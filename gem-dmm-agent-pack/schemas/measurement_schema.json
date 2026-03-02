@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gem-dmm-agent-pack/schemas/measurement_schema.json",
+  "title": "Measurement Spec Schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "_meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": { "type": "string", "const": "1.0.0" },
+        "created_at": { "type": "string", "format": "date" }
+      },
+      "required": ["schema_version", "created_at"]
+    },
+    "event_naming_convention": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "style": { "type": "string", "enum": ["snake_case", "lowercase_dot", "lowercase_kebab"] },
+        "format_rule": { "type": "string" },
+        "examples": { "type": "array", "items": { "type": "string" }, "minItems": 3 }
+      },
+      "required": ["style", "format_rule", "examples"]
+    },
+    "conversion_events": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "primary": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "secondary": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["primary", "secondary"]
+    },
+    "attribution_notes": { "type": "string", "minLength": 10 },
+    "dashboards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": { "type": "string" },
+          "audience": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+          "cadence": { "type": "string", "enum": ["daily", "weekly", "monthly"] },
+          "metrics": { "type": "array", "items": { "type": "string" }, "minItems": 3 }
+        },
+        "required": ["name", "audience", "cadence", "metrics"]
+      }
+    },
+    "weekly_review_cadence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "meeting_duration_minutes": { "type": "integer", "minimum": 15, "maximum": 180 },
+        "agenda": { "type": "array", "items": { "type": "string" }, "minItems": 3 },
+        "decision_log_required": { "type": "boolean" }
+      },
+      "required": ["meeting_duration_minutes", "agenda", "decision_log_required"]
+    },
+    "kill_scale_rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "scope": { "type": "string", "description": "Experiment or channel name." },
+          "minimum_runtime_days": { "type": "integer", "minimum": 3, "maximum": 90 },
+          "kill_if": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+          "scale_if": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+          "iterate_if": { "type": "array", "items": { "type": "string" }, "minItems": 1 }
+        },
+        "required": ["scope", "minimum_runtime_days", "kill_if", "scale_if", "iterate_if"]
+      }
+    }
+  },
+  "required": [
+    "_meta",
+    "event_naming_convention",
+    "conversion_events",
+    "attribution_notes",
+    "dashboards",
+    "weekly_review_cadence",
+    "kill_scale_rules"
+  ]
+}
+

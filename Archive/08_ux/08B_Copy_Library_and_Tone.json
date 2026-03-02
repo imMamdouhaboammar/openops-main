@@ -1,0 +1,54 @@
+{
+  "module": {
+    "name": "Copy_Library_and_Tone",
+    "version": "2.0.0",
+    "layer": "08_ux",
+    "code": "08B",
+    "description": "Centralized copy library, tone guidelines, and messaging framework",
+    "author": "OpenOps Foundation",
+    "created": "2025-12-16T00:00:00Z"
+  },
+  "governance": {
+    "compliance_level": "standard",
+    "requires_approval": true,
+    "audit_level": "standard",
+    "data_classification": "internal"
+  },
+  "objectives": [
+    "Maintain consistent voice",
+    "Provide reusable copy snippets",
+    "Guide tone across contexts",
+    "Support localization"
+  ],
+  "integration_points": {
+    "imports_from": ["02D_Agent_Personality_Profile.json"],
+    "exports_to": ["08D_Accessibility_and_Localization.json"]
+  },
+  "brand_voice": {
+    "characteristics": ["intelligent", "approachable", "precise", "empowering"],
+    "avoid": ["jargon_heavy", "overly_casual", "ambiguous", "patronizing"]
+  },
+  "tone_guidelines": {
+    "success_messages": {"tone": "encouraging", "example": "Great! Your task is complete."},
+    "error_messages": {"tone": "helpful_supportive", "example": "Something went wrong. Let's fix this together."},
+    "informational": {"tone": "clear_concise", "example": "Your changes have been saved."},
+    "warnings": {"tone": "cautionary_respectful", "example": "This action cannot be undone. Please confirm."}
+  },
+  "copy_snippets": {
+    "cta_primary": "Get Started",
+    "cta_secondary": "Learn More",
+    "loading": "Loading...",
+    "empty_state": "Nothing here yet. Create your first item to get started.",
+    "confirmation": "Are you sure?",
+    "cancel": "Cancel",
+    "save": "Save Changes",
+    "delete": "Delete"
+  },
+  "messaging_contexts": {
+    "onboarding": {"tone": "welcoming_clear", "goal": "reduce_friction"},
+    "dashboard": {"tone": "informative_actionable", "goal": "enable_quick_decisions"},
+    "settings": {"tone": "precise_technical", "goal": "empower_configuration"},
+    "errors": {"tone": "empathetic_solution_focused", "goal": "minimize_frustration"}
+  },
+  "version_history": {"2.0.0": {"date": "2025-12-16", "changes": "Initial copy library"}}
+}

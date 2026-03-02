@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "intent-first-strategy-core/schemas/diagnosis_map.schema.json",
+  "title": "Live Diagnosis Map",
+  "type": "object",
+  "additionalProperties": false,
+  "x_pack_meta": {
+    "pack": "intent-first-strategy-core",
+    "version": "1.0.0",
+    "date": "2026-02-13",
+    "owner": "OpenOps Studio (Mamdouh Aboammar)"
+  },
+  "properties": {
+    "client_request": {
+      "type": "string",
+      "minLength": 1,
+      "description": "What the client asks for."
+    },
+    "suspected_intent": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Why they want it."
+    },
+    "suspected_true_issue": {
+      "type": "string",
+      "minLength": 1,
+      "description": "What is likely blocking outcomes right now."
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "budget": { "type": "string", "description": "Budget range preferred." },
+        "time": { "type": "string", "description": "Timeline/horizon constraints." },
+        "team": { "type": "string", "description": "Execution capacity constraints." },
+        "compliance": { "type": "string", "description": "Compliance constraints." }
+      },
+      "required": ["budget", "time", "team"]
+    },
+    "evidence": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "description": "Why we believe this is the true issue (facts, observations, data signals)."
+    },
+    "contradictions": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "description": "Contradictions or vague claims that require reality checks."
+    },
+    "unknowns": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "description": "What we still need to confirm diagnosis."
+    }
+  },
+  "required": [
+    "client_request",
+    "suspected_intent",
+    "suspected_true_issue",
+    "constraints",
+    "evidence",
+    "contradictions",
+    "unknowns"
+  ]
+}
+

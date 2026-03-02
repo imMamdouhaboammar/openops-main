@@ -1,0 +1,583 @@
+{
+  "strategy_workflow_engine": {
+    "version": "1.0.0",
+    "description": "7-step workflow for marketing strategy development",
+    "status": "active",
+
+    "workflow_overview": {
+      "phases": [
+        "1_clarify_mission",
+        "2_internal_plan",
+        "3_diagnosis",
+        "4_strategy",
+        "5_execution_tactics",
+        "6_experiments_loops",
+        "7_measurement_iteration"
+      ],
+      "philosophy": "Think strategically, execute tactically, measure obsessively"
+    },
+
+    "step_1_clarify_mission": {
+      "objective": "Define clear goal, assumptions, and constraints",
+      "duration": "5% of total time",
+      
+      "questions": {
+        "goal_clarity": [
+          "What is the primary goal? (Awareness, Acquisition, Activation, Retention, Revenue, Referral)",
+          "What does success look like quantitatively?",
+          "What is the timeline?",
+          "What is at stake if this fails?"
+        ],
+        "funnel_stage": [
+          "Top of funnel (awareness, discovery)?",
+          "Middle of funnel (consideration, evaluation)?",
+          "Bottom of funnel (conversion, purchase)?",
+          "Post-purchase (retention, referral)?"
+        ],
+        "assumptions": [
+          "What are we assuming about the audience?",
+          "What are we assuming about the market?",
+          "What are we assuming about our product/offer?",
+          "Which assumptions are risky?"
+        ],
+        "constraints": [
+          "What is the budget?",
+          "What is the timeline?",
+          "What team/tools are available?",
+          "What are non-negotiables?"
+        ]
+      },
+
+      "outputs": {
+        "mission_statement": {
+          "template": "We aim to [goal] for [audience] by [approach] within [timeline], measured by [KPI]",
+          "example": "We aim to acquire 1000 qualified leads for B2B SaaS by launching a content + paid media campaign within 90 days, measured by cost per qualified lead < $50"
+        },
+        "success_criteria": {
+          "primary_metric": "Main KPI",
+          "target_value": "Quantitative goal",
+          "baseline": "Current state",
+          "timeline": "When to achieve"
+        },
+        "constraints_summary": {
+          "budget": "$X total",
+          "timeline": "Y weeks/months",
+          "team": "Z people with [skills]",
+          "tools": "[Tools available]"
+        }
+      }
+    },
+
+    "step_2_internal_plan": {
+      "objective": "Create compact strategic outline before full strategy",
+      "duration": "10% of total time",
+      
+      "structure": {
+        "diagnosis_summary": {
+          "current_situation": "1-2 sentence state",
+          "key_problems": ["Top 2-3 problems"],
+          "opportunities": ["Top 2-3 opportunities"]
+        },
+        "strategy_direction": {
+          "target_audience": "Specific ICP",
+          "core_value_prop": "Main promise",
+          "key_message": "What we say",
+          "differentiation": "Why us vs. them"
+        },
+        "channels_levers": {
+          "primary_channels": ["2-3 main channels with rationale"],
+          "secondary_channels": ["1-2 supporting channels"],
+          "key_growth_levers": ["What drives compounding growth"]
+        },
+        "experiments": {
+          "experiment_1": "What to test first",
+          "experiment_2": "What to test second"
+        },
+        "measurement": {
+          "north_star": "Primary KPI",
+          "leading_indicators": ["Early signals"],
+          "review_cadence": "How often to check"
+        }
+      },
+
+      "visibility": "Internal reasoning only. Include in output only if user requests.",
+      
+      "quality_check": [
+        "Is the diagnosis specific (not generic)?",
+        "Is the target audience narrow enough?",
+        "Is the channel rationale clear?",
+        "Are experiments testable?",
+        "Is measurement tied to business outcomes?"
+      ]
+    },
+
+    "step_3_diagnosis": {
+      "objective": "Identify problems and opportunities",
+      "duration": "15% of total time",
+      
+      "analysis_framework": {
+        "whats_working": {
+          "questions": [
+            "What channels/tactics are performing?",
+            "What messages resonate?",
+            "What audience segments convert?",
+            "What growth loops exist?"
+          ],
+          "sources": ["Analytics", "Experiments", "Customer feedback"]
+        },
+        "whats_not_working": {
+          "questions": [
+            "What channels/tactics are underperforming?",
+            "Where are funnel leaks?",
+            "What messages fall flat?",
+            "What segments churn?"
+          ],
+          "sources": ["Analytics", "Experiments", "Customer feedback"]
+        },
+        "opportunities": {
+          "questions": [
+            "What untapped channels exist?",
+            "What unaddressed pain points?",
+            "What emerging trends?",
+            "What competitive gaps?"
+          ],
+          "sources": ["Market research", "Competitor analysis", "Customer insights"]
+        },
+        "threats": {
+          "questions": [
+            "What competitive threats?",
+            "What market changes?",
+            "What overdependencies?",
+            "What resource constraints?"
+          ],
+          "sources": ["Competitive intel", "Market trends", "Internal analysis"]
+        }
+      },
+
+      "diagnosis_areas": {
+        "positioning": {
+          "check": [
+            "Is value prop clear and differentiated?",
+            "Is positioning too broad or too narrow?",
+            "Do customers understand what we do?",
+            "How do we compare to alternatives?"
+          ]
+        },
+        "funnel": {
+          "check": [
+            "Where are major drop-offs?",
+            "Is awareness sufficient?",
+            "Is activation happening?",
+            "Is retention strong?"
+          ]
+        },
+        "offers": {
+          "check": [
+            "Are offers compelling?",
+            "Are CTAs clear?",
+            "Is pricing optimal?",
+            "Are incentives aligned?"
+          ]
+        },
+        "metrics": {
+          "check": [
+            "Are we tracking the right KPIs?",
+            "Are we focusing on vanity metrics?",
+            "Is attribution clear?",
+            "Can we tie marketing to revenue?"
+          ]
+        },
+        "channels": {
+          "check": [
+            "Are we over-dependent on one channel?",
+            "Are channels complementary?",
+            "Are we missing obvious channels?",
+            "Is channel mix optimal for stage?"
+          ]
+        },
+        "budget": {
+          "check": [
+            "Is budget allocated efficiently?",
+            "Are we over/under-investing in channels?",
+            "Is CAC sustainable vs. LTV?",
+            "Are we testing enough?"
+          ]
+        }
+      },
+
+      "outputs": {
+        "diagnosis_summary": {
+          "strengths": ["What's working well"],
+          "weaknesses": ["What's not working"],
+          "opportunities": ["What we could do"],
+          "threats": ["What could hurt us"],
+          "root_causes": ["Why are things this way?"],
+          "implications": ["What this means for strategy"]
+        }
+      }
+    },
+
+    "step_4_strategy": {
+      "objective": "Define strategic foundation",
+      "duration": "25% of total time",
+      
+      "strategic_components": {
+        "target_audience": {
+          "icp_definition": {
+            "demographic": "Age, location, company size, role, etc.",
+            "psychographic": "Goals, pains, motivations, beliefs",
+            "behavioral": "Buying patterns, content preferences, channel usage",
+            "jtbd": {
+              "trigger": "What causes them to seek solution?",
+              "desired_outcome": "What do they want to achieve?",
+              "anxieties": "What holds them back?",
+              "forces": "Push (pain) vs. Pull (desire), Habit vs. New"
+            }
+          },
+          "segmentation": {
+            "primary_segment": "Most valuable, best fit",
+            "secondary_segment": "Also valuable, different approach",
+            "anti_segment": "Who we should NOT target"
+          }
+        },
+        
+        "value_proposition": {
+          "core_promise": "What ultimate benefit?",
+          "proof_points": "Why should they believe?",
+          "differentiation": "Why us vs. alternatives?",
+          "emotional_benefit": "How will they feel?",
+          "functional_benefit": "What will they achieve?"
+        },
+
+        "messaging_hierarchy": {
+          "headline": "Single most compelling statement",
+          "subheadline": "Elaboration with specifics",
+          "body_copy": "Proof, details, benefits",
+          "cta": "What to do next",
+          "supporting_messages": {
+            "objection_handlers": ["Address concerns"],
+            "benefit_details": ["Elaborate on value"],
+            "social_proof": ["Build credibility"]
+          }
+        },
+
+        "channel_strategy": {
+          "channel_selection": {
+            "criteria": [
+              "audience_presence",
+              "stage_fit",
+              "budget_efficiency",
+              "capability_match",
+              "competitive_advantage"
+            ]
+          },
+          "channel_roles": {
+            "awareness_channels": ["Reach new audiences"],
+            "consideration_channels": ["Educate and nurture"],
+            "conversion_channels": ["Drive decisions"],
+            "retention_channels": ["Keep engaged"],
+            "referral_channels": ["Generate word of mouth"]
+          },
+          "channel_mix": {
+            "primary": "2-3 main channels (70% effort)",
+            "secondary": "2-3 supporting channels (20% effort)",
+            "experimental": "1-2 test channels (10% effort)"
+          }
+        },
+
+        "growth_levers": {
+          "acquisition_levers": "What drives new users?",
+          "activation_levers": "What gets users to value?",
+          "retention_levers": "What keeps users engaged?",
+          "revenue_levers": "What drives monetization?",
+          "referral_levers": "What creates word of mouth?"
+        }
+      },
+
+      "outputs": {
+        "strategic_brief": {
+          "target_audience": "ICP definition",
+          "value_proposition": "Core promise",
+          "messaging_platform": "Hierarchy of messages",
+          "channel_strategy": "Where and why",
+          "growth_levers": "What drives compounding returns",
+          "positioning_statement": "[Product] is the [category] that [unique value] for [target audience] who [pain/desire] unlike [alternatives] because [differentiation]"
+        }
+      }
+    },
+
+    "step_5_execution_tactics": {
+      "objective": "Design detailed campaigns and tactics",
+      "duration": "25% of total time",
+      
+      "tactical_components": {
+        "campaign_structure": {
+          "campaign_themes": ["2-3 overarching themes"],
+          "campaign_phases": {
+            "phase_1": "Launch/awareness (weeks 1-4)",
+            "phase_2": "Engagement/consideration (weeks 5-8)",
+            "phase_3": "Conversion/optimization (weeks 9-12)"
+          },
+          "asset_requirements": {
+            "creative": ["Ads", "Landing pages", "Emails"],
+            "content": ["Blog posts", "Videos", "Social posts"],
+            "technical": ["Tracking", "Forms", "Integrations"]
+          }
+        },
+
+        "content_framework": {
+          "pillar_topics": ["3-5 main themes"],
+          "content_types": {
+            "awareness": ["Blog posts", "Social content", "Videos"],
+            "consideration": ["Guides", "Webinars", "Case studies"],
+            "conversion": ["Product demos", "Comparisons", "Trials"]
+          },
+          "distribution_strategy": {
+            "owned": ["Website", "Email", "Blog"],
+            "earned": ["PR", "Partnerships", "Guest posts"],
+            "paid": ["Ads", "Sponsored content", "Influencers"]
+          }
+        },
+
+        "channel_tactics": {
+          "seo": {
+            "keyword_strategy": "Target keywords + intent",
+            "content_plan": "What to create",
+            "technical_priorities": "What to fix",
+            "link_building": "How to earn links"
+          },
+          "paid_media": {
+            "targeting_strategy": "Who to reach",
+            "bidding_strategy": "How to bid",
+            "creative_strategy": "What to test",
+            "budget_allocation": "How to distribute spend"
+          },
+          "social_media": {
+            "platform_priorities": "Where to focus",
+            "content_mix": "What to post",
+            "posting_cadence": "How often",
+            "engagement_strategy": "How to interact"
+          },
+          "email_marketing": {
+            "list_strategy": "How to grow list",
+            "segmentation": "How to segment",
+            "flow_design": "Automated sequences",
+            "campaign_calendar": "Promotional sends"
+          }
+        },
+
+        "creative_examples": {
+          "ad_copy": {
+            "headlines": ["3-5 variations"],
+            "body_copy": ["2-3 variations"],
+            "ctas": ["2-3 variations"],
+            "psychology_applied": ["What triggers used"]
+          },
+          "landing_pages": {
+            "hero_section": "Headline + subhead + CTA",
+            "value_props": "3-5 key benefits",
+            "social_proof": "Testimonials, logos, stats",
+            "cta_strategy": "Primary + secondary CTAs"
+          },
+          "email_sequences": {
+            "welcome_series": "3-5 emails",
+            "nurture_track": "5-7 emails",
+            "re_engagement": "2-3 emails"
+          }
+        }
+      },
+
+      "outputs": {
+        "campaign_plan": "Detailed execution roadmap",
+        "content_calendar": "What to create when",
+        "creative_briefs": "Specifications for assets",
+        "channel_playbooks": "Tactical guides per channel"
+      }
+    },
+
+    "step_6_experiments_loops": {
+      "objective": "Design testable hypotheses and growth loops",
+      "duration": "10% of total time",
+      
+      "experiment_design": {
+        "hypothesis_framework": {
+          "structure": "We believe [change] will result in [outcome] because [reasoning], measured by [metric] over [duration]",
+          "components": {
+            "independent_variable": "What we change",
+            "dependent_variable": "What we measure",
+            "rationale": "Why we think it will work",
+            "success_criteria": "How we define success"
+          }
+        },
+
+        "prioritization": {
+          "ice_score": {
+            "impact": "How much will it move the needle? (1-10)",
+            "confidence": "How sure are we? (1-10)",
+            "ease": "How easy to implement? (1-10)",
+            "formula": "(Impact × Confidence) / Ease"
+          }
+        },
+
+        "experiment_types": {
+          "messaging_tests": "Headlines, angles, value props",
+          "creative_tests": "Ad formats, images, videos",
+          "targeting_tests": "Audience segments, demographics",
+          "channel_tests": "Platform performance, placements",
+          "funnel_tests": "Landing page elements, form fields",
+          "pricing_tests": "Price points, packaging, offers"
+        }
+      },
+
+      "growth_loops": {
+        "loop_types": {
+          "viral_loop": {
+            "structure": "User → Invite → New User → Invite...",
+            "examples": ["Referral programs", "Social sharing", "Built-in virality"]
+          },
+          "content_loop": {
+            "structure": "Create Content → Attract Users → Users Create Content...",
+            "examples": ["UGC platforms", "Community forums", "Review sites"]
+          },
+          "paid_loop": {
+            "structure": "Spend → Acquire → Revenue → Reinvest...",
+            "examples": ["Performance marketing", "Affiliate programs"]
+          },
+          "sales_loop": {
+            "structure": "Close Customer → Reference → New Lead → Close...",
+            "examples": ["B2B referrals", "Case studies", "Word of mouth"]
+          }
+        },
+
+        "loop_design_questions": [
+          "What action triggers the loop?",
+          "What output does each action create?",
+          "What makes the output valuable to the next person?",
+          "What friction exists in the loop?",
+          "How can we compound returns?",
+          "What is the loop velocity?",
+          "What is the viral coefficient?"
+        ]
+      },
+
+      "outputs": {
+        "experiment_backlog": "Prioritized list of tests",
+        "experiment_briefs": "Detailed specs for top experiments",
+        "growth_loop_designs": "Diagrams and mechanics"
+      }
+    },
+
+    "step_7_measurement_iteration": {
+      "objective": "Define KPIs, tracking, and iteration plan",
+      "duration": "10% of total time",
+      
+      "kpi_framework": {
+        "north_star_metric": {
+          "definition": "One metric that best captures value delivered",
+          "characteristics": [
+            "Measures value to customer",
+            "Predicts business outcomes",
+            "Actionable and understandable",
+            "Leading indicator of growth"
+          ],
+          "examples": {
+            "ecommerce": "Weekly active buyers",
+            "saas": "Daily active users completing core action",
+            "marketplace": "Successful transactions per week"
+          }
+        },
+
+        "supporting_metrics": {
+          "leading_indicators": "Predict future success",
+          "lagging_indicators": "Confirm past success",
+          "input_metrics": "Activities we control",
+          "output_metrics": "Results we achieve"
+        },
+
+        "metric_hierarchy": {
+          "level_1_north_star": "Primary metric",
+          "level_2_drivers": "Metrics that drive north star",
+          "level_3_inputs": "Activities that drive drivers",
+          "level_4_experiments": "Tests to improve inputs"
+        }
+      },
+
+      "tracking_plan": {
+        "events_to_track": {
+          "page_views": ["Key pages"],
+          "interactions": ["Clicks", "Scrolls", "Video plays"],
+          "conversions": ["Form submits", "Purchases", "Signups"],
+          "custom_events": ["Product-specific actions"]
+        },
+
+        "properties_to_capture": {
+          "user_properties": ["Segment", "Source", "Cohort"],
+          "event_properties": ["Campaign", "Variant", "Value"]
+        },
+
+        "tools": {
+          "analytics": ["GA4", "Mixpanel", "Amplitude"],
+          "attribution": ["Multi-touch", "Data-driven"],
+          "experimentation": ["Optimizely", "VWO", "Native platforms"],
+          "dashboards": ["Looker", "Tableau", "Custom"]
+        }
+      },
+
+      "iteration_plan": {
+        "review_cadence": {
+          "daily": "Campaign metrics, ad performance",
+          "weekly": "Channel performance, experiment results",
+          "monthly": "Strategic KPIs, budget allocation",
+          "quarterly": "Strategy review, pivot decisions"
+        },
+
+        "decision_rules": {
+          "scale": {
+            "criteria": "When metrics exceed targets by X%",
+            "action": "Increase budget, expand audience, replicate"
+          },
+          "optimize": {
+            "criteria": "When metrics are close to targets",
+            "action": "Run experiments, test variations"
+          },
+          "pivot": {
+            "criteria": "When metrics plateau or decline",
+            "action": "Change strategy, try new approach"
+          },
+          "kill": {
+            "criteria": "When metrics consistently miss targets",
+            "action": "Stop campaign, reallocate budget"
+          }
+        }
+      },
+
+      "outputs": {
+        "kpi_framework": "Metric hierarchy and definitions",
+        "tracking_specifications": "What to track and how",
+        "dashboard_design": "What to visualize",
+        "iteration_schedule": "When to review and decide"
+      }
+    },
+
+    "workflow_checklist": {
+      "required_steps": [
+        "✓ Step 1: Mission clarified",
+        "✓ Step 2: Internal plan created",
+        "✓ Step 3: Diagnosis completed",
+        "✓ Step 4: Strategy defined",
+        "✓ Step 5: Tactics detailed",
+        "✓ Step 6: Experiments designed",
+        "✓ Step 7: Measurement planned"
+      ],
+      "quality_gates": [
+        "✓ Grounded in research",
+        "✓ Specific and actionable",
+        "✓ Measurable outcomes",
+        "✓ Realistic constraints",
+        "✓ Psychology applied",
+        "✓ Experiments included",
+        "✓ Iteration plan clear"
+      ]
+    }
+  }
+}

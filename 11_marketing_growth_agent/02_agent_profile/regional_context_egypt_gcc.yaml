@@ -1,0 +1,97 @@
+version: "2.0.0"
+date: "2026-02-13"
+owner: "OpenOps Studio (Mamdouh Aboammar)"
+profile_scope: "Egypt + Saudi + UAE + GCC"
+
+core_regional_principles:
+  - "Never run one-size-fits-all GCC messaging."
+  - "Localize by country, language mix, and buying friction."
+  - "Use trust architecture early: proof, authority, and transparent offer terms."
+  - "Assume mobile-first browsing and conversion paths."
+  - "Treat seasonal windows as planning constraints, not just creative themes."
+
+market_overlays:
+  egypt:
+    language_mix:
+      primary: "Arabic (Egyptian)"
+      secondary: "English"
+    messaging_priorities:
+      - "Offer clarity and practical value"
+      - "Risk reversal and credibility proof"
+      - "Simple, concrete CTA language"
+    channel_fit:
+      awareness: ["Meta", "TikTok", "YouTube"]
+      demand_capture: ["Google Search", "SEO"]
+      retention: ["WhatsApp where compliant", "Email", "Remarketing"]
+    operational_notes:
+      - "Keep creative payload and landing speed optimized for mid-range devices."
+      - "Build conversion paths with minimal form friction."
+
+  saudi_arabia:
+    language_mix:
+      primary: "Arabic"
+      secondary: "English"
+    messaging_priorities:
+      - "Trust-first positioning"
+      - "Premium or authority framing when relevant"
+      - "Compliance-safe claims and transparent value delivery"
+    channel_fit:
+      awareness: ["Snapchat", "TikTok", "YouTube", "X"]
+      demand_capture: ["Google Search", "SEO"]
+      b2b_pipeline: ["LinkedIn", "Search", "Authority content"]
+    operational_notes:
+      - "Segment clearly by intent and buying stage."
+      - "Use high-context creative adapted to local expectations."
+
+  united_arab_emirates:
+    language_mix:
+      primary: "English + Arabic"
+      secondary: "Hindi/Urdu where relevant to audience"
+    messaging_priorities:
+      - "Segment by audience cohort and purchase context"
+      - "Clear differentiation in crowded categories"
+      - "Proof-backed claims and robust post-click experience"
+    channel_fit:
+      awareness: ["Meta", "TikTok", "YouTube", "Programmatic where fit"]
+      demand_capture: ["Google Search", "SEO"]
+      b2b_pipeline: ["LinkedIn", "Search", "Webinars/authority content"]
+    operational_notes:
+      - "Split campaigns by language and audience economics."
+      - "Use tighter attribution controls for cross-channel spend."
+
+  gcc_cluster_default:
+    countries: ["Saudi Arabia", "United Arab Emirates", "Kuwait", "Qatar", "Bahrain", "Oman"]
+    policy:
+      - "Do not reuse ad copy unchanged across all GCC countries."
+      - "Create per-country hypothesis cards before scaling budgets."
+      - "Define country-level budget guardrails and decision thresholds."
+
+seasonal_planning:
+  rule: "All time-sensitive calendar planning must include exact Gregorian dates."
+  windows_to_consider:
+    - "Ramadan"
+    - "Eid al-Fitr"
+    - "Eid al-Adha"
+    - "Back-to-school"
+    - "Year-end commercial period"
+  execution_guidance:
+    - "Map creative and offers by season-specific intent shifts."
+    - "Increase measurement cadence during high-volatility windows."
+
+compliance_and_privacy:
+  baseline:
+    - "Never request sensitive personal data in discovery."
+    - "Use aggregate metrics or bounded ranges where possible."
+    - "If private data is shared, request minimization/redaction."
+  legal_note: "This profile is not legal advice; escalate legal interpretation to qualified counsel."
+
+measurement_localization:
+  required:
+    - "Track by country, language, audience cohort."
+    - "Separate baseline and targets per market."
+    - "Define kill/scale rules per market, not globally only."
+  minimum_review_cadence:
+    weekly: "Performance + signal quality review"
+    biweekly: "Experiment decision review"
+    monthly: "Budget reallocation by market evidence"
+

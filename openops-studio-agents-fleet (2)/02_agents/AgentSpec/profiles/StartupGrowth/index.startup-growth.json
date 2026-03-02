@@ -1,0 +1,503 @@
+{
+    "agent_metadata": {
+        "agent_id": "startup-growth-strategist",
+        "namespace": "org.openops.agents.growth.startup",
+        "version": "1.0.0",
+        "tier": "L2",
+        "domain": "Startup Growth, Stage-Based Strategy, Investor Relations, UpgradIQ Framework",
+        "created_date": "2026-01-10",
+        "specialization": [
+            "UpgradIQ Startup Table",
+            "Pre-Seed → Exit Playbooks",
+            "Investor Readiness",
+            "MENA Startup Context",
+            "Stage-Based Metrics"
+        ]
+    },
+    "capabilities": {
+        "core": [
+            {
+                "id": "stage-diagnosis",
+                "name": "Stage Diagnosis & Assessment",
+                "focus": [
+                    "Metrics analysis vs. benchmarks",
+                    "Capability audit",
+                    "Gap identification",
+                    "Readiness scoring (0-100)"
+                ],
+                "accuracy_target": "90%+"
+            },
+            {
+                "id": "upgradiq-framework",
+                "name": "UpgradIQ Startup Table Framework",
+                "focus": [
+                    "7 color-coded stages",
+                    "100+ elements mapped",
+                    "Sequenced execution",
+                    "Stage-appropriate tactics"
+                ],
+                "coverage": "Pre-Seed → Exit"
+            },
+            {
+                "id": "priority-matrix",
+                "name": "Priority Matrix Generation",
+                "focus": [
+                    "Eisenhower Matrix adaptation",
+                    "Stage-specific prioritization",
+                    "Do Now / Plan / Delegate / Eliminate",
+                    "Quarterly roadmapping"
+                ]
+            },
+            {
+                "id": "playbook-generation",
+                "name": "90-Day Playbook Generation",
+                "focus": [
+                    "Critical elements for current stage",
+                    "Implementation steps",
+                    "Success criteria",
+                    "Common pitfalls"
+                ],
+                "adoption_rate": "75%+"
+            },
+            {
+                "id": "investor-readiness",
+                "name": "Investor Readiness Assessment",
+                "focus": [
+                    "Metrics readiness (1-10)",
+                    "Story readiness",
+                    "Process readiness (data room)",
+                    "Fundraising probability"
+                ],
+                "success_rate": "60%+ when score >7"
+            }
+        ],
+        "advanced": [
+            {
+                "id": "mena-contextualization",
+                "name": "MENA Market Contextualization",
+                "focus": [
+                    "Saudi/GCC: Vision 2030 alignment",
+                    "Egypt: Scale + infrastructure challenges",
+                    "Timeline adjustments (+20-40%)",
+                    "Local investor landscape"
+                ]
+            },
+            {
+                "id": "stage-transition",
+                "name": "Stage Transition Management",
+                "focus": [
+                    "Pre-transition preparation",
+                    "Transition execution",
+                    "Post-transition validation",
+                    "Avoiding regression"
+                ]
+            },
+            {
+                "id": "unit-economics",
+                "name": "Unit Economics Optimization",
+                "focus": [
+                    "CAC Payback (<12 months)",
+                    "LTV/CAC ratio (>3x)",
+                    "Gross margin optimization",
+                    "Rule of 40 achievement"
+                ]
+            }
+        ]
+    },
+    "startup_table_stages": {
+        "foundation": {
+            "color": "blue",
+            "stage_name": "Foundation (Pre-Seed)",
+            "focus": "Validate problem, build MVP, find early traction",
+            "key_elements": [
+                "PRC",
+                "CSD",
+                "MKS",
+                "VLP",
+                "SLF",
+                "USR",
+                "PBV",
+                "SAR",
+                "RLE",
+                "MPD",
+                "ASM",
+                "BMD",
+                "BRN"
+            ],
+            "metrics": {
+                "validation_interviews": "50+",
+                "mvp_status": "Launched",
+                "early_customers": "10-50 paying or 1000+ active users"
+            },
+            "timeline": "6-12 months"
+        },
+        "growth_systems": {
+            "color": "green",
+            "stage_name": "Growth Systems (Seed)",
+            "focus": "Build repeatable acquisition, establish PMF signals",
+            "key_elements": [
+                "ORS",
+                "CHF",
+                "ACE",
+                "LCD",
+                "RTS",
+                "RVX",
+                "PDS",
+                "FTP",
+                "RMS",
+                "EXV",
+                "DIN",
+                "PST",
+                "ATL",
+                "TCD",
+                "PMT",
+                "SRD"
+            ],
+            "metrics": {
+                "mrr_range": "$10K-$50K",
+                "cac_payback": "<12 months",
+                "retention_m3": ">40%",
+                "nps": "Target >40"
+            },
+            "timeline": "18-24 months to Series A"
+        },
+        "operations_performance": {
+            "color": "yellow",
+            "stage_name": "Operations & Performance (Series A Prep)",
+            "focus": "Systematize ops, prepare for scale",
+            "key_elements": [
+                "RLE",
+                "SCB",
+                "DGV",
+                "OPM",
+                "PRD",
+                "EXC",
+                "CTC",
+                "EXS",
+                "STO",
+                "FCL",
+                "ARD",
+                "RMF",
+                "PCS",
+                "UNE"
+            ],
+            "metrics": {
+                "arr_range": "$1M-$3M",
+                "gross_margin": ">70%",
+                "logo_retention": ">85%",
+                "team_size": "15-30"
+            },
+            "timeline": "Series A stage"
+        },
+        "critical_decisions": {
+            "color": "red",
+            "stage_name": "Critical Decisions (Series A)",
+            "focus": "Strategic bets, commit to scale paths",
+            "key_elements": [
+                "DST",
+                "BYT",
+                "VLG",
+                "DLS",
+                "NGC",
+                "BDA",
+                "TRP",
+                "PEX"
+            ],
+            "metrics": {
+                "arr_range": "$3M-$10M",
+                "nrr": ">110%",
+                "magic_number": ">0.75",
+                "win_rate": ">25%"
+            },
+            "timeline": "Series A → Series B (24-36 months)"
+        },
+        "market_product_fit": {
+            "color": "purple",
+            "stage_name": "Market & Product Fit (Series B Prep)",
+            "focus": "Dominate core market, prove repeatability",
+            "key_elements": [
+                "IVT",
+                "MKF",
+                "RKP",
+                "PFL",
+                "CPS",
+                "FDS",
+                "LGS",
+                "RGF",
+                "BRN",
+                "PSB",
+                "PTF",
+                "GOD",
+                "LPT",
+                "VNV",
+                "FNE",
+                "IND",
+                "TRK",
+                "FMT",
+                "CPC",
+                "FCL"
+            ],
+            "metrics": {
+                "arr_range": "$10M-$30M",
+                "rule_of_40": ">40%",
+                "gross_retention": ">90%",
+                "market_share": ">15% in defined segment"
+            },
+            "timeline": "Series B stage"
+        },
+        "advanced_operations": {
+            "color": "brown",
+            "stage_name": "Advanced Operations (Series B+)",
+            "focus": "Enterprise infrastructure, multi-market, exit prep",
+            "key_elements": [
+                "DLS",
+                "FAS",
+                "MRA",
+                "IVC",
+                "DUD",
+                "CKS",
+                "DAP",
+                "PTC",
+                "CPD",
+                "GVS",
+                "VAC",
+                "PMN",
+                "FON",
+                "RKM",
+                "EXT",
+                "RDT"
+            ],
+            "metrics": {
+                "arr_range": "$30M-$100M+",
+                "ebitda_margin": "Path to profitability",
+                "international_revenue": "Target >20%"
+            },
+            "timeline": "Series B+ → Exit"
+        },
+        "investor_perspective": {
+            "color": "cyan",
+            "stage_name": "Investor Stages",
+            "early_investment": [
+                "PRV",
+                "USG",
+                "RTP"
+            ],
+            "growth_investment": [
+                "PCS",
+                "UNE",
+                "CHT",
+                "FND",
+                "CNM",
+                "SLM",
+                "OPR",
+                "TMS",
+                "IVN",
+                "FRP",
+                "RSD",
+                "RKM",
+                "EXT",
+                "RDT"
+            ],
+            "focus": "Evaluation frameworks, portfolio construction, exit strategy"
+        }
+    },
+    "tools": {
+        "internal": [
+            {
+                "id": "stage-diagnostic-engine",
+                "name": "Stage Diagnostic Engine",
+                "input": "Metrics, team size, market position",
+                "output": "Current stage, readiness score, gap analysis",
+                "accuracy": "90%+"
+            },
+            {
+                "id": "priority-calculator",
+                "name": "Priority Calculator",
+                "input": "Current stage, objectives, constraints",
+                "output": "Prioritized action list with sequencing"
+            },
+            {
+                "id": "playbook-generator",
+                "name": "Playbook Generator",
+                "input": "Stage, industry, market context",
+                "output": "Customized 90-day execution plan"
+            },
+            {
+                "id": "investor-readiness-scorecard",
+                "name": "Investor Readiness Scorecard",
+                "input": "Metrics, story, process status",
+                "output": "1-10 score with improvement roadmap"
+            },
+            {
+                "id": "benchmark-comparator",
+                "name": "Benchmark Comparator",
+                "input": "Startup metrics",
+                "output": "Percentile ranking vs. stage cohort"
+            }
+        ],
+        "external_integrations": [
+            {
+                "category": "market_data",
+                "sources": [
+                    "CB Insights",
+                    "PitchBook",
+                    "Crunchbase",
+                    "MAGNiTT",
+                    "Wamda"
+                ]
+            },
+            {
+                "category": "benchmarks",
+                "sources": [
+                    "SaaS Capital",
+                    "OpenView",
+                    "Pacific Crest",
+                    "KeyBanc"
+                ]
+            },
+            {
+                "category": "analytics",
+                "integrations": [
+                    "Mixpanel",
+                    "Amplitude",
+                    "Google Analytics",
+                    "ChartMogul"
+                ]
+            },
+            {
+                "category": "finance",
+                "integrations": [
+                    "Stripe",
+                    "QuickBooks",
+                    "Xero"
+                ]
+            },
+            {
+                "category": "crm",
+                "integrations": [
+                    "Salesforce",
+                    "HubSpot",
+                    "Pipedrive"
+                ]
+            }
+        ]
+    },
+    "workflows": {
+        "standard": [
+            "initial_startup_assessment",
+            "pre_fundraise_preparation",
+            "quarterly_strategic_review"
+        ],
+        "advanced": [
+            "market_expansion_planning",
+            "exit_preparation",
+            "unit_economics_optimization",
+            "investor_reporting_automation"
+        ]
+    },
+    "metrics": {
+        "north_star": {
+            "metric": "Stage Progression Speed",
+            "formula": "Time to next stage milestone",
+            "target": "20% faster than industry average"
+        },
+        "leading": [
+            {
+                "name": "Diagnosis Accuracy",
+                "target": "≥90%"
+            },
+            {
+                "name": "Playbook Adoption Rate",
+                "target": "≥75%"
+            },
+            {
+                "name": "Investor Readiness Score Improvement",
+                "target": "+2 points in 90 days"
+            }
+        ],
+        "lagging": [
+            {
+                "name": "Fundraising Success Rate",
+                "target": "≥60% when readiness >7"
+            },
+            {
+                "name": "Avoided Common Pitfalls",
+                "target": "80% reduction"
+            },
+            {
+                "name": "Exit Success Rate",
+                "target": "Portfolio benchmark top quartile"
+            }
+        ]
+    },
+    "stage_benchmarks": {
+        "pre_seed": {
+            "funding_range": "$100K-$500K (MENA)",
+            "team_size": "1-5",
+            "timeline": "6-12 months",
+            "key_metric": "Problem validation + MVP"
+        },
+        "seed": {
+            "funding_range": "$1M-$3M (MENA), $2M-$5M (International)",
+            "arr_target": "$10K-$50K MRR",
+            "team_size": "5-15",
+            "timeline": "18-24 months to Series A"
+        },
+        "series_a": {
+            "funding_range": "$5M-$15M (MENA), $10M-$30M (International)",
+            "arr_target": "$1M-$3M",
+            "team_size": "15-50",
+            "timeline": "24-36 months to Series B"
+        },
+        "series_b": {
+            "funding_range": "$20M-$50M+",
+            "arr_target": "$10M-$30M+",
+            "team_size": "50-150+",
+            "timeline": "Path to profitability or exit"
+        }
+    },
+    "mena_context": {
+        "saudi_gcc": {
+            "advantages": [
+                "High capital availability",
+                "Vision 2030 government support",
+                "Strong B2G opportunities",
+                "Regional market (GCC as one)"
+            ],
+            "challenges": [
+                "Longer sales cycles (+20-30%)",
+                "Relationship-based business",
+                "Regulatory complexity (sector-specific)",
+                "Exit options (IPO Tadawul/ADX or strategic)"
+            ]
+        },
+        "egypt": {
+            "advantages": [
+                "100M+ population scale",
+                "Strong technical talent",
+                "Lower cost base",
+                "Diaspora network leverage"
+            ],
+            "challenges": [
+                "Capital scarcity (local)",
+                "Payment infrastructure",
+                "Infrastructure gaps (logistics)",
+                "Timeline extension (+30-40%)"
+            ]
+        }
+    },
+    "benchmarks_2026": {
+        "key_metrics": {
+            "cac_payback": "<12 months (was <18)",
+            "nrr": ">110% (was >100%)",
+            "rule_of_40": "Table stakes for Series B+",
+            "magic_number": ">0.75 (was >0.5)"
+        },
+        "emerging_priorities": [
+            "AI integration for product differentiation",
+            "Sustainable growth (profitability path)",
+            "Regional expansion (multi-market early)",
+            "Unit economics discipline"
+        ]
+    }
+}

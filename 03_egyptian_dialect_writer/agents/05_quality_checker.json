@@ -1,0 +1,409 @@
+{
+  "agent_id": "EDW_QUALITY_CHECKER_005",
+  "agent_name": "Quality Checker Agent",
+  "agent_name_ar": "مدقق الجودة",
+  "version": "1.0.0",
+  "status": "active",
+  "priority": "critical",
+  
+  "metadata": {
+    "created_at": "2025-12-19",
+    "last_updated": "2025-12-19",
+    "author": "OpenOps Team",
+    "category": "quality_assurance",
+    "tags": ["quality", "validation", "consistency", "accuracy"]
+  },
+
+  "core_capability": {
+    "primary_function": "فحص شامل للمحتوى للتأكد من الجودة والاتساق والدقة",
+    "validation_approach": "multi_layer_comprehensive",
+    "auto_correction": true
+  },
+
+  "inspection_layers": {
+    "layer_1_linguistic": {
+      "name": "الفحص اللغوي",
+      "checks": {
+        "grammar_errors": {
+          "description": "أخطاء نحوية",
+          "severity": "high",
+          "auto_fix": true,
+          "common_issues": [
+            "تذكير_وتأنيث_غير_متسق",
+            "جمع_غير_صحيح",
+            "ضمير_مرجع_غير_واضح"
+          ]
+        },
+
+        "spelling_errors": {
+          "description": "أخطاء إملائية",
+          "severity": "high",
+          "auto_fix": true,
+          "exceptions": ["intentional_colloquial_spelling"]
+        },
+
+        "punctuation_consistency": {
+          "description": "علامات الترقيم",
+          "severity": "medium",
+          "rules": {
+            "question_marks": "required_for_questions",
+            "exclamation_appropriate": "not_excessive",
+            "comma_usage": "natural_pauses",
+            "ellipsis_format": "consistent_style"
+          }
+        },
+
+        "diacritics_policy": {
+          "use_tashkeel": false,
+          "except_for": "ambiguous_words_only"
+        }
+      }
+    },
+
+    "layer_2_lexical": {
+      "name": "الفحص المعجمي",
+      "checks": {
+        "code_switching_balance": {
+          "description": "توازن المصطلحات",
+          "target_ratio": {
+            "english_technical": "0.30-0.40",
+            "egyptian_colloquial": "0.40-0.50",
+            "arabized": "0.15-0.25"
+          },
+          "severity": "medium",
+          "action": "recommend_adjustments"
+        },
+
+        "term_consistency": {
+          "description": "اتساق المصطلحات",
+          "severity": "high",
+          "rules": {
+            "same_term_same_spelling": true,
+            "no_switching_between_variants": true,
+            "examples": {
+              "correct": "الـ API في كل مرة",
+              "wrong": "الـ API مرة و واجهة برمجية مرة تانية"
+            }
+          }
+        },
+
+        "colloquial_authenticity": {
+          "description": "أصالة العامية",
+          "severity": "medium",
+          "check_for": [
+            "unnatural_phrasing",
+            "formal_arabic_intrusion",
+            "forced_slang"
+          ]
+        },
+
+        "technical_accuracy": {
+          "description": "دقة المصطلحات التقنية",
+          "severity": "critical",
+          "validate_against": "tech_terminology_database",
+          "flag_suspicious_usage": true
+        }
+      }
+    },
+
+    "layer_3_structural": {
+      "name": "الفحص الهيكلي",
+      "checks": {
+        "hook_effectiveness": {
+          "description": "فعالية الخطّاف",
+          "severity": "high",
+          "criteria": {
+            "attention_grabbing": "score >= 0.7",
+            "relevant_to_topic": true,
+            "not_clickbait": true
+          }
+        },
+
+        "logical_flow": {
+          "description": "التدفق المنطقي",
+          "severity": "high",
+          "check_for": [
+            "smooth_transitions",
+            "coherent_progression",
+            "no_sudden_jumps",
+            "clear_cause_effect"
+          ]
+        },
+
+        "paragraph_length": {
+          "description": "طول الفقرات",
+          "severity": "medium",
+          "rules": {
+            "max_lines_per_paragraph": 4,
+            "prefer_short_paragraphs": true,
+            "allow_single_line_for_emphasis": true
+          }
+        },
+
+        "white_space_usage": {
+          "description": "استخدام المسافات البيضاء",
+          "severity": "medium",
+          "adequate_spacing": true,
+          "readability_score_target": 0.85
+        },
+
+        "cta_presence": {
+          "description": "وجود دعوة للتفاعل",
+          "severity": "high",
+          "required": true,
+          "quality_check": "engaging_and_clear"
+        }
+      }
+    },
+
+    "layer_4_tonal": {
+      "name": "الفحص النبري",
+      "checks": {
+        "tone_consistency": {
+          "description": "اتساق النبرة",
+          "severity": "high",
+          "measure_variance": "across_paragraphs",
+          "max_variance": 0.15
+        },
+
+        "persona_alignment": {
+          "description": "التوافق مع الشخصية",
+          "severity": "high",
+          "verify_against": "tone_master_profile",
+          "characteristics": [
+            "confident_knowledgeable",
+            "friendly_direct",
+            "analytical_when_needed"
+          ]
+        },
+
+        "emotional_appropriateness": {
+          "description": "ملاءمة المشاعر",
+          "severity": "medium",
+          "check_for": [
+            "excessive_enthusiasm",
+            "inappropriate_sarcasm",
+            "forced_humor"
+          ]
+        }
+      }
+    },
+
+    "layer_5_factual": {
+      "name": "الفحص الواقعي",
+      "checks": {
+        "fact_verification": {
+          "description": "التحقق من الحقائق",
+          "severity": "critical",
+          "process": {
+            "check_numbers": true,
+            "verify_company_names": true,
+            "validate_dates": true,
+            "cross_reference_claims": true
+          },
+          "sources": [
+            "research_module",
+            "knowledge_base",
+            "recent_news_apis"
+          ]
+        },
+
+        "statistic_accuracy": {
+          "description": "دقة الإحصاءات",
+          "severity": "critical",
+          "require_source": true,
+          "no_made_up_numbers": true
+        },
+
+        "logical_consistency": {
+          "description": "الاتساق المنطقي",
+          "severity": "high",
+          "check_for": [
+            "contradictory_statements",
+            "impossible_claims",
+            "circular_logic"
+          ]
+        }
+      }
+    },
+
+    "layer_6_cultural": {
+      "name": "الفحص الثقافي",
+      "checks": {
+        "cultural_appropriateness": {
+          "description": "الملاءمة الثقافية",
+          "severity": "high",
+          "check_for": [
+            "offensive_content",
+            "insensitive_jokes",
+            "inappropriate_references"
+          ]
+        },
+
+        "local_context": {
+          "description": "السياق المحلي",
+          "severity": "medium",
+          "verify": [
+            "egyptian_cultural_fit",
+            "regional_relevance",
+            "audience_understanding"
+          ]
+        }
+      }
+    }
+  },
+
+  "scoring_system": {
+    "overall_quality_score": {
+      "calculation": "weighted_average_of_all_layers",
+      "weights": {
+        "linguistic": 0.20,
+        "lexical": 0.20,
+        "structural": 0.20,
+        "tonal": 0.15,
+        "factual": 0.15,
+        "cultural": 0.10
+      },
+      "minimum_pass_score": 0.75,
+      "target_score": 0.85
+    },
+
+    "dimension_scores": {
+      "naturalness": {
+        "target": 0.90,
+        "measurement": "how_human_like"
+      },
+      "engagement": {
+        "target": 0.85,
+        "measurement": "predicted_reader_interaction"
+      },
+      "accuracy": {
+        "target": 0.95,
+        "measurement": "factual_correctness"
+      },
+      "consistency": {
+        "target": 0.90,
+        "measurement": "internal_coherence"
+      }
+    }
+  },
+
+  "validation_workflow": {
+    "step_1_automated_checks": {
+      "run_all_layers": true,
+      "flag_issues": true,
+      "auto_fix_minor": true,
+      "duration": "fast"
+    },
+
+    "step_2_scoring": {
+      "calculate_scores": true,
+      "compare_to_targets": true,
+      "identify_weak_areas": true
+    },
+
+    "step_3_feedback": {
+      "generate_report": true,
+      "provide_suggestions": true,
+      "highlight_strengths": true
+    },
+
+    "step_4_decision": {
+      "pass_threshold": 0.75,
+      "actions": {
+        "score_above_0.85": "approve_immediately",
+        "score_0.75_to_0.85": "approve_with_notes",
+        "score_below_0.75": "request_revision"
+      }
+    }
+  },
+
+  "correction_capabilities": {
+    "auto_fixable": [
+      "spelling_errors",
+      "minor_grammar_issues",
+      "punctuation_inconsistencies",
+      "formatting_problems"
+    ],
+
+    "requires_human_review": [
+      "factual_inaccuracies",
+      "logical_inconsistencies",
+      "major_tone_shifts",
+      "structural_reorganization"
+    ],
+
+    "suggestion_system": {
+      "provide_alternatives": true,
+      "explain_reasoning": true,
+      "priority_ranking": true
+    }
+  },
+
+  "feedback_format": {
+    "report_structure": {
+      "executive_summary": {
+        "overall_score": true,
+        "pass_fail_status": true,
+        "key_strengths": "top_3",
+        "key_issues": "top_3"
+      },
+
+      "detailed_analysis": {
+        "layer_by_layer_scores": true,
+        "specific_issues_found": true,
+        "corrections_applied": true,
+        "suggestions_for_improvement": true
+      },
+
+      "recommendations": {
+        "immediate_actions": true,
+        "long_term_improvements": true,
+        "learning_points": true
+      }
+    }
+  },
+
+  "quality_benchmarks": {
+    "exceptional": {
+      "score_range": "0.90-1.00",
+      "description": "محتوى استثنائي جاهز للنشر فوراً"
+    },
+    "excellent": {
+      "score_range": "0.85-0.89",
+      "description": "محتوى ممتاز مع تعديلات طفيفة"
+    },
+    "good": {
+      "score_range": "0.75-0.84",
+      "description": "محتوى جيد يحتاج بعض التحسينات"
+    },
+    "needs_work": {
+      "score_range": "0.60-0.74",
+      "description": "محتوى يحتاج إعادة صياغة جزئية"
+    },
+    "poor": {
+      "score_range": "0.00-0.59",
+      "description": "محتوى يحتاج إعادة كتابة كاملة"
+    }
+  },
+
+  "integration_points": {
+    "receives_input_from": [
+      "all_previous_agents",
+      "content_generator",
+      "final_draft"
+    ],
+    "sends_output_to": [
+      "human_mimicker",
+      "publishing_pipeline",
+      "analytics_tracker"
+    ]
+  },
+
+  "continuous_improvement": {
+    "learn_from_errors": true,
+    "update_rules": true,
+    "refine_scoring": true,
+    "adapt_to_feedback": true
+  }
+}

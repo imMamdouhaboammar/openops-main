@@ -1,0 +1,433 @@
+{
+  "system": "Egyptian Dialect Writer",
+  "version": "1.0.0",
+  "metrics_framework": "Performance & Quality Monitoring",
+  
+  "core_metrics": {
+    
+    "content_quality": {
+      "description": "Metrics measuring the quality of generated content",
+      
+      "linguistic_quality": {
+        "metric_id": "CQ_LQ_001",
+        "measurement": "grammar_accuracy",
+        "calculation": "correct_sentences / total_sentences",
+        "target": 0.98,
+        "unit": "ratio",
+        "importance": "critical"
+      },
+      
+      "naturalness_score": {
+        "metric_id": "CQ_NS_002",
+        "measurement": "human_likeness",
+        "calculation": "weighted_average(perplexity, burstiness, authenticity)",
+        "target": 0.90,
+        "unit": "score_0_to_1",
+        "importance": "critical",
+        "components": {
+          "perplexity": {"weight": 0.4, "target": "> 50"},
+          "burstiness": {"weight": 0.3, "target": "> 0.7"},
+          "authenticity": {"weight": 0.3, "target": "> 0.85"}
+        }
+      },
+      
+      "tonal_consistency": {
+        "metric_id": "CQ_TC_003",
+        "measurement": "tone_variance_across_content",
+        "calculation": "1 - standard_deviation(tone_scores)",
+        "target": 0.85,
+        "unit": "consistency_score",
+        "importance": "high"
+      },
+      
+      "lexical_balance": {
+        "metric_id": "CQ_LB_004",
+        "measurement": "code_switching_appropriateness",
+        "calculation": "deviation_from_target_ratios",
+        "target_ranges": {
+          "egyptian_colloquial": [0.40, 0.50],
+          "english_technical": [0.30, 0.40],
+          "arabized_terms": [0.15, 0.25]
+        },
+        "unit": "percentage",
+        "importance": "high"
+      },
+      
+      "structural_integrity": {
+        "metric_id": "CQ_SI_005",
+        "measurement": "adherence_to_structure",
+        "components": {
+          "hook_effectiveness": 0.9,
+          "logical_flow": 0.85,
+          "paragraph_optimization": 0.9,
+          "cta_quality": 0.85
+        },
+        "calculation": "average(components)",
+        "target": 0.87,
+        "unit": "score",
+        "importance": "high"
+      },
+      
+      "factual_accuracy": {
+        "metric_id": "CQ_FA_006",
+        "measurement": "factual_correctness",
+        "calculation": "verified_facts / total_facts",
+        "target": 0.98,
+        "unit": "accuracy_ratio",
+        "importance": "critical"
+      },
+      
+      "cultural_appropriateness": {
+        "metric_id": "CQ_CA_007",
+        "measurement": "cultural_sensitivity",
+        "calculation": "1 - (violations / total_references)",
+        "target": 0.95,
+        "unit": "compliance_score",
+        "importance": "medium"
+      }
+    },
+    
+    "engagement_metrics": {
+      "description": "Metrics measuring audience engagement",
+      
+      "predicted_engagement": {
+        "metric_id": "EM_PE_001",
+        "measurement": "expected_interaction_rate",
+        "calculation": "ml_model_prediction",
+        "target": 0.75,
+        "unit": "probability",
+        "importance": "high"
+      },
+      
+      "actual_engagement_rate": {
+        "metric_id": "EM_AER_002",
+        "measurement": "real_world_engagement",
+        "calculation": "(likes + comments + shares) / views",
+        "target": 0.05,
+        "unit": "percentage",
+        "importance": "high",
+        "collection": "post_publication"
+      },
+      
+      "click_through_rate": {
+        "metric_id": "EM_CTR_003",
+        "measurement": "cta_effectiveness",
+        "calculation": "clicks / impressions",
+        "target": 0.03,
+        "unit": "percentage",
+        "importance": "medium"
+      },
+      
+      "comment_sentiment": {
+        "metric_id": "EM_CS_004",
+        "measurement": "audience_sentiment",
+        "calculation": "positive_comments / total_comments",
+        "target": 0.80,
+        "unit": "ratio",
+        "importance": "medium"
+      },
+      
+      "share_rate": {
+        "metric_id": "EM_SR_005",
+        "measurement": "content_virality",
+        "calculation": "shares / views",
+        "target": 0.01,
+        "unit": "percentage",
+        "importance": "medium"
+      }
+    },
+    
+    "performance_metrics": {
+      "description": "System performance and efficiency",
+      
+      "generation_time": {
+        "metric_id": "PM_GT_001",
+        "measurement": "content_creation_speed",
+        "calculation": "end_time - start_time",
+        "target": "< 30 seconds",
+        "unit": "seconds",
+        "importance": "medium"
+      },
+      
+      "success_rate": {
+        "metric_id": "PM_SR_002",
+        "measurement": "first_attempt_success",
+        "calculation": "successful_generations / total_attempts",
+        "target": 0.90,
+        "unit": "ratio",
+        "importance": "high"
+      },
+      
+      "retry_rate": {
+        "metric_id": "PM_RR_003",
+        "measurement": "regeneration_frequency",
+        "calculation": "retries / total_attempts",
+        "target": "< 0.10",
+        "unit": "ratio",
+        "importance": "medium"
+      },
+      
+      "agent_efficiency": {
+        "metric_id": "PM_AE_004",
+        "measurement": "agent_performance",
+        "per_agent": true,
+        "calculation": "successful_tasks / total_tasks",
+        "target": 0.95,
+        "unit": "ratio",
+        "importance": "medium"
+      },
+      
+      "resource_utilization": {
+        "metric_id": "PM_RU_005",
+        "measurement": "computational_efficiency",
+        "components": {
+          "cpu_usage": "average",
+          "memory_usage": "peak",
+          "api_calls": "count"
+        },
+        "importance": "low"
+      }
+    },
+    
+    "user_satisfaction": {
+      "description": "User experience and satisfaction",
+      
+      "explicit_rating": {
+        "metric_id": "US_ER_001",
+        "measurement": "user_given_rating",
+        "scale": "1_to_5_stars",
+        "target": 4.5,
+        "unit": "rating",
+        "importance": "high"
+      },
+      
+      "acceptance_rate": {
+        "metric_id": "US_AR_002",
+        "measurement": "content_acceptance",
+        "calculation": "accepted_without_edits / total_generated",
+        "target": 0.75,
+        "unit": "ratio",
+        "importance": "high"
+      },
+      
+      "edit_intensity": {
+        "metric_id": "US_EI_003",
+        "measurement": "user_modifications",
+        "calculation": "edits_made / total_words",
+        "target": "< 0.10",
+        "unit": "ratio",
+        "importance": "medium"
+      },
+      
+      "time_to_publish": {
+        "metric_id": "US_TTP_004",
+        "measurement": "review_to_publish_time",
+        "calculation": "publish_timestamp - generation_timestamp",
+        "target": "< 5 minutes",
+        "unit": "minutes",
+        "importance": "medium"
+      },
+      
+      "repeat_usage_rate": {
+        "metric_id": "US_RUR_005",
+        "measurement": "user_retention",
+        "calculation": "returning_users / total_users",
+        "target": 0.80,
+        "unit": "ratio",
+        "importance": "high"
+      }
+    },
+    
+    "learning_metrics": {
+      "description": "System improvement and learning",
+      
+      "model_improvement_rate": {
+        "metric_id": "LM_MIR_001",
+        "measurement": "quality_increase_over_time",
+        "calculation": "(current_score - baseline_score) / baseline_score",
+        "target": "positive_trend",
+        "unit": "percentage_change",
+        "importance": "medium"
+      },
+      
+      "error_reduction_rate": {
+        "metric_id": "LM_ERR_002",
+        "measurement": "decreasing_errors",
+        "calculation": "(previous_errors - current_errors) / previous_errors",
+        "target": "> 0.05_per_month",
+        "unit": "percentage_reduction",
+        "importance": "medium"
+      },
+      
+      "knowledge_base_growth": {
+        "metric_id": "LM_KBG_003",
+        "measurement": "expanding_knowledge",
+        "calculation": "new_entries / time_period",
+        "target": "50_per_month",
+        "unit": "entries_per_month",
+        "importance": "low"
+      }
+    }
+  },
+  
+  "composite_scores": {
+    
+    "overall_quality_index": {
+      "description": "Comprehensive quality score",
+      "components": {
+        "linguistic_quality": 0.20,
+        "naturalness_score": 0.20,
+        "lexical_balance": 0.15,
+        "structural_integrity": 0.20,
+        "factual_accuracy": 0.15,
+        "cultural_appropriateness": 0.10
+      },
+      "calculation": "weighted_sum",
+      "target": 0.85,
+      "benchmark": "industry_standard"
+    },
+    
+    "user_experience_score": {
+      "description": "Overall user satisfaction",
+      "components": {
+        "explicit_rating": 0.30,
+        "acceptance_rate": 0.30,
+        "edit_intensity": 0.20,
+        "time_to_publish": 0.20
+      },
+      "calculation": "weighted_sum",
+      "target": 0.80
+    },
+    
+    "system_health_score": {
+      "description": "Overall system performance",
+      "components": {
+        "success_rate": 0.40,
+        "generation_time": 0.30,
+        "retry_rate": 0.30
+      },
+      "calculation": "weighted_sum",
+      "target": 0.90
+    }
+  },
+  
+  "monitoring_configuration": {
+    
+    "real_time_monitoring": {
+      "enabled": true,
+      "metrics": [
+        "generation_time",
+        "success_rate",
+        "error_rate"
+      ],
+      "dashboard": "live_metrics_panel"
+    },
+    
+    "periodic_reporting": {
+      "daily_summary": {
+        "metrics": [
+          "total_generations",
+          "average_quality_score",
+          "user_satisfaction"
+        ],
+        "delivery_time": "09:00 AM"
+      },
+      
+      "weekly_report": {
+        "metrics": [
+          "all_core_metrics",
+          "trend_analysis",
+          "improvement_areas"
+        ],
+        "delivery_day": "Monday"
+      },
+      
+      "monthly_analysis": {
+        "metrics": [
+          "comprehensive_analysis",
+          "model_performance",
+          "learning_progress"
+        ],
+        "delivery_day": "1st of month"
+      }
+    },
+    
+    "alerts": {
+      "critical_alerts": [
+        {
+          "metric": "factual_accuracy",
+          "condition": "< 0.95",
+          "action": "immediate_notification"
+        },
+        {
+          "metric": "success_rate",
+          "condition": "< 0.85",
+          "action": "system_check"
+        }
+      ],
+      
+      "warning_alerts": [
+        {
+          "metric": "naturalness_score",
+          "condition": "< 0.85",
+          "action": "investigation"
+        },
+        {
+          "metric": "user_satisfaction",
+          "condition": "< 0.75",
+          "action": "review_needed"
+        }
+      ]
+    }
+  },
+  
+  "data_collection": {
+    
+    "collection_points": [
+      "content_generation",
+      "quality_check",
+      "user_interaction",
+      "post_publication"
+    ],
+    
+    "storage": {
+      "format": "time_series_database",
+      "retention": "12_months",
+      "aggregation": ["hourly", "daily", "weekly", "monthly"]
+    },
+    
+    "privacy": {
+      "anonymize_user_data": true,
+      "exclude_sensitive_info": true,
+      "compliance": "GDPR_ready"
+    }
+  },
+  
+  "visualization": {
+    
+    "dashboards": [
+      {
+        "name": "Quality Dashboard",
+        "metrics": ["overall_quality_index", "content_quality_metrics"],
+        "refresh_rate": "real_time"
+      },
+      {
+        "name": "Engagement Dashboard",
+        "metrics": ["engagement_metrics", "actual_vs_predicted"],
+        "refresh_rate": "hourly"
+      },
+      {
+        "name": "Performance Dashboard",
+        "metrics": ["system_health_score", "performance_metrics"],
+        "refresh_rate": "real_time"
+      }
+    ],
+    
+    "charts": [
+      "time_series_trends",
+      "comparison_charts",
+      "heatmaps",
+      "distribution_plots"
+    ]
+  }
+}

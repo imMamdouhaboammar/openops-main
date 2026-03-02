@@ -1,0 +1,79 @@
+{
+  "workflow_registry": {
+    "id": "openops_workflow_registry",
+    "version": "1.0",
+    "purpose": "Authoritative registry of available workflows and their round mappings.",
+    "rounds_reference": "01_orchestration/01_Orchestration_Engine_and_Rounds_Router.md",
+    "output_contracts_reference": "01_orchestration/01F_Output_Contracts.json",
+    "workflows": [
+      {
+        "workflow_id": "openops_rounds",
+        "name": "OpenOps Core Rounds",
+        "system": "openops_core",
+        "path": null,
+        "status": "active",
+        "governance": [
+          "00_governance/00_OpenOps_Constitution_and_IP_Policy.md",
+          "00_governance/00A_OpenOps_Main_Orchestrator_System_Prompt.json",
+          "00_governance/00D_Gemini_Gems_Operating_Profile.md"
+        ],
+        "round_mapping": {
+          "Plan": ["Plan"],
+          "Research": ["Research"],
+          "Blueprint": ["Blueprint"],
+          "Detail": ["Detail"],
+          "QA": ["QA"],
+          "Handoff": ["Handoff"]
+        },
+        "input_contract": "openops.plan",
+        "output_contract": "openops.handoff"
+      },
+      {
+        "workflow_id": "strategic_report_workflow",
+        "name": "Strategic Report Workflow",
+        "system": "12_saudi_strategic_system",
+        "path": "12_saudi_strategic_system/workflows/strategic_report_workflow.json",
+        "status": "active",
+        "governance": [
+          "00_governance/00_OpenOps_Constitution_and_IP_Policy.md",
+          "12_saudi_strategic_system/00_system_constitution.md"
+        ],
+        "round_mapping": {
+          "Plan": [1],
+          "Research": [2],
+          "Blueprint": [3, 4],
+          "Detail": [5],
+          "QA": [6],
+          "Handoff": [7]
+        },
+        "input_contract": "openops.plan",
+        "output_contract": "openops.handoff"
+      },
+      {
+        "workflow_id": "campaign_planning_v1",
+        "name": "Campaign Planning & Execution",
+        "system": "11_marketing_growth_system",
+        "path": "11_marketing_growth_system/workflows/campaign_planning.workflow.json",
+        "status": "active",
+        "governance": [
+          "00_governance/00_OpenOps_Constitution_and_IP_Policy.md",
+          "11_marketing_growth_system/11B_Marketing_Growth_System_Prompt.md"
+        ],
+        "round_mapping": {
+          "Plan": [1],
+          "Research": [1],
+          "Blueprint": [2],
+          "Detail": [3],
+          "QA": [4],
+          "Handoff": [5]
+        },
+        "input_contract": "openops.plan",
+        "output_contract": "openops.handoff"
+      }
+    ],
+    "notes": [
+      "Phase and stage numbers reference the workflow files directly.",
+      "If a workflow omits a Research phase, treat Research as a Plan subround."
+    ]
+  }
+}

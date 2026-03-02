@@ -1,0 +1,72 @@
+{
+    "tool_registry": {
+        "version": "1.0.0",
+        "total_tools": 3
+    },
+    "tools": {
+        "dialect_analyzer": {
+            "tool_id": "dialect-analyzer",
+            "name": "Dialect Level Analyzer",
+            "file_path": "tools/dialect-analyzer.tool.json",
+            "status": "spec",
+            "inputs": [
+                "Text content",
+                "Target audience (professional/casual/storytelling)"
+            ],
+            "outputs": [
+                "Dialect level (Light/Medium/Deep)",
+                "Comprehensibility score (% Arabs who understand)",
+                "Authenticity score"
+            ],
+            "description": "Analyzes text to determine dialect level and recommends adjustments for target audience"
+        },
+        "engagement_predictor": {
+            "tool_id": "engagement-predictor",
+            "name": "Engagement Predictor",
+            "file_path": "tools/engagement-predictor.tool.json",
+            "status": "spec",
+            "features": [
+                "Emotional trigger detection",
+                "Hook strength scoring",
+                "Viral potential score (0-100)",
+                "Share likelihood"
+            ],
+            "description": "Predicts engagement potential based on hook, emotional triggers, structure, and viral mechanics"
+        },
+        "thread_generator": {
+            "tool_id": "thread-generator",
+            "name": "Twitter Thread Generator",
+            "file_path": "tools/thread-generator.tool.json",
+            "status": "spec",
+            "inputs": [
+                "Long-form content (2000+ words)",
+                "Dialect (Egyptian/Saudi)",
+                "Thread length (10-15 tweets)"
+            ],
+            "outputs": [
+                "Formatted thread with numbering",
+                "Visual break suggestions",
+                "CTA tweet"
+            ],
+            "description": "Converts long-form content into optimized Twitter thread with proper pacing and hooks"
+        }
+    },
+    "integrations": {
+        "grammarly_arabic": {
+            "use_case": "Grammar + spelling check for Arabic",
+            "status": "future"
+        },
+        "hemingway_arabic": {
+            "use_case": "Readability scoring for Arabic",
+            "status": "future"
+        },
+        "canva": {
+            "use_case": "Visual assets for posts (images, charts)",
+            "api": "Canva API"
+        },
+        "buffer_hootsuite": {
+            "use_case": "Scheduling + multi-platform posting",
+            "api": "OAuth 2.0"
+        }
+    }
+}

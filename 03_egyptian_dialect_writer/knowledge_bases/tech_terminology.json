@@ -1,0 +1,127 @@
+{
+  "kb_id": "EDW_TECH_TERMINOLOGY_002",
+  "kb_name": "Technical Terminology Database",
+  "kb_name_ar": "قاعدة المصطلحات التقنية",
+  "version": "1.0.0",
+  "last_updated": "2025-12-19",
+  
+  "terminology_categories": {
+    "ai_ml": {
+      "always_english": [
+        "AI", "ML", "LLMs", "GPT", "Claude", "Gemini",
+        "Transformers", "Neural Networks", "Deep Learning",
+        "RAG", "Fine-tuning", "Embeddings", "Tokens",
+        "Prompt Engineering", "Context Window",
+        "AI Agents", "Agentic AI", "Multimodal",
+        "Text-to-Video", "Diffusion Models",
+        "Reinforcement Learning", "RLHF"
+      ],
+      "can_arabize": [
+        {"term": "model", "arabized": "موديل"},
+        {"term": "train", "arabized": "يتدرب/تدريب"},
+        {"term": "inference", "arabized": "استنتاج"}
+      ]
+    },
+
+    "saas_business": {
+      "always_english": [
+        "SaaS", "Startups", "Unicorn", "PMF",
+        "Product Market Fit", "Series A", "Series B",
+        "VC", "Venture Capital", "ARR", "MRR",
+        "CAC", "LTV", "Churn", "NDR", "Growth",
+        "Scale", "GTM", "Go-to-Market", "B2B", "B2C",
+        "Enterprise", "SMB", "MVP", "POC", "Beta"
+      ],
+      "can_arabize": [
+        {"term": "raise", "arabized": "تريّز/يريّز"},
+        {"term": "launch", "arabized": "يـlaunch"},
+        {"term": "pivot", "arabized": "بيفوت"}
+      ]
+    },
+
+    "tech_development": {
+      "always_english": [
+        "API", "SDK", "REST", "GraphQL", "Webhook",
+        "Integration", "Platform", "Ecosystem", "Layer",
+        "Stack", "Frontend", "Backend", "Full-Stack",
+        "Cloud", "DevOps", "CI/CD", "Docker",
+        "Kubernetes", "Microservices", "Database",
+        "SQL", "NoSQL", "Latency", "Throughput"
+      ]
+    },
+
+    "marketing_growth": {
+      "always_english": [
+        "Content", "SEO", "SEM", "Social Media",
+        "LinkedIn", "Engagement", "CTR", "Conversion",
+        "Funnel", "Landing Page", "CTA",
+        "Call to Action", "Campaign", "A/B Testing",
+        "Analytics", "KPI", "Metrics", "ROI",
+        "Attribution", "Retargeting", "UGC"
+      ]
+    }
+  },
+
+  "integration_patterns": {
+    "with_definite_article": {
+      "pattern": "الـ [TERM]",
+      "examples": [
+        "الـ AI بيتطور بسرعة",
+        "الـ SaaS Industry",
+        "الـ Platform بتاعتهم"
+      ]
+    },
+
+    "with_possessive": {
+      "pattern": "[TERM] + بتاع/بتاعت + [POSSESSOR]",
+      "examples": [
+        "الـ Product بتاعهم",
+        "الـ Strategy بتاعتك",
+        "الـ API بتاعنا"
+      ]
+    },
+
+    "in_comparisons": {
+      "patterns": [
+        "أحسن من الـ [TERM]",
+        "زي الـ [TERM]",
+        "مش زي الـ [TERM]"
+      ]
+    }
+  },
+
+  "arabization_rules": {
+    "verbs": {
+      "prefix_patterns": ["بـ", "يـ", "تـ", "هـ"],
+      "examples": [
+        {"verb": "code", "forms": ["بيكود", "تكود", "هيكود"]},
+        {"verb": "scale", "forms": ["بيscale", "تscale", "هيscale"]},
+        {"verb": "optimize", "forms": ["بيoptimize", "تoptimize"]}
+      ]
+    },
+
+    "nouns": {
+      "plural_suffix": "ات",
+      "examples": [
+        {"singular": "بوست", "plural": "بوستات"},
+        {"singular": "فيتشر", "plural": "فيتشرز"},
+        {"singular": "موديل", "plural": "موديلز"}
+      ]
+    }
+  },
+
+  "compound_terms": {
+    "keep_together": [
+      "Product Market Fit",
+      "Go-to-Market Strategy",
+      "Customer Acquisition Cost",
+      "Lifetime Value",
+      "Net Dollar Retention"
+    ],
+    "can_abbreviate": [
+      {"full": "Product Market Fit", "abbr": "PMF"},
+      {"full": "Annual Recurring Revenue", "abbr": "ARR"},
+      {"full": "Monthly Recurring Revenue", "abbr": "MRR"}
+    ]
+  }
+}

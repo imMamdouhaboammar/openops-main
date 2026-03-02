@@ -1,0 +1,43 @@
+{
+    "workflows": {
+        "standard": [
+            {
+                "id": "cro-audit",
+                "name": "Comprehensive CRO Audit",
+                "file_path": "standard-workflows/cro-audit.md",
+                "frequency": "quarterly",
+                "duration": "3-5 days"
+            },
+            {
+                "id": "ab-test-design",
+                "name": "A/B Test Design & Launch",
+                "file_path": "standard-workflows/ab-test-design.md",
+                "frequency": "continuous",
+                "duration": "1-2 days"
+            },
+            {
+                "id": "landing-page-optimization",
+                "name": "Landing Page Optimization Sprint",
+                "file_path": "standard-workflows/landing-page-optimization.md",
+                "frequency": "as_needed",
+                "duration": "1 week"
+            }
+        ],
+        "advanced": [
+            {
+                "id": "heatmap-deep-dive",
+                "name": "Heatmap & Session Replay Deep Dive",
+                "file_path": "advanced-workflows/heatmap-deep-dive.md",
+                "frequency": "quarterly",
+                "duration": "1 week"
+            },
+            {
+                "id": "checkout-optimization",
+                "name": "Checkout Flow Optimization Program",
+                "file_path": "advanced-workflows/checkout-optimization.md",
+                "frequency": "annual",
+                "duration": "4-6 weeks"
+            }
+        ]
+    }
+}

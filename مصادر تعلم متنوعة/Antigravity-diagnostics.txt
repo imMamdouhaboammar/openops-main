@@ -1,0 +1,189 @@
+{
+  "isRemote": false,
+  "systemInfo": {
+    "operatingSystem": "darwin",
+    "timestamp": "2025-12-06T13:06:12.985Z",
+    "userEmail": ""$BrandNameArabic$".cloud.storage@gmail.com",
+    "userName": ""$BrandNameArabic$""
+  },
+  "userSettings": {
+    "userSettings": {
+      "openMostRecentChatConversation": true,
+      "lastSelectedModel": 0,
+      "themePreference": 0,
+      "extensionPanelTab": 0,
+      "fontSize": 0,
+      "rememberLastModelSelection": 0,
+      "autocompleteSpeed": 2,
+      "lastSelectedModelName": "",
+      "googleAgentNuxStates": [],
+      "seenNuxUids": {},
+      "lastSelectedgoogleAgentModel": 1008,
+      "googleAgentAllowedCommands": [],
+      "googleAgentDeniedCommands": [],
+      "userNuxStates": [],
+      "googleAgentWebSearchDisabled": false,
+      "tabEnabled": 2,
+      "disableSelectionPopup": false,
+      "disableExplainProblemInlayHint": false,
+      "disableInlayHintShortcuts": false,
+      "disableOpengoogleAgentOnReload": false,
+      "disableAutoOpenEditedFiles": false,
+      "disableTabToJump": false,
+      "googleAgentAutoExecutionPolicy": 3,
+      "explainAndFixInCurrentConversation": false,
+      "allowgoogleAgentAccessGitignoreFiles": true,
+      "allowAgentAccessNonWorkspaceFiles": true,
+      "disablegoogleAgentAutoFixLints": false,
+      "disablegoogleAgentBrowserPreviews": false,
+      "detectAndUseProxy": 1,
+      "disableTabToImport": false,
+      "useClipboardForCompletions": true,
+      "disableHighlightAfterAccept": false,
+      "lastSelectedNewConvoTab": "",
+      "disableAutoGenerateMemories": false,
+      "enableSoundsForSpecialEvents": false,
+      "enableTabSounds": false,
+      "allowgoogleAgentInBackground": false,
+      "tabToJump": 1,
+      "googleAgentWebSearch": 1,
+      "enableTerminalCompletion": false,
+      "isSnoozed": false,
+      "featureUsageData": {},
+      "disablegoogleAgentInBackground": false,
+      "customWorkspace": [],
+      "conversationBrainConfigs": {},
+      "globalPlanModePreference": 0,
+      "cachedgoogleAgentModelConfigs": [],
+      "cachedgoogleAgentModelSorts": [],
+      "googleAgentRunExtensionCode": 2,
+      "googleAgentRunExtensionCodeAutoRun": 2,
+      "googleAgentInputAutocomplete": 2,
+      "autoContinueOnMaxGeneratorInvocations": 1,
+      "recentlyUsedgoogleAgentModels": [
+        "1008",
+        "334",
+        "1007"
+      ],
+      "annotationsConfig": 2,
+      "enableAutomaticScreenshot": false,
+      "relativeWorkingDirPaths": [],
+      "customModels": {},
+      "disableCodeSnippetTelemetry": false,
+      "planningMode": 2,
+      "agentBrowserTools": 1,
+      "artifactReviewMode": 2,
+      "browserOnboarded": false,
+      "allowTabAccessGitignoreFiles": true,
+      "browserChromePath": "",
+      "browserUserProfilePath": "",
+      "browserCdpPort": 0,
+      "demoModeEnabled": false,
+      "browserJsExecutionPolicy": 4
+    }
+  },
+  "extensionLogs": [
+    "2025-12-06 15:06:07.572 [info] 2025/12/06 15:06:07 maxprocs: Leaving GOMAXPROCS=10: CPU quota undefined",
+    "2025-12-06 15:06:07.606 [info] I1206 15:06:07.605981  7289 main.go:183] Setting GOMAXPROCS to 4",
+    "2025-12-06 15:06:07.606 [info] I1206 15:06:07.606774  7289 main.go:294] Starting language server process with pid 7289",
+    "2025-12-06 15:06:07.606 [info] I1206 15:06:07.606797  7289 server.go:228] Language server will attempt to listen on host 127.0.0.1",
+    "2025-12-06 15:06:07.606 [info] I1206 15:06:07.606881  7289 server.go:235] Language server listening on random port at 50437 for HTTPS",
+    "2025-12-06 15:06:07.607 [info] I1206 15:06:07.606904  7289 server.go:242] Language server listening on random port at 50438 for HTTP",
+    "2025-12-06 15:06:10.667 [info] I1206 15:06:10.667285  7289 server.go:326] Created extension server client at port 50436",
+    "2025-12-06 15:06:10.672 [info] W1206 15:06:10.672254  7289 log_context.go:106] Cache(userInfo): Singleflight refresh failed: You are not logged into Antigravity.",
+    "2025-12-06 15:06:10.682 [info] I1206 15:06:10.682157  7289 server.go:343] initialized server successfully",
+    "2025-12-06 15:06:10.683 [info] W1206 15:06:10.682894  7289 log_context.go:106] Cache(userInfo): Singleflight refresh failed: You are not logged into Antigravity.",
+    "2025-12-06 15:06:10.690 [info] (Antigravity) 2025-12-06 15:06:10.690 [INFO]: Language server started",
+    "2025-12-06 15:06:10.765 [info] 2025/12/06 15:06:10 http: TLS handshake error from 127.0.0.1:50453: EOF",
+    "2025-12-06 15:06:10.765 [info] 2025/12/06 15:06:10 http: TLS handshake error from 127.0.0.1:50454: EOF",
+    "2025-12-06 15:06:10.769 [info] (Antigravity) 2025-12-06 15:06:10.769 [INFO]: LS lspClient started successfully"
+  ],
+  "mainThreadLogs": {
+    "artifacts": []
+  },
+  "languageServerLogs": {
+    "logs": [
+      "I1206 15:06:07.605981  7289 main.go:183] Setting GOMAXPROCS to 4\n",
+      "I1206 15:06:07.606774  7289 main.go:294] Starting language server process with pid 7289\n",
+      "I1206 15:06:07.606797  7289 server.go:228] Language server will attempt to listen on host 127.0.0.1\n",
+      "I1206 15:06:07.606881  7289 server.go:235] Language server listening on random port at 50437 for HTTPS\n",
+      "I1206 15:06:07.606904  7289 server.go:242] Language server listening on random port at 50438 for HTTP\n",
+      "I1206 15:06:10.667285  7289 server.go:326] Created extension server client at port 50436\n",
+      "W1206 15:06:10.672254  7289 log_context.go:106] Cache(userInfo): Singleflight refresh failed: You are not logged into Antigravity.\n",
+      "I1206 15:06:10.682157  7289 server.go:343] initialized server successfully\n",
+      "W1206 15:06:10.682894  7289 log_context.go:106] Cache(userInfo): Singleflight refresh failed: You are not logged into Antigravity.\n"
+    ]
+  },
+  "recentTrajectories": [
+    {
+      "googleAgentId": "c3a1a3d0-075c-4491-bb59-b6a90930fcb1",
+      "trajectoryId": "7d7c4beb-ccc7-4e96-b7a0-30881f5fbcf6",
+      "summary": "Testing & Debugging with Dev Sentinel",
+      "lastStepIndex": 86,
+      "lastModifiedTime": "2025-12-03T07:23:41.351Z"
+    },
+    {
+      "googleAgentId": "f91d8017-c060-4147-b2f4-ec61b3642b39",
+      "trajectoryId": "b48e7705-c725-4411-bfb7-011e18ca8bc4",
+      "summary": "Debug Dev Sentinel Integration",
+      "lastStepIndex": 414,
+      "lastModifiedTime": "2025-11-29T05:53:27.795Z"
+    },
+    {
+      "googleAgentId": "078520b6-87dc-4dae-9929-f528e12ff6a3",
+      "trajectoryId": "618587cb-3274-4476-a2c7-77e88a345cee",
+      "summary": "Fixing Application Crash",
+      "lastStepIndex": 243,
+      "lastModifiedTime": "2025-11-29T04:08:48.085Z"
+    },
+    {
+      "googleAgentId": "9bc8e7e0-114b-4c4f-865c-aee5f8cc70d0",
+      "trajectoryId": "c7af222b-4a9d-46ed-aa9c-708aff211162",
+      "summary": "Growth & Marketing Agent Hub",
+      "lastStepIndex": 165,
+      "lastModifiedTime": "2025-11-27T22:55:01.657Z"
+    },
+    {
+      "googleAgentId": "e3711528-9865-49ba-bc65-82266f01b045",
+      "trajectoryId": "fe6d9d7a-a5ba-480f-b815-f76f898aa122",
+      "summary": "شغل التطبيق",
+      "lastStepIndex": 6,
+      "lastModifiedTime": "2025-11-27T22:32:21.563Z"
+    },
+    {
+      "googleAgentId": "53b94b09-dbec-4a56-9ee7-850b9b63f12b",
+      "trajectoryId": "8266b6dd-84a2-4eb2-be33-14125560fe99",
+      "summary": "Debugging Agent Module Build",
+      "lastStepIndex": 224,
+      "lastModifiedTime": "2025-11-27T22:29:22.037Z"
+    },
+    {
+      "googleAgentId": "6135ab79-5bca-450b-af35-c63cec97cf28",
+      "trajectoryId": "e8e74377-03f4-4d7d-ba86-c45862190a3d",
+      "summary": "Build Mobile Lite Experience",
+      "lastStepIndex": 237,
+      "lastModifiedTime": "2025-11-27T22:09:58.692Z"
+    },
+    {
+      "googleAgentId": "c8290dea-e4ff-4de4-8a6d-8ec509663aeb",
+      "trajectoryId": "42205e55-1ff7-499a-93ba-60a67a4c8173",
+      "summary": "Implement Projects Module Engine",
+      "lastStepIndex": 94,
+      "lastModifiedTime": "2025-11-27T22:08:40.714Z"
+    },
+    {
+      "googleAgentId": "1bdea066-0bce-4049-a7b3-1777d618a3ab",
+      "trajectoryId": "dc032830-9e55-413e-9271-8546dd9aaf64",
+      "summary": "Fixing Settings UI Persistence",
+      "lastStepIndex": 247,
+      "lastModifiedTime": "2025-11-27T18:12:18.438Z"
+    },
+    {
+      "googleAgentId": "a5de9396-0754-4da3-bd72-90cc4b0f1592",
+      "trajectoryId": "a5fd66f3-f719-48bd-a643-12cb0be0a7bd",
+      "summary": "Database Alignment Verification",
+      "lastStepIndex": 233,
+      "lastModifiedTime": "2025-11-27T13:00:18.497Z"
+    }
+  ]
+}

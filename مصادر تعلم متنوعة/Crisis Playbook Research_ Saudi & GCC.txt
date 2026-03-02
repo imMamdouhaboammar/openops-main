@@ -1,0 +1,218 @@
+﻿Crisis Communication Playbook: Strategic Resilience for Saudi Governmental & Institutional Leaders
+1. Executive Summary: The New Architecture of Reputation in the Kingdom
+In the contemporary operational landscape of the Kingdom of Saudi Arabia (KSA), the definition of a crisis has evolved from a linear operational failure to a multi-dimensional event that simultaneously threatens social harmony (Al-Silm Al-Ahli), national image, and institutional trust. Under the ambit of Vision 2030, Saudi governmental entities and major enterprises operate in a hyper-accelerated environment where digital transformation is not merely a goal but the primary battleground for public perception. The rapid modernization of the Kingdom has created a unique paradox: while the infrastructure for communication has never been more advanced—with internet penetration reaching 99% and social media usage encompassing nearly the entire population—the volatility of public sentiment has increased exponentially. A reputational threat can now metastasize from a localized complaint to a national security concern in a matter of minutes, driven by a hyper-connected citizenry and the sophisticated weaponization of digital platforms.
+This report serves as a high-authority Crisis Communication Playbook, designed to equip Saudi leaders with the intelligence required to navigate this volatile ecosystem. The analysis draws upon a comprehensive review of recent incidents—ranging from the Hamburgini food poisoning scandal and Jeddah floods to digital banking outages and geo-political disinformation campaigns. It synthesizes these events into actionable insights, revealing that the margin for error has collapsed. The "Golden Hour" of crisis response has been compressed into what we term the "6-Minute Rule"—the time it takes for a localized incident on X (formerly Twitter) to metastasize into a trending national grievance.
+Our findings indicate that successful crisis management in the Kingdom is no longer about "spinning" a narrative but about demonstrating competence, speed, and alignment with national priorities. Entities that fail to coordinate—such as the conflicting statements seen during the 2022 Jeddah floods between the Municipality and the National Center for Meteorology—suffer long-term reputational erosion. Conversely, entities that leverage the legal frameworks of the Anti-Cybercrime Law while maintaining empathetic, transparent communication can immunize themselves against the worst effects of "electronic flies" and organic public outrage.
+This playbook provides a deep-dive analysis into the mechanics of Saudi crises, offering a strategic doctrine for resilience that balances the strictures of governance with the fluidity of the digital street. It explores the intersection of cultural sensitivity, legal deterrence, and operational recovery, providing a roadmap for leaders to protect their institutions while contributing to the stability and progress of the Kingdom.
+________________
+2. The Saudi Crisis Ecosystem: Context, Drivers, and Dynamics
+To build a robust defense, one must first understand the unique pathology of crises within the Kingdom. The Saudi crisis ecosystem is distinct from Western models due to the specific interplay of cultural values, legal frameworks, and the dominant role of the state in daily life.
+2.1 The Digital Battlefield: Hyper-Connectivity as a Risk Multiplier
+Saudi Arabia’s digital landscape is unique in its density and usage patterns. With 99% internet penetration and 35.33 million social media users (equating to 94.3% of the population) as of 2024, the Kingdom is effectively a "digital-first" society.1 This profound connectivity transforms every citizen into a potential reporter and every service disruption into a public broadcast.
+* X (Twitter) Dominance: X acts as the de facto parliament, customer service desk, and news wire of Saudi Arabia. It is the primary arena for public discourse, where hashtags can dictate the national agenda within hours. With over 14 million users, it is the platform where official narratives are tested and challenged.1
+* The "Dark Social" of WhatsApp: While X is public, WhatsApp (used by 21.46 million people) serves as the hidden channel for rumor spreading.2 Misinformation here travels laterally through trusted family and tribal networks, making it harder to track but highly influential in shaping private opinion. A crisis that reaches WhatsApp groups often has a longer "shelf life" than one contained to public platforms.
+* Snapchat and the "Reality" Check: Saudi Arabia has one of the highest Snapchat penetration rates globally. This platform is used for raw, unedited footage of events—floods, fires, poor hospital service—which often contradicts official polished statements. The visual nature of Snapchat makes it a potent tool for establishing "ground truth" that can debunk corporate or governmental PR.4
+* TikTok's Viral Velocity: With average users spending nearly 35 hours per month on the platform, TikTok has become a critical vector for youth-driven narratives.6 Viral challenges or comedic skits mocking service failures can rapidly erode brand equity among the younger demographic, which constitutes the majority of the population.
+2.2 The "6-Minute Rule" and the Death of the Golden Hour
+In traditional Western crisis theory, the "Golden Hour" suggests organizations have roughly 60 minutes to assess and respond to an incident. In the Saudi context, this window has shattered. Analysis of viral incidents, such as the Al Rajhi Bank app outage 7 or Saudia Airlines delays 8, shows that a definitive public narrative is often established by influencers and users within the first six minutes of an incident.
+The "6-Minute Rule" dictates that if an entity does not acknowledge the issue or provide a holding statement within this micro-window, an information vacuum is created. This vacuum is immediately filled by three distinct actors:
+1. Aggrieved Citizens: Who share real-time proof of the failure (screenshots, videos).
+2. Rumor Mongers: Who exaggerate the scale of the crisis for engagement.
+3. Hostile Actors ("Electronic Flies"): Who hijack the trending hashtag to politicize the failure.
+Silence during this window is interpreted not as caution, but as apathy, arrogance, or guilt. The speed of information travel on Saudi social media necessitates pre-approved "holding statements" that can be deployed instantly, bypassing lengthy bureaucratic approval chains.
+2.3 The Weaponization of Rumors and "Electronic Flies"
+Disinformation in the Kingdom is rarely random; it is often structural and strategic. The phenomenon of "electronic flies" (Dhubab Iliktrūniya)—automated or coordinated accounts—plays a critical role in amplifying crises.10 These networks hijack organic grievances to sow discord, attack specific officials, or undermine national projects like NEOM or Riyadh Season.
+For instance, during geopolitical tensions or major events, bot networks have been observed inflating negative hashtags to manufacture a perception of widespread failure or dissent.13 Distinguishing between genuine citizen complaints and coordinated attacks is the first line of defense. Responding to bots validates them and amplifies their reach, while ignoring genuine citizens alienates the base. Advanced sentiment analysis that can differentiate between "organic" anger and "inorganic" amplification is a prerequisite for modern crisis management.
+2.4 The Legal Framework: The Anti-Cybercrime Law as a Double-Edged Sword
+The Anti-Cybercrime Law, specifically Article 6, creates a unique crisis management environment in Saudi Arabia.15 This article criminalizes the production, preparation, transmission, or storage of material impinging on public order, religious values, public morals, or privacy. The penalties—up to five years in prison and fines up to SAR 3 million—are severe and widely publicized.16
+During crises involving rumors or fabricated documents (e.g., fake employment offers or health alerts 19), government bodies explicitly invoke this law to deter the spread of misinformation. Statements often conclude with a warning that "legal measures will be taken against those spreading rumors." This creates a mechanism for crisis containment that is unavailable in many other jurisdictions.
+However, reliance on legal threats can backfire if perceived as suppressing legitimate grievances. If a citizen complains about a genuine service failure (e.g., a flooded street or a medical error) and is met with a threat of legal action, the public sentiment often shifts from frustration to outrage, viewing the entity as oppressive rather than responsive. The strategic balance lies in using the law to silence malicious fabrication while using empathy to address genuine pain.
+2.5 Operational Failures as Threats to National Identity
+In the context of Vision 2030, an operational failure is often reframed by the public as a failure of the national project itself. The Saudi public has bought into the vision of a modernized, efficient, world-class state. When a government app fails, a city floods, or a flagship project stalls, the disappointment is amplified because it contradicts the "New Saudi" narrative.
+The Hamburgini food poisoning incident 21 did not just destroy a brand; it triggered a nationwide scrutiny of food safety inspections and municipal oversight. Similarly, the Jeddah floods of 2022 23 resurrected trauma from 2009, leading to immediate accusations of corruption and failed infrastructure planning. When a service fails in KSA, it is perceived as a breach of the social contract between the state and the citizen, inviting intervention from the highest levels of leadership to restore trust.
+________________
+3. Anatomy of Operational Crises: Case Studies in Failure and Recovery
+Operational crises involve tangible breakdowns in service, infrastructure, or safety. These are "hard" failures that cannot be spun away; they must be fixed. The following case studies illustrate the consequences of mismanagement and the pathways to recovery.
+3.1 Case Study: The Collapse of Hamburgini (2024-2025)
+The Incident:
+Hamburgini was a celebrated homegrown success story, a fast-food chain that expanded rapidly across the Kingdom, symbolizing Saudi entrepreneurial spirit. In 2024, the brand faced a catastrophic operational crisis: a mass food poisoning outbreak at a Riyadh branch. The incident resulted in over 75 illnesses and, tragically, one fatality. Investigations traced the source to Clostridium botulinum bacteria found in "Bon Tum" mayonnaise, an imported ingredient used in the restaurant's food preparation.21
+The Crisis Response Failure:
+* Delayed Ownership: The brand initially struggled to separate itself from the supplier issue in the public mind. While the mayonnaise was the culprit, the public held the brand responsible for the selection and safety of its ingredients.
+* Regulatory Hammer: The Ministry of Municipalities and Housing (MOMRA) and the Saudi Food and Drug Authority (SFDA) acted swiftly and publicly. They shut down all Riyadh branches, withdrew the contaminated product, and halted production at the supplier's factory. While necessary for public safety, these highly visible actions cemented the association between "Hamburgini" and "danger".21
+* Communication Vacuum: The severity of the incident—specifically the fatality—overwhelmed the brand's crisis communication capabilities. There was a lack of a robust, empathetic "recovery narrative" or a visible, dramatic overhaul of safety protocols that might have reassured the public.
+The Outcome:
+By August 2025, the Riyadh Commercial Court ordered the liquidation of Food Basics Trading Company, Hamburgini's parent firm.21 The brand could not survive the total evaporation of consumer trust.
+Lessons for Saudi Entities:
+1. Supplier Risk is Your Risk: You cannot outsource liability. In the eyes of the Saudi consumer, the brand on the signboard owns the entire supply chain.
+2. The "Fatality Threshold": Once a crisis involves loss of life, standard PR tactics (apologies, refunds) are useless. The response must shift to a "Gold Command" level, involving the highest leadership, profound displays of contrition (including visiting victims' families, if appropriate culturally), and radical operational transparency.
+3. Recovery Requires Radical Reform: To survive, Hamburgini needed to visibly "burn the boat"—perhaps rebranding, changing all suppliers publicly, and inviting third-party international auditors to certify safety. Silence and a slow return to business as usual were fatal.
+3.2 Case Study: The Jeddah Floods (2009 vs. 2022)
+The Context:
+Jeddah has a painful history with flooding, most notably the 2009 disaster that killed over 120 people and sparked rare public protests and corruption investigations.28 This history means that any rain event in Jeddah is viewed through a lens of trauma and skepticism regarding infrastructure promises.
+The 2022 Incident:
+On November 24, 2022, Jeddah experienced historic rainfall, recording 179mm in just six hours—exceeding the volume of the 2009 floods.25 The city was paralyzed, cars were swept away, and two fatalities were reported.
+The Communication Breakdown:
+A subtle but damaging "blame game" emerged between government agencies, revealing a lack of unified crisis command.
+* National Center for Meteorology (NCM): The spokesperson, Hussein Al-Qahtani, aggressively communicated the "historic" nature of the rainfall, emphasizing the statistics to imply that this was a force majeure event beyond normal planning parameters.25
+* Jeddah Municipality: Faced with public anger over drainage failure, the narrative became fragmented. Citizens shared videos of submerged new infrastructure, questioning the billions spent on projects since 2009. The disconnect between the "successful infrastructure" narrative promoted in Vision 2030 progress reports and the reality of the floodwaters created a credibility gap.
+* Public Reaction: The hashtag #Jeddah_Drowning trended immediately. The public did not accept the "amount of rain" as an excuse; they demanded accountability for the drainage systems.30
+Lessons for Saudi Entities:
+1. Unified Command is Non-Negotiable: In a natural disaster involving multiple agencies (Civil Defense, Municipality, Meteorology, Education), there must be one voice. Conflicting nuances—one agency saying "we warned you" while another says "the system held"—erodes trust in the state.
+2. Avoid "Force Majeure" as a Primary Defense: Blaming the weather, even when factually accurate regarding volume, is perceived as deflecting responsibility. The narrative should focus on response (rescue, recovery, support) rather than excuse.
+3. Historical Sensitivity: Crisis managers must know the history of their file. Ignoring the 2009 trauma in 2022 communications made authorities appear disconnected from the lived experience of the residents.
+3.3 Case Study: Al Rajhi Bank & The Digital "Salary Day" Crisis
+The Incident:
+Al Rajhi Bank, the largest Islamic bank in the world and a cornerstone of the Saudi retail economy, faced recurring technical glitches in late 2023 and early 2024. These outages often occurred at critical times, such as month-end (salary deposit days), leaving millions of customers unable to access their apps or use ATMs.7
+The Digital Sentiment Crisis:
+* Zero Positive Sentiment: Analysis of social media data during the outages showed a "Net Sentiment" of nearly -82% for customer service and digital experience, with zero positive sentiment recorded during peak outage times.7
+* The "Trapped" Feeling: Customers expressed panic not just about convenience, but about survival—inability to buy groceries, pay for gas, or transfer money to dependents. This escalated the crisis from "technical" to "humanitarian" in the user's mind.
+* Twitter as the Helpdesk: With call centers overwhelmed, X became the primary venue for complaints. The bank's generic "we are working on it" responses were met with sarcasm and rage, fueling hashtags that trended for days.7
+Lessons for Saudi Entities:
+1. Digital Sovereignty is Emotional: When a user is locked out of their money or government ID (Absher), they feel a loss of agency. Crisis comms must acknowledge this anxiety, not just the technical fault.
+2. Hyper-Frequent Updates: In a digital outage, silence is terrifying. Updates should be issued every 30 minutes, even if the update is "no change." This reassures users that the team is present and working.
+3. Pre-emptive Compensation: Crisis messaging should hint at compensation (e.g., waiving transfer fees, extending deadlines) during the crisis, not just after. This cools the temperature of the anger.
+________________
+4. The Cultural & Religious Minefield: Reputational Crises
+Reputational crises in Saudi Arabia often stem from "soft" failures—tone-deaf advertising, cultural insensitivity, or perceived insults to religious values. These crises are volatile because they mobilize the deep-seated identity politics of the Saudi public.
+4.1 Case Study: Riyadh Season & The "Fake Kaaba" Controversy
+The Incident:
+During Riyadh Season 2023-2024, viral videos circulated showing a cube-shaped mirrored structure being used as a stage or display. A narrative rapidly spread on social media that this was a "replica Kaaba" built for entertainment, sparking global outrage among Muslims and accusations of desecration and idolatry.13
+The Dynamics of Disinformation:
+* The "Anti-Rumor Authority": An independent Saudi platform dedicated to debunking fake news had to intervene, clarifying that the structure was a mirrored screen and had no religious connotation.33
+* The "Abrahamic" Conspiracy: The incident fed into existing fringe theories about a "new religion" or the dilution of Islamic identity, showing how a visual design choice can trigger deep ideological anxieties.13
+* Visual Weaponization: The crisis was driven entirely by optics. The visual similarity to the Kaaba, regardless of intent, was enough to sustain the crisis.
+Lessons for Saudi Entities:
+1. Visual Risk Assessment (VRA): Pre-event planning for any major festival must include a VRA. Any structure resembling sacred symbols (cubes, green domes, minarets) in a secular or entertainment context is a high-risk asset.
+2. Pre-emptive Contextualization: If a controversial design is used, the narrative explaining it ("This is a mirrored cube representing the future...") must flood the zone before the images go viral. You cannot chase a visual lie; you must inoculate against it.
+3. Religious Compliance Filter: Entertainment authorities need a dedicated review board to flag potential religious sensitivities, preventing inadvertent provocations that can be weaponized by detractors.
+4.2 Case Study: The "Influencer Trap" & National Day Backlash
+The Incident:
+Various brands have faced backlash during Saudi National Day for campaigns deemed culturally insensitive or "unpatriotic." A notable example involves Nada Dairy (2019), which released an ad attempting to contrast "old" vs "new" Saudi Arabia. The ad was perceived by many as mocking traditional values and the previous generation, triggering a boycott campaign.34
+The Influencer Dimension:
+The new regulations by the General Authority for Media Regulation (GAMR) in late 2025 highlight the state's recognition of this risk. These rules explicitly ban "flaunting luxury," "indecent dress," and filming children without consent.35 This regulatory shift followed incidents where influencers posted content that clashed with the values of modesty and social equity, sparking public outrage that often dragged the sponsoring brands into the mud.
+Lessons for Saudi Entities:
+1. Patriotism requires Respect, not Division: Marketing that attempts to elevate the "New Saudi" by denigrating the "Old Saudi" invariably fails. The successful narrative is one of continuity and evolution, respecting the heritage while celebrating the future.
+2. Influencer Vetting is National Security: Brands must vet influencers not just for reach, but for "ideological safety." An influencer with a history of controversial tweets or behavior is a ticking time bomb. The new GAMR licenses provide a baseline, but brands need deeper due diligence.37
+3. The "Modesty" Standard: Despite social opening, the public standard for "modesty" in advertising remains conservative. Content that pushes this boundary too aggressively risks a severe backlash that can lead to product removal and apologies.
+________________
+5. Geopolitics & Cybersecurity: The Global-Local Interface
+Saudi entities operate on a global stage. Crises here often involve international actors and require a bifurcated communication strategy—one for the domestic audience and one for the world.
+5.1 Case Study: The Khashoggi Affair & "Denial 2.0"
+The Incident:
+The 2018 murder of journalist Jamal Khashoggi remains the definitive case study in geopolitical crisis mismanagement. The initial response—a flat denial, followed by shifting narratives (fistfight, rogue operation)—severely damaged the Kingdom's credibility globally.39
+The Strategic Shift:
+Over time, the Saudi strategy evolved from denial to "sovereignty." The narrative shifted to emphasizing that the judiciary had handled the matter (sentences issued) and that any further external pressure was an interference in Saudi internal affairs. This "sovereignty defense" resonated well domestically, rallying the public around the leadership against perceived foreign bullying.41
+Lessons for Saudi Entities:
+1. The Cost of Changing Narratives: The most damaging phase of the Khashoggi crisis was the week of contradictory statements. In a crisis, consistency is more valuable than exculpation. If you don't know, say "we are investigating." Do not invent a cover story that can be disproven by evidence (e.g., CCTV).
+2. Rallying the Flag: When under international attack, the domestic audience can be mobilized through a narrative of national resilience and sovereignty. However, this must be balanced with actual corrective action to satisfy global stakeholders (investors, partners).
+5.2 Case Study: The Shamoon Virus (Aramco)
+The Incident:
+In 2012, Saudi Aramco was hit by the Shamoon virus, which wiped 30,000 computers. The attackers posted an image of a burning American flag, signaling a geopolitical motive.43
+The Response Strategy:
+Aramco's response was a masterclass in operational resilience over communication. They physically disconnected the network to save the drilling operations (the "crown jewels") and used their private fleet of jets to buy up the world's supply of hard drives to rebuild their IT infrastructure.44
+Lessons for Saudi Entities:
+1. Business Continuity is the Best PR: Aramco survived because oil production didn't stop. In a cyber crisis, the priority is maintaining the core service. If the lights stay on, the public will forgive the website being down.
+2. The "Air Gap" Strategy: Critical infrastructure entities must have the ability to sever connections to the outside world instantly to preserve core functions, and communication plans should be ready to explain this "dark mode" to the public without causing panic.
+________________
+6. Crisis Coordination in Government: The "Silo" Problem
+A recurring theme in Saudi public sector crises is the lack of horizontal coordination between ministries.
+6.1 Ministry of Health vs. Ministry of Education (COVID-19)
+During the early days of the pandemic, there was occasional friction and confusion regarding school closures. While the Ministry of Health was issuing dire warnings, the Ministry of Education's transition to remote learning was initially seen as "precautionary" rather than emergency-driven.46 However, this eventually stabilized into a highly effective model where the Ministry of Health became the "single source of truth," and other ministries aligned their policies (and announcements) with health data.
+The "Unified Command" Model:
+The success of the Saudi COVID-19 response (compared to many Western nations) was due to the eventual centralization of messaging. The daily press briefings featuring the Health Ministry spokesperson became a ritual of transparency and authority.48
+Lesson: In a national crisis, designate a Lead Agency. All other entities must subordinate their communication to this lead to prevent conflicting guidance.
+________________
+7. Strategic Frameworks for the Playbook
+Based on these insights, we propose the following frameworks for the Saudi Crisis Communication Playbook.
+7.1 The "Crisis Immunization" Protocol (Pre-Crisis)
+* Sentiment Velocity Tracking: Do not just track keywords; track the speed of negative sentiment. If negativity rises by >15% in 30 minutes, trigger a "Yellow Alert."
+* Dark Social Listening: Establish feedback loops from frontline staff (call centers, branch managers) to detect rumors circulating on WhatsApp before they hit X.
+* The "Bank of Goodwill": Regularly publish "impact stories" (CSR, Saudization success, community support). This content acts as a buffer. When a crisis hits, the algorithm has positive content to mix with the negative.
+7.2 The "Response Grid" (Acute Phase)
+Map every incident to this grid to determine the response level:
+Tier
+	Description
+	Response Lead
+	Required Action
+	Tier 1 (Green)
+	Individual complaints, low traction (<500 tweets).
+	Customer Care
+	Direct reply, resolve privately. No public statement.
+	Tier 2 (Yellow)
+	Viral complaint, influencer involved, or "funny" failure (meme potential).
+	Comms Director
+	Acknowledge, apologize if needed, clarify.
+	Tier 3 (Red)
+	Systemic failure, injury, religious offense, or trending hashtag.
+	CEO / Minister
+	15-min Holding Statement. Public apology. Investigation announced.
+	Tier 4 (Black)
+	Loss of life, national security threat, or Royal decree violation.
+	Crisis Cell (Gold Command)
+	Coordinate with MOI/CGC. Legal & Security lead. Official Press Conference.
+	7.3 The Counter-Misinformation Doctrine
+* Verify, Don't Amplify: Never quote the fake news in the denial (e.g., do not say "The rumor that we are bankrupt is false"). This reinforces the keyword "bankrupt."
+* Affirmative Truth: State the truth independently (e.g., "Our financial position is confirmed strong by X report").
+* The Legal Stick: In cases of malicious fabrication, conclude with: "The organization reserves its right to take legal action against the sources of these rumors under Article 6 of the Anti-Cybercrime Law." This phrase significantly dampens the re-sharing behavior of average users.15
+7.4 Recovery & The "New Normal"
+* The "Reform" Narrative: After the storm passes, communicate change, not just recovery. "We are back" is weak. "We have implemented X, Y, and Z to ensure this never happens again" is strong.
+* Visible Accountability: If individuals were responsible (e.g., corruption in flood case), their dismissal or prosecution must be publicized (within legal privacy limits) to close the accountability loop and restore faith in the system.28
+________________
+8. Conclusion: The Imperative of Agility
+For Saudi entities, the era of "silent management" is over. The digital sphere has democratized accountability, and the goals of Vision 2030 have raised the bar for performance. A crisis today is a battle for the narrative, fought in real-time against invisible adversaries (bots) and genuine citizen reporters.
+The winners in this landscape are not those who never face crises—that is statistically impossible—but those who respond with humanity, speed, and nationalist alignment. The roadmap is clear: Listen before it trends, Respond before the 6th minute, Leverage the law against malice, and Reform visibly after the dust settles.
+This playbook provides the doctrine. The execution lies in the hands of the leadership.
+________________
+Confidentiality Notice: This report contains strategic intelligence derived from public and semi-public sources. It is intended for internal use by crisis management leadership.
+Prepared by: Senior Crisis Research Analyst
+Date: December 9, 2025
+Works cited
+1. Social Media in Saudi Arabia: Popular Trends and Strategies for 2025 | Sprinklr, accessed on December 9, 2025, https://www.sprinklr.com/blog/social-media-in-saudi-arabia/
+2. Saudi Arabia (KSA) Social Media Statistics 2024: A Digital Transformation | TMT, accessed on December 9, 2025, https://themarketingtrendz.com/en/saudi-arabia-ksa-social-media-statistics-2024-a-digital-transformation/
+3. Saudi Arabia (KSA) Social Media Statistics 2024 | GMI, accessed on December 9, 2025, https://www.globalmediainsight.com/blog/saudi-arabia-social-media-statistics/
+4. Saudis accused of using Snapchat to promote crown prince and silence critics, accessed on December 9, 2025, https://www.theguardian.com/technology/2023/jul/18/snapchat-saudi-arabia-ties
+5. Saudi Arabia warns Snapchat users that 'insulting' regime is a criminal offense, accessed on December 9, 2025, https://www.theguardian.com/technology/2023/jun/04/snapchat-social-media-saudi-arabia-authorities
+6. Social Media Saudi Arabia – Statistics and Trends, accessed on December 9, 2025, https://www.go-globe.com/social-media-saudi-arabia-statistics-and-trends/
+7. Al Rajhi Bank services disrupted; work ongoing to resolve issues, accessed on December 9, 2025, https://www.argaam.com/en/article/articledetail/id/1618585
+8. Passengers in Complete Chaos as Saudia, Qatar Airways, and FlyDubai face 92 Delays and 15 Flight Cancellations, Stranding Travellers at Jeddah, Doha, Dubai and More Destinations Across Saudi Arabia, Qatar, UAE, and Others! - Travel And Tour World, accessed on December 9, 2025, https://www.travelandtourworld.com/news/article/passengers-in-complete-chaos-as-saudia-qatar-airways-and-flydubai-face-92-delays-and-15-flight-cancellations-stranding-travellers-at-jeddah-doha-dubai-and-more-destinations-across-saudi-arabia-q/
+9. Travelers Stranded across Saudi Arabia, UAE and Kuwait as Saudia Grounds a Dozen of Flights with Multiple Delays in Riyadh, Dubai, Kuwait City and more, New Update - Travel And Tour World, accessed on December 9, 2025, https://www.travelandtourworld.com/news/article/travelers-stranded-across-saudi-arabia-uae-and-kuwait-as-saudia-grounds-a-dozen-of-flights-with-multiple-delays-in-riyadh-dubai-kuwait-city-and-more-new-update/
+10. Electronic flies and the fake news industry: a new generation of wars on Arab cyberspace Kamel Rezzoug , Hamida Khamet - ASJP, accessed on December 9, 2025, https://asjp.cerist.dz/en/downArticle/524/11/3/254059
+11. Mohammed bin Salman's "Army of Flies": Saudi Arabia's Creative Spread of Disinformation and Attack on Political Dissidence - Democratic Erosion Consortium, accessed on December 9, 2025, https://democratic-erosion.org/2021/11/30/mohammed-bin-salmans-army-of-flies-saudi-arabias-creative-spread-of-disinformation-and-attack-on-political-dissidence/
+12. A Storm of Tweets: Social Media Manipulation During the Gulf Crisis | Review of Middle East Studies - Cambridge University Press & Assessment, accessed on December 9, 2025, https://www.cambridge.org/core/journals/review-of-middle-east-studies/article/storm-of-tweets-social-media-manipulation-during-the-gulf-crisis/56F18499A63115DF038BF3157578DCF2
+13. Riyadh Season 2024: Systematic Erasure of Identity? - Al-Estiklal Newspaper, accessed on December 9, 2025, https://www.alestiklal.net/en/article/riyadh-season-2024-systematic-erasure-of-identity
+14. The Riyadh Comedy Festival Isn't Trying to Change Your Opinion of Saudi Arabia, accessed on December 9, 2025, https://carnegieendowment.org/emissary/2025/10/riyadh-comedy-festival-ea-backlash-saudi-arabia?lang=en
+15. WIPO Lex, accessed on December 9, 2025, https://www.wipo.int/wipolex/en/text/498373
+16. Anti-Cyber Crime Law - https: //laws. boe. gov. sa, accessed on December 9, 2025, https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/25df73d6-0f49-4dc5-b010-a9a700f2ec1d/2
+17. KSA Anti-Cybercrime Law: Scope, Provisions, and Penalties Explained - Facia.ai, accessed on December 9, 2025, https://facia.ai/knowledgebase/ksa-cybercrime-law/
+18. Saudi Arabia: Five Year Sentence and Fines for Spreading Rumours - Lexis® Middle East, accessed on December 9, 2025, https://www.lexismiddleeast.com/news/2021-02-15_1/en
+19. NOTICE TO DISREGARD -- Ministry of Health Saudi Arabia Clears 5 Rumors, accessed on December 9, 2025, https://gulfmagazine.co/notice-to-disregard-ministry-of-health-saudi/
+20. Government Response to Fake News and Misinformation | National Platform (National Portal), accessed on December 9, 2025, https://my.gov.sa/en/content/report-fake-news
+21. Saudi Arabia's top local burger chain Hamburgini crashes into bankruptcy, shuts down operations | World News - The Times of India, accessed on December 9, 2025, https://timesofindia.indiatimes.com/world/middle-east/saudi-arabias-top-local-burger-chain-hamburgini-crashes-into-bankruptcy-shuts-down-operations/articleshow/123528752.cms
+22. Saudi burger chain Hamburgini files for bankruptcy after food poisoning scandal - Gulf News, accessed on December 9, 2025, https://gulfnews.com/world/gulf/saudi/saudi-burger-chain-hamburgini-files-for-bankruptcy-after-food-poisoning-scandal-1.500249818
+23. A Nationwide Flood Forecasting System for Saudi Arabia: Insights from the Jeddah 2022 Event - MDPI, accessed on December 9, 2025, https://www.mdpi.com/2073-4441/16/14/1939
+24. The operational flash-flood forecasting system for the Kingdom of Saudi Arabia: A case study of the 24th November 2022 flash flood in Jeddah | Request PDF - ResearchGate, accessed on December 9, 2025, https://www.researchgate.net/publication/375415249_The_operational_flash-flood_forecasting_system_for_the_Kingdom_of_Saudi_Arabia_A_case_study_of_the_24th_November_2022_flash_flood_in_Jeddah
+25. NCM Spokesperson: Heavy Rain in Jeddah Is the Highest Ever Recorded, accessed on December 9, 2025, https://www.spa.gov.sa/w1818163
+26. Owner of burger chain falls into liquidation after deadly outbreak - Food Safety News, accessed on December 9, 2025, https://www.foodsafetynews.com/2025/09/owner-of-burger-chain-falls-into-liquidation-after-deadly-outbreak/
+27. After 12 Years of Service, Saudi's Iconic Burger Brand Hamburgini Shuts Down, Files For Bankruptcy | Curly Tales, accessed on December 9, 2025, https://curlytales.com/middle-east/food/after-12-years-of-service-saudis-iconic-burger-brand-hamburgini-shuts-down-files-for-bankruptcy/
+28. A royal decree ordered all accused in Jeddah flood to be referred to CIB and BIP, accessed on December 9, 2025, https://my.gov.sa/en/news/6351
+29. Saudi king wants officials charged over floods - Saudi Arabia - ReliefWeb, accessed on December 9, 2025, https://reliefweb.int/report/saudi-arabia/saudi-king-wants-officials-charged-over-floods
+30. Saudi Arabia – Severe Floods Hit Jeddah After 179mm of Rain in 6 Hours - FloodList, accessed on December 9, 2025, https://floodlist.com/asia/saudi-arabia-floods-jeddah-november-2022
+31. Planning and Management Issues and Challenges of Flash Flooding Disasters in Saudi Arabia: The Case of Riyadh City, accessed on December 9, 2025, https://cap.ksu.edu.sa/sites/cap.ksu.edu.sa/files/attach/jap_ksu_jan2020_en01.pdf
+32. Growing positive sentiment towards Saudi retail banks according to new PwC Middle East and DataEQ report, accessed on December 9, 2025, https://www.pwc.com/m1/en/media-centre/2024/growing-positive-sentiment-towards-saudi-retail-banks.html
+33. Briefing: Saudi entertainment season under fire for 'insulting Islam' - BBC Monitoring, accessed on December 9, 2025, https://monitoring.bbc.co.uk/product/b0002sqf
+34. Purpose Marketing: Nada Dairy's Ad for Saudi National Day Backfires | Alex of Arabia's Blog, accessed on December 9, 2025, https://alexofarabia.com/2019/09/20/purpose-marketing-nada-dairys-ad-for-saudi-national-day-backfires/
+35. Saudi Arabia sets clear rules for Content Creators and Influencers: Everything you need to know | World News - The Times of India, accessed on December 9, 2025, https://timesofindia.indiatimes.com/world/middle-east/saudi-arabia-sets-clear-rules-for-content-creators-and-influencers-everything-you-need-to-know/articleshow/124232340.cms
+36. Guide to Saudi Arabia's New Media Rules 2025: What Locals and Expats Need to Know?, accessed on December 9, 2025, https://soulofsaudi.com/saudi-arabia-media-rules-2025/
+37. Influencer Marketing Fails: Real Cases of Brand Deals Backfiring - The Brief., accessed on December 9, 2025, https://www.thebrief.org/influencer-marketing-fails-brand-deals-backfiring-what-to-learn/
+38. Saudi Arabia's Rise in Influencer Marketing: A Strategic Approach to Digital Success, accessed on December 9, 2025, https://everything-pr.com/saudi-arabias-rise-in-influencer-marketing-a-strategic-approach-to-digital-success/
+39. The Khashoggi Affair and the Future of Saudi Arabia - Arab Center Washington DC, accessed on December 9, 2025, https://arabcenterdc.org/resource/the-khashoggi-affair-and-the-future-of-saudi-arabia/
+40. Jamal Khashoggi - Wikipedia, accessed on December 9, 2025, https://en.wikipedia.org/wiki/Jamal_Khashoggi
+41. The Khashoggi Affair: Saudi Denial 2.0 - Arab Center Washington DC, accessed on December 9, 2025, https://arabcenterdc.org/resource/the-khashoggi-affair-saudi-denial-2-0/
+42. Jamal Khashoggi death: give us the facts, western countries tell Saudis - The Guardian, accessed on December 9, 2025, https://www.theguardian.com/world/2018/oct/21/jamal-khashoggi-germany-and-eu-condemn-saudi-explanation-of-death
+43. Hack or Attack? Shamoon and the Evolution of Cyber Conflict - ResearchGate, accessed on December 9, 2025, https://www.researchgate.net/publication/256064800_Hack_or_Attack_Shamoon_and_the_Evolution_of_Cyber_Conflict
+44. Malicious Life Podcast: Shamoon - The Biggest Hack in History - Cybereason, accessed on December 9, 2025, https://www.cybereason.com/blog/malicious-life-podcast-shamoon-the-biggest-hack-in-history
+45. The Impact of the Shamoon Virus: Lessons for Cybersecurity - NIC Partners IT Insights, accessed on December 9, 2025, https://blog.nicpartnersinc.com/shamoon-virus-cybersecurity-lessons
+46. MOE Leading Efforts to Combat COVID-19 Pandamic - unesco iite, accessed on December 9, 2025, https://iite.unesco.org/wp-content/uploads/2020/10/The-Saudi-MOE-Leading-Efforts-to-Combat-Coronavirus-Pandemic-COVID-19.pdf
+47. Health Policy Development During COVID-19 in Saudi Arabia: Mixed Methods Analysis, accessed on December 9, 2025, https://pmc.ncbi.nlm.nih.gov/articles/PMC8963949/
+48. Pre-suasive and persuasive strategies in the tweets of the Saudi Ministry of Health during the 2020 coronavirus pandemic: A corpus linguistic exploration - Frontiers, accessed on December 9, 2025, https://www.frontiersin.org/journals/communication/articles/10.3389/fcomm.2022.984651/full
+49. COVID-19 in Saudi Arabia: the national health response - EMRO, accessed on December 9, 2025, https://www.emro.who.int/emhj-volume-27-2021/volume-27-issue-12/covid-19-in-saudi-arabia-the-national-health-response.html

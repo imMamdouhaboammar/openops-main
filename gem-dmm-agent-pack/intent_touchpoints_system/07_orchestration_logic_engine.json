@@ -1,0 +1,144 @@
+{
+  "engine_name": "Orchestration Logic Engine",
+  "version": "1.0",
+  "region_focus": ["Egypt", "GCC", "MENA"],
+  "depends_on": [
+    "01_intent_first_manifesto.md",
+    "02_intent_mapping_framework.json",
+    "03_client_diagnostic_protocol.md",
+    "04_touchpoint_architecture_engine.md",
+    "05_bridge_content_protocol.md",
+    "06_buying_committee_intelligence_matrix.md"
+  ],
+
+  "purpose": "Coordinate intent signals, touchpoints, bridge content, and buying committee mapping into a synchronized strategic flow.",
+
+  "core_principle": "Strategy is not channels. Strategy is timing + sequencing + psychological progression.",
+
+  "orchestration_layers": {
+
+    "layer_1_intent_detection": {
+      "input": [
+        "Search behavior",
+        "Inbound inquiries",
+        "Industry triggers",
+        "Regulatory changes",
+        "Competitive shifts",
+        "Internal expansion signals"
+      ],
+      "output": "Intent classification",
+      "intent_types": [
+        "latent",
+        "problem-aware",
+        "solution-aware",
+        "vendor-aware",
+        "urgent"
+      ],
+      "rule": "No touchpoint deployment without classified intent stage."
+    },
+
+    "layer_2_committee_mapping": {
+      "input": "Strategic account profile",
+      "actions": [
+        "Identify economic authority",
+        "Identify strategic authority",
+        "Identify technical authority",
+        "Identify operational owner",
+        "Identify compliance gatekeeper",
+        "Identify internal advocate"
+      ],
+      "output": "Role-intent matrix",
+      "rule": "Each key role must be assigned a dominant touchpoint type."
+    },
+
+    "layer_3_touchpoint_assignment": {
+      "logic": {
+        "latent_intent": "Presence + Light Education",
+        "problem_aware": "Education + Light Validation",
+        "solution_aware": "Validation + Human",
+        "vendor_aware": "Human + Risk Transparency",
+        "urgent": "Conversion + Financial Clarity"
+      },
+      "constraint": "Touchpoint must match both intent stage AND committee role."
+    },
+
+    "layer_4_bridge_insertion": {
+      "rule": "No stage transition without a psychological bridge.",
+      "bridge_types": [
+        "de-risking",
+        "comparison framing",
+        "process clarity",
+        "expectation management",
+        "micro-commitment"
+      ],
+      "condition": "If resistance probability > threshold, insert bridge."
+    },
+
+    "layer_5_sequence_validation": {
+      "checks": [
+        "Is financial reassurance present before proposal?",
+        "Is compliance reassurance present before technical deep dive?",
+        "Is human exposure present before conversion?",
+        "Is validation visible before pricing discussion?"
+      ],
+      "failure_flag": "Sequence misalignment detected."
+    },
+
+    "layer_6_regional_context_adjustment": {
+      "egypt": {
+        "priority": "Human trust acceleration",
+        "risk_factor": "Budget sensitivity"
+      },
+      "saudi_arabia": {
+        "priority": "Hierarchy alignment + compliance",
+        "risk_factor": "Reputational exposure"
+      },
+      "uae": {
+        "priority": "Speed + structured documentation",
+        "risk_factor": "Legal precision"
+      }
+    }
+  },
+
+  "orchestration_modes": {
+
+    "enterprise_mode": {
+      "committee_complexity": "high",
+      "bridge_density": "high",
+      "validation_depth": "quantitative + regulatory",
+      "human_exposure": "executive level"
+    },
+
+    "mid_market_mode": {
+      "committee_complexity": "medium",
+      "bridge_density": "moderate",
+      "validation_depth": "case studies + ROI",
+      "human_exposure": "department level"
+    },
+
+    "sme_mode": {
+      "committee_complexity": "low",
+      "bridge_density": "light",
+      "validation_depth": "direct proof",
+      "human_exposure": "founder-level"
+    }
+  },
+
+  "red_flags": [
+    "Conversion requested before validation",
+    "Technical proof missing for technical authority",
+    "Financial reassurance missing for economic authority",
+    "Bridge skipped between education and proposal",
+    "Touchpoints deployed without intent classification"
+  ],
+
+  "success_conditions": [
+    "Committee exposure before proposal",
+    "Sequential psychological progression",
+    "Stage-aligned messaging",
+    "Risk reassurance layered progressively",
+    "Clear next-step triggers"
+  ],
+
+  "final_rule": "Orchestration is complete only when intent, role, touchpoint, and bridge are aligned in time."
+}

@@ -1,0 +1,11 @@
+[submodule "02_agents/AgentSpec/profiles/SaudiAccentContentWriter"]
+	path = 02_agents/AgentSpec/profiles/SaudiAccentContentWriter
+	url = https://github.com/OpenOps-Studio/saudi-accent-content-writer.git
+
+[submodule "11_marketing_growth_agent/Agency Live Journy"]
+	path = 11_marketing_growth_agent/Agency Live Journy
+	url = https://github.com/Pixora-dev-ai/agency-live-journy.git
+
+[submodule "Fleet.agents.OpeOps"]
+	path = Fleet.agents.OpeOps
+	url = https://github.com/Pixora-dev-ai/Fleet.agents.OpeOps.git

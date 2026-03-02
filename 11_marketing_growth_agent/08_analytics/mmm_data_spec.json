@@ -1,0 +1,28 @@
+{
+  "mmmDataSpec": {
+    "version": "1.0.0",
+    "lastUpdated": "2026-01-22",
+    "granularity": "weekly",
+    "requiredFields": [
+      "date",
+      "channel",
+      "spend",
+      "impressions",
+      "clicks",
+      "conversions",
+      "revenue"
+    ],
+    "recommendedFields": [
+      "brand_search_volume",
+      "pricing_changes",
+      "promotions",
+      "seasonality_index",
+      "macro_events"
+    ],
+    "modelingNotes": [
+      "Include adstock decay",
+      "Model saturation curves",
+      "Validate with incrementality tests"
+    ]
+  }
+}

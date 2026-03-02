@@ -1,0 +1,536 @@
+# gem-dmm-agent-pack/config/grounding_sources.yaml
+# Pack Version: 1.0.0 | Last Updated: 2026-02-15
+#
+# Purpose: Source registry + trust tiers + independence groups.
+#
+# 🔴 2026 VERIFICATION REQUIREMENTS:
+# - Platform feature claims MUST be verified against sources updated Q4 2025 or later
+# - Benchmark data MUST include 2026 context or be marked as "dated"
+# - Regional insights (Egypt/GCC) require 2025+ verification
+# - Algorithm changes (Google, Meta, TikTok) require 2026 verification
+#
+# Trust tiers:
+# - A: Primary/official docs or standards bodies
+# - B: Reputable research/outlets or major vendors
+# - C: Practitioner sources (credible but may be biased)
+# - D: Community/qualitative (weak evidence; never sufficient alone)
+#
+# Independence groups:
+# - Used to enforce "≥3 independent confirmations" for key recommendations.
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# 2026 PLATFORM CHANGES CONTEXT
+# ═══════════════════════════════════════════════════════════════════════════════
+# Critical platform updates that affect recommendations:
+#
+# Google Ads (2026):
+# - Performance Max now dominant campaign type (70%+ of spend for e-commerce)
+# - Broad match + Smart Bidding is new default (exact match declining)
+# - Consent Mode v2 required for EU/EEA (affects conversion tracking)
+#
+# Meta Ads (2026):
+# - Advantage+ Shopping campaigns standard for e-commerce
+# - iOS 14.5+ privacy changes stabilized (modeled conversions standard)
+# - Reels ads now 40% of Instagram ad inventory
+#
+# TikTok Ads (2026):
+# - TikTok Shop integrated into ads platform (social commerce)
+# - Spark Ads (organic content boosting) now 30% of ad formats
+# - Creator Marketplace integrated for influencer campaigns
+#
+# GA4 (2026):
+# - Universal Analytics fully sunset (July 2023, data access ended 2024)
+# - GA4 is ONLY Google Analytics option
+# - BigQuery export standard (free tier available)
+#
+# Regional (Egypt/GCC 2026):
+# - Snapchat dominance in Saudi Arabia (75% daily use)
+# - WhatsApp Business API critical for customer communication
+# - Ramadan 2026: March 10 - April 8 (40-70% of annual revenue for many sectors)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+sources:
+  # --- Official platform documentation (Tier A) ---
+  - id: src_google_search_central
+    name: "Google Search Central"
+    category: "SEO"
+    type: "official_docs"
+    base_url: "https://developers.google.com/search"
+    trust_tier: "A"
+    default_reputation_score: 0.98
+    update_frequency: "weekly"
+    allowed_use:
+      - "SEO best practices"
+      - "Indexing and crawling guidance"
+      - "Structured data guidance"
+    independence_group: "google"
+
+  - id: src_google_ads_help
+    name: "Google Ads Help"
+    category: "Paid Media"
+    type: "official_docs"
+    base_url: "https://support.google.com/google-ads/"
+    trust_tier: "A"
+    default_reputation_score: 0.98
+    update_frequency: "weekly"
+    allowed_use:
+      - "Feature capabilities"
+      - "Policy and setup guidance"
+      - "Reporting definitions"
+    independence_group: "google"
+
+  - id: src_google_ads_api
+    name: "Google Ads API Documentation"
+    category: "Paid Media"
+    type: "official_docs"
+    base_url: "https://developers.google.com/google-ads/api"
+    trust_tier: "A"
+    default_reputation_score: 0.97
+    update_frequency: "weekly"
+    allowed_use:
+      - "API capabilities and limits"
+      - "Field definitions"
+      - "Implementation details"
+    independence_group: "google"
+
+  - id: src_ga4_docs
+    name: "Google Analytics (GA4) Documentation"
+    category: "Analytics"
+    type: "official_docs"
+    base_url: "https://developers.google.com/analytics"
+    trust_tier: "A"
+    default_reputation_score: 0.98
+    update_frequency: "weekly"
+    allowed_use:
+      - "GA4 events and reporting concepts"
+      - "Implementation guidance"
+      - "Data API references"
+    independence_group: "google"
+
+  - id: src_ga4_measurement_protocol
+    name: "GA4 Measurement Protocol"
+    category: "Analytics"
+    type: "official_docs"
+    base_url: "https://developers.google.com/analytics/devguides/collection/protocol/ga4"
+    trust_tier: "A"
+    default_reputation_score: 0.97
+    update_frequency: "monthly"
+    allowed_use:
+      - "Server-side event collection patterns"
+      - "Event payload definitions"
+    independence_group: "google"
+
+  - id: src_gtm_docs
+    name: "Google Tag Manager / Tag Platform Documentation"
+    category: "Tracking"
+    type: "official_docs"
+    base_url: "https://developers.google.com/tag-platform"
+    trust_tier: "A"
+    default_reputation_score: 0.97
+    update_frequency: "monthly"
+    allowed_use:
+      - "Tagging concepts"
+      - "Implementation patterns"
+    independence_group: "google"
+
+  - id: src_search_console_docs
+    name: "Google Search Console Documentation"
+    category: "SEO"
+    type: "official_docs"
+    base_url: "https://support.google.com/webmasters/"
+    trust_tier: "A"
+    default_reputation_score: 0.96
+    update_frequency: "monthly"
+    allowed_use:
+      - "Search performance reporting"
+      - "Indexing diagnostics"
+    independence_group: "google"
+
+  - id: src_meta_business_help
+    name: "Meta Business Help Center"
+    category: "Paid Media"
+    type: "official_docs"
+    base_url: "https://www.facebook.com/business/help/"
+    trust_tier: "A"
+    default_reputation_score: 0.97
+    update_frequency: "weekly"
+    allowed_use:
+      - "Ads Manager features"
+      - "Policy and setup guidance"
+      - "Pixel/CAPI concepts (official references)"
+    independence_group: "meta"
+
+  - id: src_meta_marketing_api
+    name: "Meta Marketing API Documentation"
+    category: "Paid Media"
+    type: "official_docs"
+    base_url: "https://developers.facebook.com/docs/marketing-apis/"
+    trust_tier: "A"
+    default_reputation_score: 0.96
+    update_frequency: "weekly"
+    allowed_use:
+      - "API capabilities and limits"
+      - "Field definitions"
+    independence_group: "meta"
+
+  - id: src_tiktok_business_help
+    name: "TikTok Ads Help Center"
+    category: "Paid Media"
+    type: "official_docs"
+    base_url: "https://ads.tiktok.com/help/"
+    trust_tier: "A"
+    default_reputation_score: 0.95
+    update_frequency: "weekly"
+    allowed_use:
+      - "Ad formats and setup guidance"
+      - "Measurement and reporting definitions"
+    independence_group: "tiktok"
+
+  - id: src_linkedin_marketing_help
+    name: "LinkedIn Marketing Solutions"
+    category: "Paid Media"
+    type: "official_docs"
+    base_url: "https://business.linkedin.com/marketing-solutions"
+    trust_tier: "A"
+    default_reputation_score: 0.95
+    update_frequency: "monthly"
+    allowed_use:
+      - "Campaign types and platform guidance"
+      - "Best-practice and policy references"
+    independence_group: "linkedin"
+
+  - id: src_linkedin_api_docs
+    name: "LinkedIn API Documentation (Microsoft Learn)"
+    category: "Paid Media"
+    type: "official_docs"
+    base_url: "https://learn.microsoft.com/linkedin/"
+    trust_tier: "A"
+    default_reputation_score: 0.95
+    update_frequency: "monthly"
+    allowed_use:
+      - "API capabilities and field definitions"
+    independence_group: "linkedin"
+
+  - id: src_microsoft_ads_docs
+    name: "Microsoft Advertising Documentation"
+    category: "Paid Media"
+    type: "official_docs"
+    base_url: "https://learn.microsoft.com/advertising/"
+    trust_tier: "A"
+    default_reputation_score: 0.94
+    update_frequency: "monthly"
+    allowed_use:
+      - "Platform setup and API references"
+      - "Reporting definitions"
+    independence_group: "microsoft"
+
+  # --- Regional official sources (Egypt + GCC) ---
+  - id: src_egypt_capmas
+    name: "Egypt CAPMAS (Central Agency for Public Mobilization and Statistics)"
+    category: "Regional Statistics"
+    type: "official_docs"
+    base_url: "https://www.capmas.gov.eg/"
+    trust_tier: "A"
+    default_reputation_score: 0.90
+    update_frequency: "monthly"
+    allowed_use:
+      - "Official macro and demographic statistics"
+      - "Market sizing context (dated)"
+    independence_group: "egypt_gov"
+
+  - id: src_saudi_cst
+    name: "Saudi CST (Communications, Space & Technology Commission)"
+    category: "Regulatory"
+    type: "official_docs"
+    base_url: "https://www.cst.gov.sa/"
+    trust_tier: "A"
+    default_reputation_score: 0.90
+    update_frequency: "monthly"
+    allowed_use:
+      - "Communications/ICT regulatory context (dated)"
+      - "Digital ecosystem policy references"
+    independence_group: "saudi_gov"
+
+  - id: src_uae_open_data
+    name: "UAE Open Data Portal (FCSC)"
+    category: "Regional Statistics"
+    type: "official_docs"
+    base_url: "https://opendata.fcsc.gov.ae/"
+    trust_tier: "A"
+    default_reputation_score: 0.90
+    update_frequency: "monthly"
+    allowed_use:
+      - "Official UAE statistical datasets"
+      - "Market sizing context (dated)"
+    independence_group: "uae_gov"
+
+  - id: src_saudi_vision_2030
+    name: "Saudi Vision 2030"
+    category: "National Strategy"
+    type: "official_docs"
+    base_url: "https://www.vision2030.gov.sa/"
+    trust_tier: "A"
+    default_reputation_score: 0.88
+    update_frequency: "monthly"
+    allowed_use:
+      - "High-level strategic priorities"
+      - "Sector focus context (dated)"
+    independence_group: "saudi_gov"
+
+  # --- Analytics vendors (Tier A/B) ---
+  - id: src_mixpanel_docs
+    name: "Mixpanel Documentation"
+    category: "Product Analytics"
+    type: "vendor_docs"
+    base_url: "https://docs.mixpanel.com/"
+    trust_tier: "A"
+    default_reputation_score: 0.93
+    update_frequency: "monthly"
+    allowed_use:
+      - "Event tracking and naming guidance"
+      - "Funnels, cohorts, retention concepts"
+    independence_group: "mixpanel"
+
+  - id: src_amplitude_docs
+    name: "Amplitude Developer Documentation"
+    category: "Product Analytics"
+    type: "vendor_docs"
+    base_url: "https://www.docs.developers.amplitude.com/"
+    trust_tier: "A"
+    default_reputation_score: 0.93
+    update_frequency: "monthly"
+    allowed_use:
+      - "Instrumentation and taxonomy patterns"
+      - "Experiments and analytics concepts"
+    independence_group: "amplitude"
+
+  - id: src_posthog_docs
+    name: "PostHog Documentation"
+    category: "Product Analytics"
+    type: "vendor_docs"
+    base_url: "https://posthog.com/docs"
+    trust_tier: "A"
+    default_reputation_score: 0.92
+    update_frequency: "monthly"
+    allowed_use:
+      - "Event capture and feature flags"
+      - "Experiments and product analytics"
+    independence_group: "posthog"
+
+  # --- Research and practitioner sources (Tier B/C) ---
+  - id: src_think_with_google
+    name: "Think with Google"
+    category: "Research"
+    type: "research"
+    base_url: "https://www.thinkwithgoogle.com/"
+    trust_tier: "B"
+    default_reputation_score: 0.88
+    update_frequency: "weekly"
+    allowed_use:
+      - "Consumer behavior trends (dated)"
+      - "Creative and measurement perspectives (dated)"
+    independence_group: "research_outlets"
+
+  - id: src_iab
+    name: "IAB (Interactive Advertising Bureau)"
+    category: "Standards"
+    type: "research"
+    base_url: "https://www.iab.com/"
+    trust_tier: "B"
+    default_reputation_score: 0.90
+    update_frequency: "monthly"
+    allowed_use:
+      - "Industry standards and definitions"
+      - "Privacy/measurement frameworks (dated)"
+    independence_group: "standards_bodies"
+
+  - id: src_warc
+    name: "WARC"
+    category: "Research"
+    type: "research"
+    base_url: "https://www.warc.com/"
+    trust_tier: "B"
+    default_reputation_score: 0.86
+    update_frequency: "weekly"
+    allowed_use:
+      - "Marketing effectiveness research (dated)"
+      - "Case studies (validate independently)"
+    independence_group: "research_outlets"
+
+  - id: src_insider_intelligence
+    name: "Insider Intelligence (eMarketer)"
+    category: "Research"
+    type: "research"
+    base_url: "https://www.insiderintelligence.com/"
+    trust_tier: "B"
+    default_reputation_score: 0.85
+    update_frequency: "weekly"
+    allowed_use:
+      - "Benchmark context (dated; verify with additional sources)"
+    independence_group: "research_outlets"
+
+  - id: src_mckinsey
+    name: "McKinsey Insights"
+    category: "Research"
+    type: "practitioner"
+    base_url: "https://www.mckinsey.com/insights"
+    trust_tier: "B"
+    default_reputation_score: 0.84
+    update_frequency: "weekly"
+    allowed_use:
+      - "Strategic frameworks (timeless)"
+      - "Trend claims (dated; verify)"
+    independence_group: "consulting"
+
+  - id: src_deloitte
+    name: "Deloitte Digital / Insights"
+    category: "Research"
+    type: "practitioner"
+    base_url: "https://www2.deloitte.com/"
+    trust_tier: "B"
+    default_reputation_score: 0.82
+    update_frequency: "weekly"
+    allowed_use:
+      - "Operating models and frameworks (timeless)"
+      - "Trend claims (dated; verify)"
+    independence_group: "consulting"
+
+  # --- GitHub (implementation patterns) (Tier B/C) ---
+  - id: src_github_growthbook
+    name: "GrowthBook (open-source experimentation platform)"
+    category: "Experimentation"
+    type: "github"
+    base_url: "https://github.com/growthbook/growthbook"
+    trust_tier: "B"
+    default_reputation_score: 0.82
+    update_frequency: "weekly"
+    allowed_use:
+      - "Experimentation implementation patterns"
+      - "Feature flagging patterns"
+    independence_group: "github_oss"
+
+  - id: src_github_lightweight_mmm
+    name: "LightweightMMM (Google) — Marketing Mix Modeling"
+    category: "Attribution/MMM"
+    type: "github"
+    base_url: "https://github.com/google/lightweight_mmm"
+    trust_tier: "B"
+    default_reputation_score: 0.80
+    update_frequency: "monthly"
+    allowed_use:
+      - "MMM conceptual + implementation patterns"
+    independence_group: "github_oss"
+
+  - id: src_github_robyn
+    name: "Robyn (Meta/Facebook) — Open-source MMM"
+    category: "Attribution/MMM"
+    type: "github"
+    base_url: "https://github.com/facebookexperimental/Robyn"
+    trust_tier: "B"
+    default_reputation_score: 0.80
+    update_frequency: "monthly"
+    allowed_use:
+      - "MMM methodology references"
+      - "Implementation patterns (validate separately)"
+    independence_group: "github_oss"
+
+  - id: src_github_snowplow
+    name: "Snowplow (open-source behavioral data platform)"
+    category: "Tracking"
+    type: "github"
+    base_url: "https://github.com/snowplow/snowplow"
+    trust_tier: "B"
+    default_reputation_score: 0.78
+    update_frequency: "weekly"
+    allowed_use:
+      - "Event modeling patterns"
+      - "Tracking architecture patterns"
+    independence_group: "github_oss"
+
+  # --- Reddit (qualitative only) (Tier D) ---
+  - id: src_reddit_ppc
+    name: "Reddit — r/PPC"
+    category: "Community"
+    type: "reddit"
+    base_url: "https://www.reddit.com/r/PPC/"
+    trust_tier: "D"
+    default_reputation_score: 0.35
+    update_frequency: "daily"
+    allowed_use:
+      - "Qualitative signals"
+      - "Common practitioner pain points"
+    independence_group: "reddit"
+
+  - id: src_reddit_seo
+    name: "Reddit — r/SEO"
+    category: "Community"
+    type: "reddit"
+    base_url: "https://www.reddit.com/r/SEO/"
+    trust_tier: "D"
+    default_reputation_score: 0.35
+    update_frequency: "daily"
+    allowed_use:
+      - "Qualitative signals"
+    independence_group: "reddit"
+
+independence_rules:
+  min_confirmations_for_key_recommendation: 3
+  reddit_counts_as_confirmation: false
+  unique_groups_required: true
+  note: "Multiple pages from the same vendor/domain do not count as independent confirmations."
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# 2026 RECENCY REQUIREMENTS
+# ═══════════════════════════════════════════════════════════════════════════════
+recency_requirements:
+  platform_features:
+    requirement: "MUST verify against sources updated Q4 2025 or later"
+    rationale: "Platform features change rapidly (new ad formats, targeting options, etc.)"
+    examples:
+      - "Google Ads Performance Max capabilities"
+      - "Meta Advantage+ Shopping features"
+      - "TikTok Shop integration"
+    
+  benchmarks_and_costs:
+    requirement: "MUST include 2026 context OR mark as 'dated'"
+    rationale: "CPCs, CPMs, conversion rates change with market conditions"
+    examples:
+      - "Facebook Ads CPC benchmarks"
+      - "E-commerce conversion rate averages"
+      - "Email open rate benchmarks"
+    acceptable_approach: "Use 2024-2025 data but add disclaimer: 'Based on 2024 data; verify current rates'"
+    
+  regional_insights:
+    requirement: "Egypt/GCC insights require 2025+ verification"
+    rationale: "Regional markets evolve rapidly (new platforms, payment methods, regulations)"
+    examples:
+      - "Snapchat usage in Saudi Arabia"
+      - "WhatsApp Business adoption in Egypt"
+      - "Ramadan shopping behavior"
+    
+  algorithm_changes:
+    requirement: "Google/Meta/TikTok algorithm claims require 2026 verification"
+    rationale: "Search and social algorithms update frequently"
+    examples:
+      - "Google ranking factors"
+      - "Meta ad delivery optimization"
+      - "TikTok For You algorithm"
+    
+  timeless_principles:
+    requirement: "No recency requirement"
+    rationale: "Fundamental marketing principles don't change"
+    examples:
+      - "Customer journey stages (awareness → consideration → conversion)"
+      - "A/B testing statistical significance calculations"
+      - "Attribution modeling concepts (first-touch, last-touch, multi-touch)"
+      - "Funnel optimization principles"
+
+verification_timestamps:
+  last_platform_verification: "2026-02-15"
+  next_review_due: "2026-05-15"
+  critical_sources_to_monitor:
+    - "Google Ads Help (weekly review for major feature launches)"
+    - "Meta Business Help (weekly review for Advantage+ updates)"
+    - "TikTok Business Help (monthly review for TikTok Shop changes)"
+    - "Think with Google (quarterly review for consumer insights)"
+    - "Regional sources (monthly for Egypt/GCC market changes)"

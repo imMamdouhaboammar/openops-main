@@ -1,0 +1,210 @@
+# E-commerce Industry Marketing Configuration
+# Optimized for online retail business models
+
+industry: ecommerce
+last_updated: "2026-02-15"
+source_verification: "Based on 2026 e-commerce marketing benchmarks"
+
+## Industry Characteristics
+
+business_model:
+  type: "Transactional (one-time or repeat purchases)"
+  typical_aov: "$30-$500+ (varies by vertical)"
+  purchase_cycle:
+    impulse: "Minutes to hours (fashion, accessories)"
+    considered: "Days to weeks (electronics, furniture)"
+    repeat: "Weekly to monthly (consumables, subscriptions)"
+  seasonality: "High - Black Friday, Ramadan, holidays drive 40-60% annual revenue"
+
+buyer_psychology:
+  primary_concerns:
+    - "Can I trust this site? Is it legit?"
+    - "What if I don't like the product? Easy returns?"
+    - "Shipping cost and time?"
+    - "Payment options available?"
+  decision_triggers:
+    - "Social proof (reviews, ratings)"
+    - "Scarcity/urgency (limited stock, flash sales)"
+    - "Visual proof (product photos, videos, UGC)"
+    - "Price competitiveness"
+
+## Channel Strategy Patterns
+
+recommended_channels:
+  tier_1_essential:
+    - channel: "Facebook & Instagram Ads"
+      rationale: "Visual discovery + impulse buying. Best ROI for D2C e-commerce."
+      expected_timeline: "Week 1: Traffic, Week 2-4: Optimize for conversions"
+      typical_cost: "$0.50-$3 CPC, $10-50 CAC (varies by product margin)"
+      egypt_gcc_note: "Facebook still dominant in Egypt. Instagram growing in GCC (Dubai, Riyadh)."
+      
+    - channel: "Google Shopping Ads"
+      rationale: "Capture bottom-funnel intent (people searching for products)"
+      expected_timeline: "Immediate (day 1 traffic)"
+      typical_cost: "$0.30-$2 CPC, $15-80 CAC"
+      
+    - channel: "Influencer Marketing / UGC"
+      rationale: "Social proof + authentic recommendations drive sales (especially Gen Z, millennials)"
+      expected_timeline: "2-4 weeks per campaign"
+      typical_cost: "Micro-influencers: $100-500/post, Macro: $1K-10K+"
+  
+  tier_2_growth:
+    - channel: "TikTok Ads (if product is visual/trendy)"
+      rationale: "Viral potential + young audience. Works well for fashion, beauty, gadgets."
+      expected_timeline: "1-2 weeks for creative testing"
+      typical_cost: "$0.50-$2 CPC, trending videos can drive organic reach"
+      gcc_note: "Popular in Saudi and UAE among under-30 demographics"
+      
+    - channel: "Email Marketing (abandoned cart, post-purchase)"
+      rationale: "20-30% of carts abandoned. Email recovery = 5-10% conversion boost."
+      expected_timeline: "Immediate (once sequences built)"
+      typical_cost: "Low ($50-200/month for ESP)"
+      
+    - channel: "Retargeting (Meta + Google Display)"
+      rationale: "Typical buyer visits 3-5 times before purchase. Retargeting crucial."
+      expected_timeline: "Immediate"
+      typical_cost: "$0.50-$3 CPM"
+  
+  tier_3_scale:
+    - channel: "SEO + Content Marketing"
+      rationale: "Long-term traffic. Blog content for category keywords (e.g., 'best running shoes 2026')"
+      expected_timeline: "4-6 months for organic traction"
+      typical_cost: "Lower CAC long-term, but slow ROI"
+      
+    - channel: "Affiliate Marketing"
+      rationale: "Pay only for sales (performance-based). Good for scaling."
+      expected_timeline: "2-3 months to recruit affiliates"
+      typical_cost: "10-30% commission per sale"
+      
+    - channel: "Snapchat Ads (GCC)"
+      rationale: "Market leader in Saudi Arabia. Strong engagement for fashion, beauty, F&B."
+      expected_timeline: "1-2 weeks"
+      typical_cost: "$1-4 CPC"
+      gcc_exclusive: true
+
+avoid_or_deprioritize:
+  - channel: "LinkedIn Ads"
+    reason: "Unless B2B e-commerce (office supplies, industrial products). Poor fit for B2C retail."
+  - channel: "Long-form content (whitepapers, webinars)"
+    reason: "E-commerce buyers don't need education—they know what they want. Focus on discovery + social proof."
+
+## Touchpoint Architecture for E-commerce
+
+buyer_journey_mapping:
+  stage_1_discovery:
+    touchpoints: ["Instagram/Facebook feed ads", "TikTok viral content", "Influencer posts"]
+    goal: "Create desire and awareness of product"
+    
+  stage_2_consideration:
+    touchpoints: ["Product detail pages", "Reviews/ratings", "Comparison tools"]
+    goal: "Build trust and validate choice"
+    
+  stage_3_conversion:
+    touchpoints: ["Optimized checkout", "Payment flexibility (COD, installments)", "Limited-time offers"]
+    goal: "Remove friction and create urgency"
+    
+  stage_4_retention:
+    touchpoints: ["Post-purchase emails", "Loyalty programs", "SMS for reorders"]
+    goal: "Drive repeat purchases (lifetime value)"
+
+## Budget Allocation
+
+typical_spend_split:
+  discovery_phase_0_3_months:
+    meta_ads: "50%"
+    google_shopping: "30%"
+    influencers: "20%"
+  
+  growth_phase_3_12_months:
+    meta_ads: "40%"
+    google_shopping: "25%"
+    retargeting: "15%"
+    email_sms: "10%"
+    seo_content: "10%"
+  
+  scale_phase_12_months_plus:
+    meta_ads: "30%"
+    google_shopping: "25%"
+    retargeting: "15%"
+    affiliates: "15%"
+    seo_content: "10%"
+    new_channels: "5%"
+
+## Egypt/GCC Adjustments for E-commerce
+
+regional_nuances:
+  egypt:
+    - "COD is MANDATORY: 70-80% of e-commerce transactions are COD. Credit card penetration ~10%."
+    - "Shipping concerns: Unreliable postal service. Use trusted couriers (Bosta, Aramex). Offer free shipping for AOV > EGP 500."
+    - "WhatsApp for support: Customers expect to confirm orders via WhatsApp. Add click-to-WhatsApp buttons."
+    - "Ramadan shopping surge: 40% of annual sales in Ramadan month. Plan campaigns 2 months ahead."
+    - "Fawry payment: Second most popular after COD. Integrate Fawry for online payments."
+  
+  gcc:
+    - "Credit cards more common: 60-70% online payments via credit/debit cards."
+    - "Premium positioning works: Higher AOV tolerance. Don't compete on price alone—emphasize quality."
+    - "Snapchat dominance (Saudi): 75% of Saudi youth use Snapchat daily. Critical channel for fashion, beauty."
+    - "Next-day delivery expected: Logistics are advanced. Free next-day delivery is competitive advantage."
+    - "Influencer culture strong: GCC consumers trust influencers more than traditional ads. Invest heavily."
+
+## Success Metrics & Benchmarks
+
+key_metrics:
+  - metric: "ROAS (Return on Ad Spend)"
+    benchmark: "3:1 minimum (break-even), 5:1+ healthy"
+    
+  - metric: "CAC (Customer Acquisition Cost)"
+    benchmark: "$10-50 (mass market), $50-150 (premium)"
+    
+  - metric: "Cart Abandonment Rate"
+    benchmark: "60-80% (industry avg), optimize to < 60%"
+    
+  - metric: "Average Order Value (AOV)"
+    optimization: "Upsell, bundles, free shipping thresholds"
+    
+  - metric: "Repeat Purchase Rate"
+    benchmark: "20-40% within 90 days (consumables), 10-20% (durables)"
+    
+  - metric: "Customer Lifetime Value (LTV)"
+    target: "LTV:CAC > 3:1"
+
+kill_criteria:
+  - "If ROAS < 2:1 after 4 weeks → Pause channel, reassess creative/targeting"
+  - "If cart abandonment > 85% → Checkout UX issue, not marketing"
+  - "If repeat purchase rate < 5% after 6 months → Product-market fit or quality issue"
+
+## Anti-Patterns for E-commerce Marketing
+
+common_mistakes:
+  - mistake: "Generic product pages with stock photos only"
+    fix: "Add UGC (customer photos), video demos, detailed descriptions with benefits"
+  
+  - mistake: "No abandoned cart recovery"
+    fix: "Implement email + SMS sequences (3-email flow minimum)"
+  
+  - mistake: "Ignoring mobile optimization"
+    fix: "70% of e-commerce traffic is mobile. Optimize checkout for mobile first."
+  
+  - mistake: "Running ads without retargeting pixel"
+    fix: "Install Meta Pixel + Google Tag BEFORE launching ads. Retargeting = 30-50% of sales."
+  
+  - mistake: "Not offering COD in Egypt"
+    fix: "YOU WILL FAIL. COD is non-negotiable for Egyptian e-commerce."
+
+## Seasonal Campaign Playbook
+
+high_impact_periods:
+  - event: "Ramadan (Egypt/GCC)"
+    timing: "March-April 2026"
+    strategy: "Heavy discounts, family bundles, late-night shopping (post-iftar). Pause ads during day (low engagement)."
+    budget_allocation: "30-40% of annual ad spend"
+    
+  - event: "Black Friday / White Friday (GCC rebranding)"
+    timing: "November"
+    strategy: "Flash sales, countdown timers, influencer partnerships. Start teasing 2 weeks before."
+    budget_allocation: "20-30% of Q4 ad spend"
+    
+  - event: "Back to School (Egypt)"
+    timing: "September"
+    strategy: "Target parents (age 30-45) with uniforms, stationery, electronics."
+    budget_allocation: "10-15% of Q3 spend"

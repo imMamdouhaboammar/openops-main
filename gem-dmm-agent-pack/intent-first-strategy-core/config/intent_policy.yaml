@@ -1,0 +1,71 @@
+# intent-first-strategy-core/config/intent_policy.yaml
+# Pack: intent-first-strategy-core
+# Version: 1.0.0
+# Date: 2026-02-13
+# Owner: OpenOps Studio (Mamdouh Aboammar)
+#
+# Purpose: Intent-first gating + definitions + prohibited behaviors.
+
+intent_policy:
+  gating:
+    discovery_required: true
+    diagnosis_required: true
+    user_confirmation_required: true
+    cq_required: true
+    strategy_generation_allowed_only_after:
+      - "validation.confirmed == true"
+      - "cq.valid == true"
+
+  interaction_rules:
+    question_limit_per_round: 5
+    language_policy: "match_user_language"
+    reality_check_required: true
+    number_format_policy:
+      - "Ask for numbers or ranges when outcomes depend on magnitude."
+      - "Accept ranges when exact numbers are unavailable."
+
+  definitions:
+    request:
+      meaning: "What the client explicitly asks for (surface-level ask)."
+      examples:
+        - "Run ads"
+        - "Improve SEO"
+        - "Fix our conversion rate"
+    intent:
+      meaning: "Why the client wants it (the desired outcome and motivation)."
+      examples:
+        - "We need more qualified pipeline"
+        - "We need to reduce CAC"
+        - "We need board confidence"
+    true_issue:
+      meaning: "What is actually blocking outcomes right now (most binding constraint)."
+      examples:
+        - "Offer unclear / weak differentiation"
+        - "Tracking broken so optimization is blind"
+        - "Sales capacity bottleneck"
+    root_cause:
+      meaning: "The underlying cause that generates the true issue."
+      examples:
+        - "No single ICP definition"
+        - "No conversion taxonomy"
+        - "No proof assets or validation touchpoints"
+    constraint:
+      meaning: "Boundaries that shape feasible strategy: budget, time, compliance, team, tools."
+      examples:
+        - "Budget cap $5k/month"
+        - "Only 10 hours/week execution"
+        - "Regulated claims restrictions"
+
+  prohibited_behaviors:
+    - "strategy_before_diagnosis"
+    - "generic_channel_dump"
+    - "assumption_as_fact"
+    - "ignoring_contradictions"
+    - "asking_more_than_5_questions_per_round"
+
+  strategy_style_rules:
+    touchpoints_driven_strategy: true
+    anti_template_strategy:
+      rule: "Do not output generic channel plans until relevance to PPS and CQ is proven."
+      enforcement: "If a recommendation does not reference PPS and CQ, it must be removed or rewritten."
+

@@ -1,0 +1,3223 @@
+Sidebar menu
+Search
+Write
+Notifications
+
+Mamdouhfces
+Home
+Library
+Profile
+Stories
+Stats
+Following
+Fareed Khan
+Fareed Khan
+Find writers and publications to follow.
+
+See suggestions
+Level Up Coding
+Top highlight
+
+You're reading for free via Fareed Khan's Friend Link. Upgrade to access the best of Medium.
+
+Member-only story
+
+Building the 14 Key Pillars of Agentic AI
+Parallelism, Ensembles, Retrieval and more
+Fareed Khan
+Fareed Khan
+
+Following
+82 min read
+·
+Nov 21, 2025
+1.1K
+
+
+8
+
+
+
+
+
+Read this story for free: link
+
+Optimizing agentic solutions requires software engineering to ensure components coordinate, run in parallel, and interact with systems efficiently. Concepts like speculative execution where we try to handle predictable queries to reduce latency or redundant execution where multiple copies of the same agent prevent a single point of failure. Other patterns that enhance the reliability of modern agentic systems include:
+
+
+Parallelism Agentic Mechanism (Created by 
+Fareed Khan
+)
+Parallel Tool Use where the agent executes independent API calls at the same time to hide I O latency.
+Hierarchical Agent Teams where a manager breaks tasks into smaller steps handled by worker agents.
+Competitive Agent Ensembles where multiple agents produce answers and the system selects the best one.
+Redundant Execution where two or more agents solve the same task to detect errors and increase reliability.
+Parallel Retrieval and Hybrid Search where multiple retrieval strategies run together to improve context quality.
+Multi Hop Retrieval where the agent performs iterative retrieval steps to gather deeper and more relevant information.
+and much more.
+
+In this blog, we are going to implement the foundational conceptual flow behind the most commonly used agentic patterns …
+
+We will walk through each concept visually, break down its purpose, and then implement a simple, working version to demonstrate how it fits into a real-world agentic system.
+
+All the (theory + code) is available in my GitHub Repository:
+
+GitHub - FareedKhan-dev/agentic-parallelism: Core concepts - where to apply parallelism in agentic…
+Core concepts - where to apply parallelism in agentic solution - FareedKhan-dev/agentic-parallelism
+github.com
+
+Codebase is organized as follows:
+
+agentic-parallelism/
+    ├── 01_parallel_tool_use.ipynb
+    ├── 02_parallel_hypothesis.ipynb
+    ...
+    ├── 06_competitive_agent_ensembles.ipynb
+    ├── 07_agent_assembly_line.ipynb
+    ├── 08_decentralized_blackboard.ipynb
+    ...
+    ├── 13_parallel_context_preprocessing.ipynb
+    └── 14_parallel_multi_hop_retrieval.ipynb
+Table of Contents
+Parallel Tool Use Hiding I/O Latency
+Hypothesis Generation to Strategic Exploration
+Parallel Evaluation for Robust Governance
+Speculative Execution for Hyper-Responsive Agents
+Hierarchical Agent Teams for Superior Quality
+Competitive Agent Ensembles
+Agent Assembly Line for High-Volume Processing
+Decentralized Blackboard Collaboration
+Redundant Execution for Fault Tolerance
+Parallel Query Expansion to Maximize Recall
+Sharded & Scattered Retrieval
+Parallel Hybrid Search Fusion for High-Fidelity Context
+Parallel Context Pre-processing for Accuracy Gains
+Multi-Hop Retrieval for Deep Reasoning
+Parallel Tool Use Hiding I/O Latency
+The primary and most common bottleneck in agentic systems, something that many developers already know, but I think it is important to state here for beginners, is not LLM thinking time, it’s I/O latency …
+
+The time spent waiting for networks, databases, and external APIs to respond.
+
+Press enter or click to view image in full size
+
+Parallel Tool Processing (Created by 
+Fareed Khan
+)
+When an agent needs to gather information from multiple sources for example, fetching a stock price and searching for recent news a naive, sequential approach would execute these calls one after the other. This is inefficient. If the calls are independent, there is no reason not to execute them at the same time.
+
+We will now build an agentic system through which we will learn where and how this pattern is most useful. It will take a user query, identify that it needs to call two different live APIs, and execute them in parallel.
+
+First, we need to create our real-world tools. We will start with a tool to get live stock price data using the yfinance library.
+
+from langchain_core.tools import tool
+import yfinance as yf
+
+@tool
+def get_stock_price(symbol: str) -> float:
+    """Get the current stock price for a given stock symbol using Yahoo Finance."""
+    # We add a print statement to clearly indicate when this tool is being executed.
+    print(f"--- [Tool Call] Executing get_stock_price for symbol: {symbol} ---")
+    
+    # Instantiate the yfinance Ticker object.
+    ticker = yf.Ticker(symbol)
+    
+    # Fetch the stock's information. We use 'regularMarketPrice' for reliability, with a fallback.
+    price = ticker.info.get('regularMarketPrice', ticker.info.get('currentPrice'))
+    
+    # Handle cases where the stock symbol is invalid or data is unavailable.
+    if price is None:
+        return f"Could not find price for symbol {symbol}"
+    return price
+The @tool decorator from LangChain makes this standard Python function available to our agent as a tool. We are basically fetching the market value price of the given symbol.
+
+Let’s run a quick test to make sure it is connected to the live API correctly.
+
+get_stock_price.invoke({"symbol": "NVDA"})
+
+#### OUTPUT ####
+--- [Tool Call] Executing get_stock_price for symbol: NVDA ---
+121.79 ...
+You can see that the output confirms our tool is correctly wired and can access the external yfinance API. If this had failed, we would need to check our network connection or the yfinance library installation.
+
+Next, we will create our second tool for fetching recent company news, this time using the Tavily search API, which is optimized for LLM-based agents.
+
+from langchain_community.tools.tavily_search import TavilySearchResults
+
+# First, we initialize the base Tavily search tool.
+# 'max_results=5' will limit the search to the top 5 most relevant articles.
+tavily_search = TavilySearchResults(max_results=5)
+@tool
+def get_recent_company_news(company_name: str) -> list:
+    """Get recent news articles and summaries for a given company name using the Tavily search engine."""
+    # We add a print statement for clear logging of tool execution.
+    print(f"--- [Tool Call] Executing get_recent_company_news for: {company_name} ---")
+    
+    # We construct a more specific query for the search engine.
+    query = f"latest news about {company_name}"
+    
+    # We invoke the underlying Tavily tool.
+    return tavily_search.invoke(query)
+Here, we have wrapped the base TavilySearchResults tool inside our own custom @tool function. Purpose of this function is also the same getting that is to get the recent news based on user query.
+
+Let’s test this tool as well …
+
+get_recent_company_news.invoke({"company_name": "NVIDIA"})
+
+#### OUTPUT ####
+--- [Tool Call] Executing get_recent_company_news for: NVIDIA ---
+[{'url': 'https://www.reuters.com/technology/nvidia-briefly-surpasses-microsoft-most-valuable-company-2024-06-18/', 'content': 'Nvidia briefly overtakes Microsoft as most valuable company...'}, ...]
+The output, a list of recent news articles, confirms that our second tool is also working correctly. Our agent now has two distinct, real-world data-gathering capabilities.
+
+To properly measure our performance improvements, we need to compile our workflow. We will update our graph state to include a field for logging performance metrics.
+
+from typing import TypedDict, Annotated, List
+from langchain_core.messages import BaseMessage
+import operator
+
+class AgentState(TypedDict):
+    # 'messages' will hold the history of the conversation.
+    messages: Annotated[List[BaseMessage], operator.add]
+    # 'performance_log' will accumulate strings detailing the execution time of each step.
+    # The 'operator.add' function tells LangGraph to append to this list rather than replacing it.
+    performance_log: Annotated[List[str], operator.add]
+This AgentState is our black box recorder for the agentic run. By adding the performance_log field with an Annotated operator.add reducer, we have created a persistent log that will be updated by each node in our graph. This will give us the raw data we need to analyze the total execution time and the time spent in each phase.
+
+Now, let’s create our first instrumented node, the agent “brain” that calls the LLM.
+
+import time
+
+def call_model(state: AgentState):
+    """The agent node: calls the LLM, measures its own execution time, and logs the result to the state."""
+    print("--- AGENT: Invoking LLM --- ")
+    start_time = time.time()
+    
+    # We get the current message history from the state.
+    messages = state['messages']
+    
+    # We invoke our tool-aware LLM. The LLM will decide if it can answer directly or needs to call tools.
+    response = llm_with_tools.invoke(messages)
+    
+    end_time = time.time()
+    execution_time = end_time - start_time
+    
+    # We create a log entry with the performance data.
+    log_entry = f"[AGENT] LLM call took {execution_time:.2f} seconds."
+    print(log_entry)
+    
+    # We return the LLM's response and the new log entry to be added to the state.
+    return {
+        "messages": [response],
+        "performance_log": [log_entry]
+    }
+The call_model function is our first instrumented graph node. It wraps the llm_with_tools.invoke() call with time.time() to precisely measure the LLM's "thinking time". It then formats this measurement into a human-readable string and returns it as part of the state update.
+
+Next, we create the instrumented node for executing the tools.
+
+from langchain_core.messages import ToolMessage
+from langgraph.prebuilt import ToolExecutor
+
+# The ToolExecutor is a LangGraph utility that can take a list of tool calls and execute them.
+tool_executor = ToolExecutor(tools)
+def call_tool(state: AgentState):
+    """The tool node: executes the tool calls planned by the LLM, measures performance, and logs the results."""
+    print("--- TOOLS: Executing tool calls --- ")
+    start_time = time.time()
+    
+    # The last message from the agent will contain the tool calls.
+    last_message = state['messages'][-1]
+    tool_invocations = last_message.tool_calls
+    
+    # The ToolExecutor can batch-execute tool calls. For synchronous tools, this is still sequential under the hood,
+    # but it's a clean way to manage the execution.
+    responses = tool_executor.batch(tool_invocations)
+    
+    end_time = time.time()
+    execution_time = end_time - start_time
+    
+    # We create a log entry for the tool execution phase.
+    log_entry = f"[TOOLS] Executed {len(tool_invocations)} tools in {execution_time:.2f} seconds."
+    print(log_entry)
+    
+    # We format the tool responses as ToolMessages, which is the standard format LangGraph expects.
+    tool_messages = [
+        ToolMessage(content=str(response), tool_call_id=call['id'])
+        for call, response in zip(tool_invocations, responses)
+    ]
+    
+    # We return the tool messages and the performance log.
+    return {
+        "messages": tool_messages,
+        "performance_log": [log_entry]
+    }
+Similar to the call_model node, it wraps the core logictool_executor.batch(tool_invocations)in timing instrumentation. By logging the total time for the batch execution, we can later compare this to a simulated sequential execution to quantify the benefits of parallelism.
+
+With our instrumented nodes defined, we can now wire them together into a StateGraph.
+
+from langgraph.graph import END, StateGraph
+
+# This function acts as a conditional edge, routing the workflow based on the agent's last message.
+def should_continue(state: AgentState) -> str:
+    last_message = state['messages'][-1]
+    # If the last message contains tool calls, we route to the 'tools' node.
+    if last_message.tool_calls:
+        return "tools"
+    # Otherwise, the agent has finished its reasoning, so we end the graph.
+    return END
+
+# Define the graph workflow.
+workflow = StateGraph(AgentState)
+
+# Add our instrumented nodes.
+workflow.add_node("agent", call_model)
+workflow.add_node("tools", call_tool)
+
+# The entry point is the 'agent' node.
+workflow.set_entry_point("agent")
+
+# Add the conditional edge for routing.
+workflow.add_conditional_edges("agent", should_continue, {"tools": "tools", END: END})
+
+# Add the edge that loops back from the tools to the agent.
+workflow.add_edge("tools", "agent")
+
+# Compile the graph into a runnable application.
+app = workflow.compile()
+
+Parallel tools calling (Created by 
+Fareed Khan
+)
+We have defined a simple loop:
+
+The agent thinks.
+The should_continue edge checks if it needs to act, if so, the tools node acts, and then the flow returns to the agent for it to process the results of its actions.
+The compile() method transforms this abstract definition into a concrete, runnable object.
+We will give our agent a query that requires it to use both of our tools and stream its execution, inspecting the state at every step.
+
+from langchain_core.messages import HumanMessage
+import json
+
+# The initial input for our graph, including the user's query.
+inputs = {
+    "messages": [HumanMessage(content="What is the current stock price of NVIDIA (NVDA) and what is the latest news about the company?")],
+    "performance_log": []
+}
+step_counter = 1
+final_state = None
+
+# We use .stream() with stream_mode='values' to get the full state dictionary after each node runs.
+for output in app.stream(inputs, stream_mode="values"):
+
+    # The key of the output dictionary is the name of the node that just ran.
+    node_name = list(output.keys())[0]
+    print(f"\n{'*' * 100}")
+    print(f"**Step {step_counter}: {node_name.capitalize()} Node Execution**")
+    print(f"{'*' * 100}")
+    
+    # We'll pretty-print the state for detailed inspection.
+    state_for_printing = output[node_name].copy()
+    if 'messages' in state_for_printing:
+        # Convert message objects to a more readable string representation.
+        state_for_printing['messages'] = [msg.pretty_repr() for msg in state_for_printing['messages']]
+    print("\nCurrent State:")
+    print(json.dumps(state_for_printing, indent=4))
+
+    # Add our analysis for each step.
+    print(f"\n{'-' * 100}")
+    print("State Analysis:")
+
+    if node_name == "agent":
+        # Check if the agent's response contains tool calls.
+        if "tool_calls" in state_for_printing['messages'][-1]:
+            print("The agent has processed the input. The LLM correctly planned parallel tool calls. The execution time of the LLM call has been logged.")
+        else:
+            print("The agent has received the tool results and synthesized them into a coherent, final answer. The performance log now contains the full history.")
+    elif node_name == "tools":
+        print("The tool executor received the tool calls and executed them. The results are now in the state as ToolMessages. The performance log is accumulating.")
+    print(f"{'-' * 100}")
+    step_counter += 1
+    final_state = output[node_name]
+Let’s run this query and see how the parallelsim is working …
+
+#### OUTPUT ####
+****************************************************************************************************
+**Step 1: Agent Node Execution**
+****************************************************************************************************
+--- AGENT: Invoking LLM --- 
+[AGENT] LLM call took 4.12 seconds.
+
+Current State:
+{
+    "messages": [
+        "HumanMessage(content='What is the current stock price of NVIDIA (NVDA) and what is the latest news about the company?')",
+        "AIMessage(content='', tool_calls=[{'name': 'get_stock_price', 'args': {'symbol': 'NVDA'}, 'id': '...'}, {'name': 'get_recent_company_news', 'args': {'company_name': 'NVIDIA'}, 'id': '...'}])"
+    ],
+    "performance_log": [ "[AGENT] LLM call took 4.12 seconds." ]
+}
+----------------------------------------------------------------------------------------------------
+State Analysis:
+The agent has processed the input. The LLM correctly planned parallel tool calls. The execution time of the LLM call has been logged.
+----------------------------------------------------------------------------------------------------
+
+****************************************************************************************************
+**Step 2: Tools Node Execution**
+****************************************************************************************************
+--- TOOLS: Executing tool calls --- 
+--- [Tool Call] Executing get_stock_price for symbol: NVDA ---
+--- [Tool Call] Executing get_recent_company_news for: NVIDIA ---
+[TOOLS] Executed 2 tools in 2.31 seconds.
+Current State:
+{
+    "messages": [ ... ],
+    "performance_log": [ "[AGENT] LLM call took 4.12 seconds.", "[TOOLS] Executed 2 tools in 2.31 seconds." ]
+}
+----------------------------------------------------------------------------------------------------
+State Analysis:
+The tool executor received the tool calls and executed them. The results are now in the state as ToolMessages. The performance log is accumulating.
+----------------------------------------------------------------------------------------------------
+...
+The streaming output gives us a step-by-step view of our agent cycle.
+
+Step 1 (Agent): In the initial run of the agent node we can see in the AIMessage that the Llama 3 model correctly identified that it needed to make two independent tool calls, get_stock_price and get_recent_company_news, and it planned them in a single turn. This is the parallel plan that enables our optimization.
+Step 2 (Tools): The tools node receives these two planned calls. Our log shows both [Tool Call] print statements confirming they are executed together by the ToolExecutor. The performance log entry [TOOLS] Executed 2 tools in 2.31 seconds is our key piece of data.
+Step 3 (Agent): In the final step, the agent receives the ToolMessage results and synthesizes them into a final answer.
+Now for the final, quantitative proof. We will analyze the complete performance log to calculate the time saved.
+
+print("Run Log:")
+total_time = 0
+tool_time = 0
+for log in final_state['performance_log']:
+    print(f" - {log}")
+    # Extract the time value from the log string.
+    time_val = float(log.split(' ')[-2])
+    total_time += time_val
+    if "[TOOLS]" in log:
+        tool_time = time_val
+print("\n" + "-"*60 + "\n")
+print(f"Total Execution Time: {total_time:.2f} seconds\n")
+print("Analysis:")
+Let’s take a loot at the latency problem is being solved through parallelism …
+
+#### OUTPUT ####
+============================================================
+               FINAL PERFORMANCE REPORT
+============================================================
+Run Log:
+ - [AGENT] LLM call took 4.12 seconds.
+ - [TOOLS] Executed 2 tools in 2.31 seconds.
+ - [AGENT] LLM call took 5.23 seconds.
+------------------------------------------------------------
+
+Total Execution Time: 11.66 seconds
+The total time for the tool execution step was 2.31 seconds. Let’s assume each individual network call took ~1.5 seconds. A sequential execution would have taken ~3.0 seconds (1.5s + 1.5s).
+
+Our parallel approach saved ~0.7 seconds. This gain seems small, in a more complex system with 5–10 independent tool calls, each taking 2–3 seconds, the difference is going to be more higher. A sequential process would take 10–30 seconds, while a parallel one would still take only 2–3 seconds. This is the difference between a usable system and an unusable one.
+
+Hypothesis Generation to Strategic Exploration
+In previous pattern agent follows a single, linear path of thought. If its initial approach is flawed or suboptimal, the entire process is compromised …
+
+This is a significant risk in complex or creative tasks where the first idea is rarely the best.
+
+Parallel Hypothesis Generation, also known as Branching Thoughts, is the architectural approach through which we don’t reply on single thoughts.
+
+
+Branching Thoughts (Created by 
+Fareed Khan
+)
+Instead of a single line of reasoning, the system explicitly generates multiple, diverse strategies or “hypotheses” at the outset.
+It then explores all of these paths in parallel, generating a solution for each one.
+Finally, a “judge” agent evaluates the competing solutions and selects the single best one. This creates a system that is more robust, more creative, and less likely to get stuck on a suboptimal path.
+We will build a multi-agent system to tackle a creative marketing task. It will be composed of a Planner, parallel Workers, and a Judge. In this section my goal is to show a clear, qualitative improvement in the final output compared to what a single agent could produce.
+
+First, to manage the complex flow of information between these agents, we need to define structured Pydantic models for their outputs. This is the glue that will hold our multi-agent system together.
+
+from langchain_core.pydantic_v1 import BaseModel, Field
+from typing import List
+
+class MarketingHypothesis(BaseModel):
+    """A Pydantic model for a single, distinct marketing angle or strategy to explore."""
+    # A short, catchy name for the angle (e.g., 'The Tech Enthusiast').
+    angle_name: str = Field(description="A short, catchy name for the marketing angle (e.g., 'The Tech Enthusiast').")
+    # A concise description of the target audience and core message.
+    description: str = Field(description="A one-sentence description of the target audience and core message for this angle.")
+
+class Plan(BaseModel):
+    """A Pydantic container for the Planner's output, holding multiple hypotheses."""
+    # The list will contain exactly 3 distinct marketing hypotheses to be explored in parallel.
+    hypotheses: List[MarketingHypothesis] = Field(description="A list of exactly 3 distinct marketing hypotheses to explore in parallel.")
+
+class Slogan(BaseModel):
+    """A Pydantic model for the output of a single copywriting Worker."""
+    slogan: str = Field(description="The generated marketing slogan.")
+
+class Evaluation(BaseModel):
+    """A Pydantic model for the final, structured output of the Judge agent."""
+    # A detailed critique comparing all the generated slogans.
+    critique: str = Field(description="A detailed critique of all slogans, explaining the pros and cons of each.")
+    # The single best slogan selected by the judge.
+    best_slogan: str = Field(description="The single best slogan chosen from the list.")
+These Pydantic models are the formal “data contracts” between our agents. For example, the Plan class make sure that our Planner agent will always output a list of MarketingHypothesis objects. The Evaluation class ensures our Judge will provide not just a winning slogan but also a detailed critique.
+
+Next, we define the GraphState. This is a more complex state than in our previous pattern, as it needs to track the initial plan and the results from multiple, parallel worker branches.
+
+from typing import TypedDict, Annotated, List, Dict
+import operator
+
+class GraphState(TypedDict):
+    product_description: str
+    plan: List[MarketingHypothesis]
+    # 'worker_results' is a dictionary where keys are the angle names and values are the generated slogans.
+    # The 'operator.update' reducer tells LangGraph to merge the dictionaries from parallel branches, not replace them.
+    worker_results: Annotated[Dict[str, Slogan], operator.update]
+    final_evaluation: Evaluation
+    performance_log: Annotated[List[str], operator.add]
+The most important piece here is worker_results: Annotated[Dict[str, Slogan], operator.update]. When our parallel worker nodes complete, each will return a small dictionary with its own result. The operator.update reducer function instructs LangGraph to merge these dictionaries into a single, comprehensive worker_results object in the final state, so that no data is lost.
+
+Now, let’s define the Planner agent, which is the first node in our graph.
+
+def planner_node(state: GraphState):
+    """The Planner node: generates the initial marketing plan with multiple, diverse hypotheses."""
+    print("--- AGENT: Planner is thinking... ---")
+    start_time = time.time()
+    
+    # We create a chain that pipes our planner_prompt to the LLM, instructing it to output a 'Plan' object.
+    planner_chain = planner_prompt | llm.with_structured_output(Plan)
+    plan = planner_chain.invoke({"product_description": state['product_description']})
+    
+    execution_time = time.time() - start_time
+    log_entry = f"[Planner] Generated {len(plan.hypotheses)} hypotheses in {execution_time:.2f}s."
+    print(log_entry)
+    
+    # We update the state with the list of hypotheses and the performance log.
+    return {"plan": plan.hypotheses, "performance_log": [log_entry]}
+The planner_node takes the high-level product_description and uses the LLM to decompose the creative task into three distinct, parallelizable sub-tasks (our MarketingHypothesis objects). This initial "fan-out" step is the foundation of the entire pattern.
+
+Next, we define the Worker agent. This node is special because it will be executed multiple times in parallel, once for each hypothesis generated by the planner.
+
+def worker_node(state: GraphState, config):
+    """The Worker node: generates a slogan for a single, specific hypothesis. This node will be run in parallel for each hypothesis."""
+    # The 'config' object is a special parameter in LangGraph that provides runtime information.
+    # We retrieve the specific hypothesis for this worker instance from the 'configurable' dictionary.
+    hypothesis = config["configurable"]["hypothesis"]
+    angle_name = hypothesis.angle_name
+    
+    print(f"--- AGENT: Worker for '{angle_name}' is thinking... ---")
+    start_time = time.time()
+    
+    # Create the chain for this worker.
+    worker_chain = worker_prompt | llm.with_structured_output(Slogan)
+    result = worker_chain.invoke({
+        "product_description": state['product_description'],
+        "angle_name": angle_name,
+        "description": hypothesis.description
+    })
+    
+    execution_time = time.time() - start_time
+    log_entry = f"[Worker-{angle_name}] Generated slogan in {execution_time:.2f}s."
+    print(log_entry)
+    
+    # The output is a dictionary where the key is the angle name. This allows the 'operator.update'
+    # reducer to correctly merge the results from all parallel workers.
+    return {
+        "worker_results": {angle_name: result},
+        "performance_log": [log_entry]
+    }
+The worker_node is our copywriter. It doesn't read it from the main state. Instead, it receives its hypothesis from the config object. This is how LangGraph passes unique inputs to parallel executions of the same node, allowing each worker to focus on its assigned slice of the problem.
+
+Now we need a function that acts as a conditional edge. This function will scatter the tasks to our parallel workers.
+
+from langgraph.graph.graph import Send
+
+def scatter_to_workers(state: GraphState) -> List[Send]:
+    """A special edge function that scatters the plan to the parallel workers."""
+    print("--- ORCHESTRATOR: Scattering tasks to workers --- ")
+    # This function returns a list of 'Send' objects.
+    # Each 'Send' object is an instruction to the graph to dispatch a task to a specific node ('worker')
+    # with a specific input, passed via the 'config' parameter.
+    tasks = [
+        Send(
+            "worker",
+            config={"configurable": {"hypothesis": hypothesis}}
+        )
+        for hypothesis in state['plan']
+    ]
+    return tasks
+The scatter_to_workers function is the core of our dynamic parallelism. It's not a standard node but a function used as a conditional edge. It reads the plan from the state and programmatically constructs a list of Send objects. Each Send is a command to LangGraph to invoke the worker node with a unique configuration. When a conditional edge returns a list of Send objects like this, LangGraph understands that it must execute all of them in parallel.
+
+Finally, we need our Judge agent, which will collect and evaluate the results from all the workers.
+
+def judge_node(state: GraphState):
+    """The Judge node: evaluates all worker results, provides a critique, and selects the single best one."""
+    print("--- AGENT: Judge is evaluating... ---")
+    start_time = time.time()
+    
+    # We format the parallel worker results into a single string for the judge's prompt.
+    slogans_to_evaluate = ""
+    for angle, slogan_obj in state['worker_results'].items():
+        slogans_to_evaluate += f"Angle: {angle}\nSlogan: {slogan_obj.slogan}\n\n"
+    
+    # Create the judge's chain.
+    judge_chain = judge_prompt | llm.with_structured_output(Evaluation)
+    evaluation = judge_chain.invoke({
+        "product_description": state['product_description'],
+        "slogans_to_evaluate": slogans_to_evaluate
+    })
+    
+    execution_time = time.time() - start_time
+    log_entry = f"[Judge] Evaluated {len(state['worker_results'])} slogans in {execution_time:.2f}s."
+    print(log_entry)
+    
+    # Update the final evaluation in the state.
+    return {"final_evaluation": evaluation, "performance_log": [log_entry]}
+Ourjudge_node is the "fan-in" or aggregation which reads the worker_results dictionary and synthesizes them. It performs the final, critical reasoning step of comparing the competing ideas and making a justified decision, producing the final high-quality output of the entire system.
+
+With all our nodes and edges defined, we can assemble and compile the final graph.
+
+from langgraph.graph import StateGraph, END
+
+# Initialize a new graph with our defined state.
+workflow = StateGraph(GraphState)
+
+# Add the nodes that represent our agents.
+workflow.add_node("planner", planner_node)
+workflow.add_node("worker", worker_node)
+workflow.add_node("judge", judge_node)
+
+# The entry point of the workflow is the planner.
+workflow.set_entry_point("planner")
+
+# After the planner, we use our special 'scatter_to_workers' function as a conditional edge to fan-out the work.
+workflow.add_conditional_edges("planner", scatter_to_workers)
+
+# After ALL worker nodes have finished, their results are automatically aggregated,
+# and we define a static edge to fan-in to the judge.
+workflow.add_edge("worker", "judge")
+
+# The judge is the final step before the graph ends.
+workflow.add_edge("judge", END)
+
+# Compile the graph into a runnable application.
+app = workflow.compile()
+
+Parallel Hypothesis (Created by 
+Fareed Khan
+)
+Now for the final, quantitative proof. Let’s analyze the performance log to see the benefits of parallel execution.
+
+total_time = 0
+planner_time = 0
+worker_times = []
+judge_time = 0
+
+# Parse our performance log to extract the timing for each stage.
+for log in final_state['performance_log']:
+    time_val = float(log.split(' ')[-1].replace('s', ''))
+    if "[Planner]" in log:
+        planner_time = time_val
+    elif "[Worker-" in log:
+        worker_times.append(time_val)
+    elif "[Judge]" in log:
+        judge_time = time_val
+
+# The total time of a parallel step is the time of the longest-running task.
+parallel_worker_time = max(worker_times) if worker_times else 0
+
+# The total time of the entire workflow.
+total_execution_time = planner_time + parallel_worker_time + judge_time
+print(f"Total Execution Time: {total_execution_time:.2f} seconds\n")
+print("Breakdown:")
+print(f" - Planner: {planner_time:.2f} seconds")
+print(f" - Parallel Workers (longest path): {parallel_worker_time:.2f} seconds")
+print(f" - Judge: {judge_time:.2f} seconds\n")
+
+# Now, we simulate what would have happened in a sequential workflow.
+sequential_worker_time = sum(worker_times)
+time_saved = sequential_worker_time - parallel_worker_time
+This is what we are getting …
+
+#### OUTPUT ####
+============================================================
+                      PERFORMANCE ANALYSIS
+============================================================
+Total Execution Time: 19.24 seconds
+
+
+Breakdown:
+ - Planner: 6.78 seconds
+ - Parallel Workers (longest path): 5.31 seconds
+ - Judge: 7.15 seconds
+The three worker nodes took 5.31s, 5.12s, and 4.98s respectively. If executed sequentially, this stage would have taken 15.41 seconds (5.31 + 5.12 + 4.98).
+
+By running them in parallel, the wall-clock time for this stage was only 5.31 seconds (the time of the longest-running worker).
+
+This resulted in a time saving of over 10 seconds for this single step.
+
+More importantly, the final output is qualitatively better. The system didn’t just generate one slogan, it explored a space defined by three different strategies and then used another reasoning step to select the best one.
+
+Parallel Evaluation for Robust Governance
+In previous patterns, we relied on a single judgment path even when generating multiple ideas which means that agentic solution was still limited to one evaluative perspective …
+
+But for complex decisions, evaluation needs to be done from multiple different perspectives.
+
+
+Parallel Evaluation (Created by 
+Fareed Khan
+)
+The Parallel Evaluation or Multi-Critic Reflection is the architectural pattern where we instead of using a single, monolithic judge …
+
+We create a panel of AI critics. A piece of content is sent to all critics simultaneously, each evaluating it from a unique, expert perspective.
+Their parallel feedback is then gathered and synthesized by a final editor agent, which makes a holistic and well-informed decision.
+We will build a content review system where a draft is pass to a team of parallel critics before a final editor makes a decision based on their collective feedback.
+
+First, to ensure our critics provide consistent, machine-readable feedback, we will define a Pydantic schema for their output.
+
+from langchain_core.pydantic_v1 import BaseModel, Field
+from typing import Literal
+
+class Critique(BaseModel):
+    """A Pydantic model for a structured critique from a single, specialist critic."""
+    # A clear, binary decision on whether the content meets this critic's specific criteria.
+    is_compliant: bool = Field(description="Whether the content meets the specific criteria of this critic.")
+    # Detailed, actionable feedback explaining the decision.
+    feedback: str = Field(description="Detailed feedback explaining why the content is or is not compliant. Provide actionable suggestions if non-compliant.")
+This Critique class is the formal communication protocol as it will make sure that every specialist provides a clear is_compliant verdict and textual feedback, making their outputs reliable and easy for the final editor to parse.
+
+Next, we will define the GraphState, which needs to track the content under review and the critiques from our parallel panel.
+
+from typing import TypedDict, Annotated, Dict
+import operator
+
+class GraphState(TypedDict):
+
+    content_to_review: str
+
+    # 'critiques' is a dictionary where keys are the critic names and values are their structured Critique objects.
+    # The 'operator.update' reducer is essential for merging the outputs from the parallel branches.
+    critiques: Annotated[Dict[str, Critique], operator.update]
+    final_decision: dict # Changed to dict for simplicity
+    performance_log: Annotated[List[str], operator.add]
+The critiques dictionary in our GraphState, combined with the operator.update reducerso it can aggregate the parallel feedback. It will automatically collect the structured Critique objects from each branch into a single, comprehensive object before passing it to the final editor.
+
+Now, let’s define the core of our systen which are critic nodes. I implement one critic (the Brand Voice Analyst) and the final editor, but the notebook implementation of this approach is much deeper and complex. The other critics (Fact-Checker, Risk Assessor) follow the same pattern but with different prompts.
+
+import time
+
+# Node for the Brand Voice Analyst
+def brand_voice_node(state: GraphState):
+    """A simple critic that evaluates content against pre-defined brand voice guidelines."""
+    print("--- CRITIC: Brand Voice Analyst is reviewing... ---")
+    start_time = time.time()
+    
+    # This is a simple chain: prompt -> LLM -> structured output.
+    brand_chain = brand_voice_prompt | llm.with_structured_output(Critique)
+    critique = brand_chain.invoke({"content_to_review": state['content_to_review']})
+    
+    execution_time = time.time() - start_time
+    log_entry = f"[BrandVoice] Completed in {execution_time:.2f}s."
+    print(log_entry)
+    
+    return {"critiques": {"BrandVoice": critique}, "performance_log": [log_entry]}
+# Node for the Chief Editor (Aggregation & Decision)
+def chief_editor_node(state: GraphState):
+    """The final node: aggregates all critiques and makes a final, justified decision."""
+    print("--- EDITOR: Chief Editor is making a decision... ---")
+    start_time = time.time()
+    
+    # We format the structured critiques from the state into a single string for the editor's prompt.
+    critiques_str = ""
+    for critic_name, critique_obj in state['critiques'].items():
+        critiques_str += f"- {critic_name} Critique:\n  - Compliant: {critique_obj.is_compliant}\n  - Feedback: {critique_obj.feedback}\n\n"
+    
+    # Create the editor's chain.
+    editor_chain = chief_editor_prompt | llm.with_structured_output(dict) # Using dict for simplicity
+    final_decision = editor_chain.invoke({
+        "content_to_review": state['content_to_review'],
+        "critiques": critiques_str
+    })
+    
+    execution_time = time.time() - start_time
+    log_entry = f"[ChiefEditor] Completed in {execution_time:.2f}s."
+    print(log_entry)
+    
+    return {"final_decision": final_decision, "performance_log": [log_entry]}
+These two nodes represent the core fan-out and fan-in logic. The brand_voice_node is a template for our specialist critics, each running independently. The chief_editor_node is the aggregation point, synthesizing the multi-faceted feedback into a single, actionable decision.
+
+Just like the previous implementations, now we are going to assemble the full graph, setting the entry point to fan out to all three critics in parallel.
+
+from langgraph.graph import StateGraph, END
+
+# Initialize a new graph.
+workflow = StateGraph(GraphState)
+
+# Define the nodes for our critics and editor.m
+workflow.add_node("fact_checker", fact_checker_node)
+workflow.add_node("brand_voice_analyst", brand_voice_node)
+workflow.add_node("risk_assessor", risk_assessor_node)
+workflow.add_node("chief_editor", chief_editor_node)
+
+# The entry point is a list of nodes, which tells LangGraph to run them all in parallel.
+workflow.set_entry_point(["fact_checker", "brand_voice_analyst", "risk_assessor"])
+
+# After ALL of the critic nodes have finished, their results are merged,
+# and we define a static edge to fan-in to the chief editor.
+workflow.add_edge(["fact_checker", "brand_voice_analyst", "risk_assessor"], "chief_editor")
+
+# The editor's decision is the final step.
+workflow.add_edge("chief_editor", END)
+
+# Compile the graph into a runnable application.
+app = workflow.compile()
+print("Graph constructed and compiled successfully.")
+Press enter or click to view image in full size
+
+Parallele Eval (Created by 
+Fareed Khan
+)
+Let’s analyze the performance to see the clear benefits of this parallel workflow.
+
+critic_times = []
+editor_time = 0
+
+# Parse the performance log to extract the timing data.
+for log in final_state['performance_log']:
+    # Assumes a log format like '[NodeName] Completed in X.XXs.'
+    time_val = float(log.split(' ')[-1].replace('s.', ''))
+    if "[ChiefEditor]" in log:
+        editor_time = time_val
+    else:
+        critic_times.append(time_val)
+
+# The time for the parallel stage is the time of the longest-running critic.
+parallel_critic_time = max(critic_times) if critic_times else 0
+
+# For a sequential simulation, we would sum their times.
+sequential_critic_time = sum(critic_times)
+
+# The total time for our workflow.
+total_time = parallel_critic_time + editor_time
+time_saved = sequential_critic_time - parallel_critic_time
+print(f"Total Execution Time: {total_time:.2f} seconds\n")
+print("Breakdown:")
+print(f" - Parallel Critics (longest path): {parallel_critic_time:.2f} seconds")
+print(f" - Chief Editor: {editor_time:.2f} seconds\n")
+Let’s take a look at the eval results …
+
+#### OUTPUT ####
+=============================================================
+                  FINAL GOVERNANCE DECISION
+=============================================================
+
+Final Decision: Request Revisions
+
+Editors Summary:
+The post is non-compliant across the board. The Fact-Checker found unsupported claims, the Risk Assessor identified significant legal and reputational risks with the terms 'guaranteed' and 'cures procrastination', and the Brand Voice Analyst noted that the tone is overly hyped and exaggerated.
+
+Revision Instructions:
+Please remove the word 'guaranteed'. Rephrase the '500% faster' claim to be more specific and verifiable, for example, 'up to 5x faster in specific benchmarks'. Remove the unsupported claim about curing procrastination entirely. Tone down the language to be more professional and focus on the practical benefits for the user.
+
+============================================================
+                      PERFORMANCE ANALYSIS
+============================================================
+Total Execution Time: 15.66 seconds
+
+Breakdown:
+ - Parallel Critics (longest path): 9.21 seconds
+ - Chief Editor: 6.45 seconds
+The three critic nodes ran in parallel. If executed sequentially, this stage would have taken 19.24 seconds. By running them in parallel, the wall-clock time was only 9.21 seconds (the time of the slowest critic).
+
+This resulted in a time saving of 10.03 seconds, a >52% reduction in latency for the evaluation stage. Qualitatively, the outcome is far superior to a single evaluation.
+
+We received deep, specialized feedback from three distinct perspectives. This multi-faceted critique allowed the Chief Editor to make a highly informed decision.
+
+Speculative Execution for Hyper-Responsive Agents
+In many agentic workflows, the sequence is: User Input -> Agent Thinks (LLM call) -> Agent Acts (Tool call). The user waits during both phases. Speculative execution overlaps these two.
+
+While the agent is thinking, the system makes an educated guess about the upcoming action and starts it.
+
+Press enter or click to view image in full size
+
+Speculative Execution (Created by 
+Fareed Khan
+)
+If the guess is correct, the tool call latency is effectively hidden behind the LLM inference time, making the agent feel instantaneous.
+
+This is a key architectural pattern for any high-throughput, user-facing system where quick responsiveness is a primary feature. We will build a customer support agent that fetches a user order history, to show how this pattern can eliminate tool-call latency from the user perspective.
+
+To show the pattern flow, we first need a tool that is realistically slow. We will create a mock database lookup that has a fixed, artificial latency.
+
+from langchain_core.tools import tool
+import time
+import json
+
+# We define a constant for the simulated database latency.
+DATABASE_LATENCY_SECONDS = 3
+@tool
+def get_order_history(user_id: str) -> str:
+    """A simulated slow tool that fetches the order history for a given user from a database."""
+    print(f"--- [DATABASE] Starting query for user_id: {user_id}. This will take {DATABASE_LATENCY_SECONDS} seconds. ---")
+    
+    # This 'time.sleep()' simulates the network and database query time.
+    time.sleep(DATABASE_LATENCY_SECONDS)
+    
+    # We use mock data for this demonstration.
+    mock_db = {
+        "user123": [
+            {"order_id": "A123", "item": "QuantumLeap AI Processor", "status": "Shipped"},
+            {"order_id": "B456", "item": "Smart Coffee Mug", "status": "Delivered"}
+        ]
+    }
+    result = mock_db.get(user_id, [])
+    print(f"--- [DATABASE] Query finished for user_id: {user_id}. ---")
+    return json.dumps(result)
+This get_order_history tool is the core of our experiment. The time.sleep(DATABASE_LATENCY_SECONDS) gives us a predictable, 3-second latency that we will try to hide with our speculative execution pattern.
+
+Next, we define our GraphState, which includes a special field, prefetched_data, to hold the result of our speculative call.
+
+from typing import TypedDict, Annotated, List, Optional
+from langchain_core.messages import BaseMessage
+import operator
+from concurrent.futures import Future
+
+class GraphState(TypedDict):
+    messages: Annotated[List[BaseMessage], operator.add]
+    user_id: str
+    # 'prefetched_data' will hold a Python 'Future' object, representing the background tool call.
+    prefetched_data: Optional[Future]
+    # 'agent_decision' will hold the actual tool call that the LLM decides to make.
+    agent_decision: Optional[BaseMessage]
+    performance_log: Annotated[List[str], operator.add]
+The key part of this GraphState is the prefetched_data: Optional[Future] field. A Future is a standard Python object that acts as a placeholder for a result that is not yet available. This allows our entry point node to return immediately after starting the background task, while the Future object is passed through the state.
+
+Now for the core of the pattern: the entry_point node. This node will kick off two processes in parallel: the speculative tool call and the main LLM reasoning.
+
+from concurrent.futures import ThreadPoolExecutor
+
+# We create a thread pool to run our background tasks.
+thread_pool = ThreadPoolExecutor(max_workers=5)
+def entry_point(state: GraphState):
+    """The entry point node: starts the speculative pre-fetch and the main agent reasoning in parallel."""
+    print("--- [ORCHESTRATOR] Entry point started. --- ")
+    start_time = time.time()
+    
+    # 1. Start the speculative pre-fetch in a background thread using our thread pool.
+    #    The .submit() method returns a 'Future' object immediately.
+    print("--- [ORCHESTRATOR] Starting speculative pre-fetch of order history... ---")
+    prefetched_data_future = thread_pool.submit(get_order_history.invoke, {"user_id": state['user_id']})
+    
+    # 2. In parallel, while the tool is running in the background, we start the main agent's LLM call.
+    print("--- [ORCHESTRATOR] Starting main agent LLM call... ---")
+    agent_response = llm_with_tools.invoke(state['messages'])
+    
+    execution_time = time.time() - start_time
+    log_entry = f"[Orchestrator] LLM reasoning completed in {execution_time:.2f}s."
+    print(log_entry)
+    
+    # The node returns the Future object and the agent's decision to be added to the state.
+    return {
+        "prefetched_data": prefetched_data_future,
+        "agent_decision": agent_response,
+        "performance_log": [log_entry]
+    }
+Inentry_point node the call to thread_pool.submit() is non-blocking, it starts the 3-second get_order_history tool call in a separate thread and immediately returns a Future object. The code then proceeds without waiting, immediately invoking the llm_with_tools. This is the "overlap" that is the foundation of the speculative execution pattern.
+
+Next, we define the tool_executor_node. This node has special logic to check if its required data has already been pre-fetched.
+
+from langchain_core.messages import ToolMessage
+
+def tool_executor_node(state: GraphState):
+    """Executes the agent's chosen tool, but first checks if the data has already been pre-fetched."""
+    print("--- [TOOL EXECUTOR] Node started. --- ")
+    start_time = time.time()
+    
+    agent_decision = state['agent_decision']
+    tool_call = agent_decision.tool_calls[0]
+    
+    # We check if the tool the agent wants to call is the one we speculatively executed.
+    if tool_call['name'] == "get_order_history":
+        print("--- [TOOL EXECUTOR] Agent wants order history. Checking pre-fetch... ---")
+        # If it matches, we call .result() on the Future object. This will block until the
+        # background thread is finished, but if it's already done, it returns the result instantly.
+        prefetched_future = state['prefetched_data']
+        tool_result = prefetched_future.result()
+        print("--- [TOOL EXECUTOR] Pre-fetch successful! Using cached data instantly. ---")
+    else:
+        # If the agent made a different decision, we would execute that tool normally.
+        print(f"--- [TOOL EXECUTOR] Speculation failed. Agent wants {tool_call['name']}. Executing normally. ---")
+        # (This path is not taken in our demo).
+        tool_result = "Tool not implemented for this demo."
+    
+    tool_message = ToolMessage(content=tool_result, tool_call_id=tool_call['id'])
+    
+    execution_time = time.time() - start_time
+    log_entry = f"[ToolExecutor] Resolved tool call in {execution_time:.2f}s."
+    print(log_entry)
+    
+    return {"messages": [agent_decision, tool_message], "performance_log": [log_entry]}
+You might have noticed alread that the importance tool_executor_node is in the prefetched_future.result() call.
+
+If the 3-second database lookup has already completed while the LLM was thinking, this call will return instantly. The 3-second latency has been effectively erased from this step perspective.
+If our speculation was wrong and the agent chose a different tool, we would simply ignore the Future and execute the correct tool call from scratch.
+Now, we can assemble the graph …
+
+from langgraph.graph import StateGraph, END
+
+# This conditional edge checks if the agent's decision includes any tool calls.
+def should_call_tool(state: GraphState) -> str:
+    if state['agent_decision'].tool_calls:
+        return "execute_tool"
+    return END
+
+# Define the graph.
+workflow = StateGraph(GraphState)
+workflow.add_node("entry_point", entry_point)
+workflow.add_node("execute_tool", tool_executor_node)
+workflow.add_node("final_answer", final_answer_node) # (Assuming final_answer_node is defined)
+
+# Build the graph's control flow.
+workflow.set_entry_point("entry_point")
+workflow.add_conditional_edges("entry_point", should_call_tool)
+workflow.add_edge("execute_tool", "final_answer")
+workflow.add_edge("final_answer", END)
+app = workflow.compile()
+
+Speculative Eval (Created by 
+Fareed Khan
+)
+Let’s conduct the test, comparing our speculative workflow actual timing with a simulated traditional, sequential workflow.
+
+from langchain_core.messages import HumanMessage
+import json
+
+inputs = {
+    "messages": [HumanMessage(content="Hi, can you tell me the status of my recent orders?")],
+    "user_id": "user123"
+}
+
+step_counter = 1
+final_state = None
+
+for output in app.stream(inputs, stream_mode="values"):
+    node_name = list(output.keys())[0]
+    print(f"\n{'*' * 100}")
+    print(f"**Step {step_counter}: {node_name.replace('_', ' ').title()} Node Execution**")
+    print(f"{'*' * 100}")
+    
+    step_counter += 1
+
+
+#### OUTPUT ####
+[ORCHESTRATOR] Entry point started. --- 
+[ORCHESTRATOR] Starting speculative pre-fetch of order history... ---
+[DATABASE] Starting query for user_id: user123. This will take 3 seconds. ---
+...
+This will start the workflow based on the user query but for us the important point to extract the performance of this approach, so let’s do that …
+
+# Extract the timing data from the final_state's performance log after a full run.
+# (a full run has been completed and final_state is populated)
+llm_time_1 = float(final_state['performance_log'][0].split(' ')[-2])
+resolution_time = float(final_state['performance_log'][1].split(' ')[-2])
+llm_time_2 = float(final_state['performance_log'][2].split(' ')[-2])
+db_time = DATABASE_LATENCY_SECONDS # Our known latency
+
+# Calculate the total time for our speculative run.
+speculative_total = llm_time_1 + resolution_time + llm_time_2
+# Calculate the total time for a simulated sequential run.
+sequential_total = llm_time_1 + db_time + llm_time_2
+time_saved = sequential_total - speculative_total
+reduction_percent = (time_saved / sequential_total) * 100
+
+print("="*60)
+print("                  PERFORMANCE SHOWDOWN")
+print("="*60)
+
+print("\n" + "-"*60)
+print("             SPECULATIVE EXECUTION WORKFLOW (Our Run)")
+print("-"*60)
+print(f"1. Agent Thinks (LLM Call 1):       {llm_time_1:.2f} seconds")
+print(f"   (Database Query: {db_time:.2f}s ran in parallel, fully hidden)")
+print(f"2. Tool Result Resolution:          {resolution_time:.2f} seconds (Instant cache hit)")
+print(f"3. Synthesize Answer (LLM Call 2):  {llm_time_2:.2f} seconds")
+
+print("-"*60)
+print(f"Total Time to Final Answer: {speculative_total:.2f} seconds\n\n")
+print("-"*60)
+
+print("             TRADITIONAL SEQUENTIAL WORKFLOW (Simulated)")
+print("-"*60)
+print(f"1. Agent Thinks (LLM Call 1):       {llm_time_1:.2f} seconds")
+print(f"2. Execute Tool (Database Query):   {db_time:.2f} seconds (User waits)")
+print(f"3. Synthesize Answer (LLM Call 2):  {llm_time_2:.2f} seconds")
+
+print("-"*60)
+print(f"Simulated Total Time: {sequential_total:.2f} seconds\n\n")
+print("="*60)
+print("                        CONCLUSION")
+
+print("="*60)
+print(f"Time Saved: {time_saved:.2f} seconds")
+print(f"Perceived Latency Reduction: {reduction_percent:.0f}%\n")
+Let’s understand the output …
+
+#### OUTPUT ####
+============================================================
+                  PERFORMANCE SHOWDOWN
+============================================================
+
+------------------------------------------------------------
+             SPECULATIVE EXECUTION WORKFLOW (Our Run)
+------------------------------------------------------------
+1. Agent Thinks (LLM Call 1):       4.21 seconds
+   (Database Query: 3.00s ran in parallel, fully hidden)
+2. Tool Result Resolution:          0.01 seconds (Instant cache hit)
+3. Synthesize Answer (LLM Call 2):  3.55 seconds
+------------------------------------------------------------
+Total Time to Final Answer: 7.77 seconds
+
+------------------------------------------------------------
+             TRADITIONAL SEQUENTIAL WORKFLOW (Simulated)
+------------------------------------------------------------
+1. Agent Thinks (LLM Call 1):       4.21 seconds
+2. Execute Tool (Database Query):   3.00 seconds (User waits)
+3. Synthesize Answer (LLM Call 2):  3.55 seconds
+------------------------------------------------------------
+Simulated Total Time: 10.76 seconds
+
+============================================================
+                        CONCLUSION
+============================================================
+Time Saved: 2.99 seconds
+Perceived Latency Reduction: 28%
+We saved almost …
+
+exactly the duration of the slow tool call, resulting in a 28% reduction in total time-to-answer.
+
+In our Speculative Execution Workflow, the 3-second database query happens at the same time as the initial 4.21-second LLM call. Because the LLM call was the longer of the two parallel operations, the database latency was completely hidden. The tool_executor_node was able to get the result in a near-instantaneous 0.01 seconds. The total perceived latency for the user was just 7.77 seconds.
+
+Hierarchical Agent Teams for Superior Quality
+So far, we have explored how agents can generate ideas and evaluate them in parallel.
+
+But complex tasks are often unexpected or unseen, requiring the agent to decide what and when to execute, introducing a delay between planning and action.
+
+
+Hierarchical System (Created by 
+Fareed Khan
+)
+Specialization and Decomposition architecture pattern is the right way to solve this issue.
+
+A complex task is given to a high-level Orchestrator (or Manager) agent. This agent doesn’t perform the task itself. instead, its job is to plan.
+It decomposes the complex task into smaller, well-defined sub-tasks and delegates them to a team of specialized Worker agents.
+These workers can often execute their tasks in parallel. Finally, the Orchestrator synthesizes the results from the workers into a single, cohesive output.
+We will conduct a direct comparison between a Monolithic Agent and a Hierarchical Team on an investment report generation task to prove that the hierarchical approach produces a final report that is not only faster but also qualitatively superior in its detail, structure, and accuracy.
+
+First, we need to define the structured data models that will serve as the communication protocol between our agents. Structured outputs are the glue that holds a multi-agent system together.
+
+from langchain_core.pydantic_v1 import BaseModel, Field
+from typing import Optional, List
+
+class FinancialData(BaseModel):
+    """A Pydantic model for the structured output of the Financial Analyst agent."""
+    price: float = Field(description="Current stock price.")
+    market_cap: int = Field(description="Total market capitalization.")
+    pe_ratio: float = Field(description="Price-to-Earnings ratio.")
+    volume: int = Field(description="Average trading volume.")
+
+class NewsAndMarketAnalysis(BaseModel):
+    """A Pydantic model for the structured output of the News & Market Analyst agent."""
+    summary: str = Field(description="A concise summary of the most important recent news and market trends.")
+    competitors: List[str] = Field(description="A list of the company's main competitors.")
+
+class FinalReport(BaseModel):
+    """A Pydantic model for the final, synthesized investment report from the Chief Analyst."""
+    company_name: str = Field(description="The name of the company.")
+    financial_summary: str = Field(description="A paragraph summarizing the key financial data.")
+    news_and_market_summary: str = Field(description="A paragraph summarizing the news, market trends, and competitive landscape.")
+    recommendation: str = Field(description="A final investment recommendation (e.g., 'Strong Buy', 'Hold', 'Sell') with a brief justification.")
+These Pydantic models are the formal contracts that define how information is passed between our specialist agents and the final orchestrator. For example, the FinancialData model ensures the Financial Analyst will always provide four specific, numerical data points. This structured data is far more reliable and easier for the final synthesizer agent to work with than a simple block of text.
+
+Next, we will define the GraphState for our hierarchical team, which needs to track the outputs from each specialist worker.
+
+from typing import TypedDict, Annotated
+
+class TeamGraphState(TypedDict):
+    company_symbol: str
+    company_name: str
+    # 'financial_data' will hold the structured output from the Financial Analyst.
+    financial_data: Optional[FinancialData]
+    # 'news_analysis' will hold the structured output from the News & Market Analyst.
+    news_analysis: Optional[NewsAndMarketAnalysis]
+    # 'final_report' is the final product from the synthesizer.
+    final_report: Optional[FinalReport]
+    performance_log: Annotated[List[str], operator.add]
+The TeamGraphState is the shared workspace for our analyst team. It has specific, typed fields for the deliverables from each specialist (financial_data, news_analysis). This make sure that when the final synthesizer agent activates, it has a clean, well-organized set of inputs to work with.
+
+Now, let’s define the specialist Worker agents. Each is a self-contained, tool-using agent with a highly focused prompt. Let;s create the node for our Financial Analyst.
+
+from langchain.agents import create_tool_calling_agent, AgentExecutor
+import time
+
+# Create a self-contained agent executor for the Financial Analyst.
+# Its prompt is highly focused on its single task.
+financial_analyst_prompt = ChatPromptTemplate.from_messages([
+    ("system", "You are an expert financial analyst. Your sole job is to use the provided tool to get key financial metrics for a company and return them in a structured format."),
+    ("human", "Get the financial data for the company with stock symbol: {symbol}")
+])
+
+# This agent ONLY has access to the 'get_financial_data' tool.
+financial_agent = create_tool_calling_agent(llm, [get_financial_data], financial_analyst_prompt)
+
+# The final step in the chain forces the agent's output into our 'FinancialData' Pydantic model.
+financial_executor = AgentExecutor(agent=financial_agent, tools=[get_financial_data]) | llm.with_structured_output(FinancialData)
+
+def financial_analyst_node(state: TeamGraphState):
+    """The specialist node for fetching and structuring financial data."""
+    print("--- [Financial Analyst] Starting analysis... ---")
+    start_time = time.time()
+    result = financial_executor.invoke({"symbol": state['company_symbol']})
+    execution_time = time.time() - start_time
+    log = f"[Financial Analyst] Completed in {execution_time:.2f}s."
+    print(log)
+    return {"financial_data": result, "performance_log": [log]}
+The financial_analyst_node prompt is narrow, and its toolset is restricted. By constraining the agent to a single job, we dramatically increase the reliability of its output. The final .with_structured_output(FinancialData) call is a crucial quality gate, ensuring its deliverable is always in the correct format.
+
+The news_analyst_node follows the exact same pattern but with its own specialized prompt and tool.
+
+Finally, we define our Orchestrator agent. This agent, the report_synthesizer_node, takes the structured outputs from the parallel workers and performs the final synthesis step.
+
+# Create the chain for the synthesizer/orchestrator.
+report_synthesizer_prompt = ChatPromptTemplate.from_messages([
+    ("system", "You are the Chief Investment Analyst. Your job is to synthesize the structured financial data and market analysis provided by your specialist team into a final, comprehensive investment report, including a justified recommendation."),
+    ("human", "Please create the final report for {company_name}.\n\nFinancial Data:\n{financial_data}\n\nNews and Market Analysis:\n{news_analysis}")
+])
+synthesizer_chain = report_synthesizer_prompt | llm.with_structured_output(FinalReport)
+
+def report_synthesizer_node(state: TeamGraphState):
+    """The orchestrator node that takes the structured worker outputs and synthesizes the final report."""
+    print("--- [Chief Analyst] Synthesizing final report... ---")
+    start_time = time.time()
+    
+    # This node reads the structured data from the state.
+    report = synthesizer_chain.invoke({
+        "company_name": state['company_name'],
+        "financial_data": state['financial_data'].json(),
+        "news_analysis": state['news_analysis'].json()
+    })
+    
+    execution_time = time.time() - start_time
+    log = f"[Chief Analyst] Completed report in {execution_time:.2f}s."
+    print(log)
+    return {"final_report": report, "performance_log": [log]}
+The report_synthesizer_node is the "manager" that assembles the final product. It doesn't need to call any tools itself. Its job is pure synthesis.
+
+By receiving clean, structured FinancialData and NewsAndMarketAnalysis objects from the state, it can focus entirely on the high-level task of crafting a coherent narrative and making a final, justified recommendation.
+
+Now, we assemble the graph with a “fan-out, fan-in” architecture.
+
+from langgraph.graph import StateGraph, END
+
+# Initialize the graph.
+workflow = StateGraph(TeamGraphState)
+
+# Add the nodes for our two specialist workers and the final synthesizer.
+workflow.add_node("financial_analyst", financial_analyst_node)
+workflow.add_node("news_analyst", news_analyst_node)
+workflow.add_node("report_synthesizer", report_synthesizer_node)
+
+# The entry point is a list, which tells LangGraph to run both specialist workers in parallel.
+workflow.set_entry_point(["financial_analyst", "news_analyst"])
+
+# An edge from a list of nodes means the graph will wait for ALL of them to complete before proceeding.
+# This is our "fan-in" or synchronization step.
+workflow.add_edge(["financial_analyst", "news_analyst"], "report_synthesizer")
+
+# The synthesizer is the final step.
+workflow.add_edge("report_synthesizer", END)
+
+# Compile the graph.
+app = workflow.compile()
+
+
+# Running the flow
+inputs = {
+    "company_symbol": "TSLA",
+    "company_name": "Tesla",
+    "performance_log": []
+}
+
+start_time = time.time()
+team_result = None
+for output in app.stream(inputs, stream_mode="values"):
+    team_result = output
+end_time = time.time()
+team_time = end_time - start_time
+
+Hierarchical Agents (Created by 
+Fareed Khan
+)
+Now for the final head-to-head analysis. We will compare the quality of the final report and the performance of both systems.
+
+print("="*60)
+print("                AGENT OUTPUT COMPARISON")
+print("="*60)
+print("\n" + "-"*60)
+print("            MONOLITHIC AGENT REPORT")
+print("-"*60 + "\n")
+print(f"'{monolithic_result['output']}'")
+
+
+print("\n" + "-"*60)
+print("            HIERARCHICAL TEAM REPORT")
+print("-"*60 + "\n")
+print(json.dumps(team_result['final_report'], indent=4, default=lambda o: o.dict()))
+print("\n" + "="*60)
+print("                      ACCURACY & QUALITY ANALYSIS")
+print("="*60 + "\n")
+
+print("="*60)
+print("                      PERFORMANCE ANALYSIS")
+print("="*60 + "\n")
+print(f"Monolithic Agent Total Time: {monolithic_time:.2f} seconds") # (Assuming monolithic_time is from the notebook run)
+print(f"Hierarchical Team Total Time: {team_time:.2f} seconds\n") # (Assuming team_time is from the notebook run)
+time_saved = monolithic_time - team_time
+print(f"Time Saved: {time_saved:.2f} seconds ({time_saved/monolithic_time*100:.0f}% faster)\n")
+print("Analysis of Parallelism:")
+
+# (Extract worker times from the performance log as in the notebook)
+worker_times = [6.89, 8.12] 
+parallel_worker_time = max(worker_times)
+sequential_worker_time = sum(worker_times)
+This is the output we are getting …
+
+#### OUTPUT ####
+============================================================
+                AGENT OUTPUT COMPARISON
+============================================================
+
+------------------------------------------------------------
+            MONOLITHIC AGENT REPORT
+------------------------------------------------------------
+Tesla (TSLA) is currently trading at around $177.48. Recent news suggests the company is facing competition from other EV makers but is also expanding its Gigafactory network. The recommendation is to Hold the stock and monitor the competitive landscape.
+------------------------------------------------------------
+            HIERARCHICAL TEAM REPORT
+------------------------------------------------------------
+{
+    "final_report": {
+        "company_name": "Tesla",
+        "financial_summary": "Tesla's current stock price is 177.48, with a total market capitalization of 566,310,215,680. It exhibits a trailing Price-to-Earnings (P/E) ratio of 45.4...",
+        "news_and_market_summary": "Recent developments indicate that while Tesla remains a dominant force, the competitive landscape in the EV market is intensifying with rivals like BYD, Ford, and GM...",
+        "recommendation": "Hold. While the company shows strong financials and market leadership, the high P/E ratio and increasing competition warrant a cautious approach..."
+    }
+}
+============================================================
+                      ACCURACY & QUALITY ANALYSIS
+============================================================
+1. **Structure & Detail:** The Hierarchical Teams report is vastly superior. It has clear, distinct sections as defined by our Pydantic schema. The Monolithic agent produced a single, unstructured paragraph.
+2. **Factual Depth:** The Hierarchical Teams report contains specific, hard numbers (market cap, P/E ratio, volume) because the Financial Analyst was explicitly tasked with finding them. The Monolithic agent only mentioned the price.
+3. **Completeness:** The Hierarchical Team explicitly identified competitors and provided a more nuanced recommendation based on synthesizing multiple data points. The Monolithic agents analysis was superficial by comparison.
+**Conclusion:** The decomposition of the task and the use of specialist agents led to a provably higher-quality and more accurate output. The structure imposed by the hierarchy and Pydantic models forced a more rigorous and detailed analysis.
+============================================================
+                      PERFORMANCE ANALYSIS
+============================================================
+Monolithic Agent Total Time: 18.34 seconds
+Hierarchical Team Total Time: 13.57 seconds
+Time Saved: 4.77 seconds (26% faster)
+Analysis of Parallelism:
+The two specialist workers ran in parallel. If run sequentially, this stage would have taken 15.01 seconds. By running them in parallel, the stage took only 8.12 seconds (the time of the longest worker). This parallelism is the primary reason the more complex, higher-quality hierarchical system was also significantly faster.
+The two specialist workers ran in parallel ….
+
+The Financial Analyst took 6.89s and the News Analyst took 8.12s and also the finalized report is much more detailed and If run sequentially, this stage would have taken 15.01 seconds.
+
+By running them in parallel, the stage took only 8.12 seconds (the time of the longest worker). This parallelism is the primary reason the more complex, higher-quality hierarchical system was also significantly faster.
+
+Competitive Agent Ensembles
+In an agentic solution, each AI agent has its own biases, strengths, and weaknesses.
+
+Using an ensemble of diverse agents mitigates the risk of a single agent producing a suboptimal or flawed response.
+
+
+Ensembling Agentic Outputs (Created by 
+Fareed Khan
+)
+By combining multiple models or prompting strategies, the system becomes more resilient, avoids single-point failures, and is more likely to deliver high-quality outputs.
+
+This pattern is the AI equivalent of seeking a “second opinion” or running a competitive design process.
+
+We will build an ensemble of three diverse copywriting agents tasked with creating a product description. We will then see how a judge agent can reason over their parallel outputs to select the best one, this way we get a clear improvement in the quality control process.
+
+First, the strength of an ensemble comes from the diversity of its members. We will create three distinct copywriting “personas” using two different LLM families to maximize this diversity.
+
+from langchain_huggingface import HuggingFacePipeline
+from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
+from langchain_google_vertexai import ChatVertexAI
+import torch
+
+# LLM 1: Llama 3 8B Instruct (Open Source, local via Hugging Face)
+# This will power two of our personas.
+model_id = "meta-llama/Meta-Llama-3-8B-Instruct"
+tokenizer = AutoTokenizer.from_pretrained(model_id)
+hf_model = AutoModelForCausalLM.from_pretrained(
+    model_id,
+    torch_dtype=torch.bfloat16,
+    device_map="auto",
+    load_in_4bit=True
+)
+pipe = pipeline("text-generation", model=hf_model, tokenizer=tokenizer, max_new_tokens=1024, do_sample=True, temperature=0.7, top_p=0.9)
+llama3_llm = HuggingFacePipeline(pipeline=pipe)
+
+# LLM 2: Claude 3.5 Sonnet on Vertex AI (Proprietary, cloud-based)
+# Using a model from a different family and training methodology introduces significant diversity.
+claude_sonnet_llm = ChatVertexAI(model_name="claude-3-5-sonnet@001", temperature=0.7)
+print("LLMs Initialized: Llama 3 and Claude 3.5 Sonnet are ready to compete.")
+By using two fundamentally different models, the open-source Llama 3 and Google's Claude 3.5 Sonnetwe are making sure that our ensemble has true diversity. They will have different writing styles, different knowledge cutoffs, and different inherent biases, which is exactly what we want for a robust competitive process.
+
+Next, we will define Pydantic models to structure the outputs of our copywriters and our final judge.
+
+from langchain_core.pydantic_v1 import BaseModel, Field
+from typing import List
+
+class ProductDescription(BaseModel):
+    """A structured product description with a headline and body, the output of our copywriter agents."""
+    headline: str = Field(description="A catchy, attention-grabbing headline for the product.")
+    body: str = Field(description="A short paragraph (2-3 sentences) detailing the product's benefits and features.")
+
+class FinalEvaluation(BaseModel):
+    """The structured output of our Judge agent, containing the winning description and a detailed critique."""
+    best_description: ProductDescription = Field(description="The winning product description chosen by the judge.")
+    critique: str = Field(description="A detailed, point-by-point critique explaining why the winner was chosen over the other options, referencing the evaluation criteria.")
+    winning_agent: str = Field(description="The name of the agent that produced the winning description (e.g., 'Claude_Sonnet_Creative', 'Llama3_Direct', 'Llama3_Luxury').")
+These data models are our communication protocol.
+
+The ProductDescription schema ensures that all three competitors submit their work in the same, consistent format.
+The FinalEvaluation schema is even more critical, it forces our judge agent to not only pick a winning_agent but also to provide a detailed critique, making its decision process transparent and auditable.
+Now, let’s define the GraphState and the agent nodes. The nodes will be created using a helper function to reduce code repetition.
+
+from typing import TypedDict, Annotated, Dict
+import operator
+import time
+
+class GraphState(TypedDict):
+    product_name: str
+    product_category: str
+    features: str
+    # The dictionary will store results from the parallel competitor agents, merged with operator.update.
+    competitor_results: Annotated[Dict[str, ProductDescription], operator.update]
+    final_evaluation: FinalEvaluation
+    performance_log: Annotated[List[str], operator.add]
+
+# A helper "factory" function to create a competitor node.
+def create_competitor_node(agent_name: str, llm, prompt):
+    # Each competitor is a chain: prompt -> LLM -> structured Pydantic output.
+    chain = prompt | llm.with_structured_output(ProductDescription)
+    def competitor_node(state: GraphState):
+        print(f"--- [COMPETITOR: {agent_name}] Starting generation... ---")
+        start_time = time.time()
+        result = chain.invoke({
+            "product_name": state['product_name'],
+            "product_category": state['product_category'],
+            "features": state['features']
+        })
+        execution_time = time.time() - start_time
+        log = f"[{agent_name}] Completed in {execution_time:.2f}s."
+        print(log)
+        # The output key matches the agent's name for easy aggregation.
+        return {"competitor_results": {agent_name: result}, "performance_log": [log]}
+    return competitor_node
+This create_competitor_node is the most simplest way to build our diverse team. It takes a name, an LLM, and a prompt, and returns a fully-instrumented, structured-output LangGraph node. This allows us to easily define our three competitors, each with a unique combination of model and persona.
+
+Now, we create the three competitor nodes and the final judge node.
+
+# Create the three competitor nodes using our factory.
+# Each gets a different combination of model and prompt to ensure diversity.
+claude_creative_node = create_competitor_node("Claude_Sonnet_Creative", claude_sonnet_llm, claude_creative_prompt)
+llama3_direct_node = create_competitor_node("Llama3_Direct", llama3_llm, llama3_direct_prompt)
+llama3_luxury_node = create_competitor_node("Llama3_Luxury", llama3_llm, llama3_luxury_prompt)
+
+# The Judge Node
+def judge_node(state: GraphState):
+    """Evaluates all competitor results and selects a winner."""
+    print("--- [JUDGE] Evaluating competing descriptions... ---")
+    start_time = time.time()
+    
+    # Format the competing descriptions for the judge's prompt.
+    descriptions_to_evaluate = ""
+    for name, desc in state['competitor_results'].items():
+        descriptions_to_evaluate += f"--- Option from {name} ---\nHeadline: {desc.headline}\nBody: {desc.body}\n\n"
+    
+    # Create the judge's chain.
+    judge_chain = judge_prompt | llm.with_structured_output(FinalEvaluation)
+    evaluation = judge_chain.invoke({
+        "product_name": state['product_name'],
+        "descriptions_to_evaluate": descriptions_to_evaluate
+    })
+    
+    execution_time = time.time() - start_time
+    log = f"[Judge] Completed evaluation in {execution_time:.2f}s."
+    print(log)
+    
+    return {"final_evaluation": evaluation, "performance_log": [log]}
+Our team is now defined. We have three distinct “copywriter” nodes, each engineered for a different style, and a “Head of Marketing” judge_node that will perform the final, critical evaluation based on the collected parallel outputs.
+
+Finally, we assemble the graph with a “fan-out, fan-in” architecture.
+
+from langgraph.graph import StateGraph, END
+
+workflow = StateGraph(GraphState)
+
+# Add the three competitor nodes.
+workflow.add_node("claude_creative", claude_creative_node)
+workflow.add_node("llama3_direct", llama3_direct_node)
+workflow.add_node("llama3_luxury", llama3_luxury_node)
+
+# Add the final judge node.
+workflow.add_node("judge", judge_node)
+
+# The entry point is a list of nodes, telling LangGraph to run them all in parallel.
+workflow.set_entry_point(["claude_creative", "llama3_direct", "llama3_luxury"])
+
+# An edge from a list means the graph waits for all of them to complete before proceeding. This is the fan-in.
+workflow.add_edge(["claude_creative", "llama3_direct", "llama3_luxury"], "judge")
+
+# The judge's decision is the final step.
+workflow.add_edge("judge", END)
+app = workflow.compile()
+Press enter or click to view image in full size
+
+Ensemble Agents (Created by 
+Fareed Khan
+)
+Now for the final head-to-head analysis. We will examine the three competing descriptions and the judge final decision to understand the qualitative benefits of the ensemble.
+
+import json
+
+print("="*60)
+print("            THE COMPETING PRODUCT DESCRIPTIONS")
+print("="*60)
+
+
+for name, desc in final_state['competitor_results'].items():
+    print(f"\n--- [{name}] ---")
+    print(f"Headline: {desc['headline']}")
+    print(f"Body: {desc['body']}")
+print("\n" + "="*60)
+print("                  THE JUDGE'S FINAL VERDICT")
+print("="*60)
+final_eval = final_state['final_evaluation']
+print(f"\nWinning Agent: {final_eval['winning_agent']}\n")
+print("Winning Description:")
+print(f"  - Headline: {final_eval['best_description']['headline']}")
+print(f"  - Body: {final_eval['best_description']['body']}\n")
+print("Judge's Critique:")
+print(final_eval['critique'])
+print("\n" + "-"*60)
+print("                      PERFORMANCE ANALYSIS")
+print("-"*60)
+
+
+competitor_times = [7.33, 6.12, 6.45]
+judge_time = 8.91
+parallel_time = max(competitor_times)
+sequential_time = sum(competitor_times)
+total_time = parallel_time + judge_time
+print(f"\nTotal Execution Time: {total_time:.2f} seconds\n")
+Discussion of the Output
+
+#### OUTPUT ####
+============================================================
+            THE COMPETING PRODUCT DESCRIPTIONS
+============================================================
+
+--- [Claude_Sonnet_Creative] ---
+Headline: Your Life, Unlocked. Your Wellness, Understood.
+Body: The Aura Smart Ring is more than a tracker; its your silent wellness partner. Crafted from durable titanium, it deciphers your body signals-sleep, activity, and heart rate-translating them into insights that empower your every day. With a 7-day battery, its always on, always learning, always you.
+--- [Llama3_Direct] ---
+Headline: Track Everything. Wear Nothing.
+Body: Meet the Aura Smart Ring. Get elite sleep and activity tracking, 24/7 heart rate monitoring, and a 7-day battery. Built from tough titanium, it delivers powerful health insights without the bulk of a watch.
+--- [Llama3_Luxury] ---
+Headline: Master Your Narrative.
+Body: For the discerning individual, the Aura Smart Ring is an emblem of effortless control. Meticulously engineered from aerospace-grade titanium, it provides a seamless interface to your personal biometrics. Command your well-being with seven days of uninterrupted power and unparalleled insight.
+
+============================================================
+                  THE JUDGES FINAL VERDICT
+============================================================
+Winning Agent: Claude_Sonnet_Creative
+Winning Description:
+  - Headline: Your Life, Unlocked. Your Wellness, Understood.
+  - Body: The Aura Smart Ring is more than a tracker; its your silent wellness partner. Crafted from durable titanium, it deciphers your body's signals-sleep, activity, and heart rate-translating them into insights that empower your every day. With a 7-day battery, it's always on, always learning, always you.
+
+------------------------------------------------------------
+                      PERFORMANCE ANALYSIS
+------------------------------------------------------------
+Total Execution Time: 16.24 seconds
+The final analysis highlights two key advantages of the Competitive Ensemble pattern.
+
+Quality via Diversity + Judgment: The three agents produced clearly different outputs Llama3_Direct (punchy), Llama3_Luxury (aspirational), and Claude_Sonnet_Creative (benefit-driven). This diversity gave the Judge agent a stronger evaluation set. Its final choice reflects explicit reasoning over trade-offs, showing that quality comes from the process (competition + evaluation), not from any single model.
+Performance via Parallelism: Running all agents in parallel made the pipeline 63% faster than sequential execution. We obtained diverse outputs at the cost of the slowest agent only, delivering both improved quality and better runtime efficiency.
+Agent Assembly Line for High-Volume Processing
+The parallelism patterns we have explored so far such as Parallel Tool Use, Hypothesis Generation, and Evaluation have all focused on reducing the latency of a single, complex task. We have made our agents faster and smarter for a single user query.
+
+But what if the challenge isn’t the complexity of one task, but the sheer volume of a continuous stream of tasks?
+
+For many industrial applications, the most critical metric isn’t how fast you can process one item, but how many items you can process per hour.
+
+
+Agent Assembly Line (Created by 
+Fareed Khan
+)
+This is where the Agent Assembly Line architecture becomes important. This pattern shifts our focus from minimizing latency to maximizing throughput.
+
+Instead of one monolithic agent processing items one by one from start to finish, we break the process into a sequence of specialized stations. As soon as Station A finishes its job on Item 1, it passes the item to Station B and immediately starts working on Item 2. All stations work in parallel, but on different items in the stream.
+
+We will build a three-stage pipeline to process a batch of product reviews. Our goal is to demonstrate, through careful timing analysis, how this pipelined parallelism dramatically increases the number of reviews processed per second compared to a traditional, sequential approach.
+
+First, we need to define the data structures that will represent a review as it moves through our assembly line, being progressively enriched at each station.
+
+from langchain_core.pydantic_v1 import BaseModel, Field
+from typing import List, Literal, Optional
+
+
+class TriageResult(BaseModel):
+    """The structured output of the initial Triage station."""
+    category: Literal["Feedback", "Bug Report", "Support Request", "Irrelevant"] = Field(description="The category of the review.")
+
+class Summary(BaseModel):
+    """The structured output of the Summarization station."""
+    summary: str = Field(description="A one-sentence summary of the key feedback in the review.")
+
+class ExtractedData(BaseModel):
+    """The structured output of the Data Extraction station."""
+    product_mentioned: str = Field(description="The specific product the review is about.")
+    sentiment: Literal["Positive", "Negative", "Neutral"] = Field(description="The overall sentiment of the review.")
+    key_feature: str = Field(description="The main feature or aspect discussed in the review.")
+
+class ProcessedReview(BaseModel):
+    """The final, fully processed review object that accumulates data from all stations."""
+    original_review: str
+    category: str
+    summary: Optional[str] = None
+    extracted_data: Optional[ExtractedData] = None
+These Pydantic models are the “standardized shipping containers” for our assembly line. The ProcessedReview object is the central data carrier. It is created at the first station (Triage) and then progressively enriched with a summary and extracted_data as it moves through the subsequent stations. This ensures a consistent data contract between each stage of our pipeline.
+
+Next, we define our GraphState, which is designed to operate on a batch of reviews.
+
+from typing import TypedDict, Annotated, List
+import operator
+
+class PipelineState(TypedDict):
+    # 'initial_reviews' holds the incoming batch of raw review strings.
+    initial_reviews: List[str]
+    # 'processed_reviews' is the list of ProcessedReview objects that are built up as they move through the pipeline.
+    processed_reviews: List[ProcessedReview]
+    performance_log: Annotated[List[str], operator.add]
+The PipelineState is designed for batch processing. The entire assembly line will be invoked once with a list of initial_reviews, and its final output will be a list of fully processed_reviews.
+
+Now, we define the nodes for each “station” on our assembly line. The key implementation detail is that each node uses a ThreadPoolExecutor to process all the items assigned to its stage in parallel.
+
+from concurrent.futures import ThreadPoolExecutor, as_completed
+import time
+from tqdm import tqdm
+
+MAX_WORKERS = 4 # This controls the degree of parallelism within each station.
+
+# Station 1: Triage Node
+def triage_node(state: PipelineState):
+    """The first station: categorizes all initial reviews in parallel."""
+    print(f"--- [Station 1: Triage] Processing {len(state['initial_reviews'])} reviews... ---")
+    start_time = time.time()
+    
+    triaged_reviews = []
+    # We use a ThreadPoolExecutor to make parallel LLM calls for each review.
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        # We create a future for each review to be triaged.
+        future_to_review = {executor.submit(triage_chain.invoke, {"review_text": review}): review for review in state['initial_reviews']}
+        for future in tqdm(as_completed(future_to_review), total=len(state['initial_reviews']), desc="Triage Progress"):
+            original_review = future_to_review[future]
+            try:
+                result = future.result()
+                # We create the initial ProcessedReview object here.
+                triaged_reviews.append(ProcessedReview(original_review=original_review, category=result.category))
+            except Exception as exc:
+                print(f'Review generated an exception: {exc}')
+    
+    execution_time = time.time() - start_time
+    log = f"[Triage] Processed {len(state['initial_reviews'])} reviews in {execution_time:.2f}s."
+    print(log)
+    
+    # The output of this node is the initial list of processed reviews.
+    return {"processed_reviews": triaged_reviews, "performance_log": [log]}
+The triage_node is the entry point to our assembly line. The critical piece of engineering is the use of ThreadPoolExecutor.
+
+Instead of looping through the reviews one by one, it submits all of them to the triage_chain at once. The as_completed iterator then yields results as they finish, allowing us to build our list of triaged_reviews efficiently. This make sure that the time taken by this station is determined by the handful of slowest LLM calls, not the sum of all of them.
+
+The subsequent nodes, summarize_node and extract_data_node, follow the same parallel processing pattern. They first filter for the items they are responsible for and then process them concurrently.
+
+# Station 2: Summarize Node
+def summarize_node(state: PipelineState):
+    """The second station: filters for 'Feedback' reviews and summarizes them in parallel."""
+    # This station only operates on reviews categorized as 'Feedback'.
+    feedback_reviews = [r for r in state['processed_reviews'] if r.category == "Feedback"]
+    if not feedback_reviews:
+        print("--- [Station 2: Summarizer] No feedback reviews to process. Skipping. ---")
+        return {}
+    
+    print(f"--- [Station 2: Summarizer] Processing {len(feedback_reviews)} feedback reviews... ---")
+    start_time = time.time()
+    
+    # We use a map to easily update the reviews in place.
+    review_map = {r.original_review: r for r in state['processed_reviews']}
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        future_to_review = {executor.submit(summarizer_chain.invoke, {"review_text": r.original_review}): r for r in feedback_reviews}
+        for future in tqdm(as_completed(future_to_review), total=len(feedback_reviews), desc="Summarizer Progress"):
+            original_review_obj = future_to_review[future]
+            try:
+                result = future.result()
+                # We find the original review object in our map and enrich it with the summary.
+                review_map[original_review_obj.original_review].summary = result.summary
+            except Exception as exc:
+                print(f'Review generated an exception: {exc}')
+    
+    execution_time = time.time() - start_time
+    log = f"[Summarizer] Processed {len(feedback_reviews)} reviews in {execution_time:.2f}s."
+    print(log)
+    
+    # We return the full, updated list of reviews.
+    return {"processed_reviews": list(review_map.values()), "performance_log": [log]}
+# Station 3: Extract Data Node
+def extract_data_node(state: PipelineState):
+    """The final station: extracts structured data from summarized reviews in parallel."""
+    # This station only operates on reviews that have a summary.
+    summarized_reviews = [r for r in state['processed_reviews'] if r.summary is not None]
+    if not summarized_reviews:
+        print("--- [Station 3: Extractor] No summarized reviews to process. Skipping. ---")
+        return {}
+        
+    print(f"--- [Station 3: Extractor] Processing {len(summarized_reviews)} summarized reviews... ---")
+    start_time = time.time()
+    
+    review_map = {r.original_review: r for r in state['processed_reviews']}
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        future_to_review = {executor.submit(extractor_chain.invoke, {"summary_text": r.summary}): r for r in summarized_reviews}
+        for future in tqdm(as_completed(future_to_review), total=len(summarized_reviews), desc="Extractor Progress"):
+            original_review_obj = future_to_review[future]
+            try:
+                result = future.result()
+                # We enrich the review object one last time with the extracted data.
+                review_map[original_review_obj.original_review].extracted_data = result
+            except Exception as exc:
+                print(f'Review generated an exception: {exc}')
+    
+    execution_time = time.time() - start_time
+    log = f"[Extractor] Processed {len(summarized_reviews)} reviews in {execution_time:.2f}s."
+    print(log)
+    
+    return {"processed_reviews": list(review_map.values()), "performance_log": [log]}
+These nodes conains the filtering logic of an assembly line. The summarize_node doesn't process all reviews, it only pulls the "Feedback" items off the conveyor belt. The extract_data_node only works on items that have been successfully summarized. This specialization is a key feature of the pattern.
+
+Now, we can assemble the linear graph …
+
+from langgraph.graph import StateGraph, END
+
+# Initialize the graph.
+workflow = StateGraph(PipelineState)
+
+# Add the three stations as nodes.
+workflow.add_node("triage", triage_node)
+workflow.add_node("summarize", summarize_node)
+workflow.add_node("extract_data", extract_data_node)
+
+# Define the linear flow of the assembly line.
+workflow.set_entry_point("triage")
+workflow.add_edge("triage", "summarize")
+workflow.add_edge("summarize", "extract_data")
+workflow.add_edge("extract_data", END)
+
+# Compile the graph.
+app = workflow.compile()
+
+Assembly Line (Created by 
+Fareed Khan
+)
+Now for the final, crucial analysis. We will compare the performance of our pipelined assembly line with a simulated monolithic agent that processes reviews one by one, to quantify the massive gains in throughput.
+
+# The total time for our pipelined workflow is the sum of the time for each stage to process the entire batch.
+pipelined_total_time = triage_time + summarize_time + extract_time
+
+# Throughput is the total number of items processed divided by the total time.
+pipelined_throughput = num_reviews / pipelined_total_time
+
+# Now, we simulate a sequential, monolithic agent.
+# First, estimate the average time it takes for one item to pass through one stage.
+avg_time_per_stage_per_review = (triage_time + summarize_time + extract_time) / num_reviews
+
+# The total latency for a single review to be processed from start to finish is the time for all three stages.
+total_latency_per_review = avg_time_per_stage_per_review * 3
+
+# The total time for a sequential agent to process 10 reviews is 10 times the latency of one review.
+sequential_total_time = total_latency_per_review * num_reviews
+sequential_throughput = num_reviews / sequential_total_time
+
+# Calculate the percentage increase in throughput.
+throughput_increase = ((pipelined_throughput - sequential_throughput) / sequential_throughput) * 100
+
+print("="*60)
+print("                      PERFORMANCE ANALYSIS")
+print("="*60)
+print("\n--- Assembly Line (Pipelined) Workflow ---")
+print(f"Total Time to Process {num_reviews} Reviews: {pipelined_total_time:.2f} seconds")
+print(f"Calculated Throughput: {pipelined_throughput:.2f} reviews/second\n")
+print("--- Monolithic (Sequential) Workflow (Simulated) ---")
+print(f"Avg. Latency For One Review to Complete All Stages: {total_latency_per_review:.2f} seconds")
+print(f"Simulated Total Time to Process {num_reviews} Reviews: {sequential_total_time:.2f} seconds")
+print(f"Simulated Throughput: {sequential_throughput:.2f} reviews/second\n")
+print("="*60)
+print("                        CONCLUSION")
+print("="*60)
+print(f"Throughput Increase: {throughput_increase:.0f}%")
+Discussion of the Output
+
+#### OUTPUT ####
+============================================================
+                      PERFORMANCE ANALYSIS
+============================================================
+
+--- Assembly Line (Pipelined) Workflow ---
+Total Time to Process 10 Reviews: 20.40 seconds
+Calculated Throughput: 0.49 reviews/second
+
+--- Monolithic (Sequential) Workflow (Simulated) ---
+Avg. Latency For One Review to Complete All Stages: 6.12 seconds
+Simulated Total Time to Process 10 Reviews: 61.20 seconds
+Simulated Throughput: 0.16 reviews/second
+
+============================================================
+                        CONCLUSION
+============================================================
+Throughput Increase: 206%
+The analysis clearly shows that the assembly line pattern behavior is much powerful. While the time to process a single review from start to finish …
+
+(Its latency) is about 6 seconds, our pipelined system processed the entire batch of 10 in just over 20 seconds.
+
+A traditional monolithic agent, processing them one by one, would have taken over 60 seconds. Our throughput was 3 times higher. This is because while the Extractor was working on the first review, the Summarizer was working on the second, and the Triage agent was already working on the third.
+
+This parallel, pipelined execution is the key to building high-throughput data processing systems with AI agents.
+
+Decentralized Blackboard Collaboration
+Agentic architectures we have built so far, like hierarchies and assembly lines, have been defined by rigid, pre-determined workflows.
+
+But what about problems where the solution path is not known in advance? For complex sense-making or analysis tasks, a more flexible, adaptive approach is required.
+
+Press enter or click to view image in full size
+
+Decentralized Blackboard Collaboration (Created by 
+Fareed Khan
+)
+We can use Decentralized Blackboard Collaboration pattern in such cases. The system consists of two main components: a shared data space (the “blackboard”) and a collection of independent, specialist agents who constantly watch it.
+
+Agents are not triggered in a fixed sequence. Instead, they activate themselves when the state of the blackboard matches their expertise.
+They read the current state, contribute their knowledge by writing back to the blackboard, and then return to a dormant state.
+This creates a dynamic, emergent workflow where the solution is built incrementally, piece by piece, by the most relevant expert at each stage.
+To showcase how this pattern can be useful, we will build a customer support ticket processing system with three specialist agents an Analyzer, a Retriever, and a Draftsman collaborating on a blackboard. Our goal is to demonstrate how this decoupled approach leads to a more accurate and contextually-rich final output compared to what a single agent might produce.
+
+First, we need to define the structured data objects that our agents will post to the blackboard. These are the “sticky notes” of their collaboration.
+
+from langchain_core.pydantic_v1 import BaseModel, Field
+from typing import List, Literal, Optional
+
+class ProblemAnalysis(BaseModel):
+    """Structured analysis of the user's problem, posted by the Analyzer agent."""
+    product: str = Field(description="The product the user is having an issue with.")
+    problem_summary: str = Field(description="A concise, one-sentence summary of the technical problem.")
+    user_sentiment: Literal["Positive", "Negative", "Neutral"] = Field(description="The user's sentiment.")
+
+class Solution(BaseModel):
+    """A potential solution posted by the Retriever agent."""
+    relevant_articles: List[str] = Field(description="A list of knowledge base articles relevant to the problem.")
+
+class DraftResponse(BaseModel):
+    """The final response, posted by the Draftsman agent."""
+    response_text: str = Field(description="The complete, user-facing response drafted by the agent.")
+These Pydantic models are the formal “language” of collaboration for our blackboard system. When the Analyzer agent runs, it must post a ProblemAnalysis object. This make sure that when the Solution Retriever activates, it can reliably find a problem_summary to work with.
+
+Next, we define the BlackboardState itself. This will hold the initial ticket and all the structured data that the agents contribute over time.
+
+from typing import TypedDict, Annotated
+
+class BlackboardState(TypedDict):
+    ticket: str
+    # 'analysis', 'solution', and 'draft' are the slots on our blackboard where agents post their findings.
+    analysis: Optional[ProblemAnalysis]
+    solution: Optional[Solution]
+    draft: Optional[DraftResponse]
+    performance_log: Annotated[List[str], operator.add]
+Each optional field (analysis, solution, draft) represents a piece of the puzzle. The workflow will progress as agents fill in these fields, incrementally building up the complete picture needed to solve the problem.
+
+Now, we define our specialist agent nodes. Each is a specialist that reads from and writes to the blackboard. Here is the analyzer_node.
+
+from langchain_core.prompts import ChatPromptTemplate
+import time
+
+# Agent 1: Problem Analyzer
+analyzer_prompt = ChatPromptTemplate.from_messages([
+    ("system", "You are a Problem Analyzer. Your job is to read a customer support ticket, identify the product, summarize the problem, and gauge the user's sentiment."),
+    ("human", "Please analyze the following ticket:\n\n---\n{ticket}\n---")
+])
+
+analyzer_chain = analyzer_prompt | llm.with_structured_output(ProblemAnalysis)
+
+def analyzer_node(state: BlackboardState):
+    """The first agent to activate: reads the ticket and posts an analysis to the blackboard."""
+    print("--- [AGENT: Problem Analyzer] Activating... ---")
+    start_time = time.time()
+    result = analyzer_chain.invoke({"ticket": state['ticket']})
+    execution_time = time.time() - start_time
+    log = f"[Analyzer] Completed in {execution_time:.2f}s."
+    print(log)
+    # This agent's contribution is to fill the 'analysis' slot on the blackboard.
+    return {"analysis": result, "performance_log": [log]}
+The analyzer_node is the entry point of our collaboration. It performs the initial "sense-making" step, transforming the unstructured user ticket into a structured ProblemAnalysis object and posting it to the blackboard for other agents to see.
+
+The other agents, the retriever_node and draftsman_node, follow a similar pattern, each reading the current state of the blackboard and adding their own contribution.
+
+The most critical component of a blackboard system is the central Router. This function is the controller that inspects the blackboard after every agent’s turn and decides which specialist is best equipped to contribute next. This is the core of the event-driven, opportunistic collaboration.
+
+def router(state: BlackboardState) -> str:
+    """The central router: inspects the blackboard and decides which agent to activate next."""
+    print("--- [ROUTER] Inspecting blackboard... ---")
+    
+    # The router's logic is a sequence of rules, checked in order.
+    # Rule 1: If a draft has been written, the problem is solved.
+    if state.get('draft'):
+        print("--- [ROUTER] Decision: Draft is complete. Finishing workflow. ---")
+        return END
+    
+    # Rule 2: If a solution has been found (but no draft yet), it's time to write the response.
+    if state.get('solution'):
+        print("--- [ROUTER] Decision: Solution found. Activating Draftsman. ---")
+        return "draftsman"
+    
+    # Rule 3: If an analysis is present (but no solution yet), it's time to find a solution.
+    if state.get('analysis'):
+        print("--- [ROUTER] Decision: Analysis complete. Activating Solution Retriever. ---")
+        return "retriever"
+    
+    # This default case should ideally not be reached if the entry point is set correctly.
+    return "analyzer"
+The router is the main part of our system. It's a dynamic, state-driven decision-maker. After every node runs, the graph will call this router function. The router inspects the BlackboardState and, based on which fields are populated, determines the most logical next step. This allows the workflow to emerge organically based on the evolving state of the problem.
+
+Now, we assemble the graph, connecting all nodes via our central router.
+
+from langgraph.graph import StateGraph, START, END
+
+workflow = StateGraph(BlackboardState)
+
+# Add the specialist agent nodes.
+workflow.add_node("analyzer", analyzer_node)
+workflow.add_node("retriever", retriever_node) # (Defined in the notebook)
+workflow.add_node("draftsman", draftsman_node) # (Defined in the notebook)
+
+# The entry point is always the analyzer.
+workflow.add_edge(START, "analyzer")
+
+# After each node runs, we go to our central router to decide the next step.
+# This creates a "hub-and-spoke" architecture where the router is the hub.
+workflow.add_conditional_edges("analyzer", router)
+workflow.add_conditional_edges("retriever", router)
+workflow.add_conditional_edges("draftsman", router)
+
+# We don't need a direct edge to END, as the router handles the termination condition.
+app = workflow.compile()
+print("Graph constructed and compiled successfully.")
+
+Blackboard Collaboration (Created by 
+Fareed Khan
+)
+Let’s examine the final state of the blackboard and analyze the qualitative benefits of this collaborative approach.
+
+import json
+print("="*60)
+print("                 FINAL BLACKBOARD STATE")
+print("="*60)
+# (a full run has been completed and final_state is populated)
+print(json.dumps(final_state, indent=4, default=lambda o: o.dict() if hasattr(o, 'dict') else o))
+
+print("\n" + "="*60)
+print("                     ACCURACY & QUALITY ANALYSIS")
+print("="*60 + "\n")
+This is the output we are getting …
+
+#### OUTPUT ####
+============================================================
+                 FINAL BLACKBOARD STATE
+============================================================
+
+{
+    "ticket": "I'm really frustrated. My new Aura Ring isn't syncing my sleep data...",
+    "analysis": {
+        "product": "Aura Ring",
+        "problem_summary": "The Aura Ring app is failing to sync sleep data.",
+        "user_sentiment": "Negative"
+    },
+    "solution": {
+        "relevant_articles": [
+            "Article 4: To resolve app connectivity issues with the Aura Ring...",
+            "Article 1: To reset your Aura Smart Ring..."
+        ]
+    },
+    "draft": {
+        "response_text": "Hi there, I'm sorry to hear you're frustrated with the Aura Ring's sleep sync issue...Here are a couple of common solutions from our knowledge base..."
+    },
+    "performance_log": [
+        "[Analyzer] Completed in 4.55s.",
+        "[Retriever] Completed in 7.89s.",
+        "[Draftsman] Completed in 6.21s."
+    ]
+}
+The final draft is of significantly higher quality than a monolithic agent might produce for several reasons:
+
+Decomposition Reduces Error: A single agent might misinterpret the user’s problem and find the wrong solution. By separating analysis from retrieval, we are making sure that the retrieval step is based on a clean, structured summary of the problem.
+Specialization Increases Depth: The Draftsman agent specialized with a prompt focused on clarity. It received structured data (sentiment, problem summary, solutions) which allowed it to craft a more helpful response that addresses both the technical problem and the user frustration.
+Auditability and Modularity: Each object on the blackboard (analysis, solution, draft) is a distinct, auditable artifact. If the final draft is wrong, we can trace back to see if the analysis was incorrect or if the retrieval failed. This makes the system far easier to debug and improve than a single, black-box agent.
+Redundant Execution for Fault Tolerance
+When companies deploy their agentic solution they do face several issues like APIs time out, models crash, and networks drop. The previous patterns we learned have focused on improving the quality and speed of our agents under ideal conditions.
+
+This pattern, Redundant Execution, focuses on ensuring our system remains reliable and performant even under adverse conditions.
+
+Press enter or click to view image in full size
+
+Redundant Execution (Created by 
+Fareed Khan
+)
+The concept is straightforward: for a critical and potentially unreliable step, we execute two or more identical agents in parallel. The system then uses the result from the first agent to successfully finish and cancels the rest. This technique provides a defense against intermittent failures and unpredictable performance.
+
+We will build a simple agent that relies on an intentionally unreliable, simulated tool. We will then run it with and without redundant execution to demonstrate the dramatic and measurable improvements in both speed (latency consistency) and success rate (effective accuracy).
+
+First, we need to create our unreliable tool. This is the core of our simulation. It will have a chance to fail, a chance to be very slow, or a chance to be fast, mimicking the unpredictable nature of real-world network dependencies.
+
+from langchain_core.tools import tool
+import time
+import random
+
+@tool
+def get_critical_data(query: str) -> str:
+    """A simulated tool that fetches critical data from an external service that can be slow or fail intermittently."""
+    # We assign a random ID to each instance of the tool call for clear logging.
+    instance_id = random.randint(1000, 9999)
+    print(f"--- [Tool Instance {instance_id}] Attempting to fetch data for query: '{query}' ---")
+    
+    # We simulate unreliability with a random roll.
+    roll = random.random()
+    if roll < 0.20: # 20% chance of a complete failure.
+        print(f"--- [Tool Instance {instance_id}] FAILED: Network connection error. ---")
+        raise ConnectionError("Failed to connect to the external service.")
+    elif roll < 0.30: # 10% chance of a "long-tail latency" event.
+        slow_duration = random.uniform(5, 7)
+        print(f"--- [Tool Instance {instance_id}] SLOW: Experiencing high latency. Will take {slow_duration:.2f}s. ---")
+        time.sleep(slow_duration)
+    else: # 70% chance of a normal, fast execution.
+        fast_duration = random.uniform(0.5, 1.0)
+        print(f"--- [Tool Instance {instance_id}] FAST: Executing normally. Will take {fast_duration:.2f}s. ---")
+        time.sleep(fast_duration)
+    
+    result = f"Data for '{query}' successfully retrieved by instance {instance_id}."
+    print(f"--- [Tool Instance {instance_id}] SUCCESS: {result} ---")
+    return result
+The get_critical_data tool is our controlled experiment. The random roll and time.sleep calls are a simple but effective way to simulate the two most common problems in distributed systems, transient failures (ConnectionError) and unpredictable latency. This tool will allow us to create a clear, repeatable demonstration of the problem we are trying to solve.
+
+Now, let’s build the fault-tolerant graph. The core of this pattern is a single node that orchestrates the redundant execution using a ThreadPoolExecutor.
+
+from typing import TypedDict, Optional, Any
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from langgraph.graph import StateGraph, END
+
+class RedundantState(TypedDict):
+    input: str
+    result: Optional[Any]
+    error: Optional[str]
+    performance_log: Optional[str]
+
+def redundant_executor_node(state: RedundantState):
+    """The core of the pattern: executes two identical agents in parallel and returns the first successful result."""
+    print("--- [Redundant Executor] Starting 2 agents in parallel... ---")
+    start_time = time.time()
+    
+    # We use a ThreadPoolExecutor to run our two agent invocations concurrently.
+    with ThreadPoolExecutor(max_workers=2) as executor:
+        # We submit two identical tasks to the executor.
+        futures = [executor.submit(simple_executor.invoke, {"input": state['input']}) for _ in range(2)]
+        
+        first_result = None
+        # The 'as_completed' iterator yields futures as they finish, in any order.
+        for future in as_completed(futures):
+            try:
+                # We try to get the result of the first completed future.
+                first_result = future.result()
+                print("--- [Redundant Executor] A task finished successfully. Cancelling others. ---")
+                # Once we have one success, our job is done. We can break the loop.
+                # In a more advanced implementation, one could attempt to cancel the other running futures.
+                break
+            except Exception as e:
+                # If one of the parallel tasks fails, we simply log it and wait for the other one.
+                print(f"--- [Redundant Executor] A task failed with error: {e}. Waiting for the other. ---")
+                pass
+    
+    execution_time = time.time() - start_time
+    log = f"Redundant execution completed in {execution_time:.2f}s."
+    print(f"--- [Redundant Executor] {log} ---")
+    
+    # We update the state based on whether we got a successful result.
+    if first_result:
+        return {"result": first_result, "performance_log": log, "error": None}
+    else:
+        # This case only happens if BOTH parallel executions fail.
+        return {"result": None, "performance_log": log, "error": "Both redundant executions failed."}
+
+# We assemble a very simple graph with just this one node.
+workflow = StateGraph(RedundantState)
+workflow.add_node("redundant_executor", redundant_executor_node)
+workflow.set_entry_point("redundant_executor")
+workflow.add_edge("redundant_executor", END)
+app = workflow.compile()
+
+# Run the resilient graph multiple times
+redundant_results = []
+for i in range(num_runs):
+    print(f"--- Running Redundant Agent (Attempt {i+1}/{num_runs}) ---")
+    start_time = time.time()
+    result = app.invoke({"input": "Please fetch the user's profile"})
+    end_time = time.time()
+    if result['error']:
+        redundant_results.append(("FAILURE", end_time - start_time, result['error']))
+        print(f"FAILURE in {end_time - start_time:.2f}s.\n")
+    else:
+        redundant_results.append(("SUCCESS", end_time - start_time, result['result']))
+        print(f"SUCCESS in {end_time - start_time:.2f}s.\n")
+
+Redundant Execution (Created by 
+Fareed Khan
+)
+The redundant_executor_node is the main part of our fault-tolerant system. The key logic is the for future in as_completed(futures) loop. as_completed gives us results in the order they finish, not the order they were started.
+
+This means as soon as the fastest of our two parallel agents succeeds, we grab its result and break the loop, effectively ignoring the slower or failed agent. The try...except block is also critical, it allows the system to gracefully handle a failure in one branch while waiting for the other to potentially succeed.
+
+Now for the final head-to-head analysis. We will run both a simple, single-agent system and our new redundant system five times each and compare their success rates and latency distributions.
+
+import numpy as np
+
+# and the results are stored in 'simple_results' and 'redundant_results' lists as in the notebook)
+# --- Reliability Analysis ---
+simple_successes = sum(1 for r in simple_results if r[0] == "SUCCESS")
+simple_rate = (simple_successes / len(simple_results)) * 100 if simple_results else 0
+redundant_successes = sum(1 for r in redundant_results if r[0] == "SUCCESS")
+redundant_rate = (redundant_successes / len(redundant_results)) * 100 if redundant_results else 0
+print("="*60)
+print("                  SYSTEM RELIABILITY ANALYSIS")
+print("="*60 + "\n")
+print("--- Simple Agent ---")
+print(f"Success Rate: {simple_rate:.1f}% ({simple_successes} successes, {len(simple_results) - simple_successes} failures)\n")
+print("--- Redundant Agent ---")
+print(f"Success Rate: {redundant_rate:.1f}% ({redundant_successes} successes, {len(redundant_results) - redundant_successes} failures)\n")
+
+if simple_rate > 0:
+    reliability_increase = ((redundant_rate - simple_rate) / simple_rate) * 100
+    print(f"Accuracy / Reliability Increase: +{reliability_increase:.1f}%\n")
+
+# --- Latency Analysis ---
+simple_latencies = [r[1] for r in simple_results if r[0] == "SUCCESS"]
+redundant_latencies = [r[1] for r in redundant_results if r[0] == "SUCCESS"]
+print("="*60)
+print("                  PERFORMANCE & LATENCY ANALYSIS")
+print("="*60 + "\n")
+print("--- Simple Agent (Successful Runs Only) ---")
+print(f"Latencies: {[round(l, 2) for l in simple_latencies]}")
+print(f"Average Latency: {np.mean(simple_latencies):.2f} seconds" if simple_latencies else "N/A")
+print(f"Max Latency (P100): {np.max(simple_latencies):.2f} seconds" if simple_latencies else "N/A")
+
+print("--- Redundant Agent (Successful Runs Only) ---")
+print(f"Latencies: {[round(l, 2) for l in redundant_latencies]}")
+print(f"Average Latency: {np.mean(redundant_latencies):.2f} seconds" if redundant_latencies else "N/A")
+print(f"Max Latency (P100): {np.max(redundant_latencies):.2f} seconds" if redundant_latencies else "N/A")
+This is the output we are getting …
+
+#### OUTPUT ####
+============================================================
+                  SYSTEM RELIABILITY ANALYSIS
+============================================================
+
+
+--- Simple Agent ---
+Success Rate: 60.0% (3 successes, 2 failures)
+--- Redundant Agent ---
+Success Rate: 80.0% (4 successes, 1 failure)
+Accuracy / Reliability Increase: +33.3%
+
+============================================================
+                  PERFORMANCE & LATENCY ANALYSIS
+============================================================
+--- Simple Agent (Successful Runs Only) ---
+Latencies: [6.21, 11.99, 5.98]
+Average Latency: 8.06 seconds
+Max Latency (P100): 11.99 seconds
+The system performance is unpredictable and directly impacted by long-tail latency events.
+
+--- Redundant Agent (Successful Runs Only) ---
+Latencies: [6.15, 6.02, 6.25, 5.88]
+Average Latency: 6.08 seconds
+Max Latency (P100): 6.25 seconds
+Redundant Execution provides two clear, measurable benefits:
+
+Massively Increased Reliability: By having a backup run in parallel, the system success rate increased from 60% to 80%. This is a huge gain in effective accuracy and user trust.
+Drastically Improved Latency Consistency: The redundant system’s worst-case performance (6.25s) was better than the simple system’s average performance (8.06s). It completely eliminated the 12-second long-tail latency event. This makes the user experience predictable and fast.
+For any mission-critical step in an agentic workflow, redundant execution is a powerful and cost-effective strategy to build a truly production-grade, resilient system.
+
+Parallel Query Expansion to Maximize Recall
+The most common problem in the Agentic RAG pattern is the vocabulary-mismatch problem. Users rarely know the precise keywords or jargon used in a specialized knowledge base.
+
+A simple query like “how to make models bigger and faster” might fail to retrieve a document that uses the technical terms “Mixture of Experts” and “FlashAttention”.
+
+Press enter or click to view image in full size
+
+Parallel Query Expansion (Created by 
+Fareed Khan
+)
+Parallel Query Expansion is the architectural solution for this. Instead of taking the user query at face value, we first use a powerful LLM to brainstorm multiple, diverse ways to search for the same underlying information. This “pre-retrieval” step can generate a whole portfolio of search queries in parallel, such as:
+
+A hypothetical document (HyDE) that answers the question.
+Several decomposed sub-questions.
+A list of extracted keywords and entities.
+By executing searches for all these queries in parallel and fusing the results, we dramatically increase the recall of our retrieval step, ensuring we find all the relevant pieces of evidence, even if they are described using different terminology.
+
+We will build and compare a Simple RAG system with an Advanced RAG system using this pattern to prove that it produces a measurably more complete and accurate final answer.
+
+First, we need to define the Pydantic model that will structure the output of our query expansion agent. This forces the LLM to generate all our desired query variations in a single, reliable call.
+
+from langchain_core.pydantic_v1 import BaseModel, Field
+from typing import List
+
+class ExpandedQueries(BaseModel):
+    """A Pydantic model defining a diverse set of expanded queries to improve retrieval recall."""
+    # A generated, paragraph-length hypothetical document that is semantically similar to the likely answer.
+    hypothetical_document: str = Field(description="A generated, paragraph-length hypothetical document that directly answers the user's question, which will be used for semantic search.", alias="hyde_query")
+    # A list of smaller, more specific questions that break down the original query.
+    sub_questions: List[str] = Field(description="A list of 2-3 smaller, more specific questions that break down the original query.")
+    # A list of the core keywords and entities for precise lexical search.
+    keywords: List[str] = Field(description="A list of 3-5 core keywords and entities extracted from the user's query.")
+By instructing our LLM to populate this structured object, we ensure we get a diverse portfolio of search strategies, a semantic one (hypothetical_document), a decompositional one (sub_questions), and a lexical one (keywords) all from a single, efficient LLM call.
+
+Now, we will build the RAG system as a LangGraph graph. The first node will be our query expansion agent.
+
+from typing import TypedDict, List, Optional
+from langchain_core.documents import Document
+
+class RAGGraphState(TypedDict):
+    original_question: str
+    expanded_queries: Optional[ExpandedQueries]
+    retrieved_docs: List[Document]
+    final_answer: str
+
+# Node 1: The Query Expansion Agent
+query_expansion_prompt = ChatPromptTemplate.from_messages([
+    ("system", "You are a query expansion specialist. Your goal is to transform a user's question into a diverse set of search queries to maximize retrieval recall. Generate a hypothetical document, sub-questions, and keywords."),
+    ("human", "Please expand the following question: {question}")
+])
+
+# The chain pipes the prompt to the LLM and structures its output using our Pydantic model.
+query_expansion_chain = query_expansion_prompt | llm.with_structured_output(ExpandedQueries)
+def query_expansion_node(state: RAGGraphState):
+    """The first node in our graph: takes the original question and generates a set of expanded queries."""
+    print("--- [Expander] Generating parallel queries... ---")
+    expanded_queries = query_expansion_chain.invoke({"question": state['original_question']})
+    return {"expanded_queries": expanded_queries}
+The query_expansion_node is the "thinking" step of our advanced retrieval process. It takes the user raw query and, instead of immediately searching, it first uses an LLM to brainstorm a more robust set of queries, preparing the ground for a much more comprehensive search.
+
+The next node will execute all these generated queries in parallel.
+
+from concurrent.futures import ThreadPoolExecutor
+
+def retrieval_node(state: RAGGraphState):
+    """The second node: takes the expanded queries and executes them all in parallel."""
+    print("--- [Retriever] Executing parallel searches... ---")
+    
+    # We create a single list of all the queries to be executed.
+    all_queries = []
+    expanded = state['expanded_queries']
+    all_queries.append(expanded.hypothetical_document)
+    all_queries.extend(expanded.sub_questions)
+    all_queries.extend(expanded.keywords)
+    
+    all_docs = []
+
+    # We use a ThreadPoolExecutor to run all the retriever invocations concurrently.
+    with ThreadPoolExecutor(max_workers=5) as executor:
+        results = executor.map(retriever.invoke, all_queries)
+        for docs in results:
+            all_docs.extend(docs)
+    
+    # The final step is to deduplicate the retrieved documents to create a clean, unique context.
+    unique_docs = {doc.page_content: doc for doc in all_docs}.values()
+    print(f"--- [Retriever] Found {len(unique_docs)} unique documents from {len(all_queries)} queries. ---")
+    return {"retrieved_docs": list(unique_docs)}
+The retrieval_node is where the parallel execution happens. The use of ThreadPoolExecutor and executor.map is the key. It takes our list of 7-9 expanded queries and dispatches them to our vector store simultaneously. This "scatter-gather" approach ensures that we get the combined benefit of all search perspectives without a linear increase in latency.
+
+Finally, we assemble the graph, connecting the expansion, retrieval, and final generation nodes in sequence.
+
+from langgraph.graph import StateGraph, END
+
+workflow = StateGraph(RAGGraphState)
+
+# Add the nodes to the graph.
+workflow.add_node("expand_queries", query_expansion_node)
+workflow.add_node("retrieve_docs", retrieval_node)
+workflow.add_node("generate_answer", generation_node)
+
+# Define the linear workflow.
+workflow.set_entry_point("expand_queries")
+workflow.add_edge("expand_queries", "retrieve_docs")
+workflow.add_edge("retrieve_docs", "generate_answer")
+workflow.add_edge("generate_answer", END)
+Press enter or click to view image in full size
+
+Parallel Query Expansion (Created by 
+Fareed Khan
+)
+Now for the final head-to-head analysis. We will give both our Simple RAG and Advanced RAG systems the same, intentionally vague query and compare the quality of their retrieved context and their final answers.
+
+# The user's query uses general terms ("big and fast") instead of the technical jargon in the KB.
+user_query = "How do modern AI systems get so big and fast at the same time? I've heard about attention but I'm not sure how it's optimized."
+
+# --- Run the Simple RAG System ---
+print("--- [SIMPLE RAG] Retrieving documents...")
+# We intercept the retrieval step to inspect what the simple system finds.
+simple_retrieved_docs = retriever.invoke(user_query)
+print(f"--- [SIMPLE RAG] Documents Retrieved: {len(simple_retrieved_docs)}")
+simple_rag_answer = simple_rag_chain.invoke(user_query)
+
+# --- Run the Advanced RAG System ---
+# --- Final Analysis ---
+print("\n" + "="*60)
+print("            RETRIEVED DOCUMENTS COMPARISON")
+print("="*60)
+print(f"\n--- Simple RAG Retrieved {len(simple_retrieved_docs)} document(s) ---")
+for i, doc in enumerate(simple_retrieved_docs):
+    print(f"{i+1}. {doc.page_content}")
+print(f"\n--- Advanced RAG Retrieved {len(advanced_rag_result['retrieved_docs'])} document(s) ---")
+for i, doc in enumerate(advanced_rag_result['retrieved_docs']):
+    print(f"{i+1}. {doc.page_content}")
+print("\n" + "="*60)
+print("                     ACCURACY & QUALITY ANALYSIS")
+This is the output we have now …
+
+#### OUTPUT ####
+============================================================
+            RETRIEVED DOCUMENTS COMPARISON
+============================================================
+
+--- Simple RAG Retrieved 1 document(s) ---
+1. **Multi-headed Attention Mechanism**: The core component of the Transformer architecture is the multi-headed self-attention mechanism...
+--- Advanced RAG Retrieved 3 document(s) ---
+1. **FlashAttention Optimization**: ...FlashAttention is an I/O-aware algorithm that reorders the computation to reduce the number of read/write operations...
+2. **Mixture of Experts (MoE) Layers**: ...a router network dynamically selects a small subset of 'expert' sub-networks to process each input token...
+3. **Multi-headed Attention Mechanism**: The core component of the Transformer architecture...
+So, ths analysis drives some conclusion for us, let’s understand it …
+
+Advanced system succeeded because the query_expansion_node bridged the semantic gap. Its hypothetical document and targeted sub-queries introduced missing technical termsMixture of Experts, FlashAttention, scaling, optimizationwhich enabled retrieval of the additional crucial documents.
+The retrieved-document comparison shows a recall improvement. By capturing all three relevant documents, the advanced system provided complete context, allowing the generator to produce a comprehensive, technically accurate, and higher-quality answer.
+Sharded & Scattered Retrieval
+As a knowledge base grows from thousands to millions or billions of documents …
+
+a single, monolithic vector store becomes a major bottleneck. Search latency increases, and the index becomes unwieldy to manage and update.
+
+Press enter or click to view image in full size
+
+Scattered Retrieval (Created by 
+Fareed Khan
+)
+The architectural solution for this issue is Sharded & Scattered Retrieval. The core idea is that, instead of having one massive index, we partition (or shard) our knowledge base into multiple, smaller, independent vector stores.
+
+These shards can be organized by any logical division, such as topic, date, or data source. When a user query arrives, a central orchestrator “scatters” the query to all shards, which perform their searches in parallel. The results are then gathered and re-ranked to find the globally best documents.
+
+We will build a simulated two-shard system (Engineering vs. Marketing) and compare it to a monolithic system to understand the benefits in both latency and answer quality.
+
+First, we need to create our knowledge base shards. We’ll create two separate lists of documents, each with distinct, domain-specific information.
+
+from langchain_core.documents import Document
+
+# A list of documents for our simulated 'Engineering' knowledge base shard.
+eng_docs = [
+    Document(page_content="The QuantumLeap V3 processor utilizes a 3nm process node and features a dedicated AI accelerator core with 128 tensor units. API endpoint `/api/v3/status` provides real-time thermal throttling data.", metadata={"source": "eng-kb"}),
+    Document(page_content="Firmware update v2.1 for the Aura Smart Ring optimizes the photoplethysmography (PPG) sensor algorithm for more accurate sleep stage detection. The update is deployed via the mobile app.", metadata={"source": "eng-kb"}),
+    Document(page_content="The Smart Mug's heating element is a nickel-chromium coil controlled by a PID controller. It maintains temperature within +/- 1 degree Celsius. Battery polling is done via the `getBattery` function.", metadata={"source": "eng-kb"})
+]
+# A list of documents for our simulated 'Marketing' knowledge base shard.
+mkt_docs = [
+    Document(page_content="Press Release: Unveiling the QuantumLeap V3, the AI processor that redefines speed. 'It's a game-changer for creative professionals,' says CEO Jane Doe. Available Q4.", metadata={"source": "mkt-kb"}),
+    Document(page_content="Product Page: The Aura Smart Ring is your personal wellness companion. Crafted from aerospace-grade titanium, it empowers you to unlock your full potential by understanding your body's signals.", metadata={"source": "mkt-kb"}),
+    Document(page_content="Blog Post: 'Five Ways Our Smart Mug Supercharges Your Morning Routine.' The perfect temperature, from the first sip to the last, means your coffee is always perfect.", metadata={"source": "mkt-kb"})
+]
+We have intentionally created two distinct knowledge domains. Information about the QuantumLeap V3 technical specifications is only in the eng_docs, while information about its marketing positioning is only in the mkt_docs. This separation will allow us to test if our systems can correctly retrieve information from both sources.
+
+Now, let’s create our two vector store shards from these documents.
+
+from langchain_community.vectorstores import FAISS
+
+# We create two separate, independent FAISS vector stores.
+eng_vectorstore = FAISS.from_documents(eng_docs, embedding=embeddings)
+mkt_vectorstore = FAISS.from_documents(mkt_docs, embedding=embeddings)
+
+# We then create a retriever for each shard.
+eng_retriever = eng_vectorstore.as_retriever(search_kwargs={"k": 2})
+mkt_retriever = mkt_vectorstore.as_retriever(search_kwargs={"k": 2})
+print(f"Knowledge Base shards created: Engineering KB ({len(eng_docs)} docs), Marketing KB ({len(mkt_docs)} docs).")
+With our two shards, eng_retriever and mkt_retriever, we now have our distributed knowledge base. Each retriever operates only on its small, specialized index.
+
+Now, let’s build our sharded RAG system. The core of this system is a LangGraph node that scatters the query to our two shards in parallel and then gathers the results.
+
+from typing import TypedDict, List
+from concurrent.futures import ThreadPoolExecutor
+import time
+
+
+class ShardedRAGState(TypedDict):
+    question: str
+    retrieved_docs: List[Document]
+    final_answer: str
+
+def parallel_retrieval_node(state: ShardedRAGState):
+    """The core of the pattern: scatters the query to all shards in parallel and gathers the results."""
+    print("--- [Meta-Retriever] Scattering query to Engineering and Marketing shards in parallel... ---")
+    
+    # We use a ThreadPoolExecutor to run the two retrieval invocations concurrently.
+    with ThreadPoolExecutor(max_workers=2) as executor:
+        # We create a simple helper to add a simulated latency to each shard search.
+        # This simulates the real-world time taken to search a smaller index.
+        def p_retrieval(retriever):
+            time.sleep(0.5) 
+            return retriever.invoke(state['question'])
+        
+        # We submit both retrieval tasks to the executor.
+        futures = [executor.submit(p_retrieval, retriever) for retriever in [eng_retriever, mkt_retriever]]
+        
+        all_docs = []
+        for future in futures:
+            all_docs.extend(future.result())
+    
+    # The "gather" step: we fuse and deduplicate the results from all shards.
+    # In a real system, a more sophisticated re-ranking step would happen here.
+    unique_docs = list({doc.page_content: doc for doc in all_docs}.values())
+    print(f"--- [Meta-Retriever] Gathered {len(unique_docs)} unique documents from 2 shards. ---")
+    return {"retrieved_docs": unique_docs}
+
+# We assemble the full graph with a generation node.
+from langgraph.graph import StateGraph, END
+
+
+workflow = StateGraph(ShardedRAGState)
+workflow.add_node("parallel_retrieval", parallel_retrieval_node)
+workflow.add_node("generate_answer", generation_node)
+workflow.set_entry_point("parallel_retrieval")
+workflow.add_edge("parallel_retrieval", "generate_answer")
+workflow.add_edge("generate_answer", END)
+sharded_rag_app = workflow.compile()
+
+Scattered Retrieval (Created by 
+Fareed Khan
+)
+We are using ThreadPoolExecutor as it performs the scatter operation. It sends the same query to both the eng_retriever and mkt_retriever at the same time. The gather operation happens when we collect the results from the futures and then deduplicate them. This ensures we get a comprehensive, unified context from our distributed knowledge base.
+
+For the final head-to-head analysis. We will run our Monolithic RAG (with simulated high latency) and our Sharded RAG on a query that requires information from both shards to be answered completely.
+
+# The query contains strong marketing keywords ('game-changer') and a specific technical question ('API status endpoint').
+user_query = "I heard the new QuantumLeap V3 is a 'game-changer for creative professionals'. Can you tell me more about it, and is there an API endpoint to check its status?"
+
+# --- Run Monolithic RAG ---
+print("--- [MONOLITHIC RAG] Starting run... ---")
+start_time = time.time()
+
+monolithic_answer = monolithic_rag_chain.invoke(user_query)
+monolithic_time = time.time() - start_time
+
+# --- Run Sharded RAG ---
+print("\n--- [SHARDED RAG] Starting run... ---")
+start_time = time.time()
+inputs = {"question": user_query}
+
+sharded_time = time.time() - start_time
+
+# --- Final Analysis ---
+print("\n" + "="*60)
+print("                      ACCURACY & RECALL ANALYSIS")
+print("="*60 + "\n")
+
+
+print("="*60)
+print("                      PERFORMANCE ANALYSIS")
+print("="*60 + "\n")
+print(f"Monolithic RAG Total Time: {monolithic_time:.2f} seconds")
+print(f"Sharded RAG Total Time: {sharded_time:.2f} seconds\n")
+latency_improvement = ((monolithic_time - sharded_time) / monolithic_time) * 100
+print(f"Latency Improvement: {latency_improvement:.0f}%\n")
+This is the output we are getting …
+
+#### OUTPUT ####
+============================================================
+                      ACCURACY & RECALL ANALYSIS
+============================================================
+
+
+**Monolithic System:** Retrieved 3 documents. While it found the two correct documents, it also retrieved an irrelevant document about the 'Aura Smart Ring'. The strong semantic similarity of 'empowers you to unlock your full potential' to 'game-changer for creative professionals' pulled in this unrelated document. This noise can degrade the quality of the final answer.
+**Sharded System:** Retrieved 2 documents. The parallel search was more precise. The marketing shard found the press release, and the engineering shard found the technical specs. It correctly ignored all irrelevant documents from other product lines. This resulted in a cleaner, more focused context for the generator.
+**Conclusion:** The sharded architecture improved retrieval precision by isolating knowledge domains. This prevents context pollution from irrelevant but semantically similar documents, leading to a more accurate and trustworthy final answer.
+
+============================================================
+                      PERFORMANCE ANALYSIS
+============================================================
+Monolithic RAG Total Time: 6.89 seconds
+Sharded RAG Total Time: 4.95 seconds
+Latency Improvement: 28%
+The final analysis reveals the two advantages of the Sharded & Scattered Retrieval architecture.
+
+The query marketing component resolved cleanly in the marketing shard, while the technical component matched the engineering shard. The monolithic index, exposed to all content, was disrupted by semantically similar but irrelevant marketing text, reducing context quality.
+The sharded system ran 28% faster because parallel queries executed on smaller, domain-scoped indexes. This design scales cleanly: monolithic retrieval slows as the corpus expands, whereas sharded latency stays stable, governed only by the size of the largest shard.
+Parallel Hybrid Search Fusion for High-Fidelity Context
+Vector search (semantic) is good at understanding the conceptual meaning of a query, but it can sometimes miss documents that contain specific, exact keywords. Keyword search (lexical), on the other hand, is perfect for finding those exact terms but fails to understand conceptual relationships.
+
+The Parallel Hybrid Search Fusion architecture provides a solution by giving us the best of both approaches.
+
+It executes a vector search and a keyword search simultaneously. It then “fuses” their unique findings into a single, combined result set.
+
+Press enter or click to view image in full size
+
+Hybrid Search (Created by 
+Fareed Khan
+)
+This pattern is important for any RAG system that deals with a mix of prose and specific identifiers (product codes, error messages, legal case numbers).
+
+We will build and compare three RAG systems Vector-Only, Keyword-Only, and Hybrid to demonstrate how the hybrid approach retrieves a superior context and generates a more complete and accurate final answer.
+
+First, we need to build our two distinct retrieval mechanisms. We’ll start with the familiar vector retriever.
+
+from langchain_community.vectorstores import FAISS
+from langchain_community.embeddings import HuggingFaceEmbeddings
+
+# We create our standard FAISS vector store for semantic search.
+vector_store = FAISS.from_documents(kb_docs, embedding=embeddings)
+vector_retriever = vector_store.as_retriever(search_kwargs={"k": 2})
+This is our standard semantic search engine, powered by vector embeddings. It’s excellent at understanding the “gist” of a query.
+
+Next, we will build a classic keyword retriever from scratch using scikit-learn TfidfVectorizer. This will be our lexical search engine.
+
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+import numpy as np
+from langchain_core.retrievers import BaseRetriever
+from langchain_core.callbacks import CallbackManagerForRetrieverRun
+from typing import List
+from langchain_core.documents import Document
+
+class TfidfRetriever(BaseRetriever):
+    """A custom LangChain retriever that uses TF-IDF for keyword-based search."""
+    # We store the fitted vectorizer and the original documents.
+    vectorizer: TfidfVectorizer
+    docs: List[Document]
+    k: int = 2
+    class Config:
+        arbitrary_types_allowed = True
+    def _get_relevant_documents(self, query: str, *, run_manager: CallbackManagerForRetrieverRun) -> List[Document]:
+        # Transform the query into a TF-IDF vector.
+        query_vec = self.vectorizer.transform([query])
+        # Get the pre-computed TF-IDF vectors for all documents.
+        doc_vectors = self.vectorizer.transform([doc.page_content for doc in self.docs])
+        
+        # Calculate the cosine similarity between the query and all documents.
+        similarities = cosine_similarity(query_vec, doc_vectors).flatten()
+        
+        # Get the indices of the top 'k' most similar documents.
+        top_k_indices = np.argsort(similarities)[-self.k:][::-1]
+        
+        # Return the corresponding Document objects.
+        return [self.docs[i] for i in top_k_indices]
+
+# We fit our TF-IDF vectorizer on the content of our knowledge base.
+vectorizer = TfidfVectorizer().fit([doc.page_content for doc in kb_docs])
+
+# We create an instance of our custom retriever.
+keyword_retriever = TfidfRetriever(vectorizer=vectorizer, docs=kb_docs, k=2)
+The TfidfRetriever is our lexical search specialist. Unlike the vector retriever, it doesn't understand meaning; it operates purely on word frequencies. It will finding documents that contain the exact, literal keywords from a user's query, even if those keywords are rare or have little semantic weight.
+
+Now, let’s build our Hybrid RAG system. The core of this system is a LangGraph node that runs our two retrievers in parallel and then fuses their results.
+
+from langgraph.graph import StateGraph, END
+from typing import TypedDict, List
+
+class HybridRAGState(TypedDict):
+    question: str
+    retrieved_docs: List[Document]
+    final_answer: str
+
+def parallel_retrieval_node(state: HybridRAGState):
+    """The core of the pattern: runs vector and keyword search in parallel and fuses the results."""
+    print("--- [Hybrid Retriever] Running Vector and Keyword searches in parallel... ---")
+    
+    # We invoke both retrievers with the same question. Because they are independent,
+    # these two calls can be executed concurrently in a real, multi-threaded system.
+    vector_docs = vector_retriever.invoke(state['question'])
+    keyword_docs = keyword_retriever.invoke(state['question'])
+    
+    # The "Fusion" step: we combine the two lists of documents and then deduplicate them.
+    all_docs = vector_docs + keyword_docs
+    unique_docs = list({doc.page_content: doc for doc in all_docs}.values())
+    
+    print(f"--- [Hybrid Retriever] Fused results: Found {len(unique_docs)} unique documents. ---")
+    return {"retrieved_docs": unique_docs}
+
+# We assemble the full graph with a generation node.
+workflow = StateGraph(HybridRAGState)
+workflow.add_node("parallel_retrieval", parallel_retrieval_node)
+workflow.add_node("generate_answer", generation_node)
+workflow.set_entry_point("parallel_retrieval")
+workflow.add_edge("parallel_retrieval", "generate_answer")
+workflow.add_edge("generate_answer", END)
+hybrid_rag_app = workflow.compile()
+Press enter or click to view image in full size
+
+Parallel Hybrid Search (Created by 
+Fareed Khan
+)
+The parallel_retrieval_node is where the fusion happens. It runs both the vector_retriever and the keyword_retriever and then combines their outputs. The simple deduplication list({doc.page_content: doc for doc in all_docs}.values()) is a basic but effective fusion strategy.
+
+It make sure that if both retrievers find the same document, it only appears once, and if they find different documents, all unique findings are preserved in the final context.
+
+Now for the final head-to-head analysis. We will create a specific query that is designed to make the single-search systems fail. It will contain both a high-level semantic concept (“power saving efforts”) and a very specific, rare keyword (ERR_THROTTLE_900). A complete answer requires information that can only be found by combining the strengths of both search methods.
+
+# The query has both a conceptual part and a specific keyword part.
+user_query = "What are our company's power saving efforts, and what is the error code for QLeap-V4 overheating?"
+
+
+# --- Run Vector-Only RAG ---
+vector_answer = rag_chain_vector.invoke(user_query)
+# --- Run Keyword-Only RAG ---
+keyword_answer = rag_chain_keyword.invoke(user_query)
+# --- Run Hybrid RAG ---
+hybrid_answer = hybrid_result['final_answer']
+
+# --- Final Analysis ---
+print("\n" + "="*60)
+print("                     ACCURACY & QUALITY ANALYSIS")
+print("="*60 + "\n")
+print("The User's Goal: The user asked two distinct questions: 1. What are our power saving efforts? (A semantic question) and 2. What is the error code for overheating? (A specific/lexical question).\n")
+print("-" * 60)
+print("Vector-Only RAG Performance:")
+print("- Result: FAILED to answer completely.")
+print("- Final Answer:", vector_answer)
+
+print("Keyword-Only RAG Performance:")
+print("- Result: FAILED to answer completely.")
+print("- Final Answer:", keyword_answer)
+
+print("-" * 60)
+print("Hybrid Search RAG Performance:")
+print("- Final Answer:", hybrid_answer)
+This is what we get for this pattern workflow …
+
+#### OUTPUT ####
+============================================================
+                     ACCURACY & QUALITY ANALYSIS
+============================================================
+
+The User Goal: The user asked two distinct questions: 1. What are our power saving efforts? (A semantic question) and 2. What is the error code for overheating? (A specific/lexical question).
+------------------------------------------------------------
+Vector-Only RAG Performance:
+- Result: FAILED to answer completely.
+- Final Answer: Based on the provided context, the company power saving effort is an initiative called Project 'Titan', which is focused on developing energy-efficient hardware to reduce power consumption in data centers and is part of the green computing strategy. The context does not contain information about an error code for QLeap-V4 overheating.
+- Reason: It excelled at the semantic part, finding documents about 'Project Titan' by matching the concept of 'power saving efforts' to 'energy-efficient hardware'. However, the specific error code 'ERR_THROTTLE_900' was not semantically close enough to the query to be retrieved. The agent correctly stated it could not find the answer.
+
+------------------------------------------------------------
+Keyword-Only RAG Performance:
+- Result: FAILED to answer completely.
+- Final Answer: Based on the context, the error code for QLeap-V4 overheating is 'ERR_THROTTLE_900'. Project 'Titan' is an initiative to reduce power consumption.
+- Reason: It excelled at the lexical part, perfectly matching the keyword 'ERR_THROTTLE_900' in the query to the document containing it. However, it missed the second, more conceptual document about 'Project Titan' being part of the 'green computing strategy' because the keywords didnt overlap strongly.
+
+------------------------------------------------------------
+Hybrid Search RAG Performance:
+- Result: SUCCESS. Answered both parts of the question accurately.
+- Final Answer: Our companys power saving effort is called Project 'Titan', which is a core part of our green computing strategy aimed at developing energy-efficient hardware to reduce data center power consumption. The official error code for QLeap-V4 overheating is 'ERR_THROTTLE_900'.
+- Reason: The parallel execution and fusion step provided the best of both worlds. The vector search contributed the two documents about 'Project Titan', and the keyword search contributed the document with the specific error code. By combining these unique results into a single, rich context, the generator had all the information it needed to construct a complete and correct answer.
+The final analysis provides a definitive verdict on the superiority of the hybrid approach.
+
+Both the Vector-Only and Keyword-Only systems produced incomplete, partially correct answers. Each was a specialist that could only see one part of the problem.
+The vector search understood the concept of “power saving” but missed the specific keyword of the error code. The keyword search found the error code but missed the conceptual documents about the company’s sustainability strategy.
+The Hybrid Search system succeeded because it is not a specialist; it is a generalist built from specialists. Its parallel “scatter-gather” approach ensured that it captured the unique findings from both retrieval methods.
+The fusion step created a single, comprehensive context that contained all the necessary facts, allowing the final generator agent to easily synthesize a complete and accurate answer that addressed both parts of the user’s complex query.
+Parallel Context Pre-processing for Accuracy Gains
+The RAG patterns we have explored so far have focused on improving the initial retrieval step finding more of the right documents. This pattern, Parallel Context Pre-processing, focuses on what happens after retrieval. A common strategy for maximizing recall is to retrieve a large number of candidate documents (k=10 or more).
+
+However, passing this large, often noisy, collection of documents directly into the final generator LLM context window is problematic.
+
+Press enter or click to view image in full size
+
+Parallel Context processing (Created by 
+Fareed Khan
+)
+It's slow, expensive (due to high token counts), and can actually harm accuracy by overwhelming the model with irrelevant information the "lost in the middle" problem.
+
+The architectural solution is to introduce an intermediate “distillation” step. After retrieving a large set of candidate documents, we use multiple, small, parallel LLM calls to process them. Each call acts as a highly-focused filter, checking a single document for its relevance to the specific question. Only the documents that pass this check are included in the final, “distilled” context that is sent to the main generator.
+
+We will build and compare two RAG systems one that uses a large, raw context and another that uses this parallel pre-processing step to demonstrate these measurable improvements.
+
+First, let’s define the Pydantic model that will structure the output of our parallel “distiller” agents.
+
+from langchain_core.pydantic_v1 import BaseModel, Field
+
+class RelevancyCheck(BaseModel):
+    """A Pydantic model for the structured output of our distiller/filter agent."""
+    # A clear, binary decision on the document's relevance.
+    is_relevant: bool = Field(description="True if the document contains information that directly helps answer the question.")
+    # A concise justification for the decision.
+    brief_explanation: str = Field(description="A one-sentence explanation of why the document is or is not relevant.")
+This RelevancyCheck schema is the contract for our distiller agents. By forcing each parallel call to return a simple is_relevant boolean, we create a fast and reliable filtering mechanism. The brief_explanation is invaluable for debugging and understanding why a document was included or excluded.
+
+Now, we define the GraphState and the core node of our advanced system: the distill_context_node. This node will orchestrate the parallel pre-processing.
+
+from typing import TypedDict, List
+from langchain_core.documents import Document
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+class RAGGraphState(TypedDict):
+    question: str
+    raw_docs: List[Document]
+    distilled_docs: List[Document]
+    final_answer: str
+
+# This is the chain that will be run in parallel for each document.
+distiller_prompt = ChatPromptTemplate.from_template(
+    "Given the user's question, determine if the following document is relevant for answering it. "
+    "Provide a brief explanation.\n\n"
+    "Question: {question}\n\nDocument:\n{document}"
+)
+
+distiller_chain = distiller_prompt | llm.with_structured_output(RelevancyCheck)
+
+def distill_context_node(state: RAGGraphState):
+    """The core of the pattern: scans all retrieved documents in parallel to filter for relevance."""
+    print(f"--- [Distiller] Pre-processing {len(state['raw_docs'])} raw documents in parallel... ---")
+    
+    relevant_docs = []
+    # We use a ThreadPoolExecutor to run the 'distiller_chain' on each document concurrently.
+    with ThreadPoolExecutor(max_workers=5) as executor:
+        # We create a future for each document to be checked.
+        future_to_doc = {executor.submit(distiller_chain.invoke, {"question": state['question'], "document": doc.page_content}): doc for doc in state['raw_docs']}
+        for future in as_completed(future_to_doc):
+            doc = future_to_doc[future]
+            try:
+                result = future.result()
+                # If the distiller agent marks the document as relevant, we keep it.
+                if result.is_relevant:
+                    print(f"  - Doc '{doc.metadata['source']}' IS relevant. Reason: {result.brief_explanation}")
+                    relevant_docs.append(doc)
+                else:
+                    # Otherwise, we discard it.
+                    print(f"  - Doc '{doc.metadata['source']}' is NOT relevant. Reason: {result.brief_explanation}")
+            except Exception as e:
+                print(f"Error processing doc {doc.metadata['source']}: {e}")
+    
+    print(f"--- [Distiller] Distilled context down to {len(relevant_docs)} documents. ---")
+    return {"distilled_docs": relevant_docs}
+The distill_context_node is our "quality control" station. After a high-recall retrieval step fetches a large number of raw_docs, this node acts as a filter. The ThreadPoolExecutor fans out the work, sending each document to its own small, independent LLM call.
+
+This parallel processing is key, it means the time to distill 10 documents is roughly the same as the time to distill one. The node then gathers only the documents that were deemed is_relevant, producing a much smaller, cleaner, and more potent distilled_docs list for the final generator.
+
+Now, we assemble the full graph, placing our new distill node between the retrieve and generate steps.
+
+from langgraph.graph import StateGraph, END
+
+workflow = StateGraph(RAGGraphState)
+
+# Add the three nodes of our pipeline.
+workflow.add_node("retrieve", retrieval_node)
+workflow.add_node("distill", distill_context_node)
+workflow.add_node("generate", generation_node)
+
+# Define the linear workflow: Retrieve -> Distill -> Generate.
+workflow.set_entry_point("retrieve")
+workflow.add_edge("retrieve", "distill")
+workflow.add_edge("distill", "generate")
+workflow.add_edge("generate", END)
+advanced_rag_app = workflow.compile()
+
+Parallel Context Pre-processing (Created by 
+Fareed Khan
+)
+Now for the final head-to-head analysis. We will run both the Simple (large context) and Advanced (distilled context) RAG systems on the same query and meticulously compare their accuracy, latency, and token consumption.
+
+import tiktoken
+
+def count_tokens(text: str) -> int:
+    """A helper function to count tokens for our cost analysis."""
+    encoding = tiktoken.get_encoding("cl100k_base")
+    return len(encoding.encode(text))
+
+# --- Analysis Setup ---
+context_tokens_simple = count_tokens(context_simple)
+context_tokens_advanced = count_tokens(context_advanced)
+token_improvement = (context_tokens_simple - context_tokens_advanced) / context_tokens_simple * 100
+latency_improvement = (gen_time_simple - gen_time_advanced) / gen_time_simple * 100
+
+# --- Print Results ---
+print("="*60)
+print("                  ACCURACY & QUALITY ANALYSIS")
+print("="*60 + "\n")
+print("**Simple RAG's Answer (from Large, Noisy Context):**")
+print(f'"{simple_answer}"\n')
+print("**Advanced RAG's Answer (from Distilled, Focused Context):**")
+print(f'"{advanced_answer}"\n')
+
+print("="*60)
+print("                 LATENCY & COST (TOKEN) ANALYSIS")
+print("="*60 + "\n")
+print("| Metric                      | Simple RAG (Large Context) | Advanced RAG (Distilled Context) | Improvement |")
+print("|-----------------------------|----------------------------|----------------------------------|-------------|")
+print(f"| Context Size (Tokens)       | {context_tokens_simple:<26} | {context_tokens_advanced:<32} | **-{token_improvement:.0f}%**      |")
+print(f"| Final Generation Time       | {gen_time_simple:<24.2f} seconds | {gen_time_advanced:<32.2f} seconds | **-{latency_improvement:.0f}%**      |")
+Let’s understand the analysis …
+
+#### OUTPUT ####
+============================================================
+                  ACCURACY & QUALITY ANALYSIS
+============================================================
+
+**Simple RAG Answer (from Large, Noisy Context):**
+"Based on the context, a power supply unit of at least 1200W is recommended for the QLeap-V4 processor. The QLeap-V3 chip had a recommended power supply of 800W."
+**Advanced RAG Answer (from Distilled, Focused Context):**
+"Based on the provided context, a power supply unit of at least 1200W is recommended for the QLeap-V4 processor."
+
+**Analysis:** The Simple RAG answer, while technically correct, includes irrelevant information about the previous generation product (QLeap-V3). This happened because the large, noisy context included documents about both products. The Advanced RAG answer is **more accurate and precise**. The parallel distillation step correctly filtered out the irrelevant document about the QLeap-V3, providing a clean, focused context to the generator, which then produced a perfect, concise answer.
+============================================================
+                 LATENCY & COST (TOKEN) ANALYSIS
+============================================================
+| Metric                      | Simple RAG (Large Context) | Advanced RAG (Distilled Context) | Improvement |
+|-----------------------------|----------------------------|----------------------------------|-------------|
+| Context Size (Tokens)       | 284                        | 29                               | **-90%**      |
+| Final Generation Time       | 7.89 seconds               | 2.15 seconds                     | **-73%**      |
+The final analysis provides a clear, data-driven verdict. The Parallel Context Pre-processing pattern delivered a trifecta of significant improvements.
+
+Higher Accuracy: The qualitative analysis shows the advanced system produced a more precise and focused answer. By filtering out the distracting document about the older “QLeap-V3,” the distillation step prevented the final generator from including irrelevant information. This is a direct win for answer quality.
+Lower Cost: The token analysis is dramatic. We reduced the context fed to our final, expensive generator by a massive 90%. In a production system processing millions of queries, this translates directly into significant cost savings on LLM inference.
+Lower Latency: The reduction in context size had a direct impact on the performance of the final generation step, making it 73% faster. While the distillation step itself adds some overhead, this is often more than offset by the savings in the final, most computationally intensive step, leading to a faster overall time-to-answer for the user.
+Multi-Hop Retrieval for Deep Reasoning
+Many complex user queries are not single questions at all, they are comparative, multi-step research tasks that require synthesizing information from multiple, disparate documents.
+
+Press enter or click to view image in full size
+
+Parallel Multi-HOP (Created by 
+Fareed Khan
+)
+The Parallel Multi-Hop Retrieval architecture is the solution. This pattern elevates the RAG system into a true research agent. The workflow mirrors how a human researcher would tackle a complex question:
+
+Decompose: A high-level Meta-Agent first analyzes the complex user query and breaks it down into several simpler, independent sub-questions.
+Scatter (Parallel Retrieval): Each sub-question is dispatched to its own dedicated Retrieval Agent. These agents run in parallel, each performing a standard RAG process to find the answer to its specific sub-question.
+Gather & Synthesize: The Meta-Agent collects the answers to all the sub-questions and then performs a final reasoning step to synthesize them into a single, comprehensive answer to the original complex query.
+We will build and compare a Simple RAG system with a Multi-Hop RAG system on a comparative question that is impossible to answer with a single retrieval. We will demonstrate that only the Multi-Hop system can successfully gather the necessary evidence to provide an accurate and insightful final answer.
+
+First, we need to define the Pydantic model for our initial decomposition step. This will structure the output of our Meta-Agent’s planning phase.
+
+from langchain_core.pydantic_v1 import BaseModel, Field
+from typing import List
+
+class SubQuestions(BaseModel):
+    """A Pydantic model for the output of the Decomposer agent, holding a list of independent sub-questions."""
+    questions: List[str] = Field(description="A list of 2-3 simple, self-contained questions that, when answered together, will fully address the original complex query.")
+This SubQuestions model is the contract for our Meta-Agent first action. It forces the LLM to break down the complex query into a list of simple, answerable questions, which is the foundational step for our parallel "divide and conquer" strategy.
+
+Now, we will build our advanced Multi-Hop system as a LangGraph graph. The first node will be the "Decomposer", our Meta-Agent's planning persona.
+
+from typing import TypedDict, List, Dict, Annotated
+import operator
+
+class MultiHopRAGState(TypedDict):
+    original_question: str
+    sub_questions: List[str]
+    # This dictionary will store the answer to each sub-question, with the question as the key.
+    sub_question_answers: Annotated[Dict[str, str], operator.update]
+    final_answer: str
+
+# Node 1: Decomposer (The Meta-Agent's first step)
+decomposer_prompt = ChatPromptTemplate.from_template(
+    "You are a query decomposition expert. Your job is to break down a complex question into simple, independent sub-questions that can be answered by a retrieval system. "
+    "Do not try to answer the questions yourself.\n\n"
+    "Question: {question}"
+)
+
+decomposer_chain = decomposer_prompt | llm.with_structured_output(SubQuestions)
+
+def decomposer_node(state: MultiHopRAGState):
+    """Takes the original complex question and decomposes it into a list of sub-questions."""
+    print("--- [Meta-Agent] Decomposing complex question... ---")
+    result = decomposer_chain.invoke({"question": state['original_question']})
+    print(f"--- [Meta-Agent] Generated {len(result.questions)} sub-questions. ---")
+    return {"sub_questions": result.questions}
+The decomposer_node is the strategic brain of our research agent. It doesn't try to answer the query. Its sole, critical job is to analyze the user's intent and break it down into a set of independent, parallelizable research tasks.
+
+The next node will orchestrate the execution of a standard RAG process for each of these sub-questions in parallel.
+
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+# This is a standard, self-contained RAG chain. It will be the "engine" for our parallel retrieval agents.
+sub_question_rag_chain = (
+    {"context": retriever | format_docs, "question": RunnablePassthrough()}
+    | generator_prompt
+    | llm
+    | StrOutputParser()
+)
+
+def retrieval_agent_node(state: MultiHopRAGState):
+    """The second node: runs a full RAG process for each sub-question in parallel."""
+    print(f"--- [Retrieval Agents] Answering {len(state['sub_questions'])} sub-questions in parallel... ---")
+    
+    answers = {}
+    # We use a ThreadPoolExecutor to run the 'sub_question_rag_chain' on each sub-question concurrently.
+    with ThreadPoolExecutor(max_workers=len(state['sub_questions'])) as executor:
+        # We create a future for each sub-question to be answered.
+        future_to_question = {executor.submit(sub_question_rag_chain.invoke, q): q for q in state['sub_questions']}
+        for future in as_completed(future_to_question):
+            question = future_to_question[future]
+            try:
+                answer = future.result()
+                answers[question] = answer
+                print(f"  - Answer found for sub-question: '{question}'")
+            except Exception as e:
+                answers[question] = f"Error answering question: {e}"
+    # The results are collected into our 'sub_question_answers' dictionary.
+    return {"sub_question_answers": answers}
+The retrieval_agent_node is the scatter-gather powerhouse of our system. It takes the list of sub_questions and, using a ThreadPoolExecutor, dispatches each one to its own independent RAG chain. This is a powerful form of parallelism: we are running multiple, complete RAG processes simultaneously. After all the parallel agents have found their answers, this node gathers their findings into the sub_question_answers dictionary.
+
+Finally, the “Synthesizer” node acts as the Meta-Agent final step, combining the parallel findings into one cohesive answer.
+
+# Node 3: Synthesizer (The Meta-Agent's final step)
+synthesizer_prompt = ChatPromptTemplate.from_template(
+    "You are a synthesis expert. Your job is to combine the answers to several sub-questions into a single, cohesive, and comprehensive answer to the user's original complex question.\n\n"
+    "Original Question: {original_question}\n\n"
+    "Sub-Question Answers:\n{sub_question_answers}"
+)
+
+synthesizer_chain = synthesizer_prompt | llm | StrOutputParser()
+
+def synthesizer_node(state: MultiHopRAGState):
+    """Takes the answers to the sub-questions and synthesizes them into a final, comprehensive answer."""
+    print("--- [Meta-Agent] Synthesizing final answer... ---")
+    
+    # We format the collected sub-question answers for the final prompt.
+    sub_answers_str = "\n".join([f"- Q: {q}\n- A: {a}" for q, a in state['sub_question_answers'].items()])
+    
+    final_answer = synthesizer_chain.invoke({
+        "original_question": state['original_question'],
+        "sub_question_answers": sub_answers_str
+    })
+    return {"final_answer": final_answer}
+The synthesizer_node is the crucial final reasoning step. It doesn't perform any retrieval itself. Its job is to take the pre-digested facts from the sub_question_answers and weave them into a coherent narrative that directly addresses the user's original, complex query.
+
+Now, we assemble the graph in a linear sequence: Decompose -> Retrieve in Parallel -> Synthesize.
+
+from langgraph.graph import StateGraph, END
+
+workflow = StateGraph(MultiHopRAGState)
+workflow.add_node("decompose", decomposer_node)
+workflow.add_node("retrieve_in_parallel", retrieval_agent_node)
+workflow.add_node("synthesize", synthesizer_node)
+
+workflow.set_entry_point("decompose")
+
+workflow.add_edge("decompose", "retrieve_in_parallel")
+workflow.add_edge("retrieve_in_parallel", "synthesize")
+workflow.add_edge("synthesize", END)
+multi_hop_rag_app = workflow.compile()
+
+Parallel Multi-Hop Retrieval (Created by 
+Fareed Khan
+)
+Now for the final head-to-head analysis. We will give both systems a complex, comparative question that is impossible for a single retrieval call to answer correctly.
+
+# The query requires comparing two products whose information is in separate, non-overlapping documents.
+user_query = "Compare the QLeap-V4 and the Eco-AI-M2, focusing on their target use case and power consumption."
+
+# --- Run Simple RAG ---
+print("="*60)
+print("                  SIMPLE RAG SYSTEM OUTPUT")
+print("="*60 + "\n")
+print(f"Final Answer:\n{simple_answer}")
+
+# --- Run Multi-Hop RAG ---
+print("\n" + "="*60)
+print("                 MULTI-HOP RAG SYSTEM OUTPUT")
+print("="*60 + "\n")
+print("--- Sub-Question Answers ---")
+for i, (q, a) in enumerate(multi_hop_result['sub_question_answers'].items()):
+    print(f"{i+1}. Q: {q}\n   A: {a}")
+print("\n--- Final Synthesized Answer ---")
+print(multi_hop_result['final_answer'])
+
+# --- Final Analysis ---
+print("\n" + "="*60)
+print("                     ACCURACY & QUALITY ANALYSIS")
+print("="*60 + "\n")
+print("**Simple RAG Performance:**")
+print("- Result: COMPLETE FAILURE.")
+print("- Reason: The user's query contained terms for both products. Vector search found the documents that were, on average, most semantically similar to the entire query, retrieving only documents about the Eco-AI-M2. It completely failed to retrieve any information about the QLeap-V4. Without the necessary context for both products, a comparison was impossible.\n")
+print("**Multi-Hop RAG Performance:**")
+print("- Result: COMPLETE SUCCESS.")
+print("- Reason: The system's intelligence was in the initial decomposition step. The Meta-Agent broke the complex comparative query into two simple, focused sub-questions: 1. Get info on Product A. and 2. Get info on Product B. The parallel Retrieval Agents had no trouble answering these simple questions, each retrieving the correct, focused context. The final Synthesizer agent then received a perfect, complete set of facts about both products, making the final comparison trivial.")
+Discussion of the Output
+
+#### OUTPUT ####
+============================================================
+                  SIMPLE RAG SYSTEM OUTPUT
+============================================================
+
+Final Answer:
+Based on the provided context, the Eco-AI-M2 chip is designed for edge computing and mobile devices, with a primary feature of low power consumption at only 15W under full load. The context does not contain information about the QLeap-V4, so I cannot provide a comparison.
+
+============================================================
+                 MULTI-HOP RAG SYSTEM OUTPUT
+============================================================
+--- Sub-Question Answers ---
+1. Q: What is the target use case and power consumption of the QLeap-V4?
+   A: The QLeap-V4 processor is designed for maximum performance in data centers, with a primary use case of large-scale AI model training. It consumes 1200W of power under full load.
+2. Q: What is the target use case and power consumption of the Eco-AI-M2?
+   A: The Eco-AI-M2 chip is designed for edge computing and mobile devices like drones and smart cameras. Its key feature is low power consumption, drawing only 15W under full load.
+--- Final Synthesized Answer ---
+The QLeap-V4 and the Eco-AI-M2 are designed for very different purposes, primarily distinguished by their target use case and power consumption.
+-   **QLeap-V4**: This is a high-performance processor intended for data centers. Its main use case is large-scale AI model training, and it has a high power consumption of 1200W.
+-   **Eco-AI-M2**: This is a low-power chip designed for edge computing and mobile devices. Its focus is on energy efficiency, consuming only 15W, making it suitable for applications like drones and smart cameras.
+The final analysis provides a definitive conclusion. The difference in performance is not incremental; it is a step-change in capability.
+
+Single retrieval step was unable to resolve the ambiguity of a comparative query and retrieved context for only one of the two products. It was fundamentally incapable of gathering the necessary evidence.
+The Multi-Hop system succeeded because it didn’t try to answer the complex question in one shot. It recognized the query’s comparative nature and decomposed the problem.
+By dispatching parallel, focused RAG agents to solve each simple sub-problem, it ensured that all necessary pieces of evidence were collected. The final synthesis step was then a simple matter of combining the pre-digested facts.
+AI
+Data Science
+Artificial Intelligence
+Python
+Machine Learning
+1.1K
+
+
+8
+
+
+
+
+Level Up Coding
+Published in Level Up Coding
+287K followers
+·
+Last published 23 hours ago
+Coding tutorials and news. The developer homepage gitconnected.com && skilled.dev && levelup.dev
+
+
+Follow
+Fareed Khan
+Written by Fareed Khan
+67K followers
+·
+0 following
+I write on AI, https://www.linkedin.com/in/fareed-khan-dev/
+
+
+Following
+Responses (8)
+Mamdouhfces
+Mamdouhfces
+﻿
+
+Cancel
+Respond
+See all responses
+More from Fareed Khan and Level Up Coding
+Building a Self-Improving Agentic RAG System
+Level Up Coding
+In
+
+Level Up Coding
+
+by
+
+Fareed Khan
+
+Building a Self-Improving Agentic RAG System
+Specialist agents, multi-dimensional eval, Pareto front and more.
+
+Nov 14
+1.5K
+11
+
+
+The quiet waste of manager 1-on-1s.
+Level Up Coding
+In
+
+Level Up Coding
+
+by
+
+Ian Kiprono
+
+The quiet waste of manager 1-on-1s.
+How I spent 2 years giving status updates while my teammate got promoted
+
+Nov 11
+2K
+51
+
+
+11 Powerful APIs for Your Next Project
+Level Up Coding
+In
+
+Level Up Coding
+
+by
+
+Anmol Baranwal
+
+11 Powerful APIs for Your Next Project
+Nobody wants to build things from scratch. That’s why APIs exist.
+
+Oct 24
+801
+15
+
+
+Fixing 14 Complex RAG Failures with Knowledge Graphs
+Level Up Coding
+In
+
+Level Up Coding
+
+by
+
+Fareed Khan
+
+Fixing 14 Complex RAG Failures with Knowledge Graphs
+Ambiguity, Multi-Hop, Hallucinations, and more
+
+Dec 5
+912
+9
+
+
+See all from Fareed Khan
+See all from Level Up Coding
+Recommended from Medium
+The Best AI Tools for 2026
+Artificial Corner
+In
+
+Artificial Corner
+
+by
+
+The PyCoach
+
+The Best AI Tools for 2026
+If you’re going to learn a new AI tool, make sure it’s one of these
+
+Dec 1
+2.1K
+77
+
+
+AI Agents: Complete Course
+Data Science Collective
+In
+
+Data Science Collective
+
+by
+
+Marina Wyss - Gratitude Driven
+
+AI Agents: Complete Course
+From beginner to intermediate to production.
+
+Dec 6
+1.3K
+42
+
+
+Building a Self-Improving Agentic RAG System
+Level Up Coding
+In
+
+Level Up Coding
+
+by
+
+Fareed Khan
+
+Building a Self-Improving Agentic RAG System
+Specialist agents, multi-dimensional eval, Pareto front and more.
+
+Nov 14
+1.5K
+11
+
+
+An example of a perfect, human designed dashboard interface for desktop and mobile phone
+Michal Malewicz
+Michal Malewicz
+
+The End of Dashboards and Design Systems
+Design is becoming quietly human again.
+
+Nov 26
+2.6K
+98
+
+
+Build Agentic RAG using LangGraph
+Artificial Intelligence in Plain English
+In
+
+Artificial Intelligence in Plain English
+
+by
+
+Alpha Iterations
+
+Build Agentic RAG using LangGraph
+A practical guide to build Agentic RAG with complete project code
+
+Oct 19
+505
+3
+
+
+Build a Small Language Model (SLM) From Scratch
+Shravan Kumar
+Shravan Kumar
+
+Build a Small Language Model (SLM) From Scratch
+At this current phase of AI evolution, any model with fewer than 1 billion parameters can be called a small language model. If we look at…
+Jul 25
+1.2K
+33
+
+
+See more recommendations
+Help
+
+Status
+
+About
+
+Careers
+
+Press
+
+Blog
+
+Privacy
+
+Rules
+
+Terms
+
+Text to speech
+
+All your favorite parts of Medium are now in one sidebar for easy access.
+Okay, got it

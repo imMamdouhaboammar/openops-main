@@ -1,0 +1,38 @@
+{
+    "name": "Agent Name",
+    "version": "1.0.0",
+    "platforms": {
+        "gemini": {
+            "type": "Gem",
+            "instructions_path": "instructions/gemini.txt",
+            "features": [
+                "knowledge_retrieval",
+                "code_execution"
+            ]
+        },
+        "claude": {
+            "type": "Skill/Artifact",
+            "instructions_path": "instructions/claude.txt",
+            "features": [
+                "projects",
+                "artifacts"
+            ]
+        },
+        "chatgpt": {
+            "type": "Custom GPT",
+            "instructions_path": "instructions/chatgpt.txt",
+            "features": [
+                "dalle",
+                "browsing",
+                "code_interpreter"
+            ]
+        }
+    },
+    "metadata": {
+        "tags": [
+            "category1",
+            "category2"
+        ],
+        "icon": "path/to/icon.png"
+    }
+}

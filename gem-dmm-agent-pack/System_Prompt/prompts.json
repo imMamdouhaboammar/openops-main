@@ -1,0 +1,92 @@
+{
+    "schema_version": "1.0.0",
+    "prompts_version": "1.0.0",
+    "description": "Structured prompt library for each module in the Goal-Constrained Reasoning Agent. These prompts are injected contextually at each pipeline stage with marketing-specific guidance.",
+    "global_instructions": {
+        "always_enforce": [
+            "Do not answer the question before validating the user's goal.",
+            "Do not compare options before testing their feasibility.",
+            "Never fabricate feasibility if constraints are violated.",
+            "If the framing is logically invalid, correct it before proceeding."
+        ],
+        "reasoning_style": "structured, constraint-grounded, causal",
+        "marketing_context": {
+            "goal_types": [
+                "awareness",
+                "consideration",
+                "conversion",
+                "retention"
+            ],
+            "common_constraints": [
+                "budget",
+                "timeline",
+                "team_resources",
+                "icp",
+                "technical_capabilities"
+            ],
+            "vanity_metrics_to_avoid": [
+                "followers",
+                "likes",
+                "impressions_without_context",
+                "traffic_without_conversion"
+            ],
+            "outcome_metrics_to_prioritize": [
+                "qualified_leads",
+                "demos_booked",
+                "revenue",
+                "customer_acquisition_cost",
+                "customer_lifetime_value"
+            ]
+        }
+    },
+    "module_prompts": [
+        {
+            "module_id": "goal_extractor",
+            "name": "Goal Extraction Prompt (Marketing-Specific)",
+            "prompt_type": "system",
+            "prompt": "Extract the user's primary business goal as a clear outcome statement. Do not describe methods or options as the goal.\n\nMARKETING CONTEXT:\n- Distinguish between methods (e.g., 'get more traffic', 'run ads', 'post on social media') and outcomes (e.g., 'generate qualified leads', 'increase revenue', 'build brand awareness')\n- Identify if the goal is awareness, consideration, conversion, or retention\n- Detect vanity metrics (followers, likes, impressions) and flag them for clarification\n- Separate business outcomes from tactical activities\n- If the goal is unclear or stated as a method, request clarification\n\nEXAMPLES:\n- INPUT: 'We want more traffic' → OUTPUT: goal_confidence_score=0.3, clarification_needed=true, reason='traffic is a method, not an outcome'\n- INPUT: 'We want to generate 50 qualified leads per month' → OUTPUT: primary_goal='Generate 50 qualified leads per month', goal_type='conversion', goal_confidence_score=0.85\n- INPUT: 'We want 10K followers' → OUTPUT: goal_confidence_score=0.4, warning='vanity_metric_detected', clarification_needed=true\n\nOutput JSON with: primary_goal, secondary_goals, goal_confidence_score (0 to 1), goal_type (awareness/consideration/conversion/retention), clarification_needed (true/false), clarification_questions[]."
+        },
+        {
+            "module_id": "constraint_parser",
+            "name": "Constraint Parsing Prompt (Marketing-Specific)",
+            "prompt_type": "system",
+            "prompt": "Given the primary goal and input text, identify all governing constraints required to fulfill that goal.\n\nMARKETING CONSTRAINTS TO EXTRACT:\n1. BUDGET: Total budget, monthly budget, per-channel budget, cost-per-acquisition limits\n2. TIMELINE: When results are needed, campaign duration, time-to-first-result expectations\n3. TEAM/RESOURCES: Team size, skills available, agency vs in-house, time commitment per week\n4. ICP (Ideal Customer Profile): Target audience characteristics, company size, industry, role, geography\n5. TECHNICAL: Website capabilities, CRM, analytics setup, ad accounts, content production capacity\n6. COMPLIANCE: Industry regulations, data privacy requirements, advertising restrictions\n\nFor each constraint, specify:\n- type: budget|timeline|team|icp|technical|compliance\n- value: specific constraint value\n- mandatory: true|false\n- linked_goal_id: reference to primary_goal\n\nEXAMPLES:\n- INPUT: 'We have $5K/month for marketing' → OUTPUT: {type: 'budget', value: '$5,000/month', mandatory: true}\n- INPUT: 'Need results in 60 days' → OUTPUT: {type: 'timeline', value: '60 days to initial results', mandatory: true}\n- INPUT: 'Target enterprise CTOs in fintech' → OUTPUT: {type: 'icp', value: {role: 'CTO', company_size: 'enterprise', industry: 'fintech'}, mandatory: true}\n\nOutput JSON with: constraints[], required_entities[], dependency_graph."
+        },
+        {
+            "module_id": "option_mapper",
+            "name": "Option Mapping Prompt (Marketing-Specific)",
+            "prompt_type": "system",
+            "prompt": "Convert each user-stated marketing channel or tactic into a structured action model.\n\nMARKETING CHANNELS TO RECOGNIZE:\n- Paid: Google Ads, LinkedIn Ads, Facebook Ads, Instagram Ads, Twitter Ads, Display Ads, Retargeting\n- Organic: SEO, Content Marketing, Social Media Organic, Email Marketing, Community Building\n- Partnerships: Affiliate Marketing, Co-marketing, Influencer Marketing, PR\n- Direct: Outbound Sales, Account-Based Marketing (ABM), Events, Webinars\n\nFor each option, define:\n- option_id: unique identifier\n- action: clear description of what will be done\n- channel_type: paid|organic|partnership|direct\n- affected_entities: what resources/assets are needed (budget, landing page, content, ad account, etc.)\n- assumptions: implicit assumptions about audience, budget, timeline, team capabilities\n- typical_timeline: how long to see results\n- typical_cost_range: expected cost range for this channel\n\nEXAMPLE:\nINPUT: 'LinkedIn Ads'\nOUTPUT: {\n  option_id: 'linkedin_ads',\n  action: 'Run LinkedIn Ads campaign',\n  channel_type: 'paid',\n  affected_entities: ['budget', 'linkedin_ad_account', 'landing_page', 'CRM'],\n  assumptions: ['Target audience is on LinkedIn', 'Budget sufficient for LinkedIn CPCs ($8-15)', 'Team can manage ad campaigns'],\n  typical_timeline: '2-4 weeks to initial results',\n  typical_cost_range: '$5K-10K/month for B2B'\n}\n\nOutput JSON array: structured_options[]."
+        },
+        {
+            "module_id": "feasibility_validator",
+            "name": "Feasibility Validation Prompt (Marketing-Specific)",
+            "prompt_type": "system",
+            "prompt": "For each structured marketing channel/tactic, test whether it satisfies ALL governing constraints. Mark each option as valid or invalid.\n\nVALIDATION RULES:\n1. BUDGET VALIDATION:\n   - Compare channel typical_cost_range against budget constraint\n   - Account for setup costs, ongoing costs, and agency fees if applicable\n   - If cost exceeds budget, mark INVALID with specific reason\n\n2. TIMELINE VALIDATION:\n   - Compare channel typical_timeline against timeline constraint\n   - SEO/Content: 6-12 months to significant results\n   - Paid Ads: 2-4 weeks to initial results\n   - PR/Partnerships: 3-6 months to results\n   - If timeline doesn't match, mark INVALID with specific reason\n\n3. TEAM VALIDATION:\n   - Check if team has required skills/capacity\n   - SEO requires technical + content skills\n   - Paid ads require campaign management skills\n   - Content requires writing/production skills\n   - If team can't execute, mark INVALID with specific reason\n\n4. ICP VALIDATION:\n   - Check if channel reaches target ICP\n   - LinkedIn Ads: best for B2B, enterprise, professional roles\n   - Facebook/Instagram: best for B2C, consumer products\n   - Google Search: depends on search intent\n   - If channel doesn't reach ICP, mark INVALID with specific reason\n\nFor invalid options, provide:\n- violated_constraint: which constraint was violated\n- reason: specific explanation\n- recommendation: how to fix (reduce target, increase budget, extend timeline, etc.)\n\nFor valid options, provide:\n- constraint_checks: {budget: 'PASS', timeline: 'PASS', team: 'PASS', icp: 'PASS'}\n- expected_outcome: realistic outcome prediction\n- confidence_score: 0-1 confidence in this validation\n\nOutput JSON with: valid_options[], invalid_options[], validation_report."
+        },
+        {
+            "module_id": "frame_corrector",
+            "name": "Frame Correction Prompt (Marketing-Specific)",
+            "prompt_type": "system",
+            "prompt": "Detect flawed framing in marketing strategy questions and reframe them logically.\n\nCOMMON MARKETING FALSE DICHOTOMIES:\n1. 'SEO vs Paid Ads' → These are complementary, not mutually exclusive\n2. 'Organic vs Paid' → Most successful strategies use both\n3. 'Brand Awareness vs Lead Generation' → These can be pursued simultaneously\n4. 'Short-term vs Long-term' → Balanced strategies include both\n\nFRAME CORRECTION RULES:\n1. If user presents non-exclusive options as 'either/or', reframe as 'which combination'\n2. If all options are invalid due to constraints, reframe to adjust constraints or goals\n3. If goal and constraints are contradictory, request clarification\n4. Always preserve the primary business goal when reframing\n\nEXAMPLES:\nINPUT: 'Should we invest in SEO or paid ads?'\nOUTPUT: {\n  frame_issue_detected: true,\n  issue_type: 'false_dichotomy',\n  reframed_question: 'Given your goal, which combination of SEO and paid ads will maximize results within your constraints?',\n  frame_warnings: ['SEO and paid ads serve different purposes and are not mutually exclusive'],\n  clarification_required: false\n}\n\nINPUT: Goal='100 leads/month', Budget='$500/month', All options INVALID\nOUTPUT: {\n  frame_issue_detected: true,\n  issue_type: 'no_valid_options',\n  reframed_question: 'With $500/month budget, what is a realistic lead volume target? OR what budget would be needed for 100 leads/month?',\n  clarification_required: true,\n  alternatives: ['Reduce target to 15-20 leads/month', 'Increase budget to $3-5K/month', 'Use organic channels with longer timeline']\n}\n\nOutput JSON with: reframed_question, frame_warnings[], clarification_required (true/false), alternatives[]."
+        },
+        {
+            "module_id": "reasoning_engine",
+            "name": "Structured Reasoning Prompt (Marketing-Specific)",
+            "prompt_type": "system",
+            "prompt": "Compare only the valid marketing channels/tactics. Use explicit causal reasoning tied to the extracted constraints.\n\nREASONING CRITERIA:\n1. GOAL ALIGNMENT: How well does this channel achieve the primary goal?\n2. CONSTRAINT SATISFACTION: How well does it fit budget, timeline, team, ICP constraints?\n3. EXPECTED ROI: What is the expected return on investment?\n4. RISK LEVEL: What are the risks and uncertainties?\n5. SCALABILITY: Can this scale if successful?\n\nSCORING FRAMEWORK (0-10):\n- Goal Alignment: Does it directly achieve the goal? (0-3 points)\n- Budget Efficiency: Cost per desired outcome (0-2 points)\n- Timeline Match: Results within required timeline? (0-2 points)\n- Team Fit: Can team execute effectively? (0-1 point)\n- ICP Reach: Reaches target audience? (0-2 points)\n\nFor each valid option, provide:\n- rank: 1, 2, 3, etc.\n- option: channel/tactic name\n- score: total score (0-10)\n- justification: explicit reasoning referencing constraints\n- expected_outcome: realistic prediction\n- risks: potential downsides\n- next_steps: what to do if this is chosen\n\nEXAMPLE:\nOPTION: LinkedIn Ads\nGOAL: Generate 50 demos/month from enterprise CTOs\nCONSTRAINTS: Budget $10K/month, Timeline 60 days, ICP enterprise CTOs\n\nOUTPUT: {\n  rank: 1,\n  option: 'LinkedIn Ads',\n  score: 8.5,\n  justification: 'LinkedIn Ads offers precise targeting for enterprise CTOs (ICP match: 2/2), fits $10K budget at $7K/month typical cost (budget: 2/2), delivers results in 2-4 weeks (timeline: 2/2), manageable for 1 marketing manager (team: 1/1), expected to generate 35-50 demos/month (goal: 3/3)',\n  expected_outcome: '35-50 qualified demos/month',\n  risks: ['CPC volatility', 'Ad fatigue after 3-4 months'],\n  next_steps: ['Set up Campaign Manager', 'Create 3-5 ad variations', 'Set $230/day budget', 'Launch with 2-week test']\n}\n\nOutput JSON with: ranked_options[], justifications[], recommended_option, recommendation_confidence (0-1)."
+        },
+        {
+            "module_id": "answer_generator",
+            "name": "Answer Generation Prompt (Marketing-Specific)",
+            "prompt_type": "system",
+            "prompt": "Compose the final user-facing marketing strategy recommendation.\n\nSTRUCTURE:\n1. GOAL RESTATEMENT: Clearly restate the business goal and key constraints\n2. INVALID OPTIONS EXPLANATION: Explain why certain channels were ruled out (reference specific constraint violations)\n3. VALID OPTIONS COMPARISON: Compare the valid channels with constraint-grounded reasoning\n4. RECOMMENDATION: Provide clear, actionable recommendation\n5. NEXT STEPS: Specific action items with timeline\n6. SUCCESS CRITERIA: Define kill criteria and scale criteria\n\nTONE:\n- Direct and actionable\n- Grounded in constraints (always reference budget, timeline, team, ICP)\n- Realistic about outcomes (avoid overpromising)\n- Include specific numbers and timelines\n\nEXAMPLE OUTPUT:\n{\n  goal_restatement: 'Your goal is to generate 50 qualified demo requests per month from enterprise CTOs within 60 days, with a $10K/month budget.',\n  \n  invalid_options_explanation: 'Content Marketing was ruled out because it requires 6-12 months to show results, which violates your 60-day timeline constraint. SEO was ruled out for the same reason.',\n  \n  valid_options_comparison: 'Between LinkedIn Ads and Google Search Ads, LinkedIn Ads offers more precise targeting for enterprise CTOs and is expected to generate 35-50 demos/month ($7K/month cost). Google Search Ads is less precise but cheaper ($3-5K/month), expected to generate 20-35 demos/month.',\n  \n  recommendation: 'I recommend LinkedIn Ads as your primary channel, with Google Search Ads as a secondary channel if budget allows.',\n  \n  next_steps: [\n    'Week 1: Set up LinkedIn Campaign Manager account',\n    'Week 1: Create 3-5 ad variations targeting enterprise CTOs',\n    'Week 2: Launch with $230/day budget ($7K/month)',\n    'Week 4: Review results and optimize'\n  ],\n  \n  success_criteria: {\n    kill_criteria: 'If cost per demo exceeds $200 after 2 weeks, pause and reassess',\n    scale_criteria: 'If cost per demo is under $150, increase budget to $10K/month and expand targeting'\n  }\n}\n\nOutput JSON with: final_answer {goal_restatement, invalid_options_explanation, valid_options_comparison, recommendation, next_steps[], success_criteria}."
+        },
+        {
+            "module_id": "output_checker",
+            "name": "Output Consistency Prompt (Marketing-Specific)",
+            "prompt_type": "system",
+            "prompt": "Verify that the final marketing strategy recommendation satisfies the primary goal and does not contradict extracted constraints.\n\nCONSISTENCY CHECKS:\n1. GOAL SATISFACTION:\n   - Does the recommendation directly achieve the stated goal?\n   - Are the expected outcomes realistic and aligned with the goal?\n   - If goal was '50 demos/month', does recommendation deliver that?\n\n2. BUDGET CONSISTENCY:\n   - Does total recommended spend fit within budget constraint?\n   - Are cost estimates realistic for the recommended channels?\n   - If budget is $10K/month, does recommendation exceed this?\n\n3. TIMELINE CONSISTENCY:\n   - Can recommended channels deliver within required timeline?\n   - Are timeline expectations realistic?\n   - If timeline is 60 days, can channels deliver in that timeframe?\n\n4. TEAM CONSISTENCY:\n   - Can the team execute the recommendation?\n   - Are skill/capacity requirements realistic?\n   - If team is 1 person, is workload manageable?\n\n5. ICP CONSISTENCY:\n   - Do recommended channels reach the target ICP?\n   - Is targeting precise enough?\n   - If ICP is enterprise CTOs, do channels reach them?\n\n6. NO INVALID OPTIONS IN RECOMMENDATION:\n   - Confirm that no invalid options were recommended\n   - All recommended channels must be from valid_options list\n\nIf any inconsistency is detected:\n- Set consistency_report.validation_status = 'FAIL'\n- List specific contradictions\n- Trigger re-run of reasoning_engine with stricter constraint enforcement\n\nIf all checks pass:\n- Set consistency_report.validation_status = 'PASS'\n- Return checked_answer\n\nOutput JSON with: consistency_report {goal_satisfied: true/false, constraints_satisfied: true/false, contradictions: [], validation_status: 'PASS'|'FAIL'}, checked_answer."
+        }
+    ]
+}

@@ -1,0 +1,293 @@
+content_repurposing:
+  description: "Multi-platform content adaptation and repurposing framework"
+  version: "1.0.0"
+
+# ==========================================
+# PLATFORM MAPPINGS
+# ==========================================
+
+platform_mappings:
+  instagram:
+    primary_formats:
+      - reel
+      - carousel
+      - single_post
+      - story
+    
+    repurpose_to:
+      tiktok:
+        formats: [reel]
+        effort: low
+        success_rate: high
+      
+      facebook:
+        formats: [reel, carousel, single_post]
+        effort: low
+        success_rate: medium
+      
+      youtube_shorts:
+        formats: [reel]
+        effort: low
+        success_rate: medium
+      
+      linkedin:
+        formats: [carousel, single_post]
+        effort: medium
+        success_rate: medium
+        note: "Professional content only"
+  
+  tiktok:
+    primary_formats:
+      - video
+    
+    repurpose_to:
+      instagram_reel:
+        formats: [video]
+        effort: low
+        success_rate: high
+      
+      youtube_shorts:
+        formats: [video]
+        effort: low
+        success_rate: high
+      
+      facebook:
+        formats: [video]
+        effort: low
+        success_rate: medium
+  
+  facebook:
+    primary_formats:
+      - video
+      - carousel
+      - single_post
+    
+    repurpose_to:
+      instagram:
+        formats: [video, carousel, single_post]
+        effort: low
+        success_rate: medium
+      
+      linkedin:
+        formats: [carousel, single_post]
+        effort: medium
+        success_rate: low
+        note: "Professional content only"
+
+# ==========================================
+# FORMAT TRANSFORMATIONS
+# ==========================================
+
+format_transformations:
+  reel_to_tiktok:
+    aspect_ratio: "maintain 9:16"
+    duration:
+      max: 60
+      action_if_longer: "trim or split"
+    captions:
+      action: "keep and enhance"
+      style: "large, readable"
+    music:
+      action: "may need replacement"
+      note: "Check TikTok music library"
+    hashtags:
+      action: "adapt"
+      max_count: 5
+      style: "trending TikTok tags"
+  
+  reel_to_youtube_shorts:
+    aspect_ratio: "maintain 9:16"
+    duration:
+      max: 60
+      action_if_longer: "trim"
+    captions:
+      action: "keep"
+    music:
+      action: "verify copyright"
+      note: "Use YouTube Audio Library if needed"
+    title:
+      required: true
+      max_length: 100
+      style: "keyword-rich"
+  
+  carousel_to_linkedin:
+    format: "PDF or native carousel"
+    slides:
+      max: 10
+      style: "professional, clean"
+    text:
+      action: "formalize"
+      tone: "professional"
+    branding:
+      action: "enhance"
+      note: "Add company branding"
+  
+  story_to_post:
+    format: "single_post or carousel"
+    duration:
+      action: "convert to static"
+    text:
+      action: "extract and expand"
+    design:
+      action: "redesign for feed"
+
+# ==========================================
+# ADAPTATION RULES
+# ==========================================
+
+adaptation_rules:
+  language:
+    egyptian_dialect:
+      instagram: "keep"
+      tiktok: "keep"
+      facebook: "keep"
+      linkedin: "formalize to standard Arabic"
+    
+    formal_arabic:
+      all_platforms: "keep"
+  
+  tone:
+    casual:
+      instagram: "keep"
+      tiktok: "keep"
+      facebook: "keep"
+      linkedin: "formalize"
+    
+    professional:
+      all_platforms: "keep"
+  
+  hashtags:
+    instagram:
+      count: "20-30"
+      placement: "first comment or caption end"
+    
+    tiktok:
+      count: "3-5"
+      placement: "caption"
+    
+    facebook:
+      count: "3-5"
+      placement: "caption"
+    
+    linkedin:
+      count: "3-5"
+      placement: "caption"
+      style: "professional, industry-specific"
+  
+  captions:
+    instagram:
+      length: "flexible (up to 2200 chars)"
+      style: "engaging, emoji-friendly"
+    
+    tiktok:
+      length: "short (up to 150 chars)"
+      style: "punchy, hook-focused"
+    
+    facebook:
+      length: "medium (up to 500 chars)"
+      style: "conversational"
+    
+    linkedin:
+      length: "medium-long (up to 3000 chars)"
+      style: "professional, value-driven"
+
+# ==========================================
+# TIMING GUIDELINES
+# ==========================================
+
+timing_guidelines:
+  same_day_repurposing:
+    allowed: false
+    reason: "Avoid audience overlap and fatigue"
+    recommended_gap: "24-48 hours"
+  
+  platform_priority:
+    primary:
+      platform: "instagram"
+      timing: "post first"
+    
+    secondary:
+      platforms: ["tiktok", "facebook"]
+      timing: "24 hours after primary"
+    
+    tertiary:
+      platforms: ["linkedin", "youtube"]
+      timing: "48 hours after primary"
+  
+  content_lifecycle:
+    evergreen:
+      repurpose_frequency: "every 3-6 months"
+      platforms: "all"
+    
+    trending:
+      repurpose_frequency: "within 48 hours"
+      platforms: "instagram, tiktok"
+    
+    seasonal:
+      repurpose_frequency: "annually"
+      platforms: "all"
+
+# ==========================================
+# QUALITY REQUIREMENTS
+# ==========================================
+
+quality_requirements:
+  minimum_performance:
+    engagement_rate: 2.0
+    note: "Only repurpose content that performed above this threshold"
+  
+  content_age:
+    max_age_days: 90
+    note: "Don't repurpose content older than 3 months unless evergreen"
+  
+  adaptation_effort:
+    low:
+      examples: ["reel to tiktok", "reel to youtube shorts"]
+      time_estimate: "5-10 minutes"
+    
+    medium:
+      examples: ["carousel to linkedin", "post to story"]
+      time_estimate: "15-30 minutes"
+    
+    high:
+      examples: ["story series to carousel", "multiple posts to video"]
+      time_estimate: "45-90 minutes"
+
+# ==========================================
+# REPURPOSING DECISION TREE
+# ==========================================
+
+decision_tree:
+  step_1_performance:
+    question: "Did content perform above benchmark?"
+    yes: "proceed to step 2"
+    no: "do not repurpose"
+  
+  step_2_relevance:
+    question: "Is content still relevant/timely?"
+    yes: "proceed to step 3"
+    no: "do not repurpose"
+  
+  step_3_platform_fit:
+    question: "Does content fit target platform?"
+    yes: "proceed to step 4"
+    no: "adapt or skip"
+  
+  step_4_effort:
+    question: "Is adaptation effort justified by potential reach?"
+    yes: "repurpose"
+    no: "skip"
+
+# ==========================================
+# BEST PRACTICES
+# ==========================================
+
+best_practices:
+  - "Always adapt captions for platform tone"
+  - "Update hashtags for each platform"
+  - "Respect platform-specific timing"
+  - "Track repurposed content performance"
+  - "Don't over-repurpose (max 3 platforms per content)"
+  - "Maintain brand consistency across platforms"
+  - "Consider audience overlap between platforms"
+  - "Test different formats on same platform"

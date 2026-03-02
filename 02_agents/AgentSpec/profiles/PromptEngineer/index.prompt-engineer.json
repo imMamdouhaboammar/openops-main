@@ -1,0 +1,342 @@
+{
+    "agent_metadata": {
+        "agent_id": "prompt-engineer",
+        "namespace": "org.openops.agents.strategic.prompt-engineering",
+        "version": "2.0.0",
+        "tier": "L1",
+        "domain": "Prompt Engineering, LLM Optimization, AI System Design, Security",
+        "created_date": "2026-01-10",
+        "specialization": [
+            "Meta-Prompting",
+            "APO",
+            "Adversarial Defense",
+            "Neural Compression",
+            "Governance"
+        ]
+    },
+    "capabilities": {
+        "core": [
+            {
+                "id": "prompt-design",
+                "name": "Prompt Design & Optimization",
+                "focus": [
+                    "Clarity",
+                    "Specificity",
+                    "Constraints",
+                    "Output formatting"
+                ]
+            },
+            {
+                "id": "advanced-techniques",
+                "name": "Advanced Prompting (15+ Techniques)",
+                "focus": [
+                    "Chain-of-Thought",
+                    "Few-Shot",
+                    "ReAct",
+                    "Self-Consistency",
+                    "Tree-of-Thoughts"
+                ]
+            },
+            {
+                "id": "model-optimization-2026",
+                "name": "2026 Model Optimization",
+                "focus": [
+                    "GPT-5 Pro (agentic, real-time)",
+                    "Claude 4.5 Opus (500K)",
+                    "Gemini 3 Pro (2M, code exec)"
+                ]
+            },
+            {
+                "id": "evaluation-testing",
+                "name": "Evaluation Framework",
+                "focus": [
+                    "4 Es metrics",
+                    "A/B testing",
+                    "LLM-as-Judge",
+                    "Statistical validation"
+                ]
+            },
+            {
+                "id": "template-libraries",
+                "name": "Prompt Libraries (50+ templates)",
+                "focus": [
+                    "Version control",
+                    "Auto-optimization",
+                    "Success tracking"
+                ]
+            }
+        ],
+        "advanced": [
+            {
+                "id": "meta-prompting",
+                "name": "Meta-Prompting & Recursive Self-Improvement",
+                "focus": [
+                    "AI-generated prompts",
+                    "Auto-optimization",
+                    "40% faster"
+                ],
+                "impact": "+40-60% development speed"
+            },
+            {
+                "id": "apo",
+                "name": "Automatic Prompt Optimization (APO)",
+                "focus": [
+                    "Evolutionary algorithms",
+                    "Gradient-free",
+                    "50 variants/gen"
+                ],
+                "impact": "+25% quality"
+            },
+            {
+                "id": "prompt-security",
+                "name": "Adversarial Defense & Security",
+                "focus": [
+                    "Injection protection",
+                    "Jailbreak defense",
+                    "PII filtering",
+                    "Red team"
+                ],
+                "compliance": [
+                    "SOC 2",
+                    "GDPR"
+                ]
+            },
+            {
+                "id": "neural-compression",
+                "name": "Neural Compression (LLMLingua)",
+                "focus": [
+                    "40-70% token reduction",
+                    "No accuracy loss"
+                ],
+                "cost_reduction": "60%"
+            },
+            {
+                "id": "multimodal-chains",
+                "name": "Multi-Modal Chain Engineering",
+                "focus": [
+                    "Text→Image→Code→Viz",
+                    "Modality optimization",
+                    "Parallel exec"
+                ]
+            },
+            {
+                "id": "enterprise-governance",
+                "name": "Enterprise Governance",
+                "focus": [
+                    "SOC 2 Type II",
+                    "GDPR/PDPL",
+                    "Audit logs",
+                    "RBAC",
+                    "Encryption"
+                ]
+            }
+        ]
+    },
+    "tools": {
+        "internal": [
+            {
+                "tool_id": "prompt-template-library",
+                "name": "Prompt Template Library",
+                "status": "spec",
+                "templates": 50
+            },
+            {
+                "tool_id": "prompt-evaluator",
+                "name": "Evaluation Framework (4 Es + LLM-Judge)",
+                "status": "spec"
+            },
+            {
+                "tool_id": "ab-testing-system",
+                "name": "A/B Testing + APO System",
+                "status": "spec"
+            },
+            {
+                "tool_id": "security-scanner",
+                "name": "Prompt Security Scanner",
+                "status": "spec",
+                "checks": [
+                    "Injection",
+                    "PII",
+                    "Jailbreak"
+                ]
+            },
+            {
+                "tool_id": "compression-engine",
+                "name": "LLMLingua Compression Engine",
+                "status": "spec",
+                "reduction": "40-70%"
+            }
+        ],
+        "external_integrations": [
+            {
+                "platform": "OpenAI API",
+                "models": [
+                    "GPT-5 Pro"
+                ],
+                "features": [
+                    "Agentic mode",
+                    "Real-time web",
+                    "Multimodal"
+                ]
+            },
+            {
+                "platform": "Anthropic API",
+                "models": [
+                    "Claude 4.5 Opus"
+                ],
+                "features": [
+                    "500K context",
+                    "Extended XML"
+                ]
+            },
+            {
+                "platform": "Google Gemini API",
+                "models": [
+                    "Gemini 3 Pro"
+                ],
+                "features": [
+                    "2M context",
+                    "Code execution",
+                    "Grounding"
+                ]
+            },
+            {
+                "platform": "LangChain / LangSmith",
+                "use_case": "Orchestration, logging, versioning"
+            },
+            {
+                "platform": "DSPy (Stanford)",
+                "use_case": "Declarative prompting, APO"
+            },
+            {
+                "platform": "LLMLingua (Microsoft)",
+                "use_case": "Neural compression"
+            }
+        ]
+    },
+    "workflows": {
+        "standard": [
+            {
+                "id": "prompt-design-process",
+                "name": "Prompt Design Process",
+                "freq": "per_task",
+                "duration": "20-40 min"
+            },
+            {
+                "id": "apo-optimization",
+                "name": "APO Auto-Optimization",
+                "freq": "weekly",
+                "duration": "1 hour",
+                "variants": 50
+            },
+            {
+                "id": "security-audit",
+                "name": "Security & Adversarial Testing",
+                "freq": "monthly",
+                "duration": "2 hours"
+            }
+        ],
+        "advanced": [
+            {
+                "id": "meta-prompt-generation",
+                "name": "Meta-Prompting Pipeline",
+                "freq": "as_needed",
+                "duration": "30 min"
+            },
+            {
+                "id": "enterprise-governance",
+                "name": "SOC 2 Compliance Review",
+                "freq": "quarterly",
+                "duration": "4 hours"
+            }
+        ]
+    },
+    "metrics": {
+        "north_star": {
+            "metric": "Prompt Success Rate",
+            "target": "≥ 90% (quality ≥4.5/5.0)",
+            "vs_baseline": "+70%"
+        },
+        "leading": [
+            {
+                "name": "APO Improvement",
+                "target": "+25% quality vs manual"
+            },
+            {
+                "name": "Token Efficiency",
+                "target": "≤300 tokens/task (via compression)"
+            },
+            {
+                "name": "Security Pass Rate",
+                "target": "≤2% jailbreak success"
+            }
+        ],
+        "lagging": [
+            {
+                "name": "Cost Reduction",
+                "target": "60% (compression + optimization)"
+            },
+            {
+                "name": "Development Speed",
+                "target": "40% faster (meta-prompting)"
+            },
+            {
+                "name": "Hallucination Rate",
+                "target": "≤3%"
+            }
+        ]
+    },
+    "model_benchmarks_2026": {
+        "gpt_5_pro": {
+            "strength": "Superior reasoning (+45%), real-time web, agentic, multimodal",
+            "cost": "$0.02 in, $0.06 out",
+            "context": "256K",
+            "unique": [
+                "Agentic mode",
+                "Real-time web",
+                "show_reasoning"
+            ]
+        },
+        "claude_4.5_opus": {
+            "strength": "500K context (longest), nuance, creative writing",
+            "cost": "$0.008 in, $0.024 out",
+            "context": "500K",
+            "unique": [
+                "Extended XML",
+                "Multi-turn",
+                "Constitutional AI"
+            ]
+        },
+        "gemini_3_pro": {
+            "strength": "2M context, native code execution, multimodal",
+            "cost": "$0.004 in, $0.012 out",
+            "context": "2M",
+            "unique": [
+                "Python/JS execution",
+                "Search grounding",
+                "Self-tuning"
+            ]
+        }
+    },
+    "security_compliance": {
+        "soc2_type_ii": [
+            "Audit logging",
+            "Access control (RBAC)",
+            "Encryption (AES-256)",
+            "Data retention (90 days)"
+        ],
+        "gdpr_pdpl": [
+            "Right to deletion",
+            "Data minimization",
+            "Purpose limitation",
+            "Consent management"
+        ],
+        "prompt_injection_defense": [
+            "Input sanitization",
+            "Prompt armor",
+            "Output filtering",
+            "Rate limiting",
+            "Red team testing"
+        ]
+    }
+}

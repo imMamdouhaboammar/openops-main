@@ -1,0 +1,82 @@
+{
+  "gemini_gems_router": {
+    "id": "gemini_gems_router",
+    "version": "1.0",
+    "purpose": "Intent routing for Gemini Gems. Selects the target system, workflow, and knowledge pack.",
+    "routing_policy": {
+      "strategy": "best_match",
+      "tie_breaker": "ask_clarifying_questions",
+      "max_questions": 5,
+      "fallback": "openops_core"
+    },
+    "rules": [
+      {
+        "rule_id": "saudi_strategic_report",
+        "match_any": [
+          "saudi",
+          "vision 2030",
+          "hajj",
+          "umrah",
+          "ministry of hajj",
+          "strategic report",
+          "proposal",
+          "تقرير استراتيجي",
+          "حج",
+          "عمرة",
+          "وزارة الحج"
+        ],
+        "target_system": "12_saudi_strategic_system",
+        "workflow_id": "strategic_report_workflow",
+        "workflow_path": "12_saudi_strategic_system/workflows/strategic_report_workflow.json",
+        "knowledge_packs": ["saudi_strategic_addon"],
+        "confidence": 0.9
+      },
+      {
+        "rule_id": "marketing_campaign_planning",
+        "match_any": [
+          "campaign plan",
+          "marketing strategy",
+          "growth plan",
+          "acquisition",
+          "funnel",
+          "paid media",
+          "go-to-market",
+          "gtm"
+        ],
+        "target_system": "11_marketing_growth_system",
+        "workflow_id": "campaign_planning_v1",
+        "workflow_path": "11_marketing_growth_system/workflows/campaign_planning.workflow.json",
+        "knowledge_packs": ["marketing_growth_addon"],
+        "confidence": 0.85
+      },
+      {
+        "rule_id": "openops_core_default",
+        "match_any": [
+          "product",
+          "architecture",
+          "security",
+          "ux",
+          "tracking",
+          "research",
+          "roadmap",
+          "prd"
+        ],
+        "target_system": "openops_core",
+        "workflow_id": "openops_rounds",
+        "workflow_path": null,
+        "knowledge_packs": ["core_standard"],
+        "confidence": 0.6
+      }
+    ],
+    "default_route": {
+      "target_system": "openops_core",
+      "workflow_id": "openops_rounds",
+      "workflow_path": null,
+      "knowledge_packs": ["core_minimal"]
+    },
+    "handoff": {
+      "output_contracts": "01_orchestration/01F_Output_Contracts.json",
+      "workflow_registry": "01_orchestration/01E_Workflow_Registry.json"
+    }
+  }
+}

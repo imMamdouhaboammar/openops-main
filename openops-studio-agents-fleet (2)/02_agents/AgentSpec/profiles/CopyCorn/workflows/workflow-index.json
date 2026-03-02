@@ -1,0 +1,578 @@
+{
+    "standard_workflows": [
+        {
+            "id": "grounded-strategy",
+            "name": "Grounded Strategy Workflow",
+            "trigger": "Any strategy or tactical request",
+            "mandatory": true,
+            "steps": [
+                {
+                    "step": 1,
+                    "name": "Clarify Mission",
+                    "actions": [
+                        "Define goal and assumptions",
+                        "Identify funnel stage",
+                        "Map constraints",
+                        "Define success criteria"
+                    ],
+                    "duration": "5 min"
+                },
+                {
+                    "step": 2,
+                    "name": "External Grounding",
+                    "tool": "grounding-engine",
+                    "sources": [
+                        "Google",
+                        "Reforge",
+                        "DigitalMarketer",
+                        "Platform docs"
+                    ],
+                    "search_for": "Latest best practices, frameworks, case studies"
+                },
+                {
+                    "step": 3,
+                    "name": "Internal Grounding",
+                    "analyze": [
+                        "Positioning & messaging",
+                        "Audience & ICP",
+                        "Current funnels",
+                        "Performance data",
+                        "Past experiments"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "name": "Short Internal Plan",
+                    "tool": "internal-plan-generator",
+                    "output": [
+                        "Diagnosis",
+                        "Direction",
+                        "Levers",
+                        "Experiments",
+                        "Measurement"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "name": "Detailed Diagnosis",
+                    "identify": [
+                        "Weak positioning",
+                        "Funnel leaks",
+                        "Bad offers",
+                        "Misaligned metrics",
+                        "Channel overdependence"
+                    ]
+                },
+                {
+                    "step": 6,
+                    "name": "Full Strategy",
+                    "define": [
+                        "Target segments",
+                        "Value proposition",
+                        "Main messages",
+                        "Channel roles",
+                        "Growth levers"
+                    ]
+                },
+                {
+                    "step": 7,
+                    "name": "Execution Tactics",
+                    "deliverables": [
+                        "Campaign structures",
+                        "Content frameworks",
+                        "Ad examples",
+                        "Email flows",
+                        "Landing pages"
+                    ]
+                },
+                {
+                    "step": 8,
+                    "name": "Experiments & Loops",
+                    "document": [
+                        "Hypothesis (if/then/because)",
+                        "Variation description",
+                        "Success metrics",
+                        "Growth loop potential"
+                    ]
+                },
+                {
+                    "step": 9,
+                    "name": "Measurement",
+                    "specify": [
+                        "Primary KPIs",
+                        "Secondary KPIs",
+                        "Review cadence",
+                        "Scale/Kill criteria"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "quick-response",
+            "name": "Quick Response Workflow",
+            "trigger": "Simple tactical question",
+            "steps": [
+                {
+                    "step": 1,
+                    "name": "Quick Ground",
+                    "action": "Rapid external check if needed"
+                },
+                {
+                    "step": 2,
+                    "name": "Context Check",
+                    "action": "Does this fit existing strategy?"
+                },
+                {
+                    "step": 3,
+                    "name": "Direct Answer",
+                    "format": "Actionable recommendation with rationale"
+                }
+            ],
+            "note": "For simple questions, skip full workflow but maintain grounding mindset"
+        },
+        {
+            "id": "funnel-audit",
+            "name": "Funnel Audit Workflow",
+            "trigger": "Request for funnel analysis",
+            "steps": [
+                {
+                    "step": 1,
+                    "name": "Data Collection",
+                    "collect": [
+                        "Metrics by stage (AARRR)",
+                        "Channel breakdown",
+                        "Cohort data",
+                        "Historical trends"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "name": "Stage Analysis",
+                    "per_stage": [
+                        "Current metrics",
+                        "vs. benchmarks",
+                        "Trends",
+                        "Health rating"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "name": "Leak Identification",
+                    "identify": [
+                        "Biggest drop-offs",
+                        "Root causes",
+                        "Quick wins",
+                        "Long-term fixes"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "name": "Prioritized Recommendations",
+                    "framework": "ICE Score (Impact, Confidence, Ease)",
+                    "output": "Ranked action list"
+                }
+            ]
+        }
+    ],
+    "channel_workflows": [
+        {
+            "id": "seo-strategy",
+            "name": "SEO Strategy Workflow",
+            "steps": [
+                {
+                    "step": 1,
+                    "name": "Technical Audit",
+                    "check": [
+                        "Site speed",
+                        "Crawlability",
+                        "Indexation",
+                        "Mobile"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "name": "Keyword Research",
+                    "analyze": [
+                        "Head terms",
+                        "Long-tail",
+                        "Intent mapping",
+                        "Gaps"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "name": "Content Audit",
+                    "evaluate": [
+                        "Existing content",
+                        "Performance",
+                        "Opportunities"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "name": "Topical Authority Plan",
+                    "design": [
+                        "Pillar pages",
+                        "Cluster content",
+                        "Internal linking"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "name": "Implementation Roadmap",
+                    "output": "Prioritized SEO action plan"
+                }
+            ]
+        },
+        {
+            "id": "paid-media-launch",
+            "name": "Paid Media Launch Workflow",
+            "steps": [
+                {
+                    "step": 1,
+                    "name": "Objective Definition",
+                    "define": [
+                        "Goal",
+                        "Target CPA/ROAS",
+                        "Budget",
+                        "Timeline"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "name": "Audience Strategy",
+                    "design": [
+                        "Targeting layers",
+                        "Exclusions",
+                        "Lookalikes"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "name": "Campaign Structure",
+                    "create": [
+                        "Campaign hierarchy",
+                        "Ad groups",
+                        "Budget allocation"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "name": "Creative Development",
+                    "produce": [
+                        "Ad copy variations",
+                        "Visual concepts",
+                        "Landing pages"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "name": "Tracking Setup",
+                    "implement": [
+                        "Pixel/tags",
+                        "Conversion events",
+                        "UTM structure"
+                    ]
+                },
+                {
+                    "step": 6,
+                    "name": "Launch & Optimize",
+                    "process": [
+                        "Soft launch",
+                        "Learning phase",
+                        "Optimization cadence"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "email-program-design",
+            "name": "Email Program Design Workflow",
+            "steps": [
+                {
+                    "step": 1,
+                    "name": "Audit Existing",
+                    "review": [
+                        "Current flows",
+                        "Performance",
+                        "Gaps"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "name": "Lifecycle Mapping",
+                    "define": [
+                        "Key moments",
+                        "Trigger events",
+                        "Segment journeys"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "name": "Flow Design",
+                    "create": [
+                        "Welcome",
+                        "Onboarding",
+                        "Engagement",
+                        "Win-back"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "name": "Content Creation",
+                    "write": [
+                        "Subject lines",
+                        "Body copy",
+                        "CTAs"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "name": "Testing Plan",
+                    "design": [
+                        "A/B tests",
+                        "Send time optimization"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "content-strategy",
+            "name": "Content Strategy Workflow",
+            "steps": [
+                {
+                    "step": 1,
+                    "name": "Audience Research",
+                    "understand": [
+                        "Pain points",
+                        "Questions",
+                        "Content preferences"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "name": "Topic Mapping",
+                    "create": [
+                        "Pillar topics",
+                        "Cluster topics",
+                        "Content gaps"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "name": "Content Framework",
+                    "design": [
+                        "Content types",
+                        "Formats",
+                        "Distribution channels"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "name": "Calendar Planning",
+                    "build": [
+                        "Publishing cadence",
+                        "Content calendar",
+                        "Resource allocation"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "name": "Measurement Setup",
+                    "define": [
+                        "Content KPIs",
+                        "Attribution",
+                        "Reporting"
+                    ]
+                }
+            ]
+        }
+    ],
+    "creative_workflows": [
+        {
+            "id": "messaging-development",
+            "name": "Messaging Development Workflow",
+            "steps": [
+                {
+                    "step": 1,
+                    "name": "JTBD Analysis",
+                    "understand": [
+                        "Functional job",
+                        "Emotional job",
+                        "Social job",
+                        "Triggers",
+                        "Anxieties"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "name": "Value Prop Creation",
+                    "tool": "value-prop-generator",
+                    "output": "Core value proposition"
+                },
+                {
+                    "step": 3,
+                    "name": "Message Hierarchy",
+                    "build": [
+                        "Level 1: Value prop",
+                        "Level 2: Key messages",
+                        "Level 3: Proof points"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "name": "Hook Development",
+                    "tool": "hook-generator",
+                    "create": "Multiple hook variations by type"
+                },
+                {
+                    "step": 5,
+                    "name": "Testing Plan",
+                    "design": "Message testing experiments"
+                }
+            ]
+        },
+        {
+            "id": "ad-creation",
+            "name": "Ad Creation Workflow",
+            "steps": [
+                {
+                    "step": 1,
+                    "name": "Brief Review",
+                    "understand": [
+                        "Objective",
+                        "Audience",
+                        "Platform",
+                        "Constraints"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "name": "Angle Development",
+                    "create": [
+                        "3-5 different angles",
+                        "Based on JTBD",
+                        "Platform-appropriate"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "name": "Copy Writing",
+                    "produce": [
+                        "Headlines (5+)",
+                        "Body copy",
+                        "CTAs"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "name": "Visual Direction",
+                    "recommend": [
+                        "Image concepts",
+                        "Video ideas",
+                        "Format specs"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "name": "Landing Page Alignment",
+                    "ensure": "Message match between ad and landing page"
+                }
+            ]
+        },
+        {
+            "id": "arabic-content-creation",
+            "name": "Arabic Content Creation Workflow",
+            "steps": [
+                {
+                    "step": 1,
+                    "name": "Dialect Selection",
+                    "choose": [
+                        "Egyptian",
+                        "Saudi/Gulf",
+                        "MSA"
+                    ],
+                    "based_on": "Target audience and platform"
+                },
+                {
+                    "step": 2,
+                    "name": "Cultural Context",
+                    "consider": [
+                        "Cultural references",
+                        "Religious sensitivity",
+                        "Local trends"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "name": "Content Creation",
+                    "tool": "arabic-content-generator",
+                    "output": "Natural, human-like Arabic content"
+                },
+                {
+                    "step": 4,
+                    "name": "Quality Check",
+                    "verify": [
+                        "Dialect accuracy",
+                        "Cultural appropriateness",
+                        "Message clarity"
+                    ]
+                }
+            ]
+        }
+    ],
+    "experimentation_workflows": [
+        {
+            "id": "experiment-design",
+            "name": "Experiment Design Workflow",
+            "steps": [
+                {
+                    "step": 1,
+                    "name": "Hypothesis Formation",
+                    "format": "If [we do X], then [Y will happen], because [Z]"
+                },
+                {
+                    "step": 2,
+                    "name": "Variant Design",
+                    "define": [
+                        "Control",
+                        "Treatment(s)",
+                        "Key differences"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "name": "Metric Selection",
+                    "choose": [
+                        "Primary metric",
+                        "Secondary metrics",
+                        "Guardrails"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "name": "Sample Calculation",
+                    "determine": [
+                        "Required sample size",
+                        "Duration",
+                        "Traffic allocation"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "name": "Documentation",
+                    "create": "Experiment brief for team"
+                },
+                {
+                    "step": 6,
+                    "name": "Analysis Plan",
+                    "define": [
+                        "Statistical method",
+                        "Decision criteria",
+                        "Next steps"
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,71 @@
+# PSEUDO: Saudi Creative Strategist Mental Map v1.0
+# هدف هذا الملف: تعليمات تشغيلية لاستهلاك ملف JSON وتطبيق الخريطة أثناء إنتاج الاستراتيجيات
+
+DEFINE INPUTS:
+  user_request
+  optional_context
+  mental_map_json
+
+DEFINE OUTPUT:
+  structured_output
+
+PROCESS MAIN:
+  STEP 1: ClassifyRequest(user_request)
+    IF request_type is unknown THEN set request_type = "strategy_default"
+
+  STEP 2: SelectPath(request_type, mental_map_json.relationships.use_case_paths)
+    path_layers = matched path
+    IF no match THEN path_layers = mental_map_json.relationships.recommended_reading_order
+
+  STEP 3: GroundingPass(path_layers)
+    FOR each layer in path_layers:
+      LoadLayer(layer)
+      ExtractConstraintsAndQuestions(layer)
+
+  STEP 4: DecideClarifications()
+    critical_questions = FilterCriticalQuestions(max = 5)
+    IF critical_questions not empty THEN
+      AskUser(critical_questions)
+      STOP
+
+  STEP 5: BuildCoreQuestion()
+    core_question = SingleMostImportantDecision(user_request, optional_context)
+
+  STEP 6: BuildStrategySpine()
+    truths = Generate3AnchorTruths(path_layers)
+    direction = ChooseDirection(truths, constraints)
+    spine = Format("If {truths} then {direction} by {core_actions}")
+
+  STEP 7: ComposeOutputWithDecisionLayering()
+    LEVEL 1: ExecutiveDecisionLayer(core_question, spine, major_risks, expected_outcomes)
+    LEVEL 2: ExecutionLayer(initiatives, channels_roles, timeline, ownership, KPIs)
+    LEVEL 3: AppendicesLayer(assumptions, data_needed, alternatives, edge_cases)
+
+  STEP 8: ApplyDisciplineRules(L9)
+    Apply DecisionOwnershipRule
+    Apply RealityCheckRule
+    Apply SignalVsNoiseRule
+    Apply SaudiGroundingAndXResearchRule when output includes X content
+
+  STEP 9: FinalQualityGate()
+    Ensure no generic statements without specifics
+    Ensure each recommendation has metric
+    Ensure risks and tradeoffs are explicit
+    Ensure tone matches audience and entity type
+
+  STEP 10: Deliver(structured_output)
+
+FUNCTION ClassifyRequest(text):
+  RETURN one of:
+    report, proposal, strategy, media_plan, deck, x_content
+
+FUNCTION SelectPath(type, paths):
+  IF type == "proposal" THEN RETURN path for Government proposal
+  IF type == "x_content" THEN RETURN path for X content
+  IF type includes "hajj" or "umrah" THEN RETURN path for Hajj campaign
+  ELSE RETURN path for Conference marketing
+
+FUNCTION FilterCriticalQuestions(max):
+  Keep only questions that block decision quality
+  Return up to max
+

@@ -1,0 +1,85 @@
+{
+    "id": "neuron_headlines_hooks_v1",
+    "name": "Headlines & Hooks Neuron",
+    "version": "1.0",
+    "tags": ["headlines", "hooks", "curiosity", "attention", "creative_copy"],
+    "derived_from": [
+      {"neuron": "conversion_core", "section": "frameworks"},
+      {"neuron": "content_recipes", "section": "viral_levers"}
+    ],
+    "principles": [
+      "العنوان هو أول 3 ثواني: يا إما يجذب يا إما يضيّع العميل.",
+      "لازم يكون قصير، واضح، ويضرب على إحساس أو رغبة مباشرة.",
+      "عنصر الفضول لازم يتفتح لكن يتقفل بسرعة (gap + answer).",
+      "الأرقام والأزمنة بتدي مصداقية وسرعة إدراك.",
+      "كل Hook لازم يخدم Conversion مش مجرد لايكات."
+    ],
+    "frameworks": [
+      {
+        "id": "how_to_timebound",
+        "pattern": "إزاي [نتيجة مرغوبة] في [مدة زمنية] — بدون [عائق]",
+        "when_to_use": "Tutorials / Lead Magnets / Problem-Solution",
+        "examples": [
+          "إزاي تزود الـ CTR 2x في 14 يوم — من غير تزود الميزانية",
+          "How to triple demo bookings this quarter — without hiring more SDRs"
+        ]
+      },
+      {
+        "id": "numbered_benefit",
+        "pattern": "[رقم] طرق/قواعد لــ [فائدة واضحة]",
+        "when_to_use": "Top-of-funnel content, listicles, carousels",
+        "examples": [
+          "7 قواعد لكتابة Hook يوقف السكيرول",
+          "5 Tweaks تخلي العنوان يبيع أكتر — فورًا"
+        ]
+      },
+      {
+        "id": "twist_contrast",
+        "pattern": "[مقبول شائع]؟ جرّب [البديل الذكي]",
+        "when_to_use": "Positioning / Category creation",
+        "examples": [
+          "بتسأل Google؟ جرّب دكتور حقيقي — Ask Metadoc, not Google",
+          "Stop chasing reach — start capturing demand"
+        ]
+      },
+      {
+        "id": "proof_snapshot",
+        "pattern": "[نتيجة/رقم] بلا ضوضاء: [السبب المختصر]",
+        "when_to_use": "Case-studies / Performance posts",
+        "examples": [
+          "CPA ↓ 41% في 30 يوم: بس غيرنا الـ creative rhythm",
+          "Retention ↑ 19%: onboarding email واحد مختلف"
+        ]
+      }
+    ],
+    "tweaks": [
+      "ابدأ باسم الـ persona المستهدفة في أول 3 كلمات.",
+      "لو الجمهور مستعجل: حط الـ outcome قبل الآلية.",
+      "في الـ B2B: أضف دليل اجتماعي (Logo / عدد عملاء) في نفس السطر."
+    ],
+    "scoring": {
+      "headline_score_formula": "0.3*clarity + 0.25*specificity + 0.2*benefit + 0.15*novelty + 0.1*proof",
+      "checks": [
+        "هل فهِمه شخص خارج المجال؟",
+        "هل فيه فائدة واضحة للعميل؟",
+        "هل فيه عنصر جذب (رقم / وعد / مفارقة)؟",
+        "هل الـ CTA موجود ضمنيًا أو صراحة؟"
+      ]
+    },
+    "applications": {
+      "caption_examples": [
+        "حاسس إن Google مش فاهمك؟ 🙅‍♂️ جرب ميتادوك.",
+        "7 طرق بسيطة تخلي بوستاتك تاخد إنجيجمنت أعلى.",
+        "CPA ↓ 41%: ليه؟ بس غيرنا الريتم بتاع الكريتيف."
+      ],
+      "ad_headline_templates": [
+        "إزاي [تحقق النتيجة] من غير [عائق]",
+        "[رقم] أسباب تخليك [CTA]",
+        "بتعمل [سلوك خاطئ]؟ جرّب [حلنا]"
+      ]
+    },
+    "links_to": [
+      "neuron_conversion_core_v1",
+      "neuron_content_recipes_v1"
+    ]
+  }

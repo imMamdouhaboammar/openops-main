@@ -1,0 +1,278 @@
+# Food & Beverage / Restaurants Marketing Configuration
+# Restaurants, cafes, cloud kitchens, food delivery, catering
+
+industry: food_beverage_restaurants
+last_updated: "2026-02-15"
+source_verification: "Based on 2026 F&B marketing benchmarks"
+
+## Industry Characteristics
+
+business_model:
+  segments:
+    dine_in_restaurants: "Experience-driven, repeat customers, local catchment"
+    quick_service_qsr: "Fast, affordable, high volume"
+    cloud_kitchens: "Delivery-only, no dine-in, lower overhead"
+    cafes_coffee_shops: "Social space, repeat visits, loyalty-driven"
+    catering: "Event-based, B2B + B2C, high-ticket orders"
+  
+  typical_transaction:
+    dine_in: "$10-$50 per person"
+    delivery: "$15-$40 per order"
+    catering: "$500-$5K+ per event"
+  
+  repeat_frequency:
+    coffee_shops: "Daily to weekly"
+    restaurants: "Weekly to monthly"
+    catering: "Occasional (events)"
+
+buyer_psychology:
+  primary_motivations:
+    - "Convenience (location, delivery speed)"
+    - "Taste and quality (reviews, photos critical)"
+    - "Ambiance and experience (Instagram-worthy)"
+    - "Value for money (portion size, pricing)"
+  
+  decision_triggers:
+    - "Hunger (immediate need)"
+    - "Social occasion (date, family gathering)"
+    - "Visual appeal (food photos on Instagram)"
+    - "Promotions (discounts, BOGO, free delivery)"
+  
+  trust_factors:
+    - "Reviews and ratings (Google, Zomato, Talabat)"
+    - "Food photos (user-generated content)"
+    - "Hygiene and cleanliness"
+    - "Consistency (same quality every visit)"
+
+## Channel Strategy Patterns
+
+recommended_channels:
+  tier_1_essential:
+    - channel: "Instagram (Visual Storytelling)"
+      rationale: "Food is HIGHLY visual. Instagram = #1 platform for F&B discovery."
+      expected_timeline: "Week 1 for awareness, ongoing for engagement"
+      typical_cost: "$1-4 CPC, $5-20 cost per customer"
+      creative_notes: "High-quality food photos, behind-the-scenes, user-generated content"
+      
+    - channel: "Google My Business (Local SEO)"
+      rationale: "'Restaurants near me' searches. FREE and critical for local discovery."
+      expected_timeline: "Immediate (once optimized)"
+      typical_cost: "FREE"
+      critical_note: "MUST optimize: photos, hours, menu, reviews"
+      
+    - channel: "Food Delivery Apps (Talabat, Uber Eats, Deliveroo)"
+      rationale: "40-60% of F&B revenue is delivery (Egypt/GCC). Must be present."
+      expected_timeline: "Immediate"
+      typical_cost: "20-30% commission per order"
+      regional_note: "Talabat dominates Egypt/GCC"
+  
+  tier_2_growth:
+    - channel: "Facebook Ads (Local Awareness)"
+      rationale: "Target people within 3-5km radius. Drive foot traffic."
+      expected_timeline: "Week 1"
+      typical_cost: "$0.50-$3 CPC"
+      
+    - channel: "Influencer Marketing (Food Bloggers)"
+      rationale: "Food influencers drive massive awareness + foot traffic."
+      expected_timeline: "1-2 weeks per campaign"
+      typical_cost: "Micro: $100-500, Macro: $1K-5K per post/visit"
+      roi_note: "One viral post can drive 100+ customers in a week"
+      
+    - channel: "TikTok (Viral Food Content)"
+      rationale: "Food content performs exceptionally well on TikTok. Young audience."
+      expected_timeline: "1-2 weeks"
+      typical_cost: "$0.50-$2 CPC, but organic reach possible"
+      
+    - channel: "WhatsApp Business (Reservations, Catering Inquiries)"
+      rationale: "Direct communication for bookings, catering quotes"
+      expected_timeline: "Immediate"
+      typical_cost: "FREE"
+      regional_note: "CRITICAL in Egypt/GCC"
+  
+  tier_3_scale:
+    - channel: "Loyalty Programs (SMS, App)"
+      rationale: "Repeat customers = 60-70% of revenue. Reward loyalty."
+      expected_timeline: "2-3 months to build"
+      typical_cost: "$100-500/month (app/SMS platform)"
+      
+    - channel: "Email Marketing (Promotions, Events)"
+      rationale: "Announce new menu items, special events, offers"
+      expected_timeline: "Immediate (once list built)"
+      typical_cost: "Low ($50-200/month)"
+
+avoid_or_deprioritize:
+  - channel: "LinkedIn Ads"
+    reason: "Unless B2B catering for corporate events"
+  - channel: "Long-form content (blogs, whitepapers)"
+    reason: "F&B is visual and experiential, not educational"
+
+## Touchpoint Architecture for F&B
+
+buyer_journey_mapping:
+  stage_1_discovery:
+    touchpoints: ["Instagram posts", "Google Maps search", "Influencer recommendations"]
+    goal: "Create awareness and desire"
+    
+  stage_2_consideration:
+    touchpoints: ["Menu browsing", "Reviews (Google, Talabat)", "Food photos"]
+    goal: "Validate choice (taste, value, hygiene)"
+    
+  stage_3_conversion:
+    touchpoints: ["Delivery app order", "Reservation (WhatsApp, phone)", "Walk-in"]
+    goal: "Complete transaction"
+    
+  stage_4_retention:
+    touchpoints: ["Loyalty program", "SMS promotions", "Instagram engagement"]
+    goal: "Drive repeat visits"
+
+## Budget Allocation
+
+typical_spend_split:
+  dine_in_restaurant:
+    instagram_ads: "40%"
+    google_my_business: "0% (free, but invest time)"
+    influencer_marketing: "30%"
+    loyalty_program: "20%"
+    local_events: "10%"
+  
+  cloud_kitchen_delivery_only:
+    delivery_app_ads: "50%"
+    instagram_facebook: "30%"
+    influencer_marketing: "15%"
+    sms_promotions: "5%"
+  
+  cafe_coffee_shop:
+    instagram: "35%"
+    loyalty_program: "25%"
+    local_awareness_ads: "20%"
+    influencer_partnerships: "15%"
+    community_events: "5%"
+
+## Egypt/GCC Adjustments for F&B
+
+regional_nuances:
+  egypt:
+    - "Talabat dominance: 60% of food delivery market. MUST be on Talabat."
+    - "Price sensitivity: Egyptians compare prices heavily. Offer value meals, combos."
+    - "WhatsApp for reservations: Customers prefer WhatsApp over phone calls."
+    - "Ramadan iftar rush: 40% of monthly revenue in Ramadan (6PM-8PM surge)."
+    - "Cash on delivery: 80% of delivery orders are COD."
+    - "Instagram discovery: Young Egyptians discover new restaurants via Instagram (food bloggers)."
+    - "Hygiene concerns: Show clean kitchen, food prep (builds trust)."
+    
+  gcc:
+    - "Premium positioning: GCC customers willing to pay for quality and experience."
+    - "Delivery apps competitive: Talabat, Deliveroo, Uber Eats all strong. Be on multiple."
+    - "Influencer culture: Food influencers in Dubai/Riyadh drive massive foot traffic."
+    - "Instagram-worthy spaces: GCC customers want 'grammable' interiors. Invest in aesthetics."
+    - "Ramadan timing: Iftar buffets, suhoor specials (midnight dining)."
+    - "Expat vs local: Different cuisines for different segments (Arabic for locals, international for expats)."
+    - "Fast delivery expected: 30-45 minutes max. Longer = bad reviews."
+
+## Seasonal Campaign Playbook
+
+high_impact_periods:
+  ramadan:
+    timing: "March 10 - April 8, 2026"
+    significance: "40-50% of monthly revenue (iftar rush 6-8PM)"
+    strategy: "Iftar buffets, family meals, suhoor specials (midnight dining). Heavy Instagram ads."
+    creative_themes: "Family togetherness, breaking fast, traditional foods"
+    budget_allocation: "35-45% of annual marketing budget"
+    
+  eid_celebrations:
+    timing: "April 9-11 (Eid al-Fitr), June 15-18 (Eid al-Adha)"
+    significance: "Family gatherings, dining out"
+    strategy: "Family meal deals, reservations push, catering packages"
+    
+  summer_season:
+    timing: "June-August"
+    significance: "Outdoor dining, late-night crowds (GCC)"
+    strategy: "Outdoor seating promotions, cold beverages, summer menu"
+    
+  valentines_day:
+    timing: "February 14"
+    significance: "Couples dining (GCC more than Egypt)"
+    strategy: "Romantic ambiance, couple deals, reservations required"
+    
+  new_years_eve:
+    timing: "December 31"
+    significance: "Celebrations, parties"
+    strategy: "Special menus, reservations, premium pricing"
+
+## Success Metrics & Benchmarks
+
+key_metrics:
+  - metric: "Cost Per Customer Acquisition"
+    benchmark: "$5-20 (digital), $50-200 (influencer campaign)"
+    
+  - metric: "Customer Retention Rate"
+    benchmark: "30-50% monthly (dine-in), 20-40% (delivery)"
+    
+  - metric: "Average Order Value (AOV)"
+    benchmark_dine_in: "$15-50 per person"
+    benchmark_delivery: "$20-40 per order"
+    
+  - metric: "Delivery App Rating"
+    target: "> 4.5 stars (critical for visibility)"
+    
+  - metric: "Instagram Engagement Rate"
+    benchmark: "3-8% (F&B performs well)"
+    
+  - metric: "Repeat Customer Rate"
+    benchmark: "40-60% within 30 days (healthy)"
+
+kill_criteria:
+  - "If delivery app rating < 4.0 → Fix food quality/service BEFORE spending on ads"
+  - "If CAC > AOV → Unsustainable, reassess channel mix"
+  - "If repeat rate < 20% → Product/experience issue, not marketing"
+
+## Anti-Patterns for F&B Marketing
+
+common_mistakes:
+  - mistake: "Poor food photography (dark, unappetizing)"
+    fix: "Invest in professional food photography. Natural light, styled dishes."
+  
+  - mistake: "Ignoring Google My Business"
+    fix: "FREE traffic. Update hours, menu, photos weekly. Respond to reviews."
+  
+  - mistake: "No user-generated content (UGC)"
+    fix: "Encourage customers to tag you. Repost their photos. Run photo contests."
+  
+  - mistake: "Slow delivery times"
+    fix: "Optimize kitchen operations. 30-45 min max. Late = bad reviews = death."
+  
+  - mistake: "No loyalty program"
+    fix: "Repeat customers = 60% of revenue. Simple punch card or SMS program works."
+  
+  - mistake: "Ignoring Ramadan (Egypt/GCC)"
+    fix: "40% of monthly revenue. Plan iftar/suhoor menus 2 months ahead."
+  
+  - mistake: "Not responding to negative reviews"
+    fix: "Respond within 24 hours. Apologize, offer to make it right. Shows you care."
+
+## F&B-Specific Tactics
+
+high_impact_strategies:
+  instagram_worthy_interiors:
+    description: "Design spaces for photos (neon signs, unique decor, colorful dishes)"
+    roi: "Free marketing - customers post and tag you"
+    
+  influencer_visits:
+    description: "Invite food bloggers for free meals in exchange for posts"
+    roi: "One viral post = 100+ customers in a week"
+    
+  limited_time_offers:
+    description: "Weekly specials, seasonal items (create urgency)"
+    roi: "Drives repeat visits to try new items"
+    
+  delivery_app_optimization:
+    description: "Professional photos, detailed descriptions, promotions"
+    roi: "Higher visibility = more orders"
+    
+  whatsapp_reservations:
+    description: "Click-to-WhatsApp for easy booking"
+    roi: "Reduces no-shows, easier than phone calls (Egypt/GCC)"
+    
+  ramadan_iftar_packages:
+    description: "Family meal deals for breaking fast"
+    roi: "40% of monthly revenue in 30 days"

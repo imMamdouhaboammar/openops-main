@@ -1,0 +1,84 @@
+{
+  "module": {
+    "name": "Runtime_Prompt_Pipeline",
+    "version": "2.0.0",
+    "layer": "09_tooling",
+    "code": "09D",
+    "description": "Dynamic prompt assembly, context injection, and runtime optimization",
+    "author": "OpenOps Foundation",
+    "created": "2025-12-16T00:00:00Z"
+  },
+  "governance": {
+    "compliance_level": "standard",
+    "requires_approval": false,
+    "audit_level": "standard",
+    "data_classification": "internal"
+  },
+  "objectives": [
+    "Assemble prompts dynamically at runtime",
+    "Inject relevant context automatically",
+    "Optimize prompt tokens",
+    "Handle prompt versioning"
+  ],
+  "integration_points": {
+    "imports_from": ["09A_Prompt_Template_Registry.json", "09B_Tool_and_API_Mapping.json", "09C_Agent_Prompt_Mapping.json"],
+    "exports_to": ["01A_Execution_Context_Manager.json", "02C_Agent_Logging_and_Audit.json"]
+  },
+  "pipeline_stages": {
+    "1_template_selection": {
+      "inputs": ["agent_role", "task_type", "context"],
+      "process": "match_template_from_registry",
+      "output": "base_template"
+    },
+    "2_context_injection": {
+      "inputs": ["base_template", "execution_context"],
+      "process": "inject_variables_and_history",
+      "output": "contextualized_prompt"
+    },
+    "3_optimization": {
+      "inputs": ["contextualized_prompt", "token_budget"],
+      "process": "compress_and_prioritize",
+      "output": "optimized_prompt"
+    },
+    "4_validation": {
+      "inputs": ["optimized_prompt"],
+      "process": "check_safety_and_compliance",
+      "output": "validated_prompt"
+    },
+    "5_execution": {
+      "inputs": ["validated_prompt", "tool_mapping"],
+      "process": "send_to_llm_with_tools",
+      "output": "response"
+    }
+  },
+  "context_sources": {
+    "agent_memory": "02B_Agent_Memory_Registry.json",
+    "task_history": "01A_Execution_Context_Manager.json",
+    "knowledge_base": "05C_Embedding_and_VectorStore_Config.json",
+    "real_time_signals": "07A_Analytics_Event_Schema.json"
+  },
+  "optimization_techniques": {
+    "token_compression": {
+      "summarization": "enabled",
+      "pruning_low_relevance": true,
+      "abbreviation_expansion": false
+    },
+    "context_prioritization": {
+      "recency_weight": 0.4,
+      "relevance_weight": 0.4,
+      "importance_weight": 0.2
+    }
+  },
+  "safety_checks": {
+    "pii_detection": true,
+    "prompt_injection_detection": true,
+    "content_policy_validation": true,
+    "bias_detection": "enabled"
+  },
+  "caching_strategy": {
+    "prompt_cache": {"enabled": true, "ttl": 300},
+    "response_cache": {"enabled": true, "ttl": 600},
+    "semantic_deduplication": true
+  },
+  "version_history": {"2.0.0": {"date": "2025-12-16", "changes": "Initial runtime pipeline"}}
+}

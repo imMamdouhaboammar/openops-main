@@ -1,0 +1,3677 @@
+{
+  "$schema": "openops://11_marketing_growth_agent/06_workflows/agency_live_journey.schema.json",
+  "schemaVersion": "1.1.0",
+  "generatedAt": "2026-01-24T20:00:00Z",
+  "language": "en",
+  "title": "Live Agency Journey OS (Universal 360° Digital Marketing)",
+  "purpose": {
+    "oneLine": "A machine-readable, end-to-end agency operating journey that defines stages, handoffs, artifacts, roles, skills, and grounding sources.",
+    "whatThisIs": [
+      "A workflow graph (nodes/edges) describing how an agency runs from intake → strategy → execution → reporting → learning.",
+      "A RACI-like ownership model describing who hands off to whom and what must be delivered.",
+      "A skills and grounding registry to keep outputs evidence-based and repeatable."
+    ],
+    "whatThisIsNot": [
+      "A generic services list",
+      "A platform-specific implementation",
+      "A replacement for legal/compliance counsel"
+    ]
+  },
+  "designPrinciples": [
+    "Single Source of Truth (SSOT): if it isn't in SSOT, it didn't happen.",
+    "Artifacts-first: every step outputs a concrete artifact.",
+    "Supervisor-first: a single orchestrator controls pods; pods do not act without authorization.",
+    "Evidence-first: no causal claims without a test plan; attribution is directional unless incrementality is established.",
+    "Speed with safety: 7–14 day validation loops, with compliance gates when needed (especially clinics).",
+    "Ops reality: workflows reflect capacity constraints, response SLAs, and approvals."
+  ],
+  "repoInspiration": {
+    "primaryDocs": [
+      {
+        "path": "11_marketing_growth_agent/06_workflows/agency_workflow_360.md",
+        "usedFor": [
+          "agency journey stages",
+          "handoffs",
+          "weekly cadence",
+          "brand identity gate",
+          "templates/checklists"
+        ]
+      },
+      {
+        "path": "11_marketing_growth_agent/11_marketing_growth_system/workflows/agency_operations_orchestrator.workflow.json",
+        "usedFor": [
+          "phase structure",
+          "quality gates",
+          "authorization model"
+        ]
+      },
+      {
+        "path": "11_marketing_growth_agent/12_control_plane/pod_registry.json",
+        "usedFor": [
+          "pods model",
+          "mandates",
+          "approval escalations"
+        ]
+      },
+      {
+        "path": "11_marketing_growth_agent/12_control_plane/task_envelope.schema.json",
+        "usedFor": [
+          "task request contract"
+        ]
+      },
+      {
+        "path": "11_marketing_growth_agent/12_control_plane/pod_response_envelope.schema.json",
+        "usedFor": [
+          "pod output contract"
+        ]
+      },
+      {
+        "path": "11_marketing_growth_agent/12_control_plane/decision_log.schema.json",
+        "usedFor": [
+          "auditable decisions"
+        ]
+      },
+      {
+        "path": "11_marketing_growth_agent/11_marketing_growth_system/11C_Grounding_and_Research_Engine.json",
+        "usedFor": [
+          "grounding sources and protocol"
+        ]
+      },
+      {
+        "path": "Marketing Agency/07B_StrategIQ_Execution_Performance_Loop.md",
+        "usedFor": [
+          "learning loop",
+          "signal processing",
+          "decision recalibration"
+        ]
+      }
+    ],
+    "templates": [
+      "11_marketing_growth_agent/09_templates/ready_to_use_templates.md",
+      "11_marketing_growth_agent/11_marketing_growth_system/templates/campaign_brief.template.md",
+      "11_marketing_growth_agent/11_marketing_growth_system/templates/content_calendar.template.json"
+    ]
+  },
+  "repoRegistries": {
+    "skillsRegistry": {
+      "path": "11_marketing_growth_agent/14_registry/repo_skills_registry.v1.json",
+      "schema": "11_marketing_growth_agent/14_registry/repo_skills_registry.schema.json",
+      "generatedBy": "11_marketing_growth_agent/13_automation/skills/generate_repo_skills_registry.js",
+      "purpose": "Enumerate all repo skills so the supervisor can route/authorize pods and sub-skills deterministically."
+    }
+  },
+  "glossary": {
+    "SSOT": "Single Source of Truth (task system + docs + asset store).",
+    "SLA": "Service Level Agreement (e.g., response time for approvals or lead responses).",
+    "MBR": "Monthly Business Review.",
+    "KPI": "Key Performance Indicator.",
+    "OKR": "Objectives and Key Results.",
+    "Pod": "A specialized execution unit (Content, Creative, Paid, Analytics, etc.).",
+    "Supervisor": "The single orchestrator agent/role that authorizes pods and owns decisions.",
+    "Artifact": "A concrete deliverable: doc/spec/template/report that becomes the source of truth for a decision or handoff."
+  },
+  "actors": {
+    "clientRoles": [
+      {
+        "roleId": "CLIENT_DECISION_MAKER",
+        "name": "Decision Maker",
+        "responsibilities": [
+          "Approves budget ranges",
+          "Approves strategy direction",
+          "Approves major offer changes"
+        ],
+        "slaTargets": {
+          "approvalHours": 24
+        }
+      },
+      {
+        "roleId": "CLIENT_APPROVER",
+        "name": "Approver",
+        "responsibilities": [
+          "Approves creative/copy",
+          "Approves claims and compliance-sensitive messaging",
+          "Approves brand direction changes"
+        ],
+        "slaTargets": {
+          "approvalHours": 24
+        }
+      },
+      {
+        "roleId": "CLIENT_OPERATOR",
+        "name": "Operator",
+        "responsibilities": [
+          "Implements operational changes (hours, booking flow, staff scripts)",
+          "Responds to leads and maintains response SLA",
+          "Provides assets (photos/videos/testimonials) on schedule"
+        ],
+        "slaTargets": {
+          "leadResponseMinutes": 15
+        }
+      }
+    ],
+    "agencyRoles": [
+      {
+        "roleId": "SUPERVISOR_ORCHESTRATOR",
+        "name": "Supervisor Orchestrator (Account Lead OS)",
+        "mandate": "Owns the engagement end-to-end; authorizes pods; owns approvals, cadence, and decision log.",
+        "coreResponsibilities": [
+          "Brief intake and scope definition",
+          "Orchestrate strategy proposal and revisions",
+          "Authorize pods via task envelopes",
+          "Ensure SSOT hygiene and artifact completeness",
+          "Enforce compliance gates (especially clinics)",
+          "Run weekly planning + weekly updates + MBR",
+          "Log material decisions"
+        ],
+        "kpis": [
+          "Approval turnaround time",
+          "On-time delivery rate",
+          "Experiment cycle time",
+          "Client satisfaction and retention"
+        ]
+      },
+      {
+        "roleId": "STRATEGY_LEAD",
+        "name": "Growth Strategist",
+        "mandate": "Owns diagnosis, positioning, KPI tree, experiment backlog, and learning narrative.",
+        "kpis": [
+          "Clarity of strategy doc",
+          "Experiment quality score",
+          "Outcome impact on KPIs"
+        ]
+      },
+      {
+        "roleId": "CREATIVE_LEAD",
+        "name": "Creative Lead / Brand Designer",
+        "mandate": "Owns brand system, creative briefs, production QA, and template packs.",
+        "kpis": [
+          "Creative throughput",
+          "Creative approval rate",
+          "Creative fatigue avoidance"
+        ]
+      },
+      {
+        "roleId": "CONTENT_LEAD",
+        "name": "Content Strategist / Copy Lead",
+        "mandate": "Owns content pillars, scripts/captions, publishing plan, and review engine scripts.",
+        "kpis": [
+          "Publishing on-time rate",
+          "Engagement quality",
+          "Proof coverage consistency"
+        ]
+      },
+      {
+        "roleId": "SOCIAL_COMMUNITY",
+        "name": "Social / Community Manager",
+        "mandate": "Owns scheduling, publishing, community engagement, and GBP operations.",
+        "kpis": [
+          "Posting cadence adherence",
+          "Response time",
+          "Review response SLA"
+        ]
+      },
+      {
+        "roleId": "PAID_MEDIA",
+        "name": "Paid Media Buyer",
+        "mandate": "Owns campaign structure, testing matrix, pacing, scaling, and disapproval handling.",
+        "kpis": [
+          "CPL/CPA",
+          "MER/ROAS (context-aware)",
+          "Testing velocity",
+          "Policy disapproval rate"
+        ]
+      },
+      {
+        "roleId": "ANALYTICS_LEAD",
+        "name": "Analytics / Measurement Lead",
+        "mandate": "Owns tracking plan, event definitions, dashboards, data quality, and incrementality design.",
+        "kpis": [
+          "Data quality score",
+          "Event coverage completeness",
+          "Decision usefulness of reporting"
+        ]
+      },
+      {
+        "roleId": "LIFECYCLE_CRM",
+        "name": "Lifecycle / CRM Lead",
+        "mandate": "Owns retention, review engine, win-back sequences, and segmentation.",
+        "kpis": [
+          "Repeat rate",
+          "Win-back rate",
+          "No-show reduction (clinics)",
+          "Review volume growth"
+        ]
+      }
+    ],
+    "pods": [
+      {
+        "podId": "POD-STRATEGY",
+        "roleOwner": "STRATEGY_LEAD"
+      },
+      {
+        "podId": "POD-CREATIVE",
+        "roleOwner": "CREATIVE_LEAD"
+      },
+      {
+        "podId": "POD-CONTENT",
+        "roleOwner": "CONTENT_LEAD"
+      },
+      {
+        "podId": "POD-PAID",
+        "roleOwner": "PAID_MEDIA"
+      },
+      {
+        "podId": "POD-ANALYTICS",
+        "roleOwner": "ANALYTICS_LEAD"
+      },
+      {
+        "podId": "POD-LIFECYCLE",
+        "roleOwner": "LIFECYCLE_CRM"
+      }
+    ]
+  },
+  "statusModel": {
+    "workItemStatuses": [
+      "queued",
+      "authorized",
+      "in_progress",
+      "needs_approval",
+      "blocked",
+      "completed"
+    ],
+    "artifactStatuses": [
+      "draft",
+      "in_review",
+      "approved",
+      "published",
+      "deprecated"
+    ],
+    "decisionStatuses": [
+      "not_required",
+      "pending",
+      "approved",
+      "rejected"
+    ],
+    "handoffRules": [
+      "No stage handoff without at least one artifact.",
+      "Any compliance-sensitive content must pass a compliance gate before launch.",
+      "Any budget shift must generate a Decision Log entry."
+    ]
+  },
+  "journey": {
+    "stages": [
+      {
+        "stageId": "STAGE_00_INTAKE",
+        "name": "Intake / Onboarding (Step 0)",
+        "objective": "Clarify scope, capture a real brief, identify constraints, and lock SLAs + access list.",
+        "primaryOwnerRoleId": "SUPERVISOR_ORCHESTRATOR",
+        "participants": [
+          "CLIENT_DECISION_MAKER",
+          "CLIENT_APPROVER",
+          "CLIENT_OPERATOR"
+        ],
+        "inputs": [
+          "Business objective (90 days + 6 months)",
+          "Budget range",
+          "Capacity constraints (peak hours, appointments/day)",
+          "Current channels and performance snapshot (if any)",
+          "Approval workflow and SLA targets"
+        ],
+        "outputs": [
+          {
+            "artifactType": "BRIEF",
+            "handoffTo": [
+              "STRATEGY_LEAD",
+              "ANALYTICS_LEAD",
+              "CREATIVE_LEAD"
+            ]
+          },
+          {
+            "artifactType": "ACCESS_CHECKLIST",
+            "handoffTo": [
+              "ANALYTICS_LEAD",
+              "PAID_MEDIA"
+            ]
+          }
+        ],
+        "decisionGates": [
+          {
+            "gateId": "GATE_BRAND_IDENTITY",
+            "question": "Does the client have a brand identity system (brand kit)?",
+            "ifYes": "Collect brand kit; lock voice/tone constraints.",
+            "ifNo": "Trigger Brand Identity Project Track (minimum viable brand kit) before heavy spend."
+          }
+        ],
+        "handoffs": [
+          {
+            "fromRoleId": "SUPERVISOR_ORCHESTRATOR",
+            "toRoleId": "STRATEGY_LEAD",
+            "payload": [
+              "BRIEF",
+              "CONSTRAINTS_SUMMARY",
+              "SUCCESS_CRITERIA"
+            ]
+          }
+        ],
+        "entryCriteria": [
+          "Client decision maker available",
+          "Initial budget range defined"
+        ],
+        "exitCriteria": [
+          "Brief completed",
+          "Approval SLA agreed",
+          "Access list created"
+        ]
+      },
+      {
+        "stageId": "STAGE_00A_BRAND_IDENTITY_TRACK",
+        "name": "Brand Identity Project Track (If Missing)",
+        "objective": "Create a minimum viable brand kit so creative, copy, and campaigns ship consistently and safely.",
+        "primaryOwnerRoleId": "CREATIVE_LEAD",
+        "participants": [
+          "SUPERVISOR_ORCHESTRATOR",
+          "CONTENT_LEAD",
+          "CLIENT_DECISION_MAKER",
+          "CLIENT_APPROVER"
+        ],
+        "conditional": {
+          "dependsOnGateId": "GATE_BRAND_IDENTITY",
+          "when": "ifNo"
+        },
+        "parallelizableWith": [
+          "STAGE_01_DIAGNOSIS_AND_AUDIT"
+        ],
+        "inputs": [
+          "BRIEF",
+          "Any existing assets/logos",
+          "Competitor set",
+          "Service menu / offers"
+        ],
+        "outputs": [
+          {
+            "artifactType": "BRAND_IDENTITY_BRIEF",
+            "handoffTo": [
+              "SUPERVISOR_ORCHESTRATOR"
+            ]
+          },
+          {
+            "artifactType": "BRAND_KIT",
+            "handoffTo": [
+              "CONTENT_LEAD",
+              "PAID_MEDIA",
+              "SOCIAL_COMMUNITY",
+              "SUPERVISOR_ORCHESTRATOR"
+            ]
+          },
+          {
+            "artifactType": "BRAND_VOICE",
+            "handoffTo": [
+              "CONTENT_LEAD",
+              "SUPERVISOR_ORCHESTRATOR"
+            ]
+          },
+          {
+            "artifactType": "TEMPLATE_PACK",
+            "handoffTo": [
+              "SOCIAL_COMMUNITY",
+              "PAID_MEDIA"
+            ]
+          }
+        ],
+        "decisionGates": [
+          {
+            "gateId": "GATE_BRAND_APPROVAL",
+            "question": "Client approves the MVP brand kit baseline?",
+            "ifYes": "Lock brand kit; proceed to production at full speed.",
+            "ifNo": "Iterate quickly (max 1–2 revision loops) then lock a temporary baseline to avoid stalling growth."
+          }
+        ],
+        "entryCriteria": [
+          "Brand kit is missing or inconsistent"
+        ],
+        "exitCriteria": [
+          "Brand kit baseline approved",
+          "Templates available for weekly production cadence"
+        ]
+      },
+      {
+        "stageId": "STAGE_01_DIAGNOSIS_AND_AUDIT",
+        "name": "Discovery / Audit / Diagnosis",
+        "objective": "Build a root-cause map, establish baselines, and identify highest-leverage fixes.",
+        "primaryOwnerRoleId": "STRATEGY_LEAD",
+        "participants": [
+          "ANALYTICS_LEAD",
+          "PAID_MEDIA",
+          "CREATIVE_LEAD"
+        ],
+        "inputs": [
+          "BRIEF",
+          "Current assets inventory",
+          "Any analytics exports",
+          "Competitor list"
+        ],
+        "outputs": [
+          {
+            "artifactType": "DIAGNOSIS",
+            "handoffTo": [
+              "SUPERVISOR_ORCHESTRATOR"
+            ]
+          },
+          {
+            "artifactType": "BASELINES",
+            "handoffTo": [
+              "ANALYTICS_LEAD"
+            ]
+          },
+          {
+            "artifactType": "BRAND_AUDIT",
+            "handoffTo": [
+              "CREATIVE_LEAD"
+            ]
+          }
+        ],
+        "decisionGates": [
+          {
+            "gateId": "GATE_CAPACITY_CONSTRAINTS",
+            "question": "Is demand already at capacity in peak times?",
+            "ifYes": "Shift growth objective to off-peak utilization or higher-margin offers.",
+            "ifNo": "Proceed with demand generation as primary objective."
+          }
+        ],
+        "entryCriteria": [
+          "Brief complete",
+          "Access list in progress"
+        ],
+        "exitCriteria": [
+          "Diagnosis artifact complete with evidence",
+          "Baseline snapshot recorded"
+        ]
+      },
+      {
+        "stageId": "STAGE_02_STRATEGY_AND_OPERATING_PLAN",
+        "name": "Strategy + 6-Month Operating Plan",
+        "objective": "Produce an executable 6-month plan decomposed into 90/30/7 day plans with KPIs/OKRs and experiments.",
+        "primaryOwnerRoleId": "SUPERVISOR_ORCHESTRATOR",
+        "participants": [
+          "STRATEGY_LEAD",
+          "ANALYTICS_LEAD",
+          "CREATIVE_LEAD"
+        ],
+        "inputs": [
+          "DIAGNOSIS",
+          "BASELINES",
+          "Brand constraints",
+          "Budget constraints"
+        ],
+        "outputs": [
+          {
+            "artifactType": "PLAN_6M",
+            "handoffTo": [
+              "CLIENT_DECISION_MAKER"
+            ]
+          },
+          {
+            "artifactType": "PLAN_90D",
+            "handoffTo": [
+              "CLIENT_DECISION_MAKER"
+            ]
+          },
+          {
+            "artifactType": "MICROPLAN_7D",
+            "handoffTo": [
+              "POD-CONTENT",
+              "POD-CREATIVE",
+              "POD-PAID"
+            ]
+          },
+          {
+            "artifactType": "KPI_TREE",
+            "handoffTo": [
+              "ANALYTICS_LEAD"
+            ]
+          },
+          {
+            "artifactType": "EXPERIMENT_BACKLOG",
+            "handoffTo": [
+              "PAID_MEDIA",
+              "CONTENT_LEAD"
+            ]
+          }
+        ],
+        "decisionGates": [
+          {
+            "gateId": "GATE_STRATEGY_APPROVAL",
+            "question": "Client approves the operating plan and budget ranges?",
+            "ifYes": "Lock plan; start execution; schedule weekly cadence.",
+            "ifNo": "Iterate revisions until sign-off."
+          }
+        ],
+        "entryCriteria": [
+          "Diagnosis approved internally"
+        ],
+        "exitCriteria": [
+          "Plan signed-off",
+          "Cadence scheduled",
+          "Pods authorized"
+        ]
+      },
+      {
+        "stageId": "STAGE_03_FOUNDATION_SETUP",
+        "name": "Foundation Setup (Tracking + Brand + SSOT)",
+        "objective": "Ensure tracking, brand kit, and SSOT are ready so execution is measurable and consistent.",
+        "primaryOwnerRoleId": "ANALYTICS_LEAD",
+        "participants": [
+          "CREATIVE_LEAD",
+          "SUPERVISOR_ORCHESTRATOR"
+        ],
+        "inputs": [
+          "PLAN_90D",
+          "KPI_TREE",
+          "Access status"
+        ],
+        "outputs": [
+          {
+            "artifactType": "TRACKING_PLAN",
+            "handoffTo": [
+              "PAID_MEDIA",
+              "SUPERVISOR_ORCHESTRATOR"
+            ]
+          },
+          {
+            "artifactType": "UTM_PLAN",
+            "handoffTo": [
+              "PAID_MEDIA",
+              "CONTENT_LEAD"
+            ]
+          },
+          {
+            "artifactType": "BRAND_BRIEF",
+            "handoffTo": [
+              "CREATIVE_LEAD",
+              "CONTENT_LEAD"
+            ]
+          }
+        ],
+        "decisionGates": [
+          {
+            "gateId": "GATE_COMPLIANCE",
+            "question": "Is this a clinic or other regulated category?",
+            "ifYes": "Enable compliance review gates; restrict claims and proof types.",
+            "ifNo": "Proceed with standard brand QA."
+          }
+        ],
+        "entryCriteria": [
+          "Plan signed-off"
+        ],
+        "exitCriteria": [
+          "Tracking QA passed",
+          "Brand kit ready",
+          "SSOT structure created"
+        ]
+      },
+      {
+        "stageId": "STAGE_04_PRODUCTION",
+        "name": "Production (Content + Creative)",
+        "objective": "Create content calendar, creative briefs, and creative batches ready for approval and publishing.",
+        "primaryOwnerRoleId": "CREATIVE_LEAD",
+        "participants": [
+          "CONTENT_LEAD",
+          "SUPERVISOR_ORCHESTRATOR"
+        ],
+        "inputs": [
+          "PLAN_90D",
+          "BRAND_BRIEF",
+          "EXPERIMENT_BACKLOG"
+        ],
+        "outputs": [
+          {
+            "artifactType": "CONTENT_CALENDAR",
+            "handoffTo": [
+              "SOCIAL_COMMUNITY"
+            ]
+          },
+          {
+            "artifactType": "COPY_PACK",
+            "handoffTo": [
+              "SOCIAL_COMMUNITY",
+              "PAID_MEDIA"
+            ]
+          },
+          {
+            "artifactType": "CREATIVE_BATCH",
+            "handoffTo": [
+              "PAID_MEDIA",
+              "SOCIAL_COMMUNITY"
+            ]
+          }
+        ],
+        "decisionGates": [
+          {
+            "gateId": "GATE_CLIENT_APPROVAL_CREATIVE",
+            "question": "Client approves creative/copy within SLA?",
+            "ifYes": "Proceed to publishing and paid launch.",
+            "ifNo": "Revise, re-submit, and escalate if SLA breaks."
+          }
+        ],
+        "entryCriteria": [
+          "Brand kit ready (or hygiene baseline ready)"
+        ],
+        "exitCriteria": [
+          "Approved creative pack",
+          "Approved copy pack"
+        ]
+      },
+      {
+        "stageId": "STAGE_05_PUBLISH_AND_LAUNCH",
+        "name": "Publish (Social/GBP) + Launch (Paid)",
+        "objective": "Publish organic content and launch paid campaigns with tracking, naming conventions, and kill metrics.",
+        "primaryOwnerRoleId": "PAID_MEDIA",
+        "participants": [
+          "SOCIAL_COMMUNITY",
+          "ANALYTICS_LEAD"
+        ],
+        "inputs": [
+          "CREATIVE_BATCH",
+          "COPY_PACK",
+          "TRACKING_PLAN",
+          "UTM_PLAN"
+        ],
+        "outputs": [
+          {
+            "artifactType": "PUBLISHING_LOG",
+            "handoffTo": [
+              "SUPERVISOR_ORCHESTRATOR"
+            ]
+          },
+          {
+            "artifactType": "PAID_PLAN",
+            "handoffTo": [
+              "SUPERVISOR_ORCHESTRATOR"
+            ]
+          }
+        ],
+        "decisionGates": [
+          {
+            "gateId": "GATE_LAUNCH_QA",
+            "question": "Tracking events fire and UTMs are correct?",
+            "ifYes": "Allow scaling budgets; start experiment decision gates.",
+            "ifNo": "Fix tracking before scale."
+          }
+        ],
+        "entryCriteria": [
+          "Client approvals complete",
+          "Tracking QA done"
+        ],
+        "exitCriteria": [
+          "Campaigns live (or scheduled)",
+          "Logs recorded in SSOT"
+        ]
+      },
+      {
+        "stageId": "STAGE_06_MEASURE_REPORT_OPTIMIZE",
+        "name": "Measure → Report → Optimize (Weekly + Monthly)",
+        "objective": "Make decisions based on data, log learnings, and iterate with 7–14 day experiments.",
+        "primaryOwnerRoleId": "SUPERVISOR_ORCHESTRATOR",
+        "participants": [
+          "ANALYTICS_LEAD",
+          "STRATEGY_LEAD",
+          "PAID_MEDIA",
+          "CONTENT_LEAD"
+        ],
+        "inputs": [
+          "Dashboards",
+          "Campaign performance",
+          "Lead quality signals",
+          "Ops response SLA"
+        ],
+        "outputs": [
+          {
+            "artifactType": "WEEKLY_UPDATE",
+            "handoffTo": [
+              "CLIENT_DECISION_MAKER",
+              "CLIENT_OPERATOR"
+            ]
+          },
+          {
+            "artifactType": "MBR",
+            "handoffTo": [
+              "CLIENT_DECISION_MAKER"
+            ]
+          },
+          {
+            "artifactType": "DECISION_LOG_ENTRY",
+            "handoffTo": [
+              "SSOT"
+            ]
+          }
+        ],
+        "decisionGates": [
+          {
+            "gateId": "GATE_EXPERIMENT_DECISIONS",
+            "question": "At Day 7/Day 14: scale / iterate / kill?",
+            "ifYes": "Log decision; update backlog; adjust budgets.",
+            "ifNo": "Escalate data quality / operational issues."
+          }
+        ],
+        "entryCriteria": [
+          "Campaigns/publishing in motion"
+        ],
+        "exitCriteria": [
+          "Continuous loop (never ends during retainer)"
+        ]
+      }
+    ],
+    "handoffMatrix": [
+      {
+        "handoffId": "H_00_TO_01",
+        "fromStageId": "STAGE_00_INTAKE",
+        "toStageId": "STAGE_01_DIAGNOSIS_AND_AUDIT",
+        "fromRoleId": "SUPERVISOR_ORCHESTRATOR",
+        "toRoleId": "STRATEGY_LEAD",
+        "mustIncludeArtifacts": [
+          "BRIEF",
+          "CONSTRAINTS_SUMMARY",
+          "ACCESS_CHECKLIST"
+        ]
+      },
+      {
+        "handoffId": "H_03_TO_04",
+        "fromStageId": "STAGE_03_FOUNDATION_SETUP",
+        "toStageId": "STAGE_04_PRODUCTION",
+        "fromRoleId": "ANALYTICS_LEAD",
+        "toRoleId": "CREATIVE_LEAD",
+        "mustIncludeArtifacts": [
+          "BRAND_BRIEF",
+          "TRACKING_PLAN",
+          "UTM_PLAN"
+        ]
+      },
+      {
+        "handoffId": "H_04_TO_05",
+        "fromStageId": "STAGE_04_PRODUCTION",
+        "toStageId": "STAGE_05_PUBLISH_AND_LAUNCH",
+        "fromRoleId": "CREATIVE_LEAD",
+        "toRoleId": "PAID_MEDIA",
+        "mustIncludeArtifacts": [
+          "CREATIVE_BATCH",
+          "COPY_PACK"
+        ],
+        "approvalRequired": true
+      }
+    ],
+    "cadence": {
+      "weekly": {
+        "planningCall": {
+          "owner": "SUPERVISOR_ORCHESTRATOR",
+          "durationMinutes": 45
+        },
+        "performanceReview": {
+          "owner": "ANALYTICS_LEAD",
+          "durationMinutes": 45
+        },
+        "creativeReview": {
+          "owner": "CREATIVE_LEAD",
+          "durationMinutes": 60
+        }
+      },
+      "monthly": {
+        "mbr": {
+          "owner": "SUPERVISOR_ORCHESTRATOR",
+          "durationMinutes": 60
+        }
+      },
+      "quarterly": {
+        "strategyReset": {
+          "owner": "SUPERVISOR_ORCHESTRATOR",
+          "durationMinutes": 90
+        }
+      }
+    },
+    "automationHooks": {
+      "controlPlane": {
+        "taskEnvelopeSchema": "11_marketing_growth_agent/12_control_plane/task_envelope.schema.json",
+        "podResponseSchema": "11_marketing_growth_agent/12_control_plane/pod_response_envelope.schema.json",
+        "decisionLogSchema": "11_marketing_growth_agent/12_control_plane/decision_log.schema.json",
+        "traceSchema": "11_marketing_growth_agent/13_automation/observability/trace_event.schema.json"
+      },
+      "ssotStructure": {
+        "recommended": [
+          "SSOT/Clients/<clientSlug>/DispatchPack",
+          "SSOT/Clients/<clientSlug>/Artifacts",
+          "SSOT/Clients/<clientSlug>/DecisionLog",
+          "SSOT/Clients/<clientSlug>/Traces",
+          "SSOT/Clients/<clientSlug>/SchedulePack"
+        ]
+      }
+    }
+  },
+  "skills": {
+    "repoSkillsRegistryRef": {
+      "path": "11_marketing_growth_agent/14_registry/repo_skills_registry.v1.json",
+      "note": "This registry enumerates every skill in `./skills`. Specialties below reference only the most relevant ones."
+    },
+    "specialties": [
+      {
+        "specialtyId": "SPECIALTY_ACCOUNT_LEAD",
+        "roleId": "SUPERVISOR_ORCHESTRATOR",
+        "mission": "Own client success, approvals, cadence, and scope governance.",
+        "skills": [
+          {
+            "name": "Project scoping and client communication",
+            "level": "expert"
+          },
+          {
+            "name": "Digital marketing systems thinking",
+            "level": "advanced"
+          },
+          {
+            "name": "Risk management and escalation",
+            "level": "advanced"
+          }
+        ],
+        "recommendedRepoSkills": [
+          {
+            "skillName": "workflow-automation",
+            "path": "skills/workflow-automation/SKILL.md",
+            "inlineSummary": {
+              "status": "ok",
+              "skillName": "workflow-automation",
+              "name": "workflow-automation",
+              "title": "Workflow Automation",
+              "oneLineSummary": "Workflow automation is the infrastructure that makes AI agents reliable. Without durable execution, a network hiccup during a 10-step payment flow means lost money and angry customers. With it, workflows resume exactly where they left off.  This skill covers the platforms (n8n, Temporal, Inngest) and patterns (sequential, parallel, orchestrator-worker) that turn brittle scripts into production-grade automation.  Key insight: The platforms make different tradeoffs. n8n optimizes for accessibility",
+              "description": "Workflow automation is the infrastructure that makes AI agents reliable. Without durable execution, a network hiccup during a 10-step payment flow means lost money and angry customers. With it, workflows resume exactly where they left off.  This skill covers the platforms (n8n, Temporal, Inngest) and patterns (sequential, parallel, orchestrator-worker) that turn brittle scripts into production-grade automation.  Key insight: The platforms make different tradeoffs. n8n optimizes for accessibility",
+              "keySections": [
+                {
+                  "heading": "Capabilities",
+                  "level": 2,
+                  "bullets": [
+                    "workflow-automation",
+                    "workflow-orchestration",
+                    "durable-execution",
+                    "event-driven-workflows",
+                    "step-functions",
+                    "job-queues"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "Sequential Workflow Pattern",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "Steps execute in order, each output becomes next input"
+                },
+                {
+                  "heading": "Parallel Workflow Pattern",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "Independent steps run simultaneously, aggregate results"
+                },
+                {
+                  "heading": "Orchestrator-Worker Pattern",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "Central coordinator dispatches work to specialized workers"
+                },
+                {
+                  "heading": "⚠️ Sharp Edges",
+                  "level": 2,
+                  "bullets": [],
+                  "textPreview": "| Issue | Severity | Solution |"
+                },
+                {
+                  "heading": "Related Skills",
+                  "level": 2,
+                  "bullets": [],
+                  "textPreview": "Works well with: `multi-agent-orchestration`, `agent-tool-builder`, `backend`, `devops`"
+                }
+              ],
+              "links": []
+            }
+          },
+          {
+            "skillName": "internal-comms",
+            "path": "skills/internal-comms/SKILL.md",
+            "inlineSummary": {
+              "status": "ok",
+              "skillName": "internal-comms",
+              "name": "internal-comms",
+              "title": null,
+              "oneLineSummary": "A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill whenever asked to write some sort of internal communications (status reports, leadership updates, 3P updates, company newsletters, FAQs, incident reports, project updates, etc.).",
+              "description": "A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill whenever asked to write some sort of internal communications (status reports, leadership updates, 3P updates, company newsletters, FAQs, incident reports, project updates, etc.).",
+              "keySections": [
+                {
+                  "heading": "When to use this skill",
+                  "level": 2,
+                  "bullets": [
+                    "3P updates (Progress, Plans, Problems)",
+                    "Company newsletters",
+                    "FAQ responses",
+                    "Status reports",
+                    "Leadership updates",
+                    "Project updates"
+                  ],
+                  "textPreview": "To write internal communications, use this skill for:"
+                },
+                {
+                  "heading": "How to use this skill",
+                  "level": 2,
+                  "bullets": [
+                    "`examples/3p-updates.md` - For Progress/Plans/Problems team updates",
+                    "`examples/company-newsletter.md` - For company-wide newsletters",
+                    "`examples/faq-answers.md` - For answering frequently asked questions",
+                    "`examples/general-comms.md` - For anything else that doesn't explicitly match one of the above"
+                  ],
+                  "textPreview": "To write any internal communication:"
+                },
+                {
+                  "heading": "Keywords",
+                  "level": 2,
+                  "bullets": [],
+                  "textPreview": "3P updates, company newsletter, company comms, weekly update, faqs, common questions, updates, internal comms"
+                }
+              ],
+              "links": []
+            }
+          },
+          {
+            "skillName": "requesting-code-review",
+            "path": "skills/requesting-code-review/SKILL.md",
+            "inlineSummary": {
+              "status": "ok",
+              "skillName": "requesting-code-review",
+              "name": "requesting-code-review",
+              "title": "Requesting Code Review",
+              "oneLineSummary": "Use when completing tasks, implementing major features, or before merging to verify work meets requirements",
+              "description": "Use when completing tasks, implementing major features, or before merging to verify work meets requirements",
+              "keySections": [
+                {
+                  "heading": "When to Request Review",
+                  "level": 2,
+                  "bullets": [
+                    "After each task in subagent-driven development",
+                    "After completing major feature",
+                    "Before merge to main",
+                    "When stuck (fresh perspective)",
+                    "Before refactoring (baseline check)",
+                    "After fixing complex bug"
+                  ],
+                  "textPreview": "**Mandatory:**"
+                },
+                {
+                  "heading": "How to Request",
+                  "level": 2,
+                  "bullets": [
+                    "`{WHAT_WAS_IMPLEMENTED}` - What you just built",
+                    "`{PLAN_OR_REQUIREMENTS}` - What it should do",
+                    "`{BASE_SHA}` - Starting commit",
+                    "`{HEAD_SHA}` - Ending commit",
+                    "`{DESCRIPTION}` - Brief summary",
+                    "Fix Critical issues immediately"
+                  ],
+                  "textPreview": "**1. Get git SHAs:**"
+                },
+                {
+                  "heading": "Integration with Workflows",
+                  "level": 2,
+                  "bullets": [
+                    "Review after EACH task",
+                    "Catch issues before they compound",
+                    "Fix before moving to next task",
+                    "Review after each batch (3 tasks)",
+                    "Get feedback, apply, continue",
+                    "Review before merge"
+                  ],
+                  "textPreview": "**Subagent-Driven Development:**"
+                },
+                {
+                  "heading": "Red Flags",
+                  "level": 2,
+                  "bullets": [
+                    "Skip review because \"it's simple\"",
+                    "Ignore Critical issues",
+                    "Proceed with unfixed Important issues",
+                    "Argue with valid technical feedback",
+                    "Push back with technical reasoning",
+                    "Show code/tests that prove it works"
+                  ],
+                  "textPreview": "**Never:**"
+                }
+              ],
+              "links": []
+            }
+          }
+        ]
+      },
+      {
+        "specialtyId": "SPECIALTY_STRATEGY",
+        "roleId": "STRATEGY_LEAD",
+        "mission": "Produce strategy, KPI tree, and experiment backlog with causal discipline.",
+        "skills": [
+          {
+            "name": "Market research and competitive analysis",
+            "level": "advanced"
+          },
+          {
+            "name": "Causal experimentation design",
+            "level": "advanced"
+          },
+          {
+            "name": "Budget allocation and channel strategy",
+            "level": "advanced"
+          }
+        ],
+        "recommendedRepoSkills": [
+          {
+            "skillName": "ab-test-setup",
+            "path": "skills/ab-test-setup/SKILL.md",
+            "inlineSummary": {
+              "status": "ok",
+              "skillName": "ab-test-setup",
+              "name": "ab-test-setup",
+              "title": "A/B Test Setup",
+              "oneLineSummary": "When the user wants to plan, design, or implement an A/B test or experiment. Also use when the user mentions \"A/B test,\" \"split test,\" \"experiment,\" \"test this change,\" \"variant copy,\" \"multivariate test,\" or \"hypothesis.\" For tracking implementation, see analytics-tracking.",
+              "description": "When the user wants to plan, design, or implement an A/B test or experiment. Also use when the user mentions \"A/B test,\" \"split test,\" \"experiment,\" \"test this change,\" \"variant copy,\" \"multivariate test,\" or \"hypothesis.\" For tracking implementation, see analytics-tracking.",
+              "keySections": [
+                {
+                  "heading": "Initial Assessment",
+                  "level": 2,
+                  "bullets": [
+                    "What are you trying to improve?",
+                    "What change are you considering?",
+                    "What made you want to test this?",
+                    "Baseline conversion rate?",
+                    "Current traffic volume?",
+                    "Any historical test data?"
+                  ],
+                  "textPreview": "Before designing a test, understand:"
+                },
+                {
+                  "heading": "1. Start with a Hypothesis",
+                  "level": 3,
+                  "bullets": [
+                    "Not just \"let's see what happens\"",
+                    "Specific prediction of outcome",
+                    "Based on reasoning or data"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "2. Test One Thing",
+                  "level": 3,
+                  "bullets": [
+                    "Single variable per test",
+                    "Otherwise you don't know what worked",
+                    "Save MVT for later"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "3. Statistical Rigor",
+                  "level": 3,
+                  "bullets": [
+                    "Pre-determine sample size",
+                    "Don't peek and stop early",
+                    "Commit to the methodology"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "4. Measure What Matters",
+                  "level": 3,
+                  "bullets": [
+                    "Primary metric tied to business value",
+                    "Secondary metrics for context",
+                    "Guardrail metrics to prevent harm"
+                  ],
+                  "textPreview": "---"
+                },
+                {
+                  "heading": "Examples",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "**Weak hypothesis:**"
+                },
+                {
+                  "heading": "Good Hypotheses Include",
+                  "level": 3,
+                  "bullets": [
+                    "**Observation**: What prompted this idea",
+                    "**Change**: Specific modification",
+                    "**Effect**: Expected outcome and direction",
+                    "**Audience**: Who this applies to",
+                    "**Metric**: How you'll measure success"
+                  ],
+                  "textPreview": "---"
+                },
+                {
+                  "heading": "A/B Test (Split Test)",
+                  "level": 3,
+                  "bullets": [
+                    "Two versions: Control (A) vs. Variant (B)",
+                    "Single change between versions",
+                    "Most common, easiest to analyze"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "A/B Test (Split Test)",
+                  "level": 3,
+                  "bullets": [
+                    "Two versions: Control (A) vs. Variant (B)",
+                    "Single change between versions",
+                    "Most common, easiest to analyze"
+                  ],
+                  "textPreview": null
+                }
+              ],
+              "links": [
+                "https://www.evanmiller.org/ab-testing/sample-size.html",
+                "https://www.optimizely.com/sample-size-calculator/"
+              ]
+            }
+          },
+          {
+            "skillName": "analytics-tracking",
+            "path": "skills/analytics-tracking/SKILL.md",
+            "inlineSummary": {
+              "status": "ok",
+              "skillName": "analytics-tracking",
+              "name": "analytics-tracking",
+              "title": "Analytics Tracking",
+              "oneLineSummary": "When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions \"set up tracking,\" \"GA4,\" \"Google Analytics,\" \"conversion tracking,\" \"event tracking,\" \"UTM parameters,\" \"tag manager,\" \"GTM,\" \"analytics implementation,\" or \"tracking plan.\" For A/B test measurement, see ab-test-setup.",
+              "description": "When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions \"set up tracking,\" \"GA4,\" \"Google Analytics,\" \"conversion tracking,\" \"event tracking,\" \"UTM parameters,\" \"tag manager,\" \"GTM,\" \"analytics implementation,\" or \"tracking plan.\" For A/B test measurement, see ab-test-setup.",
+              "keySections": [
+                {
+                  "heading": "Initial Assessment",
+                  "level": 2,
+                  "bullets": [
+                    "What decisions will this data inform?",
+                    "What are the key conversion actions?",
+                    "What questions need answering?",
+                    "What tracking exists?",
+                    "What tools are in use (GA4, Mixpanel, Amplitude, etc.)?",
+                    "What's working/not working?"
+                  ],
+                  "textPreview": "Before implementing tracking, understand:"
+                },
+                {
+                  "heading": "1. Track for Decisions, Not Data",
+                  "level": 3,
+                  "bullets": [
+                    "Every event should inform a decision",
+                    "Avoid vanity metrics",
+                    "Quality > quantity of events"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "2. Start with the Questions",
+                  "level": 3,
+                  "bullets": [
+                    "What do you need to know?",
+                    "What actions will you take based on this data?",
+                    "Work backwards to what you need to track"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "3. Name Things Consistently",
+                  "level": 3,
+                  "bullets": [
+                    "Naming conventions matter",
+                    "Establish patterns before implementing",
+                    "Document everything"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "4. Maintain Data Quality",
+                  "level": 3,
+                  "bullets": [
+                    "Validate implementation",
+                    "Monitor for issues",
+                    "Clean data > more data"
+                  ],
+                  "textPreview": "---"
+                },
+                {
+                  "heading": "Event Types",
+                  "level": 3,
+                  "bullets": [
+                    "Automatic in most tools",
+                    "Enhanced with page metadata",
+                    "Button clicks",
+                    "Form submissions",
+                    "Feature usage",
+                    "Content interactions"
+                  ],
+                  "textPreview": "**Pageviews**"
+                },
+                {
+                  "heading": "Format Options",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "**Object-Action (Recommended)**"
+                },
+                {
+                  "heading": "Best Practices",
+                  "level": 3,
+                  "bullets": [
+                    "Lowercase with underscores",
+                    "Be specific: `cta_hero_clicked` vs. `button_clicked`",
+                    "Include context in properties, not event name",
+                    "Avoid spaces and special characters",
+                    "Document decisions"
+                  ],
+                  "textPreview": "---"
+                },
+                {
+                  "heading": "Best Practices",
+                  "level": 3,
+                  "bullets": [
+                    "Lowercase with underscores",
+                    "Be specific: `cta_hero_clicked` vs. `button_clicked`",
+                    "Include context in properties, not event name",
+                    "Avoid spaces and special characters",
+                    "Document decisions"
+                  ],
+                  "textPreview": "---"
+                }
+              ],
+              "links": [
+                "https://support.google.com/analytics/answer/9267735"
+              ]
+            }
+          },
+          {
+            "skillName": "pricing-strategy",
+            "path": "skills/pricing-strategy/SKILL.md",
+            "inlineSummary": {
+              "status": "ok",
+              "skillName": "pricing-strategy",
+              "name": "pricing-strategy",
+              "title": "Pricing Strategy",
+              "oneLineSummary": "When the user wants help with pricing decisions, packaging, or monetization strategy. Also use when the user mentions 'pricing,' 'pricing tiers,' 'freemium,' 'free trial,' 'packaging,' 'price increase,' 'value metric,' 'Van Westendorp,' 'willingness to pay,' or 'monetization.' This skill covers pricing research, tier structure, and packaging strategy.",
+              "description": "When the user wants help with pricing decisions, packaging, or monetization strategy. Also use when the user mentions 'pricing,' 'pricing tiers,' 'freemium,' 'free trial,' 'packaging,' 'price increase,' 'value metric,' 'Van Westendorp,' 'willingness to pay,' or 'monetization.' This skill covers pricing research, tier structure, and packaging strategy.",
+              "keySections": [
+                {
+                  "heading": "Before Starting",
+                  "level": 2,
+                  "bullets": [],
+                  "textPreview": "Gather this context (ask if not provided):"
+                },
+                {
+                  "heading": "1. Business Context",
+                  "level": 3,
+                  "bullets": [
+                    "What type of product? (SaaS, marketplace, e-commerce, service)",
+                    "What's your current pricing (if any)?",
+                    "What's your target market? (SMB, mid-market, enterprise)",
+                    "What's your go-to-market motion? (self-serve, sales-led, hybrid)"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "2. Value & Competition",
+                  "level": 3,
+                  "bullets": [
+                    "What's the primary value you deliver?",
+                    "What alternatives do customers consider?",
+                    "How do competitors price?",
+                    "What makes you different/better?"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "3. Current Performance",
+                  "level": 3,
+                  "bullets": [
+                    "What's your current conversion rate?",
+                    "What's your average revenue per user (ARPU)?",
+                    "What's your churn rate?",
+                    "Any feedback on pricing from customers/prospects?"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "4. Goals",
+                  "level": 3,
+                  "bullets": [
+                    "Are you optimizing for growth, revenue, or profitability?",
+                    "Are you trying to move upmarket or expand downmarket?",
+                    "Any pricing changes you're considering?"
+                  ],
+                  "textPreview": "---"
+                },
+                {
+                  "heading": "The Three Pricing Axes",
+                  "level": 3,
+                  "bullets": [
+                    "Features, limits, support level",
+                    "How tiers differ from each other",
+                    "Per user, per usage, flat fee",
+                    "How price scales with value",
+                    "The actual dollar amounts",
+                    "The perceived value vs. cost"
+                  ],
+                  "textPreview": "Every pricing decision involves three dimensions:"
+                },
+                {
+                  "heading": "Value-Based Pricing Framework",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "Price should be based on value delivered, not cost to serve:"
+                },
+                {
+                  "heading": "Van Westendorp Price Sensitivity Meter",
+                  "level": 3,
+                  "bullets": [
+                    "**Point of Marginal Cheapness (PMC):** \"Too cheap\" crosses \"Expensive\"",
+                    "**Point of Marginal Expensiveness (PME):** \"Too expensive\" crosses \"Cheap\"",
+                    "**Optimal Price Point (OPP):** \"Too cheap\" crosses \"Too expensive\"",
+                    "**Indifference Price Point (IDP):** \"Expensive\" crosses \"Cheap\"",
+                    "Need 100-300 respondents for reliable data",
+                    "Segment by persona (different willingness to pay)"
+                  ],
+                  "textPreview": "The Van Westendorp survey identifies the acceptable price range for your product."
+                },
+                {
+                  "heading": "Van Westendorp Price Sensitivity Meter",
+                  "level": 3,
+                  "bullets": [
+                    "**Point of Marginal Cheapness (PMC):** \"Too cheap\" crosses \"Expensive\"",
+                    "**Point of Marginal Expensiveness (PME):** \"Too expensive\" crosses \"Cheap\"",
+                    "**Optimal Price Point (OPP):** \"Too cheap\" crosses \"Too expensive\"",
+                    "**Indifference Price Point (IDP):** \"Expensive\" crosses \"Cheap\"",
+                    "Need 100-300 respondents for reliable data",
+                    "Segment by persona (different willingness to pay)"
+                  ],
+                  "textPreview": "The Van Westendorp survey identifies the acceptable price range for your product."
+                }
+              ],
+              "links": []
+            }
+          },
+          {
+            "skillName": "competitor-alternatives",
+            "path": "skills/competitor-alternatives/SKILL.md",
+            "inlineSummary": {
+              "status": "ok",
+              "skillName": "competitor-alternatives",
+              "name": "competitor-alternatives",
+              "title": "Competitor & Alternative Pages",
+              "oneLineSummary": "When the user wants to create competitor comparison or alternative pages for SEO and sales enablement. Also use when the user mentions 'alternative page,' 'vs page,' 'competitor comparison,' 'comparison page,' '[Product] vs [Product],' '[Product] alternative,' or 'competitive landing pages.' Covers four formats: singular alternative, plural alternatives, you vs competitor, and competitor vs competitor. Emphasizes deep research, modular content architecture, and varied section types beyond feature tables.",
+              "description": "When the user wants to create competitor comparison or alternative pages for SEO and sales enablement. Also use when the user mentions 'alternative page,' 'vs page,' 'competitor comparison,' 'comparison page,' '[Product] vs [Product],' '[Product] alternative,' or 'competitive landing pages.' Covers four formats: singular alternative, plural alternatives, you vs competitor, and competitor vs competitor. Emphasizes deep research, modular content architecture, and varied section types beyond feature tables.",
+              "keySections": [
+                {
+                  "heading": "Initial Assessment",
+                  "level": 2,
+                  "bullets": [
+                    "Core value proposition",
+                    "Key differentiators",
+                    "Ideal customer profile",
+                    "Pricing model",
+                    "Strengths and honest weaknesses",
+                    "Direct competitors"
+                  ],
+                  "textPreview": "Before creating competitor pages, understand:"
+                },
+                {
+                  "heading": "1. Honesty Builds Trust",
+                  "level": 3,
+                  "bullets": [
+                    "Acknowledge competitor strengths",
+                    "Be accurate about your limitations",
+                    "Don't misrepresent competitor features",
+                    "Readers are comparing—they'll verify claims"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "2. Depth Over Surface",
+                  "level": 3,
+                  "bullets": [
+                    "Go beyond feature checklists",
+                    "Explain *why* differences matter",
+                    "Include use cases and scenarios",
+                    "Show, don't just tell"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "3. Help Them Decide",
+                  "level": 3,
+                  "bullets": [
+                    "Different tools fit different needs",
+                    "Be clear about who you're best for",
+                    "Be clear about who competitor is best for",
+                    "Reduce evaluation friction"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "4. Modular Content Architecture",
+                  "level": 3,
+                  "bullets": [
+                    "Competitor data should be centralized",
+                    "Updates propagate to all pages",
+                    "Avoid duplicating research",
+                    "Single source of truth per competitor"
+                  ],
+                  "textPreview": "---"
+                },
+                {
+                  "heading": "Format 1: [Competitor] Alternative (Singular)",
+                  "level": 3,
+                  "bullets": [
+                    "\"[Competitor] alternative\"",
+                    "\"alternative to [Competitor]\"",
+                    "\"switch from [Competitor]\"",
+                    "\"[Competitor] replacement\""
+                  ],
+                  "textPreview": "**Search intent**: User is actively looking to switch from a specific competitor"
+                },
+                {
+                  "heading": "Format 2: [Competitor] Alternatives (Plural)",
+                  "level": 3,
+                  "bullets": [
+                    "\"[Competitor] alternatives\"",
+                    "\"best [Competitor] alternatives\"",
+                    "\"tools like [Competitor]\"",
+                    "\"[Competitor] competitors\""
+                  ],
+                  "textPreview": "**Search intent**: User is researching options, earlier in journey"
+                },
+                {
+                  "heading": "Format 3: You vs [Competitor]",
+                  "level": 3,
+                  "bullets": [
+                    "\"[You] vs [Competitor]\"",
+                    "\"[Competitor] vs [You]\"",
+                    "\"[You] compared to [Competitor]\"",
+                    "\"[You] or [Competitor]\"",
+                    "Features",
+                    "Pricing"
+                  ],
+                  "textPreview": "**Search intent**: User is directly comparing you to a specific competitor"
+                },
+                {
+                  "heading": "Format 3: You vs [Competitor]",
+                  "level": 3,
+                  "bullets": [
+                    "\"[You] vs [Competitor]\"",
+                    "\"[Competitor] vs [You]\"",
+                    "\"[You] compared to [Competitor]\"",
+                    "\"[You] or [Competitor]\"",
+                    "Features",
+                    "Pricing"
+                  ],
+                  "textPreview": "**Search intent**: User is directly comparing you to a specific competitor"
+                }
+              ],
+              "links": []
+            }
+          },
+          {
+            "skillName": "marketing-psychology",
+            "path": "skills/marketing-psychology/SKILL.md",
+            "inlineSummary": {
+              "status": "ok",
+              "skillName": "marketing-psychology",
+              "name": "marketing-psychology",
+              "title": "Marketing Psychology & Mental Models",
+              "oneLineSummary": "When the user wants to apply psychological principles, mental models, or behavioral science to marketing. Also use when the user mentions 'psychology,' 'mental models,' 'cognitive bias,' 'persuasion,' 'behavioral science,' 'why people buy,' 'decision-making,' or 'consumer behavior.' This skill provides 70+ mental models organized for marketing application.",
+              "description": "When the user wants to apply psychological principles, mental models, or behavioral science to marketing. Also use when the user mentions 'psychology,' 'mental models,' 'cognitive bias,' 'persuasion,' 'behavioral science,' 'why people buy,' 'decision-making,' or 'consumer behavior.' This skill provides 70+ mental models organized for marketing application.",
+              "keySections": [
+                {
+                  "heading": "How to Use This Skill",
+                  "level": 2,
+                  "bullets": [],
+                  "textPreview": "Mental models are thinking tools that help you make better decisions, understand customer behavior, and create more effective marketing. When helping users:"
+                },
+                {
+                  "heading": "Foundational Thinking Models",
+                  "level": 2,
+                  "bullets": [],
+                  "textPreview": "These models sharpen your strategy and help you solve the right problems."
+                },
+                {
+                  "heading": "First Principles",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "Break problems down to basic truths and build solutions from there. Instead of copying competitors, ask \"why\" repeatedly to find root causes. Use the 5 Whys technique to tunnel down to what really matters."
+                },
+                {
+                  "heading": "Jobs to Be Done",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "People don't buy products—they \"hire\" them to get a job done. Focus on the outcome customers want, not features."
+                },
+                {
+                  "heading": "Circle of Competence",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "Know what you're good at and stay within it. Venture outside only with proper learning or expert help."
+                },
+                {
+                  "heading": "Inversion",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "Instead of asking \"How do I succeed?\", ask \"What would guarantee failure?\" Then avoid those things."
+                },
+                {
+                  "heading": "Occam's Razor",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "The simplest explanation is usually correct. Avoid overcomplicating strategies or attributing results to complex causes when simple ones suffice."
+                },
+                {
+                  "heading": "Pareto Principle (80/20 Rule)",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "Roughly 80% of results come from 20% of efforts. Identify and focus on the vital few."
+                },
+                {
+                  "heading": "Pareto Principle (80/20 Rule)",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "Roughly 80% of results come from 20% of efforts. Identify and focus on the vital few."
+                }
+              ],
+              "links": []
+            }
+          }
+        ],
+        "internalKnowledgeBase": [
+          "11_marketing_growth_agent/01_knowledge_base/causal_inference_and_experimentation.md",
+          "11_marketing_growth_agent/01_knowledge_base/advanced_attribution_and_mmm.md",
+          "11_marketing_growth_agent/01_knowledge_base/growth_frameworks_and_psychology.md"
+        ]
+      },
+      {
+        "specialtyId": "SPECIALTY_CREATIVE",
+        "roleId": "CREATIVE_LEAD",
+        "mission": "Turn strategy into scalable creative systems and proof-based assets.",
+        "skills": [
+          {
+            "name": "Creative briefing and QA",
+            "level": "advanced"
+          },
+          {
+            "name": "Brand identity systems",
+            "level": "advanced"
+          },
+          {
+            "name": "Ad creative testing systems",
+            "level": "advanced"
+          }
+        ],
+        "recommendedRepoSkills": [
+          {
+            "skillName": "brand-guidelines",
+            "path": "skills/brand-guidelines/SKILL.md",
+            "inlineSummary": {
+              "status": "ok",
+              "skillName": "brand-guidelines",
+              "name": "brand-guidelines",
+              "title": "Anthropic Brand Styling",
+              "oneLineSummary": "Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards apply.",
+              "description": "Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards apply.",
+              "keySections": [
+                {
+                  "heading": "Overview",
+                  "level": 2,
+                  "bullets": [],
+                  "textPreview": "To access Anthropic's official brand identity and style resources, use this skill."
+                },
+                {
+                  "heading": "Colors",
+                  "level": 3,
+                  "bullets": [
+                    "Dark: `#141413` - Primary text and dark backgrounds",
+                    "Light: `#faf9f5` - Light backgrounds and text on dark",
+                    "Mid Gray: `#b0aea5` - Secondary elements",
+                    "Light Gray: `#e8e6dc` - Subtle backgrounds",
+                    "Orange: `#d97757` - Primary accent",
+                    "Blue: `#6a9bcc` - Secondary accent"
+                  ],
+                  "textPreview": "**Main Colors:**"
+                },
+                {
+                  "heading": "Typography",
+                  "level": 3,
+                  "bullets": [
+                    "**Headings**: Poppins (with Arial fallback)",
+                    "**Body Text**: Lora (with Georgia fallback)",
+                    "**Note**: Fonts should be pre-installed in your environment for best results"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "Smart Font Application",
+                  "level": 3,
+                  "bullets": [
+                    "Applies Poppins font to headings (24pt and larger)",
+                    "Applies Lora font to body text",
+                    "Automatically falls back to Arial/Georgia if custom fonts unavailable",
+                    "Preserves readability across all systems"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "Text Styling",
+                  "level": 3,
+                  "bullets": [
+                    "Headings (24pt+): Poppins font",
+                    "Body text: Lora font",
+                    "Smart color selection based on background",
+                    "Preserves text hierarchy and formatting"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "Shape and Accent Colors",
+                  "level": 3,
+                  "bullets": [
+                    "Non-text shapes use accent colors",
+                    "Cycles through orange, blue, and green accents",
+                    "Maintains visual interest while staying on-brand"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "Font Management",
+                  "level": 3,
+                  "bullets": [
+                    "Uses system-installed Poppins and Lora fonts when available",
+                    "Provides automatic fallback to Arial (headings) and Georgia (body)",
+                    "No font installation required - works with existing system fonts",
+                    "For best results, pre-install Poppins and Lora fonts in your environment"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "Color Application",
+                  "level": 3,
+                  "bullets": [
+                    "Uses RGB color values for precise brand matching",
+                    "Applied via python-pptx's RGBColor class",
+                    "Maintains color fidelity across different systems"
+                  ],
+                  "textPreview": null
+                }
+              ],
+              "links": []
+            }
+          },
+          {
+            "skillName": "copy-editing",
+            "path": "skills/copy-editing/SKILL.md",
+            "inlineSummary": {
+              "status": "ok",
+              "skillName": "copy-editing",
+              "name": "copy-editing",
+              "title": "Copy Editing",
+              "oneLineSummary": "When the user wants to edit, review, or improve existing marketing copy. Also use when the user mentions 'edit this copy,' 'review my copy,' 'copy feedback,' 'proofread,' 'polish this,' 'make this better,' or 'copy sweep.' This skill provides a systematic approach to editing marketing copy through multiple focused passes.",
+              "description": "When the user wants to edit, review, or improve existing marketing copy. Also use when the user mentions 'edit this copy,' 'review my copy,' 'copy feedback,' 'proofread,' 'polish this,' 'make this better,' or 'copy sweep.' This skill provides a systematic approach to editing marketing copy through multiple focused passes.",
+              "keySections": [
+                {
+                  "heading": "Core Philosophy",
+                  "level": 2,
+                  "bullets": [
+                    "Don't change the core message; focus on enhancing it",
+                    "Multiple focused passes beat one unfocused review",
+                    "Each edit should have a clear reason",
+                    "Preserve the author's voice while improving clarity"
+                  ],
+                  "textPreview": "Good copy editing isn't about rewriting—it's about enhancing. Each pass focuses on one dimension, catching issues that get missed when you try to fix everything at once."
+                },
+                {
+                  "heading": "The Seven Sweeps Framework",
+                  "level": 2,
+                  "bullets": [],
+                  "textPreview": "Edit copy through seven sequential passes, each focusing on one dimension. After each sweep, loop back to check previous sweeps aren't compromised."
+                },
+                {
+                  "heading": "Sweep 1: Clarity",
+                  "level": 3,
+                  "bullets": [
+                    "Confusing sentence structures",
+                    "Unclear pronoun references",
+                    "Jargon or insider language",
+                    "Ambiguous statements",
+                    "Missing context",
+                    "Sentences trying to say too much"
+                  ],
+                  "textPreview": "**Focus:** Can the reader understand what you're saying?"
+                },
+                {
+                  "heading": "Sweep 2: Voice and Tone",
+                  "level": 3,
+                  "bullets": [
+                    "Shifts between formal and casual",
+                    "Inconsistent brand personality",
+                    "Mood changes that feel jarring",
+                    "Word choices that don't match the brand",
+                    "Starting casual, becoming corporate",
+                    "Mixing \"we\" and \"the company\" references"
+                  ],
+                  "textPreview": "**Focus:** Is the copy consistent in how it sounds?"
+                },
+                {
+                  "heading": "Sweep 3: So What",
+                  "level": 3,
+                  "bullets": [
+                    "Features without benefits",
+                    "Claims without consequences",
+                    "Statements that don't connect to reader's life",
+                    "Missing \"which means...\" bridges",
+                    "Feature lists without benefit connections",
+                    "Impressive-sounding claims that don't land"
+                  ],
+                  "textPreview": "**Focus:** Does every claim answer \"why should I care?\""
+                },
+                {
+                  "heading": "Sweep 4: Prove It",
+                  "level": 3,
+                  "bullets": [
+                    "Unsubstantiated claims",
+                    "Missing social proof",
+                    "Assertions without backup",
+                    "\"Best\" or \"leading\" without evidence",
+                    "Testimonials with names and specifics",
+                    "Case study references"
+                  ],
+                  "textPreview": "**Focus:** Is every claim supported with evidence?"
+                },
+                {
+                  "heading": "Sweep 5: Specificity",
+                  "level": 3,
+                  "bullets": [
+                    "Vague language (\"improve,\" \"enhance,\" \"optimize\")",
+                    "Generic statements that could apply to anyone",
+                    "Round numbers that feel made up",
+                    "Missing details that would make it real",
+                    "Adjectives doing the work nouns should do",
+                    "Benefits without quantification"
+                  ],
+                  "textPreview": "**Focus:** Is the copy concrete enough to be compelling?"
+                },
+                {
+                  "heading": "Sweep 6: Heightened Emotion",
+                  "level": 3,
+                  "bullets": [
+                    "Flat, informational language",
+                    "Missing emotional triggers",
+                    "Pain points mentioned but not felt",
+                    "Aspirations stated but not evoked",
+                    "Pain of the current state",
+                    "Frustration with alternatives"
+                  ],
+                  "textPreview": "**Focus:** Does the copy make the reader feel something?"
+                },
+                {
+                  "heading": "Sweep 6: Heightened Emotion",
+                  "level": 3,
+                  "bullets": [
+                    "Flat, informational language",
+                    "Missing emotional triggers",
+                    "Pain points mentioned but not felt",
+                    "Aspirations stated but not evoked",
+                    "Pain of the current state",
+                    "Frustration with alternatives"
+                  ],
+                  "textPreview": "**Focus:** Does the copy make the reader feel something?"
+                }
+              ],
+              "links": []
+            }
+          }
+        ],
+        "internalKnowledgeBase": [
+          "11_marketing_growth_agent/01_knowledge_base/ai_content_intelligence_and_supply_chain.md"
+        ]
+      },
+      {
+        "specialtyId": "SPECIALTY_COPY_CONTENT",
+        "roleId": "CONTENT_LEAD",
+        "mission": "Create content calendars, scripts, and copy packs aligned to proof pillars and conversion surfaces.",
+        "skills": [
+          {
+            "name": "Copywriting systems",
+            "level": "advanced"
+          },
+          {
+            "name": "Content distribution mechanics",
+            "level": "advanced"
+          },
+          {
+            "name": "Local business proof extraction",
+            "level": "advanced"
+          }
+        ],
+        "recommendedRepoSkills": [
+          {
+            "skillName": "copywriting",
+            "path": "skills/copywriting/SKILL.md",
+            "inlineSummary": {
+              "status": "ok",
+              "skillName": "copywriting",
+              "name": "copywriting",
+              "title": "Copywriting",
+              "oneLineSummary": "When the user wants to write, rewrite, or improve marketing copy for any page — including homepage, landing pages, pricing pages, feature pages, about pages, or product pages. Also use when the user says \"write copy for,\" \"improve this copy,\" \"rewrite this page,\" \"marketing copy,\" \"headline help,\" or \"CTA copy.\" For email copy, see email-sequence. For popup copy, see popup-cro.",
+              "description": "When the user wants to write, rewrite, or improve marketing copy for any page — including homepage, landing pages, pricing pages, feature pages, about pages, or product pages. Also use when the user says \"write copy for,\" \"improve this copy,\" \"rewrite this page,\" \"marketing copy,\" \"headline help,\" or \"CTA copy.\" For email copy, see email-sequence. For popup copy, see popup-cro.",
+              "keySections": [
+                {
+                  "heading": "Before Writing",
+                  "level": 2,
+                  "bullets": [],
+                  "textPreview": "Gather this context (ask if not provided):"
+                },
+                {
+                  "heading": "1. Page Purpose",
+                  "level": 3,
+                  "bullets": [
+                    "What type of page is this? (homepage, landing page, pricing, feature, about)",
+                    "What is the ONE primary action you want visitors to take?",
+                    "What's the secondary action (if any)?"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "2. Audience",
+                  "level": 3,
+                  "bullets": [
+                    "Who is the ideal customer for this page?",
+                    "What problem are they trying to solve?",
+                    "What have they already tried?",
+                    "What objections or hesitations do they have?",
+                    "What language do they use to describe their problem?"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "3. Product/Offer",
+                  "level": 3,
+                  "bullets": [
+                    "What are you selling or offering?",
+                    "What makes it different from alternatives?",
+                    "What's the key transformation or outcome?",
+                    "Any proof points (numbers, testimonials, case studies)?"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "4. Context",
+                  "level": 3,
+                  "bullets": [
+                    "Where is traffic coming from? (ads, organic, email)",
+                    "What do visitors already know before arriving?",
+                    "What messaging are they seeing before this page?"
+                  ],
+                  "textPreview": "---"
+                },
+                {
+                  "heading": "Clarity Over Cleverness",
+                  "level": 3,
+                  "bullets": [
+                    "If you have to choose between clear and creative, choose clear",
+                    "Every sentence should have one job",
+                    "Remove words that don't add meaning"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "Benefits Over Features",
+                  "level": 3,
+                  "bullets": [
+                    "Features: What it does",
+                    "Benefits: What that means for the customer",
+                    "Always connect features to outcomes"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "Specificity Over Vagueness",
+                  "level": 3,
+                  "bullets": [
+                    "Vague: \"Save time on your workflow\"",
+                    "Specific: \"Cut your weekly reporting from 4 hours to 15 minutes\""
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "Specificity Over Vagueness",
+                  "level": 3,
+                  "bullets": [
+                    "Vague: \"Save time on your workflow\"",
+                    "Specific: \"Cut your weekly reporting from 4 hours to 15 minutes\""
+                  ],
+                  "textPreview": null
+                }
+              ],
+              "links": []
+            }
+          },
+          {
+            "skillName": "content-creator",
+            "path": "skills/content-creator/SKILL.md",
+            "inlineSummary": {
+              "status": "ok",
+              "skillName": "content-creator",
+              "name": "content-creator",
+              "title": "Content Creator",
+              "oneLineSummary": "Create SEO-optimized marketing content with consistent brand voice. Includes brand voice analyzer, SEO optimizer, content frameworks, and social media templates. Use when writing blog posts, creating social media content, analyzing brand voice, optimizing SEO, planning content calendars, or when user mentions content creation, brand voice, SEO optimization, social media marketing, or content strategy.",
+              "description": "Create SEO-optimized marketing content with consistent brand voice. Includes brand voice analyzer, SEO optimizer, content frameworks, and social media templates. Use when writing blog posts, creating social media content, analyzing brand voice, optimizing SEO, planning content calendars, or when user mentions content creation, brand voice, SEO optimization, social media marketing, or content strategy.",
+              "keySections": [
+                {
+                  "heading": "Keywords",
+                  "level": 2,
+                  "bullets": [],
+                  "textPreview": "content creation, blog posts, SEO, brand voice, social media, content calendar, marketing content, content strategy, content marketing, brand consistency, content optimization, social media marketing, content planning, b"
+                },
+                {
+                  "heading": "For Brand Voice Development",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "1. Run `scripts/brand_voice_analyzer.py` on existing content to establish baseline"
+                },
+                {
+                  "heading": "For Blog Content Creation",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "1. Choose template from `references/content_frameworks.md`"
+                },
+                {
+                  "heading": "For Social Media Content",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "1. Review platform best practices in `references/social_media_optimization.md`"
+                },
+                {
+                  "heading": "Establishing Brand Voice (First Time Setup)",
+                  "level": 3,
+                  "bullets": [
+                    "Review brand personality archetypes in `references/brand_guidelines.md`",
+                    "Select primary and secondary archetypes",
+                    "Choose 3-5 tone attributes",
+                    "Document in brand guidelines",
+                    "Write 3 sample pieces in chosen voice",
+                    "Test consistency using analyzer"
+                  ],
+                  "textPreview": "When creating content for a new brand or client:"
+                },
+                {
+                  "heading": "Creating SEO-Optimized Blog Posts",
+                  "level": 3,
+                  "bullets": [
+                    "Identify primary keyword (search volume 500-5000/month)",
+                    "Find 3-5 secondary keywords",
+                    "List 10-15 LSI keywords",
+                    "Use blog template from `references/content_frameworks.md`",
+                    "Include keyword in title, first paragraph, and 2-3 H2s",
+                    "Aim for 1,500-2,500 words for comprehensive coverage"
+                  ],
+                  "textPreview": "1. **Keyword Research**"
+                },
+                {
+                  "heading": "Social Media Content Creation",
+                  "level": 3,
+                  "bullets": [
+                    "Identify primary platforms based on audience",
+                    "Review platform-specific guidelines in `references/social_media_optimization.md`",
+                    "Start with blog post or core message",
+                    "Use repurposing matrix from `references/content_frameworks.md`",
+                    "Adapt for each platform following templates",
+                    "Platform-appropriate length"
+                  ],
+                  "textPreview": "1. **Platform Selection**"
+                },
+                {
+                  "heading": "Content Calendar Planning",
+                  "level": 3,
+                  "bullets": [
+                    "Copy `assets/content_calendar_template.md`",
+                    "Set monthly goals and KPIs",
+                    "Identify key campaigns/themes",
+                    "Follow 40/25/25/10 content pillar ratio",
+                    "Balance platforms throughout week",
+                    "Align with optimal posting times"
+                  ],
+                  "textPreview": "1. **Monthly Planning**"
+                },
+                {
+                  "heading": "Content Calendar Planning",
+                  "level": 3,
+                  "bullets": [
+                    "Copy `assets/content_calendar_template.md`",
+                    "Set monthly goals and KPIs",
+                    "Identify key campaigns/themes",
+                    "Follow 40/25/25/10 content pillar ratio",
+                    "Balance platforms throughout week",
+                    "Align with optimal posting times"
+                  ],
+                  "textPreview": "1. **Monthly Planning**"
+                }
+              ],
+              "links": []
+            }
+          },
+          {
+            "skillName": "seo-fundamentals",
+            "path": "skills/seo-fundamentals/SKILL.md",
+            "inlineSummary": {
+              "status": "ok",
+              "skillName": "seo-fundamentals",
+              "name": "seo-fundamentals",
+              "title": "SEO Fundamentals",
+              "oneLineSummary": "SEO fundamentals, E-E-A-T, Core Web Vitals, and Google algorithm principles.",
+              "description": "SEO fundamentals, E-E-A-T, Core Web Vitals, and Google algorithm principles.",
+              "keySections": [
+                {
+                  "heading": "1. E-E-A-T Framework",
+                  "level": 2,
+                  "bullets": [],
+                  "textPreview": "| Principle | Signals |"
+                },
+                {
+                  "heading": "2. Core Web Vitals",
+                  "level": 2,
+                  "bullets": [],
+                  "textPreview": "| Metric | Target | Measures |"
+                },
+                {
+                  "heading": "Site Structure",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "| Element | Purpose |"
+                },
+                {
+                  "heading": "Performance",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "| Factor | Impact |"
+                },
+                {
+                  "heading": "Page Elements",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "| Element | Best Practice |"
+                },
+                {
+                  "heading": "Content Quality",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "| Factor | Importance |"
+                },
+                {
+                  "heading": "5. Schema Markup Types",
+                  "level": 2,
+                  "bullets": [],
+                  "textPreview": "| Type | Use |"
+                },
+                {
+                  "heading": "What Google Looks For",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "| ✅ Do | ❌ Don't |"
+                },
+                {
+                  "heading": "What Google Looks For",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "| ✅ Do | ❌ Don't |"
+                }
+              ],
+              "links": []
+            }
+          }
+        ]
+      },
+      {
+        "specialtyId": "SPECIALTY_SOCIAL",
+        "roleId": "SOCIAL_COMMUNITY",
+        "mission": "Schedule, publish, engage, respond, and operate the review engine.",
+        "skills": [
+          {
+            "name": "Community engagement ops",
+            "level": "advanced"
+          },
+          {
+            "name": "Platform-native publishing",
+            "level": "advanced"
+          },
+          {
+            "name": "Reputation management (GBP)",
+            "level": "advanced"
+          }
+        ],
+        "recommendedRepoSkills": [
+          {
+            "skillName": "social-content",
+            "path": "skills/social-content/SKILL.md",
+            "inlineSummary": {
+              "status": "ok",
+              "skillName": "social-content",
+              "name": "social-content",
+              "title": "Social Content",
+              "oneLineSummary": "When the user wants help creating, scheduling, or optimizing social media content for LinkedIn, Twitter/X, Instagram, TikTok, Facebook, or other platforms. Also use when the user mentions 'LinkedIn post,' 'Twitter thread,' 'social media,' 'content calendar,' 'social scheduling,' 'engagement,' or 'viral content.' This skill covers content creation, repurposing, and platform-specific strategies.",
+              "description": "When the user wants help creating, scheduling, or optimizing social media content for LinkedIn, Twitter/X, Instagram, TikTok, Facebook, or other platforms. Also use when the user mentions 'LinkedIn post,' 'Twitter thread,' 'social media,' 'content calendar,' 'social scheduling,' 'engagement,' or 'viral content.' This skill covers content creation, repurposing, and platform-specific strategies.",
+              "keySections": [
+                {
+                  "heading": "Before Creating Content",
+                  "level": 2,
+                  "bullets": [],
+                  "textPreview": "Gather this context (ask if not provided):"
+                },
+                {
+                  "heading": "1. Goals",
+                  "level": 3,
+                  "bullets": [
+                    "What's the primary objective? (Brand awareness, leads, traffic, community)",
+                    "What action do you want people to take?",
+                    "Are you building personal brand, company brand, or both?"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "2. Audience",
+                  "level": 3,
+                  "bullets": [
+                    "Who are you trying to reach?",
+                    "What platforms are they most active on?",
+                    "What content do they engage with?",
+                    "What problems do they have that you can address?"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "3. Brand Voice",
+                  "level": 3,
+                  "bullets": [
+                    "What's your tone? (Professional, casual, witty, authoritative)",
+                    "Any topics to avoid?",
+                    "Any specific terminology or style guidelines?"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "4. Resources",
+                  "level": 3,
+                  "bullets": [
+                    "How much time can you dedicate to social?",
+                    "Do you have existing content to repurpose (blog posts, podcasts, videos)?",
+                    "Can you create video content?",
+                    "Do you have customer stories or data to share?"
+                  ],
+                  "textPreview": "---"
+                },
+                {
+                  "heading": "LinkedIn",
+                  "level": 3,
+                  "bullets": [
+                    "Personal stories with business lessons",
+                    "Contrarian takes on industry topics",
+                    "Behind-the-scenes of building a company",
+                    "Data and original insights",
+                    "Carousel posts (document format)",
+                    "Polls that spark discussion"
+                  ],
+                  "textPreview": "**Best for:** B2B, thought leadership, professional networking, recruiting"
+                },
+                {
+                  "heading": "Twitter/X",
+                  "level": 3,
+                  "bullets": [
+                    "Hot takes and opinions",
+                    "Threads that teach something",
+                    "Behind-the-scenes moments",
+                    "Engaging with others' content",
+                    "Memes and humor (if on-brand)",
+                    "Real-time commentary on events"
+                  ],
+                  "textPreview": "**Best for:** Tech, media, real-time commentary, community building"
+                },
+                {
+                  "heading": "Instagram",
+                  "level": 3,
+                  "bullets": [
+                    "High-quality visuals",
+                    "Behind-the-scenes Stories",
+                    "Reels (short-form video)",
+                    "Carousels with value",
+                    "User-generated content",
+                    "Interactive Stories (polls, questions)"
+                  ],
+                  "textPreview": "**Best for:** Visual brands, lifestyle, e-commerce, younger demographics"
+                },
+                {
+                  "heading": "Instagram",
+                  "level": 3,
+                  "bullets": [
+                    "High-quality visuals",
+                    "Behind-the-scenes Stories",
+                    "Reels (short-form video)",
+                    "Carousels with value",
+                    "User-generated content",
+                    "Interactive Stories (polls, questions)"
+                  ],
+                  "textPreview": "**Best for:** Visual brands, lifestyle, e-commerce, younger demographics"
+                }
+              ],
+              "links": []
+            }
+          },
+          {
+            "skillName": "seo-audit",
+            "path": "skills/seo-audit/SKILL.md",
+            "inlineSummary": {
+              "status": "ok",
+              "skillName": "seo-audit",
+              "name": "seo-audit",
+              "title": "SEO Audit",
+              "oneLineSummary": "When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions \"SEO audit,\" \"technical SEO,\" \"why am I not ranking,\" \"SEO issues,\" \"on-page SEO,\" \"meta tags review,\" or \"SEO health check.\" For building pages at scale to target keywords, see programmatic-seo. For adding structured data, see schema-markup.",
+              "description": "When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions \"SEO audit,\" \"technical SEO,\" \"why am I not ranking,\" \"SEO issues,\" \"on-page SEO,\" \"meta tags review,\" or \"SEO health check.\" For building pages at scale to target keywords, see programmatic-seo. For adding structured data, see schema-markup.",
+              "keySections": [
+                {
+                  "heading": "Initial Assessment",
+                  "level": 2,
+                  "bullets": [
+                    "What type of site? (SaaS, e-commerce, blog, etc.)",
+                    "What's the primary business goal for SEO?",
+                    "What keywords/topics are priorities?",
+                    "Any known issues or concerns?",
+                    "Current organic traffic level?",
+                    "Recent changes or migrations?"
+                  ],
+                  "textPreview": "Before auditing, understand:"
+                },
+                {
+                  "heading": "Priority Order",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "1. **Crawlability & Indexation** (can Google find and index it?)"
+                },
+                {
+                  "heading": "Crawlability",
+                  "level": 3,
+                  "bullets": [
+                    "Check for unintentional blocks",
+                    "Verify important pages allowed",
+                    "Check sitemap reference",
+                    "Exists and accessible",
+                    "Submitted to Search Console",
+                    "Contains only canonical, indexable URLs"
+                  ],
+                  "textPreview": "**Robots.txt**"
+                },
+                {
+                  "heading": "Indexation",
+                  "level": 3,
+                  "bullets": [
+                    "site:domain.com check",
+                    "Search Console coverage report",
+                    "Compare indexed vs. expected",
+                    "Noindex tags on important pages",
+                    "Canonicals pointing wrong direction",
+                    "Redirect chains/loops"
+                  ],
+                  "textPreview": "**Index Status**"
+                },
+                {
+                  "heading": "Site Speed & Core Web Vitals",
+                  "level": 3,
+                  "bullets": [
+                    "LCP (Largest Contentful Paint): < 2.5s",
+                    "INP (Interaction to Next Paint): < 200ms",
+                    "CLS (Cumulative Layout Shift): < 0.1",
+                    "Server response time (TTFB)",
+                    "Image optimization",
+                    "JavaScript execution"
+                  ],
+                  "textPreview": "**Core Web Vitals**"
+                },
+                {
+                  "heading": "Mobile-Friendliness",
+                  "level": 3,
+                  "bullets": [
+                    "Responsive design (not separate m. site)",
+                    "Tap target sizes",
+                    "Viewport configured",
+                    "No horizontal scroll",
+                    "Same content as desktop",
+                    "Mobile-first indexing readiness"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "Security & HTTPS",
+                  "level": 3,
+                  "bullets": [
+                    "HTTPS across entire site",
+                    "Valid SSL certificate",
+                    "No mixed content",
+                    "HTTP → HTTPS redirects",
+                    "HSTS header (bonus)"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "URL Structure",
+                  "level": 3,
+                  "bullets": [
+                    "Readable, descriptive URLs",
+                    "Keywords in URLs where natural",
+                    "Consistent structure",
+                    "No unnecessary parameters",
+                    "Lowercase and hyphen-separated"
+                  ],
+                  "textPreview": "---"
+                },
+                {
+                  "heading": "URL Structure",
+                  "level": 3,
+                  "bullets": [
+                    "Readable, descriptive URLs",
+                    "Keywords in URLs where natural",
+                    "Consistent structure",
+                    "No unnecessary parameters",
+                    "Lowercase and hyphen-separated"
+                  ],
+                  "textPreview": "---"
+                }
+              ],
+              "links": []
+            }
+          }
+        ]
+      },
+      {
+        "specialtyId": "SPECIALTY_PAID_MEDIA",
+        "roleId": "PAID_MEDIA",
+        "mission": "Design and optimize campaigns with testing matrix, pacing, policy compliance, and decision gates.",
+        "skills": [
+          {
+            "name": "Campaign architecture and testing",
+            "level": "advanced"
+          },
+          {
+            "name": "Budget pacing and optimization",
+            "level": "advanced"
+          },
+          {
+            "name": "Creative fatigue diagnosis",
+            "level": "advanced"
+          }
+        ],
+        "recommendedRepoSkills": [
+          {
+            "skillName": "analytics-tracking",
+            "path": "skills/analytics-tracking/SKILL.md",
+            "inlineSummary": {
+              "status": "ok",
+              "skillName": "analytics-tracking",
+              "name": "analytics-tracking",
+              "title": "Analytics Tracking",
+              "oneLineSummary": "When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions \"set up tracking,\" \"GA4,\" \"Google Analytics,\" \"conversion tracking,\" \"event tracking,\" \"UTM parameters,\" \"tag manager,\" \"GTM,\" \"analytics implementation,\" or \"tracking plan.\" For A/B test measurement, see ab-test-setup.",
+              "description": "When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions \"set up tracking,\" \"GA4,\" \"Google Analytics,\" \"conversion tracking,\" \"event tracking,\" \"UTM parameters,\" \"tag manager,\" \"GTM,\" \"analytics implementation,\" or \"tracking plan.\" For A/B test measurement, see ab-test-setup.",
+              "keySections": [
+                {
+                  "heading": "Initial Assessment",
+                  "level": 2,
+                  "bullets": [
+                    "What decisions will this data inform?",
+                    "What are the key conversion actions?",
+                    "What questions need answering?",
+                    "What tracking exists?",
+                    "What tools are in use (GA4, Mixpanel, Amplitude, etc.)?",
+                    "What's working/not working?"
+                  ],
+                  "textPreview": "Before implementing tracking, understand:"
+                },
+                {
+                  "heading": "1. Track for Decisions, Not Data",
+                  "level": 3,
+                  "bullets": [
+                    "Every event should inform a decision",
+                    "Avoid vanity metrics",
+                    "Quality > quantity of events"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "2. Start with the Questions",
+                  "level": 3,
+                  "bullets": [
+                    "What do you need to know?",
+                    "What actions will you take based on this data?",
+                    "Work backwards to what you need to track"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "3. Name Things Consistently",
+                  "level": 3,
+                  "bullets": [
+                    "Naming conventions matter",
+                    "Establish patterns before implementing",
+                    "Document everything"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "4. Maintain Data Quality",
+                  "level": 3,
+                  "bullets": [
+                    "Validate implementation",
+                    "Monitor for issues",
+                    "Clean data > more data"
+                  ],
+                  "textPreview": "---"
+                },
+                {
+                  "heading": "Event Types",
+                  "level": 3,
+                  "bullets": [
+                    "Automatic in most tools",
+                    "Enhanced with page metadata",
+                    "Button clicks",
+                    "Form submissions",
+                    "Feature usage",
+                    "Content interactions"
+                  ],
+                  "textPreview": "**Pageviews**"
+                },
+                {
+                  "heading": "Format Options",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "**Object-Action (Recommended)**"
+                },
+                {
+                  "heading": "Best Practices",
+                  "level": 3,
+                  "bullets": [
+                    "Lowercase with underscores",
+                    "Be specific: `cta_hero_clicked` vs. `button_clicked`",
+                    "Include context in properties, not event name",
+                    "Avoid spaces and special characters",
+                    "Document decisions"
+                  ],
+                  "textPreview": "---"
+                },
+                {
+                  "heading": "Best Practices",
+                  "level": 3,
+                  "bullets": [
+                    "Lowercase with underscores",
+                    "Be specific: `cta_hero_clicked` vs. `button_clicked`",
+                    "Include context in properties, not event name",
+                    "Avoid spaces and special characters",
+                    "Document decisions"
+                  ],
+                  "textPreview": "---"
+                }
+              ],
+              "links": [
+                "https://support.google.com/analytics/answer/9267735"
+              ]
+            }
+          },
+          {
+            "skillName": "ab-test-setup",
+            "path": "skills/ab-test-setup/SKILL.md",
+            "inlineSummary": {
+              "status": "ok",
+              "skillName": "ab-test-setup",
+              "name": "ab-test-setup",
+              "title": "A/B Test Setup",
+              "oneLineSummary": "When the user wants to plan, design, or implement an A/B test or experiment. Also use when the user mentions \"A/B test,\" \"split test,\" \"experiment,\" \"test this change,\" \"variant copy,\" \"multivariate test,\" or \"hypothesis.\" For tracking implementation, see analytics-tracking.",
+              "description": "When the user wants to plan, design, or implement an A/B test or experiment. Also use when the user mentions \"A/B test,\" \"split test,\" \"experiment,\" \"test this change,\" \"variant copy,\" \"multivariate test,\" or \"hypothesis.\" For tracking implementation, see analytics-tracking.",
+              "keySections": [
+                {
+                  "heading": "Initial Assessment",
+                  "level": 2,
+                  "bullets": [
+                    "What are you trying to improve?",
+                    "What change are you considering?",
+                    "What made you want to test this?",
+                    "Baseline conversion rate?",
+                    "Current traffic volume?",
+                    "Any historical test data?"
+                  ],
+                  "textPreview": "Before designing a test, understand:"
+                },
+                {
+                  "heading": "1. Start with a Hypothesis",
+                  "level": 3,
+                  "bullets": [
+                    "Not just \"let's see what happens\"",
+                    "Specific prediction of outcome",
+                    "Based on reasoning or data"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "2. Test One Thing",
+                  "level": 3,
+                  "bullets": [
+                    "Single variable per test",
+                    "Otherwise you don't know what worked",
+                    "Save MVT for later"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "3. Statistical Rigor",
+                  "level": 3,
+                  "bullets": [
+                    "Pre-determine sample size",
+                    "Don't peek and stop early",
+                    "Commit to the methodology"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "4. Measure What Matters",
+                  "level": 3,
+                  "bullets": [
+                    "Primary metric tied to business value",
+                    "Secondary metrics for context",
+                    "Guardrail metrics to prevent harm"
+                  ],
+                  "textPreview": "---"
+                },
+                {
+                  "heading": "Examples",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "**Weak hypothesis:**"
+                },
+                {
+                  "heading": "Good Hypotheses Include",
+                  "level": 3,
+                  "bullets": [
+                    "**Observation**: What prompted this idea",
+                    "**Change**: Specific modification",
+                    "**Effect**: Expected outcome and direction",
+                    "**Audience**: Who this applies to",
+                    "**Metric**: How you'll measure success"
+                  ],
+                  "textPreview": "---"
+                },
+                {
+                  "heading": "A/B Test (Split Test)",
+                  "level": 3,
+                  "bullets": [
+                    "Two versions: Control (A) vs. Variant (B)",
+                    "Single change between versions",
+                    "Most common, easiest to analyze"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "A/B Test (Split Test)",
+                  "level": 3,
+                  "bullets": [
+                    "Two versions: Control (A) vs. Variant (B)",
+                    "Single change between versions",
+                    "Most common, easiest to analyze"
+                  ],
+                  "textPreview": null
+                }
+              ],
+              "links": [
+                "https://www.evanmiller.org/ab-testing/sample-size.html",
+                "https://www.optimizely.com/sample-size-calculator/"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "specialtyId": "SPECIALTY_ANALYTICS",
+        "roleId": "ANALYTICS_LEAD",
+        "mission": "Make measurement reliable: tracking plan, event schema, dashboards, incrementality, and data quality.",
+        "skills": [
+          {
+            "name": "Event design and naming conventions",
+            "level": "advanced"
+          },
+          {
+            "name": "Analytics QA and data quality",
+            "level": "advanced"
+          },
+          {
+            "name": "Experiment measurement and guardrails",
+            "level": "advanced"
+          }
+        ],
+        "recommendedRepoSkills": [
+          {
+            "skillName": "analytics-tracking",
+            "path": "skills/analytics-tracking/SKILL.md",
+            "inlineSummary": {
+              "status": "ok",
+              "skillName": "analytics-tracking",
+              "name": "analytics-tracking",
+              "title": "Analytics Tracking",
+              "oneLineSummary": "When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions \"set up tracking,\" \"GA4,\" \"Google Analytics,\" \"conversion tracking,\" \"event tracking,\" \"UTM parameters,\" \"tag manager,\" \"GTM,\" \"analytics implementation,\" or \"tracking plan.\" For A/B test measurement, see ab-test-setup.",
+              "description": "When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions \"set up tracking,\" \"GA4,\" \"Google Analytics,\" \"conversion tracking,\" \"event tracking,\" \"UTM parameters,\" \"tag manager,\" \"GTM,\" \"analytics implementation,\" or \"tracking plan.\" For A/B test measurement, see ab-test-setup.",
+              "keySections": [
+                {
+                  "heading": "Initial Assessment",
+                  "level": 2,
+                  "bullets": [
+                    "What decisions will this data inform?",
+                    "What are the key conversion actions?",
+                    "What questions need answering?",
+                    "What tracking exists?",
+                    "What tools are in use (GA4, Mixpanel, Amplitude, etc.)?",
+                    "What's working/not working?"
+                  ],
+                  "textPreview": "Before implementing tracking, understand:"
+                },
+                {
+                  "heading": "1. Track for Decisions, Not Data",
+                  "level": 3,
+                  "bullets": [
+                    "Every event should inform a decision",
+                    "Avoid vanity metrics",
+                    "Quality > quantity of events"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "2. Start with the Questions",
+                  "level": 3,
+                  "bullets": [
+                    "What do you need to know?",
+                    "What actions will you take based on this data?",
+                    "Work backwards to what you need to track"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "3. Name Things Consistently",
+                  "level": 3,
+                  "bullets": [
+                    "Naming conventions matter",
+                    "Establish patterns before implementing",
+                    "Document everything"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "4. Maintain Data Quality",
+                  "level": 3,
+                  "bullets": [
+                    "Validate implementation",
+                    "Monitor for issues",
+                    "Clean data > more data"
+                  ],
+                  "textPreview": "---"
+                },
+                {
+                  "heading": "Event Types",
+                  "level": 3,
+                  "bullets": [
+                    "Automatic in most tools",
+                    "Enhanced with page metadata",
+                    "Button clicks",
+                    "Form submissions",
+                    "Feature usage",
+                    "Content interactions"
+                  ],
+                  "textPreview": "**Pageviews**"
+                },
+                {
+                  "heading": "Format Options",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "**Object-Action (Recommended)**"
+                },
+                {
+                  "heading": "Best Practices",
+                  "level": 3,
+                  "bullets": [
+                    "Lowercase with underscores",
+                    "Be specific: `cta_hero_clicked` vs. `button_clicked`",
+                    "Include context in properties, not event name",
+                    "Avoid spaces and special characters",
+                    "Document decisions"
+                  ],
+                  "textPreview": "---"
+                },
+                {
+                  "heading": "Best Practices",
+                  "level": 3,
+                  "bullets": [
+                    "Lowercase with underscores",
+                    "Be specific: `cta_hero_clicked` vs. `button_clicked`",
+                    "Include context in properties, not event name",
+                    "Avoid spaces and special characters",
+                    "Document decisions"
+                  ],
+                  "textPreview": "---"
+                }
+              ],
+              "links": [
+                "https://support.google.com/analytics/answer/9267735"
+              ]
+            }
+          },
+          {
+            "skillName": "ab-test-setup",
+            "path": "skills/ab-test-setup/SKILL.md",
+            "inlineSummary": {
+              "status": "ok",
+              "skillName": "ab-test-setup",
+              "name": "ab-test-setup",
+              "title": "A/B Test Setup",
+              "oneLineSummary": "When the user wants to plan, design, or implement an A/B test or experiment. Also use when the user mentions \"A/B test,\" \"split test,\" \"experiment,\" \"test this change,\" \"variant copy,\" \"multivariate test,\" or \"hypothesis.\" For tracking implementation, see analytics-tracking.",
+              "description": "When the user wants to plan, design, or implement an A/B test or experiment. Also use when the user mentions \"A/B test,\" \"split test,\" \"experiment,\" \"test this change,\" \"variant copy,\" \"multivariate test,\" or \"hypothesis.\" For tracking implementation, see analytics-tracking.",
+              "keySections": [
+                {
+                  "heading": "Initial Assessment",
+                  "level": 2,
+                  "bullets": [
+                    "What are you trying to improve?",
+                    "What change are you considering?",
+                    "What made you want to test this?",
+                    "Baseline conversion rate?",
+                    "Current traffic volume?",
+                    "Any historical test data?"
+                  ],
+                  "textPreview": "Before designing a test, understand:"
+                },
+                {
+                  "heading": "1. Start with a Hypothesis",
+                  "level": 3,
+                  "bullets": [
+                    "Not just \"let's see what happens\"",
+                    "Specific prediction of outcome",
+                    "Based on reasoning or data"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "2. Test One Thing",
+                  "level": 3,
+                  "bullets": [
+                    "Single variable per test",
+                    "Otherwise you don't know what worked",
+                    "Save MVT for later"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "3. Statistical Rigor",
+                  "level": 3,
+                  "bullets": [
+                    "Pre-determine sample size",
+                    "Don't peek and stop early",
+                    "Commit to the methodology"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "4. Measure What Matters",
+                  "level": 3,
+                  "bullets": [
+                    "Primary metric tied to business value",
+                    "Secondary metrics for context",
+                    "Guardrail metrics to prevent harm"
+                  ],
+                  "textPreview": "---"
+                },
+                {
+                  "heading": "Examples",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "**Weak hypothesis:**"
+                },
+                {
+                  "heading": "Good Hypotheses Include",
+                  "level": 3,
+                  "bullets": [
+                    "**Observation**: What prompted this idea",
+                    "**Change**: Specific modification",
+                    "**Effect**: Expected outcome and direction",
+                    "**Audience**: Who this applies to",
+                    "**Metric**: How you'll measure success"
+                  ],
+                  "textPreview": "---"
+                },
+                {
+                  "heading": "A/B Test (Split Test)",
+                  "level": 3,
+                  "bullets": [
+                    "Two versions: Control (A) vs. Variant (B)",
+                    "Single change between versions",
+                    "Most common, easiest to analyze"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "A/B Test (Split Test)",
+                  "level": 3,
+                  "bullets": [
+                    "Two versions: Control (A) vs. Variant (B)",
+                    "Single change between versions",
+                    "Most common, easiest to analyze"
+                  ],
+                  "textPreview": null
+                }
+              ],
+              "links": [
+                "https://www.evanmiller.org/ab-testing/sample-size.html",
+                "https://www.optimizely.com/sample-size-calculator/"
+              ]
+            }
+          },
+          {
+            "skillName": "langfuse",
+            "path": "skills/langfuse/SKILL.md",
+            "inlineSummary": {
+              "status": "ok",
+              "skillName": "langfuse",
+              "name": "langfuse",
+              "title": "Langfuse",
+              "oneLineSummary": "Expert in Langfuse - the open-source LLM observability platform. Covers tracing, prompt management, evaluation, datasets, and integration with LangChain, LlamaIndex, and OpenAI. Essential for debugging, monitoring, and improving LLM applications in production. Use when: langfuse, llm observability, llm tracing, prompt management, llm evaluation.",
+              "description": "Expert in Langfuse - the open-source LLM observability platform. Covers tracing, prompt management, evaluation, datasets, and integration with LangChain, LlamaIndex, and OpenAI. Essential for debugging, monitoring, and improving LLM applications in production. Use when: langfuse, llm observability, llm tracing, prompt management, llm evaluation.",
+              "keySections": [
+                {
+                  "heading": "Capabilities",
+                  "level": 2,
+                  "bullets": [
+                    "LLM tracing and observability",
+                    "Prompt management and versioning",
+                    "Evaluation and scoring",
+                    "Dataset management",
+                    "Cost tracking",
+                    "Performance monitoring"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "Requirements",
+                  "level": 2,
+                  "bullets": [
+                    "Python or TypeScript/JavaScript",
+                    "Langfuse account (cloud or self-hosted)",
+                    "LLM API keys"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "Basic Tracing Setup",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "Instrument LLM calls with Langfuse"
+                },
+                {
+                  "heading": "OpenAI Integration",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "Automatic tracing with OpenAI SDK"
+                },
+                {
+                  "heading": "LangChain Integration",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "Trace LangChain applications"
+                },
+                {
+                  "heading": "❌ Not Flushing in Serverless",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "**Why bad**: Traces are batched."
+                },
+                {
+                  "heading": "❌ Tracing Everything",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "**Why bad**: Noisy traces."
+                },
+                {
+                  "heading": "❌ No User/Session IDs",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "**Why bad**: Can't debug specific users."
+                },
+                {
+                  "heading": "❌ No User/Session IDs",
+                  "level": 3,
+                  "bullets": [],
+                  "textPreview": "**Why bad**: Can't debug specific users."
+                }
+              ],
+              "links": [
+                "https://cloud.langfuse.com\""
+              ]
+            }
+          }
+        ],
+        "internalAnalyticsSpecs": [
+          "11_marketing_growth_agent/08_analytics/measurement_framework.json",
+          "11_marketing_growth_agent/08_analytics/incrementality_testing_config.json",
+          "11_marketing_growth_agent/08_analytics/mmm_data_spec.json"
+        ]
+      },
+      {
+        "specialtyId": "SPECIALTY_LIFECYCLE",
+        "roleId": "LIFECYCLE_CRM",
+        "mission": "Build retention: review engine, win-back sequences, reminders, and segmentation.",
+        "skills": [
+          {
+            "name": "Lifecycle journey design",
+            "level": "advanced"
+          },
+          {
+            "name": "Messaging ethics and frequency control",
+            "level": "advanced"
+          }
+        ],
+        "recommendedRepoSkills": [
+          {
+            "skillName": "email-sequence",
+            "path": "skills/email-sequence/SKILL.md",
+            "inlineSummary": {
+              "status": "ok",
+              "skillName": "email-sequence",
+              "name": "email-sequence",
+              "title": "Email Sequence Design",
+              "oneLineSummary": "When the user wants to create or optimize an email sequence, drip campaign, automated email flow, or lifecycle email program. Also use when the user mentions \"email sequence,\" \"drip campaign,\" \"nurture sequence,\" \"onboarding emails,\" \"welcome sequence,\" \"re-engagement emails,\" \"email automation,\" or \"lifecycle emails.\" For in-app onboarding, see onboarding-cro.",
+              "description": "When the user wants to create or optimize an email sequence, drip campaign, automated email flow, or lifecycle email program. Also use when the user mentions \"email sequence,\" \"drip campaign,\" \"nurture sequence,\" \"onboarding emails,\" \"welcome sequence,\" \"re-engagement emails,\" \"email automation,\" or \"lifecycle emails.\" For in-app onboarding, see onboarding-cro.",
+              "keySections": [
+                {
+                  "heading": "Initial Assessment",
+                  "level": 2,
+                  "bullets": [
+                    "Welcome/onboarding sequence",
+                    "Lead nurture sequence",
+                    "Re-engagement sequence",
+                    "Post-purchase sequence",
+                    "Event-based sequence",
+                    "Educational sequence"
+                  ],
+                  "textPreview": "Before creating a sequence, understand:"
+                },
+                {
+                  "heading": "1. One Email, One Job",
+                  "level": 3,
+                  "bullets": [
+                    "Each email has one primary purpose",
+                    "One main CTA per email",
+                    "Don't try to do everything"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "2. Value Before Ask",
+                  "level": 3,
+                  "bullets": [
+                    "Lead with usefulness",
+                    "Build trust through content",
+                    "Earn the right to sell"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "3. Relevance Over Volume",
+                  "level": 3,
+                  "bullets": [
+                    "Fewer, better emails win",
+                    "Segment for relevance",
+                    "Quality > frequency"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "4. Clear Path Forward",
+                  "level": 3,
+                  "bullets": [
+                    "Every email moves them somewhere",
+                    "Links should do something useful",
+                    "Make next steps obvious"
+                  ],
+                  "textPreview": "---"
+                },
+                {
+                  "heading": "Sequence Length",
+                  "level": 3,
+                  "bullets": [
+                    "Welcome: 3-7 emails",
+                    "Lead nurture: 5-10 emails",
+                    "Onboarding: 5-10 emails",
+                    "Re-engagement: 3-5 emails",
+                    "Sales cycle length",
+                    "Product complexity"
+                  ],
+                  "textPreview": "Depends on:"
+                },
+                {
+                  "heading": "Timing/Delays",
+                  "level": 3,
+                  "bullets": [
+                    "Welcome email: Immediately",
+                    "Early sequence: 1-2 days apart",
+                    "Nurture: 2-4 days apart",
+                    "Long-term: Weekly or bi-weekly",
+                    "B2B: Avoid weekends",
+                    "B2C: Test weekends"
+                  ],
+                  "textPreview": "Consider:"
+                },
+                {
+                  "heading": "Subject Line Strategy",
+                  "level": 3,
+                  "bullets": [
+                    "Clear > Clever",
+                    "Specific > Vague",
+                    "Benefit or curiosity-driven",
+                    "40-60 characters ideal",
+                    "Test emoji (they're polarizing)",
+                    "Question: \"Still struggling with X?\""
+                  ],
+                  "textPreview": "**Patterns that work:**"
+                },
+                {
+                  "heading": "Subject Line Strategy",
+                  "level": 3,
+                  "bullets": [
+                    "Clear > Clever",
+                    "Specific > Vague",
+                    "Benefit or curiosity-driven",
+                    "40-60 characters ideal",
+                    "Test emoji (they're polarizing)",
+                    "Question: \"Still struggling with X?\""
+                  ],
+                  "textPreview": "**Patterns that work:**"
+                }
+              ],
+              "links": []
+            }
+          },
+          {
+            "skillName": "referral-program",
+            "path": "skills/referral-program/SKILL.md",
+            "inlineSummary": {
+              "status": "ok",
+              "skillName": "referral-program",
+              "name": "referral-program",
+              "title": "Referral & Affiliate Programs",
+              "oneLineSummary": "When the user wants to create, optimize, or analyze a referral program, affiliate program, or word-of-mouth strategy. Also use when the user mentions 'referral,' 'affiliate,' 'ambassador,' 'word of mouth,' 'viral loop,' 'refer a friend,' or 'partner program.' This skill covers program design, incentive structure, and growth optimization.",
+              "description": "When the user wants to create, optimize, or analyze a referral program, affiliate program, or word-of-mouth strategy. Also use when the user mentions 'referral,' 'affiliate,' 'ambassador,' 'word of mouth,' 'viral loop,' 'refer a friend,' or 'partner program.' This skill covers program design, incentive structure, and growth optimization.",
+              "keySections": [
+                {
+                  "heading": "Before Starting",
+                  "level": 2,
+                  "bullets": [],
+                  "textPreview": "Gather this context (ask if not provided):"
+                },
+                {
+                  "heading": "1. Program Type",
+                  "level": 3,
+                  "bullets": [
+                    "Are you building a customer referral program, affiliate program, or both?",
+                    "Is this B2B or B2C?",
+                    "What's the average customer value (LTV)?",
+                    "What's your current CAC from other channels?"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "2. Current State",
+                  "level": 3,
+                  "bullets": [
+                    "Do you have an existing referral/affiliate program?",
+                    "What's your current referral rate (% of customers who refer)?",
+                    "What incentives have you tried?",
+                    "Do you have customer NPS or satisfaction data?"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "3. Product Fit",
+                  "level": 3,
+                  "bullets": [
+                    "Is your product shareable? (Does using it involve others?)",
+                    "Does your product have network effects?",
+                    "Do customers naturally talk about your product?",
+                    "What triggers word-of-mouth currently?"
+                  ],
+                  "textPreview": null
+                },
+                {
+                  "heading": "4. Resources",
+                  "level": 3,
+                  "bullets": [
+                    "What tools/platforms do you use or consider?",
+                    "What's your budget for referral incentives?",
+                    "Do you have engineering resources for custom implementation?"
+                  ],
+                  "textPreview": "---"
+                },
+                {
+                  "heading": "Customer Referral Programs",
+                  "level": 3,
+                  "bullets": [
+                    "Existing customers recommending to their network",
+                    "Products with natural word-of-mouth",
+                    "Building authentic social proof",
+                    "Lower-ticket or self-serve products",
+                    "Referrer is an existing customer",
+                    "Motivation: Rewards + helping friends"
+                  ],
+                  "textPreview": "**Best for:**"
+                },
+                {
+                  "heading": "Affiliate Programs",
+                  "level": 3,
+                  "bullets": [
+                    "Reaching audiences you don't have access to",
+                    "Content creators, influencers, bloggers",
+                    "Products with clear value proposition",
+                    "Higher-ticket products that justify commissions",
+                    "Affiliates may not be customers",
+                    "Motivation: Revenue/commission"
+                  ],
+                  "textPreview": "**Best for:**"
+                },
+                {
+                  "heading": "Hybrid Approach",
+                  "level": 3,
+                  "bullets": [
+                    "Referral program for customers (simple, small rewards)",
+                    "Affiliate program for partners (larger commissions, more structure)"
+                  ],
+                  "textPreview": "Many successful programs combine both:"
+                },
+                {
+                  "heading": "Hybrid Approach",
+                  "level": 3,
+                  "bullets": [
+                    "Referral program for customers (simple, small rewards)",
+                    "Affiliate program for partners (larger commissions, more structure)"
+                  ],
+                  "textPreview": "Many successful programs combine both:"
+                }
+              ],
+              "links": []
+            }
+          }
+        ],
+        "internalKnowledgeBase": [
+          "11_marketing_growth_agent/01_knowledge_base/lifecycle_crm_playbooks.md"
+        ]
+      }
+    ],
+    "agentEngineeringSkills": [
+      {
+        "skillName": "agent-tool-builder",
+        "path": "skills/agent-tool-builder/SKILL.md",
+        "usedFor": [
+          "tool schema clarity",
+          "error handling"
+        ]
+      },
+      {
+        "skillName": "agent-memory-systems",
+        "path": "skills/agent-memory-systems/SKILL.md",
+        "usedFor": [
+          "memory architecture",
+          "retrieval strategy"
+        ]
+      },
+      {
+        "skillName": "agent-evaluation",
+        "path": "skills/agent-evaluation/SKILL.md",
+        "usedFor": [
+          "regression tests",
+          "reliability metrics"
+        ]
+      },
+      {
+        "skillName": "workflow-automation",
+        "path": "skills/workflow-automation/SKILL.md",
+        "usedFor": [
+          "durable execution patterns",
+          "scheduler design"
+        ]
+      }
+    ],
+    "embeddedSkillSnapshots": {
+      "generatedAt": "2026-01-24T17:49:20.639Z",
+      "generatorScript": "11_marketing_growth_agent/13_automation/skills/embed_skill_summaries_into_journey.js",
+      "limits": {
+        "maxSectionsPerSkill": 8,
+        "maxBulletsPerSection": 6,
+        "maxLinksPerSkill": 10
+      },
+      "embeddedCount": 18
+    }
+  },
+  "grounding": {
+    "protocol": {
+      "goal": "Prevent generic advice and enforce evidence-first decisions.",
+      "steps": [
+        {
+          "stepId": "GROUND_01_DEFINE_QUESTIONS",
+          "name": "Start from decisions, not data",
+          "description": "List the business decisions this workstream must support (budget shifts, offer changes, creative refresh, tracking definitions)."
+        },
+        {
+          "stepId": "GROUND_02_PLATFORM_DOCS",
+          "name": "Consult platform documentation",
+          "description": "Read policy and technical docs for GA4/GTM, Meta Ads, Google Ads, GBP, etc., before prescribing tactics."
+        },
+        {
+          "stepId": "GROUND_03_COMPETITIVE_AUDIT",
+          "name": "Competitive and market audit",
+          "description": "Audit 3–5 local competitors: offers, messaging, proof, creative formats, and GBP footprint."
+        },
+        {
+          "stepId": "GROUND_04_BENCHMARKS",
+          "name": "Benchmark expected performance",
+          "description": "Use category- and channel-appropriate benchmarks to set expectations and kill metrics."
+        },
+        {
+          "stepId": "GROUND_05_INTERNAL_BASELINES",
+          "name": "Establish internal baselines",
+          "description": "Capture last 30–90 days performance and operational constraints (capacity, response SLA)."
+        },
+        {
+          "stepId": "GROUND_06_SYNTHESIZE",
+          "name": "Synthesize into testable hypotheses",
+          "description": "Convert insights into 7–14 day experiments with explicit surfaces, kill metrics, and decision dates."
+        }
+      ]
+    },
+    "sourcesInternal": [
+      {
+        "path": "11_marketing_growth_agent/11_marketing_growth_system/11C_Grounding_and_Research_Engine.json",
+        "tags": [
+          "grounding",
+          "protocol",
+          "sources"
+        ]
+      },
+      {
+        "path": "11_marketing_growth_agent/01_knowledge_base/competitive_intelligence_radar.md",
+        "tags": [
+          "competition"
+        ]
+      },
+      {
+        "path": "11_marketing_growth_agent/01_knowledge_base/causal_inference_and_experimentation.md",
+        "tags": [
+          "experiments",
+          "causal"
+        ]
+      },
+      {
+        "path": "11_marketing_growth_agent/01_knowledge_base/advanced_attribution_and_mmm.md",
+        "tags": [
+          "attribution",
+          "mmm"
+        ]
+      }
+    ],
+    "sourcesExternal": [
+      {
+        "name": "ClickUp API (Tasks)",
+        "category": "workflow_engine",
+        "url": "https://clickup.com/api",
+        "usedFor": [
+          "task creation",
+          "status updates",
+          "automations"
+        ]
+      },
+      {
+        "name": "Notion API (Pages/Databases)",
+        "category": "docs_engine",
+        "url": "https://developers.notion.com/reference/intro",
+        "usedFor": [
+          "artifact storage",
+          "client wiki",
+          "docs SSOT"
+        ]
+      },
+      {
+        "name": "Slack Incoming Webhooks",
+        "category": "notifications",
+        "url": "https://api.slack.com/messaging/webhooks",
+        "usedFor": [
+          "approvals pings",
+          "escalations",
+          "cadence reminders"
+        ]
+      },
+      {
+        "name": "Google Drive API",
+        "category": "asset_store",
+        "url": "https://developers.google.com/drive/api/guides/about-sdk",
+        "usedFor": [
+          "asset upload",
+          "folder structure",
+          "reports storage"
+        ]
+      },
+      {
+        "name": "GA4 (Measurement / Data model)",
+        "category": "measurement",
+        "url": "https://developers.google.com/analytics/devguides/collection/ga4",
+        "usedFor": [
+          "event tracking",
+          "conversion definitions",
+          "validation"
+        ]
+      },
+      {
+        "name": "Google Tag Manager (Measurement)",
+        "category": "measurement",
+        "url": "https://developers.google.com/tag-platform/tag-manager",
+        "usedFor": [
+          "tagging implementation",
+          "event mapping",
+          "governance patterns"
+        ]
+      },
+      {
+        "name": "Google Ads Experiments (Official help)",
+        "category": "paid_media",
+        "url": "https://support.google.com/google-ads/answer/6318742",
+        "usedFor": [
+          "campaign experiments",
+          "budget split tests",
+          "incremental validation loops"
+        ]
+      },
+      {
+        "name": "Google Ads Policies (Official)",
+        "category": "compliance",
+        "url": "https://support.google.com/adspolicy/",
+        "usedFor": [
+          "policy-safe creative/copy",
+          "regulated category constraints",
+          "disapproval prevention"
+        ]
+      },
+      {
+        "name": "Meta Conversions API (Official docs)",
+        "category": "measurement",
+        "url": "https://developers.facebook.com/docs/marketing-api/conversions-api/",
+        "usedFor": [
+          "server-side events",
+          "attribution resilience",
+          "event deduplication guidance"
+        ]
+      },
+      {
+        "name": "Meta Advertising Policies (Official)",
+        "category": "compliance",
+        "url": "https://www.facebook.com/policies/ads/",
+        "usedFor": [
+          "creative/copy constraints",
+          "health/clinic claims gating",
+          "account safety"
+        ]
+      },
+      {
+        "name": "TikTok Business Measurement (Official)",
+        "category": "measurement",
+        "url": "https://business.tiktok.com/marketing-science/measurement",
+        "usedFor": [
+          "platform measurement concepts",
+          "lift mindset",
+          "event/taxonomy alignment"
+        ]
+      },
+      {
+        "name": "Google Business Profile (Official help)",
+        "category": "local_presence",
+        "url": "https://support.google.com/business/",
+        "usedFor": [
+          "GBP optimization",
+          "local reputation ops",
+          "review engine operations"
+        ]
+      },
+      {
+        "name": "Google Search Central (SEO docs)",
+        "category": "seo",
+        "url": "https://developers.google.com/search/docs",
+        "usedFor": [
+          "SEO best practices",
+          "indexing and structured data guidance",
+          "local SEO grounding"
+        ]
+      },
+      {
+        "name": "Schema.org (Structured data vocabulary)",
+        "category": "seo",
+        "url": "https://schema.org/",
+        "usedFor": [
+          "local business schema",
+          "FAQ/schema grounding",
+          "knowledge panel alignment"
+        ]
+      },
+      {
+        "name": "W3C WCAG (Accessibility)",
+        "category": "ux",
+        "url": "https://www.w3.org/WAI/standards-guidelines/wcag/",
+        "usedFor": [
+          "landing page accessibility",
+          "clinic compliance-adjacent UX hygiene",
+          "inclusive design"
+        ]
+      },
+      {
+        "name": "web.dev Core Web Vitals",
+        "category": "ux",
+        "url": "https://web.dev/vitals/",
+        "usedFor": [
+          "performance targets",
+          "site speed decisions",
+          "CRO/SEO technical grounding"
+        ]
+      },
+      {
+        "name": "Meta Robyn (MMM) - GitHub",
+        "category": "growth_science",
+        "url": "https://github.com/facebookexperimental/Robyn",
+        "usedFor": [
+          "MMM workflows",
+          "budget allocation baselines",
+          "scenario planning"
+        ]
+      },
+      {
+        "name": "Google LightweightMMM - GitHub",
+        "category": "growth_science",
+        "url": "https://github.com/google/lightweight_mmm",
+        "usedFor": [
+          "MMM baselines",
+          "model structure references",
+          "budget allocation discussion"
+        ]
+      },
+      {
+        "name": "Google CausalImpact - GitHub",
+        "category": "growth_science",
+        "url": "https://github.com/google/CausalImpact",
+        "usedFor": [
+          "causal impact estimation reference",
+          "counterfactual thinking",
+          "experiment analysis patterns"
+        ]
+      },
+      {
+        "name": "Reddit (Community signal, not authority): r/marketing",
+        "category": "community_signal",
+        "url": "https://www.reddit.com/r/marketing/",
+        "usedFor": [
+          "qualitative patterns",
+          "agency ops anecdotes",
+          "client communication pitfalls"
+        ]
+      }
+    ]
+  },
+  "workflowGraph": {
+    "nodeTypes": [
+      "stage",
+      "gate",
+      "artifact",
+      "decision",
+      "cadence"
+    ],
+    "nodes": [
+      {
+        "id": "N0",
+        "type": "stage",
+        "ref": "STAGE_00_INTAKE"
+      },
+      {
+        "id": "N0A",
+        "type": "stage",
+        "ref": "STAGE_00A_BRAND_IDENTITY_TRACK"
+      },
+      {
+        "id": "N1",
+        "type": "stage",
+        "ref": "STAGE_01_DIAGNOSIS_AND_AUDIT"
+      },
+      {
+        "id": "N2",
+        "type": "stage",
+        "ref": "STAGE_02_STRATEGY_AND_OPERATING_PLAN"
+      },
+      {
+        "id": "N3",
+        "type": "stage",
+        "ref": "STAGE_03_FOUNDATION_SETUP"
+      },
+      {
+        "id": "N4",
+        "type": "stage",
+        "ref": "STAGE_04_PRODUCTION"
+      },
+      {
+        "id": "N5",
+        "type": "stage",
+        "ref": "STAGE_05_PUBLISH_AND_LAUNCH"
+      },
+      {
+        "id": "N6",
+        "type": "stage",
+        "ref": "STAGE_06_MEASURE_REPORT_OPTIMIZE"
+      },
+      {
+        "id": "G0",
+        "type": "gate",
+        "name": "Brand Identity Gate"
+      },
+      {
+        "id": "G1",
+        "type": "gate",
+        "name": "Client Approval Gate"
+      }
+    ],
+    "edges": [
+      {
+        "from": "N0",
+        "to": "G0",
+        "label": "brand identity exists?"
+      },
+      {
+        "from": "G0",
+        "to": "N1",
+        "label": "yes → start diagnosis"
+      },
+      {
+        "from": "G0",
+        "to": "N0A",
+        "label": "no → start brand track"
+      },
+      {
+        "from": "N0A",
+        "to": "N1",
+        "label": "brand baseline → diagnosis"
+      },
+      {
+        "from": "N1",
+        "to": "N2",
+        "label": "diagnosis → strategy"
+      },
+      {
+        "from": "N2",
+        "to": "G1",
+        "label": "plan presented → approval"
+      },
+      {
+        "from": "G1",
+        "to": "N3",
+        "label": "approved → foundation"
+      },
+      {
+        "from": "N3",
+        "to": "N4",
+        "label": "tracking+brand ready → production"
+      },
+      {
+        "from": "N4",
+        "to": "N5",
+        "label": "approved assets → publish/launch"
+      },
+      {
+        "from": "N5",
+        "to": "N6",
+        "label": "live → measure/iterate"
+      },
+      {
+        "from": "N6",
+        "to": "N4",
+        "label": "new experiments → new creative/content"
+      }
+    ]
+  },
+  "operationalKPIs": {
+    "agencyOps": [
+      {
+        "name": "Approval Turnaround Time (hours)",
+        "target": "<= 24"
+      },
+      {
+        "name": "On-time Delivery Rate",
+        "target": ">= 90%"
+      },
+      {
+        "name": "Weekly Cadence Adherence",
+        "target": ">= 95%"
+      },
+      {
+        "name": "Experiment Cycle Time (days)",
+        "target": "<= 14"
+      }
+    ],
+    "clientOutcomes": [
+      {
+        "name": "Qualified bookings/orders",
+        "target": "client-specific"
+      },
+      {
+        "name": "Cost per qualified lead/booking",
+        "target": "client-specific"
+      },
+      {
+        "name": "Repeat rate / win-back rate",
+        "target": "improving trend"
+      }
+    ]
+  }
+}

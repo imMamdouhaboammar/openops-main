@@ -1,0 +1,27 @@
+{
+    "tools": [
+        "threat-model-generator.tool.json",
+        "sast-scanner.tool.json",
+        "dast-scanner.tool.json",
+        "compliance-checker.tool.json",
+        "security-control-mapper.tool.json"
+    ],
+    "tool_categories": {
+        "analysis": [
+            "threat-model-generator",
+            "security-control-mapper"
+        ],
+        "scanner": [
+            "sast-scanner",
+            "dast-scanner"
+        ],
+        "validation": [
+            "compliance-checker"
+        ]
+    },
+    "integration_guides": {
+        "snyk": "integration-guides/snyk-integration.md",
+        "sonarqube": "integration-guides/sonarqube-integration.md",
+        "owasp-zap": "integration-guides/owasp-zap-integration.md"
+    }
+}

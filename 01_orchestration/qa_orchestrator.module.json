@@ -1,0 +1,174 @@
+{
+  "module": {
+    "name": "QAOrchestrator",
+    "version": "2.0.0",
+    "type": "evaluation_module",
+    "description": "Coordinates multi-agent evaluation, bias detection, and quality validation across all OpenOps system rounds.",
+    "author": "OpenOps Studio | Created by Mamdouh Aboammar",
+    "governance": {
+      "supervised_by": "SupervisorAgent",
+      "approved_by": "StaffEngineer",
+      "compliance": "Security, Privacy, and QA Gates"
+    },
+
+    "objectives": [
+      "Provide multi-agent evaluation for accuracy, coherence, and compliance.",
+      "Detect bias, logical fallacies, and hallucination risks before Handoff.",
+      "Aggregate critic feedback from Evaluator, RedTeam, and Skeptic Agents.",
+      "Generate final QA Score and pass/fail verdict for each orchestration round."
+    ],
+
+    "evaluation_architecture": {
+      "panel_composition": ["EvaluatorAgent", "RedTeamAgent", "SkepticAgent"],
+      "evaluation_modes": ["parallel", "weighted_consensus", "adversarial_review"],
+      "integration_points": [
+        "DeepResearchEngine",
+        "AgentParallelismPatterns",
+        "ExecutionContextManager",
+        "AuditAndDecisionLedger"
+      ]
+    },
+
+    "evaluation_criteria": {
+      "dimensions": [
+        "accuracy",
+        "logical_consistency",
+        "evidence_strength",
+        "clarity",
+        "risk_sensitivity",
+        "privacy_compliance"
+      ],
+      "weighting_model": {
+        "accuracy": 0.25,
+        "logical_consistency": 0.20,
+        "evidence_strength": 0.20,
+        "clarity": 0.15,
+        "risk_sensitivity": 0.10,
+        "privacy_compliance": 0.10
+      },
+      "qa_pass_threshold": 0.90
+    },
+
+    "workflow_engine": {
+      "triggers": {
+        "on_round_exit": [
+          "initiate_parallel_evaluation",
+          "collect_feedback_from_critics",
+          "aggregate_scores"
+        ],
+        "on_qa_fail": [
+          "notify SupervisorAgent",
+          "trigger RiskAndFailurePlaybook",
+          "log_failure_in_audit_ledger"
+        ],
+        "on_qa_pass": [
+          "mark_round_verified",
+          "log_success_in_audit_ledger"
+        ]
+      },
+      "consensus_algorithm": "weighted_majority_vote",
+      "disagreement_resolution": "SupervisorAgent final authority"
+    },
+
+    "evaluation_agents": {
+      "EvaluatorAgent": {
+        "role": "Primary critic focusing on factual and logical accuracy.",
+        "methods": ["evidence_crosscheck", "source_validation", "factual_alignment"]
+      },
+      "RedTeamAgent": {
+        "role": "Adversarial auditor detecting logical or ethical weaknesses.",
+        "methods": ["counterargument_simulation", "bias_detection", "adversarial_prompting"]
+      },
+      "SkepticAgent": {
+        "role": "Statistical and confidence evaluator.",
+        "methods": ["variance_analysis", "confidence_assessment", "model_uncertainty_check"]
+      }
+    },
+
+    "integration_points": {
+      "upstream": ["DeepResearchEngine", "AgentParallelismPatterns"],
+      "downstream": [
+        "AuditAndDecisionLedger",
+        "RiskAndFailurePlaybook",
+        "ExecutionContextManager"
+      ]
+    },
+
+    "score_aggregation_model": {
+      "method": "Weighted Mean",
+      "formula": "(Σ (score_i * weight_i)) / Σ weights",
+      "bias_penalty": "−0.05 if RedTeamAgent detects logical flaw",
+      "confidence_bonus": "+0.03 if SkepticAgent reports low variance"
+    },
+
+    "outputs": {
+      "qa_report": {
+        "fields": [
+          "qa_score",
+          "dimension_breakdown",
+          "critic_feedback",
+          "risk_flags",
+          "supervisor_verdict"
+        ],
+        "storage_path": "/openops/reports/qa/",
+        "retention_days": 180
+      },
+      "verdict": "approved | rejected | rerun_required"
+    },
+
+    "automation_hooks": {
+      "on_evaluation_start": [
+        "ExecutionContextManager.freeze_context_snapshot",
+        "AuditLedger.log_event('QA_STARTED')"
+      ],
+      "on_evaluation_complete": [
+        "AuditLedger.log_event('QA_COMPLETED')",
+        "AnalyticsTracker.record('qa_round_finished')"
+      ],
+      "on_failure_detected": [
+        "RiskAndFailurePlaybook.trigger_recovery",
+        "SupervisorAgent.review_required"
+      ]
+    },
+
+    "security_rules": {
+      "classification": "internal_confidential",
+      "data_handling": "read-only on runtime contexts",
+      "access_control": {
+        "EvaluatorAgent": "write_score",
+        "RedTeamAgent": "write_feedback",
+        "SkepticAgent": "read/analyze",
+        "SupervisorAgent": "approve",
+        "QAOrchestrator": "admin"
+      }
+    },
+
+    "quality_metrics": {
+      "avg_response_latency_ms": 1200,
+      "max_parallel_evaluations": 5,
+      "target_reliability_score": 0.95,
+      "historical_baseline_score": 0.91
+    },
+
+    "example_evaluation_record": {
+      "round": "Detail",
+      "context_id": "ctx_2025_12_16_1420",
+      "qa_score": 0.92,
+      "dimension_breakdown": {
+        "accuracy": 0.95,
+        "logical_consistency": 0.88,
+        "evidence_strength": 0.93,
+        "clarity": 0.91,
+        "risk_sensitivity": 0.89,
+        "privacy_compliance": 0.96
+      },
+      "critic_feedback": {
+        "EvaluatorAgent": "Strong factual consistency.",
+        "RedTeamAgent": "Detected minor ambiguity in argument #2.",
+        "SkepticAgent": "Confidence variance acceptable (<3%)."
+      },
+      "verdict": "approved",
+      "logged_in_ledger": true
+    }
+  }
+}

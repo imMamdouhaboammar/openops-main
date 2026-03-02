@@ -1,0 +1,203 @@
+{
+  "module": {
+    "name": "ResearchTemplatesAndTaxonomy",
+    "version": "2.0.0",
+    "type": "research_structure_registry",
+    "description": "Defines standardized research document templates, classification taxonomy, and methodological styles for all research operations across OpenOps Studio.",
+    "author": "OpenOps Studio | Created by Mamdouh Aboammar",
+    "governance": {
+      "supervised_by": "ResearchSupervisorAgent",
+      "approved_by": "StaffEngineer",
+      "linked_policies": [
+        "04_Research_and_Competitive_Intelligence.md",
+        "06_Security_Compliance_and_Privacy_Gates.md"
+      ]
+    },
+
+    "objectives": [
+      "Provide a unified structure for all research documents and briefs.",
+      "Define taxonomy for research types, evidence levels, and analytic depth.",
+      "Enable modular templates that can be automatically populated by agents.",
+      "Support classification for parallel research workflows and deep analysis."
+    ],
+
+    "taxonomy": {
+      "research_types": [
+        "Exploratory Research",
+        "Comparative Analysis",
+        "Technical Deep Dive",
+        "Market Intelligence",
+        "Competitive Benchmarking",
+        "Policy Impact Study",
+        "Meta-Research (Algorithmic/AI)"
+      ],
+      "evidence_levels": [
+        "Primary Evidence (Direct Data / Experiments)",
+        "Secondary Evidence (Derived / Literature Review)",
+        "Tertiary Evidence (Summarized Insights)"
+      ],
+      "analysis_depth": [
+        "Shallow Scan",
+        "Focused Analysis",
+        "Deep Synthetic Research"
+      ],
+      "reasoning_modes": [
+        "Inductive Reasoning",
+        "Deductive Reasoning",
+        "Abductive Inference",
+        "Causal Mapping"
+      ]
+    },
+
+    "template_schema": {
+      "fields": [
+        "research_id",
+        "title",
+        "author",
+        "research_type",
+        "goal_statement",
+        "methodology",
+        "data_sources",
+        "findings",
+        "insights",
+        "recommendations",
+        "qa_validation",
+        "risk_and_limitations",
+        "metadata"
+      ]
+    },
+
+    "templates": {
+      "Exploratory Research": {
+        "structure": [
+          "1. Problem Context and Objective",
+          "2. Key Questions and Hypotheses",
+          "3. Initial Data Collection and Trends",
+          "4. Early Findings",
+          "5. Next Research Directions"
+        ],
+        "recommended_agents": [
+          "ResearchBriefAgent",
+          "PlannerAgent",
+          "SynthesizerAgent"
+        ],
+        "auto_populate_fields": ["goal_statement", "data_sources", "insights"]
+      },
+      "Technical Deep Dive": {
+        "structure": [
+          "1. System or Technology Overview",
+          "2. Research Methodology",
+          "3. Architecture or Algorithmic Breakdown",
+          "4. Experimental Results / Benchmarks",
+          "5. Discussion and Implications"
+        ],
+        "recommended_agents": [
+          "WorkerAgents",
+          "EvaluatorAgent",
+          "QAOrchestrator"
+        ],
+        "auto_populate_fields": ["methodology", "findings", "qa_validation"]
+      },
+      "Market Intelligence": {
+        "structure": [
+          "1. Market Definition and Segmentation",
+          "2. Competitor Landscape",
+          "3. Trend Analysis (Recent 12 months)",
+          "4. Key Insights and Forecasts",
+          "5. Risks, Barriers, and Opportunities"
+        ],
+        "recommended_agents": [
+          "ResearchBriefAgent",
+          "PlannerAgent",
+          "SynthesizerAgent"
+        ],
+        "auto_populate_fields": ["findings", "insights", "recommendations"]
+      },
+      "Meta-Research (Algorithmic/AI)": {
+        "structure": [
+          "1. Algorithmic Objective or Model Description",
+          "2. Prior Literature and Related Work",
+          "3. Experimental Setup or Simulation",
+          "4. Evaluation Metrics and Results",
+          "5. Theoretical Implications and Future Work"
+        ],
+        "recommended_agents": [
+          "DeepResearchEngine",
+          "EvaluatorAgent",
+          "SupervisorAgent"
+        ],
+        "auto_populate_fields": ["methodology", "qa_validation", "recommendations"]
+      }
+    },
+
+    "metadata_defaults": {
+      "language": "en",
+      "encoding": "UTF-8",
+      "citation_format": "APA-7",
+      "auto_versioning": true,
+      "retention_days": 365
+    },
+
+    "integration_points": {
+      "upstream": [
+        "ResearchBriefAgent",
+        "PlannerAgent"
+      ],
+      "downstream": [
+        "DeepResearchEngine",
+        "QAOrchestrator",
+        "DataEvidenceScoringModel"
+      ],
+      "dependencies": [
+        "ExternalSourcesIndex",
+        "AgentMemoryRegistry"
+      ]
+    },
+
+    "security_rules": {
+      "classification": "internal_confidential",
+      "encryption_at_rest": true,
+      "tamper_protection": "enabled",
+      "audit_logging": true,
+      "access_control": {
+        "ResearchBriefAgent": "read/write",
+        "PlannerAgent": "read/write",
+        "WorkerAgents": "read",
+        "QAOrchestrator": "read",
+        "SupervisorAgent": "admin"
+      }
+    },
+
+    "analytics_and_metrics": {
+      "track_generated_templates": true,
+      "track_usage_by_agent": true,
+      "metrics_storage_path": "/openops/analytics/research_templates.json",
+      "fields": [
+        "template_type",
+        "num_generated_today",
+        "avg_fill_time_sec",
+        "qa_pass_rate"
+      ]
+    },
+
+    "example_research_template": {
+      "research_id": "RSR_2025_12_16_001",
+      "title": "Evaluating the Efficiency of the Time-Tested Diffusion Algorithm",
+      "research_type": "Meta-Research (Algorithmic/AI)",
+      "goal_statement": "Analyze the TTD-DR algorithm’s performance and its ability to replicate human-level revision patterns.",
+      "methodology": "Comparative experimental testing between TTD-DR and baseline ReAct architectures.",
+      "data_sources": ["ArXiv", "GitHub Repos", "Internal QA Benchmarks"],
+      "findings": "TTD-DR outperforms baseline models by 27% on coherence metrics.",
+      "insights": "The diffusion-based self-correction loop is key to emergent reasoning consistency.",
+      "recommendations": "Integrate TTD-DR into OpenOps DeepResearchEngine v2.",
+      "qa_validation": "Approved by QAOrchestrator (score 0.92).",
+      "risk_and_limitations": "Limited training data diversity; further tests needed across multi-lingual benchmarks.",
+      "metadata": {
+        "language": "en",
+        "created_by": "ResearchBriefAgent",
+        "version": "1.0.0",
+        "last_updated": "2025-12-16T17:30:00Z"
+      }
+    }
+  }
+}

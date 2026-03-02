@@ -1,0 +1,116 @@
+# Real Estate Marketing Configuration
+# Residential, commercial, property management, real estate platforms
+
+industry: real_estate
+last_updated: "2026-02-15"
+source_verification: "Based on 2026 real estate marketing benchmarks"
+
+## Industry Characteristics
+
+business_model:
+  segments:
+    residential_sales: "Apartments, villas - high-ticket ($50K-$1M+)"
+    commercial_real_estate: "Offices, retail spaces - B2B, long sales cycle"
+    property_management: "Rental management, maintenance - recurring revenue"
+    real_estate_platforms: "Aqar, Property Finder - listing aggregators"
+  
+  sales_cycle:
+    residential: "30-180 days (research-heavy)"
+    commercial: "6-18 months (relationship-driven)"
+    rentals: "7-30 days"
+  
+  trust_sensitivity: "VERY HIGH - major financial decision"
+
+buyer_psychology:
+  primary_concerns:
+    - "Location, location, location"
+    - "Property value and appreciation potential"
+    - "Financing options (mortgage availability)"
+    - "Developer reputation (will they deliver?)"
+    - "Legal clarity (title, ownership)"
+  
+  decision_triggers:
+    - "Virtual tours and high-quality photos"
+    - "Financing pre-approval"
+    - "Limited-time offers (early bird discounts)"
+    - "Social proof (testimonials, sold units)"
+
+## Channel Strategy Patterns
+
+recommended_channels:
+  tier_1_essential:
+    - channel: "Facebook & Instagram Ads (Visual Showcase)"
+      rationale: "Real estate is HIGHLY visual. Showcase properties with photos/videos."
+      expected_timeline: "2-4 weeks for qualified leads"
+      typical_cost: "$2-10 CPC, $100-500 cost per lead"
+      
+    - channel: "Google Search Ads (Intent-Based)"
+      rationale: "'Apartments for sale in New Cairo', 'villas in Dubai Marina'"
+      expected_timeline: "Immediate leads"
+      typical_cost: "$1-8 CPC, $80-300 cost per lead"
+      
+    - channel: "Real Estate Platforms (Aqar, Property Finder, Bayut)"
+      rationale: "Buyers browse listings on dedicated platforms"
+      expected_timeline: "Immediate visibility"
+      typical_cost: "$200-$2K/month (listing fees)"
+      regional_note: "Aqar (Egypt), Property Finder/Bayut (GCC)"
+  
+  tier_2_growth:
+    - channel: "WhatsApp Business (Inquiries, Virtual Tours)"
+      rationale: "Buyers prefer WhatsApp for quick questions, scheduling viewings"
+      expected_timeline: "Immediate"
+      typical_cost: "FREE"
+      regional_note: "CRITICAL in Egypt/GCC"
+      
+    - channel: "YouTube Ads (Property Tours)"
+      rationale: "Video walkthroughs, neighborhood tours, developer interviews"
+      expected_timeline: "2-4 weeks"
+      typical_cost: "$0.05-$0.30 per view"
+      
+    - channel: "Influencer Partnerships (Lifestyle Influencers)"
+      rationale: "GCC especially - influencers showcase luxury properties"
+      expected_timeline: "1-2 months"
+      typical_cost: "$1K-$10K per campaign"
+  
+  tier_3_scale:
+    - channel: "Out-of-Home (Billboards, Transit)"
+      rationale: "High visibility for new developments"
+      expected_timeline: "Ongoing"
+      typical_cost: "$3K-$30K/month"
+      
+    - channel: "Events & Open Houses"
+      rationale: "Face-to-face relationship building"
+      expected_timeline: "Monthly"
+      typical_cost: "$500-$5K per event"
+
+## Egypt/GCC Adjustments
+
+regional_nuances:
+  egypt:
+    - "Aqar.com dominance: Primary listing platform"
+    - "Financing challenges: Mortgage penetration low (~15%)"
+    - "Payment plans: Developers offer 5-10 year installment plans"
+    - "New cities: New Cairo, New Capital drive demand"
+    - "WhatsApp critical: Buyers expect WhatsApp communication"
+    
+  gcc:
+    - "Property Finder, Bayut: Dominant platforms (UAE)"
+    - "Expat market: 70-90% of buyers are expats (UAE)"
+    - "Luxury segment: High-end properties ($500K-$10M+) strong"
+    - "Off-plan sales: Buying before construction common"
+    - "Virtual tours: Expected (especially for international buyers)"
+
+## Success Metrics
+
+key_metrics:
+  - metric: "Cost Per Lead"
+    benchmark: "$100-500 (residential), $500-$2K (commercial)"
+    
+  - metric: "Lead-to-Viewing Conversion"
+    benchmark: "20-40%"
+    
+  - metric: "Viewing-to-Sale Conversion"
+    benchmark: "10-30%"
+    
+  - metric: "Average Days on Market"
+    target: "< 90 days (residential)"

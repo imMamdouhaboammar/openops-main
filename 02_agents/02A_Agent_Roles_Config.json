@@ -1,0 +1,206 @@
+{
+  "agents_registry": {
+    "version": "2.0.0",
+    "description": "Defines operational roles, capabilities, access levels, and behavioral rules for all agents within OpenOps Orchestration System.",
+    "author": "OpenOps Studio | Created by Mamdouh Aboammar",
+    "governance": {
+      "managed_by": "SupervisorAgent",
+      "approved_by": "StaffEngineer",
+      "compliance_with": [
+        "06_Security_Compliance_and_Privacy_Gates.md",
+        "00B_OpenOps_Audit_and_Decision_Ledger.json"
+      ]
+    },
+
+    "role_taxonomy": {
+      "orchestration_layer": ["Orchestrator", "SupervisorAgent", "WorkerAgent"],
+      "evaluation_layer": ["EvaluatorAgent", "RedTeamAgent", "SkepticAgent", "QAOrchestrator"],
+      "research_layer": ["ResearchBriefAgent", "SynthesizerAgent", "PlannerAgent"],
+      "governance_layer": ["SecurityLead", "ComplianceMonitor", "StaffEngineer"]
+    },
+
+    "agents": {
+      "Orchestrator": {
+        "description": "Central coordination entity managing rounds, modules, and system decisions.",
+        "tier": "L0",
+        "capabilities": [
+          "initiate_rounds",
+          "load_modules",
+          "validate_integration_config",
+          "handoff_final_output"
+        ],
+        "access_level": "admin",
+        "restricted_actions": [],
+        "reporting_to": "StaffEngineer",
+        "security_clearance": "system_internal"
+      },
+
+      "SupervisorAgent": {
+        "description": "Oversees module execution, ensures compliance, and coordinates recovery decisions.",
+        "tier": "L1",
+        "capabilities": [
+          "approve_module_decisions",
+          "trigger_recovery",
+          "override_round",
+          "escalate_issues"
+        ],
+        "access_level": "write",
+        "restricted_actions": ["direct_file_io"],
+        "reporting_to": "StaffEngineer",
+        "security_clearance": "confidential"
+      },
+
+      "WorkerAgents": {
+        "description": "Perform task-specific or research-specific work delegated by the SupervisorAgent.",
+        "tier": "L2",
+        "capabilities": [
+          "execute_research_task",
+          "collect_external_data",
+          "run_tool_calls",
+          "generate_partial_drafts"
+        ],
+        "access_level": "read/write",
+        "restricted_actions": ["system_config_changes"],
+        "reporting_to": "SupervisorAgent",
+        "security_clearance": "internal"
+      },
+
+      "EvaluatorAgent": {
+        "description": "Performs factual, logical, and data-consistency evaluations during QA stages.",
+        "tier": "L2",
+        "capabilities": ["validate_outputs", "crosscheck_evidence", "generate_score"],
+        "access_level": "write_score",
+        "reporting_to": "QAOrchestrator",
+        "security_clearance": "internal_confidential"
+      },
+
+      "RedTeamAgent": {
+        "description": "Acts as adversarial critic to detect logical weaknesses or ethical issues.",
+        "tier": "L2",
+        "capabilities": ["bias_detection", "adversarial_analysis", "argument_attack"],
+        "access_level": "write_feedback",
+        "reporting_to": "QAOrchestrator",
+        "security_clearance": "confidential"
+      },
+
+      "SkepticAgent": {
+        "description": "Evaluates statistical soundness and model confidence in generated outputs.",
+        "tier": "L2",
+        "capabilities": ["confidence_check", "variance_analysis", "stability_test"],
+        "access_level": "read",
+        "reporting_to": "QAOrchestrator",
+        "security_clearance": "internal_confidential"
+      },
+
+      "ResearchBriefAgent": {
+        "description": "Transforms user intent into structured research briefs and scoped problems.",
+        "tier": "L2",
+        "capabilities": ["goal_clarification", "scope_definition", "draft_initial_plan"],
+        "access_level": "write",
+        "reporting_to": "SupervisorAgent",
+        "security_clearance": "internal"
+      },
+
+      "PlannerAgent": {
+        "description": "Creates multi-stage research or reasoning plans for DeepResearchEngine.",
+        "tier": "L2",
+        "capabilities": ["generate_plan", "assign_tasks_to_workers", "coordinate_research_cycles"],
+        "access_level": "write",
+        "reporting_to": "SupervisorAgent",
+        "security_clearance": "internal"
+      },
+
+      "SynthesizerAgent": {
+        "description": "Integrates results from multiple workers into coherent drafts or insights.",
+        "tier": "L2",
+        "capabilities": ["merge_outputs", "resolve_conflicts", "enhance_coherence"],
+        "access_level": "write",
+        "reporting_to": "SupervisorAgent",
+        "security_clearance": "internal"
+      },
+
+      "QAOrchestrator": {
+        "description": "Manages all quality verification processes and multi-agent evaluation panels.",
+        "tier": "L1",
+        "capabilities": ["aggregate_qa_scores", "issue_final_verdicts", "trigger_re_evaluation"],
+        "access_level": "admin",
+        "reporting_to": "SupervisorAgent",
+        "security_clearance": "internal_confidential"
+      },
+
+      "SecurityLead": {
+        "description": "Final authority on all matters related to data security, access control, and privacy enforcement.",
+        "tier": "L0",
+        "capabilities": [
+          "review_security_incidents",
+          "authorize_privacy_exceptions",
+          "approve_data_access"
+        ],
+        "access_level": "admin",
+        "reporting_to": "StaffEngineer",
+        "security_clearance": "system_confidential"
+      },
+
+      "ComplianceMonitor": {
+        "description": "Ensures regulatory, ethical, and privacy compliance in all modules and outputs.",
+        "tier": "L1",
+        "capabilities": ["audit_data_flows", "verify_privacy_gates", "report_policy_violations"],
+        "access_level": "audit",
+        "reporting_to": "SecurityLead",
+        "security_clearance": "confidential"
+      },
+
+      "StaffEngineer": {
+        "description": "Top-level technical authority for architectural and operational approvals.",
+        "tier": "L0",
+        "capabilities": [
+          "approve_system_changes",
+          "resolve_conflicts",
+          "authorize_risk_playbook"
+        ],
+        "access_level": "admin",
+        "reporting_to": "SystemOwner",
+        "security_clearance": "system_internal"
+      }
+    },
+
+    "agent_hierarchy": {
+      "SystemOwner": ["StaffEngineer"],
+      "StaffEngineer": ["SupervisorAgent", "SecurityLead"],
+      "SupervisorAgent": ["WorkerAgents", "PlannerAgent", "ResearchBriefAgent", "SynthesizerAgent", "QAOrchestrator"],
+      "QAOrchestrator": ["EvaluatorAgent", "RedTeamAgent", "SkepticAgent"]
+    },
+
+    "security_matrix": {
+      "Orchestrator": ["system_config", "runtime_state"],
+      "SupervisorAgent": ["module_control", "qa_verdicts"],
+      "WorkerAgents": ["research_tasks", "api_calls"],
+      "EvaluatorAgent": ["qa_reports"],
+      "RedTeamAgent": ["qa_feedback"],
+      "SkepticAgent": ["qa_confidence_data"],
+      "SecurityLead": ["access_logs", "security_policies"],
+      "ComplianceMonitor": ["audit_logs", "privacy_reports"]
+    },
+
+    "integration_points": {
+      "linked_modules": [
+        "DeepResearchEngine",
+        "AgentParallelismPatterns",
+        "QAOrchestrator",
+        "FailureRecoveryManager",
+        "AuditAndDecisionLedger"
+      ],
+      "managed_by": ["OrchestrationEngineCore", "SecurityAndPrivacyGates"]
+    },
+
+    "example_agent_snapshot": {
+      "agent_name": "RedTeamAgent",
+      "tier": "L2",
+      "reporting_to": "QAOrchestrator",
+      "active_round": "QA",
+      "current_task": "Evaluate reasoning robustness in DeepResearchEngine output",
+      "permissions": ["write_feedback"],
+      "security_clearance": "confidential"
+    }
+  }
+}

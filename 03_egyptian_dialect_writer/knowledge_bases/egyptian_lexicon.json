@@ -1,0 +1,179 @@
+{
+  "kb_id": "EDW_EGYPTIAN_LEXICON_001",
+  "kb_name": "Egyptian Colloquial Lexicon",
+  "kb_name_ar": "قاموس العامية المصرية",
+  "version": "1.0.0",
+  "last_updated": "2025-12-19",
+  
+  "metadata": {
+    "entries_count": "extensive",
+    "categories": [
+      "everyday_expressions",
+      "tech_adapted_colloquial",
+      "business_colloquial",
+      "conversational_fillers",
+      "idioms_and_sayings"
+    ]
+  },
+
+  "core_expressions": {
+    "opening_phrases": [
+      {"phrase": "بص يا سيدي", "usage": "attention_getter", "formality": 0.5},
+      {"phrase": "من الآخر", "usage": "get_to_the_point", "formality": 0.3},
+      {"phrase": "بصراحة", "usage": "honesty_marker", "formality": 0.4},
+      {"phrase": "خلي بالك", "usage": "warning_or_emphasis", "formality": 0.5},
+      {"phrase": "الحقيقة", "usage": "truth_emphasis", "formality": 0.6}
+    ],
+
+    "transition_phrases": [
+      {"phrase": "طيب", "usage": "smooth_transition", "frequency": "very_high"},
+      {"phrase": "يعني إيه؟", "usage": "elaboration_request", "frequency": "high"},
+      {"phrase": "نخش على", "usage": "topic_shift", "frequency": "medium"},
+      {"phrase": "ناخد مثال", "usage": "example_intro", "frequency": "high"},
+      {"phrase": "تعالى نشوف", "usage": "exploration_invitation", "frequency": "medium"}
+    ],
+
+    "conversational_fillers": [
+      {"word": "يعني", "function": "hesitation_or_elaboration", "usage_rate": "very_high"},
+      {"word": "كده", "function": "completion_or_manner", "usage_rate": "very_high"},
+      {"word": "بقى", "function": "emphasis_or_continuation", "usage_rate": "high"},
+      {"word": "طب", "function": "transition_or_question", "usage_rate": "medium"},
+      {"word": "أصل", "function": "explanation_intro", "usage_rate": "medium"},
+      {"word": "علشان/عشان", "function": "because", "usage_rate": "very_high"}
+    ],
+
+    "descriptive_adjectives": {
+      "positive": [
+        {"word": "جامد", "intensity": 0.9, "context": "impressive"},
+        {"word": "تحفة", "intensity": 0.95, "context": "excellent"},
+        {"word": "رهيب", "intensity": 0.95, "context": "awesome"},
+        {"word": "عبقري", "intensity": 0.90, "context": "genius"},
+        {"word": "ممتاز", "intensity": 0.80, "context": "excellent"},
+        {"word": "روعة", "intensity": 0.85, "context": "wonderful"}
+      ],
+      "negative": [
+        {"word": "حمصي", "intensity": 0.7, "context": "nonsense"},
+        {"word": "هبد", "intensity": 0.6, "context": "guesswork"},
+        {"word": "فاشل", "intensity": 0.9, "context": "failed"},
+        {"word": "ضعيف", "intensity": 0.6, "context": "weak"},
+        {"word": "مش نافع", "intensity": 0.7, "context": "useless"}
+      ],
+      "neutral": [
+        {"word": "عادي", "intensity": 0.5, "context": "okay"},
+        {"word": "ماشي", "intensity": 0.5, "context": "acceptable"},
+        {"word": "مقبول", "intensity": 0.6, "context": "acceptable"},
+        {"word": "متوسط", "intensity": 0.5, "context": "average"}
+      ]
+    },
+
+    "emphasis_expressions": [
+      {"phrase": "بالظبط", "strength": 0.9},
+      {"phrase": "فعلاً", "strength": 0.8},
+      {"phrase": "حرفياً", "strength": 0.9},
+      {"phrase": "تماماً", "strength": 0.85},
+      {"phrase": "بجد", "strength": 0.75}
+    ],
+
+    "agreement_expressions": [
+      {"phrase": "أيوة", "formality": 0.3},
+      {"phrase": "صح", "formality": 0.4},
+      {"phrase": "مظبوط", "formality": 0.4},
+      {"phrase": "بالضبط كده", "formality": 0.3}
+    ],
+
+    "disagreement_expressions": [
+      {"phrase": "لأ", "directness": 0.9},
+      {"phrase": "مش كده", "directness": 0.7},
+      {"phrase": "غلط", "directness": 0.9},
+      {"phrase": "ده مش منطقي", "directness": 0.6}
+    ],
+
+    "surprise_expressions": [
+      {"phrase": "عجيب!", "intensity": 0.7},
+      {"phrase": "مش معقول!", "intensity": 0.9},
+      {"phrase": "تصدق؟", "intensity": 0.6},
+      {"phrase": "تخيل!", "intensity": 0.8}
+    ]
+  },
+
+  "egyptian_idioms": [
+    {
+      "idiom": "من الآخر",
+      "literal_meaning": "from_the_end",
+      "actual_meaning": "get_to_the_point",
+      "usage": "conclusion_or_direct_statement",
+      "frequency": "very_high"
+    },
+    {
+      "idiom": "خد عندك بقى",
+      "literal_meaning": "take_with_you_now",
+      "actual_meaning": "pay_attention_to_this",
+      "usage": "introducing_important_info",
+      "frequency": "high"
+    },
+    {
+      "idiom": "الموضوع مش سهل",
+      "literal_meaning": "the_matter_is_not_easy",
+      "actual_meaning": "it_is_complicated",
+      "usage": "acknowledging_complexity",
+      "frequency": "medium"
+    },
+    {
+      "idiom": "لو بصينا كويس",
+      "literal_meaning": "if_we_look_well",
+      "actual_meaning": "upon_closer_inspection",
+      "usage": "analysis_introduction",
+      "frequency": "medium"
+    }
+  ],
+
+  "question_patterns": {
+    "rhetorical": [
+      {"pattern": "عارف [TOPIC]؟", "purpose": "engagement"},
+      {"pattern": "تفتكر [QUESTION]؟", "purpose": "thought_provocation"},
+      {"pattern": "ليه [PHENOMENON]؟", "purpose": "curiosity_trigger"},
+      {"pattern": "إيه اللي [ACTION]؟", "purpose": "explanation_request"}
+    ],
+    "direct": [
+      {"pattern": "مين [SUBJECT]؟", "purpose": "identification"},
+      {"pattern": "إزاي [PROCESS]؟", "purpose": "how_to"},
+      {"pattern": "فين [LOCATION/THING]؟", "purpose": "where_what"}
+    ]
+  },
+
+  "comparative_expressions": [
+    {"pattern": "أحسن من [X]", "usage": "superiority"},
+    {"pattern": "أسرع من [X]", "usage": "speed_comparison"},
+    {"pattern": "زي [X]", "usage": "similarity"},
+    {"pattern": "مش زي [X]", "usage": "difference"}
+  ],
+
+  "temporal_expressions": [
+    {"phrase": "دلوقتي", "meaning": "now"},
+    {"phrase": "النهاردة", "meaning": "today"},
+    {"phrase": "امبارح", "meaning": "yesterday"},
+    {"phrase": "بكره", "meaning": "tomorrow"},
+    {"phrase": "من كام يوم", "meaning": "few_days_ago"},
+    {"phrase": "من زمان", "meaning": "long_time_ago"},
+    {"phrase": "قريب", "meaning": "soon"}
+  ],
+
+  "informal_pronouns": [
+    {"pronoun": "أنت/انت", "formality": 0.3},
+    {"pronoun": "حضرتك", "formality": 0.7},
+    {"pronoun": "سيادتك", "formality": 0.9}
+  ],
+
+  "usage_guidelines": {
+    "mix_naturally": true,
+    "avoid_overuse": ["same_filler_repeatedly", "excessive_idioms"],
+    "context_appropriate": "always",
+    "formality_matching": "based_on_platform_and_audience"
+  },
+
+  "quality_metrics": {
+    "authenticity_score": {"target": 0.92},
+    "naturalness_score": {"target": 0.90},
+    "appropriateness_score": {"target": 0.88}
+  }
+}

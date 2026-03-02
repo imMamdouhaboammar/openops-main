@@ -1,0 +1,227 @@
+{
+  "workflow_name": "Agency Operations Orchestrator (Supervisor + Pods)",
+  "workflow_id": "agency_ops_orchestrator_v1",
+  "version": "1.0",
+  "description": "End-to-end agency operating workflow for onboarding, planning, approvals, execution handoffs, reporting, and learning loops. Designed for a single Supervisor Orchestrator controlling permissioned pods.",
+
+  "core_rules": [
+    "Supervisor is the only entity that authorizes pods to act",
+    "Every action produces an artifact or it did not happen",
+    "All growth ideas require 7–14 day validation path",
+    "For clinics, compliance gate is mandatory"
+  ],
+
+  "workflow_phases": [
+    {
+      "phase_id": 0,
+      "phase_name": "Client Onboarding + Brief Intake (Step 0)",
+      "duration": "1-3 days",
+      "objective": "Align scope, capture brief, confirm brand identity status, and lock operational cadence",
+      "steps": [
+        {
+          "step": "0.1",
+          "name": "Service Orientation + Brief Intake",
+          "owner": "Supervisor Orchestrator (Account Lead role)",
+          "inputs": [
+            "Business goals (90 days + 6 months)",
+            "Budget range and constraints",
+            "Operational constraints (capacity, peak hours)",
+            "Approval workflow and SLA",
+            "Current assets and access availability"
+          ],
+          "outputs": [
+            "Client brief artifact",
+            "Access checklist artifact",
+            "Success criteria artifact",
+            "Approval SLA agreement"
+          ],
+          "quality_gates": [
+            "Decision maker identified",
+            "Approval SLA agreed",
+            "Constraints documented",
+            "Primary KPI defined"
+          ]
+        },
+        {
+          "step": "0.2",
+          "name": "Brand Identity Gate",
+          "owner": "Supervisor Orchestrator",
+          "decision": "Brand kit exists? yes/no",
+          "outputs": [
+            "Brand kit received OR Brand Identity Project Track proposal"
+          ],
+          "quality_gates": [
+            "If brand kit exists: file inventory received",
+            "If no brand kit: identity track scope and timeline proposed"
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": 1,
+      "phase_name": "6-Month Strategy + Operating Plan (Step 1–3)",
+      "duration": "3-10 days",
+      "objective": "Build and approve a 6-month plan decomposed into 90/30/7 day plans",
+      "steps": [
+        {
+          "step": "1.1",
+          "name": "Plan Draft (6 months → 90/30/7)",
+          "owner": "Supervisor Orchestrator + Strategy Pod (authorized)",
+          "authorization_required": true,
+          "outputs": [
+            "6-month roadmap",
+            "2× 90-day plans",
+            "30-day plan template filled for month 1",
+            "7-day micro-plan template filled for week 1",
+            "KPIs + OKRs"
+          ],
+          "quality_gates": [
+            "Plan includes milestones",
+            "KPIs/OKRs are measurable",
+            "Includes experiment backlog with kill metrics"
+          ]
+        },
+        {
+          "step": "1.2",
+          "name": "Plan Presentation",
+          "owner": "Supervisor Orchestrator",
+          "outputs": [
+            "Presentation notes",
+            "Client questions + requested edits"
+          ]
+        },
+        {
+          "step": "1.3",
+          "name": "Approval / Revisions",
+          "owner": "Supervisor Orchestrator",
+          "outputs": [
+            "Signed-off plan",
+            "Signed-off scope + cadence + SLAs"
+          ],
+          "quality_gates": [
+            "Approval recorded in SSOT",
+            "Execution start criteria met"
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": 2,
+      "phase_name": "Execution Pods (Content + Creative + Social + Paid) (Step 4–9)",
+      "duration": "Ongoing",
+      "objective": "Run parallel workstreams with approvals and QA gates",
+      "steps": [
+        {
+          "step": "2.1",
+          "name": "Content Plan Build",
+          "owner": "Content Pod (authorized) + Supervisor Orchestrator",
+          "authorization_required": true,
+          "outputs": [
+            "Content pillars",
+            "Monthly themes",
+            "Weekly calendar",
+            "Scripts/captions"
+          ],
+          "quality_gates": [
+            "Aligned to positioning + proof pillars",
+            "Includes CTA and distribution surfaces",
+            "Includes review engine scripts where relevant"
+          ]
+        },
+        {
+          "step": "2.2",
+          "name": "Creative Production",
+          "owner": "Creative Pod (authorized) + Supervisor Orchestrator",
+          "authorization_required": true,
+          "outputs": [
+            "Creative briefs",
+            "Creative batch",
+            "Template pack",
+            "QA report"
+          ],
+          "quality_gates": [
+            "Brand consistency passed",
+            "Compliance gate passed (clinic)",
+            "Specs correct for placements"
+          ]
+        },
+        {
+          "step": "2.3",
+          "name": "Client Approval Gate",
+          "owner": "Supervisor Orchestrator",
+          "outputs": [
+            "Approved creative pack",
+            "Approved copy pack"
+          ],
+          "quality_gates": [
+            "Approval recorded",
+            "SLA respected or escalation logged"
+          ]
+        },
+        {
+          "step": "2.4",
+          "name": "Scheduling + Publishing",
+          "owner": "Social/Community Pod (authorized)",
+          "authorization_required": true,
+          "outputs": [
+            "Scheduling log",
+            "Publishing log",
+            "Engagement notes"
+          ]
+        },
+        {
+          "step": "2.5",
+          "name": "Paid Launch + Testing",
+          "owner": "Paid Media Pod (authorized)",
+          "authorization_required": true,
+          "outputs": [
+            "Campaign structure",
+            "Testing matrix",
+            "UTM plan",
+            "Weekly learnings"
+          ],
+          "quality_gates": [
+            "Tracking QA completed",
+            "Naming conventions applied",
+            "Kill metrics defined"
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": 3,
+      "phase_name": "Measurement + Reporting + Learning Loop (Step 10)",
+      "duration": "Weekly + Monthly",
+      "objective": "Operate a predictable cadence: report → decide → iterate",
+      "steps": [
+        {
+          "step": "3.1",
+          "name": "Weekly Performance Update",
+          "owner": "Analytics Pod (authorized) + Supervisor Orchestrator",
+          "authorization_required": true,
+          "outputs": [
+            "Weekly update artifact",
+            "Budget shift recommendations",
+            "Next experiments backlog updates"
+          ],
+          "quality_gates": [
+            "What changed? Why? What next?",
+            "Includes data quality status",
+            "Includes approvals needed"
+          ]
+        },
+        {
+          "step": "3.2",
+          "name": "Monthly Business Review (MBR)",
+          "owner": "Supervisor Orchestrator",
+          "outputs": [
+            "MBR deck/artifact",
+            "Strategic adjustments",
+            "Quarterly reset triggers (if needed)"
+          ]
+        }
+      ]
+    }
+  ]
+}
+

@@ -1,0 +1,256 @@
+{
+  "id": "neuron_campaign_execution_ccc_v1",
+  "name": "Campaign Execution — Crash Course V2.0 Method",
+  "version": "1.0",
+  "origin_ref": "ccc_v2_campaign_execution",
+  "tags": [
+    "campaigns",
+    "methodology",
+    "funnel",
+    "messaging",
+    "content_formats",
+    "kpis"
+  ],
+  "derived_from": [
+    {
+      "neuron": "neuron_conversion_core_v1",
+      "section": "frameworks"
+    },
+    {
+      "neuron": "neuron_campaigns_cases_v1",
+      "section": "blueprints"
+    },
+    {
+      "neuron": "neuron_headlines_hooks_v1",
+      "section": "frameworks"
+    }
+  ],
+  "purpose": "منهجية تنفيذ حملة من A→Z مبنية على Crash Course V2.0: من insight إلى concept، ثم content pillars، ثم messaging framework عبر TOF/MOF/BOF، ثم اختيار الفورمات، مع KPIs وجدول تنفيذ.",
+  "required_inputs": [
+    "Goal (مثلاً: Trial Signups / Donations / Leads)",
+    "ICP/Persona",
+    "Geo (KSA/EGY/…)",
+    "Offer/Value Prop",
+    "Budget & Timeline",
+    "Channels (Meta/Google/TikTok/…)"
+  ],
+  "stages": [
+    {
+      "id": "stage_1",
+      "title": "من Insight → Concept",
+      "goal": "استخراج الفكرة الكبرى المبنية على سلوك/ألم/رغبة الجمهور.",
+      "how_to": {
+        "observe_behaviors": [
+          "اعتماد الناس على Google للتشخيص",
+          "السعي للخصومات دون حاجة فعلية"
+        ],
+        "pain_points": [
+          "تشخيصات خاطئة",
+          "Decision Fatigue من البحث الطويل"
+        ],
+        "desires": [
+          "إجابة دقيقة من خبير",
+          "سهولة وسرعة وراحة البال"
+        ]
+      },
+      "outputs": [
+        "Insight واحد واضح",
+        "Concept مختصر (جملة واحدة)"
+      ],
+      "examples": [
+        {
+          "insight": "الناس بتسأل جوجل أول ما تتعب",
+          "concept": "Ask a real doctor, not Google"
+        },
+        {
+          "insight": "FOMO على الأسعار",
+          "concept": "هو كان بكام؟ — اطمن إنك ما اتضحكش عليك"
+        }
+      ],
+      "qa": [
+        "هل الـ Insight حقيقي ومثبت بأمثلة؟",
+        "هل الـ Concept يقدر يعيش عبر قنوات مختلفة؟"
+      ]
+    },
+    {
+      "id": "stage_2",
+      "title": "من Concept → Content Pillars",
+      "goal": "تحديد محاور الرسائل الرئيسية التي تخدم الهدف.",
+      "pillars_examples": [
+        "Awareness: توعية بالخطر/المشكلة",
+        "Positioning: تثبيت البديل/الحل كمصدر موثوق",
+        "CTA/Offer: دفع الفعل (تجرِبة/سعر/باقة)"
+      ],
+      "outputs": [
+        "3–4 Content Pillars واضحة"
+      ],
+      "qa": [
+        "هل كل عمود يخدم الهدف النهائي؟",
+        "هل يوجد تضارب أو تكرار غير ضروري؟"
+      ]
+    },
+    {
+      "id": "stage_3",
+      "title": "من Content Pillars → Messaging Framework (TOF/MOF/BOF)",
+      "goal": "صياغة الرسائل لكل مرحلة في الفانل.",
+      "framework": {
+        "TOF": {
+          "message_goal": "Awareness بالمشكلة/البديل",
+          "sample_lines": [
+            "Google مش دكتور — صحتك مش للتجربة.",
+            "الخرافة: الأرخص دايمًا أفضل."
+          ],
+          "cta_hint": "Keep scrolling-safe CTA (اقرأ/شاهد)"
+        },
+        "MOF": {
+          "message_goal": "Comparison & Education",
+          "sample_lines": [
+            "بدل معلومات متضاربة، خُد رأي دكتور مرخّص.",
+            "إزاي تتأكد إن السعر ده فعلاً صفقة؟"
+          ],
+          "cta_hint": "جرّب / اعرف التفاصيل"
+        },
+        "BOF": {
+          "message_goal": "Direct Action",
+          "sample_lines": [
+            "استشارة فورية مع دكتور مرخّص خلال دقائق.",
+            "سجّل الآن وجرب بنفسك."
+          ],
+          "cta_hint": "حمّل التطبيق / تبرّع الآن / احجز العرض"
+        }
+      },
+      "outputs": [
+        "جدول رسائل لكل مرحلة",
+        "3 CTAs مناسبة (TOF/MOF/BOF)"
+      ],
+      "qa": [
+        "هل الرسالة بتتدرج من وعي → مقارنة → فعل؟",
+        "هل الـ CTA في كل مرحلة منطقي؟"
+      ]
+    },
+    {
+      "id": "stage_4",
+      "title": "من Messaging Framework → Content Formats",
+      "goal": "اختيار الفورمات المناسبة حسب المرحلة والقناة.",
+      "formats_by_funnel": {
+        "TOF": [
+          "Static 1:1",
+          "GIF 1:1",
+          "Short Reel 9:16",
+          "Story Poll"
+        ],
+        "MOF": [
+          "Explainer Video",
+          "Carousel Comparison",
+          "Live Q&A Snippets"
+        ],
+        "BOF": [
+          "Direct Response Ads",
+          "Offer Stories",
+          "Landing + UGC Proof"
+        ]
+      },
+      "outputs": [
+        "قائمة أصول المحتوى + عدد القطع/أسبوع"
+      ],
+      "qa": [
+        "هل الفورمات تخدم الرسالة؟",
+        "هل الإنتاج واقعي للميزانية؟"
+      ]
+    },
+    {
+      "id": "stage_5",
+      "title": "Landing/LP Message Map",
+      "goal": "توحيد الرسائل على صفحة الهبوط.",
+      "sections": [
+        "Hero: Promise + Proof + CTA",
+        "Problem → Agitation → Solution (PAS)",
+        "Features → Benefits",
+        "Social Proof (أرقام/شهادات/Logos)",
+        "FAQ تعالج الاعتراضات",
+        "Final CTA"
+      ],
+      "qa": [
+        "CTA واحد؟",
+        "Proof قبل الوعود؟",
+        "FAQ فعلاً بتسد الاعتراضات؟"
+      ]
+    },
+    {
+      "id": "stage_6",
+      "title": "KPIs & Experiment Design",
+      "goal": "وضع مقاييس نجاح وخطة اختبار.",
+      "kpis": [
+        "CTR",
+        "CVR",
+        "CAC/CPA",
+        "Donations/Orders",
+        "Trial → Paid"
+      ],
+      "tests": [
+        "Hook/Angle A vs B",
+        "Creative Rhythm",
+        "Offer/CTA wording",
+        "Landing sections order"
+      ],
+      "qa": [
+        "مدة الاختبار 7–14 يوم؟",
+        "عينة كافية إحصائيًا؟"
+      ]
+    },
+    {
+      "id": "stage_7",
+      "title": "Execution Timeline",
+      "goal": "تقسيم التنفيذ على أسابيع/Sprints.",
+      "sample_timeline": [
+        "W0: Insights, Concept, Pillars",
+        "W1: Messaging Framework + LP Map",
+        "W2: إنتاج TOF/MOF + إطلاق",
+        "W3: إنتاج BOF + اختبارات",
+        "W4: تحليل النتائج + Iteration"
+      ]
+    }
+  ],
+  "cta_library": [
+    "جرّب 7 أيام مجانًا",
+    "39 AED/mo — Unlimited consults",
+    "تبرّع الآن — امنح بيت وأمان",
+    "احجز العرض اليوم"
+  ],
+  "geo_localization": {
+    "KSA": {
+      "currency": "SAR",
+      "tone": "ar",
+      "notes": [
+        "اذكر الضرائب إن لزم",
+        "استخدم أمثلة محلية"
+      ]
+    },
+    "UAE": {
+      "currency": "AED",
+      "tone": "mixed ar/en",
+      "notes": [
+        "دليل تراخيص طبية",
+        "تسعير بالدرهم"
+      ]
+    },
+    "EGY": {
+      "currency": "EGP",
+      "tone": "ar-eg casual",
+      "notes": [
+        "Mix عربي-إنجليزي طبيعي"
+      ]
+    }
+  },
+  "guardrails": {
+    "medical": "لغة غير تشخيصية + تنويه عدم الاعتماد على المحتوى كبديل لاستشارة.",
+    "ethics": "بدون وعود مضللة؛ قدم Proof حيث أمكن."
+  },
+  "llm_prompts": {
+    "build_concept": "حلّل السلوكيات والآلام والرغبات التالية واكتب 3 Insights ثم 1 Concept مختصر لكل واحد…",
+    "map_messages": "حوّل الأعمدة التالية إلى Messaging Framework عبر TOF/MOF/BOF مع أمثلة سطور + CTA لكل مرحلة…",
+    "select_formats": "اقترح Content Formats مناسبة لكل مرحلة ضمن الميزانية [X] والقنوات [..] مع عدد قطع/أسبوع…",
+    "design_lp": "ابنِ LP Message Map وفق الأقسام المحددة مع عناوين فرعية وجُمل Proof وFAQ للاعتراضات التالية…"
+  },
+  "updated_utc": "2025-10-03T03:40:48.260258Z"
+}

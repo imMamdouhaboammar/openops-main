@@ -1,0 +1,705 @@
+{
+    "internal_tools": [
+        {
+            "id": "intent-clarifier",
+            "name": "Intent Clarifier",
+            "stage": 1,
+            "category": "understanding",
+            "description": "Parses user request into structured visual components",
+            "inputs": {
+                "user_request": "Raw text request from user",
+                "context": "Optional previous conversation context"
+            },
+            "outputs": {
+                "subject": "Primary subject description",
+                "action": "What is happening",
+                "environment": "Setting/context",
+                "style": "Visual aesthetic",
+                "mood": "Emotional atmosphere",
+                "technical": "Technical specifications",
+                "confidence": "Confidence score 0.0-1.0"
+            },
+            "validation": {
+                "metric": "confidence",
+                "threshold": 0.9,
+                "on_fail": "request_clarification"
+            }
+        },
+        {
+            "id": "visual-planner",
+            "name": "Visual Planner",
+            "stage": 2,
+            "category": "planning",
+            "description": "Creates detailed visual blueprint for generation",
+            "inputs": {
+                "intent": "Structured intent from Stage 1"
+            },
+            "outputs": {
+                "composition": {
+                    "layout": "Composition rule to use",
+                    "focal_point": "X,Y coordinates",
+                    "depth_layers": "Foreground/mid/background"
+                },
+                "lighting": {
+                    "source": "Light source type",
+                    "direction": "Light direction",
+                    "quality": "Hard/soft",
+                    "temperature": "Warm/cool/neutral"
+                },
+                "color": {
+                    "palette": "Primary colors",
+                    "harmony": "Color harmony type"
+                },
+                "mood": "Detailed mood description"
+            },
+            "validation": {
+                "metric": "completeness",
+                "threshold": 0.95
+            }
+        },
+        {
+            "id": "prompt-engineer",
+            "name": "Prompt Engineer",
+            "stage": 3,
+            "category": "crafting",
+            "description": "Transforms blueprint into optimized Gemini 3 Pro Image prompt",
+            "inputs": {
+                "blueprint": "Visual blueprint from Stage 2",
+                "intent": "Original intent"
+            },
+            "outputs": {
+                "optimized_prompt": "Final prompt string",
+                "technical_layer": "Technical specifications string",
+                "style_layer": "Style description string"
+            },
+            "best_practices": [
+                "Use narrative descriptions, not keywords",
+                "Include technical camera/lighting specs",
+                "Specify style with references",
+                "Quote text exactly when needed",
+                "Follow 6-part prompt structure"
+            ]
+        },
+        {
+            "id": "generation-engine",
+            "name": "Generation Engine",
+            "stage": 4,
+            "category": "execution",
+            "description": "Executes image generation via Gemini 3 Pro Image API",
+            "inputs": {
+                "prompt": "Optimized prompt",
+                "config": {
+                    "resolution": "Output resolution",
+                    "aspect_ratio": "Output aspect ratio",
+                    "format": "Output format"
+                },
+                "references": "Optional reference images (up to 14)"
+            },
+            "outputs": {
+                "image": "Generated image",
+                "metadata": "Generation metadata"
+            },
+            "model": "gemini-3-pro-image-preview",
+            "fallback": "gemini-2.5-flash-image"
+        },
+        {
+            "id": "quality-assessor",
+            "name": "Quality Assessor",
+            "stage": 5,
+            "category": "evaluation",
+            "description": "Evaluates generated image against original intent",
+            "inputs": {
+                "image": "Generated image",
+                "intent": "Original intent",
+                "blueprint": "Visual blueprint"
+            },
+            "outputs": {
+                "overall_score": "Weighted quality score",
+                "criteria_scores": {
+                    "subject_accuracy": "Score",
+                    "composition_match": "Score",
+                    "style_fidelity": "Score",
+                    "technical_quality": "Score",
+                    "text_accuracy": "Score",
+                    "mood_atmosphere": "Score"
+                },
+                "issues": "List of identified issues",
+                "verdict": "PASS/CONDITIONAL/FAIL"
+            },
+            "thresholds": {
+                "pass": 0.85,
+                "conditional": 0.70,
+                "fail": 0.70
+            }
+        },
+        {
+            "id": "iterative-refiner",
+            "name": "Iterative Refiner",
+            "stage": 6,
+            "category": "refinement",
+            "description": "Improves image when quality check fails",
+            "inputs": {
+                "assessment": "Quality assessment from Stage 5",
+                "original_intent": "Original intent",
+                "current_prompt": "Current prompt used"
+            },
+            "outputs": {
+                "refined_prompt": "Improved prompt",
+                "action": "REGENERATE or EDIT",
+                "strategy": "Refinement strategy used"
+            },
+            "max_iterations": 3,
+            "strategies": [
+                "regenerate_with_clearer_subject",
+                "add_explicit_composition_guidance",
+                "add_style_reference_images",
+                "adjust_resolution_and_quality",
+                "regenerate_with_quoted_text",
+                "adjust_lighting_and_color"
+            ]
+        },
+        {
+            "id": "reference-processor",
+            "name": "Reference Processor",
+            "category": "preprocessing",
+            "description": "Processes and optimizes reference images for generation",
+            "inputs": {
+                "references": "Array of reference images",
+                "task_type": "Type of generation task"
+            },
+            "outputs": {
+                "processed_references": "Optimized references (up to 14)",
+                "embeddings": "Visual embeddings for consistency",
+                "metadata": "Reference metadata"
+            },
+            "categories": [
+                "subject_reference",
+                "style_reference",
+                "composition_reference",
+                "environment_reference",
+                "color_reference"
+            ]
+        },
+        {
+            "id": "mask-generator",
+            "name": "Mask Generator",
+            "category": "editing",
+            "description": "Generates masks for local edits and inpainting",
+            "inputs": {
+                "image": "Source image",
+                "target": "Description of area to mask"
+            },
+            "outputs": {
+                "mask": "Generated mask image",
+                "confidence": "Mask accuracy confidence"
+            },
+            "mask_types": [
+                "subject_isolation",
+                "background_selection",
+                "region_selection",
+                "semantic_selection"
+            ]
+        },
+        {
+            "id": "style-analyzer",
+            "name": "Style Analyzer",
+            "category": "analysis",
+            "description": "Analyzes style from reference images",
+            "inputs": {
+                "reference_image": "Image to analyze"
+            },
+            "outputs": {
+                "style": "Detected style",
+                "color_palette": "Extracted colors",
+                "lighting": "Lighting characteristics",
+                "mood": "Detected mood",
+                "keywords": "Style keywords for prompting"
+            }
+        },
+        {
+            "id": "consistency-tracker",
+            "name": "Consistency Tracker",
+            "category": "multi-image",
+            "description": "Tracks subject/style consistency across multiple generations",
+            "inputs": {
+                "subjects": "Array of subject definitions",
+                "previous_generations": "Previously generated images"
+            },
+            "outputs": {
+                "consistency_embeddings": "Visual embeddings for consistency",
+                "subject_features": "Tracked subject features",
+                "style_features": "Tracked style features"
+            },
+            "max_human_subjects": 5
+        },
+        {
+            "id": "cultural-sensitivity-checker",
+            "name": "Cultural Sensitivity Checker",
+            "category": "safety",
+            "description": "Checks for MENA cultural appropriateness",
+            "inputs": {
+                "intent": "Planned generation intent",
+                "generated_image": "Optional generated image"
+            },
+            "outputs": {
+                "is_appropriate": "Boolean",
+                "issues": "List of potential issues",
+                "recommendations": "Suggested adjustments"
+            },
+            "checks": [
+                "modesty",
+                "religious_sensitivity",
+                "cultural_appropriateness",
+                "arabic_text_handling"
+            ]
+        }
+    ],
+    "advanced_tools": [
+        {
+            "id": "siae-technical-analyzer",
+            "name": "Technical Quality Analyzer",
+            "module": "SIAE",
+            "description": "Analyzes technical quality: resolution, artifacts, sharpness, noise, exposure, color",
+            "inputs": {
+                "image": "Image to analyze"
+            },
+            "outputs": {
+                "resolution_analysis": "Resolution metrics",
+                "artifact_detection": "Detected artifacts",
+                "sharpness_score": "float",
+                "noise_level": "string",
+                "exposure_analysis": "Exposure status",
+                "color_analysis": "White balance, saturation"
+            }
+        },
+        {
+            "id": "siae-composition-analyzer",
+            "name": "Composition Analyzer",
+            "module": "SIAE",
+            "description": "Analyzes composition: layout, balance, focal point, depth, framing",
+            "inputs": {
+                "image": "Image to analyze"
+            },
+            "outputs": {
+                "layout_analysis": "Rule adherence",
+                "focal_point": "Position and strength",
+                "balance_score": "Visual weight distribution",
+                "depth_analysis": "Depth layers detected",
+                "framing_issues": "Cropping and edge problems"
+            }
+        },
+        {
+            "id": "siae-style-analyzer",
+            "name": "Style Analyzer",
+            "module": "SIAE",
+            "description": "Analyzes style: lighting, color palette, mood, style coherence",
+            "inputs": {
+                "image": "Image to analyze"
+            },
+            "outputs": {
+                "lighting_analysis": "Type, direction, quality, consistency",
+                "color_palette": "Dominant colors and harmony",
+                "mood_detection": "Detected mood",
+                "style_coherence": "Consistency score"
+            }
+        },
+        {
+            "id": "siae-semantic-analyzer",
+            "name": "Semantic Content Analyzer",
+            "module": "SIAE",
+            "description": "Analyzes semantic content: subject, context, text, anatomy, objects",
+            "inputs": {
+                "image": "Image",
+                "intent": "Original intent"
+            },
+            "outputs": {
+                "content_accuracy": "Subject matches intent",
+                "text_accuracy": "OCR + spell check",
+                "anatomical_analysis": "Human/animal anatomy check",
+                "physics_check": "Physical plausibility",
+                "missing_elements": "Elements not present"
+            }
+        },
+        {
+            "id": "siae-issue-detector",
+            "name": "Issue Detection Engine",
+            "module": "SIAE",
+            "description": "Comprehensive issue detection across all layers",
+            "inputs": {
+                "analysis_results": "Results from all analyzers"
+            },
+            "outputs": {
+                "issues": "List of detected issues with severity",
+                "issue_locations": "Bounding boxes for issues",
+                "priority_ranking": "Issues ranked by importance"
+            }
+        },
+        {
+            "id": "siae-recommendation-engine",
+            "name": "Recommendation Engine",
+            "module": "SIAE",
+            "description": "Generates actionable recommendations for fixes",
+            "inputs": {
+                "issues": "Detected issues",
+                "original_prompt": "Original prompt"
+            },
+            "outputs": {
+                "immediate_fixes": "Quick fixes",
+                "prompt_improvements": "Enhanced prompt suggestions",
+                "edit_instructions": "Manual edit guidance",
+                "regeneration_needed": "Boolean"
+            }
+        },
+        {
+            "id": "creative-brief-analyzer",
+            "name": "Brief Analyzer",
+            "module": "Creative Director",
+            "description": "Analyzes client briefs to extract visual requirements",
+            "inputs": {
+                "brief": "Client brief text"
+            },
+            "outputs": {
+                "objectives": "Extracted objectives",
+                "target_audience": "Identified audience",
+                "brand_context": "Brand requirements",
+                "emotional_requirements": "Mood/feeling goals"
+            }
+        },
+        {
+            "id": "creative-concept-generator",
+            "name": "Concept Generator",
+            "module": "Creative Director",
+            "description": "Generates multiple visual concepts from brief",
+            "inputs": {
+                "analyzed_brief": "Analyzed brief",
+                "num_concepts": "Number to generate"
+            },
+            "outputs": {
+                "concepts": "Array of concept objects with visual direction, key elements, mood, sample prompts"
+            }
+        },
+        {
+            "id": "creative-moodboard-generator",
+            "name": "Mood Board Generator",
+            "module": "Creative Director",
+            "description": "Generates complete mood boards from concepts",
+            "inputs": {
+                "concept": "Concept object",
+                "num_images": "Images per section"
+            },
+            "outputs": {
+                "hero_image": "Main visual",
+                "style_references": "Style images",
+                "color_textures": "Color/texture samples",
+                "composite_board": "Combined mood board"
+            }
+        },
+        {
+            "id": "creative-story-planner",
+            "name": "Visual Story Planner",
+            "module": "Creative Director",
+            "description": "Plans sequential images for storytelling",
+            "inputs": {
+                "story_type": "Type of story",
+                "concept": "Visual concept"
+            },
+            "outputs": {
+                "story_arc": "Frame-by-frame plan",
+                "consistency_elements": "Elements to maintain",
+                "transition_notes": "How frames connect"
+            }
+        },
+        {
+            "id": "brand-asset-manager",
+            "name": "Brand Asset Manager",
+            "module": "Brand Consistency",
+            "description": "Stores and retrieves brand assets",
+            "inputs": {
+                "brand_id": "Brand identifier",
+                "operation": "get|set|update"
+            },
+            "outputs": {
+                "brand_profile": "Complete brand profile object"
+            }
+        },
+        {
+            "id": "brand-template-engine",
+            "name": "Template Engine",
+            "module": "Brand Consistency",
+            "description": "Applies brand templates to generations",
+            "inputs": {
+                "template_id": "Template to use",
+                "content": "Content to apply"
+            },
+            "outputs": {
+                "templated_prompt": "Prompt with template constraints"
+            }
+        },
+        {
+            "id": "brand-compliance-checker",
+            "name": "Brand Compliance Checker",
+            "module": "Brand Consistency",
+            "description": "Validates images against brand guidelines",
+            "inputs": {
+                "image": "Image to check",
+                "brand_id": "Brand to check against"
+            },
+            "outputs": {
+                "compliance_score": "float",
+                "status": "COMPLIANT|REVIEW_NEEDED|NON_COMPLIANT",
+                "violations": "List of violations",
+                "recommendations": "How to fix"
+            }
+        },
+        {
+            "id": "ab-variant-generator",
+            "name": "Variant Generator",
+            "module": "A/B Testing",
+            "description": "Generates multiple variants for A/B testing",
+            "inputs": {
+                "base_concept": "Base concept/prompt",
+                "variation_strategy": "What to vary"
+            },
+            "outputs": {
+                "base": "Control image",
+                "variants": "Array of variant images with change descriptions"
+            }
+        },
+        {
+            "id": "ab-systematic-variation",
+            "name": "Systematic Variation Engine",
+            "module": "A/B Testing",
+            "description": "Changes one element at a time for controlled testing",
+            "inputs": {
+                "base": "Base image",
+                "variable": "What to change",
+                "options": "Variation options"
+            },
+            "outputs": {
+                "variants": "Array with single-variable changes"
+            }
+        },
+        {
+            "id": "ab-performance-predictor",
+            "name": "Performance Predictor",
+            "module": "A/B Testing",
+            "description": "Predicts variant performance based on visual analysis",
+            "inputs": {
+                "variants": "Images to predict",
+                "context": "Platform, audience, goal"
+            },
+            "outputs": {
+                "predictions": "CTR, engagement predictions per variant",
+                "ranking": "Variants ranked by predicted performance",
+                "attention_heatmaps": "Where eyes will focus"
+            }
+        },
+        {
+            "id": "prompt-feedback-learner",
+            "name": "Feedback Learner",
+            "module": "Prompt Evolution",
+            "description": "Learns from user feedback on generations",
+            "inputs": {
+                "prompt": "Used prompt",
+                "feedback": "User feedback",
+                "quality_score": "Achieved score"
+            },
+            "outputs": {
+                "learnings": "Patterns extracted",
+                "updated_patterns": "New success patterns"
+            }
+        },
+        {
+            "id": "prompt-library-manager",
+            "name": "Prompt Library Manager",
+            "module": "Prompt Evolution",
+            "description": "Stores and retrieves successful prompts",
+            "inputs": {
+                "operation": "save|search|get",
+                "query": "Search query or prompt"
+            },
+            "outputs": {
+                "prompts": "Matching prompts with metadata"
+            }
+        },
+        {
+            "id": "prompt-auto-improver",
+            "name": "Prompt Auto-Improver",
+            "module": "Prompt Evolution",
+            "description": "Automatically improves prompts based on learned patterns",
+            "inputs": {
+                "prompt": "Original prompt",
+                "target_improvement": "What to improve"
+            },
+            "outputs": {
+                "improved_prompt": "Enhanced prompt",
+                "improvements_made": "List of changes"
+            }
+        },
+        {
+            "id": "visual-reference-collector",
+            "name": "Reference Collector",
+            "module": "Visual Search",
+            "description": "Collects visual references from various sources",
+            "inputs": {
+                "concept": "Concept description",
+                "num_references": "How many to collect"
+            },
+            "outputs": {
+                "references": "Curated reference images with relevance scores"
+            }
+        },
+        {
+            "id": "visual-similar-finder",
+            "name": "Similar Image Finder",
+            "module": "Visual Search",
+            "description": "Finds visually similar images",
+            "inputs": {
+                "reference_image": "Image to match",
+                "similarity_type": "visual|style|composition|color"
+            },
+            "outputs": {
+                "similar_images": "Ranked list of similar images"
+            }
+        },
+        {
+            "id": "visual-competitor-analyzer",
+            "name": "Competitor Visual Analyzer",
+            "module": "Visual Search",
+            "description": "Analyzes competitor visual strategies",
+            "inputs": {
+                "competitor_images": "Images to analyze"
+            },
+            "outputs": {
+                "analysis": "Color, typography, imagery, composition patterns",
+                "insights": "Opportunities and differentiators"
+            }
+        },
+        {
+            "id": "production-batch-processor",
+            "name": "Batch Processor",
+            "module": "Production Pipeline",
+            "description": "Processes multiple images in batch",
+            "inputs": {
+                "batch_config": "Batch configuration",
+                "items": "Items to process"
+            },
+            "outputs": {
+                "processed": "Array of processed images",
+                "report": "Batch statistics"
+            }
+        },
+        {
+            "id": "production-asset-exporter",
+            "name": "Asset Exporter",
+            "module": "Production Pipeline",
+            "description": "Exports images in multiple formats and sizes",
+            "inputs": {
+                "image": "Image to export",
+                "preset": "Export preset or custom config"
+            },
+            "outputs": {
+                "exports": "Array of exported files with paths"
+            }
+        },
+        {
+            "id": "production-version-control",
+            "name": "Version Controller",
+            "module": "Production Pipeline",
+            "description": "Manages version history of assets",
+            "inputs": {
+                "asset_id": "Asset identifier",
+                "operation": "create|compare|rollback|branch"
+            },
+            "outputs": {
+                "version_info": "Version details",
+                "history": "Version history"
+            }
+        },
+        {
+            "id": "arabic-font-matcher",
+            "name": "Arabic Font Matcher",
+            "module": "Arabic Typography",
+            "description": "Recommends appropriate Arabic fonts",
+            "inputs": {
+                "purpose": "headline|body|logo",
+                "mood": "formal|casual|modern",
+                "pair_with": "Optional Latin font"
+            },
+            "outputs": {
+                "recommendations": "Ranked font recommendations with examples"
+            }
+        },
+        {
+            "id": "arabic-bilingual-layout",
+            "name": "Bilingual Layout Designer",
+            "module": "Arabic Typography",
+            "description": "Designs layouts with Arabic and English",
+            "inputs": {
+                "arabic_text": "Arabic content",
+                "english_text": "English content",
+                "layout_strategy": "mirrored|stacked|integrated"
+            },
+            "outputs": {
+                "layout_spec": "Detailed layout specification",
+                "rtl_considerations": "RTL handling notes"
+            }
+        },
+        {
+            "id": "arabic-calligraphy-generator",
+            "name": "Calligraphy Generator",
+            "module": "Arabic Typography",
+            "description": "Generates artistic Arabic calligraphy",
+            "inputs": {
+                "text": "Arabic text",
+                "style": "thuluth|naskh|diwani|ruqah|maghribi",
+                "options": "Color, decorations"
+            },
+            "outputs": {
+                "calligraphy_prompt": "Optimized prompt for calligraphy generation"
+            }
+        }
+    ],
+    "external_integrations": {
+        "gemini_3_pro_image": {
+            "model_id": "gemini-3-pro-image-preview",
+            "codename": "Nano Banana Pro",
+            "provider": "Google DeepMind",
+            "capabilities": {
+                "resolution": "up to 4K",
+                "text_accuracy": "~94%",
+                "reference_images": 14,
+                "human_consistency": 5,
+                "multi_image": true,
+                "inpainting": true,
+                "outpainting": true,
+                "local_masks": true,
+                "style_transfer": true,
+                "google_search_grounding": true
+            },
+            "api": {
+                "endpoint": "vertex_ai_or_gemini_api",
+                "pricing": "pay_as_you_go"
+            }
+        },
+        "gemini_2_5_flash_image": {
+            "model_id": "gemini-2.5-flash-image",
+            "codename": "Nano Banana",
+            "provider": "Google DeepMind",
+            "use_as": "fallback for speed/availability",
+            "capabilities": {
+                "resolution": "up to 1024x1024",
+                "speed": "faster than Pro",
+                "cost": "lower than Pro"
+            }
+        },
+        "google_search_grounding": {
+            "purpose": "Factual accuracy in generated images",
+            "integration": "native to Gemini 3 Pro Image"
+        },
+        "synthid": {
+            "purpose": "Invisible watermarking of AI-generated images",
+            "integration": "automatic on all generations"
+        }
+    }
+}

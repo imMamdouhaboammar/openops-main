@@ -1,0 +1,65 @@
+{
+  "module": {
+    "name": "Deprecated_Modules_Index",
+    "version": "2.0.0",
+    "layer": "10_legacy",
+    "code": "10A",
+    "description": "Registry of deprecated modules and their replacement paths",
+    "author": "OpenOps Foundation",
+    "created": "2025-12-16T00:00:00Z"
+  },
+  "governance": {
+    "compliance_level": "standard",
+    "requires_approval": true,
+    "audit_level": "standard",
+    "data_classification": "internal"
+  },
+  "objectives": [
+    "Track deprecated functionality",
+    "Provide migration guidance",
+    "Maintain backward compatibility period",
+    "Enable sunset planning"
+  ],
+  "integration_points": {
+    "imports_from": [],
+    "exports_to": ["10B_Migration_and_Interop_Policy.json", "10C_Compatibility_Adapters.json"]
+  },
+  "deprecation_policy": {
+    "notification_period": "90_days",
+    "support_period": "180_days",
+    "removal_timeline": "365_days",
+    "exception_process": "requires_executive_approval"
+  },
+  "deprecated_modules": {
+    "legacy_orchestrator_v1": {
+      "module_id": "legacy_orchestrator_v1",
+      "deprecated_date": "2025-10-01",
+      "removal_date": "2026-10-01",
+      "reason": "Performance limitations and lack of parallel execution",
+      "replacement": "01_Orchestration_Engine_and_Rounds_Router.md",
+      "breaking_changes": ["api_signature", "configuration_format"],
+      "migration_guide": "docs/migration/orchestrator_v1_to_v2.md"
+    },
+    "simple_memory_store": {
+      "module_id": "simple_memory_store",
+      "deprecated_date": "2025-11-15",
+      "removal_date": "2026-11-15",
+      "reason": "Insufficient scalability for multi-agent scenarios",
+      "replacement": "02B_Agent_Memory_Registry.json",
+      "breaking_changes": ["storage_schema", "query_api"],
+      "migration_guide": "docs/migration/memory_store_upgrade.md"
+    }
+  },
+  "active_warnings": {
+    "in_code_deprecation_notices": true,
+    "dashboard_alerts": true,
+    "email_notifications": "monthly",
+    "documentation_banners": true
+  },
+  "metrics_tracked": {
+    "deprecated_api_usage": "daily",
+    "migration_progress": "weekly",
+    "compatibility_layer_performance": "realtime"
+  },
+  "version_history": {"2.0.0": {"date": "2025-12-16", "changes": "Initial deprecation index"}}
+}

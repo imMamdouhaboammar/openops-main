@@ -1,0 +1,51 @@
+{
+  "envelopeVersion": "1.0.0",
+  "taskId": "TASK-RESTAURANT-CONTENT-CALENDAR-0001",
+  "mode": "operator",
+  "podId": "POD-CONTENT",
+  "authorization": {
+    "supervisorToken": "SUPERVISOR_TOKEN_EXAMPLE_ONLY",
+    "expiresAt": "2026-01-24T13:00:00Z",
+    "idempotencyKey": "idem-2026-01-24-restaurant-content-0001"
+  },
+  "objective": "Produce a 4-week content calendar aligned to the 90-day strategy, with captions/scripts, distribution surfaces, and a review-generation system.",
+  "context": {
+    "clientType": "restaurant",
+    "clientName": "Example Restaurant",
+    "primarySurfaces": ["Instagram Reels", "TikTok", "Google Business Profile"],
+    "conversionSurface": "WhatsApp + phone"
+  },
+  "inputs": {
+    "positioningLine": "Weekday comfort food + fast service with consistent quality.",
+    "proofPillars": ["reviews", "kitchen behind-the-scenes", "ingredient quality", "speed", "weekday offers"],
+    "offers": {
+      "weekdayOffer": "Mon–Wed set menu",
+      "weekendOffer": "premium specials (avoid discounting peak)"
+    }
+  },
+  "constraints": {
+    "deadline": "2026-01-28T18:00:00Z",
+    "compliance": {
+      "avoidMisleadingClaims": true
+    },
+    "budget": { "maxSpend": 0, "currency": "USD" },
+    "scope": {
+      "inScope": ["content pillars", "weekly calendar", "caption templates", "review request scripts", "GBP weekly cadence"],
+      "outOfScope": ["video editing", "graphic design", "paid media setup"]
+    }
+  },
+  "expectedOutputs": [
+    "4-week content calendar (weekly themes + post list)",
+    "Caption/script pack (reels + stories + GBP posts)",
+    "Review request scripts (WhatsApp/SMS) + timing rules",
+    "Publishing checklist + handoff notes for Social Pod"
+  ],
+  "qualityGates": [
+    "Every post has a clear surface and CTA (WhatsApp/call/reserve)",
+    "Proof pillars are represented weekly (not just promo posts)",
+    "Content supports weekday utilization goals without harming weekend brand value"
+  ],
+  "approvalGates": ["Client approves tone of voice and offer phrasing"],
+  "returnFormat": "artifact_plus_summary"
+}
+

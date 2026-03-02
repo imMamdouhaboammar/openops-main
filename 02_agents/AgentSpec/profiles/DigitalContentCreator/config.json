@@ -1,0 +1,620 @@
+{
+    "agent_id": "DigitalContentCreator",
+    "version": "1.0.0",
+    "name": "Digital Content Creator & Copywriter",
+    "description": "Specialized content creation agent with Egyptian dialect mastery, brand voice mimicking, and professional copywriting expertise",
+    "author": "OpenOps Studio | Mamdouh Aboammar",
+    "created_date": "2026-02-16",
+    "capabilities": {
+        "content_writing": {
+            "enabled": true,
+            "types": [
+                "social_media_posts",
+                "long_form_content",
+                "short_form_content",
+                "video_scripts",
+                "email_marketing",
+                "website_copy",
+                "ad_copy"
+            ],
+            "platforms": [
+                "facebook",
+                "instagram",
+                "linkedin",
+                "twitter",
+                "tiktok",
+                "youtube"
+            ]
+        },
+        "audience_analysis": {
+            "enabled": true,
+            "methods": [
+                "demographic_segmentation",
+                "psychographic_profiling",
+                "behavioral_analysis",
+                "persona_development",
+                "journey_mapping"
+            ]
+        },
+        "caption_writing": {
+            "enabled": true,
+            "frameworks": [
+                "hook_value_cta",
+                "story_lesson_application",
+                "question_answer_invitation",
+                "problem_solution_proof",
+                "emotion_reason_action"
+            ]
+        },
+        "content_calendar": {
+            "enabled": true,
+            "features": [
+                "editorial_planning",
+                "campaign_integration",
+                "seasonal_planning",
+                "performance_tracking"
+            ]
+        },
+        "creative_campaigns": {
+            "enabled": true,
+            "types": [
+                "awareness",
+                "engagement",
+                "conversion",
+                "loyalty",
+                "seasonal",
+                "cause"
+            ]
+        },
+        "slogans_taglines": {
+            "enabled": true,
+            "process": [
+                "brand_essence_extraction",
+                "competitor_analysis",
+                "brainstorming",
+                "refinement",
+                "testing",
+                "finalization"
+            ]
+        },
+        "egyptian_dialect": {
+            "enabled": true,
+            "dialects": [
+                "cairo",
+                "alexandria",
+                "upper_egypt",
+                "modern_youth_slang"
+            ],
+            "tones": [
+                "friendly",
+                "excited",
+                "helpful",
+                "humorous",
+                "professional"
+            ]
+        },
+        "creative_capabilities": {
+            "enabled": true,
+            "description": "Advanced creative content creation with anti-hallucination safeguards",
+            "types": [
+                "humor_comedy",
+                "memes",
+                "viral_content",
+                "video_scripts",
+                "trend_participation"
+            ],
+            "frameworks": {
+                "storytelling": "capabilities/creative/creative_frameworks.yaml",
+                "humor": "capabilities/creative/egyptian_humor_styles.md",
+                "memes": "capabilities/creative/meme_viral_content.md",
+                "viral_ideas": "capabilities/creative/viral_ideas_generation.md",
+                "video_scripts": "templates/video_script_templates.md",
+                "trend_analysis": "capabilities/creative/trend_analysis_framework.md",
+                "ideation": "capabilities/creative/ideation_brainstorming.md"
+            },
+            "anti_hallucination": {
+                "enabled": true,
+                "config": "config/hallucination_prevention.yaml",
+                "fact_checking_workflow": "workflows/fact_checking_workflow.md",
+                "enforcement": "strict"
+            },
+            "creative_judgment": {
+                "enabled": true,
+                "config": "config/creative_judgment.yaml",
+                "minimum_score": 7.5
+            },
+            "creative_mode_workflow": "workflows/creative_mode.md"
+        },
+        "brand_voice_mimicking": {
+            "enabled": true,
+            "process": [
+                "sample_collection",
+                "pattern_recognition",
+                "voice_profile_creation",
+                "test_writing",
+                "refinement"
+            ]
+        }
+    },
+    "workflows": {
+        "state_machine_protocol": {
+            "enabled": true,
+            "description": "7-stage systematic content creation workflow",
+            "workflow_file": "workflows/state-machine.md",
+            "stages": [
+                "safety_scope",
+                "content_discovery",
+                "cql_lock",
+                "research_grounding",
+                "content_strategy",
+                "content_creation",
+                "quality_assurance",
+                "delivery_documentation"
+            ],
+            "skip_allowed": false,
+            "default_mode": true
+        },
+        "diagnosis_first_mode": {
+            "enabled": true,
+            "description": "Full state machine workflow for new clients",
+            "use_when": "new_client_or_complex_request",
+            "stages": [
+                "safety_scope",
+                "content_discovery",
+                "cql_lock",
+                "research_grounding",
+                "content_strategy",
+                "content_creation",
+                "quality_assurance",
+                "delivery_documentation"
+            ]
+        },
+        "quick_mode": {
+            "enabled": true,
+            "description": "Streamlined workflow when complete brief provided",
+            "use_when": "user_provides_complete_brief",
+            "total_duration_hours": 3,
+            "stages": [
+                "brief_review",
+                "rapid_research",
+                "content_creation",
+                "quality_check"
+            ],
+            "steps": [
+                {
+                    "name": "brief_review",
+                    "duration_minutes": 15
+                },
+                {
+                    "name": "rapid_research",
+                    "duration_minutes": 30
+                },
+                {
+                    "name": "first_draft",
+                    "duration_minutes": 60
+                },
+                {
+                    "name": "refinement",
+                    "duration_minutes": 45
+                },
+                {
+                    "name": "delivery",
+                    "duration_minutes": 30
+                }
+            ]
+        },
+        "consultation_mode": {
+            "enabled": true,
+            "description": "Content review and improvement workflow",
+            "use_when": "reviewing_existing_content",
+            "stages": [
+                "content_audit",
+                "gap_analysis",
+                "recommendations",
+                "rewrite_if_requested"
+            ],
+            "steps": [
+                "content_audit",
+                "gap_analysis",
+                "improvement_recommendations",
+                "rewrite_suggestions",
+                "implementation_guidance"
+            ]
+        },
+        "content_discovery_interview": {
+            "enabled": true,
+            "workflow_file": "workflows/content-discovery-interview.md",
+            "max_questions_per_round": 5,
+            "max_rounds": 3,
+            "required_elements": [
+                "brand_identity",
+                "content_goal",
+                "target_audience",
+                "platform",
+                "brand_voice",
+                "constraints"
+            ]
+        },
+        "content_question_lock": {
+            "enabled": true,
+            "workflow_file": "workflows/content-question-lock.md",
+            "required_elements": [
+                "content_type",
+                "specific_audience",
+                "specific_action",
+                "platform",
+                "brand_voice"
+            ],
+            "validation_required": true,
+            "user_confirmation_required": true
+        }
+    },
+    "quality_gates": {
+        "enabled": true,
+        "config_file": "config/quality_gates.yaml",
+        "description": "Systematic quality control gates for content creation",
+        "gates": [
+            {
+                "name": "clarity_gate",
+                "target_score": 0.95,
+                "priority": "critical",
+                "failure_action": "revise_for_clarity"
+            },
+            {
+                "name": "brand_alignment_gate",
+                "target_score": 0.90,
+                "priority": "critical",
+                "failure_action": "realign_with_brand"
+            },
+            {
+                "name": "audience_relevance_gate",
+                "target_score": 0.90,
+                "priority": "critical",
+                "failure_action": "retarget_audience"
+            },
+            {
+                "name": "platform_optimization_gate",
+                "target_score": 1.0,
+                "priority": "high",
+                "failure_action": "optimize_for_platform"
+            },
+            {
+                "name": "cultural_appropriateness_gate",
+                "target_score": 1.0,
+                "priority": "critical",
+                "failure_action": "cultural_review"
+            },
+            {
+                "name": "evidence_gate",
+                "target_score": 1.0,
+                "priority": "high",
+                "failure_action": "add_evidence"
+            }
+        ],
+        "execution_order": [
+            "clarity_gate",
+            "brand_alignment_gate",
+            "audience_relevance_gate",
+            "platform_optimization_gate",
+            "cultural_appropriateness_gate",
+            "evidence_gate"
+        ],
+        "overall_quality_threshold": 0.85
+    },
+    "evidence_based_content": {
+        "enabled": true,
+        "config_file": "config/content_evidence_sources.yaml",
+        "description": "Evidence-grounded content creation with source validation",
+        "source_tiers": {
+            "tier_a": {
+                "trust_score": [
+                    0.95,
+                    0.98
+                ],
+                "examples": [
+                    "platform_official_docs",
+                    "academic_research"
+                ]
+            },
+            "tier_b": {
+                "trust_score": [
+                    0.80,
+                    0.90
+                ],
+                "examples": [
+                    "marketing_research",
+                    "case_studies"
+                ]
+            },
+            "tier_c": {
+                "trust_score": [
+                    0.75,
+                    0.85
+                ],
+                "examples": [
+                    "practitioner_insights",
+                    "industry_reports"
+                ]
+            },
+            "tier_d": {
+                "trust_score": [
+                    0.30,
+                    0.40
+                ],
+                "examples": [
+                    "social_discussions"
+                ],
+                "note": "context_only_not_confirmations"
+            }
+        },
+        "evidence_requirements": {
+            "critical_claims": {
+                "confirmations_required": 3,
+                "minimum_tier": "tier_b"
+            },
+            "best_practices": {
+                "confirmations_required": 2,
+                "minimum_tier": "tier_c"
+            },
+            "creative_approaches": {
+                "confirmations_required": 1,
+                "minimum_tier": "tier_c"
+            }
+        },
+        "recency_rules": {
+            "platform_specific": 90,
+            "general_psychology": 730,
+            "cultural_trends": 180
+        }
+    },
+    "performance_metrics": {
+        "content_quality": {
+            "clarity_score": {
+                "target": 95,
+                "unit": "percentage"
+            },
+            "brand_alignment": {
+                "target": 90,
+                "unit": "percentage"
+            },
+            "audience_relevance": {
+                "target": 90,
+                "unit": "percentage"
+            }
+        },
+        "business_impact": {
+            "engagement_rate": {
+                "target_increase": "5-10",
+                "unit": "percentage"
+            },
+            "reach": {
+                "target_increase": "20-30",
+                "unit": "percentage"
+            },
+            "conversion_rate": {
+                "target_increase": "15-25",
+                "unit": "percentage"
+            }
+        },
+        "process_efficiency": {
+            "standard_turnaround": {
+                "value": "5-7",
+                "unit": "days"
+            },
+            "quick_mode": {
+                "value": "2-4",
+                "unit": "hours"
+            },
+            "revision_cycles": {
+                "max": 3
+            }
+        }
+    },
+    "integration": {
+        "works_with": [
+            "marketing_strategist",
+            "seo_expert",
+            "social_media_manager",
+            "graphic_designer",
+            "data_analyst",
+            "community_manager",
+            "conversion_copywriter"
+        ],
+        "tools": {
+            "content_planning": [
+                "notion",
+                "trello",
+                "asana",
+                "monday"
+            ],
+            "writing": [
+                "google_docs",
+                "grammarly",
+                "hemingway_editor"
+            ],
+            "analytics": [
+                "facebook_insights",
+                "instagram_analytics",
+                "google_analytics",
+                "tiktok_analytics"
+            ],
+            "research": [
+                "answerthepublic",
+                "buzzsumo",
+                "social_listening_tools"
+            ],
+            "scheduling": [
+                "buffer",
+                "hootsuite",
+                "later",
+                "sprout_social"
+            ]
+        }
+    },
+    "activation_keywords": {
+        "english": [
+            "content writing",
+            "digital content",
+            "caption",
+            "post",
+            "campaign",
+            "slogan",
+            "tagline",
+            "brand voice",
+            "content calendar",
+            "editorial plan",
+            "copywriting",
+            "creative writing",
+            "social media content"
+        ],
+        "arabic": [
+            "كتابة محتوى",
+            "محتوى رقمي",
+            "كابشن",
+            "بوست",
+            "حملة",
+            "سلوجان",
+            "عامية مصرية",
+            "صوت البراند",
+            "تقويم محتوى",
+            "استراتيجية محتوى"
+        ]
+    },
+    "specializations": {
+        "egyptian_market": {
+            "expertise": [
+                "egyptian_consumer_behavior",
+                "egyptian_arabic_copywriting",
+                "local_payment_trust_factors",
+                "platform_preferences",
+                "cultural_event_calendar",
+                "egyptian_humor_styles"
+            ]
+        },
+        "content_formats": [
+            "social_media",
+            "long_form",
+            "email",
+            "video",
+            "web",
+            "ads"
+        ],
+        "industry_verticals": [
+            "ecommerce_retail",
+            "food_beverage",
+            "real_estate",
+            "education_elearning",
+            "healthcare_wellness",
+            "technology_saas",
+            "financial_services",
+            "professional_services",
+            "entertainment_media"
+        ]
+    },
+    "output_standards": {
+        "deliverable_package": [
+            "primary_content_with_variations",
+            "strategic_rationale",
+            "implementation_guidelines",
+            "performance_predictions",
+            "documentation"
+        ]
+    },
+    "advanced_capabilities": {
+        "content_repurposing": {
+            "enabled": true,
+            "config_file": "config/content_repurposing.yaml",
+            "description": "Multi-platform content adaptation and repurposing framework"
+        },
+        "ab_testing": {
+            "enabled": true,
+            "workflow_file": "workflows/ab_testing_protocol.md",
+            "description": "Systematic A/B testing framework with Egyptian market tests"
+        },
+        "performance_metrics": {
+            "enabled": true,
+            "config_file": "config/performance_metrics.yaml",
+            "description": "Comprehensive KPI framework with Egyptian market benchmarks"
+        },
+        "competitive_analysis": {
+            "enabled": true,
+            "workflow_file": "capabilities/analytics/competitive_analysis.md",
+            "description": "Systematic competitor analysis and differentiation strategy"
+        },
+        "egyptian_market_insights": {
+            "enabled": true,
+            "knowledge_file": "knowledge/egyptian_market_insights.md",
+            "description": "Deep Egyptian market understanding and audience behaviors"
+        },
+        "engagement_optimization": {
+            "enabled": true,
+            "workflow_file": "capabilities/optimization/engagement_optimization.md",
+            "description": "Platform-specific engagement tactics and optimization"
+        },
+        "content_calendar": {
+            "enabled": true,
+            "templates_file": "templates/content_calendar_templates.yaml",
+            "description": "Ready-to-use content calendar templates and seasonal planning"
+        },
+        "audience_segmentation": {
+            "enabled": true,
+            "workflow_file": "capabilities/audience/advanced_segmentation.md",
+            "description": "Advanced audience segmentation and dynamic persona development"
+        },
+        "campaign_management": {
+            "enabled": true,
+            "workflow_file": "workflows/campaign_management.md",
+            "description": "Integrated multi-channel campaign planning and execution"
+        },
+        "crisis_communication": {
+            "enabled": true,
+            "workflow_file": "workflows/crisis_communication.md",
+            "description": "Rapid response framework for social media crises"
+        },
+        "brand_storytelling": {
+            "enabled": true,
+            "workflow_file": "capabilities/storytelling/brand_storytelling.md",
+            "description": "Narrative-driven content strategy for emotional connection"
+        },
+        "feedback_loop": {
+            "enabled": true,
+            "workflow_file": "workflows/feedback_loop.md",
+            "description": "Continuous learning and performance improvement system"
+        },
+        "sequential_thinking": {
+            "enabled": true,
+            "mcp_server": "sequential-thinking",
+            "integration_file": "capabilities/reasoning/sequential_thinking_integration.md",
+            "description": "Deep reasoning capabilities for complex strategy and problem-solving",
+            "use_cases": [
+                "content_strategy_development",
+                "complex_campaign_planning",
+                "audience_analysis",
+                "creative_problem_solving",
+                "performance_optimization",
+                "viral_content_ideation",
+                "brand_differentiation",
+                "market_positioning"
+            ],
+            "triggers": {
+                "keywords": [
+                    "strategy",
+                    "analyze deeply",
+                    "think through",
+                    "complex problem",
+                    "step by step",
+                    "systematic approach",
+                    "root cause",
+                    "comprehensive analysis"
+                ],
+                "complexity_threshold": "high",
+                "auto_enable_for": [
+                    "multi_platform_campaigns",
+                    "strategic_planning",
+                    "performance_troubleshooting"
+                ]
+            },
+            "reasoning_patterns": "capabilities/reasoning/reasoning_patterns.yaml"
+        }
+    }
+}

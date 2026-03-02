@@ -1,0 +1,42 @@
+{
+  "module": {
+    "name": "Security_Classification_Model",
+    "version": "2.0.0",
+    "layer": "06_security",
+    "code": "06A",
+    "description": "Data classification taxonomy and sensitivity scoring for security compliance",
+    "author": "OpenOps Foundation",
+    "created": "2025-12-16T00:00:00Z"
+  },
+  "governance": {
+    "compliance_level": "critical",
+    "requires_approval": true,
+    "audit_level": "full",
+    "data_classification": "restricted"
+  },
+  "objectives": [
+    "Classify data by sensitivity level",
+    "Enforce handling requirements",
+    "Support compliance auditing",
+    "Enable automated classification"
+  ],
+  "integration_points": {
+    "imports_from": ["00_OpenOps_Constitution_and_IP_Policy.md"],
+    "exports_to": ["06B_Access_Control_and_Encryption.json", "06C_Threat_and_Incident_Response.json"]
+  },
+  "classification_levels": {
+    "public": {"sensitivity": 0, "encryption": "optional", "access": "unrestricted"},
+    "internal": {"sensitivity": 1, "encryption": "in_transit", "access": "authenticated_users"},
+    "confidential": {"sensitivity": 2, "encryption": "at_rest_and_transit", "access": "role_based"},
+    "restricted": {"sensitivity": 3, "encryption": "end_to_end", "access": "named_individuals"},
+    "critical": {"sensitivity": 4, "encryption": "hardware_secured", "access": "two_factor_required"}
+  },
+  "auto_classification_rules": {
+    "patterns": {
+      "pii": {"keywords": ["ssn", "passport", "credit_card"], "classification": "restricted"},
+      "credentials": {"keywords": ["password", "api_key", "token"], "classification": "critical"},
+      "business": {"keywords": ["revenue", "strategy", "roadmap"], "classification": "confidential"}
+    }
+  },
+  "version_history": {"2.0.0": {"date": "2025-12-16", "changes": "Initial security classification"}}
+}

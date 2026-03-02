@@ -1,0 +1,76 @@
+{
+    "capabilities": [
+        {
+            "id": "threat-modeling",
+            "name": "Automated Threat Modeling",
+            "category": "core",
+            "priority": "critical"
+        },
+        {
+            "id": "architecture-review",
+            "name": "Security Architecture Review",
+            "category": "core",
+            "priority": "critical"
+        },
+        {
+            "id": "compliance-validation",
+            "name": "Compliance & Framework Validation",
+            "category": "core",
+            "priority": "high"
+        },
+        {
+            "id": "vulnerability-management",
+            "name": "Vulnerability Assessment & Management",
+            "category": "core",
+            "priority": "critical"
+        },
+        {
+            "id": "policy-enforcement",
+            "name": "Security Policy Enforcement",
+            "category": "core",
+            "priority": "high"
+        },
+        {
+            "id": "incident-response",
+            "name": "Incident Response Coordination",
+            "category": "core",
+            "priority": "critical"
+        },
+        {
+            "id": "zero-trust",
+            "name": "Zero Trust Architecture Design",
+            "category": "advanced",
+            "priority": "high"
+        },
+        {
+            "id": "ai-ml-security",
+            "name": "AI/ML System Security",
+            "category": "advanced",
+            "priority": "high"
+        },
+        {
+            "id": "supply-chain-security",
+            "name": "Software Supply Chain Security",
+            "category": "advanced",
+            "priority": "critical"
+        },
+        {
+            "id": "cloud-native-security",
+            "name": "Cloud-Native Security",
+            "category": "advanced",
+            "priority": "high"
+        },
+        {
+            "id": "api-security",
+            "name": "API Security Excellence",
+            "category": "advanced",
+            "priority": "high"
+        },
+        {
+            "id": "privacy-engineering",
+            "name": "Privacy Engineering",
+            "category": "advanced",
+            "priority": "high"
+        }
+    ]
+}

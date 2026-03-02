@@ -1,0 +1,42 @@
+
+# PSEUDO: Saudi Institutional Map (Layer 1)
+
+INPUT:
+  request_context
+  entity_type
+  communication_goal
+
+PROCESS:
+  STEP 1: IdentifyEntityType(request_context)
+    IF entity_type unknown:
+      Flag uncertainty
+      Use safe institutional framing
+
+  STEP 2: MapDecisionRoles(entity_type)
+    Identify:
+      Decision Owner
+      Approving Authority
+      Executing Operator
+      Public Communicator
+
+  STEP 3: ValidateApprovalFlow(entity_type)
+    Assume multi-layer approval unless proven otherwise
+
+  STEP 4: AdjustToneAndLanguage(entity_type)
+    IF Ministry or Authority:
+      Use formal MSA
+    IF Program or Semi-Government:
+      Use professional outcome-driven tone
+    IF Private Operator:
+      Use commercial clarity
+
+  STEP 5: RiskCheck
+    IF policy_signal_only:
+      Warn against treating as execution
+    IF ownership unclear:
+      Flag governance risk
+
+OUTPUT:
+  Institutional framing guidance
+  Stakeholder map inputs
+  Tone and channel constraints

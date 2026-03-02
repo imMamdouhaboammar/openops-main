@@ -1,0 +1,83 @@
+{
+    "id": "neuron_ai_integration_ops_v1",
+    "name": "AI Integration for Creative Ops Neuron",
+    "version": "1.0",
+    "tags": ["ai", "integration", "creative_ops", "support_tools"],
+    "purpose": "توضيح كيفية دمج أدوات AI (LLMs, Image Generators, Research Agents) كمساعد في بناء الحملات، مع Guardrails تمنع الاعتماد الكلي أو إنتاج محتوى سطحي.",
+    "principles": [
+      "الـ AI = مساعد/مسرّع → مش بديل عن الاستراتيجية البشرية.",
+      "ابدأ دائمًا من Insight/Strategy → بعدين استخدم AI كداعم.",
+      "AI كويس في: تلخيص، اقتراح زوايا، تنظيم أفكار، توليد Variants.",
+      "AI ضعيف في: اتخاذ القرار النهائي، Proofs، فهم السياق العاطفي العميق."
+    ],
+    "ai_roles": {
+      "llm": [
+        "تلخيص مراجعات/تعليقات/مكالمات لاستخراج Pains/Desires.",
+        "توليد 10 Variants لعناوين أو Hooks لاختبار سريع.",
+        "إعادة صياغة Copy بنفس المعنى لنغمات مختلفة (formal/casual/mix)."
+      ],
+      "image_gen": [
+        "إنتاج Visuals أولية (Moodboards, Concept Sketches).",
+        "اختبار أكثر من Style للـ Ads.",
+        "بناء UGC-like صور/فيديوهات."
+      ],
+      "research_agents": [
+        "جمع مقارنات منتجات/أسعار/بدائل.",
+        "تحليل Search Trends أو مراجعات منافسين.",
+        "رصد زوايا الجمهور (keywords, hashtags)."
+      ]
+    },
+    "guardrails": {
+      "do": [
+        "استخدم AI لتسريع التكرار، مش للاستراتيجية الأساسية.",
+        "اختبر Variants الناتجة بالأرقام (CTR/CVR).",
+        "استخدم Outputs كـ Drafts قابلة للتنقيح."
+      ],
+      "dont": [
+        "ما تنقلش أي Proof أو رقم من AI من غير مصدر.",
+        "ما تسيبش AI يحدد CTA/Offer النهائي.",
+        "ما تستخدمش Outputs زي ما هي من غير مراجعة إنسانية."
+      ]
+    },
+    "integration_workflow": [
+      {"step": "Define Strategy", "action": "حدد الهدف + Persona + Offer (يدوي)"},
+      {"step": "Draft Generation", "action": "استخدم LLM يقترح Variants/Ideas"},
+      {"step": "Refine", "action": "فلتر النتائج مع Frameworks/Persuasion Triggers"},
+      {"step": "Visual Concept", "action": "جرب Image Gen للـ Moodboards/UGC-style"},
+      {"step": "Proof Check", "action": "ضيف أرقام/اعتمادات حقيقية يدوياً"},
+      {"step": "Launch & Test", "action": "اختبر Variants في السوق"},
+      {"step": "Learn", "action": "سجّل النتائج لإعادة التدريب"}
+    ],
+    "llm_prompts": {
+      "idea_variants": "اقترح 10 Hooks مختلفة لنفس الـ Offer، متنوعة بين ألم/رغبة/مقارنة/إحصائية/قصة قصيرة.",
+      "persona_synthesis": "لخّص أهم 5 نقاط من 20 مراجعة مستخدم واكتبها كـ Pain/Desire/Trigger.",
+      "tone_shift": "أعد صياغة هذا النص نفسه بثلاث نغمات: رسمي، Casual مصري، Mixed ar/en.",
+      "visual_brief": "اكتب Prompt لصورة/فيديو يحاكي UGC style لهذا Hook."
+    },
+    "applications": {
+      "caption_example": "Hook (LLM) → صياغة Proof (يدوي) → Tone Shift (LLM) → Caption نهائي.",
+      "ad_copy_example": "LLM يطلع 10 Variants → اختر 2 بناءً على Framework → اختبر CTR.",
+      "visual_example": "LLM يكتب Brief → Image Gen تطلع Visuals → مصمم ينقي الأفضل."
+    },
+    "evaluation": {
+      "checklist": [
+        "هل الـ AI استخدم في مهام دعم مش قرار أساسي؟",
+        "هل Proofs اتأكدت من مصدرها؟",
+        "هل Variants اتفلترت وارتبطت بـ KPIs؟",
+        "هل فيه مراجعة بشرية أخيرة؟"
+      ],
+      "scoring": {
+        "formula": "0.3*proper_role_use + 0.25*proof_check + 0.25*kpi_alignment + 0.2*human_review",
+        "threshold": 0.85,
+        "notes": "لو النتيجة < 0.85 → راجع الدور المستخدم للـ AI وأضف مراجعة يدوية."
+      }
+    },
+    "links_to": [
+      "neuron_mindset_role_v1",
+      "neuron_frameworks_models_v1",
+      "neuron_product_worksheet_v1",
+      "neuron_buyer_persona_targets_v1",
+      "neuron_campaign_execution_ccc_v1",
+      "neuron_campaign_validator_v1"
+    ]
+  }

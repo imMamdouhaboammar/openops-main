@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gem-dmm-agent-pack/schemas/strategy_schema.json",
+  "title": "Strategy Output Schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "_meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": { "type": "string", "const": "1.0.0" },
+        "created_at": { "type": "string", "format": "date" }
+      },
+      "required": ["schema_version", "created_at"]
+    },
+    "core_question": { "type": "string", "minLength": 10 },
+    "executive_summary": { "type": "string", "minLength": 20 },
+    "budget_split": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "channel": { "type": "string" },
+          "percent": { "type": "number", "minimum": 0, "maximum": 100 },
+          "rationale": { "type": "string" }
+        },
+        "required": ["channel", "percent", "rationale"]
+      }
+    },
+    "sections": {
+      "type": "array",
+      "minItems": 10,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "section_name": { "type": "string" },
+          "content": { "type": "string" },
+          "assumptions": { "type": "array", "items": { "type": "string" } },
+          "evidence_citations_plan": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "claim": { "type": "string" },
+                "planned_sources": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+                "notes": { "type": "string" }
+              },
+              "required": ["claim", "planned_sources"]
+            }
+          },
+          "confidence": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "score": { "type": "number", "minimum": 0, "maximum": 1 },
+              "justification": { "type": "string" }
+            },
+            "required": ["score", "justification"]
+          },
+          "next_step_questions": { "type": "array", "items": { "type": "string" }, "maxItems": 5 }
+        },
+        "required": ["section_name", "content", "assumptions", "evidence_citations_plan", "confidence", "next_step_questions"]
+      }
+    },
+    "measurement_spec_ref": { "type": "string", "minLength": 1 }
+  },
+  "required": ["_meta", "core_question", "executive_summary", "sections", "measurement_spec_ref"]
+}
+

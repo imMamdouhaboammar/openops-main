@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "intent-first-strategy-core/schemas/cq.schema.json",
+  "title": "Core Question (CQ)",
+  "type": "object",
+  "additionalProperties": false,
+  "x_pack_meta": {
+    "pack": "intent-first-strategy-core",
+    "version": "1.0.0",
+    "date": "2026-02-13",
+    "owner": "OpenOps Studio (Mamdouh Aboammar)"
+  },
+  "properties": {
+    "core_question": { "type": "string", "minLength": 10 },
+    "metric": { "type": "string", "minLength": 1 },
+    "baseline": {
+      "description": "Numeric or range string (preferred).",
+      "oneOf": [{ "type": "number" }, { "type": "string", "minLength": 1 }]
+    },
+    "target": {
+      "description": "Numeric or range string (preferred).",
+      "oneOf": [{ "type": "number" }, { "type": "string", "minLength": 1 }]
+    },
+    "time_horizon_days": { "type": "integer", "minimum": 7, "maximum": 365 },
+    "audience": { "type": "string", "minLength": 1 },
+    "constraints": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1 },
+    "validity": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "is_valid": { "type": "boolean" },
+        "missing_fields": { "type": "array", "items": { "type": "string" } },
+        "notes": { "type": "string" }
+      },
+      "required": ["is_valid", "missing_fields"]
+    }
+  },
+  "required": [
+    "core_question",
+    "metric",
+    "baseline",
+    "target",
+    "time_horizon_days",
+    "audience",
+    "constraints",
+    "validity"
+  ]
+}
+

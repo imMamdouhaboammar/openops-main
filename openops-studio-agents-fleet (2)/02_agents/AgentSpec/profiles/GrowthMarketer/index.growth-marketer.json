@@ -1,0 +1,471 @@
+{
+    "agent_id": "growth-marketer",
+    "namespace": "org.openops.agents.strategic.growth-marketer",
+    "version": "1.0.0",
+    "status": "active",
+    "metadata": {
+        "display_name": "Growth Marketing & Growth Hacking Agent",
+        "domain": "growth_marketing",
+        "tier": "L1",
+        "specialization": [
+            "aarrr_funnel",
+            "plg",
+            "viral_loops",
+            "retention",
+            "experimentation"
+        ],
+        "created_at": "2026-01-10T12:50:00Z",
+        "last_updated": "2026-01-10T12:55:00Z",
+        "maintainer": "OpenOps Growth Team"
+    },
+    "capabilities_registry": [
+        {
+            "id": "aarrr-funnel-optimization",
+            "name": "AARRR Funnel Analysis & Optimization",
+            "type": "core",
+            "frameworks": [
+                "Pirate Metrics",
+                "RARRA"
+            ],
+            "file_path": "capabilities/core-capabilities.md#aarrr-funnel"
+        },
+        {
+            "id": "ab-testing-experimentation",
+            "name": "A/B Testing & Experimentation",
+            "type": "core",
+            "tools": [
+                "VWO",
+                "Optimizely",
+                "Statsig",
+                "GrowthBook"
+            ],
+            "file_path": "capabilities/core-capabilities.md#ab-testing"
+        },
+        {
+            "id": "analytics-data-interpretation",
+            "name": "Analytics & Data Interpretation",
+            "type": "core",
+            "platforms": [
+                "Mixpanel",
+                "Amplitude",
+                "GA4",
+                "Heap"
+            ],
+            "file_path": "capabilities/core-capabilities.md#analytics"
+        },
+        {
+            "id": "acquisition-channel-optimization",
+            "name": "Acquisition Channel Optimization",
+            "type": "core",
+            "channels": [
+                "SEO",
+                "Paid",
+                "Referral",
+                "Content",
+                "Social"
+            ],
+            "file_path": "capabilities/core-capabilities.md#acquisition"
+        },
+        {
+            "id": "retention-engagement",
+            "name": "Retention & Engagement Optimization",
+            "type": "core",
+            "tactics": [
+                "email_automation",
+                "push_notifications",
+                "in_app_messaging",
+                "loyalty_programs"
+            ],
+            "file_path": "capabilities/core-capabilities.md#retention"
+        },
+        {
+            "id": "product-led-growth",
+            "name": "Product-Led Growth (PLG) Strategy",
+            "type": "advanced",
+            "focus": [
+                "freemium",
+                "self_serve",
+                "viral_features",
+                "pql_scoring"
+            ],
+            "file_path": "capabilities/advanced-capabilities.md#plg"
+        },
+        {
+            "id": "viral-loop-engineering",
+            "name": "Viral Loop Design & Engineering",
+            "type": "advanced",
+            "mechanics": [
+                "inherent",
+                "incentivized",
+                "social",
+                "network_effects"
+            ],
+            "file_path": "capabilities/advanced-capabilities.md#viral-loops"
+        },
+        {
+            "id": "clv-optimization",
+            "name": "Customer Lifetime Value (CLV) Optimization",
+            "type": "advanced",
+            "strategies": [
+                "upsell",
+                "cross_sell",
+                "churn_reduction",
+                "expansion_revenue"
+            ],
+            "file_path": "capabilities/advanced-capabilities.md#clv"
+        },
+        {
+            "id": "north-star-metric-tracking",
+            "name": "North Star Metric Definition & Tracking",
+            "type": "advanced",
+            "approach": [
+                "metric_selection",
+                "input_metrics",
+                "dashboard_design"
+            ],
+            "file_path": "capabilities/advanced-capabilities.md#nsm"
+        }
+    ],
+    "tools_registry": [
+        {
+            "id": "funnel-analyzer",
+            "name": "AARRR Funnel Analyzer",
+            "type": "analysis",
+            "schema_file": "tools/funnel-analyzer.tool.json",
+            "integration": "internal"
+        },
+        {
+            "id": "ab-test-calculator",
+            "name": "A/B Test Statistical Calculator",
+            "type": "experimentation",
+            "schema_file": "tools/ab-test-calculator.tool.json",
+            "integration": "internal"
+        },
+        {
+            "id": "viral-coefficient-calculator",
+            "name": "Viral Coefficient (K-Factor) Calculator",
+            "type": "growth_mechanics",
+            "schema_file": "tools/viral-coefficient-calculator.tool.json",
+            "integration": "internal"
+        },
+        {
+            "id": "clv-predictor",
+            "name": "Customer Lifetime Value Predictor",
+            "type": "ml_prediction",
+            "schema_file": "tools/clv-predictor.tool.json",
+            "integration": "internal"
+        },
+        {
+            "id": "cohort-analyzer",
+            "name": "Cohort Analysis Engine",
+            "type": "analytics",
+            "schema_file": "tools/cohort-analyzer.tool.json",
+            "integration": "internal"
+        },
+        {
+            "id": "mixpanel-connector",
+            "name": "Mixpanel API Integration",
+            "type": "external_integration",
+            "schema_file": "tools/mixpanel-connector.tool.json",
+            "integration": "external",
+            "provider": "mixpanel"
+        },
+        {
+            "id": "vwo-connector",
+            "name": "VWO A/B Testing Integration",
+            "type": "external_integration",
+            "schema_file": "tools/vwo-connector.tool.json",
+            "integration": "external",
+            "provider": "vwo"
+        }
+    ],
+    "workflows_registry": [
+        {
+            "id": "aarrr-funnel-audit",
+            "name": "Comprehensive AARRR Funnel Audit",
+            "type": "standard",
+            "file_path": "workflows/standard-workflows/aarrr-funnel-audit.md",
+            "triggers": [
+                "monthly",
+                "quarterly",
+                "manual_request"
+            ],
+            "duration_estimate": "2-3 hours"
+        },
+        {
+            "id": "ab-test-design-launch",
+            "name": "A/B Test Design & Launch",
+            "type": "standard",
+            "file_path": "workflows/standard-workflows/ab-test-design-launch.md",
+            "triggers": [
+                "hypothesis_ready",
+                "manual_request"
+            ],
+            "duration_estimate": "1-2 days"
+        },
+        {
+            "id": "retention-campaign-setup",
+            "name": "Automated Retention Campaign Setup",
+            "type": "standard",
+            "file_path": "workflows/standard-workflows/retention-campaign-setup.md",
+            "triggers": [
+                "churn_spike",
+                "manual_request"
+            ],
+            "duration_estimate": "4-6 hours"
+        },
+        {
+            "id": "viral-loop-implementation",
+            "name": "Viral Loop Design & Implementation",
+            "type": "advanced",
+            "file_path": "workflows/advanced-workflows/viral-loop-implementation.md",
+            "triggers": [
+                "feature_launch",
+                "growth_initiative"
+            ],
+            "duration_estimate": "1-2 weeks"
+        },
+        {
+            "id": "plg-strategy-overhaul",
+            "name": "Product-Led Growth Strategy Overhaul",
+            "type": "advanced",
+            "file_path": "workflows/advanced-workflows/plg-strategy-overhaul.md",
+            "triggers": [
+                "manual_request",
+                "pivot"
+            ],
+            "duration_estimate": "2-4 weeks"
+        },
+        {
+            "id": "clv-optimization-program",
+            "name": "CLV Optimization Program",
+            "type": "advanced",
+            "file_path": "workflows/advanced-workflows/clv-optimization-program.md",
+            "triggers": [
+                "quarterly",
+                "manual_request"
+            ],
+            "duration_estimate": "4-8 weeks"
+        }
+    ],
+    "platform_mapping": {
+        "gemini": {
+            "model": "gemini-2.0-flash-exp",
+            "system_instruction_file": "instructions/gemini.md",
+            "features": {
+                "multimodal_analysis": true,
+                "dashboard_screenshot_analysis": true,
+                "long_context": true,
+                "sql_query_generation": true
+            },
+            "specific_capabilities": [
+                "analyze_mixpanel_dashboards_visually",
+                "generate_comprehensive_growth_strategies",
+                "deep_funnel_analysis_across_12_months"
+            ]
+        },
+        "claude": {
+            "model": "claude-sonnet-4",
+            "system_instruction_file": "instructions/claude.md",
+            "features": {
+                "extended_thinking": true,
+                "statistical_rigor": true,
+                "hypothesis_generation": true
+            },
+            "specific_capabilities": [
+                "rigorous_ab_test_statistical_analysis",
+                "cohort_behavior_deep_dive",
+                "churn_root_cause_analysis"
+            ]
+        },
+        "chatgpt": {
+            "model": "gpt-4o",
+            "system_instruction_file": "instructions/chatgpt.md",
+            "features": {
+                "gpt_actions": true,
+                "real_time_api_calls": true,
+                "automation": true
+            },
+            "specific_capabilities": [
+                "live_mixpanel_query_execution",
+                "automated_campaign_launches",
+                "real_time_ab_test_monitoring"
+            ],
+            "actions": [
+                {
+                    "name": "query_mixpanel",
+                    "endpoint": "https://mixpanel.com/api"
+                },
+                {
+                    "name": "trigger_customer_io_campaign",
+                    "endpoint": "https://api.customer.io/v1/campaigns"
+                },
+                {
+                    "name": "create_vwo_experiment",
+                    "endpoint": "https://api.vwo.com/v1/experiments"
+                }
+            ]
+        }
+    },
+    "integration_points": {
+        "upstream_dependencies": [
+            {
+                "agent": "ceo-advisor",
+                "purpose": "strategic_alignment",
+                "data_exchange": [
+                    "company_vision",
+                    "growth_targets",
+                    "okrs"
+                ]
+            },
+            {
+                "agent": "data-analyst",
+                "purpose": "raw_data_analysis",
+                "data_exchange": [
+                    "cohort_reports",
+                    "funnel_data",
+                    "event_streams"
+                ]
+            },
+            {
+                "agent": "content-optimizer",
+                "purpose": "content_performance",
+                "data_exchange": [
+                    "landing_page_metrics",
+                    "seo_rankings",
+                    "content_conversion_rates"
+                ]
+            },
+            {
+                "agent": "conversion-copywriter",
+                "purpose": "copy_testing",
+                "data_exchange": [
+                    "winning_copy_variants",
+                    "ad_creative_performance"
+                ]
+            }
+        ],
+        "downstream_consumers": [
+            {
+                "agent": "product-team",
+                "purpose": "feature_prioritization",
+                "data_exchange": [
+                    "experiment_results",
+                    "user_behavior_insights",
+                    "pql_lists"
+                ]
+            },
+            {
+                "agent": "customer-success",
+                "purpose": "churn_prevention",
+                "data_exchange": [
+                    "churn_risk_scores",
+                    "expansion_opportunities",
+                    "health_scores"
+                ]
+            },
+            {
+                "agent": "doc-custodian",
+                "purpose": "growth_playbook_documentation",
+                "data_exchange": [
+                    "growth_experiments",
+                    "winning_tactics",
+                    "runbooks"
+                ]
+            }
+        ],
+        "peer_collaborations": [
+            {
+                "agent": "ux-optimizer",
+                "purpose": "conversion_rate_optimization",
+                "data_exchange": [
+                    "friction_points",
+                    "user_journey_maps",
+                    "heatmap_insights"
+                ]
+            },
+            {
+                "agent": "performance-auditor",
+                "purpose": "speed_impact_on_conversion",
+                "data_exchange": [
+                    "page_load_metrics",
+                    "core_web_vitals",
+                    "conversion_correlation"
+                ]
+            }
+        ]
+    },
+    "dependencies": {
+        "external_apis": [
+            "Mixpanel API",
+            "Amplitude API",
+            "Google Analytics 4 API",
+            "Stripe API (revenue data)",
+            "VWO API",
+            "Customer.io API"
+        ],
+        "internal_services": [
+            "Event Tracking Service",
+            "User Segmentation Engine",
+            "Email Automation Platform",
+            "Feature Flag System"
+        ],
+        "data_stores": [
+            "Analytics Data Warehouse (BigQuery/Snowflake)",
+            "User Behavior Database (PostgreSQL)",
+            "Experiment Results Store (Redis)",
+            "Cohort Cache (Redis)"
+        ]
+    },
+    "metrics": {
+        "performance": {
+            "funnel_analysis_time": {
+                "target": "< 5 minutes",
+                "unit": "minutes"
+            },
+            "ab_test_statistical_analysis_time": {
+                "target": "< 30 seconds",
+                "unit": "seconds"
+            },
+            "dashboard_query_response": {
+                "target": "< 3 seconds",
+                "unit": "seconds"
+            }
+        },
+        "quality": {
+            "experiment_statistical_accuracy": {
+                "target": "> 99%",
+                "unit": "percentage"
+            },
+            "cohort_segmentation_precision": {
+                "target": "> 95%",
+                "unit": "percentage"
+            }
+        },
+        "business_impact": {
+            "experiment_win_rate": {
+                "target": "> 20%",
+                "unit": "percentage",
+                "description": "1 in 5 tests shows significant improvement"
+            },
+            "compound_monthly_growth_rate": {
+                "target": "> 10%",
+                "unit": "percentage"
+            },
+            "ltv_cac_ratio_improvement": {
+                "target": "> 3:1",
+                "unit": "ratio"
+            },
+            "viral_coefficient": {
+                "target": "≥ 1",
+                "unit": "k_factor"
+            }
+        }
+    },
+    "versioning": {
+        "schema_version": "1.0.0",
+        "api_version": "v1",
+        "changelog_file": "CHANGELOG.md",
+        "migration_guide": "docs/migration-guide.md"
+    }
+}

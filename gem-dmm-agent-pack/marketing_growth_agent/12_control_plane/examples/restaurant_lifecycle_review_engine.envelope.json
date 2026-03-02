@@ -1,0 +1,51 @@
+{
+  "envelopeVersion": "1.0.0",
+  "taskId": "TASK-RESTAURANT-LIFECYCLE-REVIEWS-0001",
+  "mode": "operator",
+  "podId": "POD-LIFECYCLE",
+  "authorization": {
+    "supervisorToken": "SUPERVISOR_TOKEN_EXAMPLE_ONLY",
+    "expiresAt": "2026-01-24T13:00:00Z",
+    "idempotencyKey": "idem-2026-01-24-restaurant-lifecycle-reviews-0001"
+  },
+  "objective": "Design a review-generation and win-back lifecycle workflow for a restaurant with WhatsApp-first operations (no CRM), including scripts and timing rules.",
+  "context": {
+    "clientType": "restaurant",
+    "clientName": "Example Restaurant",
+    "primaryChannels": ["WhatsApp", "Google Business Profile"],
+    "constraints": ["No email list", "No CRM"]
+  },
+  "inputs": {
+    "currentState": {
+      "reviewsRequestedSystematically": false,
+      "responseSLA": "unknown"
+    },
+    "customerTouchpoints": ["post-visit", "post-delivery"]
+  },
+  "constraints": {
+    "deadline": "2026-01-28T18:00:00Z",
+    "compliance": {
+      "noIncentivizedFakeReviews": true,
+      "avoidDarkPatterns": true
+    },
+    "budget": { "maxSpend": 0, "currency": "USD" },
+    "scope": {
+      "inScope": ["review ask scripts", "timing rules", "reminder cadence", "win-back messaging", "SLA guidelines"],
+      "outOfScope": ["CRM implementation", "email automation tooling setup"]
+    }
+  },
+  "expectedOutputs": [
+    "Review generation system (timing + scripts + follow-up rules)",
+    "Win-back messaging playbook (30/60/90 day concepts)",
+    "Response SLA recommendations for WhatsApp",
+    "Hand-off notes to Social/Community Pod"
+  ],
+  "qualityGates": [
+    "Scripts feel human and on-brand (not spammy)",
+    "No unethical review manipulation",
+    "System works even without a CRM (operationally realistic)"
+  ],
+  "approvalGates": ["Client approves scripts and tone"],
+  "returnFormat": "artifact_plus_summary"
+}
+

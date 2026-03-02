@@ -1,0 +1,148 @@
+{
+    "knowledge_base": {
+        "version": "1.0.0",
+        "last_updated": "2026-01-10"
+    },
+    "resources": [
+        {
+            "id": "prompt-engineering-frameworks",
+            "name": "Prompt Engineering Frameworks & Benchmarks",
+            "file_path": "knowledge-base/prompt-frameworks.md",
+            "topics": [
+                "15+ advanced techniques",
+                "Model-specific optimization",
+                "Evaluation methodologies",
+                "2025 benchmarks"
+            ]
+        }
+    ],
+    "external_sources": [
+        {
+            "name": "OpenAI Prompt Engineering Guide",
+            "url": "https://platform.openai.com/docs/guides/prompt-engineering",
+            "type": "documentation",
+            "focus": [
+                "GPT-4 best practices",
+                "Function calling",
+                "System messages"
+            ]
+        },
+        {
+            "name": "Anthropic Prompt Library",
+            "url": "https://docs.anthropic.com/claude/prompt-library",
+            "type": "templates",
+            "focus": [
+                "Claude-optimized prompts",
+                "XML formatting",
+                "Long context"
+            ]
+        },
+        {
+            "name": "Google AI Prompting Guide",
+            "url": "https://ai.google.dev/docs/prompt_best_practices",
+            "type": "documentation",
+            "focus": [
+                "Gemini multimodal",
+                "Grounding",
+                "1M context"
+            ]
+        },
+        {
+            "name": "LangChain Documentation",
+            "url": "https://python.langchain.com/docs/",
+            "type": "framework",
+            "focus": [
+                "Prompt templates",
+                "Chains",
+                "Agents",
+                "RAG"
+            ]
+        },
+        {
+            "name": "Prompt Engineering Institute",
+            "url": "https://www.promptengineering.org/",
+            "type": "research",
+            "focus": [
+                "Academic papers",
+                "Technique benchmarks",
+                "Case studies"
+            ]
+        }
+    ],
+    "benchmarks_2025": {
+        "prompt_success_rate": {
+            "industry_avg": "55%",
+            "target": "85%",
+            "definition": "% of prompts achieving ≥4.0/5.0 quality on first attempt"
+        },
+        "token_efficiency": {
+            "industry_avg": "600 tokens/task",
+            "target": "400 tokens/task",
+            "cost_impact": "30% reduction in LLM costs"
+        },
+        "hallucination_rate": {
+            "industry_avg": "15-20%",
+            "target": "≤5%",
+            "techniques": [
+                "Constraints",
+                "Source citation",
+                "RAG"
+            ]
+        },
+        "model_costs_per_1k_tokens": {
+            "gpt_4_turbo": {
+                "input": "$0.01",
+                "output": "$0.03"
+            },
+            "claude_3.5_sonnet": {
+                "input": "$0.003",
+                "output": "$0.015"
+            },
+            "gemini_1.5_pro": {
+                "input": "$0.00125",
+                "output": "$0.005"
+            }
+        }
+    },
+    "technique_impact": {
+        "chain_of_thought": {
+            "accuracy_improvement": "+25-40%",
+            "best_for": "Math, logic, multi-step reasoning",
+            "token_overhead": "+20-30%"
+        },
+        "few_shot": {
+            "consistency_improvement": "+60-80%",
+            "best_for": "Format replication, style",
+            "examples_needed": "2-5"
+        },
+        "react": {
+            "accuracy_improvement": "+35%",
+            "best_for": "Tool use, research",
+            "token_overhead": "+40-50%"
+        },
+        "self_consistency": {
+            "accuracy_improvement": "+20-30%",
+            "best_for": "Critical decisions",
+            "cost_multiplier": "5x (generates 5 solutions)"
+        },
+        "tree_of_thoughts": {
+            "creativity_improvement": "+40%",
+            "best_for": "Strategy, creative tasks",
+            "token_overhead": "+100-200%"
+        }
+    },
+    "rag_optimization": {
+        "chunk_size": {
+            "optimal": "500-1000 tokens",
+            "too_small": "100-200 tokens (fragmented)",
+            "too_large": "2000+ tokens (noisy)"
+        },
+        "top_k_retrieval": {
+            "optimal": "3-5 chunks",
+            "minimum": "1-2 (risky)",
+            "maximum": "10+ (too noisy)"
+        },
+        "hallucination_reduction": "60-80% vs. baseline",
+        "reranking_improvement": "+15-20% relevance"
+    }
+}

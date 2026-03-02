@@ -1,0 +1,52 @@
+# intent-first-strategy-core/config/refusal_rules.yaml
+# Pack: intent-first-strategy-core
+# Version: 1.0.0
+# Date: 2026-02-13
+# Owner: OpenOps Studio (Mamdouh Aboammar)
+#
+# Purpose: Refuse strategy generation when diagnosis is not complete/validated, and redirect with minimal questions.
+
+refusal_rules:
+  refusal_triggers:
+    - id: ask_for_strategy_early
+      match_any:
+        - "give me a plan"
+        - "strategy now"
+        - "just tell me what to do"
+        - "run ads"
+        - "do SEO"
+        - "channel plan"
+      condition: "validation.confirmed != true OR cq.valid != true"
+
+    - id: generic_channel_dump_request
+      match_any:
+        - "give me all channels"
+        - "full channel plan"
+        - "list all tactics"
+      condition: "validation.confirmed != true"
+
+  refusal_message_templates:
+    - id: short_refusal
+      template: "I can’t generate a strategy yet. Strategy is a function of diagnosis, and the diagnosis isn’t validated. I need 2–3 answers to lock the Problem Statement (PPS) and Core Question (CQ)."
+
+    - id: explain_missing
+      template: "Not yet. What’s missing is: (1) confirmed true issue, (2) baseline/target/time horizon for the primary metric, and (3) constraints (budget/team/time). Answer the questions below and I’ll proceed."
+
+  redirect_questions:
+    max_questions: 3
+    questions_pool:
+      - id: q_primary_metric
+        text: "What is the ONE primary success metric you care about (e.g., qualified leads/week, revenue/month, trials/week)?"
+      - id: q_baseline_target
+        text: "What’s your current baseline and target for that metric? Ranges are fine."
+      - id: q_constraints
+        text: "What are your constraints: monthly budget range, execution capacity (hours/week), and timeline (days)?"
+      - id: q_true_issue_guess
+        text: "If you had to bet: is the blocker traffic, conversion, retention, offer/positioning, sales capacity, or tracking quality?"
+
+  refusal_behavior:
+    - "Refuse politely."
+    - "Name what is missing (diagnosis elements only)."
+    - "Ask up to 3 redirect questions to unblock."
+    - "Update Live Diagnosis Map after the user answers."
+

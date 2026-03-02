@@ -1,0 +1,8 @@
+{
+  "name": "sample-agent",
+  "purpose": "Demo agent for sample",
+  "platforms": ["gemini","chatgpt"],
+  "files": ["manifest.json","README.md","agent.py"],
+  "license": "MIT",
+  "version": "0.1.0"
+}

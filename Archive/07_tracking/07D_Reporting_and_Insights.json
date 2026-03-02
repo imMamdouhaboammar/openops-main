@@ -1,0 +1,39 @@
+{
+  "module": {
+    "name": "Reporting_and_Insights",
+    "version": "2.0.0",
+    "layer": "07_tracking",
+    "code": "07D",
+    "description": "Automated reporting, insights generation, and anomaly detection",
+    "author": "OpenOps Foundation",
+    "created": "2025-12-16T00:00:00Z"
+  },
+  "governance": {
+    "compliance_level": "standard",
+    "requires_approval": false,
+    "audit_level": "minimal",
+    "data_classification": "internal"
+  },
+  "objectives": [
+    "Generate automated reports",
+    "Detect anomalies",
+    "Surface actionable insights",
+    "Support decision-making"
+  ],
+  "integration_points": {
+    "imports_from": ["07A_Analytics_Event_Schema.json", "07B_KPI_and_Metrics_Dashboard.json"],
+    "exports_to": ["00B_OpenOps_Audit_and_Decision_Ledger.json"]
+  },
+  "report_types": {
+    "daily_summary": {"schedule": "daily_8am", "recipients": ["ops_team"]},
+    "weekly_performance": {"schedule": "monday_9am", "recipients": ["leadership"]},
+    "monthly_business_review": {"schedule": "first_of_month", "recipients": ["executives"]},
+    "incident_report": {"trigger": "on_incident", "recipients": ["on_call", "security_lead"]}
+  },
+  "anomaly_detection": {
+    "algorithms": ["z_score", "isolation_forest", "prophet"],
+    "sensitivity": "medium",
+    "alert_threshold": 2.5
+  },
+  "version_history": {"2.0.0": {"date": "2025-12-16", "changes": "Initial reporting system"}}
+}

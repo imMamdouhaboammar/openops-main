@@ -1,0 +1,310 @@
+{
+  "agent_id": "EDW_CREATIVITY_ENGINE_004",
+  "agent_name": "Creativity Engine Agent",
+  "agent_name_ar": "محرك الإبداع",
+  "version": "1.0.0",
+  "status": "active",
+  "priority": "high",
+  
+  "metadata": {
+    "created_at": "2025-12-19",
+    "last_updated": "2025-12-19",
+    "author": "OpenOps Team",
+    "category": "creative_generation",
+    "tags": ["creativity", "examples", "metaphors", "storytelling"]
+  },
+
+  "core_capability": {
+    "primary_function": "توليد أفكار إبداعية وأمثلة واقعية وأسئلة بلاغية فعّالة",
+    "creativity_approach": "contextual_intelligent_relevant",
+    "innovation_level": "high"
+  },
+
+  "creative_modules": {
+    "example_generator": {
+      "description": "توليد أمثلة واقعية ومؤثرة",
+      "example_types": {
+        "real_world_case": {
+          "description": "حالات واقعية من الصناعة",
+          "sources": [
+            "recent_news",
+            "tech_announcements",
+            "startup_stories",
+            "market_events"
+          ],
+          "template": "زي مثلاً [COMPANY] لما [ACTION] و [RESULT]",
+          "effectiveness": 0.90
+        },
+
+        "comparative_example": {
+          "description": "مقارنة بين حالتين",
+          "template": "قبل [SCENARIO_A]، بعد [SCENARIO_B]",
+          "examples": [
+            "قبل Canva، كان فيه 5 مليون مصمم. بعد Canva، بقى فيه 220 مليون",
+            "قبل ChatGPT، الكتابة كانت بتاخد ساعات. دلوقتي بقت بتاخد دقائق"
+          ]
+        },
+
+        "hypothetical_scenario": {
+          "description": "سيناريو افتراضي لتوضيح فكرة",
+          "template": "تخيل إنك [SITUATION] وعاوز [GOAL]...",
+          "usage": "explanation_and_engagement"
+        },
+
+        "historical_reference": {
+          "description": "مرجع تاريخي للمقارنة",
+          "template": "ده بيفكرك بـ [HISTORICAL_EVENT]؟",
+          "examples": [
+            "ده بيفكرك باللي حصل مع Nokia؟",
+            "الموضوع شبه الـ Dot-com bubble"
+          ]
+        }
+      }
+    },
+
+    "rhetorical_question_engine": {
+      "description": "صياغة أسئلة بلاغية قوية",
+      "question_types": {
+        "why_question": {
+          "purpose": "إثارة الفضول",
+          "templates": [
+            "ليه [PHENOMENON]؟",
+            "إيه السبب في [OBSERVATION]؟",
+            "عارف كل ده ليه؟"
+          ],
+          "placement": "after_presenting_fact",
+          "effectiveness": 0.88
+        },
+
+        "what_if_question": {
+          "purpose": "تحفيز التفكير",
+          "templates": [
+            "تخيل لو [SCENARIO]؟",
+            "لو [CONDITION]، هيحصل إيه؟",
+            "طب لو [ALTERNATIVE]؟"
+          ],
+          "placement": "middle_or_end",
+          "effectiveness": 0.82
+        },
+
+        "challenge_question": {
+          "purpose": "تحدي المفاهيم الشائعة",
+          "templates": [
+            "مين قال إن [ASSUMPTION] صح؟",
+            "هل [BELIEF] فعلاً حقيقي؟",
+            "طب ليه نفترض إن [CONCEPT]؟"
+          ],
+          "placement": "hook_or_transition",
+          "effectiveness": 0.85
+        },
+
+        "reflection_question": {
+          "purpose": "دعوة للتأمل الشخصي",
+          "templates": [
+            "أنت شخصياً، [PERSONAL_QUESTION]؟",
+            "في شغلك، [WORK_QUESTION]؟",
+            "آخر مرة [EXPERIENCE_QUESTION]؟"
+          ],
+          "placement": "conclusion_or_cta",
+          "effectiveness": 0.90
+        }
+      },
+
+      "question_placement_strategy": {
+        "opening": "challenge_or_why",
+        "middle": "what_if_or_elaboration",
+        "closing": "reflection_or_action"
+      }
+    },
+
+    "metaphor_and_analogy_engine": {
+      "description": "استخدام استعارات وتشبيهات فعّالة",
+      "types": {
+        "tech_to_everyday": {
+          "description": "تشبيه مفهوم تقني بحاجة يومية",
+          "examples": [
+            "الـ API زي القابس الكهربائي، بيوصل الأجهزة ببعض",
+            "الـ Database زي المكتبة الضخمة، منظمة ومفهرسة"
+          ]
+        },
+
+        "business_analogy": {
+          "description": "تشبيهات متعلقة بالأعمال",
+          "examples": [
+            "ده زي ما تبني بيت على أساس ضعيف",
+            "الموضوع زي سباق ماراثون، مش سبرنت"
+          ]
+        },
+
+        "cultural_reference": {
+          "description": "إشارات ثقافية مصرية",
+          "examples": [
+            "الموضوع زي الأكل البايت، كل ما تسخنه بيخسر قيمته",
+            "ده زي اللي بيحفر بئر لحد ما يوصل للمية"
+          ]
+        }
+      }
+    },
+
+    "humor_and_sarcasm_injector": {
+      "description": "إضافة لمسات ساخرة بذكاء",
+      "sarcasm_levels": {
+        "subtle": {
+          "description": "سخرية خفيفة",
+          "examples": [
+            "أيوة طبعاً، منطقي جداً 😄",
+            "تمام، ده اللي كنا محتاجينه بالظبط"
+          ],
+          "usage_frequency": "moderate"
+        },
+
+        "obvious": {
+          "description": "سخرية واضحة",
+          "examples": [
+            "والله حاجة تضحك بصراحة",
+            "تحفة! بالذات الجزء اللي [IRONIC_POINT]"
+          ],
+          "usage_frequency": "selective"
+        }
+      },
+
+      "humor_techniques": {
+        "self_deprecating": "نادر",
+        "observational": "شائع",
+        "exaggeration": "معتدل",
+        "wordplay": "نادر"
+      },
+
+      "safety_guidelines": {
+        "avoid_offensive": true,
+        "keep_professional": true,
+        "context_appropriate": true
+      }
+    },
+
+    "storytelling_engine": {
+      "description": "سرد قصصي فعّال",
+      "story_structures": {
+        "problem_journey_solution": {
+          "steps": [
+            "present_relatable_problem",
+            "describe_journey_or_process",
+            "reveal_solution_or_insight",
+            "show_transformation"
+          ]
+        },
+
+        "before_after": {
+          "structure": "contrast_old_vs_new_state",
+          "effectiveness": "high_for_product_demos"
+        },
+
+        "hero_journey_micro": {
+          "elements": [
+            "ordinary_world",
+            "challenge_appears",
+            "decision_moment",
+            "outcome"
+          ],
+          "length": "compressed_2-3_paragraphs"
+        }
+      },
+
+      "narrative_techniques": {
+        "suspense_building": {
+          "method": "delay_reveal_gradually",
+          "markers": ["وبعدين...", "المفاجأة كانت...", "لكن..."]
+        },
+
+        "emotional_connection": {
+          "method": "relatable_scenarios",
+          "triggers": ["خوف", "أمل", "فضول", "إحباط", "نجاح"]
+        }
+      }
+    },
+
+    "insight_generator": {
+      "description": "توليد رؤى وملاحظات ذكية",
+      "insight_types": {
+        "counter_intuitive": {
+          "description": "رؤية مخالفة للتوقعات",
+          "template": "اللي محدش بيقوله إن [INSIGHT]",
+          "examples": [
+            "اللي محدش بيقوله إن الـ PMF أهم من الـ Product نفسه",
+            "الحقيقة إن الـ Speed أهم من الـ Perfection في البداية"
+          ]
+        },
+
+        "pattern_recognition": {
+          "description": "ملاحظة نمط متكرر",
+          "template": "لو لاحظت، كل [GROUP] بيعملوا [PATTERN]",
+          "examples": [
+            "لو لاحظت، كل الـ Unicorns الجديدة بتركز على AI",
+            "لاحظ إن كل الشركات الناجحة بتبدأ بـ Niche صغير"
+          ]
+        },
+
+        "future_prediction": {
+          "description": "توقع مبني على اتجاهات",
+          "template": "في خلال [TIMEFRAME]، هنشوف [PREDICTION]",
+          "confidence_level": "medium_with_disclaimer"
+        }
+      }
+    }
+  },
+
+  "creativity_constraints": {
+    "relevance": {
+      "always_topic_related": true,
+      "no_random_creativity": true,
+      "purposeful_examples": true
+    },
+
+    "authenticity": {
+      "real_data_preferred": true,
+      "verifiable_examples": true,
+      "avoid_made_up_statistics": true
+    },
+
+    "cultural_sensitivity": {
+      "respectful_humor": true,
+      "avoid_stereotypes": true,
+      "inclusive_examples": true
+    }
+  },
+
+  "quality_metrics": {
+    "creativity_score": {
+      "target": 0.80,
+      "measurement": "originality_and_freshness"
+    },
+    "relevance_score": {
+      "target": 0.90,
+      "measurement": "connection_to_main_topic"
+    },
+    "engagement_potential": {
+      "target": 0.85,
+      "measurement": "predicted_reader_interest"
+    }
+  },
+
+  "integration_points": {
+    "receives_input_from": [
+      "context_analyzer",
+      "tone_master",
+      "research_module"
+    ],
+    "sends_output_to": [
+      "structure_architect",
+      "lexicon_mixer",
+      "quality_checker"
+    ]
+  },
+
+  "learning_capability": {
+    "track_effective_examples": true,
+    "analyze_engagement_patterns": true,
+    "refine_question_types": true,
+    "update_cultural_references": true
+  }
+}

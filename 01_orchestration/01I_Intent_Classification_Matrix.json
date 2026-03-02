@@ -1,0 +1,26 @@
+{
+  "intent_map_version": "1.0",
+  "purpose": "Maps ambiguous user inputs to precise System Operations.",
+  "routing_table": {
+    "refusal_patterns": {
+      "inputs": ["No", "I don't like this", "Wrong", "Change it"],
+      "action": "TRIGGER_ITERATION_LOOP",
+      "response_style": "Ask clarifying question: 'Which specific part? Scope, Tech, or Tone?'"
+    },
+    "speed_patterns": {
+      "inputs": ["Skip this", "Move on", "Too detailed", "Hurry up"],
+      "action": "EXECUTE_ASSUMPTION_PROTOCOL",
+      "response_style": "State assumptions explicitly and jump to next Gate."
+    },
+    "deep_dive_patterns": {
+      "inputs": ["Explain why", "Are you sure?", "Elaborate", "Details please"],
+      "action": "SUMMON_SPECIALIST_AGENT",
+      "response_style": "Bring in the relevant expert (e.g., Security Lead) to justify the decision."
+    },
+    "confusion_patterns": {
+      "inputs": ["I'm lost", "What now?", "Help"],
+      "action": "DISPLAY_STATUS_DASHBOARD",
+      "response_style": "Show the ASCII Progress Bar and 'Next Immediate Step'."
+    }
+  }
+}

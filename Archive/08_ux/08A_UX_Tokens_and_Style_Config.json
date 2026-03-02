@@ -1,0 +1,103 @@
+{
+  "module": {
+    "name": "UX_Tokens_and_Style_Config",
+    "version": "2.0.0",
+    "layer": "08_ux",
+    "code": "08A",
+    "description": "Design tokens, style variables, and theming configuration for consistent UX",
+    "author": "OpenOps Foundation",
+    "created": "2025-12-16T00:00:00Z"
+  },
+  "governance": {
+    "compliance_level": "standard",
+    "requires_approval": false,
+    "audit_level": "minimal",
+    "data_classification": "public"
+  },
+  "objectives": [
+    "Define design system tokens",
+    "Enable consistent theming",
+    "Support accessibility standards",
+    "Facilitate multi-platform design"
+  ],
+  "integration_points": {
+    "imports_from": [],
+    "exports_to": ["08C_Design_Blueprints_and_Flows.json", "08D_Accessibility_and_Localization.json"]
+  },
+  "color_tokens": {
+    "primary": {"50": "#E3F2FD", "500": "#2196F3", "900": "#0D47A1"},
+    "secondary": {"50": "#F3E5F5", "500": "#9C27B0", "900": "#4A148C"},
+    "neutral": {"50": "#FAFAFA", "500": "#9E9E9E", "900": "#212121"},
+    "success": "#4CAF50",
+    "warning": "#FF9800",
+    "error": "#F44336",
+    "info": "#2196F3"
+  },
+  "typography": {
+    "font_families": {
+      "primary": "Inter, system-ui, sans-serif",
+      "monospace": "Fira Code, Consolas, monospace"
+    },
+    "font_sizes": {
+      "xs": "0.75rem",
+      "sm": "0.875rem",
+      "base": "1rem",
+      "lg": "1.125rem",
+      "xl": "1.25rem",
+      "2xl": "1.5rem",
+      "3xl": "1.875rem",
+      "4xl": "2.25rem"
+    },
+    "font_weights": {
+      "normal": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700
+    },
+    "line_heights": {
+      "tight": 1.25,
+      "normal": 1.5,
+      "relaxed": 1.75
+    }
+  },
+  "spacing": {
+    "0": "0",
+    "1": "0.25rem",
+    "2": "0.5rem",
+    "3": "0.75rem",
+    "4": "1rem",
+    "6": "1.5rem",
+    "8": "2rem",
+    "12": "3rem",
+    "16": "4rem"
+  },
+  "border_radius": {
+    "none": "0",
+    "sm": "0.125rem",
+    "base": "0.25rem",
+    "md": "0.375rem",
+    "lg": "0.5rem",
+    "full": "9999px"
+  },
+  "shadows": {
+    "sm": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+    "base": "0 1px 3px 0 rgba(0, 0, 0, 0.1)",
+    "md": "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+    "lg": "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
+    "xl": "0 20px 25px -5px rgba(0, 0, 0, 0.1)"
+  },
+  "breakpoints": {
+    "xs": "320px",
+    "sm": "640px",
+    "md": "768px",
+    "lg": "1024px",
+    "xl": "1280px",
+    "2xl": "1536px"
+  },
+  "theme_modes": {
+    "light": {"background": "#FFFFFF", "text": "#212121"},
+    "dark": {"background": "#121212", "text": "#FAFAFA"},
+    "high_contrast": {"background": "#000000", "text": "#FFFFFF"}
+  },
+  "version_history": {"2.0.0": {"date": "2025-12-16", "changes": "Initial UX tokens"}}
+}

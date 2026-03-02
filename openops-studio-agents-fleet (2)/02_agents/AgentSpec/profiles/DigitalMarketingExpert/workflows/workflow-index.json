@@ -1,0 +1,43 @@
+{
+    "workflows": {
+        "standard": [
+            {
+                "id": "ramadan-campaign-launch",
+                "name": "Ramadan Campaign Launch (30-Day Sprint)",
+                "file_path": "standard-workflows/ramadan-campaign.md",
+                "frequency": "annual",
+                "duration": "8 weeks"
+            },
+            {
+                "id": "influencer-campaign-gcc",
+                "name": "GCC Influencer Campaign Management",
+                "file_path": "standard-workflows/influencer-campaign.md",
+                "frequency": "quarterly",
+                "duration": "6 weeks"
+            },
+            {
+                "id": "arabic-content-audit",
+                "name": "Arabic Content Performance Audit",
+                "file_path": "standard-workflows/arabic-content-audit.md",
+                "frequency": "monthly",
+                "duration": "1 week"
+            }
+        ],
+        "advanced": [
+            {
+                "id": "market-entry-saudi",
+                "name": "Market Entry Strategy (International Brand → Saudi)",
+                "file_path": "advanced-workflows/market-entry-saudi.md",
+                "frequency": "as_needed",
+                "duration": "12 weeks"
+            },
+            {
+                "id": "hajj-umrah-digital-journey",
+                "name": "Hajj/Umrah Digital Journey Optimization",
+                "file_path": "advanced-workflows/hajj-umrah-journey.md",
+                "frequency": "annual",
+                "duration": "16 weeks"
+            }
+        ]
+    }
+}

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "1.0.0",
+  "ssot": { "root": "/tmp/openops_ssot" },
+  "connectors": {
+    "tasks": {
+      "type": "filesystem",
+      "enabled": true,
+      "dryRun": false,
+      "filesystem": { "ssotRoot": "/tmp/openops_ssot/example-restaurant" }
+    },
+    "messaging": {
+      "type": "slack_webhook",
+      "enabled": false,
+      "dryRun": true,
+      "slackWebhook": { "webhookUrl": "", "defaultChannelLabel": "ops" }
+    },
+    "files": {
+      "type": "filesystem",
+      "enabled": true,
+      "dryRun": false,
+      "filesystem": { "ssotRoot": "/tmp/openops_ssot/example-restaurant" }
+    }
+  },
+  "observability": {
+    "enabled": true,
+    "tracePath": "/tmp/openops_ssot/example-restaurant/Traces/trace.jsonl"
+  }
+}
+

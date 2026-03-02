@@ -1,0 +1,380 @@
+---
+# Creative Frameworks Configuration
+# Systematic approaches to creative content creation
+
+version: "1.0.0"
+description: "Frameworks and techniques for creative, engaging content"
+
+# ============================================================================
+# 1. STORYTELLING FRAMEWORKS
+# ============================================================================
+
+storytelling_frameworks:
+  
+  heros_journey_simplified:
+    name: "Hero's Journey (Simplified)"
+    description: "Classic narrative arc adapted for marketing"
+    stages:
+      - ordinary_world: "Customer's current state/problem"
+      - call_to_adventure: "Introduction to solution"
+      - transformation: "Using the product/service"
+      - return_with_elixir: "Customer's new, improved state"
+    best_for:
+      - brand_stories
+      - customer_testimonials
+      - product_launches
+    example: "From struggling with acne → discovering our serum → clear skin journey → confident new you"
+    
+  three_act_structure:
+    name: "3-Act Structure"
+    description: "Beginning, middle, end with clear turning points"
+    acts:
+      act_1_setup:
+        description: "Establish situation and problem"
+        length: "25%"
+      act_2_confrontation:
+        description: "Complications and challenges"
+        length: "50%"
+      act_3_resolution:
+        description: "Solution and transformation"
+        length: "25%"
+    best_for:
+      - long_form_content
+      - video_scripts
+      - campaign_narratives
+      
+  problem_agitation_solution:
+    name: "Problem-Agitation-Solution (PAS)"
+    description: "Identify problem, intensify it, present solution"
+    steps:
+      problem: "State the customer's pain point"
+      agitation: "Make them feel the problem more acutely"
+      solution: "Present your product as the answer"
+    best_for:
+      - sales_copy
+      - ad_copy
+      - email_marketing
+    example: "Tired of dull skin? (P) Imagine missing out on that glow everyone notices (A) Our vitamin C serum brings radiance back (S)"
+    
+  before_after_bridge:
+    name: "Before-After-Bridge (BAB)"
+    description: "Show transformation journey"
+    steps:
+      before: "Life before the solution"
+      after: "Life after the solution"
+      bridge: "How to get from before to after"
+    best_for:
+      - transformation_stories
+      - product_demos
+      - testimonials
+      
+  star_method:
+    name: "STAR (Situation, Task, Action, Result)"
+    description: "Structured storytelling for case studies"
+    steps:
+      situation: "The context/challenge"
+      task: "What needed to be done"
+      action: "Steps taken"
+      result: "Outcome achieved"
+    best_for:
+      - case_studies
+      - success_stories
+      - b2b_content
+
+# ============================================================================
+# 2. CREATIVE WRITING TECHNIQUES
+# ============================================================================
+
+creative_writing_techniques:
+  
+  show_dont_tell:
+    description: "Demonstrate through details rather than stating"
+    examples:
+      telling: "Our cream is luxurious"
+      showing: "Silk-smooth texture that melts into your skin"
+    application:
+      - use_sensory_details
+      - paint_vivid_pictures
+      - let_reader_experience
+      
+  sensory_details:
+    description: "Engage the five senses"
+    senses:
+      visual: "Colors, shapes, appearance"
+      tactile: "Texture, temperature, feel"
+      olfactory: "Scents, aromas"
+      auditory: "Sounds (less common in written content)"
+      gustatory: "Taste (for food/beverage)"
+    example: "Creamy vanilla scent, velvety texture, golden glow"
+    
+  emotional_hooks:
+    description: "Connect with reader's emotions"
+    emotions:
+      - hope: "Imagine the confidence you'll feel"
+      - fear: "Don't let another day go by with..."
+      - joy: "Experience the delight of..."
+      - curiosity: "What if you could..."
+      - belonging: "Join thousands who've discovered..."
+    application:
+      - identify_target_emotion
+      - use_emotional_language
+      - create_emotional_arc
+      
+  unexpected_angles:
+    description: "Approach topics from surprising perspectives"
+    techniques:
+      - reverse_expectations: "What if skincare was actually simple?"
+      - unusual_comparisons: "Like a personal trainer for your skin"
+      - counter_intuitive: "The secret to better skin? Do less."
+      - fresh_metaphors: "Your skin's daily coffee shot (vitamin C)"
+    application:
+      - avoid_clichés
+      - find_unique_perspective
+      - surprise_and_delight
+      
+  metaphors_analogies:
+    description: "Make complex ideas relatable"
+    types:
+      metaphor: "Direct comparison (Your skin is a garden)"
+      simile: "Like/as comparison (Smooth as silk)"
+      analogy: "Extended comparison (Skincare routine is like a recipe)"
+    guidelines:
+      - keep_culturally_relevant
+      - ensure_clarity
+      - avoid_mixed_metaphors
+      - make_memorable
+
+# ============================================================================
+# 3. EMOTIONAL ARCS
+# ============================================================================
+
+emotional_arcs:
+  
+  hope_struggle_triumph:
+    description: "Journey from aspiration through challenge to success"
+    arc:
+      - hope: "Dream of clear skin"
+      - struggle: "Tried everything, nothing worked"
+      - triumph: "Finally found the solution"
+    best_for:
+      - testimonials
+      - transformation_stories
+      - motivational_content
+      
+  curiosity_discovery_satisfaction:
+    description: "Learning journey"
+    arc:
+      - curiosity: "What's the secret to..."
+      - discovery: "Here's what we learned..."
+      - satisfaction: "Now you know how to..."
+    best_for:
+      - educational_content
+      - tips_and_tricks
+      - how_to_guides
+      
+  problem_tension_relief:
+    description: "Problem-solving narrative"
+    arc:
+      - problem: "Struggling with dry skin"
+      - tension: "Winter makes it worse"
+      - relief: "Our hydrating formula soothes instantly"
+    best_for:
+      - product_solutions
+      - seasonal_campaigns
+      - problem_focused_content
+
+# ============================================================================
+# 4. CONTENT PATTERNS
+# ============================================================================
+
+content_patterns:
+  
+  list_format:
+    description: "Numbered or bulleted lists"
+    types:
+      - how_to_steps
+      - tips_and_tricks
+      - reasons_why
+      - things_to_avoid
+    benefits:
+      - scannable
+      - actionable
+      - shareable
+      
+  question_answer:
+    description: "Q&A format"
+    applications:
+      - faqs
+      - educational_content
+      - addressing_objections
+    technique: "Ask questions readers are thinking"
+    
+  comparison_contrast:
+    description: "Before/after, this vs that"
+    types:
+      - before_after
+      - old_way_new_way
+      - myth_vs_reality
+      - product_comparisons
+    caution: "Ensure factual accuracy in comparisons"
+    
+  storytelling_narrative:
+    description: "Story-driven content"
+    elements:
+      - character: "Relatable protagonist"
+      - conflict: "Challenge to overcome"
+      - resolution: "How they succeeded"
+    applications:
+      - customer_stories
+      - brand_narratives
+      - case_studies
+
+# ============================================================================
+# 5. HOOK TECHNIQUES
+# ============================================================================
+
+hook_techniques:
+  
+  question_hooks:
+    description: "Start with compelling question"
+    examples:
+      - "Ever wonder why your skin looks dull?"
+      - "What if skincare could be this simple?"
+      - "Ready to transform your routine?"
+    guidelines:
+      - make_relevant
+      - create_curiosity
+      - promise_answer
+      
+  bold_statement:
+    description: "Strong, attention-grabbing claim"
+    examples:
+      - "Everything you know about skincare is wrong"
+      - "The one ingredient that changed everything"
+      - "This 30-second habit transformed my skin"
+    caution: "Must be backed by content, not clickbait"
+    
+  story_opening:
+    description: "Begin with narrative"
+    examples:
+      - "Three months ago, I couldn't look in the mirror..."
+      - "It started with a simple question..."
+      - "The day everything changed was..."
+    application: "Draw reader into journey"
+    
+  stat_or_fact:
+    description: "Lead with surprising data"
+    examples:
+      - "90% of skin aging is preventable"
+      - "Your skin renews itself every 28 days"
+    requirement: "Must be verified (anti-hallucination)"
+
+# ============================================================================
+# 6. VOICE VARIATIONS
+# ============================================================================
+
+voice_variations:
+  
+  conversational:
+    tone: "Friendly, approachable"
+    characteristics:
+      - contractions: "you're, we're, it's"
+      - questions: "Ever noticed how...?"
+      - casual_language: "Let's be real"
+    best_for:
+      - social_media
+      - blog_posts
+      - emails
+      
+  authoritative:
+    tone: "Expert, confident"
+    characteristics:
+      - definitive_statements
+      - industry_terminology
+      - research_backed
+    best_for:
+      - thought_leadership
+      - educational_content
+      - b2b
+      
+  inspirational:
+    tone: "Uplifting, motivating"
+    characteristics:
+      - aspirational_language
+      - empowering_messages
+      - positive_framing
+    best_for:
+      - brand_manifestos
+      - campaign_messaging
+      - motivational_content
+      
+  playful:
+    tone: "Fun, energetic"
+    characteristics:
+      - wordplay
+      - humor
+      - creative_language
+    best_for:
+      - youth_brands
+      - lifestyle_products
+      - social_media
+
+# ============================================================================
+# 7. FRAMEWORK SELECTION GUIDE
+# ============================================================================
+
+framework_selection:
+  
+  by_content_type:
+    social_media_caption:
+      - hook_technique
+      - emotional_hook
+      - conversational_voice
+    blog_post:
+      - three_act_structure
+      - show_dont_tell
+      - authoritative_voice
+    ad_copy:
+      - problem_agitation_solution
+      - bold_statement
+      - conversational_voice
+    email:
+      - before_after_bridge
+      - question_hook
+      - conversational_voice
+    video_script:
+      - heros_journey
+      - story_opening
+      - playful_or_inspirational
+      
+  by_objective:
+    drive_sales:
+      - problem_agitation_solution
+      - before_after_bridge
+      - emotional_hooks
+    educate:
+      - star_method
+      - question_answer
+      - authoritative_voice
+    inspire:
+      - heros_journey
+      - hope_struggle_triumph
+      - inspirational_voice
+    entertain:
+      - storytelling_narrative
+      - playful_voice
+      - unexpected_angles
+
+# ============================================================================
+# NOTES
+# ============================================================================
+
+notes: |
+  These frameworks provide structure for creativity, not formulas to follow rigidly.
+  Mix and match techniques based on:
+  - Brand voice
+  - Audience preferences
+  - Content objective
+  - Platform requirements
+  
+  Remember: Framework guides execution, creativity makes it memorable.

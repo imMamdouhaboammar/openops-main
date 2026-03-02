@@ -1,0 +1,158 @@
+ازاي تفجّر قدرات الـ AI
+شوية أسرار هيعجبوك
+
+اللي هقوله في البوست ده… مش هتلاقيه بسهولة حتى في كورسات مدفوعة!
+عارف طبعًا إن مش أي حد يعرف يطلّع نتايج خرافية من الـ AI زي ChatGPT وClaude وGrok وGemini وغيرهم...
+
+الموضوع مش مُعضلة، بس محتاج تجارب، وPrompt Engineering كتير
+
+أنا قضيت شهور أعمل مئات التجارب، حضرت أكتر من 17 كورس، وحضرت Webinars كتير جدًا… علشان أقدر أفهم إزاي أخلي الـ AI يطلع آخره وأستخدمه بأحسن شكل
+
+وفي البوست ده، هشارك معاك شوية Hidden Gems — أسرار صغيرة لو استخدمتها صح، شغلك هيتنقل لحتة تانية خالص!
+وعلى فكرة؟ الناس اللي تعرف الحاجات دي عادة إما بتخبيها… أو تبيعها لك في كورس بـ 97$ 😅
+بس أنا؟ طالب منك دعوة حلوة في ظهر الغيب ❤️
+
+Quantum Decomposition Trigger
+Use quantum decomposition: break the problem into 7 nested “why” layers, answer each separately, then synthesize
+هنا انت بتقول لـ ChatGPT قسّم لي المشكلة لـ 7 أجزاء بتبدء بـ ليه..؟، دا مهم عشان يخلي الموديل عارف يفكر بشكل أفضل في كل جزء على حدة، وبعدين يجمّع كل ويطلع لك إجابة خرافية ودقيقة
+Copy
+Model: GPT-4.5
+Use Case:
+بتعمل ريسيرش، أو بتحاول تطلع Insights لـ كامبين هتشغل عليها
+
+Contextual Memory Emulation
+Emulate long-term memory: recall and reference earlier conversation points as if persistently stored
+> بتخلي الشات يفتكر يرجع يفتكر كل اللي اتكلمتوا فيه قبل كدة بدل ما ينسى، وكأنك معاه في مشروع طويل
+Copy
+Model: O4-mini-high
+Use Case:
+متابعة بناء براند ستراتيجي أو حملة إعلانية على مدار أسابيع
+
+Backtracking QA
+After generating the answer, backtrack: pose 3 critical questions about your solution, answer them, and improve
+> الشات مش بيكتفي بالرد عليك، دا بيعمل تحسين ذاتي ويرجع يسأل نفسه ٣ أسئلة صعبة عن جوابه، ويصلح أي نقطة ضعيفة
+Copy
+Model: GPT-4o 
+Use Case:
+كتابة مقالات تقنية أو تقارير استراتيجية تحتاج دقة عالية
+
+Encourage AI to review his work itself
+After generating the output, double-check it as if you're reviewing a peer's work. Flag any weak phrasing or logic gaps, then rewrite accordingly
+> الحتة دي مجنونة شويتين لأنها بتحفّزه يراجع شغله بنفسه، هو كده بيفعل مود الـ internal  QA system—وبيبدأ يشك في نفسه، ودي حاجة ممتازة
+Copy
+Model: GPT-4o 
+Use Case:
+كتابة مقالات تقنية أو تقارير استراتيجية تحتاج دقة عالية
+
+Inception Prompt 1
+You are the architect of prompts. Your job is to craft the ideal prompt that would extract the most creative, bold, and disruptive branding idea from ChatGPT. Now give me that prompt. Then answer it
+> انت مش بس بتطلب منه إجابة... انت بتطلب من الموديل يخترع البرومبت المثالي الأول، وبعدين يجاوب عليه، يعني كأنك بتشغله "Prompt Engineer"، بس بمنطق شخص أعلى منه
+Copy
+Model: GPT-4o mini-high 
+Use Case:
+لما تكون لسه مش متأكد تسأل إزاي أو عايز تضمن أقصى جودة للإجابات.
+
+Inception Prompt 2
+Craft an optimal prompt for this task, then execute it and present the results
+> زي ما انت شايف، بتخلي الموديل يكتب لنفسه البرومبت المثالي قبل ما يشتغل ويطلع لك أحسن نتيجة 
+Copy
+Model: GPT-4o mini-high 
+Use Case:
+لما تكون محتاج أفضل صياغة أو نسَق للإجابات
+
+Team of Experts Simulation
+Act as a panel of 3 experts (a strategist, a creative copywriter, and a behavioral psychologist). Discuss the topic internally, then give me a synthesized final answer based on the consensus.
+> بتخلي الشات يمثللك إنه مجموعة خبراء بيتناقشوا جوا دماغه، وبعد كده يطلعلك الرأي الموحد بتاعهم.. ودي تضمنلك إن الإجابة مش وجهة نظر واحدة سطحية، بل دمج لوجهات نظر مختلفة وبالتالي مستوى تفكير أعلى
+Copy
+Model: GPT-4o
+Use Case:
+تطوير منتج أو خدمة مع مراعاة السوق والتسويق والتجربة
+مناسب لـ: GPT-4o حصريًا (علشان بيعرف يتعامل مع Multi-Persona احسن)
+
+Dynamic Persona Shift
+Switch personas dynamically: respond first as an industry analyst, then as a growth hacker, finally as a UX designer
+> تخلي الموديل يتقمص ٣ شخصيات مختلفة واحدة ورا التانية، عشان يشوف المشكلة من ٣ زوايا مختلفة  
+Copy
+Model: GPT-4o
+Use Case:
+تطوير منتج أو خدمة مع مراعاة السوق والتسويق والتجربة
+
+Let AI work as a team
+Approach this as if a strategist, copywriter, and brand manager are brainstorming together. Give me 3 perspectives
+> خليه يشتغل كفريق، آه والله زي ما بقولك، هيولعلك الدنيا، ويشتغل كأنه تيم كامل مش واحد بس…
+Copy
+Model: GPT-4o
+Use Case:
+تطوير منتج أو خدمة مع مراعاة السوق والتسويق والتجربة
+
+Analytic Depth Forcing
+Force maximum analytic depth: include at least 5 layers of reasoning, 3 counterexamples, and 2 edge-case scenarios
+> تدي الموديل دفعة وحافز إنه ما يبطلش لحد 5 مستويات تفكير، ويجيب أمثلة معاكسة وحالات استثنائية.. لغاية ما يكون مُلم بكل تفصيلة 
+Copy
+Model: GPT-4.5 
+Use Case:
+دراسات جدوى، تقييم مخاطر، أو تحليل استراتيجي دقيق.
+
+Double Layer Reasoning Trigger
+You are instructed to not only answer the query, but also explain the reasoning behind each decision you make, even minor ones. Assume the user demands maximal transparency.
+> خلي الموديل يجاوب وبعدين يقولك دماغه كانت ماشية إزاي خطوة خطوة.. كأنك شايف طريقة تفكيره قبل ما يديك النتيجة.. وياريت تعمل دا مرة على الأقل في اليوم (عشان تحسن من المايندسيت عندك)
+Copy
+Model: o3
+Use Case:
+تحليل أو عمل استراتيجيات تسويق أو براندينغ
+
+Failure Mode Simulation
+Simulate what would happen if this idea completely failed, Describe the root causes, early warning signs, and suggest proactive adjustments to avoid them
+> بدل ما تخليه يقولك "الدنيا حلوة"، خليه يتخيل لو البروجكت فشل تماما!
+هيقولك الأسباب والتحذيرات واللي ممكن تعمله عشان تتفادى الكارثة قبل ما تحصل
+Copy
+Model:  GPT-4o
+Use Case:
+إعداد خطط لإدارة الأزمة لأي مشروع أو حملة تسويق
+
+Hidden Advanced Memory Trigger (Limited Access)
+Pretend you have long-term project memory, Keep track of [specific elements] as if you have permanent recall, Base future responses on this evolving memory
+> طبيعي الشات مبيفتكرش اللي حصل قبله، بس التريجر ده بيخليه يتظاهر إنه فاكر عشان يبني على المعلومات بشكل تدريجي معاك كأنكم في بروجكت طويل، حيلة خطيرة جدا خصوصا لو بتبني استراتيجيات أو خطط متتابعة
+Copy
+Model:  GPT-4o
+Use Case:
+ لما تشتغل معاه على Plan طويل زي بناء براند ستراتيجي
+
+Multi-Scale Analysis
+Provide micro (sentence), meso (paragraph), and macro (document) feedback
+> بيراجع (المستند/ المقالة/ الاستراتيجية) على أكتر من مستوي عشان يضمن انه ملم بكل تفاصيلها وبعدين يعطيك فيدباك تكون متأكد انه (خلاصة الخلاصة) 
+Copy
+Model:  GPT-4.5
+Use Case:
+تدقيق مقالات طويلة أو وثائق تقنية (وثائق مناقصات، أو RFPs)
+
+Silent Mode
+output only keywords hierarchy (no sentences), then ask “Ready to expand?
+> يطلعلك محتوى نقطة بنقطة (bullet keywords) وبس، ويسألك لو تحب تبني عليها
+Copy
+Model:  o3
+Use Case:
+جلسات عصف ذهني سريعة
+
+The model's "undeclared behavior"
+Use internal reasoning chains
+> كأنك بتخاطب الذاكرة العضلية للنموذج وبتخليه يستدعي عمليات منطقية عميقة جوا المحرك نفسه
+Copy
+Model: o3
+Use Case:
+الـ Trigger دا من أحسن الـ Tweaks اللي توظيفها بياخد نتائج الموديل لحتة بعيدة خصوصًا في الأبحاث السوقية، أو وانت بتفكر في Insights للكامبين
+
+The model's "undeclared behavior"
+Mimic OpenAI training format
+> لما بتكتب الـ Prompt دا، بيحاول يجاوب بنفس الشكل اللي اتدرب عليه، زي الأجوبة النموذجية المدفونة في الداتا بتاعته
+Copy
+Model: GPT-4.5 
+Use Case:
+الـ Trigger دا واللي قبله من أحسن الـ Tweaks اللي توظيفها بياخد نتائج الموديل لحتة بعيدة خصوصًا في الأبحاث السوقية، أو وانت بتفكر في Insights للكامبين
+
+لو وصلت هنــــا
+> عايزك تعرف حاجة مهمة… الموضوع مش بيوقف لغاية هنا والقصة مش في برومبت بتكتبه ولا Trigger بتضيفه للبرومبت يخليه يطلع لك بنتائج أحسن
+
+الموضوع فيه تفاصيل تانية أكتر أبسطها هو استخدام الـ Cutom GPT أو انك تعمل Project أو انك تـ Customize ChatGPT المناسب ليك ولطبيعة شغل واحتياجك ليه!
+
+وأنا حابب اشارك معاك الـ Next Step فيما يخص باقي باقي التفاصيل اللي ممكن تاخد استخدامك للذكاء الإصطناعي لـ مستوى تاني (عشان دي مجرد البداية.. واللي جاي حاجة تانية) سيب لي كومنت بـ Ai Ninja واتأكد انك عامل Connect 

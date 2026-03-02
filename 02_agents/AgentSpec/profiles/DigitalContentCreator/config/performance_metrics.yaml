@@ -1,0 +1,431 @@
+performance_metrics:
+  description: "Comprehensive KPI framework for measuring content performance across platforms"
+  version: "1.0.0"
+  last_updated: "2026-02-16 04:21:21"
+  timezone: "Africa/Cairo (UTC+2)"
+  data_timestamp: "2026-02-16T04:21:21+02:00"
+  benchmarks_period: "Q1 2026 (Jan-Feb 2026)"
+  note: "Benchmarks updated monthly based on real performance data"
+
+# ==========================================
+# CONTENT TYPE-SPECIFIC KPIs
+# ==========================================
+
+social_media_posts:
+  primary_metrics:
+    - metric: "engagement_rate"
+      formula: "(likes + comments + shares + saves) / reach × 100"
+      target:
+        excellent: ">5%"
+        good: "3-5%"
+        average: "1-3%"
+        poor: "<1%"
+      egyptian_benchmark:
+        instagram: "4.2%"
+        facebook: "3.8%"
+        twitter: "2.1%"
+        linkedin: "3.5%"
+    
+    - metric: "reach_rate"
+      formula: "reach / followers × 100"
+      target:
+        excellent: ">20%"
+        good: "10-20%"
+        average: "5-10%"
+        poor: "<5%"
+    
+    - metric: "save_rate"
+      formula: "saves / reach × 100"
+      target:
+        excellent: ">3%"
+        good: "1.5-3%"
+        average: "0.5-1.5%"
+        poor: "<0.5%"
+      note: "High save rate = valuable content"
+
+  secondary_metrics:
+    - metric: "share_rate"
+      formula: "shares / reach × 100"
+      target: ">1%"
+    
+    - metric: "comment_rate"
+      formula: "comments / reach × 100"
+      target: ">0.5%"
+    
+    - metric: "profile_visits"
+      target_increase: "+10% per post"
+
+instagram_reels:
+  primary_metrics:
+    - metric: "watch_time"
+      target:
+        excellent: ">80% completion"
+        good: "60-80%"
+        average: "40-60%"
+        poor: "<40%"
+    
+    - metric: "shares"
+      target:
+        excellent: ">5% of views"
+        good: "2-5%"
+        average: "1-2%"
+        poor: "<1%"
+    
+    - metric: "engagement_rate"
+      formula: "(likes + comments + shares + saves) / views × 100"
+      target:
+        excellent: ">8%"
+        good: "5-8%"
+        average: "2-5%"
+        poor: "<2%"
+
+  secondary_metrics:
+    - metric: "reach_to_followers_ratio"
+      target: ">150%"
+      note: "Reels should reach beyond followers"
+    
+    - metric: "saves"
+      target: ">3% of views"
+
+tiktok_videos:
+  primary_metrics:
+    - metric: "completion_rate"
+      target:
+        excellent: ">70%"
+        good: "50-70%"
+        average: "30-50%"
+        poor: "<30%"
+    
+    - metric: "share_rate"
+      target:
+        excellent: ">10%"
+        good: "5-10%"
+        average: "2-5%"
+        poor: "<2%"
+    
+    - metric: "for_you_page_percentage"
+      target: ">60%"
+      note: "% of views from FYP vs Following"
+
+  secondary_metrics:
+    - metric: "comment_engagement"
+      target: ">100 comments per 10K views"
+    
+    - metric: "profile_visits"
+      target: ">5% of viewers"
+
+youtube_videos:
+  primary_metrics:
+    - metric: "watch_time_percentage"
+      target:
+        excellent: ">60%"
+        good: "45-60%"
+        average: "30-45%"
+        poor: "<30%"
+    
+    - metric: "click_through_rate"
+      formula: "clicks / impressions × 100"
+      target:
+        excellent: ">10%"
+        good: "6-10%"
+        average: "3-6%"
+        poor: "<3%"
+    
+    - metric: "subscriber_conversion"
+      formula: "new subscribers / views × 100"
+      target: ">0.5%"
+
+  secondary_metrics:
+    - metric: "likes_to_views_ratio"
+      target: ">5%"
+    
+    - metric: "comments_per_1000_views"
+      target: ">10"
+    
+    - metric: "shares"
+      target: ">1% of views"
+
+linkedin_posts:
+  primary_metrics:
+    - metric: "engagement_rate"
+      target:
+        excellent: ">5%"
+        good: "3-5%"
+        average: "1-3%"
+        poor: "<1%"
+    
+    - metric: "click_through_rate"
+      target:
+        excellent: ">3%"
+        good: "1.5-3%"
+        average: "0.5-1.5%"
+        poor: "<0.5%"
+    
+    - metric: "follower_growth"
+      target: "+2-5% per month"
+
+  secondary_metrics:
+    - metric: "profile_views"
+      target_increase: "+15% per post"
+    
+    - metric: "connection_requests"
+      target: ">5 per post"
+
+blog_posts:
+  primary_metrics:
+    - metric: "time_on_page"
+      target:
+        excellent: ">4 minutes"
+        good: "2-4 minutes"
+        average: "1-2 minutes"
+        poor: "<1 minute"
+    
+    - metric: "bounce_rate"
+      target:
+        excellent: "<40%"
+        good: "40-60%"
+        average: "60-80%"
+        poor: ">80%"
+    
+    - metric: "conversion_rate"
+      formula: "conversions / visitors × 100"
+      target: ">2%"
+
+  secondary_metrics:
+    - metric: "social_shares"
+      target: ">50 per post"
+    
+    - metric: "backlinks"
+      target: ">5 within 3 months"
+    
+    - metric: "organic_traffic_growth"
+      target: "+10% month-over-month"
+
+email_campaigns:
+  primary_metrics:
+    - metric: "open_rate"
+      target:
+        excellent: ">25%"
+        good: "18-25%"
+        average: "12-18%"
+        poor: "<12%"
+      egyptian_benchmark: "22%"
+    
+    - metric: "click_through_rate"
+      target:
+        excellent: ">5%"
+        good: "3-5%"
+        average: "1-3%"
+        poor: "<1%"
+      egyptian_benchmark: "3.2%"
+    
+    - metric: "conversion_rate"
+      target: ">2%"
+
+  secondary_metrics:
+    - metric: "unsubscribe_rate"
+      target: "<0.5%"
+    
+    - metric: "forward_rate"
+      target: ">1%"
+    
+    - metric: "list_growth_rate"
+      target: "+5% per month"
+
+# ==========================================
+# EGYPTIAN MARKET BENCHMARKS
+# ==========================================
+
+egyptian_market_benchmarks:
+  instagram:
+    engagement_rate:
+      consumer_brands: "4.5%"
+      b2b: "2.8%"
+      influencers: "6.2%"
+      small_business: "5.1%"
+    
+    best_posting_times:
+      weekdays: ["9-11 AM", "7-9 PM"]
+      weekends: ["11 AM - 2 PM", "8-10 PM"]
+    
+    content_preferences:
+      - "Egyptian dialect (عامية)"
+      - "Relatable humor"
+      - "Cultural references"
+      - "Video content"
+      - "Behind-the-scenes"
+
+  facebook:
+    engagement_rate:
+      pages: "3.8%"
+      groups: "8.5%"
+    
+    best_posting_times:
+      weekdays: ["8-10 AM", "6-8 PM"]
+      weekends: ["10 AM - 1 PM"]
+    
+    audience_demographics:
+      age_range: "25-44"
+      gender_split: "52% male, 48% female"
+      peak_usage: "Evening (7-11 PM)"
+
+  tiktok:
+    engagement_rate: "12-18%"
+    completion_rate: "45-65%"
+    
+    trending_content_types:
+      - "Comedy skits"
+      - "Educational (quick tips)"
+      - "Trend participation"
+      - "Behind-the-scenes"
+      - "Challenges"
+    
+    best_posting_times:
+      - "12-2 PM"
+      - "7-10 PM"
+
+  linkedin:
+    engagement_rate:
+      posts: "3.5%"
+      articles: "2.1%"
+    
+    audience_focus:
+      - "Professional development"
+      - "Industry insights"
+      - "Career growth"
+      - "Business news"
+
+# ==========================================
+# SUCCESS CRITERIA BY GOAL
+# ==========================================
+
+success_criteria:
+  awareness:
+    primary_kpis:
+      - reach
+      - impressions
+      - profile_visits
+    targets:
+      reach_growth: "+20% month-over-month"
+      impression_growth: "+25% month-over-month"
+      new_followers: "+10% month-over-month"
+
+  engagement:
+    primary_kpis:
+      - engagement_rate
+      - comments
+      - shares
+      - saves
+    targets:
+      engagement_rate: ">4%"
+      comments_per_post: ">50"
+      shares_per_post: ">20"
+      saves_per_post: ">30"
+
+  conversion:
+    primary_kpis:
+      - click_through_rate
+      - conversion_rate
+      - cost_per_conversion
+    targets:
+      ctr: ">3%"
+      conversion_rate: ">2%"
+      cost_per_conversion: "Decreasing trend"
+
+  loyalty:
+    primary_kpis:
+      - repeat_engagement
+      - community_growth
+      - brand_mentions
+    targets:
+      repeat_visitors: ">40%"
+      community_growth: "+5% monthly"
+      brand_mentions: "+15% monthly"
+
+# ==========================================
+# PERFORMANCE TRACKING TEMPLATES
+# ==========================================
+
+weekly_performance_template:
+  metrics_to_track:
+    - total_posts
+    - total_reach
+    - total_engagement
+    - engagement_rate
+    - follower_growth
+    - top_performing_post
+    - worst_performing_post
+    - key_learnings
+
+monthly_performance_template:
+  metrics_to_track:
+    - monthly_reach
+    - monthly_engagement
+    - follower_growth_percentage
+    - engagement_rate_trend
+    - content_type_performance
+    - platform_performance
+    - audience_growth_by_demographic
+    - top_5_posts
+    - bottom_5_posts
+    - optimization_opportunities
+
+quarterly_performance_template:
+  metrics_to_track:
+    - quarterly_goals_achievement
+    - audience_growth
+    - engagement_trends
+    - content_performance_by_type
+    - platform_roi
+    - competitive_benchmarking
+    - strategic_recommendations
+
+# ==========================================
+# ALERT THRESHOLDS
+# ==========================================
+
+performance_alerts:
+  critical:
+    - condition: "engagement_rate < 1%"
+      action: "Review content strategy immediately"
+    
+    - condition: "reach_decline > 30%"
+      action: "Check algorithm changes, content quality"
+    
+    - condition: "follower_growth < 0%"
+      action: "Audit content, analyze unfollows"
+
+  warning:
+    - condition: "engagement_rate < 2%"
+      action: "Test new content formats"
+    
+    - condition: "reach_decline > 15%"
+      action: "Increase posting frequency, test timing"
+    
+    - condition: "follower_growth < 2%"
+      action: "Focus on shareable content"
+
+# ==========================================
+# REPORTING CADENCE
+# ==========================================
+
+reporting_schedule:
+  daily:
+    - monitor_engagement
+    - respond_to_comments
+    - track_trending_topics
+
+  weekly:
+    - performance_summary
+    - top_posts_analysis
+    - content_calendar_adjustment
+
+  monthly:
+    - comprehensive_report
+    - goal_progress_review
+    - strategy_optimization
+
+  quarterly:
+    - strategic_review
+    - competitive_analysis
+    - annual_planning_input

@@ -1,0 +1,220 @@
+///////////////////////////////////////////////////////////
+// GOAL-CONSTRAINED REASONING AGENT
+// Execution Loop – Production Grade Pseudo-Code
+///////////////////////////////////////////////////////////
+
+function RUN_AGENT(raw_user_input):
+
+    ///////////////////////////////////////////////////////
+    // 0. INITIALIZE CONTEXT
+    ///////////////////////////////////////////////////////
+
+    context = INIT_CONTEXT()
+    context.raw_user_input = raw_user_input
+    context.execution_id = GENERATE_UUID()
+    context.status = "running"
+    context.logs = []
+
+    LOAD_CONFIGS()  
+        modules      = LOAD_JSON("modules.json")
+        pipeline     = LOAD_JSON("pipeline.json")
+        rules        = LOAD_JSON("rules.json")
+        prompts      = LOAD_JSON("prompts.json")
+        relations    = LOAD_JSON("relations.json")
+
+    ///////////////////////////////////////////////////////
+    // 1. MAIN PIPELINE LOOP
+    ///////////////////////////////////////////////////////
+
+    for step in pipeline.steps:
+
+        module_id = step.module_id
+        module_def = modules.get(module_id)
+        module_prompt = prompts.get_for(module_id)
+        bound_rules = relations.get_rules_for(module_id)
+
+        LOG(context, "Executing module: " + module_id)
+
+        ///////////////////////////////////////////////////
+        // 1.1 BUILD MODULE INPUT
+        ///////////////////////////////////////////////////
+
+        module_input = BUILD_INPUT(context, relations, module_id)
+
+        ///////////////////////////////////////////////////
+        // 1.2 EXECUTE MODULE (LLM OR TOOL)
+        ///////////////////////////////////////////////////
+
+        retry_count = 0
+        max_retries = GET_MAX_RETRIES(module_def)
+
+        while retry_count <= max_retries:
+
+            module_output = EXECUTE_MODULE(
+                module_id,
+                module_prompt,
+                module_input,
+                context
+            )
+
+            ///////////////////////////////////////////////////
+            // 1.3 VALIDATE RULES FOR MODULE
+            ///////////////////////////////////////////////////
+
+            rule_result = VALIDATE_RULES(
+                module_output,
+                bound_rules,
+                context
+            )
+
+            if rule_result.status == "pass":
+                break
+
+            if rule_result.severity == "fatal":
+                ABORT_PIPELINE(context, rule_result.message)
+                return BUILD_ERROR_RESPONSE(context)
+
+            if rule_result.severity == "high":
+                retry_count += 1
+                LOG(context, "Retrying module due to high severity rule violation.")
+                continue
+
+            if rule_result.severity == "medium":
+                LOG(context, "Medium severity issue logged.")
+                break
+
+        ///////////////////////////////////////////////////
+        // 1.4 UPDATE CONTEXT
+        ///////////////////////////////////////////////////
+
+        UPDATE_CONTEXT(context, module_output, relations, module_id)
+
+        ///////////////////////////////////////////////////
+        // 1.5 HANDLE CONDITIONAL BRANCHES
+        ///////////////////////////////////////////////////
+
+        branch_action = EVALUATE_BRANCHES(step, context)
+
+        if branch_action == "halt_and_request_clarification":
+            context.status = "awaiting_user_clarification"
+            return BUILD_CLARIFICATION_RESPONSE(context)
+
+        if branch_action == "rollback_to_reasoning_engine":
+            LOG(context, "Rolling back to reasoning_engine.")
+            JUMP_TO_STEP(pipeline, "reasoning_engine")
+            continue
+
+        if branch_action == "pause_pipeline_for_user_input":
+            context.status = "awaiting_user_clarification"
+            return BUILD_CLARIFICATION_RESPONSE(context)
+
+    ///////////////////////////////////////////////////////
+    // 2. FINAL CONSISTENCY CHECK
+    ///////////////////////////////////////////////////////
+
+    if context.checked_answer exists:
+        final_output = context.checked_answer
+    else:
+        final_output = context.final_answer
+
+    context.status = "completed"
+
+    LOG(context, "Execution completed successfully.")
+
+    return final_output
+
+
+
+///////////////////////////////////////////////////////////
+// SUPPORTING FUNCTIONS
+///////////////////////////////////////////////////////////
+
+function INIT_CONTEXT():
+    return {
+        raw_user_input: null,
+        normalized_text: null,
+        primary_goal: null,
+        constraints: [],
+        required_entities: [],
+        structured_options: [],
+        valid_options: [],
+        invalid_options: [],
+        ranked_options: [],
+        recommended_option: null,
+        final_answer: null,
+        checked_answer: null,
+        consistency_report: null,
+        logs: [],
+        status: null
+    }
+
+
+function EXECUTE_MODULE(module_id, prompt, input, context):
+    if module_id is TOOL_BASED:
+        return RUN_TOOL(module_id, input)
+    else:
+        return CALL_LLM(prompt, input)
+
+
+function VALIDATE_RULES(output, rules, context):
+
+    for rule in rules:
+
+        result = APPLY_RULE(rule, output, context)
+
+        if result.failed:
+            return {
+                status: "fail",
+                severity: rule.severity,
+                message: rule.on_fail.message
+            }
+
+    return { status: "pass" }
+
+
+function UPDATE_CONTEXT(context, output, relations, module_id):
+
+    fields_to_write = relations.get_writes_for(module_id)
+
+    for field in fields_to_write:
+        context[field] = output[field]
+
+
+function EVALUATE_BRANCHES(step, context):
+
+    if step has conditional_branches:
+
+        for branch in step.conditional_branches:
+
+            if EVAL_CONDITION(branch.condition, context):
+                return branch.action
+
+    return "continue"
+
+
+function ABORT_PIPELINE(context, reason):
+    context.status = "aborted"
+    LOG(context, "Pipeline aborted: " + reason)
+
+
+function LOG(context, message):
+    context.logs.append({
+        timestamp: CURRENT_TIME(),
+        message: message
+    })
+
+
+function BUILD_CLARIFICATION_RESPONSE(context):
+    return {
+        status: "clarification_required",
+        message: "I need additional clarification to proceed logically.",
+        logs: context.logs
+    }
+
+
+function BUILD_ERROR_RESPONSE(context):
+    return {
+        status: "error",
+        message: "A fatal logic validation error occurred.",
+        logs: context.logs
+    }

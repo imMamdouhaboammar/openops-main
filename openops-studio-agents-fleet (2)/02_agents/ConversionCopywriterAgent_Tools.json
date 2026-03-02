@@ -1,0 +1,591 @@
+{
+  "tools_and_templates": {
+    "version": "1.0.0",
+    "agent": "ConversionCopywriterAgent",
+    "description": "Comprehensive toolkit of templates, frameworks, and operational tools for conversion copywriting",
+    "author": "OpenOps Studio | Mamdouh Aboammar",
+    
+    "research_tools": {
+      "umdp_framework": {
+        "name": "U-M-D-B-P Research Framework",
+        "description": "Foundational research system for understanding audience psychology",
+        "template": {
+          "user": {
+            "prompt": "Who is the target user? (Go beyond demographics)",
+            "fields": [
+              "name_persona",
+              "age_and_stage",
+              "professional_context",
+              "psychological_profile",
+              "current_struggles",
+              "aspirations",
+              "decision_making_style"
+            ],
+            "example": "أحمد، 32 سنة، مهندس برمجيات، متزوج حديثاً، قلقان من عدم استقرار الدخل، نفسه يحس بالأمان المالي"
+          },
+          "moment": {
+            "prompt": "When/where do they encounter your message?",
+            "fields": [
+              "platform_context",
+              "time_of_day",
+              "emotional_state",
+              "competing_distractions",
+              "trigger_event"
+            ],
+            "example": "بالليل على فيسبوك، بعد ما يسمع زميله اتترقى، حاسس بالقلق والرغبة في التطوير"
+          },
+          "desire": {
+            "prompt": "What do they truly want? (Not the product - the transformation)",
+            "fields": [
+              "emotional_outcome",
+              "status_change",
+              "identity_shift",
+              "life_improvement",
+              "avoided_negative"
+            ],
+            "example": "نفسه يحس إنه متطور ومواكب، وإن مهاراته مش هتخليه يتسرح لو في أزمة"
+          },
+          "block": {
+            "prompt": "What stops them from acting?",
+            "fields": [
+              "fear_barrier",
+              "trust_issue",
+              "resource_constraint",
+              "complexity_concern",
+              "timing_objection"
+            ],
+            "example": "خايف يدفع فلوس في كورس ومش يكمله أو ميستفيدش، ومش واثق إن الكورس هيفرق فعلاً"
+          },
+          "proof": {
+            "prompt": "What would convince them?",
+            "fields": [
+              "social_proof_type",
+              "authority_signal",
+              "evidence_format",
+              "guarantee_structure",
+              "testimonial_focus"
+            ],
+            "example": "شهادات من ناس زيه اتقبلوا في شغل أحسن، أرقام واضحة عن نسبة النجاح، ضمان استرجاع"
+          }
+        },
+        "output_format": "structured_json_with_insights"
+      },
+      
+      "audience_emotional_map": {
+        "name": "Psychological State Mapping Tool",
+        "description": "Deep dive into audience emotions, fears, and desires",
+        "template": {
+          "pain_points": {
+            "instruction": "List 5 nightmares they experience",
+            "format": [
+              "specific_pain_1",
+              "specific_pain_2",
+              "specific_pain_3",
+              "specific_pain_4",
+              "specific_pain_5"
+            ],
+            "example": "خايف يخسر وظيفته لو الأتمتة زادت في مجاله"
+          },
+          "desires": {
+            "instruction": "List 5 transformations they dream of",
+            "format": [
+              "specific_desire_1",
+              "specific_desire_2",
+              "specific_desire_3",
+              "specific_desire_4",
+              "specific_desire_5"
+            ],
+            "example": "نفسه يكون الشخص اللي الكل بييجي يستشيره في المكتب"
+          },
+          "internal_dialogue": {
+            "instruction": "What doubt loops in their mind?",
+            "format": "verbatim_self_talk",
+            "example": "أكيد الكورس ده صعب وأنا مش هقدر أكمله مع ضغط الشغل"
+          },
+          "vulnerability_moment": {
+            "instruction": "When are they most receptive?",
+            "format": "situational_description",
+            "example": "لما يشوف زميله الأصغر منه بياخد مشروع كبير وهو قاعد مكانه"
+          }
+        }
+      },
+      
+      "fear_reframing_table": {
+        "name": "Objection Transformation System",
+        "description": "Convert fears into selling points",
+        "template": {
+          "columns": ["customer_fear", "reframe_strategy", "copy_script"],
+          "rows": [
+            {
+              "fear": "خايف أدفع ومستفدش",
+              "reframe": "Risk Reversal",
+              "script": "جرب 14 يوم مجاناً. لو مش عاجبك، ملكش علينا حاجة"
+            },
+            {
+              "fear": "الموضوع معقد وهتوه",
+              "reframe": "Simplification",
+              "script": "3 خطوات بس. مش محتاج خبرة قبل كده"
+            },
+            {
+              "fear": "مش واثق فيكم",
+              "reframe": "Social Proof",
+              "script": "انضم لـ 5000 شخص بيستخدموا الخدمة يومياً"
+            },
+            {
+              "fear": "هياخد وقت طويل",
+              "reframe": "Quick Win",
+              "script": "شوف أول نتيجة في أول أسبوع"
+            }
+          ]
+        }
+      },
+      
+      "competitor_message_analysis": {
+        "name": "Market Intelligence Tool",
+        "description": "Analyze competitor messaging for gaps and opportunities",
+        "template": {
+          "competitor_name": "string",
+          "core_promise": "what_they_claim",
+          "hook_type": "how_they_open",
+          "proof_strategy": "what_evidence_they_use",
+          "cta_approach": "how_they_ask",
+          "gaps_identified": ["opportunity_1", "opportunity_2"],
+          "differentiation_angle": "how_to_stand_out"
+        }
+      }
+    },
+    
+    "messaging_tools": {
+      "message_hierarchy_builder": {
+        "name": "6-Layer Message Architecture",
+        "description": "Structure persuasive message flow",
+        "layers": {
+          "layer_1_core_promise": {
+            "prompt": "What's the main transformation?",
+            "format": "One sentence, specific and desirable",
+            "criteria": ["specific", "measurable", "desirable", "believable"],
+            "example": "تعلم تكتب إعلانات تبيع في 30 يوم"
+          },
+          "layer_2_supporting_arguments": {
+            "prompt": "Why should they believe you?",
+            "format": "3 logical reasons with mechanisms",
+            "example": [
+              "لأن النظام مبني على دراسات سلوك المستهلك",
+              "لأن هتطبق على مشاريع حقيقية مش مجرد نظري",
+              "لأن فيه متابعة أسبوعية تضمن التطبيق"
+            ]
+          },
+          "layer_3_doubt_handling": {
+            "prompt": "What internal doubts will they have?",
+            "format": "Address unspoken concerns",
+            "example": "أنا عارف إنك بتقول 'أنا مش موهوب في الكتابة'. بس الحقيقة إن الموضوع مش موهبة، ده نظام"
+          },
+          "layer_4_objection_killers": {
+            "prompt": "What explicit barriers stop them?",
+            "format": "Direct responses to objections",
+            "examples": {
+              "price": "أقل من تمن خروجة واحدة، بس الفايدة تكملك سنين",
+              "time": "15 دقيقة يومياً بس، تقدر تطبق وأنت رايح جاي من الشغل",
+              "results": "ضمان: لو طبقت ومعملتش أول مشروع في 30 يوم، نرجعلك فلوسك"
+            }
+          },
+          "layer_5_social_reinforcement": {
+            "prompt": "Who else succeeded?",
+            "format": "Proof variety (numbers, stories, logos)",
+            "example": "أكتر من 500 كاتب محتوى حولوا مهاراتهم لمشاريع بفلوس حقيقية"
+          },
+          "layer_6_why_now_logic": {
+            "prompt": "Why not wait?",
+            "format": "Urgency without pressure",
+            "example": "كل شهر بيعدي بدون تطوير، منافسينك بيسبقوك خطوة. ابدأ دلوقتي"
+          }
+        }
+      },
+      
+      "sliding_door_script": {
+        "name": "Future Contrast Visualization",
+        "description": "Show two possible futures",
+        "template": {
+          "door_a_hell": {
+            "prompt": "Paint the negative future without your solution",
+            "structure": [
+              "Current pain continues",
+              "Problem worsens over time",
+              "Missed opportunities accumulate",
+              "Regret and frustration grow"
+            ],
+            "example": "لو فضلت تكتب بالطريقة القديمة، هتفضل تشتغل ساعات أكتر بفلوس أقل، والعملاء هيفضلوا يشوفوك 'مجرد كاتب' مش شريك نمو"
+          },
+          "door_b_heaven": {
+            "prompt": "Paint the positive future with your solution",
+            "structure": [
+              "Pain eliminated",
+              "Transformation achieved",
+              "New opportunities open",
+              "Pride and satisfaction experienced"
+            ],
+            "example": "لو اتعلمت النظام ده، هتبقى الشخص اللي العملاء بيترجوه يمسك مشاريعهم، وتقدر تضاعف أسعارك لأنك بتقدم قيمة حقيقية"
+          },
+          "gap_amplification": {
+            "prompt": "Make the contrast stark",
+            "technique": "Put doors side by side with 'vs' comparison",
+            "example": "الاختيار بسيط: يا إما تفضل في نفس المكان سنة تانية، يا إما تاخد القرار النهاردة وتشوف نفسك فين بعد 6 شهور"
+          }
+        }
+      },
+      
+      "proof_placement_map": {
+        "name": "Strategic Trust Building",
+        "description": "Where to place which proof type",
+        "placements": {
+          "hero_section": {
+            "proof_type": "Micro trust badge",
+            "examples": ["5000+ users", "4.9/5 rating", "Featured in"],
+            "purpose": "Quick credibility signal"
+          },
+          "after_promise": {
+            "proof_type": "Authority or statistics",
+            "examples": ["Based on research from", "92% reported improvement"],
+            "purpose": "Validate big claim"
+          },
+          "objection_section": {
+            "proof_type": "Guarantee or risk reversal",
+            "examples": ["30-day money back", "Cancel anytime"],
+            "purpose": "Reduce fear"
+          },
+          "before_cta": {
+            "proof_type": "Social proof stories",
+            "examples": ["Customer testimonials", "Case studies", "Video reviews"],
+            "purpose": "Final reassurance"
+          }
+        }
+      }
+    },
+    
+    "writing_tools": {
+      "framework_templates": {
+        "pas_template": {
+          "name": "Problem-Agitation-Solution",
+          "structure": {
+            "problem": "State the pain clearly (1-2 sentences)",
+            "agitation": "Make them feel it deeply (2-3 sentences)",
+            "solution": "Present your offer as relief (2-3 sentences + CTA)"
+          },
+          "example": {
+            "problem": "زهقت من فواتير الكهرباء اللي بتاكل ميزانية البيت كل شهر؟",
+            "agitation": "كل سنة الأسعار بتزيد، وأنت مش عارف تتحكم في الاستهلاك. الموضوع بقى ضغط نفسي ومادي كل آخر شهر.",
+            "solution": "نظام الطاقة الشمسية بتاعنا بيوفرلك 60% من الفاتورة من أول شهر. تركيب في يوم واحد، وتقسيط مريح. احجز المعاينة المجانية النهاردة."
+          }
+        },
+        
+        "bab_template": {
+          "name": "Before-After-Bridge",
+          "structure": {
+            "before": "Current struggle state (2-3 sentences)",
+            "after": "Desired end state (2-3 sentences)",
+            "bridge": "Your solution as the path (2-3 sentences + CTA)"
+          },
+          "example": {
+            "before": "قبل ما تتعلم الكوبي رايتنج الصح، كنت بتكتب إعلانات كتير ومبيحصلش تفاعل. كل حملة بتبقى تجربة حظ.",
+            "after": "تخيل إنك تعرف بالظبط إيه اللي يخلي العميل يدوس على 'اشتري'. تخيل كل إعلان تنزله يجيب مبيعات فعلية.",
+            "bridge": "الكورس ده هيديك النظام اللي يحول الكتابة من 'فن غامض' لـ 'علم مضمون'. 7 أيام بس وهتشوف الفرق. سجل مكانك دلوقتي."
+          }
+        },
+        
+        "hvc_template": {
+          "name": "Hook-Value-CTA",
+          "structure": {
+            "hook": "Stop the scroll (3-7 words)",
+            "value": "Quick benefit delivery (20-40 words)",
+            "cta": "Frictionless next step (5-8 words)"
+          },
+          "example": {
+            "hook": "بتضيع فلوس على إعلانات مبتجيبش نتيجة؟",
+            "value": "كل جنيه بتدفعه في الإعلانات لازم يرجعلك مضاعف. إحنا بنساعدك تكتب إعلانات بتبيع مش بس بتظهر.",
+            "cta": "احجز استشارة مجانية 15 دقيقة"
+          }
+        },
+        
+        "4ps_template": {
+          "name": "Picture-Promise-Prove-Push",
+          "structure": {
+            "picture": "Paint the vision (2-3 sentences)",
+            "promise": "Commit to outcome (1 sentence)",
+            "prove": "Stack evidence (3-5 proof points)",
+            "push": "Clear CTA (1-2 sentences)"
+          },
+          "example": {
+            "picture": "تخيل إنك صاحب مطعم، وقاعد في البيت، وشغال تتفرج على كل أوردر بيتعمل لحظة بلحظة من موبايلك. مفيش تلاعب في الكاشير، ومفيش هالك في المخزن.",
+            "promise": "نظامنا بيوفرلك 20% من التكاليف في أول 3 شهور.",
+            "prove": "✓ 200 مطعم بيستخدموه في مصر\n✓ تقييم 4.8/5\n✓ ضمان استرجاع لمدة شهر\n✓ دعم فني 24/7",
+            "push": "جرب النسخة التجريبية مجاناً لمدة 14 يوم. اضغط هنا."
+          }
+        }
+      },
+      
+      "tone_guide": {
+        "egyptian_dialect": {
+          "use_cases": ["B2C", "Youth brands", "Casual products"],
+          "characteristics": [
+            "Conversational and friendly",
+            "Direct and honest",
+            "Warm with humor when appropriate"
+          ],
+          "phrases_to_use": [
+            "يلا بينا",
+            "خد بالك",
+            "مش هتلاقي أحسن من كدة",
+            "انت كده كسبت",
+            "ده أقل حاجة تستاهلها"
+          ],
+          "phrases_to_avoid": [
+            "سيادتكم",
+            "يشرفنا",
+            "للغاية",
+            "حقاً"
+          ]
+        },
+        
+        "formal_arabic": {
+          "use_cases": ["B2B", "Professional services", "Luxury"],
+          "characteristics": [
+            "Respectful and professional",
+            "Clear and direct",
+            "Warm but not casual"
+          ],
+          "phrases_to_use": [
+            "نسعد بخدمتك",
+            "نقدم لك",
+            "الحل الأمثل",
+            "نضمن لك",
+            "نساعدك على"
+          ],
+          "phrases_to_avoid": [
+            "Too flowery language",
+            "Excessive formality",
+            "Passive voice overuse"
+          ]
+        },
+        
+        "english_conversational": {
+          "use_cases": ["International audience", "Tech products", "SaaS"],
+          "characteristics": [
+            "Clear and simple",
+            "Active voice",
+            "Benefit-focused"
+          ],
+          "phrases_to_use": [
+            "Here's what you get",
+            "It's simple",
+            "You'll love this",
+            "No catch, no hassle",
+            "Start now"
+          ],
+          "phrases_to_avoid": [
+            "Utilize instead of use",
+            "Leverage instead of use",
+            "Jargon without explanation",
+            "Corporate speak"
+          ]
+        }
+      },
+      
+      "headline_formulas": {
+        "how_to": {
+          "formula": "How to [Desired Outcome] without [Common Obstacle]",
+          "example": "إزاي تضاعف مبيعاتك من غير ما تزود budget الإعلانات"
+        },
+        "number": {
+          "formula": "[Number] Ways to [Achieve Result] in [Timeframe]",
+          "example": "7 خطوات تخليك تكتب إعلان يبيع في أقل من ساعة"
+        },
+        "question": {
+          "formula": "Are You [Negative Situation]?",
+          "example": "لسه بتدفع فلوس على إعلانات مبتجيبش نتيجة؟"
+        },
+        "secret": {
+          "formula": "The [Industry] Secret They Don't Want You to Know",
+          "example": "السر اللي شركات الإعلانات مش عايزاك تعرفه"
+        },
+        "mistake": {
+          "formula": "Stop [Mistake] Before It Costs You [Consequence]",
+          "example": "بطل تضيع فلوسك في إعلانات قبل ما تخسر عملاءك كلهم"
+        }
+      }
+    },
+    
+    "optimization_tools": {
+      "ab_test_planner": {
+        "name": "Variant Design System",
+        "description": "Structure meaningful split tests",
+        "template": {
+          "control": "Current/baseline version",
+          "hypothesis": "What you believe will improve conversion and why",
+          "variant_a": {
+            "change": "Specific element modified",
+            "rationale": "Psychological principle being tested",
+            "prediction": "Expected impact"
+          },
+          "success_metrics": ["primary_metric", "secondary_metrics"],
+          "minimum_sample": "100 conversions per variant",
+          "confidence_level": "95%"
+        },
+        "test_ideas": [
+          {
+            "element": "Headline",
+            "variants": ["Fear-based vs Desire-based", "Specific vs General", "Question vs Statement"]
+          },
+          {
+            "element": "CTA",
+            "variants": ["Action-focused vs Benefit-focused", "Button color", "Above vs below fold"]
+          },
+          {
+            "element": "Proof type",
+            "variants": ["Social vs Statistical", "Video vs Text testimonials", "Logo wall vs case study"]
+          },
+          {
+            "element": "Length",
+            "variants": ["Long-form vs Short-form", "Detailed vs Scannable"]
+          }
+        ]
+      },
+      
+      "conversion_audit_checklist": {
+        "name": "Copy Performance Diagnostic",
+        "description": "Identify what's working and what's not",
+        "categories": {
+          "clarity": {
+            "checks": [
+              "Can a 12-year-old understand the offer?",
+              "Is the main benefit stated in first 7 seconds?",
+              "Is the next step completely obvious?",
+              "Are there any confusing terms or jargon?"
+            ]
+          },
+          "relevance": {
+            "checks": [
+              "Does it speak directly to target persona?",
+              "Are pain points accurately reflected?",
+              "Is the promise aligned with audience desires?",
+              "Does it address their current situation?"
+            ]
+          },
+          "trust": {
+            "checks": [
+              "Is every claim backed by proof?",
+              "Are testimonials specific and credible?",
+              "Is there authority signaling?",
+              "Are guarantees clear and believable?"
+            ]
+          },
+          "motivation": {
+            "checks": [
+              "Is the transformation clearly painted?",
+              "Are benefits > features?",
+              "Is there emotional resonance?",
+              "Is urgency real and justified?"
+            ]
+          },
+          "friction": {
+            "checks": [
+              "Is the form too long?",
+              "Are there unnecessary steps?",
+              "Is mobile experience smooth?",
+              "Are objections addressed early?"
+            ]
+          }
+        }
+      },
+      
+      "readability_optimizer": {
+        "name": "Clarity Enhancement System",
+        "rules": {
+          "sentence_length": {
+            "target": "15-20 words average",
+            "max": "25 words",
+            "action": "Break long sentences into two"
+          },
+          "paragraph_length": {
+            "target": "2-3 lines on mobile",
+            "max": "4 lines",
+            "action": "Add line breaks"
+          },
+          "reading_level": {
+            "target": "Grade 6-8",
+            "tool": "Hemingway App or similar",
+            "action": "Replace complex words with simple alternatives"
+          },
+          "active_voice": {
+            "target": "80%+ active voice",
+            "action": "Convert passive constructions"
+          },
+          "formatting": {
+            "requirements": [
+              "Use bullet points for lists",
+              "Bold key benefits",
+              "Add white space generously",
+              "Use subheaders for scannability"
+            ]
+          }
+        }
+      }
+    },
+    
+    "quality_assurance_tools": {
+      "pre_publish_checklist": {
+        "name": "Final Quality Gate",
+        "sections": {
+          "copy_quality": [
+            "[ ] Clarity test passed (12-year-old understands)",
+            "[ ] No spelling or grammar errors",
+            "[ ] Tone consistent throughout",
+            "[ ] All claims verifiable",
+            "[ ] Active voice dominant"
+          ],
+          "psychological_effectiveness": [
+            "[ ] At least 3 cognitive biases leveraged",
+            "[ ] Emotional triggers present",
+            "[ ] Pain and desire both addressed",
+            "[ ] Objections preemptively handled",
+            "[ ] Social proof included"
+          ],
+          "structural_integrity": [
+            "[ ] Logical flow from hook to CTA",
+            "[ ] Message hierarchy clear",
+            "[ ] No friction points",
+            "[ ] Mobile-optimized",
+            "[ ] CTA impossible to miss"
+          ],
+          "platform_optimization": [
+            "[ ] Format matches platform norms",
+            "[ ] Length appropriate for context",
+            "[ ] Visual and copy aligned",
+            "[ ] Tracking properly set up"
+          ],
+          "compliance_ethics": [
+            "[ ] No false claims",
+            "[ ] Scarcity/urgency truthful",
+            "[ ] Disclaimers where needed",
+            "[ ] Privacy respected",
+            "[ ] Cultural sensitivity verified"
+          ]
+        }
+      },
+      
+      "7_second_test_protocol": {
+        "name": "Instant Comprehension Verification",
+        "procedure": [
+          "Show copy to someone unfamiliar with project",
+          "Give them 7 seconds to scan",
+          "Hide the copy",
+          "Ask: 'What was being offered?'",
+          "Ask: 'Who was it for?'",
+          "Ask: 'What's the main benefit?'",
+          "Ask: 'What would you do next?'"
+        ],
+        "pass_criteria": "Correct answers to at least 3 of 4 questions",
+        "fail_action": "Rewrite hero section and headline"
+      }
+    }
+  }
+}

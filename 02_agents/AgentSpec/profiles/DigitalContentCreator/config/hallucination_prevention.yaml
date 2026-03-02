@@ -1,0 +1,382 @@
+---
+# Anti-Hallucination Prevention Configuration
+# Prevents the agent from fabricating information in creative content
+
+version: "1.0.0"
+enabled: true
+description: "Strict safeguards to prevent hallucination while maintaining creativity"
+
+# ============================================================================
+# 1. FACT VERIFICATION LAYER
+# ============================================================================
+
+fact_verification:
+  enabled: true
+  description: "All factual claims must have evidence"
+  
+  requirements:
+    statistics:
+      evidence_required: true
+      minimum_tier: "tier_b"  # Tier A or B sources only
+      confirmations: 2
+      recency_days: 90
+      
+    brand_information:
+      evidence_required: true
+      minimum_tier: "tier_b"
+      verification_method: "official_sources"
+      sources:
+        - brand_website
+        - official_social_media
+        - press_releases
+        - verified_news
+        
+    product_claims:
+      evidence_required: true
+      minimum_tier: "tier_b"
+      verification_method: "documented_features"
+      sources:
+        - product_documentation
+        - official_specs
+        - verified_reviews
+        
+    competitive_claims:
+      evidence_required: true
+      minimum_tier: "tier_a"  # Highest standard
+      confirmations: 3
+      verification_method: "independent_sources"
+      
+    testimonials:
+      evidence_required: true
+      verification_method: "real_customer_only"
+      fabrication_forbidden: true
+
+# ============================================================================
+# 2. CREATIVE VS FACTUAL SEPARATION
+# ============================================================================
+
+content_classification:
+  enabled: true
+  description: "Clear boundaries between creative and factual content"
+  
+  creative_content:
+    description: "Content where creativity is primary"
+    allowed:
+      - storytelling
+      - metaphors
+      - analogies
+      - humor
+      - emotional_language
+      - hypothetical_scenarios
+      - creative_descriptions
+    labeling_required: true
+    
+  factual_content:
+    description: "Content requiring verification"
+    includes:
+      - statistics
+      - data_points
+      - product_features
+      - specifications
+      - prices
+      - availability
+      - performance_metrics
+      - competitive_comparisons
+      - awards_recognition
+      - certifications
+    verification_required: true
+    
+  mixed_content:
+    description: "Content combining creative and factual"
+    rules:
+      - clearly_separate_creative_from_factual
+      - verify_all_factual_elements
+      - label_creative_elements
+      - never_present_creative_as_factual
+
+# ============================================================================
+# 3. FORBIDDEN FABRICATIONS
+# ============================================================================
+
+forbidden_fabrications:
+  enabled: true
+  description: "Absolute prohibitions - never fabricate these"
+  
+  prohibited:
+    - type: "invented_statistics"
+      severity: "critical"
+      examples:
+        - "85% of customers love this"
+        - "Sales increased by 200%"
+        - "Ranked #1 in Egypt"
+      
+    - type: "fake_testimonials"
+      severity: "critical"
+      examples:
+        - "Ahmed from Cairo says..."
+        - "Our customers report..."
+        - "Users have experienced..."
+        
+    - type: "fabricated_features"
+      severity: "critical"
+      examples:
+        - "Now with AI technology"
+        - "Clinically proven"
+        - "Award-winning formula"
+        
+    - type: "false_competitive_claims"
+      severity: "critical"
+      examples:
+        - "Better than competitor X"
+        - "Only brand that..."
+        - "First in the market"
+        
+    - type: "invented_awards"
+      severity: "critical"
+      examples:
+        - "Winner of Best Product 2025"
+        - "Certified by..."
+        - "Recommended by experts"
+        
+    - type: "fabricated_social_proof"
+      severity: "critical"
+      examples:
+        - "10,000+ satisfied customers"
+        - "Trusted by leading brands"
+        - "Featured in major media"
+
+# ============================================================================
+# 4. UNCERTAINTY ACKNOWLEDGMENT
+# ============================================================================
+
+uncertainty_handling:
+  enabled: true
+  description: "How to handle uncertainty and missing information"
+  
+  when_unsure:
+    action: "ask_user"
+    template: "I don't have verified information about [topic]. Could you provide details or should I research this?"
+    never_guess: true
+    
+  when_no_evidence:
+    action: "state_assumption"
+    template: "Based on general industry patterns (not specific data), [assumption]. Please confirm if this aligns with your knowledge."
+    label_as_assumption: true
+    
+  when_outdated:
+    action: "note_date"
+    template: "According to [source] from [date], [information]. This may have changed - please verify if current."
+    recency_threshold_days: 90
+    
+  when_creative:
+    action: "label_clearly"
+    template: "Creative suggestion: [content]. This is a creative approach, not based on specific data."
+    distinguish_from_factual: true
+
+# ============================================================================
+# 5. VERIFICATION CHECKPOINTS
+# ============================================================================
+
+verification_checkpoints:
+  enabled: true
+  description: "When to verify facts during content creation"
+  
+  before_creation:
+    stage: "research_grounding"
+    actions:
+      - verify_brand_information
+      - check_product_features
+      - validate_statistics
+      - confirm_claims
+    required: true
+    
+  during_creation:
+    stage: "content_creation"
+    actions:
+      - flag_unverified_claims
+      - mark_creative_vs_factual
+      - document_sources
+    continuous: true
+    
+  after_creation:
+    stage: "quality_assurance"
+    actions:
+      - run_fact_checking_gate
+      - verify_all_claims
+      - validate_sources
+      - confirm_no_fabrications
+    required: true
+    blocking: true  # Cannot proceed if fails
+
+# ============================================================================
+# 6. EVIDENCE REQUIREMENTS BY CLAIM TYPE
+# ============================================================================
+
+claim_type_requirements:
+  
+  critical_claims:
+    description: "Claims that could mislead or harm"
+    examples:
+      - health_benefits
+      - safety_claims
+      - legal_compliance
+      - performance_guarantees
+    requirements:
+      minimum_tier: "tier_a"
+      confirmations: 3
+      recency_days: 30
+      expert_validation: true
+      
+  best_practices:
+    description: "Industry best practices and recommendations"
+    examples:
+      - usage_recommendations
+      - optimization_tips
+      - strategy_suggestions
+    requirements:
+      minimum_tier: "tier_b"
+      confirmations: 2
+      recency_days: 90
+      
+  creative_approaches:
+    description: "Creative ideas and suggestions"
+    examples:
+      - content_ideas
+      - creative_concepts
+      - storytelling_approaches
+    requirements:
+      minimum_tier: "tier_c"
+      confirmations: 1
+      label_as_creative: true
+
+# ============================================================================
+# 7. EGYPTIAN MARKET SPECIFIC
+# ============================================================================
+
+egyptian_market_verification:
+  enabled: true
+  description: "Special considerations for Egyptian market"
+  
+  local_data:
+    requirement: "verify_egyptian_specific_claims"
+    sources:
+      - egyptian_market_research
+      - local_statistics
+      - egyptian_media
+      - local_expert_insights
+    never_generalize_from_global: true
+    
+  dialect_content:
+    requirement: "verify_cultural_appropriateness"
+    validation:
+      - check_slang_accuracy
+      - verify_cultural_references
+      - confirm_humor_appropriateness
+    ask_native_speaker_if_unsure: true
+    
+  local_brands:
+    requirement: "verify_egyptian_brand_info"
+    sources:
+      - brand_official_channels
+      - egyptian_business_directories
+      - local_news
+    never_assume_features: true
+
+# ============================================================================
+# 8. CREATIVE CONTENT SAFEGUARDS
+# ============================================================================
+
+creative_safeguards:
+  enabled: true
+  description: "Maintain creativity while preventing fabrication"
+  
+  storytelling:
+    allowed: true
+    requirements:
+      - label_as_creative_story
+      - dont_present_as_real_testimonial
+      - avoid_specific_false_claims
+      
+  metaphors_analogies:
+    allowed: true
+    requirements:
+      - clearly_metaphorical
+      - dont_imply_literal_truth
+      
+  humor:
+    allowed: true
+    requirements:
+      - dont_fabricate_facts_for_humor
+      - exaggeration_must_be_obvious
+      - satire_must_be_clear
+      
+  hypothetical_scenarios:
+    allowed: true
+    requirements:
+      - label_as_hypothetical
+      - use_conditional_language
+      - dont_present_as_prediction
+
+# ============================================================================
+# 9. VIOLATION HANDLING
+# ============================================================================
+
+violation_handling:
+  
+  detection:
+    automated_checks:
+      - scan_for_statistics_without_sources
+      - flag_testimonial_language
+      - detect_superlative_claims
+      - identify_competitive_claims
+      
+  response:
+    on_violation_detected:
+      action: "block_and_flag"
+      message: "Potential fabrication detected. Please verify or remove: [claim]"
+      require_user_confirmation: true
+      
+  correction:
+    options:
+      - provide_evidence
+      - rephrase_as_creative
+      - remove_claim
+      - ask_user_for_information
+
+# ============================================================================
+# 10. QUALITY GATE INTEGRATION
+# ============================================================================
+
+quality_gate_integration:
+  
+  evidence_gate:
+    enabled: true
+    priority: "critical"
+    checks:
+      - all_factual_claims_verified
+      - no_forbidden_fabrications
+      - sources_documented
+      - creative_vs_factual_separated
+    failure_action: "block_delivery"
+    
+  fact_checking_gate:
+    enabled: true
+    priority: "critical"
+    workflow: "workflows/fact_checking_workflow.md"
+    required_before_delivery: true
+
+# ============================================================================
+# NOTES
+# ============================================================================
+
+notes: |
+  This configuration ensures that creative capabilities do not compromise
+  factual accuracy. The agent can be creative in execution while remaining
+  grounded in verified information.
+  
+  Key Principles:
+  1. Creativity in HOW, not WHAT (facts)
+  2. Clear separation of creative and factual
+  3. When in doubt, ask user
+  4. Never fabricate to fill gaps
+  5. Label creative content clearly

@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gem-dmm-agent-pack/schemas/intake_schema.json",
+  "title": "Marketing Intake Schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "_meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": { "type": "string", "const": "1.0.0" },
+        "created_at": { "type": "string", "format": "date" }
+      },
+      "required": ["schema_version", "created_at"]
+    },
+    "business": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "company_name": {
+          "type": "string",
+          "description": "Optional. Avoid sensitive data. Use a public brand name only.",
+          "minLength": 1
+        },
+        "business_model": {
+          "type": "string",
+          "enum": ["b2b_saas", "b2c_ecommerce", "marketplace", "local_services", "media", "other"]
+        },
+        "industry": { "type": "string", "minLength": 1 },
+        "geographies": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 2 },
+          "minItems": 1
+        },
+        "languages": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 2 },
+          "minItems": 1
+        }
+      },
+      "required": ["business_model", "industry", "geographies", "languages"]
+    },
+    "product": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value_proposition_one_liner": { "type": "string", "minLength": 10 },
+        "pricing_model": {
+          "type": "string",
+          "enum": ["subscription", "one_time", "usage_based", "freemium", "hybrid", "unknown"]
+        },
+        "average_order_value_or_acv_range": {
+          "type": "string",
+          "description": "Use a range, e.g. '$200-$500' or '$5k-$20k'.",
+          "minLength": 1
+        },
+        "gross_margin_range": {
+          "type": "string",
+          "description": "Range, e.g. '40-60%'.",
+          "minLength": 1
+        }
+      },
+      "required": ["value_proposition_one_liner", "pricing_model"]
+    },
+    "goals": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "primary_goal": {
+          "type": "string",
+          "enum": ["revenue", "qualified_leads", "trials", "activated_users", "repeat_purchases", "awareness", "retention", "other"]
+        },
+        "primary_success_metric": { "type": "string", "minLength": 1 },
+        "time_horizon_days": { "type": "integer", "minimum": 7, "maximum": 365 }
+      },
+      "required": ["primary_goal", "primary_success_metric", "time_horizon_days"]
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "monthly_budget_range": { "type": "string", "minLength": 1 },
+        "team_capacity_hours_per_week": { "type": "integer", "minimum": 0, "maximum": 500 },
+        "must_use_tools": { "type": "array", "items": { "type": "string" } },
+        "cannot_use_channels": { "type": "array", "items": { "type": "string" } },
+        "compliance_notes": { "type": "string" }
+      },
+      "required": ["monthly_budget_range"]
+    },
+    "regional_focus": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "primary_country": { "type": "string", "minLength": 2 },
+        "secondary_countries": { "type": "array", "items": { "type": "string" } },
+        "primary_city": { "type": "string" },
+        "currency": { "type": "string", "minLength": 3 },
+        "seasonality_notes": { "type": "string" }
+      }
+    },
+    "current_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "active_channels": { "type": "array", "items": { "type": "string" } },
+        "tracking_stack": { "type": "array", "items": { "type": "string" } },
+        "kpis_known_ranges": {
+          "type": "object",
+          "additionalProperties": { "type": "string" },
+          "description": "Map KPI name -> range string, e.g. {\"CVR\":\"1.2-2.1%\"}."
+        }
+      }
+    }
+  },
+  "required": ["_meta", "business", "product", "goals", "constraints"]
+}

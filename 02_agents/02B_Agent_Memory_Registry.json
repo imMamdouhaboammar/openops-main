@@ -1,0 +1,159 @@
+{
+  "memory_registry": {
+    "version": "2.0.0",
+    "type": "memory_bus_configuration",
+    "description": "Defines the agent memory hierarchy, persistence layers, and context exchange protocols across OpenOps Orchestration Engine.",
+    "author": "OpenOps Studio | Created by Mamdouh Aboammar",
+    "governance": {
+      "supervised_by": "SupervisorAgent",
+      "approved_by": "StaffEngineer",
+      "compliance_with": [
+        "06_Security_Compliance_and_Privacy_Gates.md",
+        "00B_OpenOps_Audit_and_Decision_Ledger.json"
+      ]
+    },
+
+    "memory_layers": {
+      "short_term_memory": {
+        "scope": "session",
+        "storage_engine": "in_memory_cache",
+        "retention": "until_round_exit",
+        "encryption": "AES-256",
+        "purpose": "Temporarily hold conversation context, tool outputs, and transient reasoning data."
+      },
+      "working_memory": {
+        "scope": "round",
+        "storage_engine": "Redis",
+        "retention": "until_handoff",
+        "compression": "gzip",
+        "purpose": "Stores intermediate results, research findings, and evaluation feedback during a round."
+      },
+      "long_term_memory": {
+        "scope": "system",
+        "storage_engine": "VectorDB (e.g., Pinecone, FAISS, or Chroma)",
+        "embedding_model": "OpenOpsEmbed-v2",
+        "retention": "persistent",
+        "indexing_strategy": "semantic + contextual hash",
+        "purpose": "Holds summarized knowledge, previous decisions, and reusable insights for retrieval-augmented reasoning."
+      },
+      "audit_memory": {
+        "scope": "governance",
+        "storage_engine": "EncryptedJSONL",
+        "retention": "365_days",
+        "append_only": true,
+        "purpose": "Immutable log storage for memory access, QA results, and recovery operations."
+      }
+    },
+
+    "memory_objects_schema": {
+      "memory_id": "uuid",
+      "agent": "string",
+      "round": "Plan | Blueprint | Detail | QA | Handoff",
+      "layer": "short_term | working | long_term | audit",
+      "timestamp": "ISO-8601",
+      "source": "agent_action | external_data | user_input",
+      "content_type": "text | vector | metadata | mixed",
+      "content_ref": "hash_reference or base64_chunk",
+      "confidence": "0.0 - 1.0",
+      "context_tags": ["topic", "subtopic", "intent", "decision_id"],
+      "security_level": "public | internal | confidential | sensitive"
+    },
+
+    "exchange_protocols": {
+      "read_policy": {
+        "SupervisorAgent": "all_layers",
+        "WorkerAgents": ["short_term", "working"],
+        "EvaluatorAgent": ["working", "audit"],
+        "QAOrchestrator": "all_layers",
+        "SecurityLead": ["audit"],
+        "ComplianceMonitor": ["audit"]
+      },
+      "write_policy": {
+        "SupervisorAgent": "all_layers",
+        "WorkerAgents": ["short_term", "working"],
+        "EvaluatorAgent": ["working"],
+        "SynthesizerAgent": ["working"],
+        "RedTeamAgent": ["working"],
+        "System": ["audit"]
+      },
+      "exchange_modes": [
+        "direct_memory_bus",
+        "context_link_reference",
+        "semantic_query_embedding"
+      ]
+    },
+
+    "memory_indexing": {
+      "index_name": "openops_agent_memory_index",
+      "embedding_dim": 1536,
+      "similarity_metric": "cosine",
+      "contextual_hashing": true,
+      "batch_ingest_size": 64,
+      "deduplication_policy": "semantic_hash + checksum"
+    },
+
+    "context_management": {
+      "snapshot_interval": "per_round_exit",
+      "snapshot_storage_path": "/openops/runtime/memory_snapshots/",
+      "snapshot_format": "json.gz",
+      "snapshot_encryption": "AES-256-GCM",
+      "restore_policy": "auto_on_failure",
+      "validation_on_restore": "checksum + embedding_consistency"
+    },
+
+    "memory_cleanup": {
+      "pruning_policy": "least_recently_used",
+      "cleanup_interval_hours": 6,
+      "exclude_layers": ["audit", "long_term"],
+      "post_cleanup_hook": "AuditLedger.log_memory_prune"
+    },
+
+    "integration_points": {
+      "upstream": ["ExecutionContextManager"],
+      "downstream": [
+        "DeepResearchEngine",
+        "AgentParallelismPatterns",
+        "QAOrchestrator",
+        "FailureRecoveryManager",
+        "AuditAndDecisionLedger"
+      ],
+      "dependencies": ["RiskAndFailurePlaybook", "SecurityAndPrivacyGates"]
+    },
+
+    "security_rules": {
+      "classification": "internal_confidential",
+      "encryption_at_rest": true,
+      "encryption_in_transit": true,
+      "checksum_verification": true,
+      "access_audit_logging": true,
+      "tamper_protection": "append_only_mode"
+    },
+
+    "analytics_and_metrics": {
+      "track_memory_usage": true,
+      "metrics_collected": [
+        "total_memory_objects",
+        "avg_context_retrieval_time_ms",
+        "embedding_index_size",
+        "cache_hit_rate",
+        "cleanup_events"
+      ],
+      "reporting_interval_minutes": 30,
+      "metrics_output_path": "/openops/analytics/memory_metrics.json"
+    },
+
+    "example_memory_entry": {
+      "memory_id": "mem_2025_12_16_001",
+      "agent": "PlannerAgent",
+      "round": "Blueprint",
+      "layer": "working",
+      "timestamp": "2025-12-16T15:30:00Z",
+      "source": "agent_action",
+      "content_type": "text",
+      "content_ref": "hash_91ac77b32f2",
+      "confidence": 0.89,
+      "context_tags": ["research", "TTD-DR", "subtopic_2"],
+      "security_level": "internal"
+    }
+  }
+}

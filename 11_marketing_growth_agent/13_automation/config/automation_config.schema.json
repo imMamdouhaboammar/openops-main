@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "openops://11_marketing_growth_agent/13_automation/config/automation_config.schema.json",
+  "title": "Automation Config (Supervisor Runtime)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "ssot", "connectors", "observability"],
+  "properties": {
+    "schemaVersion": { "type": "string", "examples": ["1.0.0"] },
+    "ssot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["root"],
+      "properties": {
+        "root": { "type": "string", "description": "SSOT root folder (filesystem mode)." }
+      }
+    },
+    "connectors": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tasks", "messaging", "files"],
+      "properties": {
+        "tasks": { "$ref": "openops://11_marketing_growth_agent/13_automation/connectors/connector_config.schema.json" },
+        "messaging": { "$ref": "openops://11_marketing_growth_agent/13_automation/connectors/connector_config.schema.json" },
+        "files": { "$ref": "openops://11_marketing_growth_agent/13_automation/connectors/connector_config.schema.json" }
+      }
+    },
+    "observability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled", "tracePath"],
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "tracePath": { "type": "string", "description": "Where to append trace events (JSONL)." }
+      }
+    }
+  }
+}
+

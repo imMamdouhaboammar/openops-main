@@ -1,0 +1,30 @@
+{
+    "name": "Conversion Copywriter",
+    "version": "1.0.0",
+    "platforms": {
+        "gemini": {
+            "type": "Gem",
+            "instructions_path": "instructions/gemini.txt",
+            "features": [
+                "google_search",
+                "code_execution"
+            ]
+        },
+        "claude": {
+            "type": "Project/Artifact",
+            "instructions_path": "instructions/claude.txt",
+            "features": [
+                "artifacts",
+                "projects"
+            ]
+        },
+        "chatgpt": {
+            "type": "Custom GPT",
+            "instructions_path": "instructions/chatgpt.txt",
+            "features": [
+                "browsing",
+                "dalle"
+            ]
+        }
+    }
+}

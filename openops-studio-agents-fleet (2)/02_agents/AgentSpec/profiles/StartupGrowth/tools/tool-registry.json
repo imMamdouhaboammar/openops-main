@@ -1,0 +1,243 @@
+{
+    "internal_tools": [
+        {
+            "id": "stage-diagnostic-engine",
+            "name": "Stage Diagnostic Engine",
+            "category": "assessment",
+            "description": "Analyzes startup metrics, team, and capabilities to determine current stage and readiness score",
+            "inputs": {
+                "required": [
+                    "mrr_or_arr",
+                    "team_size",
+                    "customer_count",
+                    "funding_raised"
+                ],
+                "optional": [
+                    "cac",
+                    "ltv",
+                    "churn_rate",
+                    "nps",
+                    "burn_rate"
+                ]
+            },
+            "outputs": {
+                "current_stage": "One of: Pre-Seed, Seed, Series A, Series B, Series B+",
+                "readiness_score": "0-100 score for next stage progression",
+                "gap_analysis": "List of missing critical elements",
+                "percentile_ranking": "Percentile vs. stage cohort"
+            },
+            "accuracy_target": "90%+",
+            "usage": "Every initial assessment, quarterly reviews"
+        },
+        {
+            "id": "priority-calculator",
+            "name": "Priority Calculator",
+            "category": "planning",
+            "description": "Generates stage-appropriate priority matrix (Do Now / Plan / Delegate / Eliminate)",
+            "inputs": {
+                "current_stage": "From diagnostic engine",
+                "objectives": "User-defined goals (e.g., 'raise Series A in 6 months')",
+                "constraints": "Budget, team size, runway",
+                "market_context": "Saudi/GCC or Egypt"
+            },
+            "outputs": {
+                "priority_matrix": "4-quadrant matrix with specific actions",
+                "sequenced_roadmap": "Ordered list of priorities",
+                "resource_allocation": "Budget/time distribution"
+            },
+            "usage": "Quarterly planning, major pivots"
+        },
+        {
+            "id": "playbook-generator",
+            "name": "90-Day Playbook Generator",
+            "category": "execution",
+            "description": "Creates customized execution plans based on stage, industry, market",
+            "inputs": {
+                "stage": "Current startup stage",
+                "industry": "E.g., SaaS, E-commerce, Fintech",
+                "market": "Saudi/GCC, Egypt, MENA-wide",
+                "focus_areas": "1-3 priority elements from UpgradIQ Table"
+            },
+            "outputs": {
+                "playbook_document": "Comprehensive 90-day plan",
+                "weekly_checklists": "12 weekly task lists",
+                "success_metrics": "KPIs to track",
+                "pitfalls_guide": "Common mistakes to avoid"
+            },
+            "adoption_target": "75%+ of recommendations implemented",
+            "usage": "Start of each quarter"
+        },
+        {
+            "id": "investor-readiness-scorecard",
+            "name": "Investor Readiness Scorecard",
+            "category": "fundraising",
+            "description": "Evaluates fundraising preparation across Metrics, Story, Process dimensions",
+            "inputs": {
+                "financial_metrics": "MRR, growth rate, unit economics",
+                "story_elements": "Problem/solution clarity, team, vision",
+                "process_status": "Data room, financials, legal docs"
+            },
+            "outputs": {
+                "overall_score": "1-10 readiness score",
+                "dimension_breakdown": "Metrics (40%), Story (30%), Process (30%)",
+                "improvement_roadmap": "Specific actions to increase score",
+                "fundraising_probability": "Success likelihood estimation"
+            },
+            "success_correlation": "60%+ success rate when score >7",
+            "usage": "Pre-fundraise (3-6 months before)"
+        },
+        {
+            "id": "benchmark-comparator",
+            "name": "Benchmark Comparator",
+            "category": "analysis",
+            "description": "Compares startup metrics against stage cohort and provides percentile rankings",
+            "inputs": {
+                "startup_metrics": "All available metrics",
+                "stage": "Current stage",
+                "market": "MENA or global comparison"
+            },
+            "outputs": {
+                "percentile_rankings": "By metric (e.g., 75th percentile growth)",
+                "gap_to_top_quartile": "What it takes to reach top 25%",
+                "market_contextualized": "MENA vs. global benchmarks"
+            },
+            "data_sources": [
+                "SaaS Capital benchmarks",
+                "OpenView",
+                "MAGNiTT (MENA)"
+            ],
+            "usage": "Monthly/quarterly metric reviews"
+        }
+    ],
+    "external_integrations": {
+        "market_data": [
+            {
+                "provider": "CB Insights",
+                "data_type": "Funding rounds, valuations, market trends",
+                "coverage": "Global + MENA subset",
+                "api_available": true
+            },
+            {
+                "provider": "PitchBook",
+                "data_type": "VC data, exit multiples, benchmarks",
+                "coverage": "Global",
+                "api_available": true
+            },
+            {
+                "provider": "Crunchbase",
+                "data_type": "Company profiles, funding, team",
+                "coverage": "Global",
+                "api_available": true
+            },
+            {
+                "provider": "MAGNiTT",
+                "data_type": "MENA startup ecosystem data",
+                "coverage": "MENA-focused",
+                "api_available": "Limited"
+            },
+            {
+                "provider": "Wamda",
+                "data_type": "MENA ecosystem insights, case studies",
+                "coverage": "MENA",
+                "api_available": false
+            }
+        ],
+        "benchmark_sources": [
+            {
+                "provider": "SaaS Capital",
+                "benchmark_type": "SaaS metrics (MRR, churn, CAC, LTV)",
+                "update_frequency": "Annual",
+                "url": "https://www.saas-capital.com/research/"
+            },
+            {
+                "provider": "OpenView",
+                "benchmark_type": "SaaS expansion metrics",
+                "update_frequency": "Annual",
+                "url": "https://openviewpartners.com/benchmarks/"
+            },
+            {
+                "provider": "KeyBanc",
+                "benchmark_type": "Private SaaS company survey",
+                "update_frequency": "Bi-annual"
+            }
+        ],
+        "analytics_platforms": [
+            {
+                "platform": "Mixpanel",
+                "integration_type": "Product analytics data pull",
+                "use_case": "User behavior, activation, retention"
+            },
+            {
+                "platform": "Amplitude",
+                "integration_type": "Product analytics",
+                "use_case": "Cohort analysis, feature adoption"
+            },
+            {
+                "platform": "Google Analytics",
+                "integration_type": "Web analytics",
+                "use_case": "Traffic, conversion funnels"
+            },
+            {
+                "platform": "ChartMogul",
+                "integration_type": "Subscription analytics",
+                "use_case": "MRR, churn, LTV analysis"
+            }
+        ],
+        "financial_systems": [
+            {
+                "platform": "Stripe",
+                "integration_type": "Payment data",
+                "use_case": "Revenue, customer payment behavior"
+            },
+            {
+                "platform": "QuickBooks",
+                "integration_type": "Accounting data",
+                "use_case": "P&L, burn rate, runway"
+            },
+            {
+                "platform": "Xero",
+                "integration_type": "Accounting alternative",
+                "use_case": "Financial reporting"
+            }
+        ],
+        "crm_systems": [
+            {
+                "platform": "Salesforce",
+                "integration_type": "Sales data",
+                "use_case": "Pipeline, deal velocity, win rates"
+            },
+            {
+                "platform": "HubSpot",
+                "integration_type": "CRM + Marketing",
+                "use_case": "Lead flow, conversion rates"
+            },
+            {
+                "platform": "Pipedrive",
+                "integration_type": "Sales CRM (SMB)",
+                "use_case": "Sales pipeline management"
+            }
+        ]
+    },
+    "future_tools": {
+        "planned": [
+            {
+                "id": "scenario-modeler",
+                "description": "Model different growth/burn scenarios and their impact on runway and fundraising needs",
+                "priority": "High",
+                "estimated_development": "Q2 2026"
+            },
+            {
+                "id": "competitive-intelligence",
+                "description": "Automated tracking of competitor funding, product launches, hiring",
+                "priority": "Medium",
+                "estimated_development": "Q3 2026"
+            },
+            {
+                "id": "investor-matcher",
+                "description": "Match startup profile with investor thesis database for targeted outreach",
+                "priority": "High",
+                "estimated_development": "Q2 2026"
+            }
+        ]
+    }
+}

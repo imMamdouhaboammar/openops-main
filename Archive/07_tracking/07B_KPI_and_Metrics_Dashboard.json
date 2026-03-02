@@ -1,0 +1,59 @@
+{
+  "module": {
+    "name": "KPI_and_Metrics_Dashboard",
+    "version": "2.0.0",
+    "layer": "07_tracking",
+    "code": "07B",
+    "description": "Key performance indicators, metrics definitions, and dashboard configurations",
+    "author": "OpenOps Foundation",
+    "created": "2025-12-16T00:00:00Z"
+  },
+  "governance": {
+    "compliance_level": "standard",
+    "requires_approval": false,
+    "audit_level": "minimal",
+    "data_classification": "internal"
+  },
+  "objectives": [
+    "Define core KPIs",
+    "Monitor system health",
+    "Track business metrics",
+    "Enable data-driven decisions"
+  ],
+  "integration_points": {
+    "imports_from": ["07A_Analytics_Event_Schema.json", "03B_ProductTracker_and_Roadmap.json"],
+    "exports_to": ["00B_OpenOps_Audit_and_Decision_Ledger.json"]
+  },
+  "kpi_definitions": {
+    "agent_efficiency": {
+      "metric": "tasks_completed_per_hour",
+      "target": 12,
+      "threshold_warning": 8,
+      "threshold_critical": 5
+    },
+    "task_success_rate": {
+      "metric": "completed_tasks / total_tasks",
+      "target": 0.95,
+      "threshold_warning": 0.90,
+      "threshold_critical": 0.85
+    },
+    "system_uptime": {
+      "metric": "uptime_percentage",
+      "target": 0.9999,
+      "threshold_warning": 0.999,
+      "threshold_critical": 0.99
+    },
+    "response_latency_p95": {
+      "metric": "95th_percentile_response_time_ms",
+      "target": 200,
+      "threshold_warning": 500,
+      "threshold_critical": 1000
+    }
+  },
+  "dashboard_layouts": {
+    "executive": ["task_success_rate", "agent_efficiency", "system_uptime"],
+    "operations": ["response_latency_p95", "error_rate", "resource_utilization"],
+    "product": ["feature_adoption", "user_satisfaction", "churn_rate"]
+  },
+  "version_history": {"2.0.0": {"date": "2025-12-16", "changes": "Initial KPI dashboard"}}
+}

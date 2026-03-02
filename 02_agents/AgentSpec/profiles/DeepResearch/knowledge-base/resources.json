@@ -1,0 +1,325 @@
+{
+    "frameworks": {
+        "ttd_dr": {
+            "name": "Time-Tested Diffusion Deep Research",
+            "version": "2.0",
+            "description": "Human-like iterative research with denoising and self-correction",
+            "local_reference": "/DeepResearchEngine.json",
+            "stages": 8,
+            "key_innovation": "Diffusion-based denoising for bias and noise removal"
+        },
+        "craap_test": {
+            "name": "CRAAP Test",
+            "criteria": [
+                "Currency",
+                "Relevance",
+                "Authority",
+                "Accuracy",
+                "Purpose"
+            ],
+            "usage": "Source evaluation framework"
+        },
+        "sift_method": {
+            "name": "SIFT",
+            "steps": [
+                "Stop",
+                "Investigate source",
+                "Find better coverage",
+                "Trace claims"
+            ],
+            "usage": "Lateral reading for source verification"
+        },
+        "toulmin_model": {
+            "name": "Toulmin Model of Argumentation",
+            "components": [
+                "Claim",
+                "Grounds",
+                "Warrant",
+                "Backing",
+                "Qualifier",
+                "Rebuttal"
+            ],
+            "usage": "Argument structure analysis"
+        }
+    },
+    "evidence_levels": {
+        "A": {
+            "name": "Strong Evidence",
+            "characteristics": [
+                "Official documentation",
+                "Verified benchmarks",
+                "Multiple independent sources (≥3)",
+                "Real production case studies",
+                "Peer-reviewed research"
+            ],
+            "examples": [
+                "Vendor technical docs",
+                "Public incident post-mortems",
+                "IEEE/ACM publications"
+            ],
+            "decision_authority": "Can drive major decisions"
+        },
+        "B": {
+            "name": "Moderate Evidence",
+            "characteristics": [
+                "Expert analysis",
+                "Single credible source",
+                "Recent but limited data",
+                "Industry reports"
+            ],
+            "examples": [
+                "Gartner/Forrester reports",
+                "Conference presentations",
+                "Expert interviews"
+            ],
+            "decision_authority": "Can inform decisions with acknowledgement"
+        },
+        "C": {
+            "name": "Weak Signals",
+            "characteristics": [
+                "Anecdotal evidence",
+                "Early trends",
+                "Unverified claims",
+                "Social media discussions"
+            ],
+            "examples": [
+                "Twitter/Reddit discussions",
+                "Early product announcements",
+                "Personal opinions"
+            ],
+            "decision_authority": "Exploration only, requires validation"
+        }
+    },
+    "source_credibility": {
+        "factors": {
+            "author_expertise": {
+                "weight": 0.25,
+                "evaluation": "Verified credentials, track record, domain authority"
+            },
+            "publication_quality": {
+                "weight": 0.25,
+                "evaluation": "Peer review, editorial standards, reputation"
+            },
+            "recency": {
+                "weight": 0.20,
+                "evaluation": "Publication date vs. topic lifespan"
+            },
+            "conflict_of_interest": {
+                "weight": 0.15,
+                "evaluation": "Disclosed, potential, or none"
+            },
+            "corroboration": {
+                "weight": 0.15,
+                "evaluation": "Confirmed by other sources"
+            }
+        },
+        "penalties": {
+            "anonymous_source": -0.25,
+            "promotional_content": -0.30,
+            "outdated": -0.20
+        }
+    },
+    "search_sources": {
+        "web": {
+            "general": [
+                "Google Custom Search",
+                "Bing Search API",
+                "DuckDuckGo"
+            ],
+            "specialized": [
+                "Reddit",
+                "Hacker News",
+                "Stack Overflow"
+            ]
+        },
+        "academic": {
+            "primary": [
+                "Google Scholar",
+                "Semantic Scholar"
+            ],
+            "preprints": [
+                "arXiv",
+                "SSRN",
+                "bioRxiv"
+            ],
+            "databases": [
+                "IEEE Xplore",
+                "ACM Digital Library",
+                "PubMed"
+            ]
+        },
+        "industry": {
+            "tech": [
+                "ProductHunt",
+                "GitHub",
+                "TechCrunch"
+            ],
+            "business": [
+                "Crunchbase",
+                "PitchBook",
+                "LinkedIn"
+            ],
+            "market": [
+                "Statista",
+                "Grand View Research",
+                "IBISWorld"
+            ]
+        },
+        "news": {
+            "general": [
+                "NewsAPI",
+                "Google News"
+            ],
+            "tech": [
+                "The Verge",
+                "Wired",
+                "Ars Technica"
+            ],
+            "business": [
+                "Bloomberg",
+                "Reuters",
+                "Financial Times"
+            ]
+        },
+        "mena": {
+            "news": [
+                "Al-Monitor",
+                "Gulf News",
+                "Ahram Online",
+                "Arab News"
+            ],
+            "business": [
+                "MAGNiTT",
+                "Wamda"
+            ],
+            "government": [
+                "Saudi Vision 2030",
+                "UAE Government",
+                "Egypt Digital"
+            ]
+        }
+    },
+    "rag_techniques": {
+        "retrieval_methods": {
+            "sparse": {
+                "algorithms": [
+                    "BM25",
+                    "TF-IDF"
+                ],
+                "use_case": "Exact term matching, technical terms"
+            },
+            "dense": {
+                "algorithms": [
+                    "Sentence transformers",
+                    "OpenAI embeddings"
+                ],
+                "use_case": "Semantic similarity, paraphrases"
+            },
+            "graph": {
+                "algorithms": [
+                    "Knowledge graph traversal",
+                    "Entity linking"
+                ],
+                "use_case": "Entity relationships, multi-hop"
+            }
+        },
+        "enhancement_techniques": {
+            "query_expansion": "LLM-based synonym and concept expansion",
+            "reranking": "Cross-encoder re-scoring",
+            "dynamic_chunking": "Semantic-based document splitting",
+            "multi_hop": "Iterative retrieve-reason cycles"
+        }
+    },
+    "quality_thresholds": {
+        "intent_confidence": "≥0.9",
+        "bias_score": "<0.2",
+        "logic_consistency": ">0.85",
+        "evidence_grounding": ">0.90",
+        "argument_cohesion": ">0.8",
+        "overall_quality": "≥0.85",
+        "final_confidence": "≥0.9",
+        "minimum_citations": 5
+    },
+    "output_formats": {
+        "quick_research": {
+            "structure": [
+                "Summary",
+                "Key Points",
+                "Citations"
+            ],
+            "length": "500-1000 words"
+        },
+        "deep_dive": {
+            "structure": [
+                "Executive Summary",
+                "Methodology",
+                "Findings",
+                "Implications",
+                "Recommendations",
+                "Citations"
+            ],
+            "length": "2000-5000 words"
+        },
+        "competitive_analysis": {
+            "structure": [
+                "Landscape Overview",
+                "Competitor Profiles",
+                "Comparison Matrix",
+                "Strategic Implications"
+            ]
+        }
+    },
+    "research_types": {
+        "market_reality": {
+            "objective": "Validate problem exists at meaningful scale",
+            "valid_signals": [
+                "Observable user behavior",
+                "Spending patterns",
+                "Operational inefficiencies"
+            ],
+            "invalid_signals": [
+                "Market size estimates without behavior",
+                "Buzzwords",
+                "Investor hype"
+            ]
+        },
+        "user_behavior": {
+            "objective": "Understand what users actually do, not say",
+            "valid_sources": [
+                "Case studies",
+                "Product reviews",
+                "Support tickets",
+                "Workflow breakdowns"
+            ],
+            "rule": "Workarounds are strong signals, preferences are weak"
+        },
+        "competitive_intelligence": {
+            "objective": "Understand landscape without imitation",
+            "categories": [
+                "Direct alternatives",
+                "Indirect substitutes",
+                "Status quo",
+                "Manual workarounds"
+            ],
+            "rule": "Competition defined by problem-solving, not product category"
+        }
+    },
+    "benchmarks_2026": {
+        "research_speed": {
+            "quick_research": "10-15 minutes",
+            "deep_dive": "30-60 minutes",
+            "literature_review": "2-4 hours"
+        },
+        "quality_targets": {
+            "factual_accuracy": "≥90%",
+            "citation_coverage": "≥85%",
+            "source_diversity": "≥3 types",
+            "red_team_pass_rate": "≥80% first attempt"
+        },
+        "ai_capabilities": {
+            "context_window": "1-2M tokens (Gemini)",
+            "multi_modal": "Text, images, tables, audio, video",
+            "agentic_patterns": "ReAct, Supervisor-Worker, Red Team"
+        }
+    }
+}

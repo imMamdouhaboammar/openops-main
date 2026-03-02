@@ -1,0 +1,336 @@
+{
+  "agentIntegrations": {
+    "version": "1.0.0",
+    "description": "External platform integrations for data access and execution",
+    "integrations": [
+      {
+        "integrationId": "INTEGRATION-001",
+        "name": "Google Analytics 4",
+        "category": "Analytics",
+        "purpose": "Website traffic, user behavior, conversion tracking",
+        "authentication": {
+          "type": "OAuth 2.0",
+          "requiredScopes": ["analytics.readonly"],
+          "refreshTokenRotation": "30 days"
+        },
+        "capabilities": [
+          "Real-time traffic analysis",
+          "Funnel performance tracking",
+          "Cohort retention analysis",
+          "Custom event tracking",
+          "Attribution modeling"
+        ],
+        "dataRefreshFrequency": "Real-time to 1-day delay",
+        "rateLimit": "10M hits/month",
+        "costModel": "Free up to 10M hits/month, $150k+/month above",
+        "apiEndpoints": {
+          "events": "GET /google-analytics-4/properties/{propertyId}/events",
+          "reports": "POST /google-analytics-4/properties/{propertyId}/runReport",
+          "funnels": "POST /google-analytics-4/properties/{propertyId}/runFunnelReport"
+        }
+      },
+
+      {
+        "integrationId": "INTEGRATION-002",
+        "name": "HubSpot CRM",
+        "category": "CRM & Sales",
+        "purpose": "Lead tracking, sales pipeline, email performance",
+        "authentication": {
+          "type": "OAuth 2.0",
+          "requiredScopes": ["crm.objects.contacts.read", "crm.objects.deals.read", "crm.objects.companies.read"],
+          "refreshTokenRotation": "30 days"
+        },
+        "capabilities": [
+          "Contact and deal management",
+          "Lead scoring and workflows",
+          "Email campaign performance",
+          "Custom properties and fields",
+          "Activity timeline tracking"
+        ],
+        "dataRefreshFrequency": "Real-time",
+        "rateLimit": "100 requests/10 seconds",
+        "costModel": "Free to $3,200/month (depends on features)",
+        "apiEndpoints": {
+          "contacts": "GET /crm/v3/objects/contacts",
+          "deals": "GET /crm/v3/objects/deals",
+          "companies": "GET /crm/v3/objects/companies",
+          "workflows": "GET /automation/v3/workflows"
+        }
+      },
+
+      {
+        "integrationId": "INTEGRATION-003",
+        "name": "Facebook Ads",
+        "category": "Paid Advertising",
+        "purpose": "Paid social campaign setup, targeting, optimization",
+        "authentication": {
+          "type": "OAuth 2.0 + API Key",
+          "requiredScopes": ["ads_management", "pages_read_engagement"],
+          "refreshTokenRotation": "60 days"
+        },
+        "capabilities": [
+          "Campaign creation and optimization",
+          "Audience segmentation and lookalike",
+          "Dynamic creative optimization",
+          "Conversion tracking",
+          "Detailed performance analytics"
+        ],
+        "dataRefreshFrequency": "1-6 hours (depends on report granularity)",
+        "rateLimit": "Depends on ad account spend",
+        "costModel": "Pay-per-click (no platform fee)",
+        "apiEndpoints": {
+          "campaigns": "GET /v17.0/act_{account_id}/campaigns",
+          "adsets": "GET /v17.0/act_{account_id}/adsets",
+          "ads": "GET /v17.0/act_{account_id}/ads",
+          "insights": "GET /v17.0/{ad_id}/insights"
+        }
+      },
+
+      {
+        "integrationId": "INTEGRATION-004",
+        "name": "Mailchimp",
+        "category": "Email Marketing",
+        "purpose": "Email campaign management and performance tracking",
+        "authentication": {
+          "type": "API Key",
+          "requiredPermissions": ["campaigns", "lists", "automations"],
+          "keyRotation": "90 days recommended"
+        },
+        "capabilities": [
+          "Campaign creation and scheduling",
+          "Audience segmentation",
+          "Automation workflows",
+          "A/B testing",
+          "Performance analytics"
+        ],
+        "dataRefreshFrequency": "15 minutes",
+        "rateLimit": "10 requests/second",
+        "costModel": "Free to $350/month (based on subscriber count)",
+        "apiEndpoints": {
+          "campaigns": "GET /3.0/campaigns",
+          "lists": "GET /3.0/lists",
+          "automations": "GET /3.0/automations",
+          "reports": "GET /3.0/reports"
+        }
+      },
+
+      {
+        "integrationId": "INTEGRATION-005",
+        "name": "Google Search Console",
+        "category": "SEO & Content",
+        "purpose": "Search visibility, keyword rankings, indexing issues",
+        "authentication": {
+          "type": "OAuth 2.0",
+          "requiredScopes": ["webmasters"],
+          "refreshTokenRotation": "30 days"
+        },
+        "capabilities": [
+          "Keyword ranking tracking",
+          "Search impressions and clicks",
+          "Indexing and crawl status",
+          "Mobile usability tracking",
+          "Search performance by query"
+        ],
+        "dataRefreshFrequency": "1 day",
+        "rateLimit": "1 request/second",
+        "costModel": "Free",
+        "apiEndpoints": {
+          "searchanalytics": "POST /webmasters/v3/sites/{siteUrl}/searchAnalytics/query",
+          "sitemaps": "GET /webmasters/v3/sites/{siteUrl}/sitemaps",
+          "urlInspection": "POST /urlInspection/v1/urlInspection:inspectUrl"
+        }
+      },
+
+      {
+        "integrationId": "INTEGRATION-006",
+        "name": "Stripe",
+        "category": "Payments",
+        "purpose": "Revenue tracking, customer billing, subscription management",
+        "authentication": {
+          "type": "API Key (Secret)",
+          "requiredPermissions": ["read:charge", "read:customer", "read:subscription"],
+          "keyRotation": "Every 6 months"
+        },
+        "capabilities": [
+          "Transaction tracking",
+          "Revenue analytics",
+          "Customer lifetime value tracking",
+          "Subscription management",
+          "Fraud detection and prevention"
+        ],
+        "dataRefreshFrequency": "Real-time",
+        "rateLimit": "100 requests/second",
+        "costModel": "2.2% + $0.30 per transaction",
+        "apiEndpoints": {
+          "charges": "GET /v1/charges",
+          "customers": "GET /v1/customers",
+          "subscriptions": "GET /v1/subscriptions",
+          "invoices": "GET /v1/invoices"
+        }
+      },
+
+      {
+        "integrationId": "INTEGRATION-007",
+        "name": "LinkedIn Campaign Manager",
+        "category": "Paid Advertising",
+        "purpose": "B2B paid campaigns, account-based marketing, lead generation",
+        "authentication": {
+          "type": "OAuth 2.0",
+          "requiredScopes": ["w_member_social", "r_ads"],
+          "refreshTokenRotation": "365 days (long-lived)"
+        },
+        "capabilities": [
+          "Campaign creation and management",
+          "Audience targeting (company, role, seniority)",
+          "Lead generation forms",
+          "Website retargeting",
+          "Detailed performance tracking"
+        ],
+        "dataRefreshFrequency": "1-2 hours",
+        "rateLimit": "Depends on plan",
+        "costModel": "Pay-per-click ($2-50+ typical)",
+        "apiEndpoints": {
+          "campaigns": "GET /adCampaigns",
+          "adaccounts": "GET /adAccounts",
+          "analytics": "GET /adAnalytics",
+          "campaigns": "POST /adCampaigns"
+        }
+      },
+
+      {
+        "integrationId": "INTEGRATION-008",
+        "name": "Typeform",
+        "category": "Surveys & Research",
+        "purpose": "Customer feedback, surveys, NPS tracking, user research",
+        "authentication": {
+          "type": "API Key",
+          "requiredPermissions": ["responses:read", "forms:read"],
+          "keyRotation": "90 days recommended"
+        },
+        "capabilities": [
+          "Survey creation and distribution",
+          "Response collection and analysis",
+          "Real-time dashboards",
+          "Data export",
+          "Integration with other tools"
+        ],
+        "dataRefreshFrequency": "Real-time",
+        "rateLimit": "100 requests/minute",
+        "costModel": "Free to $35/month",
+        "apiEndpoints": {
+          "forms": "GET /forms",
+          "responses": "GET /forms/{formId}/responses",
+          "webhooks": "POST /webhooks"
+        }
+      },
+
+      {
+        "integrationId": "INTEGRATION-009",
+        "name": "Custom Data Warehouse",
+        "category": "Data Infrastructure",
+        "purpose": "Centralized data storage, cross-platform analysis, historical data",
+        "authentication": {
+          "type": "Database credentials (SSH tunnel recommended)",
+          "requiredPermissions": ["SELECT"],
+          "refreshTokenRotation": "180 days"
+        },
+        "capabilities": [
+          "SQL querying across all platforms",
+          "Custom metrics calculation",
+          "Historical trend analysis",
+          "Multi-touch attribution",
+          "Real-time dashboarding"
+        ],
+        "dataRefreshFrequency": "Hourly (via ETL)",
+        "rateLimit": "Depends on infrastructure",
+        "costModel": "Variable ($500-5000+/month)",
+        "apiEndpoints": {
+          "sql": "SELECT * FROM {table}",
+          "metrics": "SELECT {metric} FROM {table} WHERE {condition}"
+        }
+      }
+    ],
+
+    "dataFlowArchitecture": {
+      "description": "How data flows through the agent system",
+      "flows": [
+        {
+          "flowId": "FLOW-001",
+          "name": "Real-time Campaign Performance Tracking",
+          "source": ["Google Analytics", "Facebook Ads", "HubSpot"],
+          "destination": "Data Warehouse",
+          "frequency": "Every 6 hours",
+          "processing": "Aggregate metrics, calculate CAC, track funnel dropoff",
+          "outputs": ["Real-time dashboards", "Anomaly alerts", "Performance recommendations"]
+        },
+        {
+          "flowId": "FLOW-002",
+          "name": "Email Campaign Analytics",
+          "source": ["Mailchimp", "HubSpot"],
+          "destination": "Data Warehouse",
+          "frequency": "Every 2 hours",
+          "processing": "Calculate open rates, CTR, segment performance",
+          "outputs": ["Campaign performance dashboard", "Optimization recommendations"]
+        },
+        {
+          "flowId": "FLOW-003",
+          "name": "Revenue Recognition",
+          "source": ["Stripe", "HubSpot"],
+          "destination": "Data Warehouse",
+          "frequency": "Real-time",
+          "processing": "Track ARR, MRR, customer LTV, cohort revenue",
+          "outputs": ["Revenue dashboards", "Cohort analysis"]
+        },
+        {
+          "flowId": "FLOW-004",
+          "name": "Market & Competitor Intelligence",
+          "source": ["Google Search Console", "SEO tools", "Manual research"],
+          "destination": "Memory System",
+          "frequency": "Daily",
+          "processing": "Extract trends, competitor moves, keyword rankings",
+          "outputs": ["Competitive intelligence database", "Market trend alerts"]
+        }
+      ]
+    },
+
+    "integrationPatterns": {
+      "pattern1": {
+        "name": "Campaign Optimization Loop",
+        "description": "Continuous campaign performance monitoring and optimization",
+        "steps": [
+          "1. Fetch campaign data from Facebook Ads / Google Ads",
+          "2. Calculate performance metrics (ROAS, CPC, CTR, conversion rate)",
+          "3. Identify underperforming ads/campaigns",
+          "4. Generate optimization recommendations",
+          "5. Implement changes (budget allocation, targeting, creative)"
+        ],
+        "frequency": "Daily",
+        "tools": ["Facebook Ads", "Google Ads", "Analytics", "Data Warehouse"]
+      },
+      "pattern2": {
+        "name": "Lead Scoring & Follow-up",
+        "description": "Automated lead qualification and sales outreach",
+        "steps": [
+          "1. Monitor new leads from all sources",
+          "2. Score based on engagement and fit",
+          "3. Trigger nurture campaigns in Mailchimp",
+          "4. Flag high-intent leads for sales team in HubSpot"
+        ],
+        "frequency": "Real-time",
+        "tools": ["HubSpot", "Mailchimp", "Analytics"]
+      },
+      "pattern3": {
+        "name": "Retention Intelligence",
+        "description": "Monitor customer health and predict churn",
+        "steps": [
+          "1. Track customer engagement metrics",
+          "2. Identify churn risk signals",
+          "3. Trigger intervention campaigns",
+          "4. Monitor re-engagement success"
+        ],
+        "frequency": "Weekly",
+        "tools": ["Analytics", "Stripe", "HubSpot", "Mailchimp"]
+      }
+    }
+  }
+}

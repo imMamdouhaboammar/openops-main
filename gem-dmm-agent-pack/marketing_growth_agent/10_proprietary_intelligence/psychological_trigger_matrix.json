@@ -1,0 +1,181 @@
+{
+  "psychologicalTriggerMatrix": {
+    "version": "2.0.0",
+    "description": "Advanced psychological principles matched to specific customer segments and industries",
+    "baseFramework": "Cialdini + Behavioral Economics + Neuromarketing Research",
+    
+    "triggerMechanics": [
+      {
+        "triggerId": "PTM-001",
+        "triggerName": "Scarcity with Social Proof Amplifier",
+        "coreScience": "Scarcity (FOMO) + Social Proof (herd behavior) = 3x conversion lift",
+        "implementation": {
+          "level1": "Show limited slots: 'Only 3 spots left'",
+          "level2": "Add social proof: 'Sarah, John, and 47 others signed up today'",
+          "level3": "Combine with urgency: 'New cohort starts Friday - closing in 24 hours'",
+          "level4": "Add exclusivity: 'Acceptance rate: 8% (only serious founders)'",
+          "expectedLift": "40-80% conversion increase"
+        },
+        "applicableIndustries": ["SaaS", "Courses", "Consulting", "Events", "Premium Products"],
+        "researchBasis": "Cialdini 6 Principles + Loss Aversion (Kahneman)",
+        "exampleCopy": "We accept 100 founders per month. 87 have applied this month. [Apply Now] - closes Friday midnight"
+      },
+      {
+        "triggerId": "PTM-002",
+        "triggerName": "Authority + Specificity Stack",
+        "coreScience": "Authority (trust transfer) + Specific data (not generic) = credibility multiplier",
+        "implementation": {
+          "level1": "Show credentials: 'Trusted by 500+ companies'",
+          "level2": "Make specific: '500+ including Uber, Stripe, and Airbnb'",
+          "level3": "Add metric: 'Customers see average 40% productivity increase'",
+          "level4": "Include third-party validation: 'G2 rated #1 in category'",
+          "expectedLift": "25-45% conversion increase"
+        },
+        "applicableIndustries": ["B2B SaaS", "Finance", "Healthcare", "Enterprise"],
+        "researchBasis": "Halo Effect + Third-party Validation Studies",
+        "exampleCopy": "Trusted by 500+ companies including Uber and Stripe. 91% report ≥30% ROI in first 90 days. G2 #1 Leader."
+      },
+      {
+        "triggerId": "PTM-003",
+        "triggerName": "Pain Point Amplification + Immediate Relief",
+        "coreScience": "Vivid problem visualization + quick solution = high conversion",
+        "implementation": {
+          "level1": "Vivid problem: 'Your team spends 8+ hours weekly on repetitive tasks'",
+          "level2": "Emotionalize: 'That's 416 hours per year... wasted'",
+          "level3": "Add cost: 'At $50/hour, that's $20,800 in lost productivity'",
+          "level4": "Immediate relief: 'Our software eliminates 80% of this in 24 hours'",
+          "expectedLift": "30-60% conversion increase"
+        },
+        "applicableIndustries": ["SaaS", "Productivity", "HR Tech", "Automation"],
+        "researchBasis": "Prospect Theory + Affect Heuristic",
+        "exampleCopy": "Your team wastes 416 hours/year on manual data entry ($20,800 lost). Eliminate 80% in 24 hours with [Product]. Try free →"
+      },
+      {
+        "triggerId": "PTM-004",
+        "triggerName": "Reciprocity Engine with Surprising Value",
+        "coreScience": "Give valuable thing first (no strings) = obligation to reciprocate",
+        "implementation": {
+          "level1": "Free resource: 'Download free Growth Framework template'",
+          "level2": "Make surprising: 'Worth $997, 300+ companies use this'",
+          "level3": "Low friction: 'Instant download, no email required'",
+          "level4": "Subtle CTA: 'When you're ready to implement, we can help →'",
+          "expectedLift": "20-40% lead quality increase + 15-25% conversion lift"
+        },
+        "applicableIndustries": ["SaaS", "B2B", "Consulting", "Content"],
+        "researchBasis": "Reciprocity Principle (Cialdini) + Obligation Theory",
+        "exampleCopy": "Get our $997 Growth Playbook free. Used by 300+ founders. [Download Now]"
+      },
+      {
+        "triggerId": "PTM-005",
+        "triggerName": "Social Proof Ladder with Specificity",
+        "coreScience": "Multiple types of social proof + specific outcomes = 2-5x credibility",
+        "implementation": {
+          "level1": "Quantity: '10,000+ customers'",
+          "level2": "Quality: '98% satisfaction rate'",
+          "level3": "Named logos: 'Google, Meta, Salesforce'",
+          "level4": "Specific results: 'Customers report 3x productivity in 30 days'",
+          "level5": "Raw testimonials: 'This saved us $150k in 6 months' - CFO, Company X",
+          "expectedLift": "40-70% conversion increase"
+        },
+        "applicableIndustries": ["All"],
+        "researchBasis": "Consensus Principle + Source Credibility Theory",
+        "exampleCopy": "[Video of actual customer]: 'In 90 days, our costs dropped from $50k to $15k/month. This tool paid for itself 10x over.' - Jane, CFO at TechCo"
+      },
+      {
+        "triggerId": "PTM-006",
+        "triggerName": "Identity Activation + Aspiration",
+        "coreScience": "Self-perception mechanism - people buy to become who they want to be",
+        "implementation": {
+          "level1": "Activate identity: 'Join 10,000 data-driven founders'",
+          "level2": "Show aspiration: 'Who are scaling from $0-1M MRR'",
+          "level3": "Add exclusivity: 'Acceptance rate: only 5%'",
+          "level4": "Show peer group: 'Network with top 1% founders'",
+          "expectedLift": "35-55% conversion increase (especially for aspirational products)"
+        },
+        "applicableIndustries": ["Education", "Premium/Luxury", "Courses", "Membership"],
+        "researchBasis": "Identity Theory + Reference Groups",
+        "exampleCopy": "Join 2,000 founders scaling from $100k to $10M ARR. Monthly mastermind calls. Private Slack community. [Apply Now]"
+      },
+      {
+        "triggerId": "PTM-007",
+        "triggerName": "Loss Aversion Frame (Risk Reversal)",
+        "coreScience": "People feel loss 2x stronger than equivalent gain",
+        "implementation": {
+          "level1": "Frame the alternative: 'Without this, you'll continue spending $X/month'",
+          "level2": "Show cumulative loss: 'That's $120,000/year of preventable waste'",
+          "level3": "Add regret: 'Your competitors already switched 6 months ago'",
+          "level4": "Offer guarantee: '100% money-back if not satisfied'",
+          "expectedLift": "25-45% conversion increase"
+        },
+        "applicableIndustries": ["B2B", "SaaS", "Enterprise", "Financial"],
+        "researchBasis": "Loss Aversion (Kahneman & Tversky) + Regret Theory",
+        "exampleCopy": "Keep paying $15k/month to your current vendor? Switch in 24 hours. Or get 100% money back. No risk. [Try Now]"
+      },
+      {
+        "triggerId": "PTM-008",
+        "triggerName": "Commitment Sequence (Foot-in-Door)",
+        "coreScience": "Small commitment → consistency principle → larger commitment",
+        "implementation": {
+          "level1": "Micro-commitment: 'Take 2-min assessment'",
+          "level2": "See personalized result: 'You're losing $50k/year'",
+          "level3": "Natural escalation: 'See how to fix it' → Book call",
+          "level4": "Higher commitment: Buy solution",
+          "expectedLift": "50-100% increase in conversion funnel depth"
+        },
+        "applicableIndustries": ["SaaS", "B2B", "Consulting", "Services"],
+        "researchBasis": "Foot-in-Door Technique (Freedman & Fraser)",
+        "exampleCopy": "[Interactive quiz]: 'Answer 5 questions to get your Waste Score' → [Results page with CTA to book call]"
+      }
+    ],
+
+    "industryApplications": {
+      "B2B_SaaS": {
+        "topTriggers": ["PTM-002", "PTM-005", "PTM-006", "PTM-008"],
+        "messagingAngle": "Authority, Proof, Identity, Risk Reversal",
+        "exampleFramework": "Authority (G2 #1) + Specific Results (3x productivity) + Exclusivity (2% adoption rate) + No Risk (30-day guarantee)"
+      },
+      "E-Commerce": {
+        "topTriggers": ["PTM-001", "PTM-004", "PTM-005", "PTM-007"],
+        "messagingAngle": "Scarcity, Free Value, Proof, Loss Aversion",
+        "exampleFramework": "Limited stock + Free shipping offer + Customer reviews (4.8★) + Only 3 left message"
+      },
+      "Premium_Courses": {
+        "topTriggers": ["PTM-003", "PTM-005", "PTM-006", "PTM-008"],
+        "messagingAngle": "Pain + Proof + Identity + Commitment",
+        "exampleFramework": "Paint the struggle + Show results (testimonials, case studies) + Join elite community + Start with assessment"
+      },
+      "Consulting": {
+        "topTriggers": ["PTM-002", "PTM-003", "PTM-004", "PTM-005"],
+        "messagingAngle": "Authority, Pain amplification, Free value, Proof",
+        "exampleFramework": "Credentials + Problem vivification + Free audit/assessment + Client results"
+      }
+    },
+
+    "copyTesting": {
+      "description": "Which trigger combos win in A/B tests",
+      "historicalWinners": [
+        {
+          "winnerId": "CW-001",
+          "combination": "Social Proof + Scarcity + Risk Reversal",
+          "industries": ["SaaS", "B2B", "Education"],
+          "avgLift": "48%",
+          "example": "[Testimonial] + [Limited spots] + [Money-back guarantee]"
+        },
+        {
+          "winnerId": "CW-002",
+          "combination": "Specific Results + Authority + Exclusivity",
+          "industries": ["Premium Products", "Luxury", "Membership"],
+          "avgLift": "62%",
+          "example": "[\"40% more productive\"] + [\"G2 #1\"] + [\"Only for top 5% of customers\"]"
+        },
+        {
+          "winnerId": "CW-003",
+          "combination": "Pain Amplification + Immediate Relief + Proof",
+          "industries": ["SaaS", "Productivity", "Automation"],
+          "avgLift": "55%",
+          "example": "[\"You're wasting $X/month\"] + [\"Fixed in 24 hours\"] + [\"100+ companies verified\"]"
+        }
+      ]
+    }
+  }
+}

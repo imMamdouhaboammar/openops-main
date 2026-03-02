@@ -1,0 +1,304 @@
+{
+    "tool_id": "funnel-analyzer",
+    "name": "AARRR Funnel Analyzer",
+    "version": "1.0.0",
+    "category": "analytics",
+    "description": "Comprehensive AARRR funnel analysis tool that tracks user progression through Acquisition, Activation, Retention, Revenue, and Referral stages",
+    "input_schema": {
+        "type": "object",
+        "required": [
+            "start_date",
+            "end_date"
+        ],
+        "properties": {
+            "start_date": {
+                "type": "string",
+                "format": "date",
+                "description": "Start date for analysis period (YYYY-MM-DD)"
+            },
+            "end_date": {
+                "type": "string",
+                "format": "date",
+                "description": "End date for analysis period (YYYY-MM-DD)"
+            },
+            "cohort_filter": {
+                "type": "object",
+                "description": "Optional cohort filtering criteria",
+                "properties": {
+                    "acquisition_channel": {
+                        "enum": [
+                            "organic",
+                            "paid",
+                            "referral",
+                            "direct",
+                            "social"
+                        ]
+                    },
+                    "user_segment": {
+                        "type": "string"
+                    },
+                    "geography": {
+                        "type": "string"
+                    }
+                }
+            },
+            "comparison_period": {
+                "type": "object",
+                "description": "Optional comparison to previous period",
+                "properties": {
+                    "enabled": {
+                        "type": "boolean",
+                        "default": true
+                    },
+                    "type": {
+                        "enum": [
+                            "previous_period",
+                            "year_over_year"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "output_schema": {
+        "type": "object",
+        "properties": {
+            "analysis_id": {
+                "type": "string"
+            },
+            "period": {
+                "type": "object",
+                "properties": {
+                    "start_date": {
+                        "type": "string"
+                    },
+                    "end_date": {
+                        "type": "string"
+                    },
+                    "days": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "acquisition": {
+                "type": "object",
+                "properties": {
+                    "total_visitors": {
+                        "type": "integer"
+                    },
+                    "unique_visitors": {
+                        "type": "integer"
+                    },
+                    "by_channel": {
+                        "type": "object",
+                        "properties": {
+                            "organic": {
+                                "type": "integer"
+                            },
+                            "paid": {
+                                "type": "integer"
+                            },
+                            "referral": {
+                                "type": "integer"
+                            },
+                            "direct": {
+                                "type": "integer"
+                            },
+                            "social": {
+                                "type": "integer"
+                            }
+                        }
+                    },
+                    "cpa_by_channel": {
+                        "type": "object",
+                        "properties": {
+                            "organic": {
+                                "type": "number"
+                            },
+                            "paid": {
+                                "type": "number"
+                            }
+                        }
+                    },
+                    "conversion_to_signup": {
+                        "type": "number",
+                        "description": "% of visitors who signed up"
+                    }
+                }
+            },
+            "activation": {
+                "type": "object",
+                "properties": {
+                    "signups": {
+                        "type": "integer"
+                    },
+                    "activated_users": {
+                        "type": "integer"
+                    },
+                    "activation_rate": {
+                        "type": "number",
+                        "description": "% of signups who activated"
+                    },
+                    "avg_time_to_value_minutes": {
+                        "type": "number"
+                    },
+                    "onboarding_completion_rate": {
+                        "type": "number"
+                    }
+                }
+            },
+            "retention": {
+                "type": "object",
+                "properties": {
+                    "day_1_retention": {
+                        "type": "number"
+                    },
+                    "day_7_retention": {
+                        "type": "number"
+                    },
+                    "day_30_retention": {
+                        "type": "number"
+                    },
+                    "day_90_retention": {
+                        "type": "number"
+                    },
+                    "monthly_churn_rate": {
+                        "type": "number"
+                    },
+                    "stickiness_dau_mau": {
+                        "type": "number"
+                    }
+                }
+            },
+            "revenue": {
+                "type": "object",
+                "properties": {
+                    "total_revenue": {
+                        "type": "number"
+                    },
+                    "mrr": {
+                        "type": "number",
+                        "description": "Monthly Recurring Revenue"
+                    },
+                    "arpu": {
+                        "type": "number",
+                        "description": "Average Revenue Per User"
+                    },
+                    "paying_users": {
+                        "type": "integer"
+                    },
+                    "free_to_paid_conversion": {
+                        "type": "number"
+                    },
+                    "ltv_cac_ratio": {
+                        "type": "number"
+                    },
+                    "net_revenue_retention": {
+                        "type": "number"
+                    }
+                }
+            },
+            "referral": {
+                "type": "object",
+                "properties": {
+                    "total_referrals": {
+                        "type": "integer"
+                    },
+                    "referral_conversion_rate": {
+                        "type": "number"
+                    },
+                    "viral_coefficient": {
+                        "type": "number"
+                    },
+                    "nps_score": {
+                        "type": "number"
+                    }
+                }
+            },
+            "funnel_health": {
+                "type": "object",
+                "properties": {
+                    "overall_score": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 100
+                    },
+                    "bottlenecks": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "stage": {
+                                    "type": "string"
+                                },
+                                "issue": {
+                                    "type": "string"
+                                },
+                                "severity": {
+                                    "enum": [
+                                        "critical",
+                                        "high",
+                                        "medium",
+                                        "low"
+                                    ]
+                                },
+                                "recommendation": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "configuration": {
+        "data_source": "mixpanel|amplitude|custom",
+        "cache_results": true,
+        "cache_ttl_hours": 1,
+        "include_comparison": true
+    },
+    "usage_example": {
+        "request": {
+            "start_date": "2026-01-01",
+            "end_date": "2026-01-31",
+            "cohort_filter": {
+                "acquisition_channel": "organic"
+            },
+            "comparison_period": {
+                "enabled": true,
+                "type": "previous_period"
+            }
+        },
+        "response": {
+            "analysis_id": "FA-2026-01-31-001",
+            "period": {
+                "start_date": "2026-01-01",
+                "end_date": "2026-01-31",
+                "days": 31
+            },
+            "acquisition": {
+                "total_visitors": 125000,
+                "unique_visitors": 98000,
+                "conversion_to_signup": 3.2
+            },
+            "activation": {
+                "signups": 3920,
+                "activated_users": 2744,
+                "activation_rate": 70,
+                "avg_time_to_value_minutes": 8.5
+            },
+            "funnel_health": {
+                "overall_score": 72,
+                "bottlenecks": [
+                    {
+                        "stage": "Activation",
+                        "issue": "30% of users drop off during onboarding step 2",
+                        "severity": "high",
+                        "recommendation": "Simplify onboarding step 2, add contextual help"
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,808 @@
+{
+  "workflowsRegistry": {
+    "metadata": {
+      "version": "1.0.0",
+      "totalWorkflows": 12,
+      "lastUpdated": "2026-01-22"
+    },
+
+    "workflows": [
+      {
+        "workflowId": "WORKFLOW-001",
+        "name": "Growth Strategy Development Workflow",
+        "description": "Comprehensive workflow for developing multi-channel growth strategy",
+        "complexity": "Complex",
+        "duration": "2-4 weeks",
+        "stages": [
+          {
+            "stageNum": 1,
+            "stageName": "Market Analysis & Opportunity Assessment",
+            "duration": "3-5 days",
+            "activities": [
+              "Define TAM, SAM, SOM",
+              "Analyze competitive landscape",
+              "Identify target customer segments",
+              "Assess market growth trends",
+              "Calculate addressable market"
+            ],
+            "outputs": [
+              "Market opportunity document",
+              "Competitive positioning matrix",
+              "Target customer segments definition"
+            ]
+          },
+          {
+            "stageNum": 2,
+            "stageName": "Customer Research & Persona Development",
+            "duration": "1-2 weeks",
+            "activities": [
+              "Conduct customer interviews (15-20)",
+              "Develop customer personas (3-5)",
+              "Map customer journeys",
+              "Identify key pain points and jobs",
+              "Define messaging for each persona"
+            ],
+            "outputs": [
+              "Customer persona documents",
+              "Customer journey maps",
+              "Job-to-be-done analysis"
+            ]
+          },
+          {
+            "stageNum": 3,
+            "stageName": "Channel Strategy & Tactic Selection",
+            "duration": "1 week",
+            "activities": [
+              "Score channels by (impact, cost, speed)",
+              "Select primary channels (2-4)",
+              "Develop channel-specific tactics",
+              "Estimate CAC and LTV by channel",
+              "Create channel roadmap"
+            ],
+            "outputs": [
+              "Channel selection rationale",
+              "Channel-specific tactics",
+              "Channel roadmap with milestones"
+            ]
+          },
+          {
+            "stageNum": 4,
+            "stageName": "90-Day Growth Plan Development",
+            "duration": "1 week",
+            "activities": [
+              "Set growth targets (revenue, users, engagement)",
+              "Develop monthly initiatives",
+              "Identify dependencies and risks",
+              "Allocate budget and resources",
+              "Create success metrics"
+            ],
+            "outputs": [
+              "90-day growth plan",
+              "Budget allocation",
+              "KPI tracking dashboard"
+            ]
+          }
+        ],
+        "successCriteria": [
+          "Growth plan is data-backed and realistic",
+          "Clear owner for each initiative",
+          "All key channels represented",
+          "Metrics are SMART (Specific, Measurable, Achievable, Relevant, Time-bound)",
+          "Team is aligned on strategy"
+        ]
+      },
+
+      {
+        "workflowId": "WORKFLOW-002",
+        "name": "Conversion Rate Optimization Workflow",
+        "description": "Structured CRO process for maximizing conversion rates",
+        "complexity": "Advanced",
+        "duration": "6-12 weeks",
+        "stages": [
+          {
+            "stageNum": 1,
+            "stageName": "Audit & Baseline Establishment",
+            "duration": "1-2 weeks",
+            "activities": [
+              "Map complete conversion funnel",
+              "Analyze dropout rates by stage",
+              "Identify bottlenecks (>20% drop-off)",
+              "Segment by traffic source and user type",
+              "Establish baseline conversion rate"
+            ],
+            "outputs": [
+              "Funnel map with drop-off rates",
+              "Bottleneck prioritization matrix",
+              "Baseline metrics"
+            ]
+          },
+          {
+            "stageNum": 2,
+            "stageName": "Research & Hypothesis Generation",
+            "duration": "1-2 weeks",
+            "activities": [
+              "Conduct heatmap and session recording analysis",
+              "Review user feedback and support tickets",
+              "Apply conversion psychology principles",
+              "Analyze competitor solutions",
+              "Generate 15-20 high-potential hypotheses"
+            ],
+            "outputs": [
+              "Hypothesis priority matrix",
+              "Psychological principles applied",
+              "Expected impact estimates"
+            ]
+          },
+          {
+            "stageNum": 3,
+            "stageName": "Testing & Experimentation",
+            "duration": "3-8 weeks",
+            "activities": [
+              "Design A/B tests for top 5 hypotheses",
+              "Validate statistical power requirements",
+              "Execute tests (minimum 1-2 weeks each)",
+              "Analyze results with proper statistics",
+              "Document learnings"
+            ],
+            "outputs": [
+              "Test results (winners and learnings)",
+              "Statistical analysis reports",
+              "Tested variations catalog"
+            ]
+          },
+          {
+            "stageNum": 4,
+            "stageName": "Implementation & Scaling",
+            "duration": "1-2 weeks",
+            "activities": [
+              "Roll out winning variants",
+              "Monitor for secondary effects",
+              "Measure impact at scale",
+              "Plan next round of tests",
+              "Share learnings with team"
+            ],
+            "outputs": [
+              "Scaled winning variants",
+              "Updated conversion rate baseline",
+              "Next test priorities"
+            ]
+          }
+        ],
+        "successCriteria": [
+          "Conversion rate improved by minimum 10-15%",
+          "Learnings documented for future iterations",
+          "Scaling plan is clear",
+          "Team understands psychological principles applied"
+        ]
+      },
+
+      {
+        "workflowId": "WORKFLOW-003",
+        "name": "Market Analysis & Competitive Intelligence Workflow",
+        "description": "Deep-dive competitive and market analysis",
+        "complexity": "Intermediate",
+        "duration": "2-3 weeks",
+        "stages": [
+          {
+            "stageNum": 1,
+            "stageName": "Market Overview & Sizing",
+            "duration": "3-5 days",
+            "activities": [
+              "Research TAM from multiple sources",
+              "Calculate SAM based on addressable customers",
+              "Estimate SOM (serviceable obtainable market)",
+              "Analyze market growth trends",
+              "Identify market dynamics (fragmenting, consolidating, growing)"
+            ],
+            "outputs": [
+              "Market sizing report",
+              "Market growth analysis",
+              "Opportunity assessment"
+            ]
+          },
+          {
+            "stageNum": 2,
+            "stageName": "Competitive Landscape Analysis",
+            "duration": "1 week",
+            "activities": [
+              "Identify 5-10 key competitors",
+              "Analyze positioning and messaging",
+              "Evaluate product features and pricing",
+              "Assess go-to-market strategy",
+              "Score on capability matrix"
+            ],
+            "outputs": [
+              "Competitive positioning matrix",
+              "Feature comparison table",
+              "Pricing analysis"
+            ]
+          },
+          {
+            "stageNum": 3,
+            "stageName": "Strategic Differentiation Assessment",
+            "duration": "3-5 days",
+            "activities": [
+              "Identify competitive gaps",
+              "Assess defensibility of positioning",
+              "Evaluate barriers to entry",
+              "Identify red oceans vs blue oceans",
+              "Recommend strategic position"
+            ],
+            "outputs": [
+              "Competitive gap analysis",
+              "Recommended positioning",
+              "Defensibility assessment"
+            ]
+          }
+        ],
+        "successCriteria": [
+          "Market sizing validated from 2+ sources",
+          "Clear competitive differentiation identified",
+          "Realistic assessment of market entry difficulty",
+          "Actionable insights for strategy"
+        ]
+      },
+
+      {
+        "workflowId": "WORKFLOW-004",
+        "name": "Customer Acquisition Strategy Workflow",
+        "description": "Multi-channel customer acquisition strategy development",
+        "complexity": "Complex",
+        "duration": "4-8 weeks",
+        "stages": [
+          {
+            "stageNum": 1,
+            "stageName": "Channel Evaluation & Selection",
+            "duration": "1 week",
+            "activities": [
+              "Score channels on (reach, cost, speed, fit)",
+              "Assess team capability for each channel",
+              "Evaluate competitive saturation",
+              "Select primary (2-3) and secondary channels",
+              "Create channel hypothesis"
+            ],
+            "outputs": [
+              "Channel selection rationale",
+              "Channel scoring matrix",
+              "Channel roadmap"
+            ]
+          },
+          {
+            "stageNum": 2,
+            "stageName": "Paid Acquisition Setup (if applicable)",
+            "duration": "1-2 weeks",
+            "activities": [
+              "Define target audience & lookalike",
+              "Set platform-specific campaigns",
+              "Create ad creative variations (3-5)",
+              "Establish CAC targets",
+              "Set up conversion tracking"
+            ],
+            "outputs": [
+              "Live paid campaigns",
+              "Ad variations testing plan",
+              "CAC baselines"
+            ]
+          },
+          {
+            "stageNum": 3,
+            "stageName": "Organic Acquisition Setup",
+            "duration": "Ongoing",
+            "activities": [
+              "Develop content strategy for channel",
+              "Create first batch of content",
+              "Optimize for platform algorithm",
+              "Build email nurture sequence",
+              "Set up community presence"
+            ],
+            "outputs": [
+              "Content calendar",
+              "Email sequences",
+              "Community playbook"
+            ]
+          },
+          {
+            "stageNum": 4,
+            "stageName": "Measurement & Optimization",
+            "duration": "Ongoing",
+            "activities": [
+              "Track CAC by channel weekly",
+              "Measure CAC vs target",
+              "Optimize best performing channel",
+              "Pause underperformers",
+              "Iterate and scale winners"
+            ],
+            "outputs": [
+              "Weekly CAC dashboard",
+              "Optimization recommendations",
+              "Channel performance reports"
+            ]
+          }
+        ],
+        "successCriteria": [
+          "CAC within target range for all channels",
+          "Clear channel winner(s) identified",
+          "Sustainable acquisition model",
+          "Predictable growth rate"
+        ]
+      },
+
+      {
+        "workflowId": "WORKFLOW-005",
+        "name": "Retention & Engagement Optimization Workflow",
+        "description": "Maximize customer retention and lifetime value",
+        "complexity": "Advanced",
+        "duration": "8-12 weeks",
+        "stages": [
+          {
+            "stageNum": 1,
+            "stageName": "Retention Analysis & Baseline",
+            "duration": "1 week",
+            "activities": [
+              "Analyze retention curves by cohort",
+              "Identify cliff points in retention",
+              "Segment by engagement level",
+              "Define churn drivers",
+              "Establish baseline retention metrics"
+            ],
+            "outputs": [
+              "Retention curves by segment",
+              "Churn driver analysis",
+              "Baseline metrics"
+            ]
+          },
+          {
+            "stageNum": 2,
+            "stageName": "Onboarding Optimization",
+            "duration": "2-3 weeks",
+            "activities": [
+              "Map onboarding funnel",
+              "Identify drop-off points",
+              "Define 'aha! moment' in product",
+              "Create day 1 and week 1 experience",
+              "Test critical path to value"
+            ],
+            "outputs": [
+              "Optimized onboarding flow",
+              "Day 1 and week 1 email sequences",
+              "Aha! moment definition"
+            ]
+          },
+          {
+            "stageNum": 3,
+            "stageName": "Engagement Loop Creation",
+            "duration": "2-3 weeks",
+            "activities": [
+              "Define core engagement behavior",
+              "Create habit loop mechanics",
+              "Design engagement triggers (email, push, in-app)",
+              "Build engagement campaigns",
+              "Test for optimal frequency"
+            ],
+            "outputs": [
+              "Engagement campaign calendar",
+              "Trigger strategy",
+              "Frequency optimization results"
+            ]
+          },
+          {
+            "stageNum": 4,
+            "stageName": "Churn Prevention & Win-back",
+            "duration": "1-2 weeks",
+            "activities": [
+              "Create early warning system for churn",
+              "Design intervention campaigns",
+              "Develop win-back sequence",
+              "Set up churn surveys",
+              "Create churn prevention playbook"
+            ],
+            "outputs": [
+              "Churn prediction model",
+              "Intervention playbook",
+              "Win-back sequence"
+            ]
+          }
+        ],
+        "successCriteria": [
+          "Week-1 retention improved by 20%+",
+          "Month-3 retention improved by 15%+",
+          "Churn rate predictable and managed",
+          "LTV:CAC ratio improved"
+        ]
+      },
+      {
+        "workflowId": "WORKFLOW-006",
+        "name": "Causal Experimentation & Incrementality Workflow",
+        "description": "Design and run causal experiments to measure true impact",
+        "complexity": "Advanced",
+        "duration": "4-8 weeks",
+        "stages": [
+          {
+            "stageNum": 1,
+            "stageName": "Experiment Design",
+            "duration": "1 week",
+            "activities": [
+              "Define hypothesis and primary KPI",
+              "Select method (RCT, holdout, geo test)",
+              "Calculate sample size and MDE",
+              "Define guardrails and risk thresholds"
+            ],
+            "outputs": [
+              "Experiment design doc",
+              "Power analysis",
+              "Decision rules"
+            ]
+          },
+          {
+            "stageNum": 2,
+            "stageName": "Implementation & Launch",
+            "duration": "1-2 weeks",
+            "activities": [
+              "Randomize audience or geos",
+              "Instrument events and QA tracking",
+              "Launch experiment with monitoring",
+              "Document anomalies"
+            ],
+            "outputs": [
+              "Experiment launch checklist",
+              "Tracking validation report",
+              "Monitoring dashboard"
+            ]
+          },
+          {
+            "stageNum": 3,
+            "stageName": "Analysis & Decision",
+            "duration": "1-2 weeks",
+            "activities": [
+              "Compute lift and confidence intervals",
+              "Review guardrail metrics",
+              "Decide scale/iterate/kill",
+              "Document learnings"
+            ],
+            "outputs": [
+              "Incrementality report",
+              "Decision memo",
+              "Next experiment queue"
+            ]
+          }
+        ],
+        "successCriteria": [
+          "Incremental impact quantified",
+          "Decision rules followed",
+          "Learnings documented and reusable"
+        ]
+      },
+      {
+        "workflowId": "WORKFLOW-007",
+        "name": "Marketing Mix Modeling Workflow",
+        "description": "Strategic budget allocation using MMM and adstock modeling",
+        "complexity": "Expert",
+        "duration": "6-10 weeks",
+        "stages": [
+          {
+            "stageNum": 1,
+            "stageName": "Data Collection & QA",
+            "duration": "2-3 weeks",
+            "activities": [
+              "Compile spend, impressions, conversions",
+              "Normalize time series",
+              "Add seasonality and pricing controls",
+              "Validate data completeness"
+            ],
+            "outputs": [
+              "MMM dataset",
+              "Data QA report"
+            ]
+          },
+          {
+            "stageNum": 2,
+            "stageName": "Modeling & Calibration",
+            "duration": "2-3 weeks",
+            "activities": [
+              "Run MMM with adstock and saturation curves",
+              "Validate against known events",
+              "Compare with incrementality tests",
+              "Refine model assumptions"
+            ],
+            "outputs": [
+              "Channel contribution report",
+              "Response curves",
+              "Model diagnostics"
+            ]
+          },
+          {
+            "stageNum": 3,
+            "stageName": "Budget Optimization",
+            "duration": "1-2 weeks",
+            "activities": [
+              "Identify marginal ROI by channel",
+              "Simulate budget scenarios",
+              "Propose reallocation plan",
+              "Set validation experiments"
+            ],
+            "outputs": [
+              "Optimized budget plan",
+              "Scenario model",
+              "Validation test plan"
+            ]
+          }
+        ],
+        "successCriteria": [
+          "Budget recommendations grounded in MMM",
+          "Response curves validated",
+          "Incrementality checks planned"
+        ]
+      },
+      {
+        "workflowId": "WORKFLOW-008",
+        "name": "Creative Intelligence & Testing Workflow",
+        "description": "Scale creative production and identify winning angles",
+        "complexity": "Advanced",
+        "duration": "4-6 weeks",
+        "stages": [
+          {
+            "stageNum": 1,
+            "stageName": "Insight Mining",
+            "duration": "1 week",
+            "activities": [
+              "Extract top-performing hooks",
+              "Cluster creatives by angle",
+              "Analyze fatigue signals",
+              "Define creative hypotheses"
+            ],
+            "outputs": [
+              "Creative insights report",
+              "Angle taxonomy"
+            ]
+          },
+          {
+            "stageNum": 2,
+            "stageName": "Creative Production",
+            "duration": "1-2 weeks",
+            "activities": [
+              "Generate briefs and templates",
+              "Produce variants with consistent metadata",
+              "QA for brand compliance",
+              "Prepare distribution plan"
+            ],
+            "outputs": [
+              "Creative library",
+              "Metadata schema",
+              "Distribution plan"
+            ]
+          },
+          {
+            "stageNum": 3,
+            "stageName": "Testing & Scaling",
+            "duration": "2-3 weeks",
+            "activities": [
+              "Run structured creative tests",
+              "Measure lift by segment",
+              "Promote winners and archive losers",
+              "Feed learnings back into briefs"
+            ],
+            "outputs": [
+              "Creative performance dashboard",
+              "Updated creative playbook"
+            ]
+          }
+        ],
+        "successCriteria": [
+          "Creative ROI improved",
+          "Clear winning angles identified",
+          "Scalable creative system in place"
+        ]
+      },
+      {
+        "workflowId": "WORKFLOW-009",
+        "name": "Pricing & Packaging Optimization Workflow",
+        "description": "Optimize monetization through pricing and packaging experiments",
+        "complexity": "Expert",
+        "duration": "6-10 weeks",
+        "stages": [
+          {
+            "stageNum": 1,
+            "stageName": "Pricing Research",
+            "duration": "2-3 weeks",
+            "activities": [
+              "Collect customer willingness-to-pay data",
+              "Run price sensitivity analysis",
+              "Audit competitor pricing",
+              "Define packaging hypotheses"
+            ],
+            "outputs": [
+              "Pricing research report",
+              "Packaging hypotheses"
+            ]
+          },
+          {
+            "stageNum": 2,
+            "stageName": "Experimentation",
+            "duration": "2-4 weeks",
+            "activities": [
+              "Launch pricing page tests",
+              "Measure conversion and revenue impact",
+              "Monitor churn and NRR impacts",
+              "Iterate on offers"
+            ],
+            "outputs": [
+              "Experiment results",
+              "Revenue impact analysis"
+            ]
+          },
+          {
+            "stageNum": 3,
+            "stageName": "Rollout & Communication",
+            "duration": "1-2 weeks",
+            "activities": [
+              "Define rollout plan",
+              "Prepare customer comms",
+              "Train sales and success teams",
+              "Monitor post-launch metrics"
+            ],
+            "outputs": [
+              "Pricing rollout plan",
+              "Enablement materials"
+            ]
+          }
+        ],
+        "successCriteria": [
+          "Revenue per user improved",
+          "Churn does not increase beyond threshold",
+          "Pricing clarity improved"
+        ]
+      },
+      {
+        "workflowId": "WORKFLOW-010",
+        "name": "Agentic Campaign Orchestration Workflow",
+        "description": "Coordinate multi-channel campaigns with automated learning loops",
+        "complexity": "Expert",
+        "duration": "Ongoing",
+        "stages": [
+          {
+            "stageNum": 1,
+            "stageName": "Campaign Architecture",
+            "duration": "1-2 weeks",
+            "activities": [
+              "Define campaign objectives and KPI tree",
+              "Map channel roles and handoffs",
+              "Create asset and timeline dependencies",
+              "Set automation rules"
+            ],
+            "outputs": [
+              "Campaign blueprint",
+              "Dependency map",
+              "Automation rules"
+            ]
+          },
+          {
+            "stageNum": 2,
+            "stageName": "Execution & Monitoring",
+            "duration": "Ongoing",
+            "activities": [
+              "Launch synchronized channel campaigns",
+              "Track performance in real time",
+              "Route learnings to creative and budget updates",
+              "Trigger escalation on anomalies"
+            ],
+            "outputs": [
+              "Live campaign dashboard",
+              "Anomaly alerts",
+              "Optimization log"
+            ]
+          }
+        ],
+        "successCriteria": [
+          "Cross-channel alignment",
+          "Automated optimization loops functioning",
+          "Campaign learnings captured"
+        ]
+      },
+      {
+        "workflowId": "WORKFLOW-011",
+        "name": "Competitive Intelligence Radar Workflow",
+        "description": "Always-on competitor monitoring and insight synthesis",
+        "complexity": "Intermediate",
+        "duration": "Ongoing",
+        "stages": [
+          {
+            "stageNum": 1,
+            "stageName": "Signal Collection",
+            "duration": "Weekly",
+            "activities": [
+              "Monitor competitor messaging",
+              "Track pricing and packaging changes",
+              "Capture ad creative changes",
+              "Track SEO keyword shifts"
+            ],
+            "outputs": [
+              "Weekly signal log",
+              "Competitor change alerts"
+            ]
+          },
+          {
+            "stageNum": 2,
+            "stageName": "Analysis & Insights",
+            "duration": "Monthly",
+            "activities": [
+              "Identify patterns and shifts",
+              "Map differentiation opportunities",
+              "Assess threats and counter-moves",
+              "Update positioning map"
+            ],
+            "outputs": [
+              "Competitive insights report",
+              "Updated positioning map"
+            ]
+          }
+        ],
+        "successCriteria": [
+          "Early warning on competitor moves",
+          "Actionable differentiation insights"
+        ]
+      },
+      {
+        "workflowId": "WORKFLOW-012",
+        "name": "Classified Intelligence Activation Workflow",
+        "description": "Activate deep intelligence systems and enforce guardrails",
+        "complexity": "Expert",
+        "duration": "2-4 weeks",
+        "stages": [
+          {
+            "stageNum": 1,
+            "stageName": "Signal Fusion & Trust Audit",
+            "duration": "1 week",
+            "activities": [
+              "Map signal sources and confidence levels",
+              "Validate trust signal ledger",
+              "Run privacy and consent checks",
+              "Define causal validation plan"
+            ],
+            "outputs": [
+              "Signal fusion map",
+              "Trust audit report",
+              "Causal test plan"
+            ]
+          },
+          {
+            "stageNum": 2,
+            "stageName": "Creative Genome & Offer Resonance",
+            "duration": "1-2 weeks",
+            "activities": [
+              "Encode top creatives into genome schema",
+              "Score offers with resonance index",
+              "Design controlled variants",
+              "Set attention yield curve thresholds"
+            ],
+            "outputs": [
+              "Creative genome library",
+              "Offer resonance scores",
+              "Variant test plan"
+            ]
+          },
+          {
+            "stageNum": 3,
+            "stageName": "Wargame & Moat Compounding",
+            "duration": "1 week",
+            "activities": [
+              "Run competitor wargame scenarios",
+              "Define counter-messaging playbook",
+              "Create moat compounding actions",
+              "Document reusable assets"
+            ],
+            "outputs": [
+              "Wargame response map",
+              "Moat compounding plan",
+              "Reusable asset library"
+            ]
+          }
+        ],
+        "successCriteria": [
+          "Confidence gates enforced",
+          "Causal validation plan approved",
+          "Reusable advantage assets created"
+        ]
+      }
+    ]
+  }
+}

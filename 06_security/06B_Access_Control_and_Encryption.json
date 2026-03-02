@@ -1,0 +1,39 @@
+{
+  "module": {
+    "name": "Access_Control_and_Encryption",
+    "version": "2.0.0",
+    "layer": "06_security",
+    "code": "06B",
+    "description": "RBAC policies, encryption standards, and key management",
+    "author": "OpenOps Foundation",
+    "created": "2025-12-16T00:00:00Z"
+  },
+  "governance": {
+    "compliance_level": "critical",
+    "requires_approval": true,
+    "audit_level": "full",
+    "data_classification": "critical"
+  },
+  "objectives": [
+    "Enforce role-based access control",
+    "Manage encryption keys",
+    "Support zero-trust architecture",
+    "Enable audit logging"
+  ],
+  "integration_points": {
+    "imports_from": ["06A_Security_Classification_Model.json", "02A_Agent_Roles_Config.json"],
+    "exports_to": ["00B_OpenOps_Audit_and_Decision_Ledger.json"]
+  },
+  "rbac_roles": {
+    "admin": {"permissions": ["*"], "can_delegate": true},
+    "supervisor": {"permissions": ["read:*", "write:agents", "write:orchestration"], "can_delegate": false},
+    "agent": {"permissions": ["read:assigned", "write:artifacts"], "can_delegate": false},
+    "viewer": {"permissions": ["read:public"], "can_delegate": false}
+  },
+  "encryption": {
+    "at_rest": {"algorithm": "AES-256-GCM", "key_rotation": "90_days"},
+    "in_transit": {"protocol": "TLS 1.3", "cipher_suites": ["TLS_AES_256_GCM_SHA384"]},
+    "key_management": {"service": "aws_kms", "hsm_backed": true}
+  },
+  "version_history": {"2.0.0": {"date": "2025-12-16", "changes": "Initial access control"}}
+}

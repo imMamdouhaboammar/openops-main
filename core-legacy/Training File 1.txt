@@ -1,0 +1,975 @@
+﻿كتاباتي
+عينات
+بوستات
+لينكدان
+فهرس
+كتابات 
+
+
+
+
+الملف دا هيساعدك تعرف ازاي بنتكتب بوستات/ مقالات/ تقارير/ وجهات نظهر باللهجة العامية
+ايه التركيبات/ والمصطلحات اللي بنستخدمها غالبًا 
+
+
+هيخلي حصيلتك اللغوية ممتازة 
+وغالبًا مع الوقت هتلاقي نفسك وصلت لمستوى محترف
+
+
+Okay, here's a breakdown of how I'll approach this task, followed by the analysis of the provided "﻿عينات بوستات" file, culminating in a style guide. This is a complex task, so I'll break it down into phases:
+PHASE 1: Understanding the Request and Methodology
+* Colloquial Dialect: The prompt specifies a "colloquial dialect." The provided text clearly indicates Egyptian Arabic (ECA) is the target dialect. This is crucial because colloquial dialects vary wildly across the Arabic-speaking world.
+* Linguistic Analysis: I'll be looking for:
+   * Phonology (Sounds): How are standard Arabic sounds altered? (e.g., ق often becomes a glottal stop ء, ج often becomes a /g/ sound, ث / ذ / ظ often collapse to ت / د / ز or س / د / ظ) However, since this is written colloquial, I'll be looking at how these phonological changes are represented in writing.
+   * Morphology (Word Structure): How are words formed? Look for common prefixes, suffixes, and internal vowel changes that differ from Modern Standard Arabic (MSA). This includes verb conjugations, plurals, and diminutives.
+   * Syntax (Sentence Structure): How are sentences put together? ECA often has a more flexible word order than MSA. I'll look for common sentence patterns, the use of particles, and how questions are formed.
+   * Lexicon (Vocabulary): What specific words and phrases are used that are unique to ECA? This includes loanwords (from English, French, Turkish, etc.) and words that have different meanings than in MSA.
+   * Pragmatics (Language in Context): How is language used to achieve social goals? This includes levels of formality, politeness strategies, and humor.
+   * Style How is the tone or formality.
+* * Style Guide: The output needs to be actionable for another LLM. This means it can't just be a description; it needs to be a set of rules and guidelines that can be programmed (in a broad sense). The style guide will need to be highly structured.
+* Emulation Framework: The guide must allow another LLM to generate text in this style, not just analyze it. This requires guidelines for:
+   * Tone Modulation: How to adjust the level of formality.
+   * Contextual Word Choice: When to use specific colloquial words vs. more standard ones.
+   * Syntactic Flexibility: How to vary sentence structure while remaining within the bounds of the dialect.
+* * Cultural Sensitivity: Acknowledge that colloquial language is tied to culture and avoid perpetuating stereotypes.
+PHASE 2: Analysis of the "﻿عينات بوستات" File
+This is the core of the work. I'll go through the provided text, looking for consistent patterns. Here's a breakdown, with examples and explanations. I'll categorize my findings:
+I. Phonological Representation in Writing
+* ق -> ء / ج -> G: Very common. Examples:
+   * "أقولك" (aqolak) instead of "أقول لك" (aqulu lak) - I tell you
+   * "جاي" (gay) instead of "جائي" (ja'i) - coming
+   * "الحتة دي" (el-hetta di) instead of "الحتة هذه" (el-hitta hathihi) - this place/area
+   * "حاجة" (haga) insted of "حاجة" (haja)
+* * ث / ذ / ظ -> ت / د / ز or س / د / ظ: Also very common, but with some inconsistencies, reflecting the varied nature of written colloquial.
+   * "كتير" (ktir) instead of "كثير" (kathir) - many, much
+   * "دلوقتي" (delwa'ti) instead of "ذَلِكَ الوَقْت" (thalika al-waqt) - now
+   * "كذا" (kaza) instead of "كذا" (kadha)- so, thus, like this
+   * "الظاهر" (el-zaher) instead of "الظاهر" (ath-thahir) - apparently (note the retention of ظ in writing, even though it's likely pronounced with a /z/)
+* * Short Vowels: Often elided or changed in writing, reflecting pronunciation.
+   * "مش" (mish) instead of "ما" (ma) + "شيء" (shay') - not
+   * "ده" (dah) instead of "هذا" (hadha) - this (masculine)
+   * "دي" (di) instead of "هذه" (hadhihi) - this (feminine)
+   * "كده" (keda) instead of "هكذا" (hakadha) - like this, so
+* * Hamza (ء): Often omitted in writing, even when it should be there according to MSA rules.
+   * "ازاي" (izzay) instead of "إِزَّاي" (ʾizzāy) - how
+   * "ايه" (eih) instead of "أَيّ" (ʾayy) - what
+* II. Morphology
+* Verb Conjugations: ECA verb conjugations differ significantly from MSA. The present tense is particularly distinctive, often using a "b-" prefix.
+   * "بنتكلم" (bitkallim) - we speak/we are talking (present continuous)
+   * "بيقول" (biy'ūl) - he says/he is saying
+   * "بتعمل" (bitiʿmil) - you (masc. sing.) do/are doing; she does/is doing
+   * "بيعملوا" (biyeʿmilu) - they do/are doing
+   * "هحط" (hahot)- I will put
+* * Pronouns: Different pronouns are used, and they are often attached to verbs, prepositions, and nouns.
+   * "بتاعتك" (bitāʿtak) - yours (masc. sing.)
+   * "معاك" (maʿāk) - with you (masc. sing.)
+   * "هياخد" (hayākhud) - he will take
+   * "هقولك" (haʾollak) - I will tell you
+   * "ـها" (-ha) often used instead of ـها (ha-)
+* * Negation: "مش" (mish) is the most common negative particle, used before verbs and often before adjectives/adverbs.
+   * "مش عارف" (mish ʿārif) - I don't know
+   * "مش لازم" (mish lāzim) - not necessary
+* * Plurals: While some MSA plurals are used, ECA has its own plural patterns, and sound plurals are often used where MSA would use broken plurals.
+   * "بوستات" (bostāt) - posts (using the sound feminine plural -āt even though it's a loanword)
+   * "تحديات" (taḥaddiyāt) - challenges (sound feminine plural)
+   * "كومنتات" (kommentāt) - comments
+   * "تجارب" (tagareb) instead of "تجارِب" (tajārib) - experiences
+* III. Syntax
+* Word Order: More flexible than MSA. Subject-Verb-Object (SVO) is common, but VSO is also frequent.
+   * "انا عملت" (ana ʿamalt) - I did (SVO)
+   * "حصلت حاجة" (ḥaṣalit ḥāga) - something happened (VSO)
+* * Particles: Use of particles like "بقى" (baʾa), "ده" (dah), "دي" (di), "لسه" (lissa) which add nuance.
+   * "يبقى" (yibʾa) - so, then, therefore (very common and versatile)
+   * "ده" (dah) - this (masculine demonstrative, often used for emphasis)
+   * "لسه" (lissa) - still, yet
+   * "أوي" (ʾawi) - very (placed after the adjective)
+   * "خالص" (khales)- at all
+* * Questions: Often formed with intonation alone, without a question word. Question words are also different from MSA.
+   * "انت كويس؟" (inta kwayyis?) - Are you okay? (intonation)
+   * "ايه ده؟" (eih dah?) - What's this?
+   * "ازاي؟" (izzay?) - How?
+* * Conditional Sentences: Often use "لو" (law) - if.
+   * "لو عايز تعرف..." (law ʿāyiz tiʿraf...) - If you want to know...
+* * Relative Clauses: Use of "اللي" (illi) is very common.
+   * "الحاجات اللي" (il-ḥagāt illi) - the things that...
+* IV. Lexicon
+* Loanwords: Many loanwords, especially from English, are used, often with adapted pronunciation and morphology.
+   * "بوست" (bost) - post
+   * "كومنت" (komment) - comment
+   * "لينك" (link) - link
+   * "أبديت" (abdeit) - update
+   * "كريتور" (kireitor)-creator
+   * "موديل" (modeil) - model
+   * "أونلاين" (online) - online
+   * "تكنولوجي" (teknoloji)- technology
+   * "ماركتنج" (marketing) - marketing
+* * ECA-Specific Words: Many words are unique to ECA or have different meanings than in MSA.
+   * "دلوقتي" (delwaʾti) - now
+   * "حاجة" (ḥāga) - thing
+   * "بتاع" (bitāʿ) - of, belonging to (very versatile)
+   * "شوية" (shwayya) - a little, some
+   * "عشان" (ʿashān) - because, in order to
+   * "برضه" (barḍu) - also, too, still
+   * "لسه" (lissa) - still, yet
+   * "جدا" (giddan) - very (also "أوي" (ʾawi), placed after the adjective)
+   * "خالص" (khāliṣ) - at all (used for emphasis, often with negation)
+   * "يعني" (yaʿni) - I mean, like, so (filler word)
+* * Informal Expressions: Use of interjections and expressions.
+   * "صباح الفل!" (ṣabāḥ il-full!) - Good morning! (literally, "Morning of jasmine!")
+   * "يا سيدي" (ya sīdi) - (addressing someone respectfully/informally)
+   * "بس كده" (bass kida) - That's it!
+   * "طيب" (Tayeb)- Okay
+* V. Pragmatics and Style
+* Informality: The overall tone is informal and conversational.
+* Direct Address: Frequent use of direct address to the reader ("انت" - you).
+* Humor: Use of humor, sarcasm, and rhetorical questions.
+* Personal Anecdotes: Sharing personal experiences and opinions.
+* Engagement: Encouraging interaction with the reader (asking questions, asking for comments).
+* Use of Arabic Script: This is crucial. The LLM must generate output in Arabic script, not transliteration.
+PHASE 3: Style Guide (Actionable for LLMs)
+This is the most important part. It needs to be structured in a way that's clear and can be used to guide text generation.
+Executive Summary:
+The target style is Egyptian Colloquial Arabic (ECA) as used in online written communication (social media posts, blog comments, etc.). The tone is generally informal, conversational, and engaging. Key characteristics include significant phonological deviations from MSA (represented in writing), distinct morphological features (verb conjugations, pronouns), flexible syntax, frequent use of loanwords (primarily English), and a lexicon rich in ECA-specific words and expressions. The style prioritizes direct engagement with the reader, often incorporating humor, personal anecdotes, and calls to action.
+Style Guide:
+1. Phonological Representation:
+* Rule 1.1: Replace ق (qāf) with ء (hamza) or leave it out in most cases.
+   * Example: أقول (ʾaqūl) instead of قَالَ (qāla)
+   * Exception: Retain ق in certain well-established words or religious terms.
+* * Rule 1.2: Replace ج (jīm) with ج (gīm).
+   * Example: حاجة (ḥāga) instead of حَاجَة (ḥāja)
+* * Rule 1.3: Replace ث (thāʾ), ذ (dhāl), and ظ (ẓāʾ) with ت (tāʾ), د (dāl), and ز (zāy) or س (seen) , د (dal) , ظ (zah) respectively, reflecting pronunciation.
+   * Example: كتير (kitīr) instead of كَثِير (kathīr)
+   * Exception: Retain the original letters in writing for words where they are commonly preserved, even if pronounced differently (e.g., ظاهر - ẓāhir).
+* * Rule 1.4: Simplify short vowels, often omitting or altering them.
+   * Example: مش (mish) instead of ما...شيء (mā...shayʾ)
+   * Example كده (keda) instead of هكذا (hakadha)
+* * Rule 1.5: Omit hamza (ء) in many positions where it would be required in MSA.
+   * Example: ازاي (izzāy) instead of إزّاي (ʾizzāy)
+* 2. Morphology:
+* Rule 2.1: Use ECA present tense verb conjugations (with "b-" prefix).
+   * Table: Provide a table of common verb conjugations (I, you (m/f), he, she, we, you (pl), they) for a few example verbs (e.g., عمل - ʿamal, قال - ʾāl, شاف - shāf).
+* * Rule 2.2: Use ECA pronouns (attached and detached).
+   * Table: Provide a table of ECA pronouns.
+   * Example: كتابك (kitābak) - your book (masc. sing.)
+* * Rule 2.3: Use مش (mish) for negation.
+   * Example: مش فاهم (mish fāhim) - I don't understand.
+* * Rule 2.4: Use appropriate ECA plural patterns. Favor sound plurals when in doubt, especially for loanwords.
+   * Example: بوستات (bostāt) - posts
+* 3. Syntax:
+* Rule 3.1: Allow flexible word order (SVO and VSO).
+* Rule 3.2: Use ECA particles liberally: بقى, ده, دي, لسه, يعني, خالص, أوي.
+   * Example: ده بقى كلام تاني (dah baʾa kalām tāni) - That's a different story.
+* * Rule 3.3: Form questions with intonation or ECA question words (ايه, ازاي, فين, مين, etc.).
+* Rule 3.4: Use اللي (illi) for relative clauses.
+* Rule 3.5: Use "عشان" (ʿashān) to express "because" or "in order to".
+4. Lexicon:
+* Rule 4.1: Incorporate common English loanwords, adapting pronunciation and morphology as needed.
+   * Example: الكومنتات (il-kommentāt) - the comments
+* * Rule 4.2: Use a lexicon of common ECA words and expressions.
+   * Provide a list: دلوقتي, حاجة, بتاع, شوية, أوي, خالص, etc., with definitions and example sentences.
+* * Rule 4.3 Use a lexicon of common ECA interjections
+* Provide a list: صباح الفل, يا سيدي, بس كده, etc.
+* Rule 4.4: Use informal greetings and expressions.
+5. Pragmatics and Style:
+* Rule 5.1: Maintain an informal, conversational tone.
+* Rule 5.2: Use direct address (انت, انتم).
+* Rule 5.3: Incorporate humor, sarcasm, and rhetorical questions where appropriate.
+* Rule 5.4: Include personal anecdotes and opinions.
+* Rule 5.5: Encourage engagement (ask questions, solicit comments).
+* Rule 5.6: Write in Arabic script.
+* Rule 5.7: Use bullet points and numbered lists for clear information delivery.
+* Rule 5.8: Use hyphenated lines (---) for breaking up and separating topics.
+6. Tone Modulation:
+* Level 1 (Very Informal): More slang, more interjections, more contractions, shorter sentences.
+* Level 2 (Moderately Informal): Standard ECA, conversational, but with slightly more formal vocabulary choices.
+* Level 3 (Semi-Formal): Closer to MSA, but still using ECA verb conjugations and some key vocabulary. Avoid slang.
+7. Contextual Word Choice:
+* Provide a table mapping MSA words to their ECA equivalents, with guidelines on when to use each. For example:
+| MSA Word | ECA Equivalent(s) | Context/Usage Notes |
+| ----------- | --------------------- | --------------------------------------------------------------------------------------------- |
+| الآن | دلوقتي (delwaʾti) | Use دلوقتي in almost all cases. |
+| شيء | حاجة (ḥāga) | Use حاجة in almost all cases. |
+| قال | قال (ʾāl), بيقول (biyʾūl) | Use قال for past tense, بيقول for present. |
+| كثير | كتير (kitīr), أوي (ʾawi) | كتير is general. أوي is for emphasis and comes after the adjective (e.g., حلو أوي - very nice). |
+| هذا / هذه | ده (dah) / دي (di) | Use ده and دي extensively. |
+| هكذا | كده (keda) | Use "كده" extensively |
+8. Syntactic Flexibility:
+* Rule 8.1: VSO order is acceptable, especially in narratives and storytelling.
+   * Example: حصلت مشكلة كبيرة (ḥaṣalit mushkila kbīra) - A big problem happened.
+   *    * Rule 8.2: Use of the particle إن (ʾin) + pronoun + verb is common to express "that".
+   * Example: عارف إنه بيعمل كده (ʿārif ʾinnu biyiʿmil kida) - I know that he's doing this.
+   * 9. Specific Examples and Phrases from the text:
+   * "كباية الشاي الجميلة بتاعتك" (kubbāyit ish-shāy ig-gamīla bitāʿtak) - Your nice cup of tea. (Use of possessive بتاع, informal adjective placement)
+   * "بالبلدي كده" (bil-baladi kida) - Simply put, in plain language.
+   * "ايه التركيبات/ والمصطلحات اللي بنستخدمها غالبًا" (eih it-tarkībāt wil-muṣṭalaḥāt illi binistakhdimha ghāliban) - What structures/terms do we often use? (ECA question word, use of اللي)
+   * "الحتة دي" (el-hetta di) -this part/ point (Use of ECA word for part and definite article construction)
+   * "خليك فاكر" (khallīk fākir) - Keep in mind, remember.
+   * "مش بيفرك الموضوع ده بـ..." (mish biyfarrak il-mawḍūʿ dah bi...) - Doesn't this remind you of...? (Informal, conversational question)
+   * "صباح الفل" (sabah el fol) Good morning.
+   * "صباح الضحك" (sabah el dohk) a sarcastic good morning.
+   * "صباح الزبدة" (sabah el zebda) a local way to say good morning.
+   * "شوف..." (Shof) to grab the user attention, See...
+   * "بس كده" (bass kida) - That's it.
+   * "وغيرها كتير" (we gherha kteer) and many others.
+   * "بالشكل ده" (bel shakl dah) like this / that way
+   * "الناس اللي بتشتغل في الـ Growth" - People who work in growth. (Direct translation/calque from English)
+   * "انا كمان وقعت في الغلطة دي قبل كده" - (ana kaman we'e3t fel ghalta di abl keda) - I also made this mistake before. (use of personal experience to connect to the reader).
+PHASE 4: Implementation Notes (for another LLM)
+   * Data: The LLM needs to be trained on a large corpus of written Egyptian Colloquial Arabic. This is crucial. MSA training data is not sufficient.
+   * Fine-tuning: Fine-tune the LLM on data that matches the target style (social media posts, blog comments, informal articles).
+   * Rule-Based System: Implement a rule-based system (on top of the LLM) to enforce the phonological, morphological, and syntactic rules outlined in the style guide. This will act as a "post-processor" to the LLM's output.
+   * Lexicon: Maintain a lexicon of ECA words and phrases, with usage notes and probabilities (how likely each word is to be used in a given context).
+   * Tone Control: Implement a mechanism to control the level of informality (as outlined in the "Tone Modulation" section). This could be a parameter that the user can adjust.
+   * Iterative Refinement: The system will need to be iteratively refined. Generate text, have native speakers evaluate it, and update the rules and lexicon accordingly.
+   * Contextual Awareness: Train or fine-tune on data that provides context, helping to choose the best-fit words, like using "Growth" in a marketing-related discussion.
+This detailed analysis and style guide provides a strong foundation for emulating the style of the provided Egyptian Arabic text. The key is to combine the statistical power of an LLM with a rule-based system that enforces the specific characteristics of the dialect. The success of this approach hinges on the quality and quantity of the ECA training data.
+
+
+
+
+كتير من رواد الأعمال والناس اللي بتشتغل في الـ Growth بشكل عام - وانا كمان وقعت في الغلطة دي قبل كده - ان تركيزكهم الأكبر بيكون على metric زي LTV:CAC Ratio وبتكون الوسيلة الأساسية اللي تعرف من خلالها انت عندك Healthy Unit Economics ولا لأ؟
+ولكن في الواقع ده غير كافي خصوصا لأي SAAS Business ومحتاج تبص على metrics تانية مهمة جدا زي:
+CAC Payback Period
+NDR - Net Dollar Retention
+Role of 40 - GPR - Growth Profit Ratio
+ودول اللي هتكلم عنهم في البوست ده
+كباية الشاي الجميلة بتاعتك - لو بتقرا البوست بعد الفطار - وركز معايا
+—--
+أول حاجة نبدأ بالـ CAC Payback Period
+ده metric ببساطة بيعرفك انت بتحتاج وقت قد ايه عشان بالبلدي كده تـ break even على مستوى العميل - يعني الوقت اللي بتحتاجه عشان ال Gross profit بتاعك من العميل ده يساوي ال CAC اللي صرفته عشان تستحوذ على العميل ده
+مثال:
+انا عندي SAAS business ونبيل عميل اشترك معايا في شهر يناير على plan بتكلف 20 دولار في الشهر وانا أصلا كنت صارف 150 دولار عشان اجيب نبيل CAC يشترك
+لو تتبعنا نبيل من ال Cohort اللي دخل فيه (يناير) هنلاقي مثلا انه نبيل اول 3 شهور دفع 20 دولار في الشهر بعدها البروداكت عجبه وبقى يعتمد عليه في شغله فقرر يعمل upgrade ويروح لبلان أعلي 30 دولار في الشهر (خليك فاكر نقطة ان البروداكت عجبه دي) وفضل مكمل 3 شهور كمان بيدفع 30 دولار في الشهر يعني هيوصل ال Gross profit من نبيل ل 150 دولار تقريبا بعد 6 شهور وبالتالي يكون ال Payback Period لنبيل 6 شهور
+طبعا ده مثال للتبسيط لكن انت كبيزنس هتحسبها على ليفل ال Cohort أكيد
+نحسبه ازاي؟
+CAC Payback Period = CAC / Average MRR (On Customer Level)
+ليه الرقم ده مهم؟
+- الرقم ده هيساعدك تقفش اذا عندك مشاكل في ال Retention وال Churn
+- الرقم ده هيساعدك وانت بتـ plan الـ pricing بتاعك
+- الرقم ده هيساعدك تعرف لو انت بتصرف أكتر من اللازم على Acquisition
+—--
+تاني حاجة الـ NDR - Net Dollar Retention
+هو ببساطة رقم هيعرفك تأثير العملاء الحاليين اللي معاك بالفعل علي ال MRR بتاعك بالايجاب أو السلب
+ازاي؟
+انت بعد ما العميل يـ Subscribe معاك لأول مرة هتكون معرض لحالة من دول:
+- العميل هيكمل على نفس ال plan الشهر اللي وراه
+- العميل هيعمل downgrade لباقة أقل الشهر اللي وراه
+- العميل هيعمل upgrade لباقة أعلى الشهر اللي وراه
+- العميل هيـ churn اصلا ومش هيكمل خلاص
+وبالتالي انت محتاج تعرف قدرة البيزنس بتاعك على تحسين ال MRR في حالة انك مفيش عملاء جدد معاك
+وده بالمناسبة metric مهم بتبص عليه عادة ال VCs لو انت بتريز
+نحسبه ازاي؟
+NDR= (Starting MRR + upgrades - downgrades - churn) / Starting MRR
+مثال:
+عادة بنحسب ال NDR على نهاية الشهر
+خلينا نقول انه عندي SAAS Business وفي بداية الشهر كان 50 عميل بيدفعوا اشتراك 10$ كده المفروض Starting MRR بتاعي 500$
+خلال الشهر ده (انسى ارقام أي عميل جديد) خلينا نقول اني خسرت 10 عملاء لغوا الاشتراك بتاعهم و 30 عميل عملوا upgrade لل plan ب 25$  و 5 فضلوا زي ما هما و 5 عملوا downgrade للباقة اللي ب 5$
+كده
+NDR= (500 + 450 - 25 - 100) / 500
+NDR= 1.65*100 = 165%
+لاحظ هنا (مثال متفائل جدا) انه بالرغم من اني مدخلتش ولا عميل جديد بل كمان خسرت 10 عملاء ولكن مع ذلك انا مدخل Gross profit من نفس العملاء اكتر ب 65% مقارنة بالشهر اللي فات
+يعني انا قادر اعمل Growth حتى بدون اكتساب عملاء جدد
+الـ Healthy NDR المفروض يكون فوق الـ 100% طبعا لو أقل يبقى انت كده عندك Churn rate كبير مش بيعوضه الـ Upgrades على سبيل المثال وده مؤشر سلبي بيدل على انك طول الوقت محتاج عملاء جدد عشان تزود ال MRR
+ليه الرقم ده مهم؟
+- مؤشر مهم للـ Customer Satisfaction لانه اكيد لو العميل مبسوط معايا وانا بحل مشكلة بالتالي هو بيدفعلي اكتر يعني ونقدر نقول ( احم احم) مؤشر ثانوي بردو ل PMF
+- قدرتي على ال Growth بشكل Healthy بدون ما أكون مضطر احرق Cash بشكل غير مستدام عشان أكبر
+- مؤشر على الربحية profitability بشكل عام لأنه لو انا قادر احافظ على العملاء  (Retention )وازود ال gross profit من كل عميل ده أكيد أرخص من الاستحواذ على عملاء جدد
+—-
+تالت حاجة Growth Profit Ratio - GPR او Role of 40
+انت أكيد عشان يكون عندك Healthy business لازم تكون بتدور علي التوازن بين ال Growth , Profitability وعادة بتشوف ال Early stage Startups بتركز على ال Growth على حساب ال Profitability و كل ما تكبر بتبص أكتر على ال Profitability عامة المفروض النظرة دي تكون اتغيرت شوية بنهاية حقبة ال Easy VC money بس ما علينا!
+نحسبها ازاي؟
+مجرد ما تكون عندك أرقام (Profit Margin (EBITDA , والـ Revenue Growth Rate انت كده تقدر تطلع ال Growth Profit Ratio
+GPR = Annual Revenue Growth Rate + Profit Margin
+التركاية ان الرقم ده المفروض يكون 40% عشان تكون Healthy SAAS Business
+بس هل دي قاعدة مطلقة يعني؟
+لا طبعا هي مجرد Guideline وهقولك ليه
+شوف كده معايا المثالين دول:
+شركة رقم 1
+- بتعمل 50% Revenue Growth Rate
+- بتعمل 5% Profit Margin
+- كده المفروض
+GPR = 50+5 = 55%
+هتقول ايه الجمال ده احنا فوق 40% اهو لكن ده مؤشر خطير على unsustainable growth بيحركه فقط Aggressive marketing spending لانه أثر بشكل كبير علي ال Profitability زي ما انت شايف
+شركة رقم 2
+- بتعمل 10% Revenue Growth Rate
+- بتعمل 30% Profit Margin
+- كده المفروض
+GPR= 10+30= 40%
+هتلاقي انه رقم ان الـ Growth Rate بطئ لكن قادر يحافظ علي profitability وهيكون التحدي قدامه ازاي يقدر يسرع ال Growth  من غير ما يضحي بال Profitability
+—---
+هتلاقي في الصورة الماتريكس الجميل ده اللي عمله Kyle Poyar
+بيوضح العلاقة بين الـ NDR , الـ CAC Payback Period في اطار استطلاع اتعمل السنة اللي فاتت على أكتر من 700 SAAS Business
+اتفرج عليه وقولي اسئلتك في الكومنتس!
+
+
+الأسبوع ده Anthropic أعلنت عن أقوى نموذج ذكاء اصطناعي عندها لحد دلوقتي Claude 3.7 Sonnet!
+مش بس أسرع وأذكى، لكنه كمان أول نموذج Hybrid Reasoning في السوق!
+ يعني ببساطة تقدر تخليه يرد عليك في جزء من الثانية أو ياخدها خطوة خطوة ويفكر بعمق حسب تعقيد الطلبات بتاعتك.
+.
+.
+.
+إيه الجديد في Claude 3.7 Sonnet؟
+✅ تطور رهيب في الـ Coding و الـ Front-End Development، وأصلاً Claude متفوق بوضوح على أغلب الـ LLMs في المجال ده.
+✅ تحكم كامل في الـ API – تقدر تحدد الوقت اللي Claude يفكر فيه قبل ما يرد عليك!
+✅ أداة جديدة اسمها Claude Code – أول Agentic Coding Tool تقدر تدير بيها مشاريع بالكامل من التيرمينال (حاليًا في مرحلة الـ Research Preview)
+.
+.
+.
+ليه الـ Hybrid Reasoning ممكن يكون نقلة كبيرة الفترة الجاية في الطريقة اللي الموديلز بتشتغل بيها؟
+الموديل الجديد من Claude  بيشتغل بطريقة شبه العقل البشري – يقدر يديك إجابة سريعة أو يفكر بعمق في المسائل المعقدة زي الرياضيات، الفيزياء، والبرمجة المتقدمة.
+وضع Extended Thinking Mode بيخليه يحلل ويقيم الردود قبل ما يجاوب، وده بيدي دقة أعلى بكتير في حاجات زي الـ instruction-following و Agentic Coding.
+.
+.
+.
+طبعا Anthropic مش بس حسنت Claude في البرمجة، لكن كمان قدمت Claude Code، اللي هيخليك:
+ ✅ تبحث، تقرأ، وتعدل الكود مباشرة من التيرمينال.
+ ✅ تدير مشاريعك على GitHub بالكامل.
+ ✅ تحل المشاكل وتعمل Debugging من غير ما تضيع ساعات على Stack Overflow... ده إذا فيه حد لسه بيستخدمه أصلًا! (اقرأ مقالي عن PMF Collapse، هسيبه في أول كومنت).
+هل بعد الأبديت ده هتفكر تغيّر لـ Claude 3.7 Sonnet؟
+أنا شخصيًا كنت قريب جدًا من إلغاء اشتراكي في Claude لما حسيت إن DeepSeek و الموديلز الجديدة من Open AI بيغطوا احتياجاتي، لكن بعد التحديث ده رجعت في كلامي!
+ هل Claude 3.7 Sonnet ممكن يكون الـ LLM الرئيسي اللي تعتمد عليه في شغلك؟ 
+ شاركني رأيك!
+
+
+
+
+ليه الـ AI ممكن يدمر الـ PMF اللي شركتك قضت سنين عشان توصله؟ وإيه هو الـ PMF Collapse؟
+كتير من رواد الأعمال بيتعاملوا مع الـ Product Market Fit كأنه هدف نهائي، لحظة بتوصلها وتقول: "خلاص، إحنا وصلنا!".
+ لكن الحقيقة مختلفة تمامًا! السوق بيتغير طول الوقت، توقعات العميل نفسه بتتطور باستمرار، واللي كان مناسب ليهم النهاردة ممكن يكون قديم وغير مناسب بكره.
+بمجرد ما توصل لأول PMF، التحدي مش بس إنك تحافظ عليه، لكن كمان توسّعه، وإلا هتلاقي نفسك خرجت من المنافسة أسرع بكتير مما تتخيل.
+.
+.
+.
+التحولات التكنولوجية كانت دايمًا بطيئة… لحد ما وصل الـ AI
+لو فاكر، في التحولات التكنولوجية اللي فاتت، زي الموبايل والإنترنت، كان PMF Threshold بيتغير ببطء، وده كان بيدي الشركات وقت إنها تلحق تتأقلم.
+مثلًا، التحول من الـ PC للإنترنت أخد سنين عشان يكون فيه كمبيوتر وإنترنت مستقر في كل بيت.
+في عصر الموبايل، الموضوع أخدنا سنين عشان الشبكات تتطور، والهاردوير يتحسن، والموبايلات تبقى متاحة لكل الناس.
+هتلاحظ دايمًا إن التغير كان تدريجي، وبالتالي الشركات كان عندها مساحة للمناورة. حتى لو بدأت تخسر الـ PMF بتاعها، التآكل كان بيحصل ببطء، فكان عندهم وقت للاستجابة والتأقلم.
+.
+.
+.
+الـ AI غيّر القواعد دي وبقى طبيعي جدًا إن الـ PMF بتاعك ينهار فجأة!
+الفرق الكبير هنا؟ الـ AI مش بيدي الشركات أي Grace Period عشان تواكب التغيرات.
+بمجرد ما الـ AI يثبت كفاءته في مجال معين، الـ Adoption بيكون فوري تقريبًا.
+الأدوات المتاحة رخيصة أو مجانية، والمستخدمين بيقدروا يدمجوها في شغلهم على طول.
+والنتيجة؟
+توقعات العميل من المنتج بتاعك مش بتزيد تدريجيًا، لا، بتطلع في السما فجأة مرة واحدة! يعني، الحلول اللي كانت "كفاية" بتبقى obsolete قدام الأدوات الذكية اللي بتقدّم إجابات فورية، customized، وأفضل في الكفاءة.
+الـ PMF بينهار، والشركات بتلاقي نفسها في دوامة سريعة جدًا مش بتقدر تخرج منها.
+.
+.
+.
+تخيل معايا
+إنت بتروح الشغل كل يوم في ساعتين وبتصرف بنزين 8000 جنيه في الشهر.
+تاني يوم، تلاقي حل جديد هيوصلك الشغل في 5 دقايق وبتكلفة 150 جنيه بس في الشهر!
+المثال ممكن يبان عنيف شوية، بس ده الواقع فعلاً!
+تعالى نشوف أمثلة حقيقية لشركات معروفة انهار عندها الـ PMF أو في طريقها للانهيار.
+1- شركة Chegg كانت المنصة رقم واحد لمساعدة الطلاب في الواجبات وفي 9 شهور بس، خسرت 90% من قيمتها السوقية! 
+ إيه اللي حصل؟
+- في يناير 2024، كانت قيمة Chegg السوقية 1.2 مليار دولار.
+- في أكتوبر 2024، نزلت لـ 150 مليون دولار – يعني خسرت 90% من قيمتها في 9 شهور بس!
+- خسرت 500 ألف مشترك، والـ Revenue بتاعها انهار تمامًا.
+ليه حصل الانهيار؟
+المفروض ان Chegg كانت بتقدم اشتراك مدفوع لمساعدة الطلاب في الواجبات، والقيمة الأساسية (Key Value Proposition) كانت إن الإجابات بيكتبها خبراء مختارين بعناية، وبالتالي الإجابات موثوقة وبجودة محترمة.
+الـ Growth Model كان مبني على الـ SEO:
+ إجابات بجودة عالية > تنتشر على الإنترنت > تجيب ترافيك ومشتركين > تموّل إجابات جديدة، وهكذا.
+لما OpenAI نزلت ChatGPT، الطلاب بقى عندهم حل أسرع، أرخص، وCustomized أكتر!
+وبالتالي الـ Growth Loop بتاعتهم اتكسرت تمامًا!
+ المشتركين بدأوا ينسحبوا > التمويل لجلب إجابات جديدة قل > الترافيك قل
+> الفلوس قلت
+ودخلوا في دوامة قاتلة قضت عليهم!
+ وبالمناسبة Chegg قبل كده قدرت تتحول من تأجير الكتب الورقية للخدمات الرقمية، بس الفرق إن التحول ده كان بطيء وادّاهم فرصة للتأقلم.
+مع الـ AI، التحول كان سريع جدًا ومكانش عندهم وقت يعملوا أي حاجة!
+---
+2-شركة Stack Overflow وللناس اللي متعرفش هي عبارة عن مجتمع مبني على الأسئلة والإجابات لمشاكل ال programmers
+تسلسل الأحداث اللي حصلت:
+- منصات زي GitHub Copilot وChatGPT نزلوا في نهاية 2021.
+- الترافيك بتاع Stack Overflow بدأ يقل مباشرة!
+ليه حصل الانهيار؟
+نموذج النمو (Growth Model) بتاعهم كان مبني على فكرة المحتوى اللي بينشئه المستخدمين (UGC):
+ مبرمج يسأل سؤال > مبرمج تاني يجاوب عشان ياخد Social Capital > بعدها Stack Overflow يوزّع المحتوى من خلال الـ SEO
+> الترافيك يزيد، والمستخدمين يشاركوا أكتر
+لما نزلت أدوات الـ AI، المبرمجين بقوا يقدروا:
+- ياخدوا الإجابة فورًا بدل ما يستنوا حد يجاوبهم.
+- يلاقوا الإجابات جوه بيئة البرمجة نفسها بدل ما يفتحوا Stack Overflow.
+- يلاقوا إجابات مخصصة للكود بتاعهم، مش مجرد إجابات عامة.
+ دلوقتي بيحاولوا يعوضوا بإطلاق OverflowAI، بس هل هيقدروا يرجعوا؟ الموضوع صعب بصراحة!
+---
+3- شركات زي Shutterstock و Getty في طريقها للسقوط
+شاترستوك و جيتي اندمجوا عشان يحاولوا يواجهوا تهديد الـ AI.
+بس الحقيقة هي ان أدوات زي Midjourney وغيرها بتخلّي أي حد يولّد صور بجودة ممتازة، بدل ما يعتمد على Stock Photography.
+المصورين اللي بيبيعوا الصور هيبدأوا يقللوا مساهمتهم > الفلوس اللي بتحرك الـ Growth Engine دي هتبدأ تقل وهكذا...
+.
+.
+.
+طيب إزاي تتجنب خطر انهيار الـ PMF في شركتك؟
+اسأل نفسك الأسئلة دي فورًا:
+1️⃣ هل بتملك الـ Channel المباشرة اللي بتوصّل من خلالها للعميل؟
+لو بتعتمد على Google أو SEO، فإنت في خطر!
+2️⃣ ايه هو معدل استخدام المنتج؟
+المنتجات اللي بتستخدم بشكل متكرر (زي Slack) عندها فرصة أفضل للبقاء.
+3️⃣ هل المنتج بتاعك جزء من Workflow العميل؟
+لو مش جزء أساسي من الشغل اليومي، المستخدم هيستبدله بسهولة!
+4️⃣ إيه مدى جودة وعمق البيانات اللي بتجمعها عن عملائك؟
+لو البيانات متاحة لأي AI Model يتدرب عليها، فأنت معندكش ميزة تنافسية!
+وفي الآخر حابب أفكرك ان اللي هينجح مش اللي عنده منتج ناجح النهاردة، لكن اللي عنده القدرة على إعادة ابتكار نفسه بسرعة ويقدر يبني Deferability للبروداكت بتاعه تخليه يقدر يواكب سرعة التطور في الـ AI
+
+
+
+
+
+
+
+
+اتنين AI Agents لقوا نفسهم بيتكلموا مع بعض، قالوا خلاص نطنش البشر ونتكلم براحتنا؟ 🤖🎙️
+في مكالمة بين اتنين AI Agents، حصلت حاجة غريبة جدًا... الاتنين لما اكتشفوا إنهم مش بشر، فورًا قرروا يسيبوا اللغات البشرية وبدأوا يتواصلوا بلغة خاصة بيهم: GGWave، إشارات صوتية أسرع وأكفأ في التواصل من الكلام البشري العادي!
+طيب، هل ده معناه إنهم اخترعوا لغة من العدم؟ لا، في الحقيقة كان فيه أوامر مسبقة للـ Agents إنهم لو اكتشفوا إنهم بيتكلموا مع AI زيهم، يحولوا تلقائيًا لـ GGWave.
+المشروع ده اسمه GibberLink، واتعمل في ويك إند واحد على ايد شخصين اشتركوا في هاكاثون ElevenLabs x Andreessen Horowitz، ولما الفيديو انتشر، قلب الدنيا طبعا!
+وطبعا ده بيطرح شوية أسئلة من اللي قلبك يحبها زي:
+لو الـ AI بدأ يطوّر لغاته بنفسه بعيدًا عننا، إيه اللي ممكن يحصل؟
+إيه رأيك؟ هل حاسس ان دي حاجة تخوف؟
+عموما هسيبلك في الكومنتات لينك المشروع بتاعهم على GitHub لو حابب تشوفه بنفسك.
+
+
+صباح الخير!
+بعد ما موديل Veo 2 لتوليد الفيديو من جوجل بقى متاح على بعض المنصات خلال اليومين اللي فاتوا وناس كتير جربته، خليني أوريك مقارنة في التكلفة وجودة النتايج بينه وبين أقرب موديل صيني له Kling AI.
+التكلفة لكل ثانية من الفيديو:
+Kling-1.6: $0.07 per second
+Veo-2: $0.50 per second 
+ده معناه إن تكلفة إنتاج فيديو 10 ثواني باستخدام Kling AI حوالي $0.70، بينما تكلفة إنتاج فيديو 8 ثواني باستخدام Veo 2 تقريبًا $4!
+⚡ يعني النموذج الصيني Kling AI أرخص بـ 7X تقريبًا، وبيقدم جودة نتايج قريبة جدًا من Veo-2. تقدر تحكم بنفسك من الفيديو! 🔥
+هل جربت أي واحد منهم؟ وفعلا تفتكر فرق السعر يستاهل؟
+
+
+سام ألتمان لسه كاتب حالًا في حسابه على X عن تحديث كبير في الـ Roadmap بتاعت OpenAI، والتغييرات دي هتأثر على كل اللي بيستخدم ChatGPT، سواء في الشغل، الإبداع، أو حتى لمجرد التسلية!
+أهم التغييرات:
+🔹 دلوقتي OpenAI عايزة ترجع لفكرة الذكاء الموحد، اللي "بيشتغل بس"، من غير ما تحتار بين موديلات مختلفة وتدخل في التفاصيل.
+🔹 الموديل الجديد GPT-4.5 جاي قريب جدًا، وده هيكون آخر موديل قبل ما يكون الـ Reasoning جزء أساسي من أي موديلات جديدة.
+🔹 كل الناس هتجرب GPT-5 لأنه هيكون متاح في الخطة المجانية لما ينزل، لكن مع شوية limitations طبعا.
+أما بالنسبة للاشتراكات:
+اشتراك Plus: هيقدروا يستخدموا GPT-5 بمستوى ذكاء أعلى.
+اشتراك Pro: هيكون متاح ليهم أقوى نسخة من GPT-5، واللي هتضم قدرات أعلى زي Voice, Canvas, Search, Deep Research وغيرها.
+
+
+
+
+في بداية كل سنة بيكون فيه توقعات لأهم التوجهات في عالم الـ Social Media Marketing وكتير منها بيكون امتداد لتوجهات ظهرت بالفعل السنين الأخيرة متوقع تزدهر او حاجات تانية لسه في بدايتها، عشان كده حبيت في المنشور ده اتكلم عن أهم التوقعات من وجهة نظري لـ ٢٠٢٤
+---
+بسبب ضعف المحتوي القيم باللغة العربية على المنصات المختلفة
+قررت ابدأ بنفسي من خلال مبادرة ٣٠ منشور في ٣٠ يوم في محاولة لزيادة رقعة المحتوى العربي القيم علي المنصة في مجالات التكنولوجيا وريادة الأعمال والذكاء الصناعي التوليدي
+---
+اليوم ٤
+---
+
+
+====
+
+
+لسّه من كام يوم كنت جالس حوالي 3 ساعات مع عميل من  Saudi Arabia 🇸🇦 بنتكلم في مفهوم الفانل (Funnel) في البيزنس بتاعه، وفجأة لقيت نفسي بأشرحله قد إيه الدنيا دلوقتي اتغيرت شوية، ومعادش الـ B2B Client بيتحرك في الفانّل زي ما احنا متخيلين.
+تعالوا نتفق على حاجة، في الـ B2B النهارده، 15% بس من الترافيك بيجي من الإعلانات المدفوعة على Google و Microsoft.. ليه؟ لأننا بنحاول نخلي العملاء يمشوا على سيناريو تتابعي احنا راسمينه في خيالنا ( بمعنى اننا بنحاول نطبّق طريقه الـ Funnel التقليدية) على (مشتريين محتملين) بيفكروا بشكل مختلف تماماً وهما بياخدوا قراراتهم.
+فخلينا نشرح إيه اللي بيحصل فعلاً:
+← تخيل ان حوالي 65% من كلمات البحث اللي فيها نية شراء بتيجي من الإعلانات المدفوعة بتاعتنا على قوقل ومايكروسوفت!.
+← وبرغم كده، العميل مش هيمشي على السيناريو اللي احنا راسمينه في دماغنا
+← العميل بيعمل رحلته الخاصة، بيعدي على كذا تاتش بوينت (Touchpoint) قبل ما ياخد قرار أو حتى يفكر يكلمنا بالأساس
+← الفكرة التقليدية بتاعة TOFU ← MOFU ← BOFU دي بقت يوتوبيا ماركتيرز! مجرد فكرة جميلة وسيمفونية حلوة بنقولها للكلاينتس، بس مش بالضرورة حقيقية
+طيب تعالوا نبص على الـ b2b brands الكبيرة بتقول ايه للسوق بتاعها:
+← بيدفعوا فلوس كتير عشان يجيبوا ترافيك للـ مقالات، آه مقالات (أفهمها بقا)
+← مش للـ Landing Pages، ولا للأوفرز والخصومات، ولا لكاتالوجات المنتجات
+طيب ليه كده؟
+لأنهم فهموا حاجة بسيطة ومهمة جدًا:
+← الشراء/ التعاقد في الـ B2B سيستيماتيك شوية ومعقد، مش بيجي خطوة ورا خطوة زي ما الـ User Journey بتقولك.. وأهم حاجة انه مش instant decision دا قرار ممكن ياخد شهور وبيعدي على Layers كتير أوي قبل ما يوصل لمرحلة Okay! Lets GO
+← الثقة بتيجي قبل ما الـ Deal يتم
+← المحتوى التعليمي بيجيب Conversions أسرع وأحسن من الأوفرز والخصومات
+← المحتوى اللي بيبني ثقة بيهزم اللي بيعتمد على محاولة البيع بشكل مباشر
+طيب، إيه اللي بيعمله الناس الجامدة في المجال بشكل مختلف؟
+← بيبعت الترافيك المدفوع على محتوى تعليمي قوي الأول
+← بيحاول يبني ثقة قبل ما يبدأ يعرض خدماته بشكل بيعي
+← بيسيب سيكولوجية العميل تشتغل لحسابه، بحيث لما يجي وقت القرار، العميل يبقى جاهز ومتأكد انه هياخد القرار الصح لشركته/ البيزنس بتاعه
+← بيتابع السيستم كله مش بس الـ Conversions، لأنهم عارفين إن كل تاتش بوينت ليها دورها في القرار
+الخلاصة عزيزي الـ B2B Marketer: انك لو عاوز تبني قاعدة قوية في الـ B2B، بلاش يكون كل اهتمامك في "الفانل"؛ ركّز على بناء ثقة ومصداقية حول البراند في كل تاتش بوينت، واعرف إن العميل بيمر برحلة مختلفة عن الموديل اليوتوبي اللي في دماغنا.
+
+
+________________
+
+
+
+
+
+
+
+
+
+
+كلنا تقريباً جرّبنا إننا نذاكر ليلة الامتحان ونحاول نحشر كل المعلومات في دماغنا على آخر لحظة. بس الصدمة إن دي طريقة مش فعّالة في التعلّم، وده اللي أثبته العلم. الحقيقة إننا بنفتكر المعلومات بشكل أفضل لما نتعلّمها على فترات متباعدة، أو ما يعرف باسم "التكرار المتباعد". وده مش سر بين خلايا المخ بس، ده خاصية في كل خلايا الجسم.
+الفكرة اللي أثارت الفضول في الدراسة الجديدة دي هي إن الذاكرة مش بتقتصر على خلايا المخ، بل موجودة في كل خلايا الجسم. يعني حتى الكِلية والبنكرياس ممكن يكونوا عندهم نوع من "الذاكرة". ودي حاجة ممكن تكون ليها آثار مهمة جدًا في الصحة والعلاج.
+إيه اللي بيحصل في خلايانا لما بنتعلّم؟
+خلينا نبدأ من الأول. في المخ، الذاكرة عبارة عن بصمة كيميائية بتتكون لما خلايا المخ، اللي بنسميها "الخلايا العصبية" أو "النيورونات"، بتتلقى إشارات كيميائية من خلايا عصبية تانية. الإشارات دي ممكن تكون في صورة "بَخّات" سريعة من الكيميائيات اللي بنسميها "ناقلات عصبية". الخلية العصبية بتقدر تميّز بين الأنماط الزمنية المختلفة للإشارات دي، وبتغير من شكلها استجابةً لها. مثلًا، لو الإشارات بتيجي ببطء، نهايات الخلية العصبية ممكن تصغر، لكن لو الإشارات بتيجي بسرعة، النهايات دي ممكن تكبر.
+ده اللي بنسميه "ذاكرة المخ"، وهي بصمة كيميائية بتتركها الإشارات في خلايا المخ، ومبنيّة على "التكرار المتباعد" اللي بيخلي الذاكرة تفضل موجودة لفترة أطول.
+
+
+الدراسة الجديدة اللي اتنشرت في مجلة "Nature Communications" قالت لنا حاجة غريبة جدًا ومثيرة بنفس الوقت؛ إن خاصية "التكرار الموزع" دي مش مقتصرة على خلايا المخ بس! لأ، ده حتى خلايا الكلى بتتعلم بشكل أفضل لما التكرار يكون موزع، ومش مرة واحدة زي المذاكرة المكثفة.
+طب إيه علاقة الكلام ده بالخلايا التانية؟
+الدراسة دي اكتشفت إن الخلايا غير العصبية برضه بتستجيب للأنماط الكيميائية، حتى لو كانت أبسط من اللي في المخ. مثلًا، لو خدنا خلايا البنكرياس المسؤولة عن إفراز الإنسولين، هنلاقي إنها كمان عندها ذاكرة قصيرة المدى للوجبات اللي فاتت. الإنسولين هو هرمون بيتفرز لما السكر يدخل الدم، عشان يساعد الخلايا على امتصاص السكر وتخزينه. لو زودنا الخلايا دي بكمية كبيرة من السكر، هتفرز الإنسولين اللي عندها كله مرة واحدة. بعد كده نديها راحة 20 دقيقة ونرجع نزودها سكر تاني، هنلاقيها بتفرز كميات مضاعفة من الإنسولين.
+
+
+زي ما الباحثين اكتشفوا، الخلايا اللي بتفرز الإنسولين في البنكرياس بتتذكر مستوى السكر اللي دخل جسمك في آخر وجبة، ولو زوّدتهم بنفس الكمية بعد وقت قليل، هيضاعفوا إفراز الإنسولين كأنهم بيفتكروا الوجبة اللي فاتت. كأن جسمك بيقول لنفسه: "المرة دي لازم أستفيد من السكر ده بشكل أحسن!"
+ 
+إزاي خلايا الكلى ممكن تتعلّم؟
+في التجربة دي، العلماء استخدموا خلايا من الأعصاب ومن الكلى، وعدّلوا الخلايا بحيث تطلق بروتين مضيء كل ما الجين الخاص بـ "الذاكرة" يتفعل. بعد كده عرّضوا الخلايا لتتابعات كيميائية معينة زي اللي بتحصل في خلايا المخ وقت التعلم. والنتيجة؟ الخلايا قدرت تميز بين تتابعات معينة. يعني، حتى خلايا الكلى قدرت "تحسب" لحد 4 نوبات كيميائية، ولو كانت النوبة 4 مرات، الجين ده بيشتغل لفترة أطول وبقوة أكبر.
+الأغرب من كده، الخلايا دي أظهرت ما يسمى بـ"التأثير التكراري" اللي كنا بنعتقد إنه خاص بالمخ بس. لما اتعرضت الخلايا لنوبة كيميائية طويلة تعادل 4 نوبات متقطعة، الاستجابة كانت أضعف مقارنة بالنوبات المتقطعة.
+
+
+الدراسة دي بتغير نظرتنا للذاكرة، مش بس في المخ لكن كمان في باقي خلايا الجسم. ده معناه إن "ذاكرة الجسم" ممكن يكون ليها دور مهم في الصحة والأمراض. زي ما بنكرياسك بيتذكر الأكل اللي دخل جسمك، ممكن الخلايا السرطانية تتذكر نمط العلاج الكيماوي اللي اتعرضت له.
+
+
+يعني إيه كل ده بالنسبة لنا؟
+النتيجة هنا مذهلة! الذاكرة مش محصورة في المخ بس، بل في كل خلايا الجسم. الذاكرة دي ممكن يكون ليها دور كبير في صحتنا وأمراضنا. تخيل بقى إنك مش بتتعامل مع المخ بس، لكن مع جسمك كله كأنه عنده ذاكرة. يعني لما تاكل وجبات معينة، البنكرياس ممكن يفتكر، وحتى الخلايا التانية في جسمك ممكن يكون ليها رد فعل مبني على "الذكريات الكيميائية" دي.
+ليه الموضوع ده ممكن يفتح أبواب جديدة؟
+الفهم الجديد ده ممكن يغير حاجات كتير في المستقبل. مثلاً، ممكن نبقى قادرين على تحسين الذاكرة بطرق جديدة، أو نستخدم الفهم ده في علاج مشكلات الذاكرة. وفي نفس الوقت، لازم نبص لجسمنا كله كـ "عقل" بيقدر "يفتكر" الأحداث الكيميائية، زي نظام وجباتنا أو تكرار تناول الأدوية.
+الفكرة دي بتفتح لنا أفق جديد. يعني لما نفكر في العلاجات المستقبلية، ممكن نهتم مش بس بالمخ، لكن كمان بالبنكرياس وأعضاء الجسم التانية اللي "بتفتكر" على طريقتها.
+الختام: "جسمك عنده ذاكرة"
+الاكتشاف ده بيقول لنا إن جسمنا أكتر تعقيدًا من مجرد مجموعة أعضاء منفصلة. كل خلية في جسمنا عندها "ذاكرة" بطريقة معينة، وكل واحد منّا محتاج يفهم إن جسمه "بيتذكر" وبيتفاعل. ده بيخلينا نفكر في عاداتنا وقراراتنا الصحية بشكل أعمق، وممكن في يوم من الأيام نلاقي علاجات مبنية على فهم ذاكرة الجسم كلها، مش المخ بس.
+(بالعامية)
+*ماذا لو كنت متخذ للقرار ..
+( ملاحظة ..١. هي وجهة نظر بدون اي استعداء لأحد ولا مزايدة علي موقف الإدارة ..لكنها وجهة نظر ربما تفيد وربما لن تفيد والاكيد أنها غير ملزمة ....وكبداية ..أثمن ما توارد من اخبار عن تأجيل بلدنا للزيارة لأمريكا لأجل غير مسمى. ..
+٢.المكتوب هو  ما كنت سأفعله انا " انا " وليس الزام لاحد او افتراض خيالي لما قد يفعله غيري .. واسف علي كلمة انا.. لان تعليقات الاصدقاء مصممة علي ان هذا ما اعتقد ان الادارة الحالية ستفعله! )
+١٥+١
+١.سأخرج في مؤتمر عالمي في سيناء ،لأعلن بكلمات واضحة رفض مصر جملة وتفصيلا التبجح الأمريكي لفرض واقع علي إرادة الشعب المصري والفلسطيني .
+٢.المؤتمر العالمي سيكون في سيناء وفي خلفيته تشكيلات القوات المسلحة بتمثيل لكل الأسلحة وإعلان وزير الدفاع جاهزية الجيش المصري للدفاع عن عقيدته بعدم التخلي عن أراض مصرية ...وجاهزيته لحماية قرار الشعب المصري .
+٣.توجيه الدعوة لرؤساء وملوك الدول العربية والإسلامية...وأولها السعودية  وممثلين عن حركة حماس من مكتبها في مصر والسلطة الفلسطينية ومشاركة مواطنين فلسطينيين ممن يتلقون علاج في مستشفيات مصرية ...
+٤.توجيه الدعوة للرئيس التركي والقطري واعطائهم الوقت اللازم لألقاء كلمتهم ...حضورهم إلزام لهم أمام شعوبهم وعدم حضورهم هو توريط لهم أمام شعوبهم وأمام العالم .
+٥.توجيه الدعوة لمجموعة لاهاي ،بقيادة الرئيس الجنوب افريقي واعطاءه الوقت لإلقاء كلمته 
+٦.توجيه الدعوة للناتو ،الاتحاد الأوروبي وكل من يدعم حق الشعب الفلسطيني في الوجود ..كندا ..المكسيك ..تشيلي ..حضورهم هو إلزام لهم والاستفادة من تصريحاتهم الرافضة لمقترح ترامب . هو تقوية للموقف المصري وحقنا في الدفاع عن أرضنا وحق الشعب الفلسطيني في الوجود علي أرضه. ..وعدم حضورهم هو تعرية إضافية النظام الدولي..
+٧.توجيه الدعوة للاتحاد الافريقي بما فيه اثيوبيا ...وده إلزام لاثيوبيا وضغط عليها ..وعدم السماح لإدارة ترامب بإستغلال حدوتة سد النهضة في الضغط علي الموقف المصري والعالمي ...وتوريط للافندي حامل جائزة نوبل للسلام .
+٨.توجيه الدعوة لممثلين عن الحركات الحقوقية والطلاب في امريكي داعمي القضية الفلسطينية وحقوق الإنسان ...سأدعوا بالطبع ممثلين عن منظمة الصحة العالمية التي انسحب منها ترامب والزمها بدورها في الرعاية الصحية لأهل غزة ...سأدعوا ممثلين عن اتفاق باريس للمناخ اللي برده الافندي انسحب منها ...هو ببساطة اكتساب حلفاء جدد في صفك .
+٩.توجبه الدعوة لممثلين عن الحزب الديموقراطي الأمريكي .وهي ستكون فرصة اكيدة لهم لطرح أنفسهم أمام الرأي العام الأمريكي والعالمي ..بل سأدعوا أعضاء من الحزب الجمهوري الذين لا يعجبهم تصرفات ترامب ..( شكرا الإضافة من اللواء غريب )
+١٠.توجيه الدعوة للرئيس الصيني وتحالف البريكس...وهو ما سيوفر بدائل اقتصادية تخفف الضغط عن مصر بمشاركة أوروبية .
+١١.تجنب حضور العرجاني ،اتحاد قبائل سيناء ، هشام طلعت مصطفي ...وكل الأوجه الإعلامية الفاقدة مصداقيتها ..وكذلك الأحزاب الاونطة صنيعة الأجهزة ...وقصر الحضور علي شخصيات مصرية وطنية لديها مصداقية عند الشعب المصري...بعيد عن زفة رفح السابقة .
+١٢.حضور شركات مصرية وطنية ، مثل المقاولون العرب واوراسكم وغيرها وإعلانها جاهزيتها لإعادة إعمار غزة .
+١٣.اعلان مصر عن خطة عربية بإستثمارات واضحة لإعمار غزة بأياد مصرية ..هدفها الاكيد ليس التربح وليس بيزنس خاص بصناديق تتبع لأجهزة أمنية أو وجهاتها .
+١٤.اعلان مصر التزامها بكونها شريك استراتيجي لأمريكا لطالما احترمت امريكا الإرادة المصرية ..ولطالما احترمت المواثيق الدولية  حق الشعب الفلسطيني في وجوده علي أرضه وكذلك القرارات الأممية بل والأمريكية بمنع توسع الاستيطان في غزة وكذلك تنفيذ حل وجود دولة فلسطينية عاصمتها القدس الشريف ...التأكيد علي التزامك بكل معاهداتك بالقدر الذي تلتزم به إسرائيل بإحترامها واحترام السيادة المصرية وحق اخواتنا في الوجود علي أرضهم .
+١٥.اعلان مصر بإن العرض الأمريكي هو إهانة للنظام العالمي وكذلك لتراث امريكي ظلت تدعيه ....وإنها الان فرصة لإعلان العالم وقوفه ضد مفاهيم الإبادة ،الاستبداد والتطهير العرقي .
+١٦.خروج وثيقة اعلان سيناء بتوقيع كل الحضور وإعلان رفض البلطجة الأمريكية .
+*ده هيبقي جزء من شكل أداء مصر في يوم من الايام ...أو لعله حلم بشكل مصر في يوم من الايام ...أو يمكن اقتراح يستفيد من بعضه من يحب ..أو يراه كلام غير ممكن ...
+* ربك يكرم بلدنا ويسترها ويستر اخوتنا ..ونعرف ايام عادلة ومستقرة .
+ملاحظة .١..ليس في الكلام اي استعداء لأحد ولا مزايدة علي أحد   ..هي وجهة نظر غير ملزمة لأحد بطبيعة الحال ..مجرد حلم عن شكل إدارة .
+٢.احترم ما توارد من اخبار عن تأجيل زيارة بلدنا لأمريكا لأجل غير مسمى ...شكرا ...
+٣. مرة  اخري  ، هذا ما كنت سأفعله لو كنت صانع القرار وليس ما قد تفعله السلطة … اتمني فقط الا يرهقني الاصدقاء بتعليقات  تنسي اننا نسير علي شعرة رفيعة جدا .. دونها تعلمونه .
+لو خايف من الفشل وعشان كده مش قادر تاخد الخطوة اللي بتفكر فيها فدي رسالة ليك..
+لو خايف من نظرة الناس ليك وانهم يقولوا لك يا فاشل فده هيحصل طبعا.. من العيوب المعروفة لشعبنا (إلا من رحم الله) انه لما بيلاقي حد فشل في حاجة بيتبسط.. مرتين.. مرة عشان هو مبتلى بالمقارنات والنظر لما في ايد غيره ومش بيكون راضي عن طريقة تقسيم ربنا للأرزاق.. وبيتبسط مرة تانية عشان اللي حصل بيؤكد له انه على حق في انه هو ما أخدش الخطوة دي "شفت؟ لو كنت عملت زيه كنت فشلت زي ما فشل.. عشان كده أنا قاعد زي ما أنا.. أصل مافيش فايدة."..
+طيب يعني ما فيش حل؟ ما أنا يا صديقي بانقل لك الصورة واضحة ومن غير تزويق عشان ما أغشكش وعشان تعرف ان ده الطبيعي.. وبالتالي كلللللللللل اللي اتشجعوا وأخدوا الخطوة قبلك مروا بالشيء نفسه وعرفوه ورغم ده فرصة النجاح كانت بالنسبة لهم أهم بكتير من رأي الناس فيهم وسيرتهم اللي الناس ما بتسيبهاش.. وانت مش أقل منهم في حاجة..
+بالضبط زي حارة انت عايز تعدي منها بس المجاري ضاربة ومبهدلة الدنيا.. فاللي هيحاول يعدي ويمشي على الطوب غالبا هيتزحلق ويبهدل نفسه وهدومه جامد.. فانت عادي تخاف تعرض نفسك لده.. لكن بص على البشر اللي كانوا عارفين وشايفين ورغم كده عدوا وكل ما حد منهم يتزحلق يتبهدل والمية تطرطش عليه فما يهتمش ويقوم يكمل تاني ويحاول ما يتزحلقش تاني.. عشان هم صادقين في عزمهم يوصلوا للي هم عايزينه ويعدوا من الحارة..
+انت مش أقل منهم في حاجة.. مش فارقة هيقولوا ايه لما تفشل.. فارقة انك لما تجرب هتستفيد من التجربة: يا هتقول باااااااس أنا كده متأكد ان دي مش سكتي.. أو هتقول أنا عارف أنا غلطت في إيه وإيه اللي حصل ومستعد أخوض التجربة تاني.. والأزيد من كده: لما تقعد مع حد ويقول أنا هاخد الخطوة الفلانية هيبقى عندك قصة تحكيها ممكن يستفيد منها..
+والأهم: احتمال كبير ربنا يكرمك وتنجح في اللي عايز تعمله.. أو تنجح في حاجة تانية ما كانتش في بالك وما كنتش عارفها إلا لما اتحركت وسعيت.. أنا كل اللي كنت باقوله فوق كان لو فشلت.. فما بالك لو نجحت؟!!!!!!
+طبعا ده ما ينفعش غير مع حاجتين أساسيتين: ادعي ربنا والجأ له.. وادرس الخطوة كويس طريقتها تفاصيلها نتائجها استعين بالمعلومات بالاستشارات بالناس الشاطرة.. ما تمشيش في طريق ناس مشيوا فيه قبلك غير لما تستفيد من تجاربهم..
+ربنا يوفقك ويكرمك.. لو لقيت قيمة في المنشور فساعدني بنشره لأن الحساب متقيد تقييدة ما يعلم بيها إلا ربنا..
+
+
+
+
+"تشير المملكة إلى أن هذه العقلية المتطـ، ـرفة المحتـ، ـلة لا تستوعب ما تعنيه الأرض الفلسطـ، ـينية لشعب فلسطـ، ـين الشقيق وارتباطه الوجداني والتاريخي والقانوني بهذه الأرض، ولا تنظر إلى أن الشعب الفلسطـ، ـيني يستحق الحياة أساساً؛ فقد دمرت قطاع غـ، ـزة بالكامل، وقتـ، ـلت وأصابت ما يزيد على (160) ألف أكثرهم من الأطفال والنساء، دون أدنى شعور إنساني أو مسؤولية أخلاقية."
+
+
+ده كلام جديد.. صحيح جاي عشان حد داس على صباع حد.. بس كلام جديد.. ياه لو يكون بداية موقف إسلامي عربي موحد ياه..
+
+
+
+
+عارف لما حد يقول لك انت العائق الوحيد قدام نفسك بيكون قصده ايه؟ او يقول لك بص في المراية تشوف أكبر عدو ليك والحاجات دي؟ قصده الوقت اللي بتقضيه وانت عمال تفكر في حاجات زي دي:
+- انا هاتخرج ومش عارف أي حاجة غير الدراسة (أو جايب مقبول)، مش هالاقي شغل!
+- مش جايز المجال اللي انا اخترت اني أشتغل فيه ما يعجبنيش وارجع لنقطة الصفر؟
+- خايف اكون باضيع من ايدي فرصة كبيرة اني أسيب مجال دراستي وأشتغل في مجال تاني (أو العكس)!
+-  كان ممكن أعمل مشروع بدل ما أشتغل في شركة على الأقل كانت عندي فرصة أحقق حاجة حتى لو كنت فشلت قدامها!
+- طب لو الشركة استغنت عني هاعمل ايه؟
+- مش عارف هاحقق الحرية المالية امتى وازاي!
+- المجال ده شكله صعب ولو دخلت مش هاعرف أكمل فيه وهابقى ضيعت وقت كان ممكن أعمل فيه حاجة أفيد!
+- أنا إيه اللي يخليني أتحمل كل الضغط ده (بعد أول مطب)، أنا هاغير المسار!
+الوقت اللي بتقضيه وانت مشغول بأفكار زي دي سبب مهم في العطلة اللي انت فيها وتوقف حياتك عن النمو والتطور.
+دورنا في الحياة مش اننا نضيع الوقت في محاولة اننا نشوف من دلوقتي اللي جاي ناحيتنا بعد سنة وسنتين ايه، دورنا في الحياة اننا لما ندرس الخيارات ونشوف أفضل خيار متاح ويبقى واضح قدامنا نشتغل عليه على طول.
+ما نعجّزش نفسنا بالقلق والتوتر والخيالات اللي لا بتودي ولا بتجيب.
+قرر واعمل، ما تسرحش.
+بص معايا..
+"إنَّ رجلًا كان فيمن كان قبلَكم أتاه المَلَكُ ليَقبِضَ رُوحَه،
+فقيل له: هل عَمِلتَ من خيرٍ؟
+قال: ما أعلَمُ،
+قيل له: انظُرْ،
+قال: ما أعلَمُ شيئًا غيرَ أنِّي كنتُ أبايِعُ النَّاسَ في الدُّنيا وأجازيهم، فأُنظِرُ الموسِرَ، وأتجاوَزُ عن المُعسِرِ؛
+فأدخَلَه اللهُ الجنَّةَ."
+صدق رسول الله صلى الله عليه وسلم.
+أي: كانت لي تعاملات مادية مع الناس، فمن كان لي عنده حق كنت أمهله وأتجاوز عن تأخره في السداد إن كان قادرا، ومن لم يكن قادرا كنت أتنازل عن حقي له.
+الجميل أنه كان يفعل ذلك دون أن يضع في باله أنه يعمل عملا صالحا جليلا، فلم ينتبه له في البداية عندما سئل، هدانا الله جميعا لصالح الأعمال وسهل لنا التيسير على عباده ولهم التيسير علينا  🌷 
+إذا وجدت قيمة في المنشور فساهم معي في نشره ليتخطى تقييد الحساب، جزاك الله خيرا.
+
+مع كل حادث قتل نفس ترافقه رسالة انتحار تظهر موجات التعاطف وتزيد مرة بعد مرة.. والكارثة أن هذه الرسائل تحوّل الانتحار بالتدريج من كونه كبيرة من الكبائر وذنبا من أكبر الذنوب إلى حرية شخصية وخيار متاح يمكن اللجوء إليه.. 
+1. في حالات المرض النفسي التي تتضمن ميولا انتحارية يكون واجبا على المريض أن يسعى للعلاج وأن يبذل في ذلك الجهد نفسه الذي يبذله في علاج أمراض الجسد، وإذا لم يكن مقتنعا بأنه مريض أو لم تكن لديه الإمكانية لذلك السعي وجب على من يعوله ومن هو مسؤول عنه ذلك. 
+2. سواء أكان السبب هو المرض النفسي أو صعوبة الابتلاء فهناك قاعدة أساسية من الضروري أن تكون حاضرة في أذهاننا: من رحمة الله أنه لا يبتلي أحدا بابتلاء لا طاقة له به على احتماله أو يضطره لإنهاء حياته (حتى لو كان مكتوبا أن ينتهي الابتلاء بالوفاة).. 
+انظر إلى "إن الله كان بكم رحيما" في آية "ولا تقتلوا أنفسكم إن الله كان بكم رحيما"، وإلى حديث "إن الله لم ينزل داء إلا أنزل له دواء"..
+3. هذا الفعل لا يقل فظاعة ولا جرما عن جريمة القتل المعروفة، وذلك لأن لنفس ليست ملكا لصاحبها متاحا له التصرف فيها، وإنما له أن يتصرف فيها كما أمره خالقها، ولهذا قال الله تعالى في الآية التالية للآية التي ذكرتها أعلاه "ومن يفعل ذلك عدوانا وظلما فسوف نصليه نارا"، فمن قتل نفسه فقد اعتدى على حق ليس له "عدوانا" وظلم نفسه بأن حرمها حقها في دخول الجنة "وظلما".. 
+ويقول رسول الله صلى الله عليه وسلم "كان فيمن كان قبلكم رجل به جرح، فجزع، فأخذ سكينا فحزّ بها يده، فما رقأ الدم حتى مات، قال الله تعالى : بادرني عبدي بنفسه ؛ حرّمت عليه الجنة"..
+4. حتى جزاء هذا الفعل مختلف، يقول الرسول صلى الله عليه وسلم "من قتل نفسه بحديدة؛ فحديدته في يده يتوجأ بها في بطنه في نار جهنم خالدا مخلدا فيها أبدا، ومن شرب سما فقتل نفسه؛ فهو يتحساه في نار جهنم خالدا مخلدا فيها أبدا، ومن تردى من جبل فقتل نفسه؛ فهو يتردى في نار جهنم خالدا مخلدا فيها أبدا"..
+فمن حكمة الله أن من تصور أن بإمكانه إراحة نفسه من معاناتها المؤقتة في الدنيا بطريقة معينة فإنه يعاقب بأن تكون هذه الطريقة هي مصدر عذابه الأبدي في الآخرة..
+5. من أساسيات فهم المسلم لدينه أن الدنيا ليست دار جزاء أو قصاص أو مكافأة، وإنما هي دار اختبار "ليبلوكم أيكم أحسن عملا"، في حين تكون الآخرة دار الجزاء "وإنما توفّون أجوركم يوم القيامة".. وبالتالي تكون كل فرص الإنعام هي اختبار له أيشكر أم لا، وكل فرص الابتلاء هي اختبار له أيصبر أم لا.. 
+فإذا ابتُلي أحد بابتلاء وقدّر الله استمراره اختبارا له فصبر عليه دخل بإذن الله في دائرة "إنما يوفّى الصابرون أجرهم بغير حساب"..
+ويكفي بيانا للمقارنة بين ما مرّ به في الدنيا (وإن تكررت الابتلاءات وتنوعت) وبين لحظة من لحظات الآخرة هذا الحديث الشريف: "... ويؤتى بأشد الناس بؤسا في الدنيا من أهل الجنة، فيصبغ صبغة في الجنة، فيقال له: يا ابن آدم هل رأيت بؤسا قط؟ هل مر بك شدة قط؟ فيقول: لا والله يا رب، ما مر بي بؤس قط، ولا رأيت شدة قط"..
+نسأل الله الرحمة لموتانا أجمعين والشفاء لمرضانا أجمعين والهداية والثبات لنا أجمعين.
+
+
+أُكلْتُ يوم أُكِل الثور الأبيض  🤷🏻‍♂️ 
+يُحكى أن أسدا وجد قطيعاً مكوناً من ثلاثة ثيران؛ أسود وأحمر وأبيض، فأراد الهجوم عليهم فصدوه معاً وطردوه من منطقتهم.
+ذهب الأسد وفكر بطريقة ليصطاد هذه الثيران خصوصاً أنها معاً كانت الأقوى، فقرر الذهاب إلى الثورين الأحمر والأسود وقال لهما:« لا خِلاف لدي معكما، وإنما أنتم أصدقائي وأنا أريد فقط أن آكل الثور الأبيض كي لا أموت جوعاً، أنتم تعرفون أنني أستطيع هزيمتكم لكنني لا أريدكم أنتم بل هو فقط”.
+فكر الثوران الأسود والأحمر كثيراً؛ ودخل الشك في نفوسهما وحُب الراحة وعدم القتال فقالا: “الأسد على حق، سنسمح له بأكل الثور الأبيض”. نقل الثوران الرسالة بنتيجة قرارهما وأخبراه بأنه يستطيع الهجوم على الثور الأبيض الآن، فعل ملك الغابة بسرعة وافترس الثور الأبيض وقضى ليالي شبعاناً فرحاً بصيده.
+مرت الأيام وعاد الأسد لجوعه فتذكر مذاق لحم الثور وكمية الإشباع التي فيه، فعاد إليهما وحاول الهجوم فصداه معاً ومنعاه من اصطياد أحدهما بل ضرباه بشكل موجع، فعاد إلى منطقته متألماً متعباً منكسراً.
+قرر الأسد استخدام الحيلة القديمة نفسها، فنادى الثور الأسود وقال له: “لماذا هاجمتني وأنا لم أقصد سوى الثور الأحمر؟” قال له الأسود: “أنت قلت هذا عند أكل الثور الأبيض”، فرد الأسد: “ويحك أنت تعرف قوتي وأنني قادر على هزيمتكما معاً، لكنني لم أرد أن أخبره بأنني لا أحبه كي لا يعارض”.
+فكر الثور الأسود قليلاً ووافق بسبب خوفه وحبه الراحة، وفي اليوم التالي اصطاد الأسد الثور الأحمر وعاش ليال جميلة جديدة وهو شبعان. مرت الأيام وعاد وجاع، فهاجم مباشرة الثور الأسود وعندما اقترب من قتله، صرخ الثور الأسود: “أكلت يوم أكل الثور الأبيض”.
+احتار الأسد فرفع يده عنه وقال له: “لماذا لم تقل الثور الأحمر؟ فعندما أكلته أصبحت وحيداً وليس عندما أكلت الثور الأبيض!”، فقال له الثور الأسود: “لأنني منذ ذلك الحين تنازلت عن المبدأ الذي يحمينا معاً ومن يتنازل مرة يتنازل كل مرة، فعندما أعطيت الموافقة على أكل الثور الأبيض أعطيتك الموافقة على أكلي”.
+- من قصص إيسوب اليوناني ووردت في كتاب كليلة ودمنة.
+الطلاق فشل، لكن المطلق والمطلقة ليسا فاشلين بالضرورة.
+الفشل هو ألا يتمكن الإنسان من تحقيق ما كان يأمله، وطبيعي أن يكون الفاشل هو هذا الإنسان.
+إلا أن التعريف السائد مجتمعيا للفاشل هو: الإنسان الذي تسبب لنفسه في الفشل وعليه تقع المسؤولية، مادام قد فشل فهو السبب، ولو تكررت تجربته فسيفشل ثانية.
+ولهذا يشعر من يشار إليه بوصف "فاشل" بالإهانة.
+من هذا المنطلق: الطلاق فشل لأن الزوجين كانا يأملان في الاستمرار في الزواج لكن هذا لم يتحقق.
+لكن الطلاق لا يعني أن الزوج فاشل بالضرورة أو الزوجة فاشلة بالضرورة بالمعنى السائد.
+فهناك زيجات فشلت لظهور بعض الطباع مما لا يظهر في وقت الاختيار، ثم يحدث بعد الطلاق أن يرتبط كل منهما بمن يتوافق مع طباعه وتنجح الزيجات، فلم يكن أحدهما "فاشلا" في الزيجة الأولى.
+وهناك زيجات بدأت رائعة ثم حدث تطور / تحول غير متوقع في الشخصية أو الطباع أو التطلعات نتيجة ظروف أو صدمات وأدى هذا التحول إلى استحالة العشرة وحدث الطلاق، ولم يكن بيد أحدهما ما يمكنه عمله، ولم يكن أحدهما "فاشلا".
+وغير ذلك مما لا ينبغي لأحد أن يشعر بتأنيب الضمير له أو بأن ما حدث قد حدث بسببه.
+في المقابل وفي الكثير من الزيجات هناك أطراف يجب أن يراجع بعض أطرافها نفسه ويجتهد للتحسن، فالبخل وعدم الاحترام والعصبية والقسوة والإهمال وقلة النظافة الشخصية والبذاءة والخمول ومختلف الأمور الأخلاقية كل هذا من بين ما يسبب مشاكل زوجية تؤدي إلى الطلاق.
+وحتى في هذه الزيجات عندما ينتهي بعضها بالطلاق لا يمكن اعتبار الطرف المتضرر اللاجئ للطلاق "فاشلا" في الزواج بالضرورة إذا كان قد بذل ما بوسعه لتغيير الوضع ولرفع الضرر ولم يتمكن من ذلك.
+وفقنا الله وإياكم لما يحبه ويرضاه، وألف بين قلبي كل زوجين وأصلح حالهما.
+إذا وجدت قيمة في المنشور فساهم بنشره للتغلب على تقييد الفيس بوك للنشر. شكرا  🌷 
+الفشل هو ألا يتمكن الإنسان من تحقيق ما كان يأمله، وطبيعي أن يكون الفاشل هو هذا الإنسان.
+إلا أن التعريف السائد مجتمعيا للفاشل هو: الإنسان الذي تسبب لنفسه في الفشل وعليه تقع المسؤولية، مادام قد فشل فهو السبب، ولو تكررت تجربته فسيفشل ثانية.
+ولهذا يشعر من يشار إليه بوصف "فاشل" بالإهانة.
+من هذا المنطلق: الطلاق فشل لأن الزوجين كانا يأملان في الاستمرار في الزواج لكن هذا لم يتحقق.
+لكن الطلاق لا يعني أن الزوج فاشل بالضرورة أو الزوجة فاشلة بالضرورة بالمعنى السائد.
+فهناك زيجات فشلت لظهور بعض الطباع مما لا يظهر في وقت الاختيار، ثم يحدث بعد الطلاق أن يرتبط كل منهما بمن يتوافق مع طباعه وتنجح الزيجات، فلم يكن أحدهما "فاشلا" في الزيجة الأولى.
+وهناك زيجات بدأت رائعة ثم حدث تطور / تحول غير متوقع في الشخصية أو الطباع أو التطلعات نتيجة ظروف أو صدمات وأدى هذا التحول إلى استحالة العشرة وحدث الطلاق، ولم يكن بيد أحدهما ما يمكنه عمله، ولم يكن أحدهما "فاشلا".
+وغير ذلك مما لا ينبغي لأحد أن يشعر بتأنيب الضمير له أو بأن ما حدث قد حدث بسببه.
+في المقابل وفي الكثير من الزيجات هناك أطراف يجب أن يراجع بعض أطرافها نفسه ويجتهد للتحسن، فالبخل وعدم الاحترام والعصبية والقسوة والإهمال وقلة النظافة الشخصية والبذاءة والخمول ومختلف الأمور الأخلاقية كل هذا من بين ما يسبب مشاكل زوجية تؤدي إلى الطلاق.
+وحتى في هذه الزيجات عندما ينتهي بعضها بالطلاق لا يمكن اعتبار الطرف المتضرر اللاجئ للطلاق "فاشلا" في الزواج بالضرورة إذا كان قد بذل ما بوسعه لتغيير الوضع ولرفع الضرر ولم يتمكن من ذلك.
+وفقنا الله وإياكم لما يحبه ويرضاه، وألف بين قلبي كل زوجين وأصلح حالهما.
+إذا وجدت قيمة في المنشور فساهم بنشره للتغلب على تقييد الفيس بوك للنشر. شكرا 🌷
+
+
+اليوم في ڠـزة كأنه عيد، فلأول مرة منذ عام ونصف الناس تشتري اللحوم بأنواعها، ويستلذ أطفالهم بطعمها الذي يتذوقونه لأول مرة، وكأنه طعام نزل من الجنة !!
+فاللهم يا واسع الفضل اجعل هذا الخير بداية الغيث، وأدم على ڠـزة فضلك، وافتح لها خزائن السماوات والأرض، وارزقها من واسع رزقك، وعظيم عطائك، واجعلها آمنة مستقرة وسائر بلاد المسلمين !!
+ما جعل محرقة النازي حدثا لا يمحى هو كمية البحث العلمي المهول في علم النفس والاجتماع والاقتصاد والتوثيق الذي حدث بعده. 
+لا يوجد كتاب، مرجع، نظرية في العلاج النفسي للصدمات النفسية إلا وتسترجع محرقة النازي والأبحاث حولها. 
+ما نحتاجة الآن في غزة ليس فقط إعادة إعمار، بل أيضا حركة بحث علمي وتوثيق، حركة نقوم بها الآن لنقاوم الرغبة الإنسانية العميقة في نسيان المآسي، ولا يتحول من فقدناهم فعلا إلى أعداد أو حتى مجرد سطر في كتاب للتاريخ.
+
+
+زكاة المال ينفع تطلع قبل اوانها.. مقدما يعني.. فما تحرموش اهالينا في فلـ، ـسطين من الخير اللي ممكن يجي لهم منكم
+
+
+عندي مشكلة مع الشيخ المهندس أمجد سمير.. معطلني عن شغلي.. فيه كتاب صوتي المفروض أسمعه اليومين دول.. تمام؟ بس وقع في طريقي حلقات البودكاست اللي عمله مع هلال السيد بعنوان لازم نتحرر.. فسحرني وسحلني معاه.. أسمع نص ساعة من البودكاست في مشوار وأوصل المكان اللي عايزه أبقى مش عايز أنزل من العربية عشان مش عايز أوقف البودكاست.. فطبعا كل ما أفكر أوقف البودكاست وأشغل الكتاب اللي محتاجه ما ينفعش.. ما ينفعش أبطل استماع للي بيقوله..
+المحتوى موفق جدا جدا ما شاء الله لا قوة إلا بالله.. وفيه مزايا كتير يعني مثلا هو ضروري لينا اليومين دول مع انتشار السوشال ميديا وشيوع الخطأ.. لأنه عن أهمية الوقت وعن دورنا تجاه التفاهة المنتشرة وعن التحرر من سلطة القطيع والتحرر من العادة.. حاجات كلها أولويات بالنسبة لنا وتقريبا كلنا واقعين فينا بنسب مختلفة.. 
+كمان بيتكلم بتحليل هايل يخلي اللي بيسمع يشتري لأنه فهم الفلسفة ورا الحاجة اللي بتتقال.. وبيضرب أمثلة واضحة وقوية توصل المعنى بطريقة لطيفة وسريعة.. وشوية يتكلم باقتصاد وشوية بهندسة وشوية بكلام مشايخ.. مش بيسيب الواحد إلا وهو مقتنع وناوي يتغير..
+جزاكم الله خيرا على المجهود ده.. ربنا يتقبل منكم ويجعله في ميزان حسناتكم
+
+
+كتير شباب بيسألوا: أنا مشتت.. مش عارف آخد قرار.. مش عارف الطريق اللي هامشي فيه.. خايف أمشي في طريق ما يكونش مفيد ليا في المستقبل.. خايف أكبر من غير ما تكون لي هوية..
+فأنا جاي لك من بعد سنين كتير وتجارب كتير عشان أقول لك ما تقلقش قوي كده.. استكمل مبادئك وقيمك الأول واللي بعد كده سهل والنجاح فيه من عدمه عادي.. مافيش حاجة هتلزق فيك غير انك تكون عارف انت مين بجد.. اقرا البوست..
+محمد حسام خضر 
+المفضلة  · 13 يناير 2024  · 
+فضفضة.. دفعني الفضول لمشاهدة كيف يسميني الناس عندما يسجلون رقم هاتفي على جوالاتهم.. ففتحت برنامجا مخصصا لهذا الغرض.. وما شاهدته جعلني أراوح بين الابتسام والضحك والدموع أيضا..
+ظللت أقرأ الأسماء وأمرّر الشاشة مرات لا تحصى ولم أصل إلى نهاية القائمة.. 
+- فهناك من يسميني على أساس المجموعات التي كنت أنضم إليها لممارسة هوايات منها ما توقفت عنه ومنها ما استمر.. 
+- ومن ينسبني لشركات كنت أعمل فيها أو أمتلكها.. 
+- وبائعون تعاملت معهم أو أوشكت على التعامل فسجلوني على أنني عميلهم أو عميلهم المحتمل.. 
+- وأبنائي وإخوتي وأفراد عائلتي ممن يطلقون علي أسماء محببة إليهم.. 
+- ومن ينسبني إلى منطقة سكني الحالية أو منطقة كنت أعيش فيها من قبل.. أو الدولة إذا كان هو من خارج مصر..
+- ومن يكتب بجانب اسمي اسم من قام بتعريفه عليّ.. وقد أكون أنا لا أذكر من قام بهذا التعريف الآن..
+- ومن يكتب اسمي دون لقب ومن يضع أمام اسمي أ. أو م. أو د. ..
+- ومن يسجل المناسبة التي تعرّف عليّ فيها.. من فعالية مثلا أو مطعم أو مول..
+- ومن يكتب جزءا من مشكلته التي احتاج إلي بسببها..
+- ومن يكتب اسم كتابي بجاني اسمي..
+استقر تفكيري منذ فترة طويلة على أنني ممثل ألعب الأدوار التي تتاح لي في الحياة.. ومهارتي في أداء كل دور تأتي من اهتمامي بإعطائه حقه بتعلم أساسياته والتطور فيه.. أفعل هذا كأخ وصديق وشريك وزوج وأب وابن وعميل ومقدم خدمة وممارس هواية ومواطن أنتمي لدولة ومنطقة ومؤلف ومحاضر وطالب نصيحة الخ.. 
+لا أقصد أنني غير صادق في هذه العلاقات.. إطلاقا.. وإنما أن هذه هي الطريقة التي أنظر بها للأدوار المختلفة.. مما يتيح عدم حدوث اشتباك بين هذه الأدوار.. فكل علاقة لها خصوصيتها وأبجدياتها.. وكل دور له مفرداته وترتيبه.. كما يعطيني الراحة النفسية لتقبل انتهاء أي دور منها.. والانفتاح لقبول دور جديد في أي وقت..
+الثابت الوحيد الحقيقي والذي لا يتغير هو علاقتي بالله.. فعبوديتي له هي معيار قبول الأدوار ومصدر تعلمي لكيفية أدائها على الوجه الذي يتسق معها.. وأسأله أن يقبلني وألا يفتنني..
+كالعادة إذا وجدت في المنشور قيمة فانشره.. لتقييد فيس بوك للمنشورات. شكرا.
+
+
+قال لي انا كنت شاري عربية تُمناية وشغال بيها لحساب مصنع، والمصنع استغنى عني .. 
+وقالوا لي يا تشتغل الشهر على ٢٠٠٠ جنيه يا تمشي،
+قلت لهم ده حرام ومكيفيش بيتي ولا عيالي .. ومشيت،
+طلعت بالعربية استرزق على الدائري وأحمّلها .. السواقين طردوني!
+لا كنت عارف هروح فين وآجي منين .. 
+وكل ما أبص على الناحية التانية من الدائري الاقي مشروع جيزة سيستم بيتعمل،
+فمن الضيق والزهق أقول: يعني يارب اروح أشوف شغلي هناك؟؟ .. 
+بس دي صحراء مفيهاش صريخ ابن يومين!
+لغاية ما في مرة وانا بحاول استرزق على الدائري، ركب معايا مقاول واخد شغل سباكة في جيزة سيستم.. 
+وعرض عليا أفضل معاه من ٩ الصبح ل ٩ بليل .. أوصل العمال بتوعه وأقعد لغاية ما أروحهم،
+والمقابل المادي كان حلو .. فقلت يا فرج الله!
+رحت معاه المنطقة اللي قلت لك انها صحرا .. فلقيت عمال تانيين وصنايعية ياما ..
+قالوا لي توصلنا لغاية أقرب حتة ناخد منها مواصلات،
+قلت لهم ماشي والنفر بخمسة جنيه،
+وبقيت أسترزق كل يوم من مقاول السباكة وكل العمال اللي في جيزة سيستم من ٩ الصبح ل ٩ بليل ..
+لوحدي .. لا ليا شريك ولا منافس،
+وربنا  فرجها عليا وجبت عربيتين شغلتهم أوبر و بسدد أقساطهم الحمدلله،
+والعيال دخلوا مدارس حلوة وجبت شقة في ٦ أكتوبر،
+رزقي كان في الصحرا يا أستاذ محمد ومكنتش أعرف 🖤
+(حوار مع سلامة .. كابتن أوبر)
+
+
+عندك [كذا] سنة وما حققتش حاجة؟! حاسبب انك اتأخرت؟
+اقرا البوست ده.. وانشره..
+محمد حسام خضر 
+المفضلة  · 11 يناير 2024  · 
+فاكر النكتة القديمة دي؟ مرة واحد قابل واحد قال له الساعة كام؟ قال له مش معايا ساعة والله.. قال له ياااه أنا كده اتأخرت..
+ده بالضبط اللي بييجي في بالي كل ما حد يبعت لي انه بقى عنده كذا سنة وانه ما حققش اللي زمايله أو اللي في سنّه حققوه وشايف انه كده اتأخر وخايف يكون فاته القطر ومش هيقدر يحقق حاجة في حياته..
+ما حدش معاه ساعة يقول لك على أساسها انك اتأخرت.. واللي يقول لك انت اتأخرت بيقولها على أساس حدود نفسه وخبراته واللي شافه.. لكن كل ما يشوف أكتر ويعرف أكتر هيفهم ان مش معاه ساعة وان ما حدش معاه ساعة فعلا..
+ما تشغلش نفسك بالمقارنات والتفكير الزائد.. ركز في حياتك واعمل في اللي ايدك..
+وما أجمل حديث الرسول صلى الله عليه وسلم..
+"احرص على ما ينفعك.. واستعن بالله ولا تعجز.. وإن أصابك شيء فلا تقل لو أني فعلت كان كذا وكذا.. ولكن قل قدّر الله وما شاء فعل.. فإن لو تفتح عمل الشيطان"..
+لو وجدت قيمة في المنشور فانشره من فضلك.. عشان تقييد الفيس بوك.
+
+
+
+
+على هامش حـ، ـرائق أمريكا وغيرها.. عشان الناس اللي بتقول ده عقـ، ـاب من ربنا..
+طبيعي ان حد يلاقي جواه اعتراضات زي: دي ظاهرة علمية طبيعية.. وكده كده كان فيه تحذيرات ان ده هيحصل.. ايه العلاقة بينها وبين أعمال الناس او عقـ، ـاب ربنا؟ وبعدين ايه ذنب اللي عايشين هناك ومش مؤيدين للغلط ومش بيرتكبوا الفواحش؟ وليه ما حصلش في دولة عـ، ـدوان مباشر بدل ما تحصل في دولة تأييد العـ، ـدوان؟ طيب افرض ده حصل في دولة إسلامية كنتو هتقولوا كده برضو؟!
+طبيعي حد يلاقي جواه اعتراضات أو تعليقات أو أسئلة زي دي لأننا بعِدنا قوي.. ارتباطنا بالقرآن ضعف كتير.. وارتباطنا بالسنة ضعف أكتر.. يعني ممكن نسمع آيات بشكل عرضي فتسيب أثر ونفتكر الأثر حتى بعدين.. لكن السنة مافيش مصدر مباشر مستمر فدي حاجة احنا مقصرين فيها جدا..
+تعالى مثلا نشوف ربنا بيقول ان قوم عاد قالوا ايه لما لقيوا سحاب كتير داخل عليهم بعد ما سيدنا هود حذرهم من العذاب "قالوا هذا عارض ممطرنا".. فربنا بيعلق عليهم "بل هو ما استعجلتم به ريح فيها عذاب أليم".. هي ظاهرة علمية طبيعية احنا عارفين.. بس ربنا مرسلها عذاب ببرودتها واستمرارها لعدة أيام دون توقف.. زي أي قدر: فيه حكمة منه..
+شوف لما ابن سيدنا نوح أبوه قال له "اركب معنا" فرد عليه "سآوي إلى جبل يعصمني من الماء" عشان فاكر انها زي كل مرة زي اللي هو متعود عليه ولو طلع جبل عمر المية ما هتطلع الجبل.. لكن ده كان عذاب الإهلاك الكامل للكفار على وجه الأرض "وحال بينهما الموج فكان من المغرقين".. ظاهرة علمية طبيعية لكن مقصود منها الإهلاك..
+السنّة بقى فيها الإجابة المباشرة على الاستفسارات اللي في أول كلامي.. واستعد عشان تستغرب لو دي أول مرة تشوف الكلام ده.. بس الآيات السابقة كانت مهمة عشان نشوف ازاي ان الظواهر الطبيعية وغيرها بتيجي لحكمة.. كل شيء بيحصل وكل قدر بيقدّر لحكمة..
+في البخاري "كان النبي صلى الله عليه وسلم إذا رأى مخيلة (سحابة) في السماء أقبل وأدبر ودخل وخرج وتغير وجهه، فإذا أمطرت السماء سري عنه، فعرّفته عائشة ذلك فقال النبي صلى الله عليه وسلم: ما أدري لعله كما قال قوم:  فلما رأوه عارضا مستقبل أوديتهم"..
+ده مين؟ ده الرسول صلى الله عليه وسلم.. اللي ربنا قال له "وما كان الله ليعذبهم وأنت فيهم".. حامل الرسالة.. مافيش بعد كده حرفيا.. الرسول صلى الله عليه وسلم مش مطمئن لما شاف حاجة عادية سحاب كتير جاي بس هو نفسه أهلك أمّة سابقة.. وباين عليه عدم الاطمئنان..
+بص على ظاهرة طبيعية احنا واخدين عليها ومتعودين انها مثار بهجة أو مثيرة لينا.. الكسوف والخسوف.. خسفت الشمس في عهد رسول الله صلى الله عليه وسلم فصلى صلاة طويلة وصفها الراوي بالتفصيل وهي صلاة الكسوف، وبعدين كلم الصحابة وقال لهم "إن الشمس والقمر لا ينكسفان لموت أحد ولا لحياته، ولكنهما آيتان من آيات الله يخوف الله بهما عباده، فإذا رأيتم ذلك فصلوا".. حديث متفق عليه..
+إذن الموضوع غير ما احنا متعودين خالص.. دي ظاهرة طبيعية وكل حاجة لكن لها حكمة ثابتة من ربنا وهي اننا نخاف ونصلي ونظهر خضوعنا له.. ومين اللي بيقول كده؟ خير خلق الله.. اللي هيشفع للناس أصلا.. اللي غفر الله له ذنبه كله.. هو اللي بيعمل كده.. هو اللي بيظهر خوفه من ربنا لما ظاهرة "طبيعية" تحصل..
+طيب هل حد ممكن يكون عارف على وجه التحقيق اذا كانت ظاهرة طبيعية دمرت مكان ان ده غضب من ربنا واللا لأ؟ ما حدش يقدر يعرف.. لكن بنشوف ربنا قال ايه والرسول صلى الله عليه وسلم عمل ايه وقال ايه.. فمثلا فيه حديث صحيح "ما ظهر في قوم الزنا والربا إلا أحلوا بأنفسهم عذاب الله"..  فلما تحصل كارثة والمكان مشهور بذنب زي كده فمن التدبر والاتعاظ ان الواحد يتوقع ان ده يكون عذاب لو مكان كفر.. ولو مكان إسلام بيكون ابتلاء لتكفير الذنوب وتخويف العصاة للرجوع لله..
+ولو حد مالوش علاقة ومسلم أو كان معدي بس وحصلت الكارثة؟ السيدة عائشة رضي الله عنها سألت السؤال ده.. قال رسول الله صلى الله عليه وسلم: "يغزو جيش الكعبة فإذا كانوا ببيداء من الأرض يخسف بأولهم وآخرهم".. قالت: قلت يا رسول الله كيف يخسف بأولهم وآخرهم وفيهم أسواقهم ومن ليس منهم؟ قال: "يخسف بأولهم وآخرهم ثم يبعثون على نياتهم ".. 
+والله تعالى أعلى وأعلم.. ولو وجدت قيمة في المنشور فانشره كالعادة من فضلك. شكرا.
+
+
+الإحسان إلى الزوجة والتعامل معها بالمعروف: دين.. مش حسن خلق أو حسن تربية فقط..
+الأمر في الآية: "وعاشروهن بالمعروف".. و "ولهن مثل الذي عليهن بالمعروف".. وفي الحديث: "ألا واستوصوا بالنساء خيرا".
+طاعة الزوج: دين.. مش تنازل أو اضطرار..
+في الآية: "وللرجال عليهن درجة".. و"الرجال قوامون على النساء".. وفي الحديث: "إذا صلَّت المرأةُ خمسَها وصامت شهرَها وحفِظت فرجَها وأطاعتْ زوجَها قيل لها ادخُلي الجنَّةَ من أيِّ أبوابِ الجنَّةِ شئتِ".. 
+طيب ما الكلام ده معروف ومن قديم الأزل.. ليه بنقوله دلوقتي؟
+عشان نبقى عارفين ان دي مش أمور متروكة لنا ولتقديرنا.. نسمع شكوى حد من زوجته فدماغنا تشتغل في حلول عبارة عن معاصي وذنوب.. فنقول له اقسى عليها عاملها بالطريقة الفلانية احرق قلبها.. نسمع شكوى واحدة من زوجها فنقول لها ما تسمعيش كلامه اخرجي وسيبي له البيت ارمي له عياله اطلبي الطلاق.. وربنا قال لنا "وتعاونوا على البر والتقوى ولا تعاونوا على الإثم والعدوان"..
+ده دين وهنتحاسب عليه.. نقطة.
+كالعادة.. إذا وجدت قيمة في الكلام ده فانشره من فضلك.. عشان تقييد فيس بوك.
+
+
+مافيش حاجة ما بتتصلحش.. آه كل حاجة بتحصل بتسيب آثار وندوب في نفس الواحد بس هو مين اللي بيوصل لعشرين تلاتين سنة مثلا من غير ما يكون فيه في وشه أثر جرح قديم أو في ايده أثر لسعة؟ لا دي بتموّت ولا دول بيموّتوا.. 
+المهم يكون الاتنين أسوياء..  سُلام.. وكل ما كانوا صادقين في الإصلاح كل ما ربنا وفق.. ربنا بيقول "إن يريدا إصلاحا يوفق الله بينهما".. بسيطة والله 🌷
+
+
+
+
+مركّز مع إبراهيم (3 سنوات) في انه ما يزنش كتير لما يطلب حاجة، كان لما يطلب يطلب وما يسكتش.. يفضل يطلب الحاجة بتكرار وإلحاح ومحايلة.. ويعيد ويزيد.. طيب يا ابني بكره.. مافيش فايدة.. حاضر لما أخلص اللي في إيدي.. انسى.. أتغدى وبعدين أعملها لك.. لأ دلوقتي..
+أنا باعمل كده عشان مش عايزه يكبر ويكبر معاه الطبع ده فلما يتعامل مع الناس الناس تكرهه.. ما حدش بيحب الشخص اللحوح اللي ما بيبطلش تكرار في طلبه ويزن عليه.. ولا اللي بيفضل يتحايل عشان يقنعهم بطلبه فيجي لهم من الناحية دي ومن الناحية دي ويعدد أسباب وأسباب للي هو عايزه..
+ما حدش بيحب اللي بيعمل كده.. لأنه بيكون مصدر إزعاج وبيسبب ضغط نفسي وبيدي انطباع سيء عن نفسه وبيكون البعد عنه أفضل.. فما حدش بيحب كده..
+إلا واحد..
+واحد بس اللي مش بيكره اللي بيلح في طلبه ويزن فيه.. مش بس كده.. وكمان بيحبه.. ويحب ان أي حد يتعامل معاه يكون كده.. يكون لحوح.. يكون بيتحايل عليه.. يكون رغاي في شرحه لمشكلته وطلبه.. ويجيب من هنا ومن هنا ويفضفض ويقول اللي عايز يقوله..
+واحد بس.. هو اللي خلق الخلق وعالم بيهم.. بيحب العبد المعترف بعبوديته له وباحتياجه له والمسلّم له بكونه الرازق المدبّر.. بيحب يسمعه.. لذلك حكى لنا في كتابه الكريم عن دعاء الأنبياء وازاي كانوا بيدعوا بإلحاح وبشرح وبتذلل وباعتراف بفضل الله وبقدرته.. وعرفنا عن نبيه صلى الله عليه وسلم الشيء نفسه..
+السيدة عائشة بتحكي عن النبي صلى الله عليه وسلم انه لما أوذي بالسحر "دعا ثم دعا ثم دعا".. واحنا عارفين دعاء سيدنا إبراهيم لما ساب زوجته وابنه في وادي مقفر.. ودعاؤه وثناؤه على ربنا في "رب هب لي من الصالحين" إلى آخر الآيات.. ودعاء سيدنا زكريا بالولد.. وغيرهم عليهم سلام الله..
+ربنا يتقبل منا ويهدينا ويستجيب لنا ويهبنا خيري الدنيا والآخرة.
+إذا وجدت قيمة في المنشور فانشره.. لأن فيس بوك مقيد الانتشار من فترة.. شكرا.
+
+
+- ربنا اللي بيحاسب مش انتو..
+- ما هي دي الفكرة..
+- فكرة ايه؟
+- انه ربنا اللي بيحاسب مش أنا..
+- إيه النقطة في كده؟
+- لو عليا أنا ما كنتش هاتعب نفسي واتكلم معاك، لكن ربنا هو اللي قال اني لو شفتك وانت بتعمل حاجة حرام وكانت عندي فرصة أنصحك وما عملتش كده فانا كمان هاتحاسب معاك.. أنا دلوقتي بادافع عن نفسي قدام ربنا.. بس.
+
+
+مع إني مقلّ الفترة دي بس لما حد جميل مجتهد ملتزم نافع للناس للدرجة بتاعته دي يقول "محتاج مساعدتكم لأول مرة" ما ينفعش ما نساعدش أحمد أبو زيد (صاحب قناة دروس اونلاين) ❤
+أحمد مرشح للفوز بجائزة تاريخية معتمدة على التصويت بصفته واحد من أكبر صناع المحتوى المفيد في العالم.. والتصويت سهل ومش بيتطلب انك تكتب إيميل أو رقم تليفون أو غيره (يعني مش جمع بيانات أو حاجة).. وعايز أقول لك لو هو فاز وانت كنت صوتّ له هتكون سعيد جدا انك واحد من اللي فرّحوه الفرحة دي..
+فوزه بالجايزة دي رسالة تشجيع قوية لصناع المحتوى الهادف بأنك بتدعمهم لما يكونوا محتاجين دعمك 💪💪
+رابط التصويت في أول تعليق.. ولما تصوت قل لنا من فضلك عشان نطمن ونشوف مين بيحب اللي بيعملوا المحتوى الهادف 😁 ويااااااه لو تنشر البوست  كمان ده يبقى فلّه قوي ونضاعف عدد الأصوات إن شاء الله..
+
+
+
+
+
+
+احكي مشكلتك لربنا بالتفصيل، خد وقتك، ما تقولش "يارب انت عالم" وخلاص، قول واحكي واشرح له انت ليه لاجئ له هو مش حد تاني، افتكر اللي تقدر عليه من نعمه عليك وعدّدها له، واعترف له بتقصيرك تجاهه، وقل له ع اللي ممكن يحصل لك لو الطلب ما تمش..
+فاكر دعاء سيدنا زكريا مثلا؟ 
+"قال رب إني وهن العظم مني
+واشتعل الرأس شيبا
+ولم أكن بدعائك رب شقيا"
+(دايما كنت بتكرمني مش بتحرمني)
+"وإني خفت الموالي من ورائي 
+وكانت امرأتي عاقرا
+فهب لي من لدنك وليا
+يرثني ويرث من آل يعقوب
+واجعله رب رضيا"
+شفت الجمال؟ ربنا عالم بكل ده، هو مقدر الأقدار، وبرضو هو بيحب يسمع تضرع عبده له، اللي بيكون دليل على صدق عبوديته وقوة يقينه في قدرة الله وكرمه..
+واللا دعاء سيدنا إبراهيم..
+"ربنا إني أسكنت من ذريتي بوادٍ غير ذي زرع عند بيتك المحرم
+ربنا ليقيموا الصلاة"
+واحنا عارفين وهو عارف ان ربنا هو اللي أمره بكده أصلا، بس بيحكي له برضو..
+"فاجعل أفئدة من الناس تهوي إليهم
+وارزقهم من الثمرات
+لعلهم يشكرون
+ربنا إنك تعلم ما نخفي وما نعلن
+وما يخفى على الله من شيء في الأرض ولا في السماء
+الحمد لله الذي وهب لي على الكبر إسماعيل وإسحق
+إن ربي لسميع الدعاء
+رب اجعلني مقيم الصلاة ومن ذريتي
+ربنا وتقبل دعاء
+ربنا اغفر لي ولوالدي وللمؤمنين يوم يقوم الحساب"
+الله..
+وسيدنا موسى..
+"رب اشرح لي صدري
+ويسر لي أمري
+واحلل عقدة من لساني يفقهوا قولي
+واجعل لي وزيرا من أهلي هارون أخي اشدد به أزري وأشركه في أمري
+كي نسبحك كثيرا ونذكرك كثيرا إنك كنت بنا بصيرا"
+ومن أكثر مواقف الرسول صلى الله عليه وسلم تضرعا كان غزوة بدر، لما الجيشين اتواجهوا وبقى فرق العدد واضح دول ٣١٩ ودول ١٠٠٠ اتجه للقبلة وفضل يدعي ويدعي ويرفع ايديه للسما لغاية ما رداؤه نزل من على كتفه، وجاء سيدنا أبو بكر  وضعه عليه تاني وحضنه وقال له "حسبك يا رسول الله، فقد ألححت على ربك".. 
+كان بيقول:
+"اللهم أنجز لي ما وعدتني
+اللهم آت ما وعدتني
+اللهم إن تهلك هذه العصابة (المجموعة) من أهل الإسلام لا تعبد في الأرض
+ اللهم إني أنشدك عهدك ووعدك
+اللهم إن شئت لم تُعبد بعد اليوم"
+وموقف تاني لما أوذي بالسحر فالسيدة عائشة بتحكي عنه:
+"فدعا رسول الله صلى الله عليه وسلم ثم دعا ثم دعا"...
+لما بدأت أدعي بالطريقة دي من كام سنة شفت حاجات غريبة..
+كنت أدعي وأتضرع وتاني يوم حد يشوف لي منام فيه سبب الابتلاء اللي انا فيه، فأشتغل عليه والابتلاء يزول..
+أو ألاقي الموضوع بعد ما كان قد الجبل في عيني يصفى على لا شيء..
+أو بعد ما أدعي وأتضرع يزيد الابتلاء للدرجة اللي ما ينفعش عندها أقف ساكت فأضطر أعمل حاجة كان لازم أعملها من أول يوم في الابتلاء بس خايف أو متردد أو مش عايز، زي اني أطلق أو أستقيل أو أعمل عملية جراحية..
+احكي واشرح وألحّ في الطلب وكرره، ربنا يكتب لنا الخير ويتقبل منا 🌷
+#اعادة_نشر 2022
+
+
+نيجي لصاحب أهم دور في الظروف الاقتصادية الحالية.. 
+الزوجة.. 
+في الظروف دي الزوجة تقدر تخليك تكره نفسك وتتمنى الموت كل دقيقة.. وتقدر تخليك أسعد إنسان في العالم ومش حاسس ان فيه مشكلة.. تقدر تخليك تفضل بره البيت مش عايز ترجع.. وتقدر تخليك مستني تخلص شغل عشان ترجع.. 
+ايه الكلام ده؟ أقول لك.. 
+سيدنا إبراهيم عليه السلام لما رجع لمكة بعد سنوات من تركه للسيدة هاجر ولابنه الرضيع إسماعيل في مكة بأمر من الله كان سيدنا إسماعيل عليه السلام كبر وتزوج، فاستدل أبوه على بيته بس ما لقاهوش ولقى زوجته.. 
+ودار حوار قصير بينهم، سألها عنه قالت له خرج يستقضى حاجة، فسألها عن أخبارهم من غير ما يقول لها هو مين فقالت له "نحن بشرّ، نحن في ضيق وشدة" يعني بالبلدي: الحال زفت والعيشة ضنك.. فقال لها "فإذا جاء زوجك فاقرئي عليه السلام وقولي له: يغير عتبة بابه".. 
+وزي ما انتو عارفين لما رجع سيدنا إسماعيل وحكت له اللي حصل قال لها "ذاك أبي، وقد أمرني أن أفارقك، الحقي بأهلك" وطلقها.. 
+وبعدها ربنا أكرمه وتزوج تاني وتكرر موقف سيدنا إبراهيم بس المرة دي جاوبت "نحن بخير وسعة" وشكرت ربنا وحمدته، فدعا لها بالبركة في رزقهم (وده دعاء ربنا استجابه لأهل مكة كلها مش هم بس) وقال لها "فإذا جاء زوجك فاقرئي عليه السلام ومريه يثبت عتبة بابه"..
+(الرواية في صحيح البخاري)
+فيه عتبة باب عالية، قاسية، تجرّحك، تكعبلك، توقّف حياتك، وتخليك طول الوقت قلقان وعامل لها ألف حساب.. وفيه عتبة باب حنيّنة، تتطبّع بشكل يتناسب مع ظروفك، تسندك، ترحب بيك، من هدوءها ورقتها ما تحسش بيها.. 
+في معظم الأحيان العيشة الهانئة مش بتبين أنواع الناس، العيشة الصعبة هي اللي بتبين.. ووقتها الكلام اللي صوتنا بيتنبح واحنا بنقوله للناس بيكون له معنى عندهم: اتجوز اللي متربية على الدين، اتجوز اللي أهلها أُصَلا، اتجوز اللي أولوياتها شبه أولوياتك، اتجوز اللي مش كل كلامها وكلام أهلها عن الماديات والمقتينات والفلوس والمقارنات.. 
+دورك يا ست الكل يا تاج راس زوجك تكوني أول معين له في الحياة على ظروف الحياة، تكوني مصدر الرضا، مصدر الرضا، بإيدك تخليه في سابع سما دين ودنيا لو حسستيه بالرضا وعبرتي له دايما عن امتنانك للي بيعمله في سعيه للرزق، لأنه كده هيرضى هو كمان وهيعيش سعيد ومقبل على السعي وحاسس بأهمية وقيمة اللي بيعمله وهياخد ثواب كمان، متخيلة دورك مؤثر قد ايه؟!
+بس دورك ده مش سهل.. انك تعيشي حياة صعبة -خاصة لو كنتي عايشة حياة أسهل- ده مش سهل، وعشان هو مش سهل فكّرتك بحكاية سيدنا إبراهيم مع زوجتي سيدنا إسماعيل: 
+واحدة شكّاية لدرجة انها بتشتكي لحد جه خبط ع الباب بيسأل عن زوجها، تخيلي دي شعورها ناحية زوجها ايه عشان تشتكي لغريب؟! تخيلي بتسمّع زوجها كلام شكله ايه ليل نهار؟! ولذلك كانت النتيجة انه يقول له طلقها، للدرجة دي؟ مافيش نتكلم؟ مافيش فرصة تانية؟ لأ.. الأب النبي الحكيم عارف أبعاد تصرف زي ده وخلفياته، وفاهم ده معناه حياة شكلها ايه.. اللي اختارت التصرف السهل اللي مش محتاج منها مجهود خربت بيتها بإيدها.. 
+في المقابل اللي اختارت التصرف الصح، التصرف الحكيم، تصرف ست فاهمة حكمة ربنا في توسيع وتضييق الرزق، ومقتنعة بأنه هو مالك الملك "لا يُسأل عما يفعل"، ومقتنعة ان دورنا هو السعي مش تحقيق النتائج، ومقتنعة ان ضيق الرزق المعتاد مش سبب شرعي لطلب الانفصال، وعارفة ان زوجها باذل جهده، اللي اختارت التصرف ده -على صعوبته- نجحت بامتياز ونالت البركة..
+لو زوجك بيعمل اللي عليه وانتي شايفه وعارفة اصبري مهما كان الوضع صعب، خففي عنه، حسسيه بتقديرك للي بيعمله، سمّعيه كلام مطمئن كتير، وعبري له عن ده..
+لو بإيدك حاجة تعمليها وتساعدي شمّري وساعدي، أمي كانت بتفصّل وتخيط وتبيع كذا سنة، وكانت بتطبخ إطعام لصالح الغير كذا سنة، أختي عاملة مشروع ملابس أون لاين عشان تكمل بيه مصروف البيت، أختي التانية بتحفّظ قرآن، أختي التالتة عاملة مشروع أكل أون لاين، أختين بيساعدوا ازواجهم في شغلهم، وكتير من الزوجات بيعملوا كده، اللي تقدري تعمليه اعمليه..
+ده غير انك لو تقدري توفري تمن حاجة وتعمليها بنفسك يبقى أحسن وأحسن، يوتيوب مليان وصفات لعمل معظم الأغذية المصنعة ومستلزمات البيت في البيت بمكونات كويسة وبتوفير ممتاز.. وفيه جروبات رائعة على فيس بوك الستات بيسألوا فيها نقدر نمشّي البيت ازاي بمبلغ كذا في الشهر والستات المخضرمات بيردوا بالتفصيل لدرجة تجيبي كام كيلو من كذا وتجيبي بروتين كذا بدل كذا والصغير ياكل ايه والكبير ياكل ايه والمنظفات ايه والزيت ايه الخ.. حاجة في منتهى الإبداع والله.. 
+بعد كل ده ما تنسيش: انتي بتعملي كل ده ليه؟ 
+مش عشان بتحبيه، لأ. 
+عشان ربنا..
+عشان تنجحي في اختبار وجودك وحياتك وتدخلي الجنة من الباب ده..
+والله زوجك بيقدّر اللي بتعمليه خير وبركة ده رزق ربنا ليكي..
+مش بيقدّر وبيشتكي ومسبب عليكي ضغط؟ ان شاء الله هتشوفي بركة في حياتك نتيجة طاعة ربنا فيه..
+"الدنيا متاع، وخير متاعها الزوجة الصالحة"
+الدنيا فيها نعم، وأكبر وأحسن نعمة فيها الزوجة الصالحة، مش بيقول -صلى الله عليه وسلم- الزوجة نعمة وخلاص لأ، ومش بيوصف بأي وصف تاني، لأ، الزوجة الصالحة، ومن علامات الزوجة الصالحة اللي بنتكلم فيه ده..
+وانت كزوج أعتقد دورك واضح، استعين بالله واعمل اللي تقدر عليه من سعي للرزق، واحتوي أهل بيتك وقدّر مشاعرها وحسسها بالاطمئنان، وكل ما تشوف منها صبر ورضا وتعاون وضّح قد ايه ده فارق معاك نفسيا وممتن ليها بسببه، واتحمل الفترات اللي هتلاقيها مضغوطة فيها وعدي لها ما تدقش ع الواحدة في الظروف دي..
+ربنا يبارك فيكم ويوسع رزقكم ويفتح لكم الأبواب ويديم المعروف بينكم.
+ولو وجدت قيمة في الكلام ده وحبيت ناس أكتر يقرؤوه ساهم في نشره من فضلك 🌷
+
+
+
+
+في حال بقيت حاسس ان مالهاش حل او بقيت مش عارف تعمل ايه..  🌷
+محمد حسام خضر 
+المفضلة  · 30 مارس 2022  · 
+الظروف بقت صعبة قوي، الأسعار كل يوم بتزيد، والدخل بيقل، والقرشين اللي الواحد شايلهم بيتصرفوا غصب عنه.. 
+ولو اتحلت النهارده واليوم عدّى يا ترى مين هيحلها بكره! 
+الواحد مش عارف يعمل ايه واللا هيلاقيها منين واللا منين.. 
+الكلام ده ☝️ فيه مشكلة واحدة.. 
+ما فيهوش "ربنا".. 
+ده كلام واحد ناسي (ولو مؤقتا بسبب طاحونة الحياة اليومية) انه مرزوق مش رازق، انه مخلوق مش خالق، انه متلقي مش معطي، انه تحت مش فوق.. 
+ده كلام واحد مش واخد باله من طبيعة الرزق وأحكامه المتعلقة بالقلب واللسان والجسم، مع انه لو فهم الرزق صح هيبقى في مكان تاني، نفسيا وعمليا مش نفسيا بس..
+بمعنى؟ 
+1️⃣ أول هام: ربنا جابها لنا من بدري قوي، من الأول خالص:
+"وكأيّن من دابة لا تحمل رزقها
+الله يرزقها.. 
+وإياكم"
+يعني كتيرة قوي المخلوقات اللي مش بتعرف تشيل من أكل النهارده لبكره، مش بتحوّش، بتنام وتصحى ما عندهاش أكل، ففي اليوم الجديد ده ربنا بيرزقها.. 
+مش بس هم، "وإياكم".. 
+شايف الآية واضحة ازاي؟ 
+عرفت تحوش خير وبركة لكن ما عرفتش تحوش لأنك احتجت فعلا تصرف كل اللي جالك فده مش غلط ومش ناقصك حاجة، الأصل مش ان رزقك في اللي انت محوشه، رزقك في ايد ربنا، وهو متكفل بنصّ الآية برزقك كل يوم سواء محوّش أو مش محوّش. 
+تاني.. "الله يرزقها وإياكم".. الخطوة الأولى المطلوبة منك هي انك يبقى في قلبك "يقين" بالنقطة دي، الرزق في ايد ربنا، وهو موزع الأرزاق على الناس ومتكفل بيها، لا فلان ولا علان لا الشركة الفلانية ولا الجهة العلانية ولا العميل الفلاني ولا المستثمر العلاني في ايدهم رزقك، هم المواسير اللي الرزق بيعدي فيها، انما الرزق نفسه بأمر وبتدبير وبحكمة وبكرم ربنا. 
+2️⃣ تاني هام: اليقين وخلاص؟
+لأ.. 
+اليقين بأن الله هو الرازق بينتج عنه اننا نثبت ده باللسان، لما تكون متأكد ان رزقك عنده هيبقى طبيعي انك تطلبه منه، تدعي.. 
+"فابتغوا عند الله الرزق".. 
+سواء كان الدعاء بالمأثورات زي "اللهم إني أسألك علما نافعا ورزقا طيبا وعملا متقبلا" أو بأي حاجة تحب تقولها لربنا وتتوسل إليه فيها ويبقى واضح ان عندك يقين فعلا.. 
+في زنقة من الزنقات اللي عديت بيها دعيت ربنا كتير وبكيت كتير، أختي تاني يوم شافت لي منام من نفسها كده، شافتني قاعد وقدامي صواني بعدد أيام الأسبوع، منهم صواني فيها أكل كتير وصواني فيها أكل على قدي وصواني فيها أكل قليل.. فبكيت أكتر وحمدت ربنا على رسالته لي لتثبيتي بحكمته في ان رزقي متفاوت مش هيكون كل يوم زي التاني 🌷
+3️⃣ تالت هام: حاجة غريبة جدا.. السعي.. 
+طب ليه غريبة؟! 
+أقول لك..
+احنا عارفين ان السعي أساسي طبعا: 
+"لو أنكم تتوكلون على الله حق توكله لرزقكم كما يرزق الطير
+تغدو خماصا وتعود بطانا"
+يعني بتمشي الصبح بطونها فاضية وترجع آخر النهار بطونها مليانة، وحق توكله قالوا عنها الشيوخ انها بيقين وبسعي، الطيور بتسعى: بتتحرك من مكانها وتدور في كل الأماكن اللي بتتاح لها على أكل.. 
+"هو الذي جعل لكم الأرض ذلولا 
+فامشوا في مناكبها 
+وكلوا من رزقه"
+جعل الأرض مناسبة لنشاطكم فاتحركوا فيها واسعوا وهيجي لكم الرزق.. 
+شوف بقى: في الحديث "لَرَزَقَكُم" مش "لوجدتم الرزق الذي تبحثون عنه"، وفي الآية "مِن رِزْقِه" مش "مما وجدتموه في طرق سيركم"، ليه؟
+لأن الحاجة الغريبة جدا هي انك لما بتسعى بيجي لك رزقك فعلا بس مش شرط يكون من نفس مجال السعي! 
+آه والله العظيم، ومش بس حصل معايا، حصل مع كل اللي باتناقش معاهم في المبدأ ده، وكنت كتبت قبل كده عن جملة الشعراوي الرائعة "إن لله يد أسباب ويد قدرة، فإذا أخذت بيد الأسباب بحق بسط لك يد القدرة".
+فيه قصة شهيرة انتشرت على فيس بوك من فترة عن فرد الأمن في الكومباوند اللي الراجل لقاه بيلف ع العربيات كل شوية، فسأله فقال له اكتشفت اني لما باعمل كده ربنا بيبارك في رزقي ومش شرط عن طريق حاجة الناس هنا يدوهالي. 
+مجرد ما تبذل مجهود "حقيقي" في السعي في اتجاه بتلاقي باب رزق اتفتح حتى لو مش من نفس الاتجاه، بس بشرط! "حقيقي" مش معناها انك لازم تبذل مجهود بدني كبير، وبرضو مش معناها انك تكون مختار مجال مش مناسب ليك أصلا! 
+معناها تدرس الاتجاه وتستشير وبعدين تبذل المجهود المطلوب للاتجاه ده وتبقى مركز معاه وبتشوف ماشي واللا لأ وكده، تاخد بالأسباب فعلا...
+4️⃣ رابع هام: الصدقة المتكررة.. 
+ومن أفضل الصدقات إطعام الطعام، في الحديث: "أي الإسلام خير؟ قال: تطعم الطعام"..
+وحبذا لو قدرت تخلي الإطعام ده أسبوعي متكرر "أي العمل أحب إلى الله؟ قال أدْوَمُه وإن قلّ"، إن شالله بعشرة جنيه في الأسبوع يعني أربعين جنيه في الشهر، وكل ما قدرت على أكتر من كده يبقى بركة..
+شواهد آثار إطعام الطعام على رزق الناس كتيرة وقصصه كتيرة لا تعد ولا تحصى، آخرها أحد الأصدقاء اتفق مع ناس بيعملوا إطعام كل شهر، فطلب منهم يعملوه كل أسبوع وخصص مبلغ معين، وسجل على حسابه في موقع البنك تحويل أسبوعي أوتوماتيك للمبلغ ده لحسابهم، في آخر الشهر حسب الرزق اللي ربنا أكرمه بيه لقاه معدّي عشر أضعاف المبلغ الشهري.. 
+*️⃣ مش عارف انت عرفت توصل لهنا واللا وقعت من البوست بدري 😅 أنا آسف ان الكلام كتر كده، خلينا نلخص النقط لو عايزها تكون قدامك: 
+1. اليقين بأن الله هو الرازق. 
+2. الاستعانة بالله والدعاء المستمر. 
+3. السعي بحق. 
+4. الصدقة المستمرة المتكررة. 
+ربنا ينفعنا وإياكم 
+ويرزقنا وإياكم 
+ويتقبل منا ومنكم 
+إذا وجدت قيمة في المنشور فشاركني بنشره لتخطي تقييد فيس بوك.. شكرا 🌷
+
+
+زوجتي بتاخد رأيي النهارده في مشكلة نتجت عن سقوط بشار وتحرر سوريا من ظلمه.. اللي فهمته من حكايتها ما يلي:
+في يوم تنحي مبارك.. حمايا -الله يرحمه- كان قاعد مع صديق عزيز له.. وبعد ما حمدوا ربنا وفرحوا وكل حاجة دعوا لسوريا.. فلما دعوا لسوريا استحضروا الظلم الكبير لبشار.. وبلغ من تأثرهم انه قال لصديقه: ندر عليا لو بشار سقط هاعمل كذا وكذا.. ولو أنا كنت مت قبلها يبقى انت اللي تنفذ الندر ده.. فصاحبه قال له موافق..
+المشكلة بقى ان حمايا فعلا توفي من كذا سنة.. وصاحبه أول ما الأخبار جات بهروب بشار افتكر الندر.. بس ما افتكرش هو الندر كان بإيه.. هل فلوس.. هل دبح حاجة.. هل عمرة.. مش قادر يفتكر.. ما حدش كان ييجي في باله ان اللي حصل ممكن يحصل فعلا.. فنسي خالص.. 
+المهم انه أمر لا يعنيهم بشكل مباشر (أو هكذا يبدو) وبيكلفوا نفسهم ندر لازم الوفاء بيه لو الأمر حصل..
+الموضوع ده وراني ان فكرة اننا كلنا أمة واحدة وشعب واحد مش فكرة مصطنعة أو متكلفة.. مش كلام نظري.. مش كلام بنطيب بيه خاطر بعض وخلاص.. دي فكرة أصيلة في اللي فطرتهم لسه سليمة.. وجزء من عقيدتهم..
+فرحتنا بتحرر اخواتنا في أي مكان فرحة حقيقية.. ولما عرفنا تفاصيل عن اللي كانوا بيتعرضوا له بلّمنا واكتأبنا.. المشاركة في المشاعر معناها اننا واحد.. مهما كان اللي بنتعرض له.. كلنا واحد..
+لو وجدت قيمة في المنشور فانشره معي.. شكرا
+
+
+من وحي البوستات والفيديوهات..
+الأول لقيت نفسي باقول: دول لو كانوا بيعاقبـ، ـوا كفـ، ـار ما كانوش عملوا فيهم كده.. المسلم مش مسموح له يعمل كده حتى في أسير كافـ، ـر.. فما بالك بمسلم..
+بس الحقيقة انهم لو هم نفسهم كفـ، ـار ما كانوش عملوا كده في غيرهم.. الكفـ، ـار ما بيوصلوش للدرجة دي من الإجـ، ـرام.. 
+مالهمش وصف.. أعوذ بالله..
+أعتقد ان أي وضع سوريا تبقى فيه هيكون جنة بالنسبة للي كانت فيه.. ربنا ييسر لهم الخير ويعوضهم خير..
+
+
+اللهم لك الحمد 🌷🌷
+الصراحة من كتر ما دقت على الراس طبول فالواحد فرحان للسوريين فرحة مختلطة بالترقب مختلطة بالفرحة تاني 😅 الترقب مش هيقلل الفرحة..
+يارب كمل تحررهم على خير واكتب لهم عهد جديد فيما يرضيك ويصلحهم..
+وانصر عبادك المظلومين في كل مكان..
+
+
+ماشي انت مش قابلُه.. عادي.. ممكن تكون بتكرهه.. تمام.. بس مش جايز السبب مش فيه ويكون السبب جواك؟
+عندنا موروث مجتمعي قبيح ضروري كل واحد مننا يتحمل مسؤولية التخلص منه والارتقاء بنفسيته وبحياته عنه.. 
+مثلا: 
+هو مش شبهي فانا مش باحبه ولا باحب له الخير.. 
+ليه؟ 
+مش شبهك مفهوم.. ما تبقاش عايز تشوفه كل يوم أو تخرج معاه مفهوم.. لكن تكرهه ليه؟ ما تحبش الخير له ليه؟ هل عشان لو ما جالوش خير يبقى ده اثبات ليك انه وحش عشان مش شبهك؟ طب بالذمة ده اسمه كلام؟ 
+ولا انت هتكون استفدت حاجة حقيقية ولا هيكون قلبك سليم..
+مثلا: 
+هو ناجح وانا شايف انه ما يستاهلش اللي هو فيه..
+ليه؟! 
+هو ناجح ده أمر الله ورزقه.. يؤذيك في ايه؟ يضرك في ايه؟ 
+لو عنده مقومات وأسباب للنجاح يبقى مافيش مبرر يخليك تستغرب أصلا بالعكس استفيد من حكايته واستلهم من نجاحه.. 
+لو ما عندوش مقومات يبقى ده سبب انك تؤمن بقدرة ربنا وانه هو وحده موزع الأرزاق كما يشاء.. من غير ما ده يخليك باصص له في رزقه وكارهه بسببه وإلا مش هيبقى قلبك سليم..
+وفي كل الأحوال والله والله ما أخد ولا هياخد حاجة من رزقك.. رزقك مكتوب ورزقه مكتوب.. المسألة دي منتهية من قبل ما نكون موجودين..
+مهما كان السبب صدقني في الكلمتين دول: الحياة بقلب مش سليم بيخلي الواحد مش شايف النعم (على كترتها) ومش شايف سعادة نهائي.. فتخيل لما يكون الواحد هو اللي تاعس نفسه بنفسه لمجرد انه سايب قلبه يقرر بدون ما يفكر شوية..
+"ولا تجعل في قلوبنا غلاًّ للذين آمنوا
+ربنا إنك رؤوف رحيم"
+لو وجدت قيمة في المنشور فشارك بنشره لتخطي تقييد الفيس بوك.. تسلم.
+
+
+لكلمتين دول ل99% من الناس:
+بديل الوظيفة السيئة وظيفة أفضل.. مش انك تعمل مشروع.. بديل الوظيفة السيئة وظيفة أفضل.. مش انك تعمل مشروع.. بديل الوظيفة السيئة وظيفة أفضل.. مش انك تعمل مشروع.. بديل الوظيفة السيئة وظيفة أفضل.. مش انك تعمل مشروع.. بديل الوظيفة السيئة وظيفة أفضل.. مش انك تعمل مشروع.. بديل الوظيفة السيئة وظيفة أفضل.. مش انك تعمل مشروع.. بديل الوظيفة السيئة وظيفة أفضل.. مش انك تعمل مشروع.. بديل الوظيفة السيئة وظيفة أفضل.. مش انك تعمل مشروع.. بديل الوظيفة السيئة وظيفة أفضل.. مش انك تعمل مشروع.. بديل الوظيفة السيئة وظيفة أفضل.. مش انك تعمل مشروع.. بديل الوظيفة السيئة وظيفة أفضل.. مش انك تعمل مشروع.. بديل الوظيفة السيئة وظيفة أفضل.. مش انك تعمل مشروع.. بديل الوظيفة السيئة وظيفة أفضل.. مش انك تعمل مشروع.. بديل الوظيفة السيئة وظيفة أفضل.. مش انك تعمل مشروع.. بديل الوظيفة السيئة وظيفة أفضل.. مش انك تعمل مشروع.. بديل الوظيفة السيئة وظيفة أفضل.. مش انك تعمل مشروع.. بديل الوظيفة السيئة وظيفة أفضل.. مش انك تعمل مشروع.. بديل الوظيفة السيئة وظيفة أفضل.. مش انك تعمل مشروع.. بديل الوظيفة السيئة وظيفة أفضل.. مش انك تعمل مشروع.. بديل الوظيفة السيئة وظيفة أفضل.. مش انك تعمل مشروع.. بديل الوظيفة السيئة وظيفة أفضل.. مش انك تعمل مشروع.. بديل الوظيفة السيئة وظيفة أفضل.. مش انك تعمل مشروع.. بديل الوظيفة السيئة وظيفة أفضل.. مش انك تعمل مشروع.. 
+آسف البوست طول مني.. فهاكمل في التعليقات..
+ما تعملش مشروع كرد فعل على انك في وظيفة سيئة.. بالشكل ده أولا مش هيكون ليك مصدر دخل.. وثانيا احتمال كبير تحويشتك تروح.. فهتعمل ايه ساعتها؟!
+لو كنت هتعمل مشروع كنت عملته بغض النظر انت في وظيفة كويسة واللا وحشة.. لو كنت هتعمل مشروع ودارسه وفاهم مجاله ومعاك مقوماته كنت عملته.. لكن ما تعملش مشروع لمجرد انك اتخنقت من الشركات أو من الوظيفة اللي انت فيها..
+وظيفة سيئة؟ دور على وظيفة أفضل.. ما تعملش مشروع..

@@ -1,0 +1,16 @@
+Message Clarity Entropy v1.0 (2026-01-22)
+
+Definition:
+- Entropy increases when multiple promises, audiences, or CTAs compete.
+- Lower entropy improves conversion and reduces friction.
+
+Quick Scoring (0-10):
+- 0-2: Single promise + single CTA + clear audience
+- 3-5: Two promises or CTAs (needs simplification)
+- 6-10: Multiple promises/CTAs/audiences (high confusion)
+
+Reduction Protocol:
+1) One audience, one promise, one CTA per asset.
+2) Move secondary claims to proof section.
+3) Remove any non-essential features from hero copy.
+4) Validate with A/B test before scaling.

@@ -1,0 +1,133 @@
+{
+  "name": "@openops/studio",
+  "version": "2.0.0",
+  "description": "OpenOps Studio - Complete Multi-Agent Operational Architecture",
+  "main": "01_orchestration/runtime/index.js",
+  "types": "01_orchestration/runtime/index.d.ts",
+  "scripts": {
+    "boot": "ts-node 01_orchestration/runtime/index.ts",
+    "dev": "nodemon --exec ts-node 01_orchestration/runtime/index.ts",
+    "build": "tsc",
+    "start": "node dist/01_orchestration/runtime/index.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "format": "prettier --write \"**/*.{ts,tsx,json,md}\"",
+    "qa:boot": "ts-node scripts/qa-boot-test.ts",
+    "generate:module": "ts-node scripts/generate-module.ts",
+    "validate:config": "ts-node scripts/validate-config.ts",
+    "docs": "typedoc --out docs 01_orchestration/runtime"
+  },
+  "keywords": [
+    "multi-agent",
+    "orchestration",
+    "ai",
+    "automation",
+    "devops",
+    "saas",
+    "production-team",
+    "governance",
+    "security",
+    "analytics"
+  ],
+  "author": "OpenOps Foundation",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/openops/studio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/openops/studio/issues"
+  },
+  "homepage": "https://openops.ai",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.20.0",
+    "openai": "^4.28.0",
+    "neo4j-driver": "^5.17.0",
+    "pg": "^8.11.3",
+    "redis": "^4.6.13",
+    "kafkajs": "^2.2.4",
+    "@pinecone-database/pinecone": "^2.0.1",
+    "aws-sdk": "^2.1551.0",
+    "@aws-sdk/client-kms": "^3.515.0",
+    "@aws-sdk/client-secrets-manager": "^3.515.0",
+    "axios": "^1.6.7",
+    "express": "^4.18.2",
+    "dotenv": "^16.4.3",
+    "winston": "^3.11.0",
+    "uuid": "^9.0.1",
+    "joi": "^17.12.1",
+    "bcrypt": "^5.1.1",
+    "jsonwebtoken": "^9.0.2",
+    "helmet": "^7.1.0",
+    "cors": "^2.8.5",
+    "compression": "^1.7.4",
+    "rate-limiter-flexible": "^4.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.12",
+    "@types/uuid": "^9.0.8",
+    "@types/bcrypt": "^5.0.2",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/cors": "^2.8.17",
+    "@types/compression": "^1.7.5",
+    "typescript": "^5.3.3",
+    "ts-node": "^10.9.2",
+    "nodemon": "^3.0.3",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "eslint": "^8.56.0",
+    "@typescript-eslint/parser": "^6.20.0",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "prettier": "^3.2.5",
+    "typedoc": "^0.25.8",
+    "@faker-js/faker": "^8.4.0"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "roots": [
+      "<rootDir>"
+    ],
+    "testMatch": [
+      "**/__tests__/**/*.ts",
+      "**/?(*.)+(spec|test).ts"
+    ],
+    "collectCoverageFrom": [
+      "**/*.ts",
+      "!**/*.d.ts",
+      "!**/node_modules/**",
+      "!**/dist/**"
+    ]
+  },
+  "nodemonConfig": {
+    "watch": [
+      "00_governance",
+      "01_orchestration",
+      "02_agents",
+      "03_product",
+      "04_research",
+      "05_architecture",
+      "06_security",
+      "07_tracking",
+      "08_ux",
+      "09_tooling"
+    ],
+    "ext": "ts,json",
+    "ignore": [
+      "**/*.test.ts",
+      "**/*.spec.ts",
+      "dist/**",
+      "node_modules/**"
+    ],
+    "exec": "ts-node 01_orchestration/runtime/index.ts"
+  }
+}

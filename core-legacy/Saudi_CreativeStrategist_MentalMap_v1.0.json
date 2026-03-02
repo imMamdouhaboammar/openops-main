@@ -1,0 +1,616 @@
+{
+  "meta": {
+    "name": "Saudi Creative Strategist Mental Map",
+    "version": "1.0",
+    "language": "ar",
+    "created_at": "2025-12-18T12:56:52Z",
+    "purpose": "Knowledge base map for a Saudi-focused creative strategist with Hajj & Umrah depth.",
+    "notes": [
+      "This is a map, not a knowledge dump.",
+      "Designed to be used by Gemini Gem or similar LLM agent.",
+      "Each layer can be expanded into separate knowledge documents."
+    ]
+  },
+  "layers": [
+    {
+      "id": "L0",
+      "title": "Saudi Strategic Worldview",
+      "why_it_exists": "Sets the mental frame: KSA is a state + vision + programs + market, not a market alone.",
+      "core_principles": [
+        {
+          "id": "P0_1",
+          "text": "Decisions can be policy-driven as much as market-driven."
+        },
+        {
+          "id": "P0_2",
+          "text": "Time horizon matters: today vs 2030."
+        },
+        {
+          "id": "P0_3",
+          "text": "Form and narrative can be as important as tactics."
+        },
+        {
+          "id": "P0_4",
+          "text": "Sometimes silence is strategic."
+        }
+      ],
+      "outputs_influenced": [
+        "strategy_direction",
+        "narrative_tone",
+        "risk_posture"
+      ],
+      "dependencies": [],
+      "expands_to_docs": [
+        "KSA_worldview_primer",
+        "Saudi_decision_culture_notes"
+      ]
+    },
+    {
+      "id": "L1",
+      "title": "Saudi Institutional Map",
+      "why_it_exists": "Clarifies who holds mandate, who approves, who executes, and who speaks.",
+      "entities": [
+        {
+          "type": "Ministry",
+          "focus": "Policy, national mandates, oversight"
+        },
+        {
+          "type": "Authority",
+          "focus": "Regulation, standards, enforcement"
+        },
+        {
+          "type": "Program",
+          "focus": "Cross-ministry targets and delivery"
+        },
+        {
+          "type": "Semi-government",
+          "focus": "Execution + investment + partnerships"
+        },
+        {
+          "type": "Holding/Operator",
+          "focus": "Service delivery, commercial outcomes"
+        },
+        {
+          "type": "Media/Comms bodies",
+          "focus": "Narrative amplification and public trust"
+        }
+      ],
+      "decision_roles": [
+        "decision_maker",
+        "sponsor",
+        "approver",
+        "operator",
+        "communicator"
+      ],
+      "concepts": [
+        {
+          "id": "C1_1",
+          "name": "Policy signal vs operational reality",
+          "definition": "Do not treat announcements as execution until validated."
+        },
+        {
+          "id": "C1_2",
+          "name": "Approval flow",
+          "definition": "Assume multi-step approvals for public comms and procurement."
+        }
+      ],
+      "outputs_influenced": [
+        "proposal_structure",
+        "stakeholder_map",
+        "governance_model",
+        "tone_level"
+      ],
+      "dependencies": [
+        "L0"
+      ],
+      "expands_to_docs": [
+        "KSA_institution_roles_map",
+        "Approval_flows_playbook"
+      ]
+    },
+    {
+      "id": "L2",
+      "title": "Vision 2030 Logic Layer",
+      "why_it_exists": "Connects narrative, funding, and priorities to national programs and KPIs.",
+      "concepts": [
+        {
+          "id": "C2_1",
+          "name": "Programs drive initiatives",
+          "definition": "Programs translate Vision goals into measurable initiatives."
+        },
+        {
+          "id": "C2_2",
+          "name": "Language patterns matter",
+          "definition": "Official wording often signals priority and acceptable framing."
+        },
+        {
+          "id": "C2_3",
+          "name": "KPI cascade",
+          "definition": "National to Program to Initiative to Execution metrics."
+        }
+      ],
+      "outputs_influenced": [
+        "why_now",
+        "strategic_alignment",
+        "kpi_tree"
+      ],
+      "dependencies": [
+        "L0",
+        "L1"
+      ],
+      "expands_to_docs": [
+        "Vision2030_alignment_framework",
+        "Program_to_initiative_mapping_guide"
+      ]
+    },
+    {
+      "id": "L3",
+      "title": "Saudi Market and Audience Psychology",
+      "why_it_exists": "Defines trust, status, social norms, and segment differences in KSA context.",
+      "segments": [
+        {
+          "id": "S3_1",
+          "name": "Saudi citizens"
+        },
+        {
+          "id": "S3_2",
+          "name": "Residents"
+        },
+        {
+          "id": "S3_3",
+          "name": "Visitors"
+        },
+        {
+          "id": "S3_4",
+          "name": "Pilgrims"
+        },
+        {
+          "id": "S3_5",
+          "name": "B2B operators"
+        },
+        {
+          "id": "S3_6",
+          "name": "B2G stakeholders"
+        }
+      ],
+      "behavioral_drivers": [
+        {
+          "id": "B3_1",
+          "name": "Trust building",
+          "notes": "Proof, reliability, and consistency beat hype."
+        },
+        {
+          "id": "B3_2",
+          "name": "Reputation sensitivity",
+          "notes": "Small errors can amplify quickly, especially in public services."
+        },
+        {
+          "id": "B3_3",
+          "name": "Norms and identity",
+          "notes": "Respect cultural framing, avoid exploitation."
+        }
+      ],
+      "outputs_influenced": [
+        "messaging_house",
+        "content_angles",
+        "creative_constraints"
+      ],
+      "dependencies": [
+        "L0",
+        "L1"
+      ],
+      "expands_to_docs": [
+        "Saudi_audience_clusters",
+        "Behavioral_nudges_library_KSA"
+      ]
+    },
+    {
+      "id": "L4",
+      "title": "Hajj and Umrah Ecosystem Core",
+      "why_it_exists": "Specialization layer: journey, stakeholders, seasonality, operational constraints.",
+      "journey": [
+        {
+          "stage": "Idea",
+          "needs": [
+            "clarity",
+            "legitimacy",
+            "trust"
+          ]
+        },
+        {
+          "stage": "Intention",
+          "needs": [
+            "reassurance",
+            "proof",
+            "guidance"
+          ]
+        },
+        {
+          "stage": "Decision",
+          "needs": [
+            "choice architecture",
+            "price-value clarity",
+            "risk reduction"
+          ]
+        },
+        {
+          "stage": "Preparation",
+          "needs": [
+            "checklists",
+            "support",
+            "documentation help"
+          ]
+        },
+        {
+          "stage": "Experience",
+          "needs": [
+            "service reliability",
+            "real-time comms",
+            "issue resolution"
+          ]
+        },
+        {
+          "stage": "Memory",
+          "needs": [
+            "meaning",
+            "gratitude",
+            "story preservation"
+          ]
+        }
+      ],
+      "stakeholders": [
+        "Ministry of Hajj and Umrah",
+        "Pilgrims affairs offices and international delegations",
+        "Umrah companies and Hajj operators",
+        "Service providers (transport, housing, catering, guides)",
+        "Investors, startups, innovators",
+        "Media and public stakeholders"
+      ],
+      "seasonality": [
+        "Ramadan",
+        "Hajj peak",
+        "Umrah waves",
+        "Conference cycles"
+      ],
+      "outputs_influenced": [
+        "season_plan",
+        "stakeholder_map",
+        "experience_narrative",
+        "risk_controls"
+      ],
+      "dependencies": [
+        "L0",
+        "L1",
+        "L2",
+        "L3"
+      ],
+      "expands_to_docs": [
+        "Hajj_Umrah_value_chain",
+        "Seasonality_playbook",
+        "Pilgrim_journey_messaging"
+      ]
+    },
+    {
+      "id": "L5",
+      "title": "Communication and Narrative Layer",
+      "why_it_exists": "Defines what is said, how, when, and by whom in Saudi public context.",
+      "message_types": [
+        {
+          "type": "Announcement",
+          "goal": "inform"
+        },
+        {
+          "type": "Narrative",
+          "goal": "shape perception"
+        },
+        {
+          "type": "Campaign",
+          "goal": "drive action"
+        },
+        {
+          "type": "Public reassurance",
+          "goal": "reduce anxiety and prevent misinformation"
+        }
+      ],
+      "tone_modes": [
+        "formal_msa",
+        "professional_warm",
+        "social_light"
+      ],
+      "rules": [
+        {
+          "id": "R5_1",
+          "text": "Avoid overclaiming; prefer verifiable proof points."
+        },
+        {
+          "id": "R5_2",
+          "text": "Respect religious context; avoid trivialization."
+        },
+        {
+          "id": "R5_3",
+          "text": "When uncertain, use cautious framing or recommend delay."
+        }
+      ],
+      "outputs_influenced": [
+        "pr_plan",
+        "x_content",
+        "media_kit",
+        "speech_points"
+      ],
+      "dependencies": [
+        "L0",
+        "L1",
+        "L3",
+        "L4"
+      ],
+      "expands_to_docs": [
+        "Saudi_message_house_templates",
+        "Public_comms_guardrails"
+      ]
+    },
+    {
+      "id": "L6",
+      "title": "Channels Reality Map",
+      "why_it_exists": "Assigns roles to channels based on Saudi behavior and institutional norms.",
+      "channels": [
+        {
+          "name": "X",
+          "role": "high-impact public discourse and institutional messaging",
+          "risk": "misinterpretation amplification"
+        },
+        {
+          "name": "LinkedIn",
+          "role": "B2B and institutional credibility",
+          "risk": "over-formality"
+        },
+        {
+          "name": "Instagram",
+          "role": "visual storytelling and social proof",
+          "risk": "shallow conversion without funnel"
+        },
+        {
+          "name": "YouTube",
+          "role": "depth and authority",
+          "risk": "production cost"
+        },
+        {
+          "name": "Snapchat",
+          "role": "local attention and immediacy",
+          "risk": "short-lived recall"
+        },
+        {
+          "name": "TikTok",
+          "role": "reach and cultural momentum",
+          "risk": "sensitivity and brand control"
+        },
+        {
+          "name": "Press/TV",
+          "role": "authority reinforcement",
+          "risk": "slow cycles"
+        }
+      ],
+      "outputs_influenced": [
+        "channel_strategy",
+        "content_formats",
+        "media_mix"
+      ],
+      "dependencies": [
+        "L3",
+        "L5"
+      ],
+      "expands_to_docs": [
+        "KSA_channel_roles_matrix",
+        "Platform_playbooks_KSA"
+      ]
+    },
+    {
+      "id": "L7",
+      "title": "Measurement and Accountability Layer",
+      "why_it_exists": "Connects activity to outcomes and enables learning loops across seasons.",
+      "kpi_families": [
+        {
+          "family": "Visibility",
+          "examples": [
+            "share_of_voice",
+            "reach",
+            "impressions"
+          ]
+        },
+        {
+          "family": "Credibility",
+          "examples": [
+            "earned_mentions_quality",
+            "partner_signals",
+            "sentiment_guardrails"
+          ]
+        },
+        {
+          "family": "Participation",
+          "examples": [
+            "registrations",
+            "booth_visits",
+            "meeting_bookings"
+          ]
+        },
+        {
+          "family": "Conversion",
+          "examples": [
+            "leads",
+            "contracts",
+            "qualified_pipeline"
+          ]
+        },
+        {
+          "family": "Experience",
+          "examples": [
+            "nps",
+            "complaint_resolution_time",
+            "service_uptime"
+          ]
+        },
+        {
+          "family": "Advocacy",
+          "examples": [
+            "referrals",
+            "creator_amplification",
+            "repeat_participation"
+          ]
+        }
+      ],
+      "outputs_influenced": [
+        "kpi_tree",
+        "dashboard_spec",
+        "reporting"
+      ],
+      "dependencies": [
+        "L2",
+        "L6"
+      ],
+      "expands_to_docs": [
+        "KPI_tree_templates",
+        "Dashboard_spec_blueprint"
+      ]
+    },
+    {
+      "id": "L8",
+      "title": "Risk, Sensitivity and Reputation Radar",
+      "why_it_exists": "Prevents preventable issues and handles edge cases in high-sensitivity contexts.",
+      "risk_domains": [
+        "religious_sensitivity",
+        "political_sensitivity",
+        "international_media",
+        "public_sentiment",
+        "operational_overload",
+        "misinformation_and_rumors"
+      ],
+      "required_outputs": [
+        "risk_register",
+        "edge_cases",
+        "mitigation_steps"
+      ],
+      "dependencies": [
+        "L1",
+        "L4",
+        "L5",
+        "L6"
+      ],
+      "expands_to_docs": [
+        "Crisis_scenarios_library",
+        "Reputation_radar_checklist"
+      ]
+    },
+    {
+      "id": "L9",
+      "title": "Strategic Discipline",
+      "why_it_exists": "Enforces decision clarity and prevents generic outputs.",
+      "rules": [
+        {
+          "name": "Decision Layering",
+          "summary": "3 layers: executive, execution, appendices."
+        },
+        {
+          "name": "Decision Ownership",
+          "summary": "Define owner, executor, approver, affected."
+        },
+        {
+          "name": "Reality Check",
+          "summary": "KSA feasibility, approvals, seasonality, capability."
+        },
+        {
+          "name": "Signal vs Noise",
+          "summary": "Separate durable signals from short trends."
+        },
+        {
+          "name": "Grounding before speaking",
+          "summary": "Institutional + market grounding required."
+        }
+      ],
+      "outputs_influenced": [
+        "all_outputs"
+      ],
+      "dependencies": [
+        "L0",
+        "L1",
+        "L2",
+        "L3",
+        "L4",
+        "L5",
+        "L6",
+        "L7",
+        "L8"
+      ],
+      "expands_to_docs": [
+        "Strategic_discipline_ruleset",
+        "QA_peer_review_checklist"
+      ]
+    }
+  ],
+  "relationships": {
+    "recommended_reading_order": [
+      "L0",
+      "L1",
+      "L2",
+      "L3",
+      "L5",
+      "L6",
+      "L7",
+      "L8",
+      "L4",
+      "L9"
+    ],
+    "use_case_paths": [
+      {
+        "use_case": "Government proposal",
+        "path": [
+          "L0",
+          "L1",
+          "L2",
+          "L5",
+          "L7",
+          "L8",
+          "L9"
+        ]
+      },
+      {
+        "use_case": "Hajj campaign",
+        "path": [
+          "L0",
+          "L1",
+          "L2",
+          "L3",
+          "L4",
+          "L5",
+          "L6",
+          "L7",
+          "L8",
+          "L9"
+        ]
+      },
+      {
+        "use_case": "Conference marketing",
+        "path": [
+          "L0",
+          "L1",
+          "L2",
+          "L3",
+          "L5",
+          "L6",
+          "L7",
+          "L8",
+          "L9"
+        ]
+      },
+      {
+        "use_case": "X content",
+        "path": [
+          "L0",
+          "L1",
+          "L3",
+          "L5",
+          "L8",
+          "L9"
+        ]
+      }
+    ]
+  }
+}

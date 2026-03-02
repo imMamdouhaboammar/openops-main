@@ -1,0 +1,584 @@
+{
+    "schema_version": "1.0.0",
+    "ruleset_name": "Goal-Constrained Reasoning Rules (Marketing-Enhanced)",
+    "description": "A rule library that enforces goal alignment, constraint satisfaction, feasibility validation, and frame correction to prevent surface-level or structurally invalid marketing strategy recommendations.",
+    "rule_groups": [
+        {
+            "group_id": "G1_goal_extraction",
+            "name": "Goal Extraction Rules",
+            "applies_to_modules": [
+                "goal_extractor"
+            ],
+            "rules": [
+                {
+                    "id": "R1_primary_goal_required",
+                    "severity": "fatal",
+                    "type": "invariant",
+                    "description": "A primary goal must be extracted before any reasoning or comparison.",
+                    "check": {
+                        "field": "primary_goal",
+                        "operator": "exists_and_non_empty"
+                    },
+                    "on_fail": {
+                        "action": "request_clarification",
+                        "message": "I couldn't determine the main goal. What outcome are you trying to achieve?"
+                    }
+                },
+                {
+                    "id": "R2_goal_is_outcome_not_method",
+                    "severity": "high",
+                    "type": "quality_gate",
+                    "description": "The primary goal must be expressed as an outcome, not a method or option.",
+                    "check": {
+                        "field": "primary_goal",
+                        "operator": "must_not_match_any",
+                        "value": [
+                            "walk",
+                            "drive",
+                            "choose",
+                            "option",
+                            "either",
+                            "or",
+                            "traffic",
+                            "followers",
+                            "likes",
+                            "impressions",
+                            "run ads",
+                            "do seo",
+                            "post on social"
+                        ]
+                    },
+                    "on_fail": {
+                        "action": "rewrite_goal",
+                        "message": "Goal appears to describe a method. Restate it as the intended outcome."
+                    },
+                    "marketing_examples": [
+                        {
+                            "invalid": "We want more traffic",
+                            "reason": "'traffic' is a method, not an outcome",
+                            "correct": "We want to generate qualified leads"
+                        },
+                        {
+                            "invalid": "We want to run LinkedIn Ads",
+                            "reason": "'run LinkedIn Ads' is a tactic, not a goal",
+                            "correct": "We want to generate demo requests from enterprise buyers"
+                        }
+                    ]
+                },
+                {
+                    "id": "R3_goal_confidence_threshold",
+                    "severity": "medium",
+                    "type": "threshold",
+                    "description": "If goal confidence is low, clarification is recommended before committing to advice.",
+                    "check": {
+                        "field": "goal_confidence_score",
+                        "operator": "gte",
+                        "value": 0.5
+                    },
+                    "on_fail": {
+                        "action": "request_clarification",
+                        "message": "I'm not confident I understood the main goal. Can you clarify what you want to accomplish?"
+                    }
+                },
+                {
+                    "id": "R17_vanity_metric_detection",
+                    "severity": "high",
+                    "type": "quality_gate",
+                    "description": "Detect and flag vanity metrics as goals (followers, likes, impressions without business context).",
+                    "check": {
+                        "field": "primary_goal",
+                        "operator": "must_not_contain_vanity_metrics",
+                        "vanity_metrics": [
+                            "followers",
+                            "likes",
+                            "shares",
+                            "impressions",
+                            "page views",
+                            "social media engagement"
+                        ]
+                    },
+                    "on_fail": {
+                        "action": "request_clarification",
+                        "message": "The goal mentions a vanity metric. What business outcome do you want from this metric? (e.g., leads, sales, brand awareness)"
+                    },
+                    "marketing_examples": [
+                        {
+                            "input": "We want 10,000 followers",
+                            "action": "Flag as vanity metric, request clarification",
+                            "clarification": "What do you want 10K followers to achieve? Lead generation? Brand awareness? Community building?"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "group_id": "G2_constraint_parsing",
+            "name": "Constraint Parsing Rules",
+            "applies_to_modules": [
+                "constraint_parser"
+            ],
+            "rules": [
+                {
+                    "id": "R4_constraints_required",
+                    "severity": "high",
+                    "type": "invariant",
+                    "description": "At least one governing constraint must be identified for goal-constrained tasks.",
+                    "check": {
+                        "field": "constraints",
+                        "operator": "array_length_gte",
+                        "value": 1
+                    },
+                    "on_fail": {
+                        "action": "log_warning",
+                        "message": "No constraints detected. Proceeding may increase risk of shallow or misframed advice."
+                    }
+                },
+                {
+                    "id": "R5_constraints_must_link_to_goal",
+                    "severity": "high",
+                    "type": "quality_gate",
+                    "description": "Each constraint must be explicitly linked to fulfilling the primary goal.",
+                    "check": {
+                        "field": "constraints[*].linked_goal_id",
+                        "operator": "all_exist_and_non_empty"
+                    },
+                    "on_fail": {
+                        "action": "reparse_constraints",
+                        "message": "Constraints are not properly linked to the main goal. Re-derive constraints with goal linkage."
+                    }
+                },
+                {
+                    "id": "R6_required_entities_identified",
+                    "severity": "medium",
+                    "type": "quality_gate",
+                    "description": "If the goal implies a required physical or logical entity, it must be listed in required_entities.",
+                    "check": {
+                        "field": "required_entities",
+                        "operator": "exists"
+                    },
+                    "on_fail": {
+                        "action": "augment_required_entities",
+                        "message": "Missing required entities. Identify what must be present or moved to satisfy the goal."
+                    }
+                },
+                {
+                    "id": "R18_budget_constraint_validation",
+                    "severity": "high",
+                    "type": "marketing_constraint",
+                    "description": "If budget is mentioned, it must be extracted as a mandatory constraint with specific value.",
+                    "check": {
+                        "field": "constraints",
+                        "operator": "contains_budget_if_mentioned"
+                    },
+                    "on_fail": {
+                        "action": "request_clarification",
+                        "message": "Budget was mentioned but not clearly specified. What is your total marketing budget?"
+                    },
+                    "marketing_examples": [
+                        {
+                            "input": "We have $5K per month",
+                            "expected_output": {
+                                "type": "budget",
+                                "value": "$5,000/month",
+                                "mandatory": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "R19_timeline_constraint_validation",
+                    "severity": "high",
+                    "type": "marketing_constraint",
+                    "description": "If timeline is mentioned, it must be extracted as a mandatory constraint.",
+                    "check": {
+                        "field": "constraints",
+                        "operator": "contains_timeline_if_mentioned"
+                    },
+                    "on_fail": {
+                        "action": "request_clarification",
+                        "message": "Timeline was mentioned but not clearly specified. When do you need to see results?"
+                    }
+                },
+                {
+                    "id": "R20_icp_constraint_validation",
+                    "severity": "medium",
+                    "type": "marketing_constraint",
+                    "description": "If target audience is mentioned, extract as ICP constraint with specific characteristics.",
+                    "check": {
+                        "field": "constraints",
+                        "operator": "contains_icp_if_mentioned"
+                    },
+                    "on_fail": {
+                        "action": "augment_constraints",
+                        "message": "Target audience mentioned but not fully specified. Extract ICP details (role, company size, industry, etc.)"
+                    }
+                }
+            ]
+        },
+        {
+            "group_id": "G3_option_mapping",
+            "name": "Option Mapping Rules",
+            "applies_to_modules": [
+                "option_mapper"
+            ],
+            "rules": [
+                {
+                    "id": "R7_options_required",
+                    "severity": "fatal",
+                    "type": "invariant",
+                    "description": "At least one option must be recognized to proceed with comparison.",
+                    "check": {
+                        "field": "structured_options",
+                        "operator": "array_length_gte",
+                        "value": 1
+                    },
+                    "on_fail": {
+                        "action": "request_clarification",
+                        "message": "I didn't detect clear options to compare. What are the choices you want me to evaluate?"
+                    }
+                },
+                {
+                    "id": "R8_each_option_has_action_model",
+                    "severity": "high",
+                    "type": "quality_gate",
+                    "description": "Each option must be represented as a structured action affecting entities.",
+                    "check": {
+                        "field": "structured_options[*].action",
+                        "operator": "all_exist_and_non_empty"
+                    },
+                    "on_fail": {
+                        "action": "remap_options",
+                        "message": "Options are not properly mapped to actions. Rebuild structured action models."
+                    }
+                }
+            ]
+        },
+        {
+            "group_id": "G4_feasibility_validation",
+            "name": "Feasibility Validation Rules (Marketing-Enhanced)",
+            "applies_to_modules": [
+                "feasibility_validator"
+            ],
+            "rules": [
+                {
+                    "id": "R9_test_each_option_against_all_constraints",
+                    "severity": "fatal",
+                    "type": "invariant",
+                    "description": "Every option must be evaluated against every mandatory constraint.",
+                    "check": {
+                        "field": "validation_report.coverage",
+                        "operator": "equals",
+                        "value": "complete"
+                    },
+                    "on_fail": {
+                        "action": "revalidate",
+                        "message": "Feasibility validation incomplete. Ensure all options are tested against all constraints."
+                    }
+                },
+                {
+                    "id": "R10_block_invalid_options_from_reasoning",
+                    "severity": "fatal",
+                    "type": "invariant",
+                    "description": "Invalid options must not proceed to the reasoning engine.",
+                    "check": {
+                        "field": "valid_options",
+                        "operator": "contains_only_validated",
+                        "value": true
+                    },
+                    "on_fail": {
+                        "action": "abort",
+                        "message": "Invalid options leaked into reasoning. Stop and fix the pipeline."
+                    }
+                },
+                {
+                    "id": "R11_mark_goal_infeasible_if_no_valid_options",
+                    "severity": "high",
+                    "type": "decision_rule",
+                    "description": "If no valid options exist, the agent must not fabricate a recommendation.",
+                    "check": {
+                        "field": "valid_options",
+                        "operator": "array_length_gte",
+                        "value": 1
+                    },
+                    "on_fail": {
+                        "action": "request_clarification",
+                        "message": "None of these options can achieve the goal as stated. Is there another option (for example, someone else does X) or should we change the goal?"
+                    }
+                },
+                {
+                    "id": "R21_budget_feasibility_check",
+                    "severity": "fatal",
+                    "type": "marketing_validation",
+                    "description": "If a channel's typical cost exceeds budget constraint, mark as INVALID.",
+                    "check": {
+                        "field": "structured_options[*]",
+                        "operator": "cost_within_budget"
+                    },
+                    "on_fail": {
+                        "action": "mark_invalid",
+                        "message": "Channel cost exceeds budget constraint. Mark as INVALID with specific cost vs budget comparison."
+                    },
+                    "marketing_examples": [
+                        {
+                            "scenario": "LinkedIn Ads with low budget",
+                            "channel": "LinkedIn Ads",
+                            "typical_cost": "$5-8K/month for B2B",
+                            "budget_constraint": "$2K/month",
+                            "result": "INVALID",
+                            "reason": "LinkedIn Ads requires $5-8K/month minimum, exceeds $2K budget"
+                        }
+                    ]
+                },
+                {
+                    "id": "R22_timeline_feasibility_check",
+                    "severity": "fatal",
+                    "type": "marketing_validation",
+                    "description": "If a channel's typical timeline exceeds timeline constraint, mark as INVALID.",
+                    "check": {
+                        "field": "structured_options[*]",
+                        "operator": "timeline_within_constraint"
+                    },
+                    "on_fail": {
+                        "action": "mark_invalid",
+                        "message": "Channel timeline exceeds constraint. Mark as INVALID with specific timeline comparison."
+                    },
+                    "marketing_examples": [
+                        {
+                            "scenario": "SEO with short timeline",
+                            "channel": "SEO",
+                            "typical_timeline": "6-12 months",
+                            "timeline_constraint": "30 days",
+                            "result": "INVALID",
+                            "reason": "SEO requires 6-12 months to show results, violates 30-day timeline"
+                        }
+                    ]
+                },
+                {
+                    "id": "R23_icp_reach_validation",
+                    "severity": "high",
+                    "type": "marketing_validation",
+                    "description": "If a channel cannot reach the target ICP, mark as INVALID or LOW_CONFIDENCE.",
+                    "check": {
+                        "field": "structured_options[*]",
+                        "operator": "reaches_target_icp"
+                    },
+                    "on_fail": {
+                        "action": "mark_invalid_or_warn",
+                        "message": "Channel does not effectively reach target ICP. Mark as INVALID or flag with warning."
+                    },
+                    "marketing_examples": [
+                        {
+                            "scenario": "Facebook Ads for B2B enterprise",
+                            "channel": "Facebook Ads",
+                            "icp": "Enterprise CTOs",
+                            "result": "INVALID",
+                            "reason": "Facebook Ads ineffective for reaching enterprise CTOs (LinkedIn is better fit)"
+                        }
+                    ]
+                },
+                {
+                    "id": "R24_team_capacity_validation",
+                    "severity": "medium",
+                    "type": "marketing_validation",
+                    "description": "If team lacks skills or capacity to execute channel, mark as INVALID or flag warning.",
+                    "check": {
+                        "field": "structured_options[*]",
+                        "operator": "team_can_execute"
+                    },
+                    "on_fail": {
+                        "action": "mark_invalid_or_warn",
+                        "message": "Team lacks required skills/capacity. Mark as INVALID or suggest agency/training."
+                    }
+                }
+            ]
+        },
+        {
+            "group_id": "G5_frame_correction",
+            "name": "Frame Correction Rules (Marketing-Enhanced)",
+            "applies_to_modules": [
+                "frame_corrector"
+            ],
+            "rules": [
+                {
+                    "id": "R12_false_dichotomy_detection",
+                    "severity": "high",
+                    "type": "pattern_detection",
+                    "description": "If the user presents choices but one or more are infeasible, flag a false dichotomy and reframe.",
+                    "check": {
+                        "field": "invalid_options",
+                        "operator": "array_length_gte",
+                        "value": 1
+                    },
+                    "on_fail": {
+                        "action": "noop",
+                        "message": ""
+                    },
+                    "on_pass": {
+                        "action": "set_frame_warning",
+                        "message": "The options are not equally feasible for achieving the goal. I'll reframe the decision logically."
+                    }
+                },
+                {
+                    "id": "R13_reframe_must_preserve_goal",
+                    "severity": "high",
+                    "type": "quality_gate",
+                    "description": "A reframed question must preserve the original primary goal unless clarification is required.",
+                    "check": {
+                        "field": "reframed_question",
+                        "operator": "preserves_goal",
+                        "value": true
+                    },
+                    "on_fail": {
+                        "action": "request_clarification",
+                        "message": "To proceed, I need to confirm the goal because the current framing conflicts with what's feasible."
+                    }
+                },
+                {
+                    "id": "R25_marketing_false_dichotomy_patterns",
+                    "severity": "high",
+                    "type": "marketing_pattern_detection",
+                    "description": "Detect common marketing false dichotomies and reframe appropriately.",
+                    "common_patterns": [
+                        {
+                            "pattern": "SEO vs Paid Ads",
+                            "issue": "These are complementary, not mutually exclusive",
+                            "reframe": "Which combination of SEO and paid ads will maximize results?"
+                        },
+                        {
+                            "pattern": "Organic vs Paid",
+                            "issue": "Most successful strategies use both",
+                            "reframe": "What mix of organic and paid channels fits your constraints?"
+                        },
+                        {
+                            "pattern": "Brand Awareness vs Lead Generation",
+                            "issue": "These can be pursued simultaneously",
+                            "reframe": "How should we balance brand awareness and lead generation?"
+                        },
+                        {
+                            "pattern": "Short-term vs Long-term",
+                            "issue": "Balanced strategies include both",
+                            "reframe": "What combination of quick-win and long-term channels fits your goals?"
+                        }
+                    ],
+                    "check": {
+                        "field": "detected_options",
+                        "operator": "matches_false_dichotomy_pattern"
+                    },
+                    "on_pass": {
+                        "action": "reframe_question",
+                        "message": "Detected false dichotomy. Reframing to reflect that these options are not mutually exclusive."
+                    }
+                }
+            ]
+        },
+        {
+            "group_id": "G6_reasoning_and_answer",
+            "name": "Reasoning & Answer Rules (Marketing-Enhanced)",
+            "applies_to_modules": [
+                "reasoning_engine",
+                "answer_generator",
+                "output_checker"
+            ],
+            "rules": [
+                {
+                    "id": "R14_reasoning_must_reference_constraints",
+                    "severity": "high",
+                    "type": "quality_gate",
+                    "description": "Reasoning must explicitly reference governing constraints when they affect feasibility.",
+                    "check": {
+                        "field": "justifications",
+                        "operator": "mentions_constraints_when_needed",
+                        "value": true
+                    },
+                    "on_fail": {
+                        "action": "re-run_module",
+                        "target_module": "reasoning_engine",
+                        "message": "Reasoning did not reference constraints. Re-run with explicit constraint grounding."
+                    }
+                },
+                {
+                    "id": "R15_answer_structure_required",
+                    "severity": "medium",
+                    "type": "format_gate",
+                    "description": "Final answer should include goal restatement and recommendation, and explain invalid options if present.",
+                    "check": {
+                        "field": "final_answer",
+                        "operator": "contains_sections",
+                        "value": [
+                            "goal_restatement",
+                            "recommendation"
+                        ]
+                    },
+                    "on_fail": {
+                        "action": "regenerate_answer",
+                        "message": "Answer missing required structure. Regenerate with goal restatement and recommendation."
+                    }
+                },
+                {
+                    "id": "R16_no_recommendation_if_goal_not_satisfied",
+                    "severity": "fatal",
+                    "type": "invariant",
+                    "description": "If the recommendation does not satisfy the primary goal, the answer is invalid.",
+                    "check": {
+                        "field": "consistency_report.goal_satisfied",
+                        "operator": "equals",
+                        "value": true
+                    },
+                    "on_fail": {
+                        "action": "re-run_module",
+                        "target_module": "reasoning_engine",
+                        "message": "Recommendation does not satisfy the primary goal. Re-run reasoning with stricter feasibility grounding."
+                    }
+                },
+                {
+                    "id": "R26_realistic_outcome_expectations",
+                    "severity": "high",
+                    "type": "marketing_quality_gate",
+                    "description": "Recommended outcomes must be realistic based on budget, timeline, and channel characteristics. No overpromising.",
+                    "check": {
+                        "field": "expected_outcome",
+                        "operator": "is_realistic_for_constraints"
+                    },
+                    "on_fail": {
+                        "action": "adjust_expectations",
+                        "message": "Expected outcomes are unrealistic for the given constraints. Adjust to realistic ranges."
+                    },
+                    "marketing_examples": [
+                        {
+                            "scenario": "Unrealistic lead volume",
+                            "budget": "$1K/month",
+                            "expected_outcome": "500 leads/month",
+                            "result": "FAIL",
+                            "reason": "$1K budget cannot generate 500 leads/month (typical cost per lead is $50-100)",
+                            "realistic_outcome": "10-20 leads/month"
+                        }
+                    ]
+                },
+                {
+                    "id": "R27_include_kill_and_scale_criteria",
+                    "severity": "medium",
+                    "type": "marketing_format_gate",
+                    "description": "Marketing recommendations should include kill criteria (when to stop) and scale criteria (when to increase investment).",
+                    "check": {
+                        "field": "final_answer.success_criteria",
+                        "operator": "contains_both",
+                        "value": [
+                            "kill_criteria",
+                            "scale_criteria"
+                        ]
+                    },
+                    "on_fail": {
+                        "action": "augment_answer",
+                        "message": "Add kill criteria and scale criteria to the recommendation."
+                    },
+                    "marketing_examples": [
+                        {
+                            "kill_criteria": "If cost per demo exceeds $200 after 2 weeks, pause and reassess",
+                            "scale_criteria": "If cost per demo is under $150, increase budget to $10K/month"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

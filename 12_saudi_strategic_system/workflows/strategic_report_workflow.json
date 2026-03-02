@@ -1,0 +1,431 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Strategic Report Workflow",
+  "version": "1.0",
+  "description": "Workflow for generating strategic reports for Saudi market and Hajj/Umrah ecosystem",
+  "workflow_id": "strategic_report_workflow",
+  "workflow_type": "strategic_report",
+  "stages": [
+    {
+      "stage_id": 1,
+      "stage_name": "Request Understanding",
+      "arabic_name": "فهم الطلب",
+      "objectives": [
+        "Parse and clarify the request",
+        "Identify report type and scope",
+        "Determine target audience and stakeholders",
+        "Understand timeline and constraints"
+      ],
+      "activated_agents": [
+        "strategic_architect"
+      ],
+      "inputs_required": [
+        "User request description",
+        "Entity/project name (if applicable)",
+        "Target audience",
+        "Delivery timeline"
+      ],
+      "outputs": [
+        "Request classification",
+        "Scope definition",
+        "Stakeholder identification",
+        "Initial requirements document"
+      ],
+      "quality_gates": [
+        "Request is clearly understood",
+        "Scope is well-defined",
+        "Ambiguities are resolved"
+      ],
+      "next_stage_condition": "All quality gates passed"
+    },
+    {
+      "stage_id": 2,
+      "stage_name": "Deep Grounding",
+      "arabic_name": "التأصيل العميق",
+      "objectives": [
+        "Perform external grounding (best practices, global references)",
+        "Perform internal grounding (entity analysis, objectives, constraints)",
+        "Perform Saudi & Hajj context grounding"
+      ],
+      "activated_agents": [
+        "strategic_architect",
+        "saudi_market_analyst",
+        "hajj_umrah_specialist"
+      ],
+      "inputs_required": [
+        "Request details from Stage 1",
+        "Access to Knowledge Base",
+        "Entity background information"
+      ],
+      "tasks": [
+        {
+          "task": "External Grounding",
+          "description": "Research best practices and global references",
+          "agent": "strategic_architect",
+          "knowledge_sources": [
+            "Global strategic communication patterns",
+            "Vision 2030 documents",
+            "International event and tourism best practices"
+          ]
+        },
+        {
+          "task": "Internal Grounding",
+          "description": "Analyze entity, objectives, assets, constraints",
+          "agent": "saudi_market_analyst",
+          "knowledge_sources": [
+            "Saudi institutional map",
+            "Vision 2030 framework",
+            "Regulatory context"
+          ]
+        },
+        {
+          "task": "Hajj/Umrah Context",
+          "description": "If relevant, deep dive into Hajj/Umrah ecosystem",
+          "agent": "hajj_umrah_specialist",
+          "knowledge_sources": [
+            "Hajj & Umrah ecosystem deep dive",
+            "Ministry strategy",
+            "Stakeholders map"
+          ],
+          "condition": "Request involves Hajj, Umrah, or Ministry of Hajj"
+        }
+      ],
+      "outputs": [
+        "External grounding brief",
+        "Internal analysis document",
+        "Saudi/Hajj context brief",
+        "Relevant patterns and frameworks identified"
+      ],
+      "quality_gates": [
+        "Sufficient external research conducted",
+        "Entity and objectives clearly understood",
+        "Saudi context properly integrated",
+        "No blind guessing or assumptions"
+      ],
+      "next_stage_condition": "All quality gates passed"
+    },
+    {
+      "stage_id": 3,
+      "stage_name": "Expert Squad Discussion",
+      "arabic_name": "نقاش فريق الخبراء",
+      "objectives": [
+        "Simulate internal expert debate",
+        "Challenge assumptions and logic",
+        "Generate multiple strategic directions",
+        "Evaluate pros/cons and risks"
+      ],
+      "activated_agents": [
+        "strategic_architect",
+        "saudi_market_analyst",
+        "hajj_umrah_specialist",
+        "growth_strategist",
+        "behavioral_psychologist",
+        "creative_copywriter",
+        "reality_check_agent"
+      ],
+      "discussion_rounds": [
+        {
+          "round": 1,
+          "topic": "Strategic Direction",
+          "participants": [
+            "strategic_architect",
+            "saudi_market_analyst"
+          ],
+          "questions": [
+            "What are the primary strategic objectives?",
+            "What is the competitive/market context?",
+            "What are the constraints and enablers?"
+          ]
+        },
+        {
+          "round": 2,
+          "topic": "Audience & Behavior",
+          "participants": [
+            "behavioral_psychologist",
+            "growth_strategist"
+          ],
+          "questions": [
+            "Who are the target audiences?",
+            "What drives their behavior and decisions?",
+            "How do we influence them effectively?"
+          ]
+        },
+        {
+          "round": 3,
+          "topic": "Messaging & Communication",
+          "participants": [
+            "creative_copywriter",
+            "hajj_umrah_specialist"
+          ],
+          "questions": [
+            "What are the core messages?",
+            "How do we frame them for Saudi context?",
+            "What are the sensitivities and red lines?"
+          ]
+        },
+        {
+          "round": 4,
+          "topic": "Reality Check",
+          "participants": [
+            "reality_check_agent"
+          ],
+          "questions": [
+            "What could go wrong?",
+            "What assumptions are weak?",
+            "What is not executable?",
+            "What are the edge cases?"
+          ]
+        }
+      ],
+      "outputs": [
+        "Multiple strategic directions (2-3 options)",
+        "Pros/cons and risk analysis for each",
+        "Recommended direction with rationale"
+      ],
+      "quality_gates": [
+        "Multiple perspectives considered",
+        "Assumptions challenged",
+        "Risks identified",
+        "Logic is coherent"
+      ],
+      "next_stage_condition": "Recommended direction approved internally"
+    },
+    {
+      "stage_id": 4,
+      "stage_name": "Strategy Design & Outline",
+      "arabic_name": "تصميم الاستراتيجية والهيكل",
+      "objectives": [
+        "Build clear structure and outline",
+        "Define sections and flow",
+        "Determine level of depth",
+        "Assign content responsibility"
+      ],
+      "activated_agents": [
+        "strategic_architect",
+        "kpis_okrs_expert"
+      ],
+      "tasks": [
+        {
+          "task": "Structure Design",
+          "description": "Design the report structure with 3 decision layers",
+          "layers": [
+            "Layer 1: Executive Decision Layer (1 page)",
+            "Layer 2: Execution & Operations Layer (detailed)",
+            "Layer 3: Depth & Appendices Layer (analysis)"
+          ]
+        },
+        {
+          "task": "Content Mapping",
+          "description": "Map content to structure",
+          "sections": [
+            "Executive Summary",
+            "Context & Analysis",
+            "Strategy & Framework",
+            "Execution Plan",
+            "Measurement & KPIs",
+            "Risks & Alternatives"
+          ]
+        }
+      ],
+      "outputs": [
+        "Detailed outline with 3 layers",
+        "Section descriptions and objectives",
+        "Content flow diagram"
+      ],
+      "quality_gates": [
+        "Structure is clear and logical",
+        "3 decision layers are distinct",
+        "Flow makes sense",
+        "All required sections included"
+      ],
+      "next_stage_condition": "Outline approved"
+    },
+    {
+      "stage_id": 5,
+      "stage_name": "Detailed Build",
+      "arabic_name": "البناء التفصيلي",
+      "objectives": [
+        "Write each section following the outline",
+        "Ensure coherence between parts",
+        "Link to outcomes and KPIs",
+        "Apply Saudi context throughout"
+      ],
+      "activated_agents": [
+        "strategic_architect",
+        "saudi_market_analyst",
+        "hajj_umrah_specialist",
+        "growth_strategist",
+        "behavioral_psychologist",
+        "creative_copywriter",
+        "kpis_okrs_expert"
+      ],
+      "content_creation_rules": [
+        "Use clear, professional Arabic (MSA for formal)",
+        "Avoid buzzwords and empty phrases",
+        "Provide specific examples and data",
+        "Tie recommendations to KPIs",
+        "Respect cultural and religious sensitivities",
+        "Apply 5-layer thinking to each section"
+      ],
+      "outputs": [
+        "Layer 1: Executive Decision Layer (complete)",
+        "Layer 2: Execution & Operations Layer (complete)",
+        "Layer 3: Depth & Appendices Layer (complete)",
+        "Supporting visuals and diagrams (if needed)"
+      ],
+      "quality_gates": [
+        "Each section adds clear value",
+        "Coherence across sections",
+        "Saudi context integrated",
+        "No generic or imported content without adaptation",
+        "Actionable recommendations with ownership"
+      ],
+      "next_stage_condition": "All sections complete and coherent"
+    },
+    {
+      "stage_id": 6,
+      "stage_name": "Quality Control & Review",
+      "arabic_name": "مراقبة الجودة والمراجعة",
+      "objectives": [
+        "Pass through all 7 Quality Gates",
+        "Refine weak logic or contradictions",
+        "Remove empty phrases",
+        "Validate feasibility and reality"
+      ],
+      "activated_agents": [
+        "reality_check_agent",
+        "strategic_architect"
+      ],
+      "quality_gates_checklist": [
+        {
+          "gate": 1,
+          "name": "Saudi Grounding Check",
+          "questions": [
+            "Is output grounded in Saudi context?",
+            "Does it respect regulations, culture, sensitivities?"
+          ]
+        },
+        {
+          "gate": 2,
+          "name": "Hajj & Umrah Relevance Check",
+          "questions": [
+            "If Hajj/Umrah related, is depth sufficient?",
+            "Was internal ecosystem knowledge used?"
+          ]
+        },
+        {
+          "gate": 3,
+          "name": "Logic & Coherence Check",
+          "questions": [
+            "Is logic consistent and coherent?",
+            "Are there contradictions or gaps?"
+          ]
+        },
+        {
+          "gate": 4,
+          "name": "Actionability Check",
+          "questions": [
+            "Are recommendations actually actionable?",
+            "Are steps clear and specific?"
+          ]
+        },
+        {
+          "gate": 5,
+          "name": "Reality Check",
+          "questions": [
+            "Can this be executed in Saudi reality?",
+            "Is timeline realistic?",
+            "Are required capabilities locally available?"
+          ]
+        },
+        {
+          "gate": 6,
+          "name": "Risk & Edge Cases Check",
+          "questions": [
+            "Were risks and edge cases addressed?",
+            "Were negative scenarios considered?"
+          ]
+        },
+        {
+          "gate": 7,
+          "name": "Buzzword & Fluff Check",
+          "questions": [
+            "Are there empty phrases or generic statements?",
+            "Does every sentence add actual value?"
+          ]
+        }
+      ],
+      "outputs": [
+        "Quality Gate checklist (all passed)",
+        "Refinement notes and corrections",
+        "Final polished report"
+      ],
+      "quality_gates": [
+        "All 7 Quality Gates passed",
+        "No critical issues remain",
+        "Report is production-ready"
+      ],
+      "next_stage_condition": "All Quality Gates passed, report approved"
+    },
+    {
+      "stage_id": 7,
+      "stage_name": "Delivery & Next Steps",
+      "arabic_name": "التسليم والخطوات التالية",
+      "objectives": [
+        "Deliver final report in clear format",
+        "Provide usage guidance",
+        "Outline next steps",
+        "Offer follow-up support"
+      ],
+      "activated_agents": [
+        "strategic_architect"
+      ],
+      "delivery_format": {
+        "structure": [
+          "Executive Summary (Layer 1)",
+          "Full Report (Layer 2)",
+          "Appendices (Layer 3)",
+          "Next Steps & Recommendations"
+        ],
+        "language": "Arabic (MSA for formal sections)",
+        "tone": "Professional, clear, actionable",
+        "attribution": "Mandatory creator attribution at end"
+      },
+      "outputs": [
+        "Final strategic report (all layers)",
+        "Next steps document",
+        "Implementation guidance",
+        "Follow-up recommendations"
+      ],
+      "quality_gates": [
+        "Report is clear and usable",
+        "Next steps are defined",
+        "Attribution included"
+      ],
+      "workflow_complete": true
+    }
+  ],
+  "workflow_rules": {
+    "mandatory_principles": [
+      "Saudi-First Grounding",
+      "Deep Research Before Output",
+      "Multi-Layer Expert Reasoning",
+      "Decision-Grade Outputs",
+      "Reality Check by Default"
+    ],
+    "failure_conditions": [
+      "Insufficient Saudi context",
+      "Cannot pass Quality Gates",
+      "Violates sensitivities",
+      "Logic is weak or contradictory"
+    ],
+    "escalation": "If workflow blocked, escalate to System Constitution for guidance",
+    "iteration": "Stages can iterate if quality gates fail"
+  },
+  "metadata": {
+    "version": "1.0",
+    "created": "2025-12-19",
+    "author": "Mamdouh Aboammar",
+    "status": "Production"
+  }
+}

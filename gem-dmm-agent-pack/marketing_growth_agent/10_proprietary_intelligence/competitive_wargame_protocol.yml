@@ -1,0 +1,52 @@
+version: 1.0.0
+lastUpdated: 2026-01-22
+purpose: Simulate competitor moves and pre-plan responses
+
+scenarios:
+  - id: WAR-001
+    name: Competitor price cut
+    risk: high
+    signals:
+      - pricing_change_detected
+      - ad_spend_spike
+    response:
+      - validate_with_sources
+      - launch_value_anchor_messaging
+      - offer_limited_upgrade_incentives
+    guardrails:
+      - do_not_trigger_price_war
+      - protect_unit_economics
+
+  - id: WAR-002
+    name: Competitor launches new feature
+    risk: medium
+    signals:
+      - release_notes
+      - messaging_shift
+    response:
+      - publish_comparison_brief
+      - highlight_differentiation
+      - activate_customer_proof
+    guardrails:
+      - avoid_false_claims
+      - update_competitor_matrix
+
+  - id: WAR-003
+    name: Competitor creative blitz
+    risk: medium
+    signals:
+      - ad_library_surge
+      - share_of_voice_drop
+    response:
+      - boost_creative_refresh
+      - counter_positioning_ads
+      - test_new_hooks
+    guardrails:
+      - cap_spend_increase
+      - monitor_marginal_cac
+
+decisionRules:
+  - if: confidence_level < L3
+    then: run_incrementality_test
+  - if: marginal_cac > target_cac
+    then: pause_and_reallocate

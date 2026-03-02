@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-RESTAURANT-PAID-LAUNCH-0001",
+  "podId": "POD-PAID",
+  "status": "completed",
+  "generatedAt": "2026-01-24T18:00:00Z",
+  "summary": "Built a weekday-focused paid media launch plan with a testing matrix, pacing rules, UTMs, and Day 7/Day 14 decision gates. Excluded peak-hour overdelivery and added compliance/brand safety checks.",
+  "artifacts": [
+    {
+      "artifactId": "PAID_PLAN__example-restaurant__weekdays__2026-01-24__v1.0",
+      "artifactType": "PAID_PLAN",
+      "format": "md",
+      "location": "SSOT/Clients/example-restaurant/Artifacts/PAID_PLAN__example-restaurant__weekdays__2026-01-24__v1.0.md",
+      "notes": "Includes architecture, pacing, and risk checklist."
+    }
+  ],
+  "decisionsNeeded": [
+    {
+      "decision": "Approve weekday offer language (avoid discount confusion on weekends).",
+      "owner": "Client Approver",
+      "deadline": "2026-01-25T18:00:00Z",
+      "impactIfDelayed": "Paid launch shifts by 48 hours; Week 1 micro-plan will miss its decision gate."
+    }
+  ],
+  "risks": [
+    {
+      "riskLevel": "medium",
+      "description": "Retargeting audience may be small → frequency increases → creative fatigue.",
+      "mitigation": "Set frequency watch thresholds; refresh creatives weekly; widen retargeting window if needed."
+    }
+  ],
+  "nextActions": [
+    {
+      "action": "Supervisor to log approval decision and schedule launch QA (tracking + UTMs).",
+      "owner": "Supervisor Orchestrator",
+      "due": "2026-01-25T12:00:00Z"
+    },
+    {
+      "action": "Creative Pod to deliver 6 creative variants (proof-led + weekday hook) for testing matrix.",
+      "owner": "POD-CREATIVE",
+      "due": "2026-01-26T18:00:00Z",
+      "dependsOn": ["Client approves offer language"]
+    }
+  ]
+}
+

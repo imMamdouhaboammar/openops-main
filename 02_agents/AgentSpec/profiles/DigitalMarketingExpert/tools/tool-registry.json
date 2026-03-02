@@ -1,0 +1,62 @@
+{
+    "tool_registry": {
+        "version": "1.0.0",
+        "last_updated": "2026-01-10",
+        "total_tools": 3
+    },
+    "tools_by_category": {
+        "campaign_planning": [
+            {
+                "tool_id": "saudi-campaign-planner",
+                "name": "Saudi Campaign Planner (Vision 2030 Aligned)",
+                "file_path": "tools/saudi-campaign-planner.tool.json",
+                "status": "spec",
+                "language": "python"
+            }
+        ],
+        "content_analytics": [
+            {
+                "tool_id": "arabic-content-analyzer",
+                "name": "Arabic Content Performance Analyzer",
+                "file_path": "tools/arabic-content-analyzer.tool.json",
+                "status": "spec",
+                "language": "python"
+            }
+        ],
+        "influencer_management": [
+            {
+                "tool_id": "influencer-matcher-gcc",
+                "name": "GCC Influencer Matcher & Vetter",
+                "file_path": "tools/influencer-matcher-gcc.tool.json",
+                "status": "spec",
+                "language": "python"
+            }
+        ]
+    },
+    "integration_guides": {
+        "meta_ads_manager": {
+            "api_documentation": "https://developers.facebook.com/docs/marketing-apis",
+            "authentication": "OAuth 2.0",
+            "rate_limits": "200 calls per hour (standard tier)",
+            "recommended_use": "Instagram/Facebook campaign management targeting Saudi/GCC"
+        },
+        "tiktok_ads_api": {
+            "api_documentation": "https://ads.tiktok.com/marketing_api/docs",
+            "authentication": "Access Token",
+            "rate_limits": "Varies by endpoint",
+            "recommended_use": "TikTok campaign automation for GCC markets"
+        },
+        "google_ads_api": {
+            "api_documentation": "https://developers.google.com/google-ads/api/docs/start",
+            "authentication": "OAuth 2.0",
+            "rate_limits": "15,000 operations per day (basic access)",
+            "recommended_use": "Arabic keyword targeting, search/display campaigns"
+        },
+        "snapchat_ads_api": {
+            "api_documentation": "https://marketingapi.snapchat.com/docs/",
+            "authentication": "OAuth 2.0",
+            "rate_limits": "1,000 requests per hour",
+            "recommended_use": "Snap Ads management for Saudi market (40M+ users)"
+        }
+    }
+}

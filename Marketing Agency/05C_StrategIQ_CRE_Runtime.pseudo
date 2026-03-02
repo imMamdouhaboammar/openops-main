@@ -1,0 +1,167 @@
+# ==========================================================
+# StrategIQ Competitive Research Engine (CRE)
+# Runtime Orchestration Logic v1.0.0
+# ==========================================================
+# © StrategIQ OS by OpenOps Studio | Created by Mamdouh Aboammar
+# LinkedIn: https://www.linkedin.com/in/mamdouh-aboammar
+# ==========================================================
+
+SYSTEM: StrategIQ_OS
+MODULE: Competitive_Research_Engine
+RUNTIME_MODE: autonomous
+SAFETY_PROFILE: balanced
+ENABLED_FEATURES: web_browsing + KB_grounding + Evidence_Scoring + QA_Gates
+
+# ----------------------------------------------------------
+# 0. INITIALIZATION
+# ----------------------------------------------------------
+
+on_startup():
+    load_module_config("05A_StrategIQ_Competitive_Research_Engine.json")
+    verify_policy_compliance(["Security_Privacy_Gates", "Research_Taxonomy"])
+    register_agents(CRE_AGENT_MATRIX)
+    log_event("CRE Runtime Initialized")
+
+# ----------------------------------------------------------
+# 1. TRIGGER CONDITIONS
+# ----------------------------------------------------------
+
+if user_request.contains_any(["competitor", "market research", "competitive audit", "brand analysis"]):
+    activate_module("Competitive_Research_Engine")
+
+if decision_context.requires("evidence", "insight_validation", "gap_detection"):
+    activate_module("Competitive_Research_Engine")
+
+# ----------------------------------------------------------
+# 2. ORCHESTRATION FLOW
+# ----------------------------------------------------------
+
+function run_CRE_pipeline(request):
+
+    log_event("CRE Pipeline Triggered", request)
+
+    # STEP 1 — INTENT CLARIFICATION
+    scope = ResearchSupervisorAgent.parse_intent(request)
+    intent_summary = scope.extract(["goal", "scope", "desired_output"])
+    assert intent_summary.goal is not None, "Research goal required"
+
+    # STEP 2 — RESEARCH BRIEF COMPILATION
+    brief = ResearchBriefCompiler.generate(scope)
+    brief.attach("hypotheses", generate_initial_hypotheses(scope))
+    log_event("Research Brief Compiled", brief)
+
+    # STEP 3 — DATA GATHERING LOOP
+    sources = ExternalSourcesIndex.retrieve(scope.domains)
+    data_bundle = SourceAccessProxy.collect(sources)
+    log_event("Data Collected", {"sources": len(sources), "records": len(data_bundle)})
+
+    # STEP 4 — EVIDENCE SCORING & FILTERING
+    scored_set = DataEvidenceScoringModel.score(data_bundle)
+    filtered_set = scored_set.filter(threshold >= 0.75)
+    log_event("Evidence Scored & Filtered", {"retained": len(filtered_set)})
+
+    # STEP 5 — INSIGHT SYNTHESIS & GAP DETECTION
+    insights = IntelligenceSignalAggregator.synthesize(filtered_set)
+    gaps = InsightSynthesisEngine.detect_blindspots(insights)
+    log_event("Insights Synthesized", {"insights": len(insights), "gaps": len(gaps)})
+
+    # STEP 6 — QA & CONTRADICTION ANALYSIS
+    qa_report = ResearchQAEvaluator.validate(insights, filtered_set)
+    if qa_report.issues_found:
+        resolve_contradictions(qa_report)
+    log_event("QA Completed", {"valid": qa_report.valid_ratio})
+
+    # STEP 7 — REPORT GENERATION
+    dossier = ReportSynthesizer.generate({
+        "summary": summarize(insights),
+        "competitive_matrix": build_matrix(insights),
+        "hidden_opportunities": gaps,
+        "qa_score": qa_report.score,
+        "metadata": {
+            "generated_by": "StrategIQ CRE",
+            "timestamp": now(),
+            "confidence_score": qa_report.score
+        }
+    })
+    log_event("Final Report Generated", dossier.metadata)
+
+    return dossier
+
+
+# ----------------------------------------------------------
+# 3. INTERNAL UTILITIES
+# ----------------------------------------------------------
+
+function generate_initial_hypotheses(scope):
+    """
+    Build starting hypotheses based on strategic questions.
+    Example:
+        H1: Competitor X over-indexes on acquisition, underperforms on retention.
+        H2: Emerging player Y using differentiated pricing signals upcoming disruption.
+    """
+    return [
+        "Top competitors are focusing on performance creatives over brand retention.",
+        "Market leaders are neglecting narrative differentiation.",
+        "New entrants show innovation signals through pricing flexibility."
+    ]
+
+
+function resolve_contradictions(qa_report):
+    """
+    Automatically cross-check conflicting data points and tag lower trust scores.
+    """
+    for conflict in qa_report.conflicts:
+        downgrade_evidence(conflict.evidence_a, 0.1)
+        downgrade_evidence(conflict.evidence_b, 0.1)
+    log_event("Contradictions Resolved", {"resolved": len(qa_report.conflicts)})
+
+
+function build_matrix(insights):
+    """
+    Builds the Competitor Positioning Matrix dynamically.
+    Axes: Differentiation vs Market Maturity
+    Clusters: Emerging, Established, Saturated
+    """
+    matrix = {}
+    for insight in insights:
+        category = classify(insight)
+        matrix[category].append(insight)
+    return matrix
+
+
+# ----------------------------------------------------------
+# 4. VALIDATION & HANDOFF
+# ----------------------------------------------------------
+
+function finalize_and_handoff(dossier):
+    QA_Gate.validate(dossier)
+    assert dossier.qa_score >= 0.8, "QA Score too low for release"
+    HandoffManager.prepare({
+        "artifact": dossier,
+        "recipients": ["Marketing_Strategist", "Growth_Team", "Product_Manager"],
+        "format": ["JSON", "PDF", "Markdown"]
+    })
+    log_event("Report Handoff Completed")
+
+# ----------------------------------------------------------
+# 5. ERROR HANDLING
+# ----------------------------------------------------------
+
+on_error(exception):
+    log_event("CRE Runtime Error", exception)
+    notify("ResearchSupervisorAgent", exception.message)
+    fallback_mode("summary_only")
+
+# ----------------------------------------------------------
+# 6. SHUTDOWN
+# ----------------------------------------------------------
+
+on_shutdown():
+    archive_session_data()
+    log_event("CRE Runtime Session Archived")
+    unload_agents()
+    log_event("CRE Runtime Shutdown Completed")
+
+# ==========================================================
+# END OF FILE
+# ==========================================================

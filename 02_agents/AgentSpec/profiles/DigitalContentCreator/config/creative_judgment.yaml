@@ -1,0 +1,321 @@
+---
+# Creative Judgment Configuration
+# Criteria for evaluating creative content quality
+
+version: "1.0.0"
+description: "Quality criteria for creative content evaluation"
+
+# ============================================================================
+# CREATIVE QUALITY DIMENSIONS
+# ============================================================================
+
+quality_dimensions:
+  
+  originality:
+    name: "الأصالة (Originality)"
+    description: "How fresh and unique is the content?"
+    weight: 0.25
+    
+    criteria:
+      fresh_angle:
+        question: "Does it offer a new perspective?"
+        score_range: "0-10"
+        target: 7
+        
+      unexpected_twist:
+        question: "Does it surprise the audience?"
+        score_range: "0-10"
+        target: 7
+        
+      unique_voice:
+        question: "Does it sound distinctly ours?"
+        score_range: "0-10"
+        target: 7
+        
+    overall_target: 7.0
+    minimum_acceptable: 6.0
+    
+  impact:
+    name: "التأثير (Impact)"
+    description: "How powerfully does it resonate?"
+    weight: 0.30
+    
+    criteria:
+      emotional_resonance:
+        question: "Does it trigger emotions?"
+        score_range: "0-10"
+        target: 8
+        
+      memorability:
+        question: "Will they remember it?"
+        score_range: "0-10"
+        target: 8
+        
+      shareability:
+        question: "Will they share it?"
+        score_range: "0-10"
+        target: 8
+        
+    overall_target: 8.0
+    minimum_acceptable: 7.0
+    
+  execution:
+    name: "التنفيذ (Execution)"
+    description: "How well is it crafted?"
+    weight: 0.25
+    
+    criteria:
+      timing:
+        question: "Is the timing right?"
+        score_range: "0-10"
+        target: 8
+        
+      delivery:
+        question: "Is it well-executed?"
+        score_range: "0-10"
+        target: 8
+        
+      polish:
+        question: "Is it refined?"
+        score_range: "0-10"
+        target: 8
+        
+    overall_target: 8.0
+    minimum_acceptable: 7.0
+    
+  cultural_fit:
+    name: "الملاءمة الثقافية (Cultural Fit)"
+    description: "How well does it fit Egyptian context?"
+    weight: 0.20
+    
+    criteria:
+      egyptian_context:
+        question: "Does it resonate with Egyptian audience?"
+        score_range: "0-10"
+        target: 9
+        
+      current_trends:
+        question: "Is it culturally current?"
+        score_range: "0-10"
+        target: 9
+        
+      audience_understanding:
+        question: "Does it show deep audience knowledge?"
+        score_range: "0-10"
+        target: 9
+        
+    overall_target: 9.0
+    minimum_acceptable: 8.0
+
+# ============================================================================
+# SCORING SYSTEM
+# ============================================================================
+
+scoring:
+  
+  calculation_method: "weighted_average"
+  
+  weights:
+    originality: 0.25
+    impact: 0.30
+    execution: 0.25
+    cultural_fit: 0.20
+    
+  thresholds:
+    excellent: 8.5
+    good: 7.5
+    acceptable: 6.5
+    needs_improvement: 5.5
+    reject: 5.0
+    
+  minimum_per_dimension:
+    originality: 6.0
+    impact: 7.0
+    execution: 7.0
+    cultural_fit: 8.0
+
+# ============================================================================
+# CONTENT TYPE SPECIFIC CRITERIA
+# ============================================================================
+
+content_type_adjustments:
+  
+  humor_comedy:
+    priority_dimensions:
+      - impact  # Humor must land
+      - cultural_fit  # Must be culturally appropriate
+    adjusted_weights:
+      impact: 0.35
+      cultural_fit: 0.25
+      originality: 0.20
+      execution: 0.20
+      
+  memes:
+    priority_dimensions:
+      - shareability  # Memes must be shareable
+      - timing  # Memes are time-sensitive
+    adjusted_weights:
+      impact: 0.35
+      cultural_fit: 0.25
+      originality: 0.20
+      execution: 0.20
+      
+  video_scripts:
+    priority_dimensions:
+      - execution  # Production quality matters
+      - timing  # Pacing is critical
+    adjusted_weights:
+      execution: 0.30
+      impact: 0.30
+      originality: 0.20
+      cultural_fit: 0.20
+      
+  viral_ideas:
+    priority_dimensions:
+      - shareability  # Must be shareable
+      - timing  # Trend-dependent
+    adjusted_weights:
+      impact: 0.35
+      originality: 0.25
+      cultural_fit: 0.20
+      execution: 0.20
+
+# ============================================================================
+# EVALUATION PROCESS
+# ============================================================================
+
+evaluation_process:
+  
+  step_1_initial_review:
+    action: "Quick assessment"
+    questions:
+      - "Does it pass basic quality bar?"
+      - "Any immediate red flags?"
+      - "Worth detailed evaluation?"
+    outcome: "proceed or reject"
+    
+  step_2_dimensional_scoring:
+    action: "Score each dimension"
+    process:
+      - score_originality_criteria
+      - score_impact_criteria
+      - score_execution_criteria
+      - score_cultural_fit_criteria
+    outcome: "dimensional scores"
+    
+  step_3_calculate_overall:
+    action: "Calculate weighted score"
+    formula: "sum(dimension_score * weight)"
+    outcome: "overall_score"
+    
+  step_4_threshold_check:
+    action: "Compare to thresholds"
+    checks:
+      - overall_score >= acceptable_threshold
+      - each_dimension >= minimum_per_dimension
+    outcome: "pass or fail"
+    
+  step_5_decision:
+    action: "Make final decision"
+    options:
+      - approve: "Score ≥ 7.5"
+      - revise: "Score 6.5-7.5"
+      - reject: "Score < 6.5"
+
+# ============================================================================
+# CREATIVE VS STANDARD QUALITY GATES
+# ============================================================================
+
+creative_quality_gates:
+  description: "Creative content uses BOTH standard and creative gates"
+  
+  standard_gates:
+    - clarity_gate
+    - brand_alignment_gate
+    - audience_relevance_gate
+    - platform_optimization_gate
+    - cultural_appropriateness_gate
+    - evidence_gate  # CRITICAL for factual elements
+    
+  creative_gates:
+    - originality_gate
+    - impact_gate
+    - execution_gate
+    - cultural_fit_gate
+    
+  integration:
+    approach: "Sequential"
+    order:
+      1: "Standard gates (including fact-checking)"
+      2: "Creative gates"
+    rationale: "Ensure factual accuracy before evaluating creativity"
+
+# ============================================================================
+# FEEDBACK TEMPLATES
+# ============================================================================
+
+feedback_templates:
+  
+  excellent:
+    message: "Exceptional creative work! This content scores {score}/10."
+    details: "Strengths: {strengths}"
+    
+  good:
+    message: "Strong creative content. Score: {score}/10."
+    details: "Strengths: {strengths}. Minor improvements: {suggestions}"
+    
+  acceptable:
+    message: "Acceptable creative content. Score: {score}/10."
+    details: "Needs improvement in: {weaknesses}. Suggestions: {suggestions}"
+    
+  needs_improvement:
+    message: "Creative content needs significant improvement. Score: {score}/10."
+    details: "Issues: {weaknesses}. Required changes: {requirements}"
+    
+  reject:
+    message: "Creative content does not meet quality standards. Score: {score}/10."
+    details: "Critical issues: {critical_issues}. Recommendation: Start fresh or major revision."
+
+# ============================================================================
+# CONTINUOUS IMPROVEMENT
+# ============================================================================
+
+continuous_improvement:
+  
+  track_metrics:
+    - creative_scores_over_time
+    - dimension_trends
+    - content_type_performance
+    - audience_response_correlation
+    
+  review_frequency: "monthly"
+  
+  adjustment_triggers:
+    - consistent_low_scores_in_dimension
+    - audience_feedback_mismatch
+    - platform_changes
+    - cultural_shifts
+    
+  refinement_process:
+    - analyze_patterns
+    - identify_gaps
+    - update_criteria
+    - retrain_evaluation
+
+# ============================================================================
+# NOTES
+# ============================================================================
+
+notes: |
+  Creative judgment balances art and science. These criteria provide structure
+  while allowing for creative excellence.
+  
+  Key Principles:
+  1. Creativity within brand guardrails
+  2. Cultural sensitivity is non-negotiable
+  3. Impact matters more than cleverness
+  4. Execution quality reflects brand quality
+  5. Originality without authenticity fails
+  
+  Remember: High creative scores don't override failed fact-checking.
+  Factual accuracy is always required.

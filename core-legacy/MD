@@ -1,0 +1,2 @@
+Failed to parse configuration file: yaml: line 6: could not find expected ':'
+Please check the file format and try again, or run init command to create a new configuration.

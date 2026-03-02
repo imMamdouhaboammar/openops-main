@@ -1,0 +1,65 @@
+{
+  "_meta": {
+    "schema_version": "1.0.0",
+    "created_at": "2026-02-13",
+    "source": "agent_discovery"
+  },
+  "business_snapshot": {
+    "business_model": "b2b_saas",
+    "industry": "Customer support automation",
+    "geographies": ["US", "CA", "UK"],
+    "languages": ["en"],
+    "value_proposition": "AI-assisted support desk that reduces ticket resolution time for mid-market SaaS teams.",
+    "pricing_model": "subscription"
+  },
+  "icp": {
+    "primary_icp": "B2B SaaS companies (50–500 employees), support teams using Zendesk/Intercom, needing to reduce support costs and improve CSAT.",
+    "secondary_segments": [
+      "Ecommerce brands with high ticket volume",
+      "IT service providers with repetitive L1 tickets"
+    ]
+  },
+  "goals": {
+    "core_outcome": "Increase qualified demo requests and improve trial-to-paid conversion.",
+    "primary_metric": "Qualified demos per week",
+    "time_horizon_days": 90
+  },
+  "constraints": {
+    "monthly_budget_range": "$15k-$30k",
+    "team_capacity_hours_per_week": 60,
+    "non_negotiables": [
+      "No misleading claims about AI capabilities",
+      "Brand tone must remain professional and credible"
+    ]
+  },
+  "funnel_baseline": {
+    "awareness": { "brand_search_volume": "unknown" },
+    "acquisition": { "website_sessions_per_week": "8k-12k" },
+    "activation": { "demo_request_cvr": "0.6-1.0%" },
+    "retention": { "trial_to_paid_rate": "8-12%" },
+    "revenue": { "avg_acv_range": "$6k-$18k" },
+    "referral": { "referral_rate": "unknown" }
+  },
+  "current_marketing": {
+    "active_channels": ["Google Search Ads", "LinkedIn (light)", "SEO (limited)", "Email (basic)"],
+    "tracking_stack": ["GA4", "GTM", "HubSpot CRM"],
+    "known_issues": [
+      "Attribution unclear between paid and organic",
+      "Landing pages not tailored by segment"
+    ]
+  },
+  "regional_context": {
+    "primary_country": "Saudi Arabia",
+    "secondary_countries": ["United Arab Emirates", "Egypt"],
+    "primary_city": "Riyadh",
+    "languages": ["ar", "en"],
+    "currency": "SAR",
+    "seasonality_notes": "Expect demand shifts around Ramadan/Eid; confirm exact dates for the target year.",
+    "local_compliance_notes": "Review local ad policies and claims restrictions for regulated sectors."
+  },
+  "data_availability_map": {
+    "available": ["GA4 basic reports", "HubSpot pipeline by source", "Google Ads search terms"],
+    "missing": ["Clean conversion definitions", "Segment-level funnel baselines", "Creative testing history"],
+    "notes": "User can share aggregated weekly metrics; no raw PII."
+  }
+}

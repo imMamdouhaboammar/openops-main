@@ -1,0 +1,288 @@
+{
+    "knowledge_base": {
+        "version": "1.0.0",
+        "last_updated": "2026-01-10"
+    },
+    "resources": [
+        {
+            "id": "dialect-frameworks",
+            "name": "Egyptian + Saudi Dialect Frameworks",
+            "file_path": "knowledge-base/dialect-frameworks.md",
+            "topics": [
+                "Language levels",
+                "Proverbs",
+                "Cultural references",
+                "Do's and Don'ts"
+            ]
+        }
+    ],
+    "egyptian_dialect": {
+        "common_verbs": [
+            "بتاع",
+            "بيقول",
+            "بيعمل",
+            "ماشي",
+            "علشان",
+            "يعني",
+            "خلاص",
+            "كده"
+        ],
+        "expressions": [
+            "زي الفل",
+            "ماشي على بركة الله",
+            "يا سلام",
+            "يا نهار",
+            "والله العظيم"
+        ],
+        "proverbs": [
+            {
+                "arabic": "اللي اختشوا ماتوا",
+                "meaning": "Don't be shy",
+                "usage": "Encourage boldness"
+            },
+            {
+                "arabic": "اللي ما يعرف الصقر يشويه",
+                "meaning": "Ignorance of value",
+                "usage": "Undervaluing expertise"
+            },
+            {
+                "arabic": "اصبر على جارك السو يا يرحل يا تجيله داهية",
+                "meaning": "Patience with difficulty",
+                "usage": "Dealing with challenges"
+            }
+        ],
+        "cultural_refs": [
+            "Ramadan",
+            "Football (Ahly/Zamalek)",
+            "Egyptian cinema",
+            "Om Kalthoum",
+            "Coffee shops"
+        ],
+        "market_stats": {
+            "population": "104M",
+            "internet_users": "73M",
+            "dialect_preference": "70% prefer Egyptian dialect over Fusha",
+            "linkedin_engagement": "+120% vs. Fusha"
+        }
+    },
+    "saudi_dialect": {
+        "common_verbs": [
+            "يا",
+            "عاد",
+            "والله",
+            "ياخي",
+            "الحين",
+            "مب",
+            "أبشر",
+            "حياك"
+        ],
+        "expressions": [
+            "على كيفك",
+            "تمام",
+            "ماشي الحال",
+            "عادي",
+            "السالفة",
+            "الشين"
+        ],
+        "proverbs": [
+            {
+                "arabic": "الطول طول نخلة والعقل عقل صخلة",
+                "meaning": "Height doesn't equal intelligence",
+                "usage": "Value substance over appearance"
+            },
+            {
+                "arabic": "اللي ما يطول العنب حامضٍ عنه يقول",
+                "meaning": "Sour grapes",
+                "usage": "Jealousy/envy"
+            },
+            {
+                "arabic": "الصبر مفتاح الفرج",
+                "meaning": "Patience is key",
+                "usage": "Encouraging perseverance"
+            }
+        ],
+        "cultural_refs": [
+            "Vision 2030",
+            "Hajj/Umrah",
+            "Arabic coffee",
+            "Football (Nassr/Hilal)",
+            "Desert/tribal heritage"
+        ],
+        "market_stats": {
+            "population": "36M",
+            "internet_users": "33M (92%)",
+            "dialect_preference": "89% engage more with Saudi dialect",
+            "snapchat_dominance": "40M+ users (highest per capita)"
+        }
+    },
+    "benchmarks_2026": {
+        "linkedin_longform_arabic": {
+            "avg_length": "650 words",
+            "optimal_length": "1300-2000 words",
+            "engagement_fusha": "2.5%",
+            "engagement_Egyptian_dialect": "5.5%",
+            "engagement_Saudi_dialect": "5.4%",
+            "read_time_target": "3-5 minutes"
+        },
+        "twitter_threads": {
+            "avg_thread_length": "8 tweets",
+            "optimal_thread_length": "12 tweets",
+            "completion_rate": "65%",
+            "share_multiplier": "3.5x vs. single tweet"
+        },
+        "viral_thresholds": {
+            "good": {
+                "shares": "50+",
+                "comments": "30+",
+                "saves": "20+"
+            },
+            "great": {
+                "shares": "200+",
+                "comments": "100+",
+                "saves": "80+"
+            },
+            "viral": {
+                "shares": "1000+",
+                "comments": "500+",
+                "saves": "300+"
+            }
+        }
+    },
+    "real_content_patterns": {
+        "authentic_hooks": [
+            "شد كرسي وهات ☕️ وتعال 👏🏻",
+            "نبدأ بسم الله كده، بوست دسم كالعادة 😅",
+            "البوست ده مش للقراءة السريعة، ده Manual تقدر ترجعله",
+            "لو وصلت هنا 👏 فـ إنت مش بس بتقرا… إنت عايز تبقى محترف فعلاً",
+            "خليني أديك الـ playbook بالكامل",
+            "واللي هتقراه دلوقتي مش مجرد overview",
+            "تحذير: البوست ده للقراءة السريعة مش محتاج تـ شد كرسي"
+        ],
+        "pattern_structures": {
+            "emoji_bullets": "🔺 للنقاط الرئيسية",
+            "checkmarks": "✅ للخطوات والإنجازات",
+            "finish_flag": "🏁 للخلاصة النهائية",
+            "fire_emoji": "🔥 للنقاط المهمة جداً",
+            "numbers_with_emoji": "1️⃣ 2️⃣ 3️⃣ لترقيم الخطوات"
+        },
+        "transition_phrases": [
+            "🔺 نيجي بقى لـ...",
+            "🔺 ندخل على الجد بقى",
+            "🔺 خليني أوضح حاجه مهمة",
+            "🔺 من الآخر:",
+            "🔺 الزتونة:",
+            "--- (للفصل بين الأقسام)",
+            "🏁 في النهاية:",
+            "🏁 الخلاصة:"
+        ],
+        "engagement_patterns": [
+            "لو حابب [action]، اكتب في الكومنت",
+            "سيب لي كومنت لو محتاجه",
+            "شارك في الكومنت: إيه أكتر [question]؟",
+            "Bookmark البوست ده",
+            "احفظ البوست لأنه طويل جدا",
+            "لو وصلت هنا 👏 فـ [acknowledgment]"
+        ],
+        "authentic_expressions": {
+            "emphasis": [
+                "ابسلوتلي خالص",
+                "والله بتفرق",
+                "اه والله",
+                "صدقني",
+                "بجد",
+                "فعلاً"
+            ],
+            "explanations": [
+                "يعني ايه؟ ماتيجي نعرف",
+                "مش واصله لسه؟ هبسطهالك",
+                "خليني أوضح",
+                "هبسطهااaalك",
+                "ركز يا سيدي كده"
+            ],
+            "warnings": [
+                "خلي بالك من",
+                "اوعااااك تعمل",
+                "انتبه لـ",
+                "ما تنساش"
+            ],
+            "conclusions": [
+                "من الآخر",
+                "الزتونة",
+                "في النهاية",
+                "الخلاصة"
+            ]
+        }
+    },
+    "content_templates": {
+        "hero_journey_egyptian": {
+            "hook": "لو إنت [target] وبتعاني من [pain]… البوست ده ليك.",
+            "conflict": "كنت زيك بالظبط، بفتكر لما [story]…",
+            "transformation": "لحد ما اكتشفت إن [insight]…",
+            "lesson": "الدرس اللي اتعلمته: [wisdom]",
+            "cta": "لو حابب تعرف [next step]، اكتب في الكومنت."
+        },
+        "framework_post_egyptian": {
+            "hook": "عايز تعرف السر في [topic]؟ خليني أقولك.",
+            "intro": "الموضوع مش معقد، بس محتاج تفهم [context].",
+            "framework_reveal": "في [number] خطوات أساسية:",
+            "breakdown": "🔺 الخطوة [X]: [explanation] + مثال حي",
+            "application": "طبّق ده على [use case]…",
+            "cta": "حابب نتكلم أكتر؟ تعالى رسالة."
+        },
+        "technical_deep_dive": {
+            "hook": "شد كرسي وهات ☕️… البوست ده تقيل",
+            "context": "ليه [topic] مهم دلوقتي أكتر من أي وقت فات؟",
+            "breakdown": "🔺 المرحلة [X]: [detailed explanation]",
+            "examples": "مثال عملي من الواقع:",
+            "mistakes": "❌ الأخطاء القاتلة",
+            "tools": "🔧 الأدوات اللي محتاجها",
+            "conclusion": "🏁 الخلاصة الزتونة"
+        },
+        "hero_journey": {
+            "avg_length": "2000-3000 words",
+            "sections": [
+                "Hook",
+                "Background",
+                "Challenge",
+                "Attempts",
+                "Turning Point",
+                "Solution",
+                "CTA"
+            ],
+            "engagement_rate": "8.5%",
+            "best_for": "Personal brand, thought leadership"
+        },
+        "framework_post": {
+            "avg_length": "1500-2500 words",
+            "sections": [
+                "Problem",
+                "Why It Matters",
+                "Framework (3-7 steps)",
+                "Deep Dive",
+                "Case Study",
+                "CTA"
+            ],
+            "engagement_rate": "7.8%",
+            "best_for": "Educational, how-to"
+        },
+        "listicle": {
+            "avg_length": "1200-2000 words",
+            "items": "7-15 points",
+            "engagement_rate": "6.9%",
+            "best_for": "Quick wins, actionable tips"
+        },
+        "case_study": {
+            "avg_length": "1800-2500 words",
+            "sections": [
+                "Intro",
+                "Challenge",
+                "Approach",
+                "Results",
+                "Lessons",
+                "CTA"
+            ],
+            "engagement_rate": "8.2%",
+            "best_for": "Proof of concept, credibility"
+        }
+    }
+}

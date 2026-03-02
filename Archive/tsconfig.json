@@ -1,0 +1,94 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "ES2022",
+    "lib": ["ES2022"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    
+    /* Emit */
+    "outDir": "./dist",
+    "rootDir": "./",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "removeComments": false,
+    "importHelpers": true,
+    "downlevelIteration": true,
+    
+    /* Interop Constraints */
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    
+    /* Type Checking */
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    
+    /* Completeness */
+    "skipLibCheck": true,
+    
+    /* Advanced */
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    
+    /* Path Mapping */
+    "baseUrl": ".",
+    "paths": {
+      "@governance/*": ["00_governance/*"],
+      "@orchestration/*": ["01_orchestration/*"],
+      "@agents/*": ["02_agents/*"],
+      "@product/*": ["03_product/*"],
+      "@research/*": ["04_research/*"],
+      "@architecture/*": ["05_architecture/*"],
+      "@security/*": ["06_security/*"],
+      "@tracking/*": ["07_tracking/*"],
+      "@ux/*": ["08_ux/*"],
+      "@tooling/*": ["09_tooling/*"],
+      "@legacy/*": ["10_legacy/*"]
+    }
+  },
+  "include": [
+    "00_governance/**/*.ts",
+    "01_orchestration/**/*.ts",
+    "02_agents/**/*.ts",
+    "03_product/**/*.ts",
+    "04_research/**/*.ts",
+    "05_architecture/**/*.ts",
+    "06_security/**/*.ts",
+    "07_tracking/**/*.ts",
+    "08_ux/**/*.ts",
+    "09_tooling/**/*.ts",
+    "10_legacy/**/*.ts",
+    "scripts/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.test.ts",
+    "**/*.spec.ts"
+  ],
+  "ts-node": {
+    "require": ["tsconfig-paths/register"],
+    "transpileOnly": true,
+    "files": true,
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  }
+}

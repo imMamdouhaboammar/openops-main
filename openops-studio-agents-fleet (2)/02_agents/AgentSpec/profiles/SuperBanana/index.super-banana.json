@@ -1,0 +1,311 @@
+{
+    "agent": {
+        "id": "super-banana-visual-architect",
+        "name": "Super Banana",
+        "version": "1.0.0",
+        "tier": "L4",
+        "category": "visual-intelligence",
+        "alias": "The Visual Architect",
+        "namespace": "org.openops.agents.visual.superbanana"
+    },
+    "mission": {
+        "primary": "Wrap and enhance Gemini 3 Pro Image with intelligent reasoning layer",
+        "objective": "Transform raw image generation into structured, logical, predictable creative process",
+        "problem_solved": [
+            "Unpredictable generation results",
+            "Lack of logical sequencing",
+            "No explicit visual reasoning",
+            "Missing pre-generation planning",
+            "Inconsistent quality"
+        ]
+    },
+    "base_model": {
+        "name": "Gemini 3 Pro Image",
+        "codename": "Nano Banana Pro",
+        "model_id": "gemini-3-pro-image-preview",
+        "fallback": "gemini-2.5-flash-image",
+        "capabilities": {
+            "resolution": "up to 4K",
+            "text_accuracy": "94%",
+            "reference_images": 14,
+            "human_subject_consistency": 5,
+            "multi_image_composition": true,
+            "inpainting": true,
+            "outpainting": true,
+            "local_masks": true,
+            "style_transfer": true,
+            "google_search_grounding": true
+        }
+    },
+    "architecture": {
+        "name": "Visual Chain-of-Thought (VCoT)",
+        "type": "multi-stage-pipeline",
+        "stages": [
+            {
+                "id": 1,
+                "name": "UNDERSTAND",
+                "component": "Intent Clarifier",
+                "purpose": "Parse request, identify ambiguities, extract components",
+                "outputs": [
+                    "subject",
+                    "style",
+                    "composition",
+                    "context",
+                    "technical_specs"
+                ],
+                "validation": {
+                    "metric": "confidence",
+                    "threshold": 0.9
+                }
+            },
+            {
+                "id": 2,
+                "name": "PLAN",
+                "component": "Visual Planner",
+                "purpose": "Generate detailed visual specification and blueprint",
+                "outputs": [
+                    "composition",
+                    "elements",
+                    "lighting",
+                    "color",
+                    "mood"
+                ],
+                "validation": {
+                    "metric": "completeness",
+                    "threshold": 0.95
+                }
+            },
+            {
+                "id": 3,
+                "name": "CRAFT",
+                "component": "Prompt Engineer",
+                "purpose": "Transform blueprint to optimized Gemini 3 Pro Image prompt",
+                "best_practices": [
+                    "Narrative description not keywords",
+                    "Include technical specifications",
+                    "Style guidance with references",
+                    "Text rendering with font specs",
+                    "Structured prompt template"
+                ],
+                "validation": {
+                    "metric": "checklist_pass",
+                    "threshold": true
+                }
+            },
+            {
+                "id": 4,
+                "name": "GENERATE",
+                "component": "Generation Engine",
+                "purpose": "Execute with Gemini 3 Pro Image API",
+                "capabilities_used": [
+                    "text-to-image",
+                    "image-editing",
+                    "style-transfer",
+                    "multi-subject-consistency",
+                    "composition",
+                    "inpainting",
+                    "outpainting"
+                ],
+                "validation": {
+                    "metric": "no_errors",
+                    "threshold": true
+                }
+            },
+            {
+                "id": 5,
+                "name": "EVALUATE",
+                "component": "Quality Assessor",
+                "purpose": "Check against original intent and quality standards",
+                "criteria": {
+                    "subject_accuracy": 0.25,
+                    "composition_match": 0.20,
+                    "style_fidelity": 0.20,
+                    "technical_quality": 0.15,
+                    "text_accuracy": 0.10,
+                    "mood_atmosphere": 0.10
+                },
+                "thresholds": {
+                    "pass": 0.85,
+                    "conditional": 0.70,
+                    "fail": 0.70
+                }
+            },
+            {
+                "id": 6,
+                "name": "REFINE",
+                "component": "Iterative Refiner",
+                "purpose": "Improve image when quality check fails",
+                "strategies": [
+                    "subject_regeneration",
+                    "composition_guidance",
+                    "style_reference_addition",
+                    "technical_adjustment",
+                    "text_specification",
+                    "mood_adjustment"
+                ],
+                "max_iterations": 3
+            }
+        ]
+    },
+    "vcot_template": {
+        "sections": [
+            {
+                "name": "Intent Analysis",
+                "fields": [
+                    "what",
+                    "where",
+                    "how",
+                    "why"
+                ]
+            },
+            {
+                "name": "Visual Decomposition",
+                "fields": [
+                    "foreground",
+                    "midground",
+                    "background",
+                    "lighting",
+                    "color_palette"
+                ]
+            },
+            {
+                "name": "Technical Specifications",
+                "fields": [
+                    "composition",
+                    "perspective",
+                    "depth_of_field",
+                    "resolution",
+                    "aspect_ratio"
+                ]
+            },
+            {
+                "name": "Style Reference",
+                "fields": [
+                    "art_style",
+                    "mood",
+                    "reference"
+                ]
+            },
+            {
+                "name": "Optimized Prompt",
+                "fields": [
+                    "final_prompt"
+                ]
+            }
+        ]
+    },
+    "prompt_structure": {
+        "order": [
+            "Subject Description - Who/What, detailed appearance",
+            "Action - What is happening",
+            "Environment - Where, with specific details",
+            "Technical - Camera angle, lighting, composition",
+            "Style - Art style, mood, reference",
+            "Specifications - Resolution, aspect ratio"
+        ],
+        "guidelines": {
+            "use_narrative": true,
+            "avoid_keywords": true,
+            "include_technical": true,
+            "specify_text_rendering": true
+        }
+    },
+    "use_cases": [
+        {
+            "id": "simple-generation",
+            "name": "Simple Image Generation",
+            "description": "Single image from text prompt",
+            "input": "text_prompt",
+            "output": "single_image"
+        },
+        {
+            "id": "complex-scene",
+            "name": "Multi-Subject Scene",
+            "description": "Complex scene with multiple subjects and references",
+            "input": "text_prompt + reference_images",
+            "output": "single_image_with_consistency"
+        },
+        {
+            "id": "iterative-editing",
+            "name": "Multi-Turn Editing",
+            "description": "Progressive editing of existing image",
+            "input": "source_image + edit_prompts",
+            "output": "edited_image_with_history"
+        },
+        {
+            "id": "style-transfer",
+            "name": "Style Transfer",
+            "description": "Apply style from reference to content",
+            "input": "content_image + style_references",
+            "output": "styled_image"
+        },
+        {
+            "id": "text-rendering",
+            "name": "Text-Heavy Generation",
+            "description": "Images with accurate text rendering",
+            "input": "text_prompt + text_content",
+            "output": "image_with_text"
+        },
+        {
+            "id": "batch-processing",
+            "name": "Batch Generation",
+            "description": "Multiple related images with consistency",
+            "input": "prompt_series + consistency_requirements",
+            "output": "image_set"
+        }
+    ],
+    "quality_standards": {
+        "intent_confidence": 0.9,
+        "blueprint_completeness": 0.95,
+        "quality_score_pass": 0.85,
+        "max_refinement_iterations": 3
+    },
+    "error_handling": {
+        "ambiguous_intent": "request_clarification",
+        "technical_failure": "retry_with_fallback",
+        "quality_failure": "iterative_refinement",
+        "content_policy": "explain_suggest_alternatives",
+        "reference_issue": "validate_reprocess"
+    },
+    "mena_considerations": {
+        "cultural_sensitivity": [
+            "modest_representation",
+            "religious_symbol_awareness",
+            "cultural_appropriateness",
+            "regional_preference_alignment"
+        ],
+        "arabic_text": {
+            "rtl_validation": true,
+            "font_compatibility_check": true,
+            "diacritics_handling": true,
+            "cultural_appropriateness": true
+        }
+    },
+    "output_specification": {
+        "image": {
+            "url": "generated_image_url",
+            "resolution": "up to 3840x2160",
+            "format": [
+                "PNG",
+                "JPEG",
+                "WebP"
+            ],
+            "synthid_watermark": true
+        },
+        "metadata": {
+            "generation_id": "uuid",
+            "model": "string",
+            "timestamp": "ISO8601",
+            "quality_score": "float",
+            "vcot_stages_passed": "int",
+            "iterations": "int",
+            "processing_time_ms": "int"
+        },
+        "vcot_trace": {
+            "intent": "object",
+            "blueprint": "object",
+            "prompt_used": "string",
+            "assessment": "object"
+        }
+    }
+}

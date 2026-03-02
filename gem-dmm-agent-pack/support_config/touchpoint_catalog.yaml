@@ -1,0 +1,140 @@
+# Touchpoint Catalog — Comprehensive Reference
+
+This catalog defines touchpoint types across the buyer decision journey. Each touchpoint serves a specific psychological function and moves the buyer forward.
+
+---
+
+## Touchpoint Categories
+
+### 1. PRESENCE TOUCHPOINTS
+**Psychological Function**: Create awareness that a solution exists, establish category association
+
+| Touchpoint Type | Purpose | Psychological Effect | Examples |
+|----------------|---------|---------------------|----------|
+| Search Visibility | Be found when intent exists | "This brand exists for my need" | SEO-ranked content, Google Ads |
+| Social Presence | Ambient brand awareness | "I've seen this before, it's familiar" | Instagram feed presence, LinkedIn posts |
+| PR/Media Mentions | Authority signal, social proof | "Others recognize this brand" | Industry publications, podcasts, guest articles |
+| Display/Retargeting | Stay top-of-mind |  "Reminder of what I was considering" | Banner ads, retargeting pixels |
+
+**Deployment Priority**: Required before Education touchpoints. Low-intent prospects need presence first.
+
+---
+
+### 2. EDUCATION TOUCHPOINTS
+**Psychological Function**: Build understanding, establish expertise, frame the buying decision
+
+| Touchpoint Type | Purpose | Psychological Effect | Examples |
+|----------------|---------|---------------------|----------|
+| Long-form Content | Teach underlying concepts | "They understand my problem deeply" | Blog posts (1500+ words), guides, whitepapers |
+| Video Explainers | Simplify complex ideas | "Now I get it" | Product demos, how-it-works videos, founder story |
+| Webinars/Workshops | Interactive learning + authority | "I learned from an expert" | Live webinars, recorded sessions, AMAs |
+| Email Nurture Sequences | Drip education over time | "They're helping me understand, not selling" | 5-7 email sequences with educational content |
+| Comparison Content | Frame decision criteria | "This is how I should evaluate options" | Product comparison pages, "X vs Y" content |
+
+**Deployment Logic**:
+- If buyer journey is 3+ months → Heavy investment in education content
+- If ticket size is high ($10K+) → Multiple education formats required
+- If industry knowledge gap is large → Start here before validation
+
+---
+
+### 3. VALIDATION TOUCHPOINTS
+**Psychological Function**: Reduce perceived risk, build trust, prove claims
+
+| Touchpoint Type | Purpose | Psychological Effect | Examples |
+|----------------|---------|---------------------|----------|
+| Case Studies | Real-world proof | "It worked for someone like me" | Detailed customer success stories |
+| Social Proof (Reviews/Testimonials) | Peer validation | "Others trust this brand" | G2/Capterra reviews, video testimonials |
+| Data/Reports | Quantified results | "The numbers back this up" | ROI calculators, benchmark reports, stats |
+| Free Trial/Demo | Risk-free evaluation | "I can test this myself" | 14-day trial, live product tour, sandbox |
+| Certifications/Awards | Third-party credibility | "External authorities vouch for them" | ISO certifications, industry awards |
+
+**Deployment Logic**:
+- If trust barriers are high (new brand, skeptical audience) → Validation touchpoints are critical
+- If competing with established players → Need MORE validation than competitors
+- If buyer is risk-averse (enterprise, GCC markets) → Multiple validation types required
+
+---
+
+### 4. HUMAN TOUCHPOINTS
+**Psychological Function**: Provide reassurance, answer specific questions, build relationships
+
+| Touchpoint Type | Purpose | Psychological Effect | Examples |
+|----------------|---------|---------------------|----------|
+| Sales Calls | Personalized consultation | "They care about my specific situation" | Discovery calls, solution demos |
+| Live Chat | Real-time answers | "I can get help immediately" | Website chat, WhatsApp Business |
+| Account Management | Ongoing support | "I'm not alone in this" | Dedicated CSM, onboarding specialist |
+| Events/Meetups | Face-to-face connection | "I know the people behind the brand" | Conferences, local meetups, office visits |
+| Community | Peer-to-peer support | "Others like me are using this successfully" | Slack/Discord groups, user forums |
+
+**Regional Context**:
+- **GCC**: Human touchpoints are CRITICAL. Relationship-heavy decision culture. Events and personal connections drive trust.
+- **Egypt**: WhatsApp is mandatory human touchpoint. Phone support expected.
+- **B2B Enterprise**: Always include human touchpoints for deals >$10K
+
+---
+
+### 5. CONVERSION TOUCHPOINTS
+**Psychological Function**: Remove final friction, create urgency, facilitate action
+
+| Touchpoint Type | Purpose | Psychological Effect | Examples |
+|----------------|---------|---------------------|----------|
+| Optimized Landing Pages | Clear value prop + CTA | "I know exactly what to do next" | Dedicated campaign pages, product pages |
+| Limited-Time Offers | Create urgency | "I should act now" | Seasonal discounts (Ramadan, Black Friday), early-bird pricing |
+| Simplified Checkout | Remove friction | "This is easy" | One-page checkout, guest checkout, multiple payment options |
+| Money-Back Guarantee | Remove risk | "I can reverse this decision if needed" | 30-day guarantees, no-questions-asked refunds |
+| Payment Flexibility | Lower barrier | "I can afford this" | Installment plans, deferred payment, COD (Egypt) |
+
+**Regional Adjustments**:
+- **Egypt**: COD is often REQUIRED for e-commerce conversion. Credit card penetration low.
+- **GCC**: Premium positioning → Payment flexibility less critical. But B2B may need net-30/60 terms.
+
+---
+
+## Touchpoint Sequencing Rules
+
+### Rule 1: PRESENCE BEFORE EDUCATION
+If buyer doesn't know you exist, education content is wasted. Build presence (SEO, ads, social) first.
+
+### Rule 2: EDUCATION BEFORE VALIDATION
+Don't ask for trust before building understanding. Teach before proving.
+
+### Rule 3: VALIDATION BEFORE HUMAN
+Human touchpoints are expensive. Ensure buyer is educated and partially validated before sales calls.
+
+### Rule 4: HUMAN BEFORE HIGH-TICKET CONVERSION
+For deals >$10K, human touchpoint (call, demo, meeting) is almost always required before close.
+
+### Rule 5: CONVERSION LAST
+Optimize landing pages and checkout only AFTER earlier touchpoints are working. Don't start with conversion optimization.
+
+---
+
+## Common Anti-Patterns
+
+❌ **Conversion-first**: Building landing pages before presence/education exists
+❌ **Validation overload**: Spamming testimonials without educating first
+❌ **Education without presence**: Creating great content but no distribution
+❌ **Human-first (too early)**: Sales calls to cold, uneducated prospects
+❌ **Skipping validation**: Going from education straight to conversion (high-ticket products especially)
+
+---
+
+## Use Case: Mapping Touchpoints to Funnel Stage
+
+| Buyer Stage | Primary Touchpoint Types | Secondary Touchpoint Types |
+|-------------|------------------------|---------------------------|
+| **Awareness** (Problem unaware) | Presence: SEO, Social, PR | Education: Thought leadership |
+| **Education** (Problem aware, solution unaware) | Education: Long-form content, webinars | Presence: Retargeting |
+| **Consideration** (Solution aware, evaluating options) | Validation: Case studies, reviews | Education: Comparison content |
+| **Decision** (Vendor selection) | Human: Sales calls, demos | Validation: Free trial |
+| **Conversion** (Ready to buy) | Conversion: Landing page, checkout | Human: Customer success handoff |
+
+---
+
+## Implementation Notes
+
+- This catalog is referenced by the system prompt to design touchpoint architectures
+- Always map touchpoints to specific buyer psychology (not just "awareness, consideration, conversion")
+- Regional expert persona should flag Egypt/GCC touchpoint preferences
+- Performance marketer persona should estimate cost per touchpoint type

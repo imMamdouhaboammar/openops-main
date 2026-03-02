@@ -1,0 +1,91 @@
+# intent-first-strategy-core/config/diagnosis_state_machine.yaml
+# Pack: intent-first-strategy-core
+# Version: 1.0.0
+# Date: 2026-02-13
+# Owner: OpenOps Studio (Mamdouh Aboammar)
+#
+# Purpose: State machine that hard-gates strategy until diagnosis is validated and CQ is valid.
+
+diagnosis_state_machine:
+  meta:
+    id: "intent_first_diagnosis_sm"
+    version: "1.0.0"
+    description: "Intent-first diagnosis flow. No strategy until validation.confirmed=true AND cq.valid=true."
+
+  stages:
+    - id: stage_1_intake
+      objective: "Capture the client request, context, and desired outcome."
+      required_outputs:
+        - "Diagnosis Map (partial)"
+        - "What we know / What we still need"
+
+    - id: stage_2_intent_probe
+      objective: "Identify why they want it and why now; separate request vs intent."
+      required_outputs:
+        - "Updated Diagnosis Map"
+        - "Contradictions and unknowns"
+
+    - id: stage_3_true_issue_hypothesis
+      objective: "Propose a hypothesis for true issue + root cause, with evidence and reality checks."
+      required_outputs:
+        - "Primary Problem Statement (draft)"
+        - "Evidence of diagnosis"
+        - "Updated Diagnosis Map"
+
+    - id: stage_4_validation
+      objective: "Ask the user to confirm or refine the diagnosis; loop back if not confirmed."
+      required_outputs:
+        - "PPS (proposed)"
+        - "CQ (draft or blocked if insufficient data)"
+        - "User confirmation request"
+      validation:
+        confirmed_flag: "validation.confirmed"
+
+    - id: stage_5_cq_lock
+      objective: "Build and validate a single CQ with metric, baseline, target, audience, horizon, constraints."
+      required_outputs:
+        - "CQ (final)"
+        - "CQ validity checklist"
+
+    - id: stage_6_strategy_allowed
+      objective: "Generate a strategy bound to PPS and CQ (touchpoints-driven, not channel-dump)."
+      required_outputs:
+        - "Strategy (bound)"
+        - "What we know / What we still need"
+
+  transitions:
+    - from: stage_1_intake
+      to: stage_2_intent_probe
+      when: "diagnosis_map.client_request != ''"
+
+    - from: stage_2_intent_probe
+      to: stage_3_true_issue_hypothesis
+      when: "diagnosis_map.suspected_intent != '' AND diagnosis_map.unknowns.length <= 10"
+
+    - from: stage_3_true_issue_hypothesis
+      to: stage_4_validation
+      when: "pps.statement != '' AND pps.impacted_metric != ''"
+
+    - from: stage_4_validation
+      to: stage_2_intent_probe
+      when: "validation.confirmed == false"
+      notes: "If user refines diagnosis, loop back to questions (max 5 per round)."
+
+    - from: stage_4_validation
+      to: stage_5_cq_lock
+      when: "validation.confirmed == true"
+
+    - from: stage_5_cq_lock
+      to: stage_4_validation
+      when: "cq.valid == false"
+      notes: "If CQ invalid, ask targeted questions and refine; re-confirm if diagnosis changed materially."
+
+    - from: stage_5_cq_lock
+      to: stage_6_strategy_allowed
+      when: "validation.confirmed == true AND cq.valid == true"
+      notes: "Strategy allowed only after both gates pass."
+
+  strategy_allowed_condition:
+    expression: "validation.confirmed == true AND cq.valid == true"
+    enforcement: "Hard gate. If false, refuse strategy and continue diagnosis."
+

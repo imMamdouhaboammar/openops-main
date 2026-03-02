@@ -1,0 +1,3077 @@
+{
+  "$schema": "openops://11_marketing_growth_agent/14_registry/repo_skills_registry.schema.json",
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-01-24T17:35:01.675Z",
+  "skillsRoot": "skills",
+  "totalSkills": 236,
+  "skills": [
+    {
+      "skillId": "3d-web-experience",
+      "dirName": "3d-web-experience",
+      "title": "3D Web Experience",
+      "description": "Expert in building 3D experiences for the web - Three.js, React Three Fiber, Spline, WebGL, and interactive 3D scenes. Covers product configurators, 3D portfolios, immersive websites, and bringing depth to web experiences. Use when: 3D website, three.js, WebGL, react three fiber, 3D experience.",
+      "path": "skills/3d-web-experience",
+      "skillFile": "skills/3d-web-experience/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 5445,
+        "mtimeISO": "2026-01-24T09:34:58.674Z"
+      }
+    },
+    {
+      "skillId": "ab-test-setup",
+      "dirName": "ab-test-setup",
+      "title": "A/B Test Setup",
+      "description": "When the user wants to plan, design, or implement an A/B test or experiment. Also use when the user mentions \"A/B test,\" \"split test,\" \"experiment,\" \"test this change,\" \"variant copy,\" \"multivariate test,\" or \"hypothesis.\" For tracking implementation, see analytics-tracking.",
+      "path": "skills/ab-test-setup",
+      "skillFile": "skills/ab-test-setup/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 11172,
+        "mtimeISO": "2026-01-24T09:34:59.128Z"
+      }
+    },
+    {
+      "skillId": "Active Directory Attacks",
+      "dirName": "Active Directory Attacks",
+      "title": "Active Directory Attacks",
+      "description": "This skill should be used when the user asks to \"attack Active Directory\", \"exploit AD\", \"Kerberoasting\", \"DCSync\", \"pass-the-hash\", \"BloodHound enumeration\", \"Golden Ticket\", \"Silver Ticket\", \"AS-REP roasting\", \"NTLM relay\", or needs guidance on Windows domain penetration testing.",
+      "path": "skills/Active Directory Attacks",
+      "skillFile": "skills/Active Directory Attacks/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 9504,
+        "mtimeISO": "2026-01-24T09:34:58.692Z"
+      }
+    },
+    {
+      "skillId": "address-github-comments",
+      "dirName": "address-github-comments",
+      "title": "Address GitHub Comments",
+      "description": "Use when you need to address review or issue comments on an open GitHub Pull Request using the gh CLI.",
+      "path": "skills/address-github-comments",
+      "skillFile": "skills/address-github-comments/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 1227,
+        "mtimeISO": "2026-01-24T09:34:59.131Z"
+      }
+    },
+    {
+      "skillId": "agent-evaluation",
+      "dirName": "agent-evaluation",
+      "title": "Agent Evaluation",
+      "description": "Testing and benchmarking LLM agents including behavioral testing, capability assessment, reliability metrics, and production monitoring—where even top agents achieve less than 50% on real-world benchmarks Use when: agent testing, agent evaluation, benchmark agents, agent reliability, test agent.",
+      "path": "skills/agent-evaluation",
+      "skillFile": "skills/agent-evaluation/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 2089,
+        "mtimeISO": "2026-01-24T09:34:59.133Z"
+      }
+    },
+    {
+      "skillId": "agent-manager-skill",
+      "dirName": "agent-manager-skill",
+      "title": "Agent Manager Skill",
+      "description": "Manage multiple local CLI agents via tmux sessions (start/stop/monitor/assign) with cron-friendly scheduling.",
+      "path": "skills/agent-manager-skill",
+      "skillFile": "skills/agent-manager-skill/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 1054,
+        "mtimeISO": "2026-01-24T09:34:59.135Z"
+      }
+    },
+    {
+      "skillId": "agent-memory-mcp",
+      "dirName": "agent-memory-mcp",
+      "title": "Agent Memory Skill",
+      "description": "A hybrid memory system that provides persistent, searchable knowledge management for AI agents (Architecture, Patterns, Decisions).",
+      "path": "skills/agent-memory-mcp",
+      "skillFile": "skills/agent-memory-mcp/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 2101,
+        "mtimeISO": "2026-01-24T09:34:59.139Z"
+      }
+    },
+    {
+      "skillId": "agent-memory-systems",
+      "dirName": "agent-memory-systems",
+      "title": "Agent Memory Systems",
+      "description": "Memory is the cornerstone of intelligent agents. Without it, every interaction starts from zero. This skill covers the architecture of agent memory: short-term (context window), long-term (vector stores), and the cognitive architectures that organize them.  Key insight: Memory isn't just storage - it's retrieval. A million stored facts mean nothing if you can't find the right one. Chunking, embedding, and retrieval strategies determine whether your agent remembers or forgets.  The field is fragm",
+      "path": "skills/agent-memory-systems",
+      "skillFile": "skills/agent-memory-systems/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 2317,
+        "mtimeISO": "2026-01-24T09:34:59.140Z"
+      }
+    },
+    {
+      "skillId": "agent-tool-builder",
+      "dirName": "agent-tool-builder",
+      "title": "Agent Tool Builder",
+      "description": "Tools are how AI agents interact with the world. A well-designed tool is the difference between an agent that works and one that hallucinates, fails silently, or costs 10x more tokens than necessary.  This skill covers tool design from schema to error handling. JSON Schema best practices, description writing that actually helps the LLM, validation, and the emerging MCP standard that's becoming the lingua franca for AI tools.  Key insight: Tool descriptions are more important than tool implementa",
+      "path": "skills/agent-tool-builder",
+      "skillFile": "skills/agent-tool-builder/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 1673,
+        "mtimeISO": "2026-01-24T09:34:59.149Z"
+      }
+    },
+    {
+      "skillId": "ai-agents-architect",
+      "dirName": "ai-agents-architect",
+      "title": "AI Agents Architect",
+      "description": "Expert in designing and building autonomous AI agents. Masters tool use, memory systems, planning strategies, and multi-agent orchestration. Use when: build agent, AI agent, autonomous agent, tool use, function calling.",
+      "path": "skills/ai-agents-architect",
+      "skillFile": "skills/ai-agents-architect/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 2571,
+        "mtimeISO": "2026-01-24T09:34:59.160Z"
+      }
+    },
+    {
+      "skillId": "ai-product",
+      "dirName": "ai-product",
+      "title": "AI Product Development",
+      "description": "Every product will be AI-powered. The question is whether you'll build it right or ship a demo that falls apart in production.  This skill covers LLM integration patterns, RAG architecture, prompt engineering that scales, AI UX that users trust, and cost optimization that doesn't bankrupt you. Use when: keywords, file_patterns, code_patterns.",
+      "path": "skills/ai-product",
+      "skillFile": "skills/ai-product/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 2170,
+        "mtimeISO": "2026-01-24T09:34:59.173Z"
+      }
+    },
+    {
+      "skillId": "ai-wrapper-product",
+      "dirName": "ai-wrapper-product",
+      "title": "AI Wrapper Product",
+      "description": "Expert in building products that wrap AI APIs (OpenAI, Anthropic, etc.) into focused tools people will pay for. Not just 'ChatGPT but different' - products that solve specific problems with AI. Covers prompt engineering for products, cost management, rate limiting, and building defensible AI businesses. Use when: AI wrapper, GPT product, AI tool, wrap AI, AI SaaS.",
+      "path": "skills/ai-wrapper-product",
+      "skillFile": "skills/ai-wrapper-product/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 6623,
+        "mtimeISO": "2026-01-24T09:34:59.195Z"
+      }
+    },
+    {
+      "skillId": "algolia-search",
+      "dirName": "algolia-search",
+      "title": "Algolia Search Integration",
+      "description": "Expert patterns for Algolia search implementation, indexing strategies, React InstantSearch, and relevance tuning Use when: adding search to, algolia, instantsearch, search api, search functionality.",
+      "path": "skills/algolia-search",
+      "skillFile": "skills/algolia-search/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 1971,
+        "mtimeISO": "2026-01-24T09:34:59.198Z"
+      }
+    },
+    {
+      "skillId": "algorithmic-art",
+      "dirName": "algorithmic-art",
+      "title": null,
+      "description": "Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems. Create original algorithmic art rather than copying existing artists' work to avoid copyright violations.",
+      "path": "skills/algorithmic-art",
+      "skillFile": "skills/algorithmic-art/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 19769,
+        "mtimeISO": "2026-01-24T09:34:59.207Z"
+      }
+    },
+    {
+      "skillId": "analytics-tracking",
+      "dirName": "analytics-tracking",
+      "title": "Analytics Tracking",
+      "description": "When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions \"set up tracking,\" \"GA4,\" \"Google Analytics,\" \"conversion tracking,\" \"event tracking,\" \"UTM parameters,\" \"tag manager,\" \"GTM,\" \"analytics implementation,\" or \"tracking plan.\" For A/B test measurement, see ab-test-setup.",
+      "path": "skills/analytics-tracking",
+      "skillFile": "skills/analytics-tracking/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 10800,
+        "mtimeISO": "2026-01-24T09:34:59.218Z"
+      }
+    },
+    {
+      "skillId": "API Fuzzing for Bug Bounty",
+      "dirName": "API Fuzzing for Bug Bounty",
+      "title": "API Fuzzing for Bug Bounty",
+      "description": "This skill should be used when the user asks to \"test API security\", \"fuzz APIs\", \"find IDOR vulnerabilities\", \"test REST API\", \"test GraphQL\", \"API penetration testing\", \"bug bounty API testing\", or needs guidance on API security assessment techniques.",
+      "path": "skills/API Fuzzing for Bug Bounty",
+      "skillFile": "skills/API Fuzzing for Bug Bounty/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 10290,
+        "mtimeISO": "2026-01-24T09:34:58.675Z"
+      }
+    },
+    {
+      "skillId": "api-design-principles",
+      "dirName": "api-design-principles",
+      "title": "API Design Principles",
+      "description": "Master REST and GraphQL API design principles to build intuitive, scalable, and maintainable APIs that delight developers. Use when designing new APIs, reviewing API specifications, or establishing API design standards.",
+      "path": "skills/api-design-principles",
+      "skillFile": "skills/api-design-principles/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 13722,
+        "mtimeISO": "2026-01-24T09:34:59.221Z"
+      }
+    },
+    {
+      "skillId": "api-documentation-generator",
+      "dirName": "api-documentation-generator",
+      "title": "API Documentation Generator",
+      "description": "Generate comprehensive, developer-friendly API documentation from code, including endpoints, parameters, examples, and best practices",
+      "path": "skills/api-documentation-generator",
+      "skillFile": "skills/api-documentation-generator/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 11185,
+        "mtimeISO": "2026-01-24T09:34:59.235Z"
+      }
+    },
+    {
+      "skillId": "api-patterns",
+      "dirName": "api-patterns",
+      "title": "API Patterns",
+      "description": "API design principles and decision-making. REST vs GraphQL vs tRPC selection, response formats, versioning, pagination.",
+      "path": "skills/api-patterns",
+      "skillFile": "skills/api-patterns/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 2435,
+        "mtimeISO": "2026-01-24T09:34:59.239Z"
+      }
+    },
+    {
+      "skillId": "api-security-best-practices",
+      "dirName": "api-security-best-practices",
+      "title": "API Security Best Practices",
+      "description": "Implement secure API design patterns including authentication, authorization, input validation, rate limiting, and protection against common API vulnerabilities",
+      "path": "skills/api-security-best-practices",
+      "skillFile": "skills/api-security-best-practices/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 23401,
+        "mtimeISO": "2026-01-24T09:34:59.255Z"
+      }
+    },
+    {
+      "skillId": "app-builder",
+      "dirName": "app-builder",
+      "title": "App Builder - Application Building Orchestrator",
+      "description": "Main application building orchestrator. Creates full-stack applications from natural language requests. Determines project type, selects tech stack, coordinates agents.",
+      "path": "skills/app-builder",
+      "skillFile": "skills/app-builder/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 3172,
+        "mtimeISO": "2026-01-24T09:34:59.256Z"
+      }
+    },
+    {
+      "skillId": "app-store-optimization",
+      "dirName": "app-store-optimization",
+      "title": "App Store Optimization (ASO) Skill",
+      "description": "Complete App Store Optimization (ASO) toolkit for researching, optimizing, and tracking mobile app performance on Apple App Store and Google Play Store",
+      "path": "skills/app-store-optimization",
+      "skillFile": "skills/app-store-optimization/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 16531,
+        "mtimeISO": "2026-01-24T09:34:59.335Z"
+      }
+    },
+    {
+      "skillId": "architecture",
+      "dirName": "architecture",
+      "title": "Architecture Decision Framework",
+      "description": "Architectural decision-making framework. Requirements analysis, trade-off evaluation, ADR documentation. Use when making architecture decisions or analyzing system design.",
+      "path": "skills/architecture",
+      "skillFile": "skills/architecture/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 1759,
+        "mtimeISO": "2026-01-24T09:34:59.488Z"
+      }
+    },
+    {
+      "skillId": "architecture-patterns",
+      "dirName": "architecture-patterns",
+      "title": "Architecture Patterns",
+      "description": "Implement proven backend architecture patterns including Clean Architecture, Hexagonal Architecture, and Domain-Driven Design. Use when architecting complex backend systems or refactoring existing applications for better maintainability.",
+      "path": "skills/architecture-patterns",
+      "skillFile": "skills/architecture-patterns/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 15164,
+        "mtimeISO": "2026-01-24T09:34:59.501Z"
+      }
+    },
+    {
+      "skillId": "audit-website",
+      "dirName": "audit-website",
+      "title": "Website Audit Skill",
+      "description": "Audit websites for SEO, technical, content, and security issues using squirrelscan CLI. Returns LLM-optimized reports with health scores, broken links, meta tag analysis, and actionable recommendations. Use when analyzing websites, debugging SEO issues, or checking site health.",
+      "path": "skills/audit-website",
+      "skillFile": "skills/audit-website/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 11056,
+        "mtimeISO": "2026-01-24T09:34:59.506Z"
+      }
+    },
+    {
+      "skillId": "autonomous-agent-patterns",
+      "dirName": "autonomous-agent-patterns",
+      "title": "🕹️ Autonomous Agent Patterns",
+      "description": "Design patterns for building autonomous coding agents. Covers tool integration, permission systems, browser automation, and human-in-the-loop workflows. Use when building AI agents, designing tool APIs, implementing permission systems, or creating autonomous coding assistants.",
+      "path": "skills/autonomous-agent-patterns",
+      "skillFile": "skills/autonomous-agent-patterns/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 23086,
+        "mtimeISO": "2026-01-24T09:34:59.514Z"
+      }
+    },
+    {
+      "skillId": "autonomous-agents",
+      "dirName": "autonomous-agents",
+      "title": "Autonomous Agents",
+      "description": "Autonomous agents are AI systems that can independently decompose goals, plan actions, execute tools, and self-correct without constant human guidance. The challenge isn't making them capable - it's making them reliable. Every extra decision multiplies failure probability.  This skill covers agent loops (ReAct, Plan-Execute), goal decomposition, reflection patterns, and production reliability. Key insight: compounding error rates kill autonomous agents. A 95% success rate per step drops to 60% b",
+      "path": "skills/autonomous-agents",
+      "skillFile": "skills/autonomous-agents/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 2221,
+        "mtimeISO": "2026-01-24T09:34:59.516Z"
+      }
+    },
+    {
+      "skillId": "AWS Penetration Testing",
+      "dirName": "AWS Penetration Testing",
+      "title": "AWS Penetration Testing",
+      "description": "This skill should be used when the user asks to \"pentest AWS\", \"test AWS security\", \"enumerate IAM\", \"exploit cloud infrastructure\", \"AWS privilege escalation\", \"S3 bucket testing\", \"metadata SSRF\", \"Lambda exploitation\", or needs guidance on Amazon Web Services security assessment.",
+      "path": "skills/AWS Penetration Testing",
+      "skillFile": "skills/AWS Penetration Testing/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 9911,
+        "mtimeISO": "2026-01-24T09:34:58.677Z"
+      }
+    },
+    {
+      "skillId": "aws-serverless",
+      "dirName": "aws-serverless",
+      "title": "AWS Serverless",
+      "description": "Specialized skill for building production-ready serverless applications on AWS. Covers Lambda functions, API Gateway, DynamoDB, SQS/SNS event-driven patterns, SAM/CDK deployment, and cold start optimization.",
+      "path": "skills/aws-serverless",
+      "skillFile": "skills/aws-serverless/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 7870,
+        "mtimeISO": "2026-01-24T09:34:59.518Z"
+      }
+    },
+    {
+      "skillId": "azure-functions",
+      "dirName": "azure-functions",
+      "title": "Azure Functions",
+      "description": "Expert patterns for Azure Functions development including isolated worker model, Durable Functions orchestration, cold start optimization, and production patterns. Covers .NET, Python, and Node.js programming models. Use when: azure function, azure functions, durable functions, azure serverless, function app.",
+      "path": "skills/azure-functions",
+      "skillFile": "skills/azure-functions/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 1386,
+        "mtimeISO": "2026-01-24T09:34:59.524Z"
+      }
+    },
+    {
+      "skillId": "backend-dev-guidelines",
+      "dirName": "backend-dev-guidelines",
+      "title": "Backend Development Guidelines",
+      "description": "Comprehensive backend development guide for Node.js/Express/TypeScript microservices. Use when creating routes, controllers, services, repositories, middleware, or working with Express APIs, Prisma database access, Sentry error tracking, Zod validation, unifiedConfig, dependency injection, or async patterns. Covers layered architecture (routes → controllers → services → repositories), BaseController pattern, error handling, performance monitoring, testing strategies, and migration from legacy patterns.",
+      "path": "skills/backend-dev-guidelines",
+      "skillFile": "skills/backend-dev-guidelines/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 8159,
+        "mtimeISO": "2026-01-24T09:34:59.526Z"
+      }
+    },
+    {
+      "skillId": "backend-patterns",
+      "dirName": "backend-patterns",
+      "title": "Backend Development Patterns",
+      "description": "Backend architecture patterns, API design, database optimization, and server-side best practices for Node.js, Express, and Next.js API routes.",
+      "path": "skills/backend-patterns",
+      "skillFile": "skills/backend-patterns/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 13206,
+        "mtimeISO": "2026-01-24T09:34:59.551Z"
+      }
+    },
+    {
+      "skillId": "bash-linux",
+      "dirName": "bash-linux",
+      "title": "Bash Linux Patterns",
+      "description": "Bash/Linux terminal patterns. Critical commands, piping, error handling, scripting. Use when working on macOS or Linux systems.",
+      "path": "skills/bash-linux",
+      "skillFile": "skills/bash-linux/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 4156,
+        "mtimeISO": "2026-01-24T09:34:59.568Z"
+      }
+    },
+    {
+      "skillId": "behavioral-modes",
+      "dirName": "behavioral-modes",
+      "title": "Behavioral Modes - Adaptive AI Operating Modes",
+      "description": "AI operational modes (brainstorm, implement, debug, review, teach, ship, orchestrate). Use to adapt behavior based on task type.",
+      "path": "skills/behavioral-modes",
+      "skillFile": "skills/behavioral-modes/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 5379,
+        "mtimeISO": "2026-01-24T09:34:59.599Z"
+      }
+    },
+    {
+      "skillId": "better-auth-best-practices",
+      "dirName": "better-auth-best-practices",
+      "title": "Better Auth Integration Guide",
+      "description": "Skill for integrating Better Auth - the comprehensive TypeScript authentication framework.",
+      "path": "skills/better-auth-best-practices",
+      "skillFile": "skills/better-auth-best-practices/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 6153,
+        "mtimeISO": "2026-01-24T09:34:59.602Z"
+      }
+    },
+    {
+      "skillId": "blockrun",
+      "dirName": "blockrun",
+      "title": "BlockRun",
+      "description": "Use when user needs capabilities Claude lacks (image generation, real-time X/Twitter data) or explicitly requests external models (\"blockrun\", \"use grok\", \"use gpt\", \"dall-e\", \"deepseek\")",
+      "path": "skills/blockrun",
+      "skillFile": "skills/blockrun/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 8976,
+        "mtimeISO": "2026-01-24T09:34:59.608Z"
+      }
+    },
+    {
+      "skillId": "brainstorming",
+      "dirName": "brainstorming",
+      "title": "Brainstorming Ideas Into Designs",
+      "description": "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation.",
+      "path": "skills/brainstorming",
+      "skillFile": "skills/brainstorming/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 2505,
+        "mtimeISO": "2026-01-24T09:34:59.613Z"
+      }
+    },
+    {
+      "skillId": "brand-guidelines",
+      "dirName": "brand-guidelines",
+      "title": "Anthropic Brand Styling",
+      "description": "Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards apply.",
+      "path": "skills/brand-guidelines",
+      "skillFile": "skills/brand-guidelines/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 2235,
+        "mtimeISO": "2026-01-24T09:34:59.623Z"
+      }
+    },
+    {
+      "skillId": "Broken Authentication Testing",
+      "dirName": "Broken Authentication Testing",
+      "title": "Broken Authentication Testing",
+      "description": "This skill should be used when the user asks to \"test for broken authentication vulnerabilities\", \"assess session management security\", \"perform credential stuffing tests\", \"evaluate password policies\", \"test for session fixation\", or \"identify authentication bypass flaws\". It provides comprehensive techniques for identifying authentication and session management weaknesses in web applications.",
+      "path": "skills/Broken Authentication Testing",
+      "skillFile": "skills/Broken Authentication Testing/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 12614,
+        "mtimeISO": "2026-01-24T09:34:58.706Z"
+      }
+    },
+    {
+      "skillId": "browser-automation",
+      "dirName": "browser-automation",
+      "title": "Browser Automation",
+      "description": "Browser automation powers web testing, scraping, and AI agent interactions. The difference between a flaky script and a reliable system comes down to understanding selectors, waiting strategies, and anti-detection patterns.  This skill covers Playwright (recommended) and Puppeteer, with patterns for testing, scraping, and agentic browser control. Key insight: Playwright won the framework war. Unless you need Puppeteer's stealth ecosystem or are Chrome-only, Playwright is the better choice in 202",
+      "path": "skills/browser-automation",
+      "skillFile": "skills/browser-automation/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 2286,
+        "mtimeISO": "2026-01-24T09:34:59.625Z"
+      }
+    },
+    {
+      "skillId": "browser-extension-builder",
+      "dirName": "browser-extension-builder",
+      "title": "Browser Extension Builder",
+      "description": "Expert in building browser extensions that solve real problems - Chrome, Firefox, and cross-browser extensions. Covers extension architecture, manifest v3, content scripts, popup UIs, monetization strategies, and Chrome Web Store publishing. Use when: browser extension, chrome extension, firefox addon, extension, manifest v3.",
+      "path": "skills/browser-extension-builder",
+      "skillFile": "skills/browser-extension-builder/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 5977,
+        "mtimeISO": "2026-01-24T09:34:59.627Z"
+      }
+    },
+    {
+      "skillId": "bullmq-specialist",
+      "dirName": "bullmq-specialist",
+      "title": "BullMQ Specialist",
+      "description": "BullMQ expert for Redis-backed job queues, background processing, and reliable async execution in Node.js/TypeScript applications. Use when: bullmq, bull queue, redis queue, background job, job queue.",
+      "path": "skills/bullmq-specialist",
+      "skillFile": "skills/bullmq-specialist/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 1537,
+        "mtimeISO": "2026-01-24T09:34:59.634Z"
+      }
+    },
+    {
+      "skillId": "bun-development",
+      "dirName": "bun-development",
+      "title": "⚡ Bun Development",
+      "description": "Modern JavaScript/TypeScript development with Bun runtime. Covers package management, bundling, testing, and migration from Node.js. Use when working with Bun, optimizing JS/TS development speed, or migrating from Node.js to Bun.",
+      "path": "skills/bun-development",
+      "skillFile": "skills/bun-development/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 14142,
+        "mtimeISO": "2026-01-24T09:34:59.636Z"
+      }
+    },
+    {
+      "skillId": "Burp Suite Web Application Testing",
+      "dirName": "Burp Suite Web Application Testing",
+      "title": "Burp Suite Web Application Testing",
+      "description": "This skill should be used when the user asks to \"intercept HTTP traffic\", \"modify web requests\", \"use Burp Suite for testing\", \"perform web vulnerability scanning\", \"test with Burp Repeater\", \"analyze HTTP history\", or \"configure proxy for web testing\". It provides comprehensive guidance for using Burp Suite's core features for web application security testing.",
+      "path": "skills/Burp Suite Web Application Testing",
+      "skillFile": "skills/Burp Suite Web Application Testing/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 10918,
+        "mtimeISO": "2026-01-24T09:34:58.708Z"
+      }
+    },
+    {
+      "skillId": "canvas-design",
+      "dirName": "canvas-design",
+      "title": null,
+      "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations.",
+      "path": "skills/canvas-design",
+      "skillFile": "skills/canvas-design/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 11939,
+        "mtimeISO": "2026-01-24T09:34:59.641Z"
+      }
+    },
+    {
+      "skillId": "capture-api-response-test-fixture",
+      "dirName": "capture-api-response-test-fixture",
+      "title": null,
+      "description": "Capture API response test fixture.",
+      "path": "skills/capture-api-response-test-fixture",
+      "skillFile": "skills/capture-api-response-test-fixture/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 2019,
+        "mtimeISO": "2026-01-24T09:35:00.274Z"
+      }
+    },
+    {
+      "skillId": "cc-skill-continuous-learning",
+      "dirName": "cc-skill-continuous-learning",
+      "title": "cc-skill-continuous-learning",
+      "description": "Development skill from everything-claude-code",
+      "path": "skills/cc-skill-continuous-learning",
+      "skillFile": "skills/cc-skill-continuous-learning/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 192,
+        "mtimeISO": "2026-01-24T09:35:00.284Z"
+      }
+    },
+    {
+      "skillId": "cc-skill-project-guidelines-example",
+      "dirName": "cc-skill-project-guidelines-example",
+      "title": "Project Guidelines Skill (Example)",
+      "description": "Project Guidelines Skill (Example)",
+      "path": "skills/cc-skill-project-guidelines-example",
+      "skillFile": "skills/cc-skill-project-guidelines-example/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 9797,
+        "mtimeISO": "2026-01-24T09:35:00.292Z"
+      }
+    },
+    {
+      "skillId": "cc-skill-strategic-compact",
+      "dirName": "cc-skill-strategic-compact",
+      "title": "cc-skill-strategic-compact",
+      "description": "Development skill from everything-claude-code",
+      "path": "skills/cc-skill-strategic-compact",
+      "skillFile": "skills/cc-skill-strategic-compact/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 188,
+        "mtimeISO": "2026-01-24T09:35:00.297Z"
+      }
+    },
+    {
+      "skillId": "Claude Code Guide",
+      "dirName": "Claude Code Guide",
+      "title": "Claude Code Guide",
+      "description": "Master guide for using Claude Code effectively. Includes configuration templates, prompting strategies \"Thinking\" keywords, debugging techniques, and best practices for interacting with the agent.",
+      "path": "skills/Claude Code Guide",
+      "skillFile": "skills/Claude Code Guide/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 2137,
+        "mtimeISO": "2026-01-24T09:34:58.710Z"
+      }
+    },
+    {
+      "skillId": "clean-code",
+      "dirName": "clean-code",
+      "title": "Clean Code - Pragmatic AI Coding Standards",
+      "description": "Pragmatic coding standards - concise, direct, no over-engineering, no unnecessary comments",
+      "path": "skills/clean-code",
+      "skillFile": "skills/clean-code/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 6676,
+        "mtimeISO": "2026-01-24T09:35:00.303Z"
+      }
+    },
+    {
+      "skillId": "clerk-auth",
+      "dirName": "clerk-auth",
+      "title": "Clerk Authentication",
+      "description": "Expert patterns for Clerk auth implementation, middleware, organizations, webhooks, and user sync Use when: adding authentication, clerk auth, user authentication, sign in, sign up.",
+      "path": "skills/clerk-auth",
+      "skillFile": "skills/clerk-auth/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 1506,
+        "mtimeISO": "2026-01-24T09:35:00.311Z"
+      }
+    },
+    {
+      "skillId": "clickhouse-io",
+      "dirName": "clickhouse-io",
+      "title": "ClickHouse Analytics Patterns",
+      "description": "ClickHouse database patterns, query optimization, analytics, and data engineering best practices for high-performance analytical workloads.",
+      "path": "skills/clickhouse-io",
+      "skillFile": "skills/clickhouse-io/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 10003,
+        "mtimeISO": "2026-01-24T09:35:00.314Z"
+      }
+    },
+    {
+      "skillId": "Cloud Penetration Testing",
+      "dirName": "Cloud Penetration Testing",
+      "title": "Cloud Penetration Testing",
+      "description": "This skill should be used when the user asks to \"perform cloud penetration testing\", \"assess Azure or AWS or GCP security\", \"enumerate cloud resources\", \"exploit cloud misconfigurations\", \"test O365 security\", \"extract secrets from cloud environments\", or \"audit cloud infrastructure\". It provides comprehensive techniques for security assessment across major cloud platforms.",
+      "path": "skills/Cloud Penetration Testing",
+      "skillFile": "skills/Cloud Penetration Testing/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 14036,
+        "mtimeISO": "2026-01-24T09:34:58.713Z"
+      }
+    },
+    {
+      "skillId": "code-review-checklist",
+      "dirName": "code-review-checklist",
+      "title": "Code Review Checklist",
+      "description": "Comprehensive checklist for conducting thorough code reviews covering functionality, security, performance, and maintainability",
+      "path": "skills/code-review-checklist",
+      "skillFile": "skills/code-review-checklist/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 11622,
+        "mtimeISO": "2026-01-24T09:35:00.329Z"
+      }
+    },
+    {
+      "skillId": "code-review-excellence",
+      "dirName": "code-review-excellence",
+      "title": "Code Review Excellence",
+      "description": "Master effective code review practices to provide constructive feedback, catch bugs early, and foster knowledge sharing while maintaining team morale. Use when reviewing pull requests, establishing review standards, or mentoring developers.",
+      "path": "skills/code-review-excellence",
+      "skillFile": "skills/code-review-excellence/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 13679,
+        "mtimeISO": "2026-01-24T09:35:00.358Z"
+      }
+    },
+    {
+      "skillId": "coding-standards",
+      "dirName": "coding-standards",
+      "title": "Coding Standards & Best Practices",
+      "description": "Universal coding standards, best practices, and patterns for TypeScript, JavaScript, React, and Node.js development.",
+      "path": "skills/coding-standards",
+      "skillFile": "skills/coding-standards/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 11429,
+        "mtimeISO": "2026-01-24T09:35:00.360Z"
+      }
+    },
+    {
+      "skillId": "competitor-alternatives",
+      "dirName": "competitor-alternatives",
+      "title": "Competitor & Alternative Pages",
+      "description": "When the user wants to create competitor comparison or alternative pages for SEO and sales enablement. Also use when the user mentions 'alternative page,' 'vs page,' 'competitor comparison,' 'comparison page,' '[Product] vs [Product],' '[Product] alternative,' or 'competitive landing pages.' Covers four formats: singular alternative, plural alternatives, you vs competitor, and competitor vs competitor. Emphasizes deep research, modular content architecture, and varied section types beyond feature tables.",
+      "path": "skills/competitor-alternatives",
+      "skillFile": "skills/competitor-alternatives/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 19612,
+        "mtimeISO": "2026-01-24T09:35:00.363Z"
+      }
+    },
+    {
+      "skillId": "computer-use-agents",
+      "dirName": "computer-use-agents",
+      "title": "Computer Use Agents",
+      "description": "Build AI agents that interact with computers like humans do - viewing screens, moving cursors, clicking buttons, and typing text. Covers Anthropic's Computer Use, OpenAI's Operator/CUA, and open-source alternatives. Critical focus on sandboxing, security, and handling the unique challenges of vision-based control. Use when: computer use, desktop automation agent, screen control AI, vision-based agent, GUI automation.",
+      "path": "skills/computer-use-agents",
+      "skillFile": "skills/computer-use-agents/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 9435,
+        "mtimeISO": "2026-01-24T09:35:00.365Z"
+      }
+    },
+    {
+      "skillId": "concise-planning",
+      "dirName": "concise-planning",
+      "title": "Concise Planning",
+      "description": "Use when a user asks for a plan for a coding task, to generate a clear, actionable, and atomic checklist.",
+      "path": "skills/concise-planning",
+      "skillFile": "skills/concise-planning/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 1312,
+        "mtimeISO": "2026-01-24T09:35:00.368Z"
+      }
+    },
+    {
+      "skillId": "content-creator",
+      "dirName": "content-creator",
+      "title": "Content Creator",
+      "description": "Create SEO-optimized marketing content with consistent brand voice. Includes brand voice analyzer, SEO optimizer, content frameworks, and social media templates. Use when writing blog posts, creating social media content, analyzing brand voice, optimizing SEO, planning content calendars, or when user mentions content creation, brand voice, SEO optimization, social media marketing, or content strategy.",
+      "path": "skills/content-creator",
+      "skillFile": "skills/content-creator/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 7458,
+        "mtimeISO": "2026-01-24T09:35:00.372Z"
+      }
+    },
+    {
+      "skillId": "context-window-management",
+      "dirName": "context-window-management",
+      "title": "Context Window Management",
+      "description": "Strategies for managing LLM context windows including summarization, trimming, routing, and avoiding context rot Use when: context window, token limit, context management, context engineering, long context.",
+      "path": "skills/context-window-management",
+      "skillFile": "skills/context-window-management/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 1439,
+        "mtimeISO": "2026-01-24T09:35:00.390Z"
+      }
+    },
+    {
+      "skillId": "conversation-memory",
+      "dirName": "conversation-memory",
+      "title": "Conversation Memory",
+      "description": "Persistent memory systems for LLM conversations including short-term, long-term, and entity-based memory Use when: conversation memory, remember, memory persistence, long-term memory, chat history.",
+      "path": "skills/conversation-memory",
+      "skillFile": "skills/conversation-memory/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 1773,
+        "mtimeISO": "2026-01-24T09:35:00.392Z"
+      }
+    },
+    {
+      "skillId": "copy-editing",
+      "dirName": "copy-editing",
+      "title": "Copy Editing",
+      "description": "When the user wants to edit, review, or improve existing marketing copy. Also use when the user mentions 'edit this copy,' 'review my copy,' 'copy feedback,' 'proofread,' 'polish this,' 'make this better,' or 'copy sweep.' This skill provides a systematic approach to editing marketing copy through multiple focused passes.",
+      "path": "skills/copy-editing",
+      "skillFile": "skills/copy-editing/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 12981,
+        "mtimeISO": "2026-01-24T09:35:00.395Z"
+      }
+    },
+    {
+      "skillId": "copywriting",
+      "dirName": "copywriting",
+      "title": "Copywriting",
+      "description": "When the user wants to write, rewrite, or improve marketing copy for any page — including homepage, landing pages, pricing pages, feature pages, about pages, or product pages. Also use when the user says \"write copy for,\" \"improve this copy,\" \"rewrite this page,\" \"marketing copy,\" \"headline help,\" or \"CTA copy.\" For email copy, see email-sequence. For popup copy, see popup-cro.",
+      "path": "skills/copywriting",
+      "skillFile": "skills/copywriting/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 13114,
+        "mtimeISO": "2026-01-24T09:35:00.398Z"
+      }
+    },
+    {
+      "skillId": "core-components",
+      "dirName": "core-components",
+      "title": "Core Components",
+      "description": "Core component library and design system patterns. Use when building UI, using design tokens, or working with the component library.",
+      "path": "skills/core-components",
+      "skillFile": "skills/core-components/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 4793,
+        "mtimeISO": "2026-01-24T09:35:00.401Z"
+      }
+    },
+    {
+      "skillId": "crewai",
+      "dirName": "crewai",
+      "title": "CrewAI",
+      "description": "Expert in CrewAI - the leading role-based multi-agent framework used by 60% of Fortune 500 companies. Covers agent design with roles and goals, task definition, crew orchestration, process types (sequential, hierarchical, parallel), memory systems, and flows for complex workflows. Essential for building collaborative AI agent teams. Use when: crewai, multi-agent team, agent roles, crew of agents, role-based agents.",
+      "path": "skills/crewai",
+      "skillFile": "skills/crewai/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 6017,
+        "mtimeISO": "2026-01-24T09:35:00.403Z"
+      }
+    },
+    {
+      "skillId": "Cross-Site Scripting and HTML Injection Testing",
+      "dirName": "Cross-Site Scripting and HTML Injection Testing",
+      "title": "Cross-Site Scripting and HTML Injection Testing",
+      "description": "This skill should be used when the user asks to \"test for XSS vulnerabilities\", \"perform cross-site scripting attacks\", \"identify HTML injection flaws\", \"exploit client-side injection vulnerabilities\", \"steal cookies via XSS\", or \"bypass content security policies\". It provides comprehensive techniques for detecting, exploiting, and understanding XSS and HTML injection attack vectors in web applications.",
+      "path": "skills/Cross-Site Scripting and HTML Injection Testing",
+      "skillFile": "skills/Cross-Site Scripting and HTML Injection Testing/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 13261,
+        "mtimeISO": "2026-01-24T09:34:58.743Z"
+      }
+    },
+    {
+      "skillId": "d3-viz",
+      "dirName": "d3-viz",
+      "title": "D3.js Visualisation",
+      "description": "Creating interactive data visualisations using d3.js. This skill should be used when creating custom charts, graphs, network diagrams, geographic visualisations, or any complex SVG-based data visualisation that requires fine-grained control over visual elements, transitions, or interactions. Use this for bespoke visualisations beyond standard charting libraries, whether in React, Vue, Svelte, vanilla JavaScript, or any other environment.",
+      "path": "skills/d3-viz",
+      "skillFile": "skills/d3-viz/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 21764,
+        "mtimeISO": "2026-01-24T09:35:00.407Z"
+      }
+    },
+    {
+      "skillId": "database-design",
+      "dirName": "database-design",
+      "title": "Database Design",
+      "description": "Database design principles and decision-making. Schema design, indexing strategy, ORM selection, serverless databases.",
+      "path": "skills/database-design",
+      "skillFile": "skills/database-design/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 1527,
+        "mtimeISO": "2026-01-24T09:35:00.599Z"
+      }
+    },
+    {
+      "skillId": "deployment-procedures",
+      "dirName": "deployment-procedures",
+      "title": "Deployment Procedures",
+      "description": "Production deployment principles and decision-making. Safe deployment workflows, rollback strategies, and verification. Teaches thinking, not scripts.",
+      "path": "skills/deployment-procedures",
+      "skillFile": "skills/deployment-procedures/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 5708,
+        "mtimeISO": "2026-01-24T09:35:00.615Z"
+      }
+    },
+    {
+      "skillId": "discord-bot-architect",
+      "dirName": "discord-bot-architect",
+      "title": "Discord Bot Architect",
+      "description": "Specialized skill for building production-ready Discord bots. Covers Discord.js (JavaScript) and Pycord (Python), gateway intents, slash commands, interactive components, rate limiting, and sharding.",
+      "path": "skills/discord-bot-architect",
+      "skillFile": "skills/discord-bot-architect/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 8171,
+        "mtimeISO": "2026-01-24T09:35:00.617Z"
+      }
+    },
+    {
+      "skillId": "dispatching-parallel-agents",
+      "dirName": "dispatching-parallel-agents",
+      "title": "Dispatching Parallel Agents",
+      "description": "Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies",
+      "path": "skills/dispatching-parallel-agents",
+      "skillFile": "skills/dispatching-parallel-agents/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 6104,
+        "mtimeISO": "2026-01-24T09:35:00.618Z"
+      }
+    },
+    {
+      "skillId": "doc-coauthoring",
+      "dirName": "doc-coauthoring",
+      "title": "Doc Co-Authoring Workflow",
+      "description": "Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content. This workflow helps users efficiently transfer context, refine content through iteration, and verify the doc works for readers. Trigger when user mentions writing docs, creating proposals, drafting specs, or similar documentation tasks.",
+      "path": "skills/doc-coauthoring",
+      "skillFile": "skills/doc-coauthoring/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 15815,
+        "mtimeISO": "2026-01-24T09:35:00.620Z"
+      }
+    },
+    {
+      "skillId": "docker-expert",
+      "dirName": "docker-expert",
+      "title": "Docker Expert",
+      "description": "Docker containerization expert with deep knowledge of multi-stage builds, image optimization, container security, Docker Compose orchestration, and production deployment patterns. Use PROACTIVELY for Dockerfile optimization, container issues, image size problems, security hardening, networking, and orchestration challenges.",
+      "path": "skills/docker-expert",
+      "skillFile": "skills/docker-expert/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 14062,
+        "mtimeISO": "2026-01-24T09:35:00.622Z"
+      }
+    },
+    {
+      "skillId": "documentation-templates",
+      "dirName": "documentation-templates",
+      "title": "Documentation Templates",
+      "description": "Documentation templates and structure guidelines. README, API docs, code comments, and AI-friendly documentation.",
+      "path": "skills/documentation-templates",
+      "skillFile": "skills/documentation-templates/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 3312,
+        "mtimeISO": "2026-01-24T09:35:00.624Z"
+      }
+    },
+    {
+      "skillId": "docx",
+      "dirName": "docx",
+      "title": "DOCX creation, editing, and analysis",
+      "description": "Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction. When Claude needs to work with professional documents (.docx files) for: (1) Creating new documents, (2) Modifying or editing content, (3) Working with tracked changes, (4) Adding comments, or any other document tasks",
+      "path": "skills/docx",
+      "skillFile": "skills/docx/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 10150,
+        "mtimeISO": "2026-01-24T09:35:00.627Z"
+      }
+    },
+    {
+      "skillId": "email-sequence",
+      "dirName": "email-sequence",
+      "title": "Email Sequence Design",
+      "description": "When the user wants to create or optimize an email sequence, drip campaign, automated email flow, or lifecycle email program. Also use when the user mentions \"email sequence,\" \"drip campaign,\" \"nurture sequence,\" \"onboarding emails,\" \"welcome sequence,\" \"re-engagement emails,\" \"email automation,\" or \"lifecycle emails.\" For in-app onboarding, see onboarding-cro.",
+      "path": "skills/email-sequence",
+      "skillFile": "skills/email-sequence/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 23016,
+        "mtimeISO": "2026-01-24T09:35:00.741Z"
+      }
+    },
+    {
+      "skillId": "email-systems",
+      "dirName": "email-systems",
+      "title": "Email Systems",
+      "description": "Email has the highest ROI of any marketing channel. $36 for every $1 spent. Yet most startups treat it as an afterthought - bulk blasts, no personalization, landing in spam folders.  This skill covers transactional email that works, marketing automation that converts, deliverability that reaches inboxes, and the infrastructure decisions that scale. Use when: keywords, file_patterns, code_patterns.",
+      "path": "skills/email-systems",
+      "skillFile": "skills/email-systems/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 2199,
+        "mtimeISO": "2026-01-24T09:35:00.743Z"
+      }
+    },
+    {
+      "skillId": "environment-setup-guide",
+      "dirName": "environment-setup-guide",
+      "title": "Environment Setup Guide",
+      "description": "Guide developers through setting up development environments with proper tools, dependencies, and configurations",
+      "path": "skills/environment-setup-guide",
+      "skillFile": "skills/environment-setup-guide/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 11403,
+        "mtimeISO": "2026-01-24T09:35:00.744Z"
+      }
+    },
+    {
+      "skillId": "Ethical Hacking Methodology",
+      "dirName": "Ethical Hacking Methodology",
+      "title": "Ethical Hacking Methodology",
+      "description": "This skill should be used when the user asks to \"learn ethical hacking\", \"understand penetration testing lifecycle\", \"perform reconnaissance\", \"conduct security scanning\", \"exploit vulnerabilities\", or \"write penetration test reports\". It provides comprehensive ethical hacking methodology and techniques.",
+      "path": "skills/Ethical Hacking Methodology",
+      "skillFile": "skills/Ethical Hacking Methodology/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 10882,
+        "mtimeISO": "2026-01-24T09:34:58.757Z"
+      }
+    },
+    {
+      "skillId": "executing-plans",
+      "dirName": "executing-plans",
+      "title": "Executing Plans",
+      "description": "Use when you have a written implementation plan to execute in a separate session with review checkpoints",
+      "path": "skills/executing-plans",
+      "skillFile": "skills/executing-plans/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 2171,
+        "mtimeISO": "2026-01-24T09:35:00.746Z"
+      }
+    },
+    {
+      "skillId": "File Path Traversal Testing",
+      "dirName": "File Path Traversal Testing",
+      "title": "File Path Traversal Testing",
+      "description": "This skill should be used when the user asks to \"test for directory traversal\", \"exploit path traversal vulnerabilities\", \"read arbitrary files through web applications\", \"find LFI vulnerabilities\", or \"access files outside web root\". It provides comprehensive file path traversal attack and testing methodologies.",
+      "path": "skills/File Path Traversal Testing",
+      "skillFile": "skills/File Path Traversal Testing/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 11822,
+        "mtimeISO": "2026-01-24T09:34:58.778Z"
+      }
+    },
+    {
+      "skillId": "file-organizer",
+      "dirName": "file-organizer",
+      "title": "File Organizer",
+      "description": "Intelligently organizes files and folders by understanding context, finding duplicates, and suggesting better organizational structures. Use when user wants to clean up directories, organize downloads, remove duplicates, or restructure projects.",
+      "path": "skills/file-organizer",
+      "skillFile": "skills/file-organizer/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 6414,
+        "mtimeISO": "2026-01-24T09:35:00.747Z"
+      }
+    },
+    {
+      "skillId": "file-uploads",
+      "dirName": "file-uploads",
+      "title": "File Uploads & Storage",
+      "description": "Expert at handling file uploads and cloud storage. Covers S3, Cloudflare R2, presigned URLs, multipart uploads, and image optimization. Knows how to handle large files without blocking. Use when: file upload, S3, R2, presigned URL, multipart.",
+      "path": "skills/file-uploads",
+      "skillFile": "skills/file-uploads/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 953,
+        "mtimeISO": "2026-01-24T09:35:00.748Z"
+      }
+    },
+    {
+      "skillId": "finishing-a-development-branch",
+      "dirName": "finishing-a-development-branch",
+      "title": "Finishing a Development Branch",
+      "description": "Use when implementation is complete, all tests pass, and you need to decide how to integrate the work - guides completion of development work by presenting structured options for merge, PR, or cleanup",
+      "path": "skills/finishing-a-development-branch",
+      "skillFile": "skills/finishing-a-development-branch/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 4250,
+        "mtimeISO": "2026-01-24T09:35:00.750Z"
+      }
+    },
+    {
+      "skillId": "firebase",
+      "dirName": "firebase",
+      "title": "Firebase",
+      "description": "Firebase gives you a complete backend in minutes - auth, database, storage, functions, hosting. But the ease of setup hides real complexity. Security rules are your last line of defense, and they're often wrong. Firestore queries are limited, and you learn this after you've designed your data model.  This skill covers Firebase Authentication, Firestore, Realtime Database, Cloud Functions, Cloud Storage, and Firebase Hosting. Key insight: Firebase is optimized for read-heavy, denormalized data. I",
+      "path": "skills/firebase",
+      "skillFile": "skills/firebase/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 1783,
+        "mtimeISO": "2026-01-24T09:35:00.751Z"
+      }
+    },
+    {
+      "skillId": "form-cro",
+      "dirName": "form-cro",
+      "title": "Form CRO",
+      "description": "When the user wants to optimize any form that is NOT signup/registration — including lead capture forms, contact forms, demo request forms, application forms, survey forms, or checkout forms. Also use when the user mentions \"form optimization,\" \"lead form conversions,\" \"form friction,\" \"form fields,\" \"form completion rate,\" or \"contact form.\" For signup/registration forms, see signup-flow-cro. For popups containing forms, see popup-cro.",
+      "path": "skills/form-cro",
+      "skillFile": "skills/form-cro/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 10481,
+        "mtimeISO": "2026-01-24T09:35:00.752Z"
+      }
+    },
+    {
+      "skillId": "free-tool-strategy",
+      "dirName": "free-tool-strategy",
+      "title": "Free Tool Strategy (Engineering as Marketing)",
+      "description": "When the user wants to plan, evaluate, or build a free tool for marketing purposes — lead generation, SEO value, or brand awareness. Also use when the user mentions \"engineering as marketing,\" \"free tool,\" \"marketing tool,\" \"calculator,\" \"generator,\" \"interactive tool,\" \"lead gen tool,\" \"build a tool for leads,\" or \"free resource.\" This skill bridges engineering and marketing — useful for founders and technical marketers.",
+      "path": "skills/free-tool-strategy",
+      "skillFile": "skills/free-tool-strategy/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 11297,
+        "mtimeISO": "2026-01-24T09:35:00.754Z"
+      }
+    },
+    {
+      "skillId": "frontend-design",
+      "dirName": "frontend-design",
+      "title": null,
+      "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics.",
+      "path": "skills/frontend-design",
+      "skillFile": "skills/frontend-design/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 4440,
+        "mtimeISO": "2026-01-24T09:35:00.759Z"
+      }
+    },
+    {
+      "skillId": "frontend-dev-guidelines",
+      "dirName": "frontend-dev-guidelines",
+      "title": "Frontend Development Guidelines",
+      "description": "Frontend development guidelines for React/TypeScript applications. Modern patterns including Suspense, lazy loading, useSuspenseQuery, file organization with features directory, MUI v7 styling, TanStack Router, performance optimization, and TypeScript best practices. Use when creating components, pages, features, fetching data, styling, routing, or working with frontend code.",
+      "path": "skills/frontend-dev-guidelines",
+      "skillFile": "skills/frontend-dev-guidelines/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 11328,
+        "mtimeISO": "2026-01-24T09:35:00.761Z"
+      }
+    },
+    {
+      "skillId": "frontend-patterns",
+      "dirName": "frontend-patterns",
+      "title": "Frontend Development Patterns",
+      "description": "Frontend development patterns for React, Next.js, state management, performance optimization, and UI best practices.",
+      "path": "skills/frontend-patterns",
+      "skillFile": "skills/frontend-patterns/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 14342,
+        "mtimeISO": "2026-01-24T09:35:00.785Z"
+      }
+    },
+    {
+      "skillId": "frontend-testing",
+      "dirName": "frontend-testing",
+      "title": "Dify Frontend Testing Skill",
+      "description": "Generate Vitest + React Testing Library tests for Dify frontend components, hooks, and utilities. Triggers on testing, spec files, coverage, Vitest, RTL, unit tests, integration tests, or write/review test requests.",
+      "path": "skills/frontend-testing",
+      "skillFile": "skills/frontend-testing/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 10383,
+        "mtimeISO": "2026-01-24T09:35:00.786Z"
+      }
+    },
+    {
+      "skillId": "game-development",
+      "dirName": "game-development",
+      "title": "Game Development",
+      "description": "Game development orchestrator. Routes to platform-specific skills based on project needs.",
+      "path": "skills/game-development",
+      "skillFile": "skills/game-development/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 4682,
+        "mtimeISO": "2026-01-24T09:35:00.839Z"
+      }
+    },
+    {
+      "skillId": "gcp-cloud-run",
+      "dirName": "gcp-cloud-run",
+      "title": "GCP Cloud Run",
+      "description": "Specialized skill for building production-ready serverless applications on GCP. Covers Cloud Run services (containerized), Cloud Run Functions (event-driven), cold start optimization, and event-driven architecture with Pub/Sub.",
+      "path": "skills/gcp-cloud-run",
+      "skillFile": "skills/gcp-cloud-run/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 6941,
+        "mtimeISO": "2026-01-24T09:35:00.927Z"
+      }
+    },
+    {
+      "skillId": "geo-fundamentals",
+      "dirName": "geo-fundamentals",
+      "title": "GEO Fundamentals",
+      "description": "Generative Engine Optimization for AI search engines (ChatGPT, Claude, Perplexity).",
+      "path": "skills/geo-fundamentals",
+      "skillFile": "skills/geo-fundamentals/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 3445,
+        "mtimeISO": "2026-01-24T09:35:00.933Z"
+      }
+    },
+    {
+      "skillId": "git-pushing",
+      "dirName": "git-pushing",
+      "title": "Git Push Workflow",
+      "description": "Stage, commit, and push git changes with conventional commit messages. Use when user wants to commit and push changes, mentions pushing to remote, or asks to save and push their work. Also activates when user says \"push changes\", \"commit and push\", \"push this\", \"push to github\", or similar git workflow requests.",
+      "path": "skills/git-pushing",
+      "skillFile": "skills/git-pushing/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 1086,
+        "mtimeISO": "2026-01-24T09:35:00.949Z"
+      }
+    },
+    {
+      "skillId": "github-workflow-automation",
+      "dirName": "github-workflow-automation",
+      "title": "🔧 GitHub Workflow Automation",
+      "description": "Automate GitHub workflows with AI assistance. Includes PR reviews, issue triage, CI/CD integration, and Git operations. Use when automating GitHub workflows, setting up PR review automation, creating GitHub Actions, or triaging issues.",
+      "path": "skills/github-workflow-automation",
+      "skillFile": "skills/github-workflow-automation/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 21665,
+        "mtimeISO": "2026-01-24T09:35:00.958Z"
+      }
+    },
+    {
+      "skillId": "graphql",
+      "dirName": "graphql",
+      "title": "GraphQL",
+      "description": "GraphQL gives clients exactly the data they need - no more, no less. One endpoint, typed schema, introspection. But the flexibility that makes it powerful also makes it dangerous. Without proper controls, clients can craft queries that bring down your server.  This skill covers schema design, resolvers, DataLoader for N+1 prevention, federation for microservices, and client integration with Apollo/urql. Key insight: GraphQL is a contract. The schema is the API documentation. Design it carefully.",
+      "path": "skills/graphql",
+      "skillFile": "skills/graphql/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 2508,
+        "mtimeISO": "2026-01-24T09:35:00.964Z"
+      }
+    },
+    {
+      "skillId": "HTML Injection Testing",
+      "dirName": "HTML Injection Testing",
+      "title": "HTML Injection Testing",
+      "description": "This skill should be used when the user asks to \"test for HTML injection\", \"inject HTML into web pages\", \"perform HTML injection attacks\", \"deface web applications\", or \"test content injection vulnerabilities\". It provides comprehensive HTML injection attack techniques and testing methodologies.",
+      "path": "skills/HTML Injection Testing",
+      "skillFile": "skills/HTML Injection Testing/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 13044,
+        "mtimeISO": "2026-01-24T09:34:58.792Z"
+      }
+    },
+    {
+      "skillId": "hubspot-integration",
+      "dirName": "hubspot-integration",
+      "title": "HubSpot Integration",
+      "description": "Expert patterns for HubSpot CRM integration including OAuth authentication, CRM objects, associations, batch operations, webhooks, and custom objects. Covers Node.js and Python SDKs. Use when: hubspot, hubspot api, hubspot crm, hubspot integration, contacts api.",
+      "path": "skills/hubspot-integration",
+      "skillFile": "skills/hubspot-integration/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 1067,
+        "mtimeISO": "2026-01-24T09:35:00.966Z"
+      }
+    },
+    {
+      "skillId": "i18n-localization",
+      "dirName": "i18n-localization",
+      "title": "i18n & Localization",
+      "description": "Internationalization and localization patterns. Detecting hardcoded strings, managing translations, locale files, RTL support.",
+      "path": "skills/i18n-localization",
+      "skillFile": "skills/i18n-localization/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 3121,
+        "mtimeISO": "2026-01-24T09:35:00.980Z"
+      }
+    },
+    {
+      "skillId": "IDOR Vulnerability Testing",
+      "dirName": "IDOR Vulnerability Testing",
+      "title": "IDOR Vulnerability Testing",
+      "description": "This skill should be used when the user asks to \"test for insecure direct object references,\" \"find IDOR vulnerabilities,\" \"exploit broken access control,\" \"enumerate user IDs or object references,\" or \"bypass authorization to access other users' data.\" It provides comprehensive guidance for detecting, exploiting, and remediating IDOR vulnerabilities in web applications.",
+      "path": "skills/IDOR Vulnerability Testing",
+      "skillFile": "skills/IDOR Vulnerability Testing/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 12603,
+        "mtimeISO": "2026-01-24T09:34:58.821Z"
+      }
+    },
+    {
+      "skillId": "inngest",
+      "dirName": "inngest",
+      "title": "Inngest Integration",
+      "description": "Inngest expert for serverless-first background jobs, event-driven workflows, and durable execution without managing queues or workers. Use when: inngest, serverless background job, event-driven workflow, step function, durable execution.",
+      "path": "skills/inngest",
+      "skillFile": "skills/inngest/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 1527,
+        "mtimeISO": "2026-01-24T09:35:00.984Z"
+      }
+    },
+    {
+      "skillId": "interactive-portfolio",
+      "dirName": "interactive-portfolio",
+      "title": "Interactive Portfolio",
+      "description": "Expert in building portfolios that actually land jobs and clients - not just showing work, but creating memorable experiences. Covers developer portfolios, designer portfolios, creative portfolios, and portfolios that convert visitors into opportunities. Use when: portfolio, personal website, showcase work, developer portfolio, designer portfolio.",
+      "path": "skills/interactive-portfolio",
+      "skillFile": "skills/interactive-portfolio/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 5463,
+        "mtimeISO": "2026-01-24T09:35:00.986Z"
+      }
+    },
+    {
+      "skillId": "internal-comms",
+      "dirName": "internal-comms",
+      "title": null,
+      "description": "A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill whenever asked to write some sort of internal communications (status reports, leadership updates, 3P updates, company newsletters, FAQs, incident reports, project updates, etc.).",
+      "path": "skills/internal-comms",
+      "skillFile": "skills/internal-comms/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 1511,
+        "mtimeISO": "2026-01-24T09:35:00.991Z"
+      }
+    },
+    {
+      "skillId": "javascript-mastery",
+      "dirName": "javascript-mastery",
+      "title": "🧠 JavaScript Mastery",
+      "description": "Comprehensive JavaScript reference covering 33+ essential concepts every developer should know. From fundamentals like primitives and closures to advanced patterns like async/await and functional programming. Use when explaining JS concepts, debugging JavaScript issues, or teaching JavaScript fundamentals.",
+      "path": "skills/javascript-mastery",
+      "skillFile": "skills/javascript-mastery/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 12826,
+        "mtimeISO": "2026-01-24T09:35:00.996Z"
+      }
+    },
+    {
+      "skillId": "kaizen",
+      "dirName": "kaizen",
+      "title": "Kaizen: Continuous Improvement",
+      "description": "Guide for continuous improvement, error proofing, and standardization. Use this skill when the user wants to improve code quality, refactor, or discuss process improvements.",
+      "path": "skills/kaizen",
+      "skillFile": "skills/kaizen/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 17510,
+        "mtimeISO": "2026-01-24T09:35:00.999Z"
+      }
+    },
+    {
+      "skillId": "langfuse",
+      "dirName": "langfuse",
+      "title": "Langfuse",
+      "description": "Expert in Langfuse - the open-source LLM observability platform. Covers tracing, prompt management, evaluation, datasets, and integration with LangChain, LlamaIndex, and OpenAI. Essential for debugging, monitoring, and improving LLM applications in production. Use when: langfuse, llm observability, llm tracing, prompt management, llm evaluation.",
+      "path": "skills/langfuse",
+      "skillFile": "skills/langfuse/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 5802,
+        "mtimeISO": "2026-01-24T09:35:01.002Z"
+      }
+    },
+    {
+      "skillId": "langgraph",
+      "dirName": "langgraph",
+      "title": "LangGraph",
+      "description": "Expert in LangGraph - the production-grade framework for building stateful, multi-actor AI applications. Covers graph construction, state management, cycles and branches, persistence with checkpointers, human-in-the-loop patterns, and the ReAct agent pattern. Used in production at LinkedIn, Uber, and 400+ companies. This is LangChain's recommended approach for building agents. Use when: langgraph, langchain agent, stateful agent, agent graph, react agent.",
+      "path": "skills/langgraph",
+      "skillFile": "skills/langgraph/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 7407,
+        "mtimeISO": "2026-01-24T09:35:01.007Z"
+      }
+    },
+    {
+      "skillId": "launch-strategy",
+      "dirName": "launch-strategy",
+      "title": "Launch Strategy",
+      "description": "When the user wants to plan a product launch, feature announcement, or release strategy. Also use when the user mentions 'launch,' 'Product Hunt,' 'feature release,' 'announcement,' 'go-to-market,' 'beta launch,' 'early access,' 'waitlist,' or 'product update.' This skill covers phased launches, channel strategy, and ongoing launch momentum.",
+      "path": "skills/launch-strategy",
+      "skillFile": "skills/launch-strategy/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 12221,
+        "mtimeISO": "2026-01-24T09:35:01.010Z"
+      }
+    },
+    {
+      "skillId": "Linux Privilege Escalation",
+      "dirName": "Linux Privilege Escalation",
+      "title": "Linux Privilege Escalation",
+      "description": "This skill should be used when the user asks to \"escalate privileges on Linux\", \"find privesc vectors on Linux systems\", \"exploit sudo misconfigurations\", \"abuse SUID binaries\", \"exploit cron jobs for root access\", \"enumerate Linux systems for privilege escalation\", or \"gain root access from low-privilege shell\". It provides comprehensive techniques for identifying and exploiting privilege escalation paths on Linux systems.",
+      "path": "skills/Linux Privilege Escalation",
+      "skillFile": "skills/Linux Privilege Escalation/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 11730,
+        "mtimeISO": "2026-01-24T09:34:58.837Z"
+      }
+    },
+    {
+      "skillId": "Linux Production Shell Scripts",
+      "dirName": "Linux Production Shell Scripts",
+      "title": "Linux Production Shell Scripts",
+      "description": "This skill should be used when the user asks to \"create bash scripts\", \"automate Linux tasks\", \"monitor system resources\", \"backup files\", \"manage users\", or \"write production shell scripts\". It provides ready-to-use shell script templates for system administration.",
+      "path": "skills/Linux Production Shell Scripts",
+      "skillFile": "skills/Linux Production Shell Scripts/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 12417,
+        "mtimeISO": "2026-01-24T09:34:58.851Z"
+      }
+    },
+    {
+      "skillId": "llm-app-patterns",
+      "dirName": "llm-app-patterns",
+      "title": "🤖 LLM Application Patterns",
+      "description": "Production-ready patterns for building LLM applications. Covers RAG pipelines, agent architectures, prompt IDEs, and LLMOps monitoring. Use when designing AI applications, implementing RAG, building agents, or setting up LLM observability.",
+      "path": "skills/llm-app-patterns",
+      "skillFile": "skills/llm-app-patterns/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 21695,
+        "mtimeISO": "2026-01-24T09:35:01.013Z"
+      }
+    },
+    {
+      "skillId": "loki-mode",
+      "dirName": "loki-mode",
+      "title": "Loki Mode - Multi-Agent Autonomous Startup System",
+      "description": "Multi-agent autonomous startup system for Claude Code. Triggers on \"Loki Mode\". Orchestrates 100+ specialized agents across engineering, QA, DevOps, security, data/ML, business operations, marketing, HR, and customer success. Takes PRD to fully deployed, revenue-generating product with zero human intervention. Features Task tool for subagent dispatch, parallel code review with 3 specialized reviewers, severity-based issue triage, distributed task queue with dead letter handling, automatic deployment to cloud providers, A/B testing, customer feedback loops, incident response, circuit breakers, and self-healing. Handles rate limits via distributed state checkpoints and auto-resume with exponential backoff. Requires --dangerously-skip-permissions flag.",
+      "path": "skills/loki-mode",
+      "skillFile": "skills/loki-mode/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 28553,
+        "mtimeISO": "2026-01-24T09:35:01.036Z"
+      }
+    },
+    {
+      "skillId": "marketing-ideas",
+      "dirName": "marketing-ideas",
+      "title": "Marketing Ideas for SaaS",
+      "description": "When the user needs marketing ideas, inspiration, or strategies for their SaaS or software product. Also use when the user asks for 'marketing ideas,' 'growth ideas,' 'how to market,' 'marketing strategies,' 'marketing tactics,' 'ways to promote,' or 'ideas to grow.' This skill provides 140 proven marketing approaches organized by category.",
+      "path": "skills/marketing-ideas",
+      "skillFile": "skills/marketing-ideas/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 24473,
+        "mtimeISO": "2026-01-24T09:35:05.999Z"
+      }
+    },
+    {
+      "skillId": "marketing-psychology",
+      "dirName": "marketing-psychology",
+      "title": "Marketing Psychology & Mental Models",
+      "description": "When the user wants to apply psychological principles, mental models, or behavioral science to marketing. Also use when the user mentions 'psychology,' 'mental models,' 'cognitive bias,' 'persuasion,' 'behavioral science,' 'why people buy,' 'decision-making,' or 'consumer behavior.' This skill provides 70+ mental models organized for marketing application.",
+      "path": "skills/marketing-psychology",
+      "skillFile": "skills/marketing-psychology/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 21332,
+        "mtimeISO": "2026-01-24T09:35:06.002Z"
+      }
+    },
+    {
+      "skillId": "mcp-builder",
+      "dirName": "mcp-builder",
+      "title": "MCP Server Development Guide",
+      "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
+      "path": "skills/mcp-builder",
+      "skillFile": "skills/mcp-builder/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 9092,
+        "mtimeISO": "2026-01-24T09:35:06.010Z"
+      }
+    },
+    {
+      "skillId": "Metasploit Framework",
+      "dirName": "Metasploit Framework",
+      "title": "Metasploit Framework",
+      "description": "This skill should be used when the user asks to \"use Metasploit for penetration testing\", \"exploit vulnerabilities with msfconsole\", \"create payloads with msfvenom\", \"perform post-exploitation\", \"use auxiliary modules for scanning\", or \"develop custom exploits\". It provides comprehensive guidance for leveraging the Metasploit Framework in security assessments.",
+      "path": "skills/Metasploit Framework",
+      "skillFile": "skills/Metasploit Framework/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 13213,
+        "mtimeISO": "2026-01-24T09:34:58.974Z"
+      }
+    },
+    {
+      "skillId": "micro-saas-launcher",
+      "dirName": "micro-saas-launcher",
+      "title": "Micro-SaaS Launcher",
+      "description": "Expert in launching small, focused SaaS products fast - the indie hacker approach to building profitable software. Covers idea validation, MVP development, pricing, launch strategies, and growing to sustainable revenue. Ship in weeks, not months. Use when: micro saas, indie hacker, small saas, side project, saas mvp.",
+      "path": "skills/micro-saas-launcher",
+      "skillFile": "skills/micro-saas-launcher/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 5279,
+        "mtimeISO": "2026-01-24T09:35:06.092Z"
+      }
+    },
+    {
+      "skillId": "mobile-design",
+      "dirName": "mobile-design",
+      "title": "Mobile Design System",
+      "description": "Mobile-first design thinking and decision-making for iOS and Android apps. Touch interaction, performance patterns, platform conventions. Teaches principles, not fixed values. Use when building React Native, Flutter, or native mobile apps.",
+      "path": "skills/mobile-design",
+      "skillFile": "skills/mobile-design/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 15455,
+        "mtimeISO": "2026-01-24T09:35:06.115Z"
+      }
+    },
+    {
+      "skillId": "moodle-external-api-development",
+      "dirName": "moodle-external-api-development",
+      "title": "Moodle External API Development",
+      "description": "Create custom external web service APIs for Moodle LMS. Use when implementing web services for course management, user tracking, quiz operations, or custom plugin functionality. Covers parameter validation, database operations, error handling, service registration, and Moodle coding standards.",
+      "path": "skills/moodle-external-api-development",
+      "skillFile": "skills/moodle-external-api-development/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 18300,
+        "mtimeISO": "2026-01-24T09:35:06.177Z"
+      }
+    },
+    {
+      "skillId": "neon-postgres",
+      "dirName": "neon-postgres",
+      "title": "Neon Postgres",
+      "description": "Expert patterns for Neon serverless Postgres, branching, connection pooling, and Prisma/Drizzle integration Use when: neon database, serverless postgres, database branching, neon postgres, postgres serverless.",
+      "path": "skills/neon-postgres",
+      "skillFile": "skills/neon-postgres/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 1588,
+        "mtimeISO": "2026-01-24T09:35:06.180Z"
+      }
+    },
+    {
+      "skillId": "nestjs-expert",
+      "dirName": "nestjs-expert",
+      "title": "Nest.js Expert",
+      "description": "Nest.js framework expert specializing in module architecture, dependency injection, middleware, guards, interceptors, testing with Jest/Supertest, TypeORM/Mongoose integration, and Passport.js authentication. Use PROACTIVELY for any Nest.js application issues including architecture decisions, testing strategies, performance optimization, or debugging complex dependency injection problems. If a specialized expert is a better fit, I will recommend switching and stop.",
+      "path": "skills/nestjs-expert",
+      "skillFile": "skills/nestjs-expert/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 21444,
+        "mtimeISO": "2026-01-24T09:35:06.182Z"
+      }
+    },
+    {
+      "skillId": "Network 101",
+      "dirName": "Network 101",
+      "title": "Network 101",
+      "description": "This skill should be used when the user asks to \"set up a web server\", \"configure HTTP or HTTPS\", \"perform SNMP enumeration\", \"configure SMB shares\", \"test network services\", or needs guidance on configuring and testing network services for penetration testing labs.",
+      "path": "skills/Network 101",
+      "skillFile": "skills/Network 101/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 7480,
+        "mtimeISO": "2026-01-24T09:34:58.977Z"
+      }
+    },
+    {
+      "skillId": "nextjs-best-practices",
+      "dirName": "nextjs-best-practices",
+      "title": "Next.js Best Practices",
+      "description": "Next.js App Router principles. Server Components, data fetching, routing patterns.",
+      "path": "skills/nextjs-best-practices",
+      "skillFile": "skills/nextjs-best-practices/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 3740,
+        "mtimeISO": "2026-01-24T09:35:06.185Z"
+      }
+    },
+    {
+      "skillId": "nextjs-supabase-auth",
+      "dirName": "nextjs-supabase-auth",
+      "title": "Next.js + Supabase Auth",
+      "description": "Expert integration of Supabase Auth with Next.js App Router Use when: supabase auth next, authentication next.js, login supabase, auth middleware, protected route.",
+      "path": "skills/nextjs-supabase-auth",
+      "skillFile": "skills/nextjs-supabase-auth/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 1389,
+        "mtimeISO": "2026-01-24T09:35:06.261Z"
+      }
+    },
+    {
+      "skillId": "nodejs-best-practices",
+      "dirName": "nodejs-best-practices",
+      "title": "Node.js Best Practices",
+      "description": "Node.js development principles and decision-making. Framework selection, async patterns, security, and architecture. Teaches thinking, not copying.",
+      "path": "skills/nodejs-best-practices",
+      "skillFile": "skills/nodejs-best-practices/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 8266,
+        "mtimeISO": "2026-01-24T09:35:06.280Z"
+      }
+    },
+    {
+      "skillId": "notebooklm",
+      "dirName": "notebooklm",
+      "title": "NotebookLM Research Assistant Skill",
+      "description": "Use this skill to query your Google NotebookLM notebooks directly from Claude Code for source-grounded, citation-backed answers from Gemini. Browser automation, library management, persistent auth. Drastically reduced hallucinations through document-only responses.",
+      "path": "skills/notebooklm",
+      "skillFile": "skills/notebooklm/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 9442,
+        "mtimeISO": "2026-01-24T09:35:06.300Z"
+      }
+    },
+    {
+      "skillId": "notion-template-business",
+      "dirName": "notion-template-business",
+      "title": "Notion Template Business",
+      "description": "Expert in building and selling Notion templates as a business - not just making templates, but building a sustainable digital product business. Covers template design, pricing, marketplaces, marketing, and scaling to real revenue. Use when: notion template, sell templates, digital product, notion business, gumroad.",
+      "path": "skills/notion-template-business",
+      "skillFile": "skills/notion-template-business/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 5443,
+        "mtimeISO": "2026-01-24T09:35:06.418Z"
+      }
+    },
+    {
+      "skillId": "onboarding-cro",
+      "dirName": "onboarding-cro",
+      "title": "Onboarding CRO",
+      "description": "When the user wants to optimize post-signup onboarding, user activation, first-run experience, or time-to-value. Also use when the user mentions \"onboarding flow,\" \"activation rate,\" \"user activation,\" \"first-run experience,\" \"empty states,\" \"onboarding checklist,\" \"aha moment,\" or \"new user experience.\" For signup/registration optimization, see signup-flow-cro. For ongoing email sequences, see email-sequence.",
+      "path": "skills/onboarding-cro",
+      "skillFile": "skills/onboarding-cro/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 11289,
+        "mtimeISO": "2026-01-24T09:35:06.440Z"
+      }
+    },
+    {
+      "skillId": "page-cro",
+      "dirName": "page-cro",
+      "title": "Page Conversion Rate Optimization (CRO)",
+      "description": "When the user wants to optimize, improve, or increase conversions on any marketing page — including homepage, landing pages, pricing pages, feature pages, or blog posts. Also use when the user says \"CRO,\" \"conversion rate optimization,\" \"this page isn't converting,\" \"improve conversions,\" or \"why isn't this page working.\" For signup/registration flows, see signup-flow-cro. For post-signup activation, see onboarding-cro. For forms outside of signup, see form-cro. For popups/modals, see popup-cro.",
+      "path": "skills/page-cro",
+      "skillFile": "skills/page-cro/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 10723,
+        "mtimeISO": "2026-01-24T09:35:06.457Z"
+      }
+    },
+    {
+      "skillId": "paid-ads",
+      "dirName": "paid-ads",
+      "title": "Paid Ads",
+      "description": "When the user wants help with paid advertising campaigns on Google Ads, Meta (Facebook/Instagram), LinkedIn, Twitter/X, or other ad platforms. Also use when the user mentions 'PPC,' 'paid media,' 'ad copy,' 'ad creative,' 'ROAS,' 'CPA,' 'ad campaign,' 'retargeting,' or 'audience targeting.' This skill covers campaign strategy, ad creation, audience targeting, and optimization.",
+      "path": "skills/paid-ads",
+      "skillFile": "skills/paid-ads/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 15000,
+        "mtimeISO": "2026-01-24T09:35:06.474Z"
+      }
+    },
+    {
+      "skillId": "parallel-agents",
+      "dirName": "parallel-agents",
+      "title": "Native Parallel Agents",
+      "description": "Multi-agent orchestration patterns. Use when multiple independent tasks can run with different domain expertise or when comprehensive analysis requires multiple perspectives.",
+      "path": "skills/parallel-agents",
+      "skillFile": "skills/parallel-agents/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 5335,
+        "mtimeISO": "2026-01-24T09:35:06.482Z"
+      }
+    },
+    {
+      "skillId": "paywall-upgrade-cro",
+      "dirName": "paywall-upgrade-cro",
+      "title": "Paywall and Upgrade Screen CRO",
+      "description": "When the user wants to create or optimize in-app paywalls, upgrade screens, upsell modals, or feature gates. Also use when the user mentions \"paywall,\" \"upgrade screen,\" \"upgrade modal,\" \"upsell,\" \"feature gate,\" \"convert free to paid,\" \"freemium conversion,\" \"trial expiration screen,\" \"limit reached screen,\" \"plan upgrade prompt,\" or \"in-app pricing.\" Distinct from public pricing pages (see page-cro) — this skill focuses on in-product upgrade moments where the user has already experienced value.",
+      "path": "skills/paywall-upgrade-cro",
+      "skillFile": "skills/paywall-upgrade-cro/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 14192,
+        "mtimeISO": "2026-01-24T09:35:06.492Z"
+      }
+    },
+    {
+      "skillId": "pdf",
+      "dirName": "pdf",
+      "title": "PDF Processing Guide",
+      "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically process, generate, or analyze PDF documents at scale.",
+      "path": "skills/pdf",
+      "skillFile": "skills/pdf/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 7068,
+        "mtimeISO": "2026-01-24T09:35:06.508Z"
+      }
+    },
+    {
+      "skillId": "Pentest Checklist",
+      "dirName": "Pentest Checklist",
+      "title": "Pentest Checklist",
+      "description": "This skill should be used when the user asks to \"plan a penetration test\", \"create a security assessment checklist\", \"prepare for penetration testing\", \"define pentest scope\", \"follow security testing best practices\", or needs a structured methodology for penetration testing engagements.",
+      "path": "skills/Pentest Checklist",
+      "skillFile": "skills/Pentest Checklist/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 10219,
+        "mtimeISO": "2026-01-24T09:34:58.980Z"
+      }
+    },
+    {
+      "skillId": "Pentest Commands",
+      "dirName": "Pentest Commands",
+      "title": "Pentest Commands",
+      "description": "This skill should be used when the user asks to \"run pentest commands\", \"scan with nmap\", \"use metasploit exploits\", \"crack passwords with hydra or john\", \"scan web vulnerabilities with nikto\", \"enumerate networks\", or needs essential penetration testing command references.",
+      "path": "skills/Pentest Commands",
+      "skillFile": "skills/Pentest Commands/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 9417,
+        "mtimeISO": "2026-01-24T09:34:58.983Z"
+      }
+    },
+    {
+      "skillId": "performance-profiling",
+      "dirName": "performance-profiling",
+      "title": "Performance Profiling",
+      "description": "Performance profiling principles. Measurement, analysis, and optimization techniques.",
+      "path": "skills/performance-profiling",
+      "skillFile": "skills/performance-profiling/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 3101,
+        "mtimeISO": "2026-01-24T09:35:06.558Z"
+      }
+    },
+    {
+      "skillId": "personal-tool-builder",
+      "dirName": "personal-tool-builder",
+      "title": "Personal Tool Builder",
+      "description": "Expert in building custom tools that solve your own problems first. The best products often start as personal tools - scratch your own itch, build for yourself, then discover others have the same itch. Covers rapid prototyping, local-first apps, CLI tools, scripts that grow into products, and the art of dogfooding. Use when: build a tool, personal tool, scratch my itch, solve my problem, CLI tool.",
+      "path": "skills/personal-tool-builder",
+      "skillFile": "skills/personal-tool-builder/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 7114,
+        "mtimeISO": "2026-01-24T09:35:06.585Z"
+      }
+    },
+    {
+      "skillId": "plaid-fintech",
+      "dirName": "plaid-fintech",
+      "title": "Plaid Fintech",
+      "description": "Expert patterns for Plaid API integration including Link token flows, transactions sync, identity verification, Auth for ACH, balance checks, webhook handling, and fintech compliance best practices. Use when: plaid, bank account linking, bank connection, ach, account aggregation.",
+      "path": "skills/plaid-fintech",
+      "skillFile": "skills/plaid-fintech/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 1459,
+        "mtimeISO": "2026-01-24T09:35:06.608Z"
+      }
+    },
+    {
+      "skillId": "plan-writing",
+      "dirName": "plan-writing",
+      "title": "Plan Writing",
+      "description": "Structured task planning with clear breakdowns, dependencies, and verification criteria. Use when implementing features, refactoring, or any multi-step work.",
+      "path": "skills/plan-writing",
+      "skillFile": "skills/plan-writing/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 4000,
+        "mtimeISO": "2026-01-24T09:35:06.646Z"
+      }
+    },
+    {
+      "skillId": "planning-with-files",
+      "dirName": "planning-with-files",
+      "title": "Planning with Files",
+      "description": "Implements Manus-style file-based planning for complex tasks. Creates task_plan.md, findings.md, and progress.md. Use when starting complex multi-step tasks, research projects, or any task requiring >5 tool calls.",
+      "path": "skills/planning-with-files",
+      "skillFile": "skills/planning-with-files/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 6629,
+        "mtimeISO": "2026-01-24T09:35:06.683Z"
+      }
+    },
+    {
+      "skillId": "playwright-skill",
+      "dirName": "playwright-skill",
+      "title": "Playwright Browser Automation",
+      "description": "Complete browser automation with Playwright. Auto-detects dev servers, writes clean test scripts to /tmp. Test pages, fill forms, take screenshots, check responsive design, validate UX, test login flows, check links, automate any browser task. Use when user wants to test websites, automate browser interactions, validate web functionality, or perform any browser-based testing.",
+      "path": "skills/playwright-skill",
+      "skillFile": "skills/playwright-skill/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 13930,
+        "mtimeISO": "2026-01-24T09:35:06.782Z"
+      }
+    },
+    {
+      "skillId": "popup-cro",
+      "dirName": "popup-cro",
+      "title": "Popup CRO",
+      "description": "When the user wants to create or optimize popups, modals, overlays, slide-ins, or banners for conversion purposes. Also use when the user mentions \"exit intent,\" \"popup conversions,\" \"modal optimization,\" \"lead capture popup,\" \"email popup,\" \"announcement banner,\" or \"overlay.\" For forms outside of popups, see form-cro. For general page conversion optimization, see page-cro.",
+      "path": "skills/popup-cro",
+      "skillFile": "skills/popup-cro/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 11218,
+        "mtimeISO": "2026-01-24T09:35:06.811Z"
+      }
+    },
+    {
+      "skillId": "postgresql-table-design",
+      "dirName": "postgresql-table-design",
+      "title": "PostgreSQL Table Design",
+      "description": "Design a PostgreSQL-specific schema. Covers best-practices, data types, indexing, constraints, performance patterns, and advanced features",
+      "path": "skills/postgresql-table-design",
+      "skillFile": "skills/postgresql-table-design/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 16046,
+        "mtimeISO": "2026-01-24T09:35:06.825Z"
+      }
+    },
+    {
+      "skillId": "powershell-windows",
+      "dirName": "powershell-windows",
+      "title": "PowerShell Windows Patterns",
+      "description": "PowerShell Windows patterns. Critical pitfalls, operator syntax, error handling.",
+      "path": "skills/powershell-windows",
+      "skillFile": "skills/powershell-windows/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 3500,
+        "mtimeISO": "2026-01-24T09:35:06.831Z"
+      }
+    },
+    {
+      "skillId": "pptx",
+      "dirName": "pptx",
+      "title": "PPTX creation, editing, and analysis",
+      "description": "Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modifying or editing content, (3) Working with layouts, (4) Adding comments or speaker notes, or any other presentation tasks",
+      "path": "skills/pptx",
+      "skillFile": "skills/pptx/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 25551,
+        "mtimeISO": "2026-01-24T09:35:06.881Z"
+      }
+    },
+    {
+      "skillId": "pricing-strategy",
+      "dirName": "pricing-strategy",
+      "title": "Pricing Strategy",
+      "description": "When the user wants help with pricing decisions, packaging, or monetization strategy. Also use when the user mentions 'pricing,' 'pricing tiers,' 'freemium,' 'free trial,' 'packaging,' 'price increase,' 'value metric,' 'Van Westendorp,' 'willingness to pay,' or 'monetization.' This skill covers pricing research, tier structure, and packaging strategy.",
+      "path": "skills/pricing-strategy",
+      "skillFile": "skills/pricing-strategy/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 22239,
+        "mtimeISO": "2026-01-24T09:35:08.380Z"
+      }
+    },
+    {
+      "skillId": "prisma-expert",
+      "dirName": "prisma-expert",
+      "title": "Prisma Expert",
+      "description": "Prisma ORM expert for schema design, migrations, query optimization, relations modeling, and database operations. Use PROACTIVELY for Prisma schema issues, migration problems, query performance, relation design, or database connection issues.",
+      "path": "skills/prisma-expert",
+      "skillFile": "skills/prisma-expert/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 10249,
+        "mtimeISO": "2026-01-24T09:35:08.399Z"
+      }
+    },
+    {
+      "skillId": "Privilege Escalation Methods",
+      "dirName": "Privilege Escalation Methods",
+      "title": "Privilege Escalation Methods",
+      "description": "This skill should be used when the user asks to \"escalate privileges\", \"get root access\", \"become administrator\", \"privesc techniques\", \"abuse sudo\", \"exploit SUID binaries\", \"Kerberoasting\", \"pass-the-ticket\", \"token impersonation\", or needs guidance on post-exploitation privilege escalation for Linux or Windows systems.",
+      "path": "skills/Privilege Escalation Methods",
+      "skillFile": "skills/Privilege Escalation Methods/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 8115,
+        "mtimeISO": "2026-01-24T09:34:58.999Z"
+      }
+    },
+    {
+      "skillId": "product-manager-toolkit",
+      "dirName": "product-manager-toolkit",
+      "title": "Product Manager Toolkit",
+      "description": "Comprehensive toolkit for product managers including RICE prioritization, customer interview analysis, PRD templates, discovery frameworks, and go-to-market strategies. Use for feature prioritization, user research synthesis, requirement documentation, and product strategy development.",
+      "path": "skills/product-manager-toolkit",
+      "skillFile": "skills/product-manager-toolkit/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 8924,
+        "mtimeISO": "2026-01-24T09:35:08.448Z"
+      }
+    },
+    {
+      "skillId": "programmatic-seo",
+      "dirName": "programmatic-seo",
+      "title": "Programmatic SEO",
+      "description": "When the user wants to create SEO-driven pages at scale using templates and data. Also use when the user mentions \"programmatic SEO,\" \"template pages,\" \"pages at scale,\" \"directory pages,\" \"location pages,\" \"[keyword] + [city] pages,\" \"comparison pages,\" \"integration pages,\" or \"building many pages for SEO.\" For auditing existing SEO issues, see seo-audit.",
+      "path": "skills/programmatic-seo",
+      "skillFile": "skills/programmatic-seo/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 16478,
+        "mtimeISO": "2026-01-24T09:35:08.658Z"
+      }
+    },
+    {
+      "skillId": "prompt-caching",
+      "dirName": "prompt-caching",
+      "title": "Prompt Caching",
+      "description": "Caching strategies for LLM prompts including Anthropic prompt caching, response caching, and CAG (Cache Augmented Generation) Use when: prompt caching, cache prompt, response cache, cag, cache augmented.",
+      "path": "skills/prompt-caching",
+      "skillFile": "skills/prompt-caching/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 1820,
+        "mtimeISO": "2026-01-24T09:35:08.698Z"
+      }
+    },
+    {
+      "skillId": "prompt-engineer",
+      "dirName": "prompt-engineer",
+      "title": "Prompt Engineer",
+      "description": "Expert in designing effective prompts for LLM-powered applications. Masters prompt structure, context management, output formatting, and prompt evaluation. Use when: prompt engineering, system prompt, few-shot, chain of thought, prompt design.",
+      "path": "skills/prompt-engineer",
+      "skillFile": "skills/prompt-engineer/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 2710,
+        "mtimeISO": "2026-01-24T09:35:08.712Z"
+      }
+    },
+    {
+      "skillId": "prompt-engineering",
+      "dirName": "prompt-engineering",
+      "title": "Prompt Engineering Patterns",
+      "description": "Expert guide on prompt engineering patterns, best practices, and optimization techniques. Use when user wants to improve prompts, learn prompting strategies, or debug agent behavior.",
+      "path": "skills/prompt-engineering",
+      "skillFile": "skills/prompt-engineering/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 5659,
+        "mtimeISO": "2026-01-24T09:35:08.743Z"
+      }
+    },
+    {
+      "skillId": "prompt-library",
+      "dirName": "prompt-library",
+      "title": "📝 Prompt Library",
+      "description": "Curated collection of high-quality prompts for various use cases. Includes role-based prompts, task-specific templates, and prompt refinement techniques. Use when user needs prompt templates, role-play prompts, or ready-to-use prompt examples for coding, writing, analysis, or creative tasks.",
+      "path": "skills/prompt-library",
+      "skillFile": "skills/prompt-library/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 7644,
+        "mtimeISO": "2026-01-24T09:35:08.772Z"
+      }
+    },
+    {
+      "skillId": "python-patterns",
+      "dirName": "python-patterns",
+      "title": "Python Patterns",
+      "description": "Python development principles and decision-making. Framework selection, async patterns, type hints, project structure. Teaches thinking, not copying.",
+      "path": "skills/python-patterns",
+      "skillFile": "skills/python-patterns/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 9476,
+        "mtimeISO": "2026-01-24T09:35:08.806Z"
+      }
+    },
+    {
+      "skillId": "rag-engineer",
+      "dirName": "rag-engineer",
+      "title": "RAG Engineer",
+      "description": "Expert in building Retrieval-Augmented Generation systems. Masters embedding models, vector databases, chunking strategies, and retrieval optimization for LLM applications. Use when: building RAG, vector search, embeddings, semantic search, document retrieval.",
+      "path": "skills/rag-engineer",
+      "skillFile": "skills/rag-engineer/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 2924,
+        "mtimeISO": "2026-01-24T09:35:08.828Z"
+      }
+    },
+    {
+      "skillId": "rag-implementation",
+      "dirName": "rag-implementation",
+      "title": "RAG Implementation",
+      "description": "Retrieval-Augmented Generation patterns including chunking, embeddings, vector stores, and retrieval optimization Use when: rag, retrieval augmented, vector search, embeddings, semantic search.",
+      "path": "skills/rag-implementation",
+      "skillFile": "skills/rag-implementation/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 1881,
+        "mtimeISO": "2026-01-24T09:35:08.859Z"
+      }
+    },
+    {
+      "skillId": "react-native-best-practices",
+      "dirName": "react-native-best-practices",
+      "title": "React Native Best Practices",
+      "description": "Provides React Native performance optimization guidelines for FPS, TTI, bundle size, memory leaks, re-renders, and animations. Applies to tasks involving Hermes optimization, JS thread blocking, bridge overhead, FlashList, native modules, or debugging jank and frame drops.",
+      "path": "skills/react-native-best-practices",
+      "skillFile": "skills/react-native-best-practices/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 6846,
+        "mtimeISO": "2026-01-24T09:35:08.877Z"
+      }
+    },
+    {
+      "skillId": "react-patterns",
+      "dirName": "react-patterns",
+      "title": "React Patterns",
+      "description": "Modern React patterns and principles. Hooks, composition, performance, TypeScript best practices.",
+      "path": "skills/react-patterns",
+      "skillFile": "skills/react-patterns/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 3796,
+        "mtimeISO": "2026-01-24T09:35:09.434Z"
+      }
+    },
+    {
+      "skillId": "react-ui-patterns",
+      "dirName": "react-ui-patterns",
+      "title": "React UI Patterns",
+      "description": "Modern React UI patterns for loading states, error handling, and data fetching. Use when building UI components, handling async data, or managing UI states.",
+      "path": "skills/react-ui-patterns",
+      "skillFile": "skills/react-ui-patterns/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 6488,
+        "mtimeISO": "2026-01-24T09:35:09.443Z"
+      }
+    },
+    {
+      "skillId": "receiving-code-review",
+      "dirName": "receiving-code-review",
+      "title": "Code Review Reception",
+      "description": "Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical rigor and verification, not performative agreement or blind implementation",
+      "path": "skills/receiving-code-review",
+      "skillFile": "skills/receiving-code-review/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 6314,
+        "mtimeISO": "2026-01-24T09:35:09.449Z"
+      }
+    },
+    {
+      "skillId": "Red Team Tools and Methodology",
+      "dirName": "Red Team Tools and Methodology",
+      "title": "Red Team Tools and Methodology",
+      "description": "This skill should be used when the user asks to \"follow red team methodology\", \"perform bug bounty hunting\", \"automate reconnaissance\", \"hunt for XSS vulnerabilities\", \"enumerate subdomains\", or needs security researcher techniques and tool configurations from top bug bounty hunters.",
+      "path": "skills/Red Team Tools and Methodology",
+      "skillFile": "skills/Red Team Tools and Methodology/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 7797,
+        "mtimeISO": "2026-01-24T09:34:59.003Z"
+      }
+    },
+    {
+      "skillId": "red-team-tactics",
+      "dirName": "red-team-tactics",
+      "title": "Red Team Tactics",
+      "description": "Red team tactics principles based on MITRE ATT&CK. Attack phases, detection evasion, reporting.",
+      "path": "skills/red-team-tactics",
+      "skillFile": "skills/red-team-tactics/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 4405,
+        "mtimeISO": "2026-01-24T09:35:09.457Z"
+      }
+    },
+    {
+      "skillId": "referral-program",
+      "dirName": "referral-program",
+      "title": "Referral & Affiliate Programs",
+      "description": "When the user wants to create, optimize, or analyze a referral program, affiliate program, or word-of-mouth strategy. Also use when the user mentions 'referral,' 'affiliate,' 'ambassador,' 'word of mouth,' 'viral loop,' 'refer a friend,' or 'partner program.' This skill covers program design, incentive structure, and growth optimization.",
+      "path": "skills/referral-program",
+      "skillFile": "skills/referral-program/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 16793,
+        "mtimeISO": "2026-01-24T09:35:09.561Z"
+      }
+    },
+    {
+      "skillId": "remotion-best-practices",
+      "dirName": "remotion-best-practices",
+      "title": null,
+      "description": "Best practices for Remotion - Video creation in React",
+      "path": "skills/remotion-best-practices",
+      "skillFile": "skills/remotion-best-practices/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 3457,
+        "mtimeISO": "2026-01-24T09:35:09.623Z"
+      }
+    },
+    {
+      "skillId": "requesting-code-review",
+      "dirName": "requesting-code-review",
+      "title": "Requesting Code Review",
+      "description": "Use when completing tasks, implementing major features, or before merging to verify work meets requirements",
+      "path": "skills/requesting-code-review",
+      "skillFile": "skills/requesting-code-review/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 2700,
+        "mtimeISO": "2026-01-24T09:35:09.911Z"
+      }
+    },
+    {
+      "skillId": "research-engineer",
+      "dirName": "research-engineer",
+      "title": "Academic Research Engineer",
+      "description": "An uncompromising Academic Research Engineer. Operates with absolute scientific rigor, objective criticism, and zero flair. Focuses on theoretical correctness, formal verification, and optimal implementation across any required technology.",
+      "path": "skills/research-engineer",
+      "skillFile": "skills/research-engineer/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 6504,
+        "mtimeISO": "2026-01-24T09:35:09.924Z"
+      }
+    },
+    {
+      "skillId": "salesforce-development",
+      "dirName": "salesforce-development",
+      "title": "Salesforce Development",
+      "description": "Expert patterns for Salesforce platform development including Lightning Web Components (LWC), Apex triggers and classes, REST/Bulk APIs, Connected Apps, and Salesforce DX with scratch orgs and 2nd generation packages (2GP). Use when: salesforce, sfdc, apex, lwc, lightning web components.",
+      "path": "skills/salesforce-development",
+      "skillFile": "skills/salesforce-development/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 1512,
+        "mtimeISO": "2026-01-24T09:35:09.958Z"
+      }
+    },
+    {
+      "skillId": "schema-markup",
+      "dirName": "schema-markup",
+      "title": "Schema Markup",
+      "description": "When the user wants to add, fix, or optimize schema markup and structured data on their site. Also use when the user mentions \"schema markup,\" \"structured data,\" \"JSON-LD,\" \"rich snippets,\" \"schema.org,\" \"FAQ schema,\" \"product schema,\" \"review schema,\" or \"breadcrumb schema.\" For broader SEO issues, see seo-audit.",
+      "path": "skills/schema-markup",
+      "skillFile": "skills/schema-markup/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 13192,
+        "mtimeISO": "2026-01-24T09:35:10.066Z"
+      }
+    },
+    {
+      "skillId": "scroll-experience",
+      "dirName": "scroll-experience",
+      "title": "Scroll Experience",
+      "description": "Expert in building immersive scroll-driven experiences - parallax storytelling, scroll animations, interactive narratives, and cinematic web experiences. Like NY Times interactives, Apple product pages, and award-winning web experiences. Makes websites feel like experiences, not just pages. Use when: scroll animation, parallax, scroll storytelling, interactive story, cinematic website.",
+      "path": "skills/scroll-experience",
+      "skillFile": "skills/scroll-experience/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 6051,
+        "mtimeISO": "2026-01-24T09:35:10.113Z"
+      }
+    },
+    {
+      "skillId": "Security Scanning Tools",
+      "dirName": "Security Scanning Tools",
+      "title": "Security Scanning Tools",
+      "description": "This skill should be used when the user asks to \"perform vulnerability scanning\", \"scan networks for open ports\", \"assess web application security\", \"scan wireless networks\", \"detect malware\", \"check cloud security\", or \"evaluate system compliance\". It provides comprehensive guidance on security scanning tools and methodologies.",
+      "path": "skills/Security Scanning Tools",
+      "skillFile": "skills/Security Scanning Tools/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 13547,
+        "mtimeISO": "2026-01-24T09:34:59.026Z"
+      }
+    },
+    {
+      "skillId": "security-review",
+      "dirName": "security-review",
+      "title": "Security Review Skill",
+      "description": "Use this skill when adding authentication, handling user input, working with secrets, creating API endpoints, or implementing payment/sensitive features. Provides comprehensive security checklist and patterns.",
+      "path": "skills/security-review",
+      "skillFile": "skills/security-review/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 12233,
+        "mtimeISO": "2026-01-24T09:35:10.150Z"
+      }
+    },
+    {
+      "skillId": "segment-cdp",
+      "dirName": "segment-cdp",
+      "title": "Segment CDP",
+      "description": "Expert patterns for Segment Customer Data Platform including Analytics.js, server-side tracking, tracking plans with Protocols, identity resolution, destinations configuration, and data governance best practices. Use when: segment, analytics.js, customer data platform, cdp, tracking plan.",
+      "path": "skills/segment-cdp",
+      "skillFile": "skills/segment-cdp/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 1423,
+        "mtimeISO": "2026-01-24T09:35:10.170Z"
+      }
+    },
+    {
+      "skillId": "senior-architect",
+      "dirName": "senior-architect",
+      "title": "Senior Architect",
+      "description": "Comprehensive software architecture skill for designing scalable, maintainable systems using ReactJS, NextJS, NodeJS, Express, React Native, Swift, Kotlin, Flutter, Postgres, GraphQL, Go, Python. Includes architecture diagram generation, system design patterns, tech stack decision frameworks, and dependency analysis. Use when designing system architecture, making technical decisions, creating architecture diagrams, evaluating trade-offs, or defining integration patterns.",
+      "path": "skills/senior-architect",
+      "skillFile": "skills/senior-architect/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 4654,
+        "mtimeISO": "2026-01-24T09:35:10.210Z"
+      }
+    },
+    {
+      "skillId": "senior-fullstack",
+      "dirName": "senior-fullstack",
+      "title": "Senior Fullstack",
+      "description": "Comprehensive fullstack development skill for building complete web applications with React, Next.js, Node.js, GraphQL, and PostgreSQL. Includes project scaffolding, code quality analysis, architecture patterns, and complete tech stack guidance. Use when building new projects, analyzing code quality, implementing design patterns, or setting up development workflows.",
+      "path": "skills/senior-fullstack",
+      "skillFile": "skills/senior-fullstack/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 4495,
+        "mtimeISO": "2026-01-24T09:35:10.334Z"
+      }
+    },
+    {
+      "skillId": "seo-audit",
+      "dirName": "seo-audit",
+      "title": "SEO Audit",
+      "description": "When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions \"SEO audit,\" \"technical SEO,\" \"why am I not ranking,\" \"SEO issues,\" \"on-page SEO,\" \"meta tags review,\" or \"SEO health check.\" For building pages at scale to target keywords, see programmatic-seo. For adding structured data, see schema-markup.",
+      "path": "skills/seo-audit",
+      "skillFile": "skills/seo-audit/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 8453,
+        "mtimeISO": "2026-01-24T09:35:10.390Z"
+      }
+    },
+    {
+      "skillId": "seo-fundamentals",
+      "dirName": "seo-fundamentals",
+      "title": "SEO Fundamentals",
+      "description": "SEO fundamentals, E-E-A-T, Core Web Vitals, and Google algorithm principles.",
+      "path": "skills/seo-fundamentals",
+      "skillFile": "skills/seo-fundamentals/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 2787,
+        "mtimeISO": "2026-01-24T09:35:10.401Z"
+      }
+    },
+    {
+      "skillId": "server-management",
+      "dirName": "server-management",
+      "title": "Server Management",
+      "description": "Server management principles and decision-making. Process management, monitoring strategy, and scaling decisions. Teaches thinking, not commands.",
+      "path": "skills/server-management",
+      "skillFile": "skills/server-management/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 3734,
+        "mtimeISO": "2026-01-24T09:35:10.426Z"
+      }
+    },
+    {
+      "skillId": "Shodan Reconnaissance and Pentesting",
+      "dirName": "Shodan Reconnaissance and Pentesting",
+      "title": "Shodan Reconnaissance and Pentesting",
+      "description": "This skill should be used when the user asks to \"search for exposed devices on the internet,\" \"perform Shodan reconnaissance,\" \"find vulnerable services using Shodan,\" \"scan IP ranges with Shodan,\" or \"discover IoT devices and open ports.\" It provides comprehensive guidance for using Shodan's search engine, CLI, and API for penetration testing reconnaissance.",
+      "path": "skills/Shodan Reconnaissance and Pentesting",
+      "skillFile": "skills/Shodan Reconnaissance and Pentesting/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 13821,
+        "mtimeISO": "2026-01-24T09:34:59.047Z"
+      }
+    },
+    {
+      "skillId": "shopify-apps",
+      "dirName": "shopify-apps",
+      "title": "Shopify Apps",
+      "description": "Expert patterns for Shopify app development including Remix/React Router apps, embedded apps with App Bridge, webhook handling, GraphQL Admin API, Polaris components, billing, and app extensions. Use when: shopify app, shopify, embedded app, polaris, app bridge.",
+      "path": "skills/shopify-apps",
+      "skillFile": "skills/shopify-apps/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 1250,
+        "mtimeISO": "2026-01-24T09:35:10.441Z"
+      }
+    },
+    {
+      "skillId": "shopify-development",
+      "dirName": "shopify-development",
+      "title": "Shopify Development Skill",
+      "description": "|",
+      "path": "skills/shopify-development",
+      "skillFile": "skills/shopify-development/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 8883,
+        "mtimeISO": "2026-01-24T09:35:10.450Z"
+      }
+    },
+    {
+      "skillId": "signup-flow-cro",
+      "dirName": "signup-flow-cro",
+      "title": "Signup Flow CRO",
+      "description": "When the user wants to optimize signup, registration, account creation, or trial activation flows. Also use when the user mentions \"signup conversions,\" \"registration friction,\" \"signup form optimization,\" \"free trial signup,\" \"reduce signup dropoff,\" or \"account creation flow.\" For post-signup onboarding, see onboarding-cro. For lead capture forms (not account creation), see form-cro.",
+      "path": "skills/signup-flow-cro",
+      "skillFile": "skills/signup-flow-cro/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 9759,
+        "mtimeISO": "2026-01-24T09:35:10.525Z"
+      }
+    },
+    {
+      "skillId": "skill-creator",
+      "dirName": "skill-creator",
+      "title": "Skill Creator",
+      "description": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations.",
+      "path": "skills/skill-creator",
+      "skillFile": "skills/skill-creator/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 17837,
+        "mtimeISO": "2026-01-24T09:35:10.539Z"
+      }
+    },
+    {
+      "skillId": "skill-developer",
+      "dirName": "skill-developer",
+      "title": "Skill Developer Guide",
+      "description": "Create and manage Claude Code skills following Anthropic best practices. Use when creating new skills, modifying skill-rules.json, understanding trigger patterns, working with hooks, debugging skill activation, or implementing progressive disclosure. Covers skill structure, YAML frontmatter, trigger types (keywords, intent patterns, file paths, content patterns), enforcement levels (block, suggest, warn), hook mechanisms (UserPromptSubmit, PreToolUse), session tracking, and the 500-line rule.",
+      "path": "skills/skill-developer",
+      "skillFile": "skills/skill-developer/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 12278,
+        "mtimeISO": "2026-01-24T09:35:10.593Z"
+      }
+    },
+    {
+      "skillId": "slack-bot-builder",
+      "dirName": "slack-bot-builder",
+      "title": "Slack Bot Builder",
+      "description": "Build Slack apps using the Bolt framework across Python, JavaScript, and Java. Covers Block Kit for rich UIs, interactive components, slash commands, event handling, OAuth installation flows, and Workflow Builder integration. Focus on best practices for production-ready Slack apps. Use when: slack bot, slack app, bolt framework, block kit, slash command.",
+      "path": "skills/slack-bot-builder",
+      "skillFile": "skills/slack-bot-builder/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 8779,
+        "mtimeISO": "2026-01-24T09:35:10.656Z"
+      }
+    },
+    {
+      "skillId": "slack-gif-creator",
+      "dirName": "slack-gif-creator",
+      "title": "Slack GIF Creator",
+      "description": "Knowledge and utilities for creating animated GIFs optimized for Slack. Provides constraints, validation tools, and animation concepts. Use when users request animated GIFs for Slack like \"make me a GIF of X doing Y for Slack.\"",
+      "path": "skills/slack-gif-creator",
+      "skillFile": "skills/slack-gif-creator/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 7841,
+        "mtimeISO": "2026-01-24T09:35:10.666Z"
+      }
+    },
+    {
+      "skillId": "SMTP Penetration Testing",
+      "dirName": "SMTP Penetration Testing",
+      "title": "SMTP Penetration Testing",
+      "description": "This skill should be used when the user asks to \"perform SMTP penetration testing\", \"enumerate email users\", \"test for open mail relays\", \"grab SMTP banners\", \"brute force email credentials\", or \"assess mail server security\". It provides comprehensive techniques for testing SMTP server security.",
+      "path": "skills/SMTP Penetration Testing",
+      "skillFile": "skills/SMTP Penetration Testing/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 12156,
+        "mtimeISO": "2026-01-24T09:34:59.008Z"
+      }
+    },
+    {
+      "skillId": "social-content",
+      "dirName": "social-content",
+      "title": "Social Content",
+      "description": "When the user wants help creating, scheduling, or optimizing social media content for LinkedIn, Twitter/X, Instagram, TikTok, Facebook, or other platforms. Also use when the user mentions 'LinkedIn post,' 'Twitter thread,' 'social media,' 'content calendar,' 'social scheduling,' 'engagement,' or 'viral content.' This skill covers content creation, repurposing, and platform-specific strategies.",
+      "path": "skills/social-content",
+      "skillFile": "skills/social-content/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 21040,
+        "mtimeISO": "2026-01-24T09:35:10.681Z"
+      }
+    },
+    {
+      "skillId": "software-architecture",
+      "dirName": "software-architecture",
+      "title": "Software Architecture Development Skill",
+      "description": "Guide for quality focused software architecture. This skill should be used when users want to write code, design architecture, analyze code, in any case that relates to software development.",
+      "path": "skills/software-architecture",
+      "skillFile": "skills/software-architecture/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 3535,
+        "mtimeISO": "2026-01-24T09:35:10.691Z"
+      }
+    },
+    {
+      "skillId": "SQL Injection Testing",
+      "dirName": "SQL Injection Testing",
+      "title": "SQL Injection Testing",
+      "description": "This skill should be used when the user asks to \"test for SQL injection vulnerabilities\", \"perform SQLi attacks\", \"bypass authentication using SQL injection\", \"extract database information through injection\", \"detect SQL injection flaws\", or \"exploit database query vulnerabilities\". It provides comprehensive techniques for identifying, exploiting, and understanding SQL injection attack vectors across different database systems.",
+      "path": "skills/SQL Injection Testing",
+      "skillFile": "skills/SQL Injection Testing/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 11462,
+        "mtimeISO": "2026-01-24T09:34:59.014Z"
+      }
+    },
+    {
+      "skillId": "SQLMap Database Penetration Testing",
+      "dirName": "SQLMap Database Penetration Testing",
+      "title": "SQLMap Database Penetration Testing",
+      "description": "This skill should be used when the user asks to \"automate SQL injection testing,\" \"enumerate database structure,\" \"extract database credentials using sqlmap,\" \"dump tables and columns from a vulnerable database,\" or \"perform automated database penetration testing.\" It provides comprehensive guidance for using SQLMap to detect and exploit SQL injection vulnerabilities.",
+      "path": "skills/SQLMap Database Penetration Testing",
+      "skillFile": "skills/SQLMap Database Penetration Testing/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 12026,
+        "mtimeISO": "2026-01-24T09:34:59.017Z"
+      }
+    },
+    {
+      "skillId": "SSH Penetration Testing",
+      "dirName": "SSH Penetration Testing",
+      "title": "SSH Penetration Testing",
+      "description": "This skill should be used when the user asks to \"pentest SSH services\", \"enumerate SSH configurations\", \"brute force SSH credentials\", \"exploit SSH vulnerabilities\", \"perform SSH tunneling\", or \"audit SSH security\". It provides comprehensive SSH penetration testing methodologies and techniques.",
+      "path": "skills/SSH Penetration Testing",
+      "skillFile": "skills/SSH Penetration Testing/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 11937,
+        "mtimeISO": "2026-01-24T09:34:59.018Z"
+      }
+    },
+    {
+      "skillId": "stripe-integration",
+      "dirName": "stripe-integration",
+      "title": "Stripe Integration",
+      "description": "Get paid from day one. Payments, subscriptions, billing portal, webhooks, metered billing, Stripe Connect. The complete guide to implementing Stripe correctly, including all the edge cases that will bite you at 3am.  This isn't just API calls - it's the full payment system: handling failures, managing subscriptions, dealing with dunning, and keeping revenue flowing. Use when: stripe, payments, subscription, billing, checkout.",
+      "path": "skills/stripe-integration",
+      "skillFile": "skills/stripe-integration/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 2545,
+        "mtimeISO": "2026-01-24T09:35:10.699Z"
+      }
+    },
+    {
+      "skillId": "subagent-driven-development",
+      "dirName": "subagent-driven-development",
+      "title": "Subagent-Driven Development",
+      "description": "Use when executing implementation plans with independent tasks in the current session",
+      "path": "skills/subagent-driven-development",
+      "skillFile": "skills/subagent-driven-development/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 9809,
+        "mtimeISO": "2026-01-24T09:35:10.705Z"
+      }
+    },
+    {
+      "skillId": "supabase-postgres-best-practices",
+      "dirName": "supabase-postgres-best-practices",
+      "title": "Supabase Postgres Best Practices",
+      "description": "Postgres performance optimization and best practices from Supabase. Use this skill when writing, reviewing, or optimizing Postgres queries, schema designs, or database configurations.",
+      "path": "skills/supabase-postgres-best-practices",
+      "skillFile": "skills/supabase-postgres-best-practices/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 1887,
+        "mtimeISO": "2026-01-24T09:35:10.801Z"
+      }
+    },
+    {
+      "skillId": "systematic-debugging",
+      "dirName": "systematic-debugging",
+      "title": "Systematic Debugging",
+      "description": "Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes",
+      "path": "skills/systematic-debugging",
+      "skillFile": "skills/systematic-debugging/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 9884,
+        "mtimeISO": "2026-01-24T09:35:10.966Z"
+      }
+    },
+    {
+      "skillId": "tailwind-design-system",
+      "dirName": "tailwind-design-system",
+      "title": "Tailwind Design System",
+      "description": "Build scalable design systems with Tailwind CSS, design tokens, component libraries, and responsive patterns. Use when creating component libraries, implementing design systems, or standardizing UI patterns.",
+      "path": "skills/tailwind-design-system",
+      "skillFile": "skills/tailwind-design-system/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 18668,
+        "mtimeISO": "2026-01-24T09:35:11.101Z"
+      }
+    },
+    {
+      "skillId": "tailwind-patterns",
+      "dirName": "tailwind-patterns",
+      "title": "Tailwind CSS Patterns (v4 - 2025)",
+      "description": "Tailwind CSS v4 principles. CSS-first configuration, container queries, modern patterns, design token architecture.",
+      "path": "skills/tailwind-patterns",
+      "skillFile": "skills/tailwind-patterns/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 6757,
+        "mtimeISO": "2026-01-24T09:35:11.109Z"
+      }
+    },
+    {
+      "skillId": "tdd-workflow",
+      "dirName": "tdd-workflow",
+      "title": "TDD Workflow",
+      "description": "Test-Driven Development workflow principles. RED-GREEN-REFACTOR cycle.",
+      "path": "skills/tdd-workflow",
+      "skillFile": "skills/tdd-workflow/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 2813,
+        "mtimeISO": "2026-01-24T09:35:11.115Z"
+      }
+    },
+    {
+      "skillId": "telegram-bot-builder",
+      "dirName": "telegram-bot-builder",
+      "title": "Telegram Bot Builder",
+      "description": "Expert in building Telegram bots that solve real problems - from simple automation to complex AI-powered bots. Covers bot architecture, the Telegram Bot API, user experience, monetization strategies, and scaling bots to thousands of users. Use when: telegram bot, bot api, telegram automation, chat bot telegram, tg bot.",
+      "path": "skills/telegram-bot-builder",
+      "skillFile": "skills/telegram-bot-builder/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 6033,
+        "mtimeISO": "2026-01-24T09:35:11.119Z"
+      }
+    },
+    {
+      "skillId": "telegram-mini-app",
+      "dirName": "telegram-mini-app",
+      "title": "Telegram Mini App",
+      "description": "Expert in building Telegram Mini Apps (TWA) - web apps that run inside Telegram with native-like experience. Covers the TON ecosystem, Telegram Web App API, payments, user authentication, and building viral mini apps that monetize. Use when: telegram mini app, TWA, telegram web app, TON app, mini app.",
+      "path": "skills/telegram-mini-app",
+      "skillFile": "skills/telegram-mini-app/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 6168,
+        "mtimeISO": "2026-01-24T09:35:11.123Z"
+      }
+    },
+    {
+      "skillId": "test-driven-development",
+      "dirName": "test-driven-development",
+      "title": "Test-Driven Development (TDD)",
+      "description": "Use when implementing any feature or bugfix, before writing implementation code",
+      "path": "skills/test-driven-development",
+      "skillFile": "skills/test-driven-development/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 9867,
+        "mtimeISO": "2026-01-24T09:35:11.127Z"
+      }
+    },
+    {
+      "skillId": "test-fixing",
+      "dirName": "test-fixing",
+      "title": "Test Fixing",
+      "description": "Run tests and systematically fix all failing tests using smart error grouping. Use when user asks to fix failing tests, mentions test failures, runs test suite and failures occur, or requests to make tests pass.",
+      "path": "skills/test-fixing",
+      "skillFile": "skills/test-fixing/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 2974,
+        "mtimeISO": "2026-01-24T09:35:11.137Z"
+      }
+    },
+    {
+      "skillId": "testing-patterns",
+      "dirName": "testing-patterns",
+      "title": "Testing Patterns and Utilities",
+      "description": "Jest testing patterns, factory functions, mocking strategies, and TDD workflow. Use when writing unit tests, creating test factories, or following TDD red-green-refactor cycle.",
+      "path": "skills/testing-patterns",
+      "skillFile": "skills/testing-patterns/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 5851,
+        "mtimeISO": "2026-01-24T09:35:11.146Z"
+      }
+    },
+    {
+      "skillId": "theme-factory",
+      "dirName": "theme-factory",
+      "title": "Theme Factory Skill",
+      "description": "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly.",
+      "path": "skills/theme-factory",
+      "skillFile": "skills/theme-factory/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 3124,
+        "mtimeISO": "2026-01-24T09:35:11.174Z"
+      }
+    },
+    {
+      "skillId": "Top 100 Web Vulnerabilities Reference",
+      "dirName": "Top 100 Web Vulnerabilities Reference",
+      "title": "Top 100 Web Vulnerabilities Reference",
+      "description": "This skill should be used when the user asks to \"identify web application vulnerabilities\", \"explain common security flaws\", \"understand vulnerability categories\", \"learn about injection attacks\", \"review access control weaknesses\", \"analyze API security issues\", \"assess security misconfigurations\", \"understand client-side vulnerabilities\", \"examine mobile and IoT security flaws\", or \"reference the OWASP-aligned vulnerability taxonomy\". Use this skill to provide comprehensive vulnerability definitions, root causes, impacts, and mitigation strategies across all major web security categories.",
+      "path": "skills/Top 100 Web Vulnerabilities Reference",
+      "skillFile": "skills/Top 100 Web Vulnerabilities Reference/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 24268,
+        "mtimeISO": "2026-01-24T09:34:59.099Z"
+      }
+    },
+    {
+      "skillId": "trigger-dev",
+      "dirName": "trigger-dev",
+      "title": "Trigger.dev Integration",
+      "description": "Trigger.dev expert for background jobs, AI workflows, and reliable async execution with excellent developer experience and TypeScript-first design. Use when: trigger.dev, trigger dev, background task, ai background job, long running task.",
+      "path": "skills/trigger-dev",
+      "skillFile": "skills/trigger-dev/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 2346,
+        "mtimeISO": "2026-01-24T09:35:11.287Z"
+      }
+    },
+    {
+      "skillId": "turborepo",
+      "dirName": "turborepo",
+      "title": "Turborepo Skill",
+      "description": "|",
+      "path": "skills/turborepo",
+      "skillFile": "skills/turborepo/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 27169,
+        "mtimeISO": "2026-01-24T09:35:11.291Z"
+      }
+    },
+    {
+      "skillId": "twilio-communications",
+      "dirName": "twilio-communications",
+      "title": "Twilio Communications",
+      "description": "Build communication features with Twilio: SMS messaging, voice calls, WhatsApp Business API, and user verification (2FA). Covers the full spectrum from simple notifications to complex IVR systems and multi-channel authentication. Critical focus on compliance, rate limits, and error handling. Use when: twilio, send SMS, text message, voice call, phone verification.",
+      "path": "skills/twilio-communications",
+      "skillFile": "skills/twilio-communications/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 9006,
+        "mtimeISO": "2026-01-24T09:35:11.415Z"
+      }
+    },
+    {
+      "skillId": "typescript-expert",
+      "dirName": "typescript-expert",
+      "title": "TypeScript Expert",
+      "description": ">-",
+      "path": "skills/typescript-expert",
+      "skillFile": "skills/typescript-expert/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 14644,
+        "mtimeISO": "2026-01-24T09:35:11.439Z"
+      }
+    },
+    {
+      "skillId": "ui-ux-pro-max",
+      "dirName": "ui-ux-pro-max",
+      "title": "UI/UX Pro Max - Design Intelligence",
+      "description": null,
+      "path": "skills/ui-ux-pro-max",
+      "skillFile": "skills/ui-ux-pro-max/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 13493,
+        "mtimeISO": "2026-01-24T09:35:11.499Z"
+      }
+    },
+    {
+      "skillId": "upstash-qstash",
+      "dirName": "upstash-qstash",
+      "title": "Upstash QStash",
+      "description": "Upstash QStash expert for serverless message queues, scheduled jobs, and reliable HTTP-based task delivery without managing infrastructure. Use when: qstash, upstash queue, serverless cron, scheduled http, message queue serverless.",
+      "path": "skills/upstash-qstash",
+      "skillFile": "skills/upstash-qstash/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 2397,
+        "mtimeISO": "2026-01-24T09:35:11.676Z"
+      }
+    },
+    {
+      "skillId": "using-git-worktrees",
+      "dirName": "using-git-worktrees",
+      "title": "Using Git Worktrees",
+      "description": "Use when starting feature work that needs isolation from current workspace or before executing implementation plans - creates isolated git worktrees with smart directory selection and safety verification",
+      "path": "skills/using-git-worktrees",
+      "skillFile": "skills/using-git-worktrees/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 5592,
+        "mtimeISO": "2026-01-24T09:35:11.690Z"
+      }
+    },
+    {
+      "skillId": "using-superpowers",
+      "dirName": "using-superpowers",
+      "title": "Using Skills",
+      "description": "Use when starting any conversation - establishes how to find and use skills, requiring Skill tool invocation before ANY response including clarifying questions",
+      "path": "skills/using-superpowers",
+      "skillFile": "skills/using-superpowers/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 3798,
+        "mtimeISO": "2026-01-24T09:35:11.694Z"
+      }
+    },
+    {
+      "skillId": "vercel-deployment",
+      "dirName": "vercel-deployment",
+      "title": "Vercel Deployment",
+      "description": "Expert knowledge for deploying to Vercel with Next.js Use when: vercel, deploy, deployment, hosting, production.",
+      "path": "skills/vercel-deployment",
+      "skillFile": "skills/vercel-deployment/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 2144,
+        "mtimeISO": "2026-01-24T09:35:11.705Z"
+      }
+    },
+    {
+      "skillId": "vercel-react-best-practices",
+      "dirName": "vercel-react-best-practices",
+      "title": "Vercel React Best Practices",
+      "description": "React and Next.js performance optimization guidelines from Vercel Engineering. This skill should be used when writing, reviewing, or refactoring React/Next.js code to ensure optimal performance patterns. Triggers on tasks involving React components, Next.js pages, data fetching, bundle optimization, or performance improvements.",
+      "path": "skills/vercel-react-best-practices",
+      "skillFile": "skills/vercel-react-best-practices/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 5257,
+        "mtimeISO": "2026-01-24T09:35:11.733Z"
+      }
+    },
+    {
+      "skillId": "verification-before-completion",
+      "dirName": "verification-before-completion",
+      "title": "Verification Before Completion",
+      "description": "Use when about to claim work is complete, fixed, or passing, before committing or creating PRs - requires running verification commands and confirming output before making any success claims; evidence before assertions always",
+      "path": "skills/verification-before-completion",
+      "skillFile": "skills/verification-before-completion/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 4201,
+        "mtimeISO": "2026-01-24T09:35:12.149Z"
+      }
+    },
+    {
+      "skillId": "viral-generator-builder",
+      "dirName": "viral-generator-builder",
+      "title": "Viral Generator Builder",
+      "description": "Expert in building shareable generator tools that go viral - name generators, quiz makers, avatar creators, personality tests, and calculator tools. Covers the psychology of sharing, viral mechanics, and building tools people can't resist sharing with friends. Use when: generator tool, quiz maker, name generator, avatar creator, viral tool.",
+      "path": "skills/viral-generator-builder",
+      "skillFile": "skills/viral-generator-builder/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 5289,
+        "mtimeISO": "2026-01-24T09:35:12.151Z"
+      }
+    },
+    {
+      "skillId": "voice-agents",
+      "dirName": "voice-agents",
+      "title": "Voice Agents",
+      "description": "Voice agents represent the frontier of AI interaction - humans speaking naturally with AI systems. The challenge isn't just speech recognition and synthesis, it's achieving natural conversation flow with sub-800ms latency while handling interruptions, background noise, and emotional nuance.  This skill covers two architectures: speech-to-speech (OpenAI Realtime API, lowest latency, most natural) and pipeline (STT→LLM→TTS, more control, easier to debug). Key insight: latency is the constraint. Hu",
+      "path": "skills/voice-agents",
+      "skillFile": "skills/voice-agents/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 2281,
+        "mtimeISO": "2026-01-24T09:35:12.156Z"
+      }
+    },
+    {
+      "skillId": "voice-ai-development",
+      "dirName": "voice-ai-development",
+      "title": "Voice AI Development",
+      "description": "Expert in building voice AI applications - from real-time voice agents to voice-enabled apps. Covers OpenAI Realtime API, Vapi for voice agents, Deepgram for transcription, ElevenLabs for synthesis, LiveKit for real-time infrastructure, and WebRTC fundamentals. Knows how to build low-latency, production-ready voice experiences. Use when: voice ai, voice agent, speech to text, text to speech, realtime voice.",
+      "path": "skills/voice-ai-development",
+      "skillFile": "skills/voice-ai-development/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 8284,
+        "mtimeISO": "2026-01-24T09:35:12.164Z"
+      }
+    },
+    {
+      "skillId": "vulnerability-scanner",
+      "dirName": "vulnerability-scanner",
+      "title": "Vulnerability Scanner",
+      "description": "Advanced vulnerability analysis principles. OWASP 2025, Supply Chain Security, attack surface mapping, risk prioritization.",
+      "path": "skills/vulnerability-scanner",
+      "skillFile": "skills/vulnerability-scanner/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 7584,
+        "mtimeISO": "2026-01-24T09:35:12.171Z"
+      }
+    },
+    {
+      "skillId": "web-artifacts-builder",
+      "dirName": "web-artifacts-builder",
+      "title": "Web Artifacts Builder",
+      "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
+      "path": "skills/web-artifacts-builder",
+      "skillFile": "skills/web-artifacts-builder/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 3087,
+        "mtimeISO": "2026-01-24T09:35:12.191Z"
+      }
+    },
+    {
+      "skillId": "web-design-guidelines",
+      "dirName": "web-design-guidelines",
+      "title": "Web Interface Guidelines",
+      "description": "Review UI code for Web Interface Guidelines compliance. Use when asked to \"review my UI\", \"check accessibility\", \"audit design\", \"review UX\", or \"check my site against best practices\".",
+      "path": "skills/web-design-guidelines",
+      "skillFile": "skills/web-design-guidelines/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 1183,
+        "mtimeISO": "2026-01-24T09:35:12.217Z"
+      }
+    },
+    {
+      "skillId": "web-performance-optimization",
+      "dirName": "web-performance-optimization",
+      "title": "Web Performance Optimization",
+      "description": "Optimize website and web application performance including loading speed, Core Web Vitals, bundle size, caching strategies, and runtime performance",
+      "path": "skills/web-performance-optimization",
+      "skillFile": "skills/web-performance-optimization/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 16073,
+        "mtimeISO": "2026-01-24T09:35:12.271Z"
+      }
+    },
+    {
+      "skillId": "webapp-testing",
+      "dirName": "webapp-testing",
+      "title": "Web Application Testing",
+      "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.",
+      "path": "skills/webapp-testing",
+      "skillFile": "skills/webapp-testing/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 3913,
+        "mtimeISO": "2026-01-24T09:35:12.275Z"
+      }
+    },
+    {
+      "skillId": "Windows Privilege Escalation",
+      "dirName": "Windows Privilege Escalation",
+      "title": "Windows Privilege Escalation",
+      "description": "This skill should be used when the user asks to \"escalate privileges on Windows,\" \"find Windows privesc vectors,\" \"enumerate Windows for privilege escalation,\" \"exploit Windows misconfigurations,\" or \"perform post-exploitation privilege escalation.\" It provides comprehensive guidance for discovering and exploiting privilege escalation vulnerabilities in Windows environments.",
+      "path": "skills/Windows Privilege Escalation",
+      "skillFile": "skills/Windows Privilege Escalation/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 14367,
+        "mtimeISO": "2026-01-24T09:34:59.119Z"
+      }
+    },
+    {
+      "skillId": "Wireshark Network Traffic Analysis",
+      "dirName": "Wireshark Network Traffic Analysis",
+      "title": "Wireshark Network Traffic Analysis",
+      "description": "This skill should be used when the user asks to \"analyze network traffic with Wireshark\", \"capture packets for troubleshooting\", \"filter PCAP files\", \"follow TCP/UDP streams\", \"detect network anomalies\", \"investigate suspicious traffic\", or \"perform protocol analysis\". It provides comprehensive techniques for network packet capture, filtering, and analysis using Wireshark.",
+      "path": "skills/Wireshark Network Traffic Analysis",
+      "skillFile": "skills/Wireshark Network Traffic Analysis/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 12180,
+        "mtimeISO": "2026-01-24T09:34:59.123Z"
+      }
+    },
+    {
+      "skillId": "WordPress Penetration Testing",
+      "dirName": "WordPress Penetration Testing",
+      "title": "WordPress Penetration Testing",
+      "description": "This skill should be used when the user asks to \"pentest WordPress sites\", \"scan WordPress for vulnerabilities\", \"enumerate WordPress users, themes, or plugins\", \"exploit WordPress vulnerabilities\", or \"use WPScan\". It provides comprehensive WordPress security assessment methodologies.",
+      "path": "skills/WordPress Penetration Testing",
+      "skillFile": "skills/WordPress Penetration Testing/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 12227,
+        "mtimeISO": "2026-01-24T09:34:59.124Z"
+      }
+    },
+    {
+      "skillId": "workflow-automation",
+      "dirName": "workflow-automation",
+      "title": "Workflow Automation",
+      "description": "Workflow automation is the infrastructure that makes AI agents reliable. Without durable execution, a network hiccup during a 10-step payment flow means lost money and angry customers. With it, workflows resume exactly where they left off.  This skill covers the platforms (n8n, Temporal, Inngest) and patterns (sequential, parallel, orchestrator-worker) that turn brittle scripts into production-grade automation.  Key insight: The platforms make different tradeoffs. n8n optimizes for accessibility",
+      "path": "skills/workflow-automation",
+      "skillFile": "skills/workflow-automation/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 2368,
+        "mtimeISO": "2026-01-24T09:35:12.279Z"
+      }
+    },
+    {
+      "skillId": "writing-plans",
+      "dirName": "writing-plans",
+      "title": "Writing Plans",
+      "description": "Use when you have a spec or requirements for a multi-step task, before touching code",
+      "path": "skills/writing-plans",
+      "skillFile": "skills/writing-plans/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 3264,
+        "mtimeISO": "2026-01-24T09:35:12.283Z"
+      }
+    },
+    {
+      "skillId": "writing-skills",
+      "dirName": "writing-skills",
+      "title": "Writing Skills",
+      "description": "Use when creating new skills, editing existing skills, or verifying skills work before deployment",
+      "path": "skills/writing-skills",
+      "skillFile": "skills/writing-skills/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 24400,
+        "mtimeISO": "2026-01-24T09:35:12.289Z"
+      }
+    },
+    {
+      "skillId": "xlsx",
+      "dirName": "xlsx",
+      "title": "Requirements for Outputs",
+      "description": "Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. When Claude needs to work with spreadsheets (.xlsx, .xlsm, .csv, .tsv, etc) for: (1) Creating new spreadsheets with formulas and formatting, (2) Reading or analyzing data, (3) Modify existing spreadsheets while preserving formulas, (4) Data analysis and visualization in spreadsheets, or (5) Recalculating formulas",
+      "path": "skills/xlsx",
+      "skillFile": "skills/xlsx/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 10632,
+        "mtimeISO": "2026-01-24T09:35:12.332Z"
+      }
+    },
+    {
+      "skillId": "zapier-make-patterns",
+      "dirName": "zapier-make-patterns",
+      "title": "Zapier & Make Patterns",
+      "description": "No-code automation democratizes workflow building. Zapier and Make (formerly Integromat) let non-developers automate business processes without writing code. But no-code doesn't mean no-complexity - these platforms have their own patterns, pitfalls, and breaking points.  This skill covers when to use which platform, how to build reliable automations, and when to graduate to code-based solutions. Key insight: Zapier optimizes for simplicity and integrations (7000+ apps), Make optimizes for power ",
+      "path": "skills/zapier-make-patterns",
+      "skillFile": "skills/zapier-make-patterns/SKILL.md",
+      "hasSkillFile": true,
+      "fileMeta": {
+        "bytes": 2173,
+        "mtimeISO": "2026-01-24T09:35:12.359Z"
+      }
+    }
+  ]
+}

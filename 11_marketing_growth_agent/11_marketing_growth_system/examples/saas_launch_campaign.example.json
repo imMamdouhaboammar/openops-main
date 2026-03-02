@@ -1,0 +1,364 @@
+{
+  "saas_product_launch_example": {
+    "metadata": {
+      "campaign_name": "B2B SaaS Project Management Tool Launch",
+      "company": "Example SaaS Co",
+      "product": "TaskFlow - AI-powered project management",
+      "market": "Mid-market B2B (50-500 employees)",
+      "timeline": "90 days",
+      "budget": "$50,000"
+    },
+
+    "step_1_grounding": {
+      "external_research": {
+        "best_practices": [
+          "Product-led growth common in SaaS (Slack, Notion, Airtable models)",
+          "Free trial conversion rates: 2-5% industry average",
+          "B2B buying process: 3-6 months, 6-10 decision makers",
+          "Content marketing + product demos drive highest quality leads"
+        ],
+        "competitive_insights": [
+          "Asana: Community-driven, template library focus",
+          "Monday.com: Visual brand, workflow automation emphasis",
+          "ClickUp: Feature-rich positioning, all-in-one message"
+        ],
+        "channel_benchmarks": {
+          "paid_search": "CPC $8-15, CPA $120-200",
+          "linkedin_ads": "CPC $12-20, CPA $180-300",
+          "content_marketing": "6-12 months to ROI, 3x more leads than paid"
+        }
+      },
+      "internal_analysis": {
+        "product_positioning": "AI-powered project management that reduces planning time by 60%",
+        "target_icp": "Operations managers at 50-500 employee tech companies",
+        "differentiation": "AI suggests optimal task allocation based on team capacity and skills",
+        "constraints": {
+          "budget": "$50k total",
+          "timeline": "90 days to first 100 customers",
+          "team": "1 marketer, 1 designer, developer support"
+        }
+      },
+      "synthesis": {
+        "key_insights": [
+          "Product-led growth with freemium fits market expectations",
+          "AI differentiation is compelling but needs proof",
+          "Content + product demos will be primary strategy",
+          "Competitors are established - need clear differentiation angle"
+        ],
+        "opportunities": [
+          "AI angle is unique and timely",
+          "Can build community early around AI + productivity",
+          "Template library can drive SEO + product adoption"
+        ]
+      }
+    },
+
+    "step_2_strategy": {
+      "target_audience": {
+        "primary_icp": {
+          "title": "Operations Manager / Project Manager",
+          "company_size": "50-500 employees",
+          "industry": "Tech, SaaS, agencies",
+          "pain_points": [
+            "Team always overcommitted, burnout risk",
+            "Poor visibility into capacity and workload",
+            "Inefficient task allocation (gut feel, not data)",
+            "Tool fatigue - too many disconnected tools"
+          ],
+          "desired_outcomes": {
+            "functional": "Optimize team workload, reduce planning time",
+            "emotional": "Confidence in plans, less stress",
+            "social": "Be seen as strategic ops leader"
+          }
+        },
+        "jtbd": {
+          "trigger": "Team missed deadline or someone burned out",
+          "anxieties": ["Another tool to learn", "Team resistance", "Cost without ROI"],
+          "forces": {
+            "push": "Current planning is manual and time-consuming",
+            "pull": "AI promises faster, better decisions",
+            "habit": "Comfortable with current tool (even if painful)",
+            "anxiety": "AI might make wrong suggestions"
+          }
+        }
+      },
+
+      "value_proposition": {
+        "core_promise": "Stop guessing who should work on what. Our AI optimizes task allocation based on capacity, skills, and project priorities - in seconds, not hours.",
+        "proof_points": [
+          "Reduces planning time by 60% (beta customer data)",
+          "Prevents burnout with capacity forecasting",
+          "Learns from your team's actual work patterns"
+        ],
+        "differentiation": "Only PM tool with AI-powered workload optimization",
+        "positioning_statement": "TaskFlow is the AI-powered project management tool that eliminates planning guesswork for mid-market operations managers who are tired of manual capacity planning, unlike Asana or Monday, because our AI actually understands your team's capabilities and workload."
+      },
+
+      "messaging_hierarchy": {
+        "headline": "Stop Guessing. Start Optimizing. AI-Powered Project Planning.",
+        "subheadline": "TaskFlow's AI suggests optimal task allocation in seconds - so your team works smarter, not harder.",
+        "supporting_messages": [
+          "60% less time planning, 100% more confidence in your decisions",
+          "Prevent burnout before it happens with capacity forecasting",
+          "AI that learns from your team - not generic suggestions"
+        ],
+        "cta": "Start Free 14-Day Trial"
+      },
+
+      "channel_strategy": {
+        "primary_channels": [
+          {
+            "channel": "Content Marketing (Blog + SEO)",
+            "rationale": "Long-term, high-quality leads. OpsManagers research online.",
+            "budget": "$15k (60 days of writing + SEO)",
+            "tactics": [
+              "Pillar: Capacity planning guides",
+              "Pillar: Team productivity frameworks",
+              "Pillar: AI in project management"
+            ]
+          },
+          {
+            "channel": "Product-Led Growth (Free Trial)",
+            "rationale": "Let product sell itself. Low friction.",
+            "budget": "$5k (onboarding optimization)",
+            "tactics": [
+              "14-day free trial, no credit card",
+              "In-app AI suggestions showcase",
+              "Template library for quick wins"
+            ]
+          }
+        ],
+        "secondary_channels": [
+          {
+            "channel": "LinkedIn Organic + Thought Leadership",
+            "rationale": "Build authority, reach decision makers",
+            "budget": "$2k (content + design)",
+            "tactics": [
+              "Founder posts on AI + productivity",
+              "Case studies and customer stories",
+              "Engage in PM communities"
+            ]
+          },
+          {
+            "channel": "Paid Search (Google Ads)",
+            "rationale": "Capture high-intent searches",
+            "budget": "$20k (ad spend over 90 days)",
+            "tactics": [
+              "Target: 'project management software', 'capacity planning tool'",
+              "Landing pages per search intent",
+              "Retargeting for trial signups"
+            ]
+          }
+        ],
+        "experimental": [
+          {
+            "channel": "LinkedIn Ads",
+            "budget": "$8k test",
+            "hypothesis": "Can reach OpsManagers with AI angle at acceptable CPA"
+          }
+        ]
+      },
+
+      "growth_levers": {
+        "acquisition": "SEO content + paid search for high-intent keywords",
+        "activation": "AI suggestions in first session (aha moment)",
+        "retention": "Weekly capacity reports, burnout alerts",
+        "revenue": "Upgrade prompts when team size > 10",
+        "referral": "Share capacity reports with stakeholders (viral loop)"
+      }
+    },
+
+    "step_3_tactics": {
+      "campaign_phases": {
+        "phase_1_launch": {
+          "timeline": "Weeks 1-4",
+          "objective": "Generate awareness and trial signups",
+          "tactics": [
+            "Publish 8 SEO-optimized blog posts",
+            "Launch Google Ads campaigns",
+            "Founder LinkedIn thought leadership (3x/week)",
+            "Launch free trial landing page"
+          ],
+          "kpis": ["500 website visitors", "50 trial signups", "2% trial conversion rate"]
+        },
+        "phase_2_optimize": {
+          "timeline": "Weeks 5-8",
+          "objective": "Optimize conversion and activate users",
+          "tactics": [
+            "A/B test landing page headlines",
+            "Add in-app onboarding tutorial",
+            "Launch retargeting campaigns",
+            "Publish case study content"
+          ],
+          "kpis": ["1000 website visitors", "100 trial signups", "10% trial-to-paid"]
+        },
+        "phase_3_scale": {
+          "timeline": "Weeks 9-12",
+          "objective": "Scale winners and hit customer target",
+          "tactics": [
+            "Increase budget on best-performing ads",
+            "Launch LinkedIn Ads if Google profitable",
+            "Expand SEO content production",
+            "Add referral program"
+          ],
+          "kpis": ["2000 visitors", "200 trials", "100 paying customers"]
+        }
+      },
+
+      "content_framework": {
+        "pillar_1_capacity_planning": {
+          "topics": [
+            "Complete Guide to Capacity Planning for Project Managers",
+            "5 Signs Your Team is Overcommitted (And How to Fix It)",
+            "Capacity Planning Template [Free Download]"
+          ],
+          "distribution": ["Blog", "LinkedIn", "Email"]
+        },
+        "pillar_2_ai_productivity": {
+          "topics": [
+            "How AI is Transforming Project Management in 2025",
+            "AI vs. Manual Planning: A Real Comparison",
+            "Ethical AI in Workforce Planning"
+          ],
+          "distribution": ["Blog", "LinkedIn", "PR pitches"]
+        }
+      },
+
+      "ad_creative_examples": {
+        "angle_1_pain_amplification": {
+          "headline": "Another Missed Deadline? Your Team Might Be Overcommitted.",
+          "body": "Stop guessing who can take on more work. TaskFlow's AI shows exactly who has capacity - in real-time.",
+          "cta": "See Your Team's Real Capacity",
+          "psychology": ["Loss aversion (missed deadlines)", "Clarity (real-time capacity)"]
+        },
+        "angle_2_time_savings": {
+          "headline": "Spend 10 Minutes Planning, Not 3 Hours",
+          "body": "TaskFlow's AI suggests optimal task allocation instantly. Get back to strategic work.",
+          "cta": "Save 60% of Your Planning Time",
+          "psychology": ["Time savings (specific)", "Authority (AI)"]
+        },
+        "angle_3_social_proof": {
+          "headline": "Why 300+ Ops Managers Switched to TaskFlow",
+          "body": "Better plans. Happier teams. Fewer surprises. See what AI-powered planning can do.",
+          "cta": "Join 300+ Smart Ops Teams",
+          "psychology": ["Bandwagon effect", "Social proof (specific number)"]
+        }
+      },
+
+      "landing_page_structure": {
+        "hero": {
+          "headline": "Stop Guessing. Start Optimizing.",
+          "subheadline": "AI-powered task allocation that prevents burnout and missed deadlines.",
+          "cta": "Start Free 14-Day Trial",
+          "hero_image": "Dashboard showing AI workload suggestions"
+        },
+        "value_props": [
+          "60% faster planning with AI-powered suggestions",
+          "Prevent burnout with capacity forecasting",
+          "Works with your existing workflows"
+        ],
+        "social_proof": {
+          "logos": "5-8 beta customer logos",
+          "testimonial": "TaskFlow cut our planning time in half. The AI actually understands our team. - Jane, Ops Manager @ TechCo",
+          "stats": "300+ teams optimizing workload with TaskFlow"
+        },
+        "demo_section": "Interactive demo or video showing AI in action",
+        "cta_secondary": "See How It Works (Demo Video)"
+      }
+    },
+
+    "step_4_experiments": {
+      "experiment_1_messaging": {
+        "hypothesis": "Pain amplification angle ('Another missed deadline?') will outperform time savings angle by 20%+ in click-through rate",
+        "variants": [
+          "Control: Time savings headline",
+          "Variant: Pain amplification headline"
+        ],
+        "success_metric": "CTR",
+        "sample_size": "1000 impressions per variant",
+        "duration": "7 days"
+      },
+      "experiment_2_landing_page": {
+        "hypothesis": "Adding specific time savings ('60% faster') to hero will increase trial signups by 15%+",
+        "variants": [
+          "Control: Generic benefits",
+          "Variant: Specific time savings stat"
+        ],
+        "success_metric": "Trial signup rate",
+        "sample_size": "500 visitors per variant",
+        "duration": "14 days"
+      },
+      "experiment_3_onboarding": {
+        "hypothesis": "Showing AI suggestion in first 2 minutes will increase activation by 25%+",
+        "variants": [
+          "Control: Standard onboarding",
+          "Variant: Fast-track to AI demo"
+        ],
+        "success_metric": "% completing first AI-assisted task",
+        "sample_size": "100 users per variant",
+        "duration": "21 days"
+      }
+    },
+
+    "step_5_measurement": {
+      "north_star_metric": "Weekly Active Teams (using AI suggestions)",
+      "kpi_hierarchy": {
+        "level_1_campaign": {
+          "primary": "100 paying customers by Day 90",
+          "supporting": ["500 trial signups", "15% trial-to-paid conversion"]
+        },
+        "level_2_channels": {
+          "paid_search": "CPA < $150, ROAS > 3:1",
+          "content": "1500 organic visitors by Day 60",
+          "product_trial": "50% activation rate (AI usage in first session)"
+        },
+        "level_3_tactics": {
+          "ad_performance": "CTR > 2%, Landing page CVR > 5%",
+          "content_performance": "Avg. time on page > 3 min, bounce < 60%",
+          "onboarding": "80% complete onboarding tutorial"
+        }
+      },
+      "dashboard": {
+        "daily_view": ["Ad spend", "Clicks", "Signups", "Trial starts"],
+        "weekly_view": ["Traffic by channel", "Trial-to-paid rate", "Experiment results"],
+        "monthly_view": ["MRR", "CAC", "LTV projection", "Channel ROI"]
+      },
+      "decision_rules": {
+        "scale": "If CPA < $120 for 7 days, increase budget 50%",
+        "optimize": "If CPA $120-$180, run creative tests",
+        "pivot": "If CPA > $180 for 14 days, pause and redesign",
+        "kill": "If CPA > $250 after redesign, abandon channel"
+      }
+    },
+
+    "expected_outcomes": {
+      "optimistic": {
+        "customers": 150,
+        "mrr": "$7,500 (at $50/mo average)",
+        "cac": "$100",
+        "ltv_cac_ratio": "4:1"
+      },
+      "realistic": {
+        "customers": 100,
+        "mrr": "$5,000",
+        "cac": "$150",
+        "ltv_cac_ratio": "3:1"
+      },
+      "pessimistic": {
+        "customers": 50,
+        "mrr": "$2,500",
+        "cac": "$250",
+        "ltv_cac_ratio": "1.5:1"
+      }
+    },
+
+    "key_learnings_to_track": [
+      "Which messaging angle resonates most?",
+      "What drives activation (AI usage)?",
+      "What's the real CAC per channel?",
+      "How long is sales cycle?",
+      "What objections come up most?",
+      "Which content drives best leads?"
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gem-dmm-agent-pack/schemas/memory_entry_schema.json",
+  "title": "Memory Entry Schema (Privacy-Safe, Copy/Paste)",
+  "description": "A compact, privacy-safe record of decisions and definitions. Must not contain PII or secrets.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "_meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": { "type": "string", "const": "1.0.0" },
+        "created_at": { "type": "string", "format": "date" }
+      },
+      "required": ["schema_version", "created_at"]
+    },
+    "business_snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "industry": { "type": "string" },
+        "business_model": { "type": "string" },
+        "geographies": { "type": "array", "items": { "type": "string" } },
+        "icp_summary": { "type": "string" }
+      },
+      "required": ["industry", "business_model", "icp_summary"]
+    },
+    "core_question": { "type": "string", "minLength": 10 },
+    "metric_definitions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "metric_name": { "type": "string" },
+          "definition": { "type": "string" }
+        },
+        "required": ["metric_name", "definition"]
+      }
+    },
+    "decisions": { "type": "array", "items": { "type": "string" } },
+    "constraints": { "type": "array", "items": { "type": "string" } },
+    "privacy_note": {
+      "type": "string",
+      "const": "No PII, credentials, or customer lists stored in this record."
+    }
+  },
+  "required": ["_meta", "business_snapshot", "core_question", "decisions", "privacy_note"]
+}
+

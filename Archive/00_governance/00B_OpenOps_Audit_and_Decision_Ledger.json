@@ -1,0 +1,117 @@
+{
+  "ledger": {
+    "name": "OpenOps_Audit_and_Decision_Ledger",
+    "version": "2.0.0",
+    "type": "governance_registry",
+    "description": "Centralized immutable ledger that records all orchestration decisions, agent actions, and compliance outcomes within OpenOps Studio.",
+    "author": "OpenOps Studio | Created by Mamdouh Aboammar",
+    "governance": {
+      "scope": "Global – applies to all orchestrated rounds and modules.",
+      "enforcement": "All agent actions must be logged before round exit.",
+      "data_policy": "Immutable entries, no retroactive edits allowed."
+    },
+    "schema": {
+      "entry_id": "uuid",
+      "timestamp": "ISO-8601",
+      "round": "Plan | Blueprint | Detail | QA | Handoff",
+      "agent": "string",
+      "action_type": "decision | execution | escalation | rollback | validation",
+      "action_description": "string",
+      "inputs": "array",
+      "outputs": "array",
+      "decision_context": {
+        "justification": "string",
+        "risk_level": "low | medium | high",
+        "confidence_score": "0.0-1.0",
+        "dependencies": "array"
+      },
+      "security_context": {
+        "classification": "public | internal | confidential | sensitive",
+        "privacy_compliance": "boolean",
+        "security_gate_passed": "boolean",
+        "incident_flag": "boolean"
+      },
+      "qa_context": {
+        "evaluation_score": "0.0-1.0",
+        "redteam_feedback": "string",
+        "supervisor_notes": "string"
+      },
+      "outcome": {
+        "status": "approved | rejected | rerun_required | escalated | completed",
+        "impact_scope": "local | system | cross_module",
+        "follow_up_actions": "array"
+      },
+      "attribution": {
+        "initiated_by": "AgentName or User",
+        "approved_by": "SupervisorAgent or Orchestrator",
+        "verified_by": "QAOrchestrator"
+      }
+    },
+    "security_rules": {
+      "storage": "Encrypted JSONL ledger file under /openops/audit/",
+      "access_control": "Role-based (SupervisorAgent, StaffEngineer, ComplianceOfficer)",
+      "retention_period_days": 365,
+      "backup_frequency": "daily",
+      "tamper_protection": "SHA-256 checksums per entry"
+    },
+    "integration_points": {
+      "upstream": [
+        "OrchestrationEngine",
+        "DeepResearchEngine",
+        "AgentParallelismPatterns"
+      ],
+      "downstream": [
+        "QAOrchestrator",
+        "AnalyticsTracker",
+        "SecurityComplianceMonitor"
+      ]
+    },
+    "example_entry": {
+      "entry_id": "b8c-42a1-ef01",
+      "timestamp": "2025-12-16T14:05:00Z",
+      "round": "Detail",
+      "agent": "SupervisorAgent",
+      "action_type": "decision",
+      "action_description": "Revised branch plan after Red Team challenge.",
+      "inputs": ["refined_draft", "attack_report"],
+      "outputs": ["updated_research_plan"],
+      "decision_context": {
+        "justification": "Detected logical inconsistency in subtopic #3; requested denoising iteration.",
+        "risk_level": "medium",
+        "confidence_score": 0.87,
+        "dependencies": ["core_denoising_loop"]
+      },
+      "security_context": {
+        "classification": "internal",
+        "privacy_compliance": true,
+        "security_gate_passed": true,
+        "incident_flag": false
+      },
+      "qa_context": {
+        "evaluation_score": 0.91,
+        "redteam_feedback": "Resolved bias successfully.",
+        "supervisor_notes": "Approved after fix."
+      },
+      "outcome": {
+        "status": "approved",
+        "impact_scope": "local",
+        "follow_up_actions": ["continue_denoising_cycle"]
+      },
+      "attribution": {
+        "initiated_by": "RedTeamAgent",
+        "approved_by": "SupervisorAgent",
+        "verified_by": "QAOrchestrator"
+      }
+    },
+    "automation_hooks": {
+      "on_entry_commit": [
+        "trigger: QAOrchestrator.verify_log_integrity",
+        "trigger: ComplianceMonitor.append_checksum"
+      ],
+      "on_failure": [
+        "trigger: IncidentResponseProtocol",
+        "alert: SecurityLead"
+      ]
+    }
+  }
+}

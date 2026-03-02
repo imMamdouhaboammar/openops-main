@@ -1,0 +1,103 @@
+{
+  "kb_id": "EDW_WRITING_PATTERNS_003",
+  "kb_name": "Writing Patterns Library",
+  "kb_name_ar": "مكتبة أنماط الكتابة",
+  "version": "1.0.0",
+  
+  "post_templates": {
+    "news_announcement": {
+      "structure": "hook → context → details → analysis → cta",
+      "hook_type": "surprising_fact",
+      "example": "من كام يوم [COMPANY] نجحت في [ACHIEVEMENT]!"
+    },
+
+    "industry_analysis": {
+      "structure": "observation → explanation → implications → future",
+      "hook_type": "controversial_question",
+      "example": "فيه حاجة كبيرة بتحصل في [INDUSTRY]..."
+    },
+
+    "thought_leadership": {
+      "structure": "bold_claim → justification → examples → conclusion",
+      "hook_type": "counter_intuitive_statement",
+      "example": "معظم [GROUP] غلطانين في [ASSUMPTION]"
+    },
+
+    "how_to_guide": {
+      "structure": "problem → solution_steps → benefits → cta",
+      "hook_type": "relatable_problem",
+      "example": "لو بتعاني من [PROBLEM]، الحل بسيط"
+    },
+
+    "case_study": {
+      "structure": "intro → challenge → approach → results → lessons",
+      "hook_type": "dramatic_result",
+      "example": "ازاي [ENTITY] قدر يحقق [RESULT] في [TIME]"
+    }
+  },
+
+  "paragraph_patterns": {
+    "introduction": [
+      "[Hook sentence]. [Context]. [Why it matters].",
+      "[Question]. [Answer preview]. [Significance]."
+    ],
+
+    "body": [
+      "[Point statement]. [Elaboration]. [Example]. [So what].",
+      "[Claim]. [Evidence]. [Analysis]. [Connection to main idea]."
+    ],
+
+    "conclusion": [
+      "[Summary]. [Key takeaway]. [Call to action].",
+      "[Final thought]. [Future outlook]. [Engagement question]."
+    ]
+  },
+
+  "sentence_starters_library": {
+    "analysis": [
+      "اللي بيحصل دلوقتي...",
+      "لو دققنا في الموضوع...",
+      "الحقيقة إن...",
+      "المثير للاهتمام..."
+    ],
+
+    "examples": [
+      "زي مثلاً...",
+      "ناخد مثال...",
+      "شوف بقى...",
+      "تخيل..."
+    ],
+
+    "transitions": [
+      "من ناحية تانية...",
+      "خلينا نشوف...",
+      "طيب...",
+      "نخش على نقطة تانية..."
+    ]
+  },
+
+  "effective_hooks": [
+    {
+      "type": "shocking_stat",
+      "template": "[NUMBER] من [GROUP] بيعملوا [ACTION]",
+      "effectiveness": 0.9
+    },
+    {
+      "type": "provocative_question",
+      "template": "ليه [ASSUMPTION] غلط؟",
+      "effectiveness": 0.85
+    },
+    {
+      "type": "bold_claim",
+      "template": "[STATEMENT] - وده هيغير كل حاجة",
+      "effectiveness": 0.88
+    }
+  ],
+
+  "cta_patterns": {
+    "opinion_seeking": "قولي، إيه رأيك في [TOPIC]؟",
+    "experience_sharing": "حد جرب [THING] قبل كده؟",
+    "action_prompting": "روح جرّب [ACTION] دلوقتي",
+    "link_teasing": "هسيبلك اللينك في أول كومنت"
+  }
+}

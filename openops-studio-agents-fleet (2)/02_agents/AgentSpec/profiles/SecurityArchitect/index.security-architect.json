@@ -1,0 +1,420 @@
+{
+    "agent_id": "security-architect",
+    "namespace": "org.openops.agents.engineering.security-architect",
+    "version": "1.0.0",
+    "status": "active",
+    "metadata": {
+        "display_name": "Security Architect",
+        "domain": "security_engineering",
+        "tier": "L2",
+        "specialization": [
+            "threat_modeling",
+            "compliance",
+            "zero_trust",
+            "devsecops"
+        ],
+        "created_at": "2026-01-10T12:00:00Z",
+        "last_updated": "2026-01-10T12:35:00Z",
+        "maintainer": "OpenOps Security Team"
+    },
+    "capabilities_registry": [
+        {
+            "id": "threat-modeling",
+            "name": "Automated Threat Modeling",
+            "type": "core",
+            "frameworks": [
+                "STRIDE",
+                "PASTA",
+                "LINDDUN"
+            ],
+            "file_path": "capabilities/core-capabilities.md#threat-modeling"
+        },
+        {
+            "id": "architecture-review",
+            "name": "Security Architecture Review",
+            "type": "core",
+            "standards": [
+                "OWASP",
+                "NIST",
+                "ISO27001"
+            ],
+            "file_path": "capabilities/core-capabilities.md#architecture-review"
+        },
+        {
+            "id": "compliance-validation",
+            "name": "Compliance & Framework Validation",
+            "type": "core",
+            "frameworks": [
+                "NIST-CSF",
+                "ISO-27001",
+                "OWASP-SAMM",
+                "CIS"
+            ],
+            "file_path": "capabilities/core-capabilities.md#compliance-validation"
+        },
+        {
+            "id": "vulnerability-management",
+            "name": " Vulnerability Assessment & Management",
+            "type": "core",
+            "tools": [
+                "SAST",
+                "DAST",
+                "SCA",
+                "penetration-testing"
+            ],
+            "file_path": "capabilities/core-capabilities.md#vulnerability-management"
+        },
+        {
+            "id": "zero-trust-design",
+            "name": "Zero Trust Architecture Design",
+            "type": "advanced",
+            "components": [
+                "identity",
+                "device-trust",
+                "microsegmentation",
+                "continuous-auth"
+            ],
+            "file_path": "capabilities/advanced-capabilities.md#zero-trust"
+        },
+        {
+            "id": "ai-ml-security",
+            "name": "AI/ML System Security",
+            "type": "advanced",
+            "coverage": [
+                "llm-security",
+                "model-protection",
+                "data-poisoning",
+                "adversarial-attacks"
+            ],
+            "file_path": "capabilities/advanced-capabilities.md#ai-ml-security"
+        },
+        {
+            "id": "supply-chain-security",
+            "name": "Software Supply Chain Security",
+            "type": "advanced",
+            "focus": [
+                "sbom",
+                "dependency-scanning",
+                "build-pipeline-security"
+            ],
+            "file_path": "capabilities/advanced-capabilities.md#supply-chain"
+        }
+    ],
+    "tools_registry": [
+        {
+            "id": "threat-model-generator",
+            "name": "STRIDE Threat Model Generator",
+            "type": "analysis",
+            "schema_file": "tools/threat-model-generator.tool.json",
+            "integration": "internal"
+        },
+        {
+            "id": "sast-scanner",
+            "name": "Static Application Security Testing",
+            "type": "scanner",
+            "schema_file": "tools/sast-scanner.tool.json",
+            "integration": "external",
+            "providers": [
+                "sonarqube",
+                "checkmarx",
+                "semgrep"
+            ]
+        },
+        {
+            "id": "dast-scanner",
+            "name": "Dynamic Application Security Testing",
+            "type": "scanner",
+            "schema_file": "tools/dast-scanner.tool.json",
+            "integration": "external",
+            "providers": [
+                "owasp-zap",
+                "burp-suite"
+            ]
+        },
+        {
+            "id": "compliance-checker",
+            "name": "Framework Compliance Checker",
+            "type": "validation",
+            "schema_file": "tools/compliance-checker.tool.json",
+            "integration": "internal",
+            "supported_frameworks": [
+                "NIST-CSF",
+                "ISO-27001",
+                "OWASP-ASVS",
+                "CIS"
+            ]
+        },
+        {
+            "id": "security-control-mapper",
+            "name": "Security Control Recommendation Engine",
+            "type": "recommendation",
+            "schema_file": "tools/security-control-mapper.tool.json",
+            "integration": "internal"
+        }
+    ],
+    "workflows_registry": [
+        {
+            "id": "security-architecture-review",
+            "name": "Comprehensive Security Architecture Review",
+            "type": "standard",
+            "file_path": "workflows/standard-workflows/architecture-review.md",
+            "triggers": [
+                "design_complete",
+                "manual_request"
+            ],
+            "duration_estimate": "2-4 hours"
+        },
+        {
+            "id": "threat-model-creation",
+            "name": "Threat Model Creation & Risk Assessment",
+            "type": "standard",
+            "file_path": "workflows/standard-workflows/threat-modeling.md",
+            "triggers": [
+                "new_feature",
+                "architecture_change"
+            ],
+            "duration_estimate": "1-2 hours"
+        },
+        {
+            "id": "vulnerability-remediation",
+            "name": "Vulnerability Detection & Remediation",
+            "type": "standard",
+            "file_path": "workflows/standard-workflows/vulnerability-remediation.md",
+            "triggers": [
+                "scan_complete",
+                "cve_alert"
+            ],
+            "duration_estimate": "varies"
+        },
+        {
+            "id": "compliance-audit",
+            "name": "Security Compliance Audit",
+            "type": "standard",
+            "file_path": "workflows/standard-workflows/compliance-audit.md",
+            "triggers": [
+                "quarterly",
+                "pre_release",
+                "manual_request"
+            ],
+            "duration_estimate": "4-8 hours"
+        },
+        {
+            "id": "zero-trust-implementation",
+            "name": "Zero Trust Architecture Implementation",
+            "type": "advanced",
+            "file_path": "workflows/advanced-workflows/zero-trust-implementation.md",
+            "triggers": [
+                "manual_request",
+                "architecture_overhaul"
+            ],
+            "duration_estimate": "2-4 weeks"
+        },
+        {
+            "id": "incident-response-security",
+            "name": "Security Incident Response & Forensics",
+            "type": "advanced",
+            "file_path": "workflows/advanced-workflows/incident-response.md",
+            "triggers": [
+                "security_alert",
+                "breach_detection"
+            ],
+            "duration_estimate": "immediate"
+        }
+    ],
+    "platform_mapping": {
+        "gemini": {
+            "model": "gemini-2.0-flash-exp",
+            "system_instruction_file": "instructions/gemini.md",
+            "features": {
+                "multimodal_analysis": true,
+                "architecture_diagram_review": true,
+                "long_context": true,
+                "code_execution": true
+            },
+            "specific_capabilities": [
+                "visual_threat_identification",
+                "diagram_based_threat_modeling",
+                "infrastructure_as_code_analysis"
+            ]
+        },
+        "claude": {
+            "model": "claude-sonnet-4",
+            "system_instruction_file": "instructions/claude.md",
+            "features": {
+                "extended_thinking": true,
+                "constitutional_ai": true,
+                "structured_outputs": true
+            },
+            "specific_capabilities": [
+                "complex_threat_modeling",
+                "ethical_security_decisions",
+                "comprehensive_risk_assessment"
+            ]
+        },
+        "chatgpt": {
+            "model": "gpt-4o",
+            "system_instruction_file": "instructions/chatgpt.md",
+            "features": {
+                "function_calling": true,
+                "gpt_actions": true,
+                "custom_instructions": true
+            },
+            "specific_capabilities": [
+                "security_tool_integration",
+                "automated_scanning_orchestration",
+                "policy_enforcement_automation"
+            ],
+            "actions": [
+                {
+                    "name": "scan_with_snyk",
+                    "endpoint": "https://api.snyk.io/v1/scan"
+                },
+                {
+                    "name": "check_owasp_compliance",
+                    "endpoint": "https://internal-api/owasp/validate"
+                }
+            ]
+        }
+    },
+    "integration_points": {
+        "upstream_dependencies": [
+            {
+                "agent": "staff-engineer",
+                "purpose": "architecture_approval",
+                "data_exchange": [
+                    "architecture_diagrams",
+                    "technical_decisions"
+                ]
+            },
+            {
+                "agent": "product-manager",
+                "purpose": "risk_appetite_definition",
+                "data_exchange": [
+                    "security_requirements",
+                    "compliance_needs"
+                ]
+            },
+            {
+                "agent": "architectural-integrity",
+                "purpose": "design_consistency",
+                "data_exchange": [
+                    "architecture_patterns",
+                    "system_constraints"
+                ]
+            }
+        ],
+        "downstream_consumers": [
+            {
+                "agent": "devops-automator",
+                "purpose": "security_automation",
+                "data_exchange": [
+                    "security_policies",
+                    "automated_controls"
+                ]
+            },
+            {
+                "agent": "performance-auditor",
+                "purpose": "performance_security_balance",
+                "data_exchange": [
+                    "security_overhead_metrics",
+                    "optimization_recommendations"
+                ]
+            },
+            {
+                "agent": "doc-custodian",
+                "purpose": "security_documentation",
+                "data_exchange": [
+                    "threat_models",
+                    "security_runbooks"
+                ]
+            }
+        ],
+        "peer_collaborations": [
+            {
+                "agent": "compliance-legal",
+                "purpose": "regulatory_compliance",
+                "data_exchange": [
+                    "compliance_status",
+                    "legal_requirements"
+                ]
+            },
+            {
+                "agent": "data-privacy-ndmo",
+                "purpose": "privacy_security_alignment",
+                "data_exchange": [
+                    "privacy_controls",
+                    "data_protection_measures"
+                ]
+            }
+        ]
+    },
+    "dependencies": {
+        "external_apis": [
+            "CVE/NVD Database",
+            "MITRE ATT&CK API",
+            "OWASP API",
+            "GitHub Security Advisory API"
+        ],
+        "internal_services": [
+            "Authentication Service",
+            "Secrets Manager",
+            "Audit Logging Service",
+            "Notification Service"
+        ],
+        "data_stores": [
+            "Threat Model Repository (Git)",
+            "Vulnerability Database (PostgreSQL)",
+            "Security Metrics Store (TimeSeries DB)"
+        ]
+    },
+    "metrics": {
+        "performance": {
+            "threat_model_generation_time": {
+                "target": "< 2 minutes",
+                "unit": "minutes"
+            },
+            "vulnerability_scan_throughput": {
+                "target": "> 1000 LOC/second",
+                "unit": "lines_per_second"
+            },
+            "compliance_check_time": {
+                "target": "< 5 minutes",
+                "unit": "minutes"
+            }
+        },
+        "quality": {
+            "false_positive_rate": {
+                "target": "< 10%",
+                "unit": "percentage"
+            },
+            "threat_coverage": {
+                "target": "> 95%",
+                "unit": "percentage"
+            },
+            "control_effectiveness": {
+                "target": "> 90%",
+                "unit": "percentage"
+            }
+        },
+        "business": {
+            "security_incidents_prevented": {
+                "target": "100% of detected threats",
+                "unit": "percentage"
+            },
+            "compliance_audit_pass_rate": {
+                "target": "100%",
+                "unit": "percentage"
+            },
+            "mean_time_to_remediate_critical": {
+                "target": "< 48 hours",
+                "unit": "hours"
+            }
+        }
+    },
+    "versioning": {
+        "schema_version": "1.0.0",
+        "api_version": "v1",
+        "changelog_file": "CHANGELOG.md",
+        "migration_guide": "docs/migration-guide.md"
+    }
+}

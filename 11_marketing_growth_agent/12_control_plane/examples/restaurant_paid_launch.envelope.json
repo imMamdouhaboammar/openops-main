@@ -1,0 +1,52 @@
+{
+  "envelopeVersion": "1.0.0",
+  "taskId": "TASK-RESTAURANT-PAID-LAUNCH-0001",
+  "mode": "operator",
+  "podId": "POD-PAID",
+  "authorization": {
+    "supervisorToken": "SUPERVISOR_TOKEN_EXAMPLE_ONLY",
+    "expiresAt": "2026-01-24T13:00:00Z",
+    "idempotencyKey": "idem-2026-01-24-restaurant-paid-0001"
+  },
+  "objective": "Design a paid media launch plan (Meta/Google) focused on Mon–Wed demand capture, including testing matrix, pacing rules, and kill metrics.",
+  "context": {
+    "clientType": "restaurant",
+    "clientName": "Example Restaurant",
+    "goalWindowDays": 14,
+    "primarySurface": "Meta ads → WhatsApp / phone"
+  },
+  "inputs": {
+    "monthlyBudget": 1500,
+    "currency": "USD",
+    "constraints": ["Avoid pushing peak hours Thu–Sat evenings"],
+    "availableCreatives": ["UGC-style food reels", "review screenshots", "menu photos"]
+  },
+  "constraints": {
+    "deadline": "2026-01-27T18:00:00Z",
+    "compliance": {
+      "avoidMisleadingDiscounts": true,
+      "avoidDarkPatterns": true
+    },
+    "budget": { "maxSpend": 1500, "currency": "USD" },
+    "scope": {
+      "inScope": ["campaign structure", "testing matrix", "UTM plan", "pacing rules", "kill metrics", "approval checklist"],
+      "outOfScope": ["actually launching ads", "billing setup", "pixel implementation"]
+    }
+  },
+  "expectedOutputs": [
+    "Campaign architecture (prospecting/retargeting)",
+    "Testing matrix (angles × proof × format)",
+    "Budget pacing plan (testing vs scaling)",
+    "Kill metrics and Day 7/Day 14 decision rules",
+    "Naming convention and UTM plan",
+    "Disapproval/risk checklist"
+  ],
+  "qualityGates": [
+    "Plan includes a weekday-only strategy and excludes peak hour overdelivery",
+    "Each test has a kill metric and decision date",
+    "Tracking requirements are explicitly stated (events + UTMs)"
+  ],
+  "approvalGates": ["Client approves offer language and any discount phrasing"],
+  "returnFormat": "artifact_plus_decisions"
+}
+

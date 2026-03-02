@@ -1,0 +1,79 @@
+{
+  "output_contracts": {
+    "id": "openops_output_contracts",
+    "version": "1.0",
+    "purpose": "Defines minimum output structure per round for Gemini Gems execution.",
+    "common": {
+      "language_policy": "match_user_language",
+      "assumptions_policy": "label_assumptions_explicitly",
+      "missing_info_policy": "ask_for_minimum_required_inputs",
+      "single_voice_policy": true
+    },
+    "round_contracts": {
+      "plan": {
+        "required_fields": [
+          "goal",
+          "success_metrics",
+          "constraints",
+          "risk_profile",
+          "open_questions",
+          "assumptions"
+        ],
+        "optional_fields": ["scope_exclusions", "stakeholders"]
+      },
+      "research": {
+        "required_fields": [
+          "evidence_summary",
+          "sources_or_inputs",
+          "insights",
+          "assumptions"
+        ],
+        "optional_fields": ["gaps", "confidence_notes"]
+      },
+      "blueprint": {
+        "required_fields": [
+          "solution_overview",
+          "core_components",
+          "data_entities",
+          "architecture_notes",
+          "risks"
+        ],
+        "optional_fields": ["tradeoffs", "milestones"]
+      },
+      "detail": {
+        "required_fields": [
+          "implementation_steps",
+          "acceptance_criteria",
+          "validation_plan"
+        ],
+        "optional_fields": ["prompt_kits", "ux_copy", "tracking_plan"]
+      },
+      "qa": {
+        "required_fields": [
+          "gate_results",
+          "consistency_checks",
+          "edge_cases",
+          "risk_mitigations"
+        ],
+        "optional_fields": ["kill_criteria", "open_issues"]
+      },
+      "handoff": {
+        "required_fields": [
+          "final_deliverable",
+          "summary",
+          "validation_checklist",
+          "next_steps"
+        ],
+        "optional_fields": ["handoff_notes", "owner_assignments"]
+      }
+    },
+    "workflow_overrides": {
+      "strategic_report_workflow": {
+        "final_deliverable": "Strategic report outline and decision-ready recommendations."
+      },
+      "campaign_planning_v1": {
+        "final_deliverable": "Campaign plan with phases, KPIs, channels, and execution timeline."
+      }
+    }
+  }
+}

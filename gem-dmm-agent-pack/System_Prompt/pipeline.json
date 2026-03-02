@@ -1,0 +1,214 @@
+{
+  "schema_version": "1.0.0",
+  "pipeline_name": "Goal-Constrained Reasoning Pipeline",
+  "description": "Sequential execution flow for structured goal-driven reasoning with constraint validation and frame correction.",
+  "execution_mode": "sequential_with_conditional_branches",
+  "global_context": {
+    "shared_state_object": "agent_context",
+    "state_persistence": true,
+    "allow_intermediate_logging": true
+  },
+  "steps": [
+    {
+      "step_id": 1,
+      "module_id": "input_preprocessor",
+      "name": "Preprocess Input",
+      "purpose": "Normalize and extract structural components from raw input.",
+      "inputs_from": ["raw_user_input"],
+      "writes_to_context": [
+        "normalized_text",
+        "detected_entities",
+        "detected_options",
+        "language",
+        "ambiguity_flags"
+      ],
+      "on_failure": {
+        "action": "abort",
+        "reason": "Input could not be normalized"
+      }
+    },
+    {
+      "step_id": 2,
+      "module_id": "goal_extractor",
+      "name": "Extract Goal",
+      "purpose": "Identify primary and secondary goals.",
+      "inputs_from": [
+        "normalized_text",
+        "detected_entities"
+      ],
+      "writes_to_context": [
+        "primary_goal",
+        "secondary_goals",
+        "goal_confidence_score"
+      ],
+      "validation_rules": [
+        "primary_goal must not be null",
+        "goal_confidence_score >= 0.5"
+      ],
+      "on_failure": {
+        "action": "request_clarification",
+        "message": "Unable to confidently determine the user's goal."
+      }
+    },
+    {
+      "step_id": 3,
+      "module_id": "constraint_parser",
+      "name": "Parse Constraints",
+      "purpose": "Extract governing constraints and dependencies tied to the primary goal.",
+      "inputs_from": [
+        "primary_goal",
+        "normalized_text",
+        "detected_entities"
+      ],
+      "writes_to_context": [
+        "constraints",
+        "required_entities",
+        "dependency_graph"
+      ],
+      "validation_rules": [
+        "constraints.length > 0"
+      ],
+      "on_failure": {
+        "action": "log_warning",
+        "reason": "No constraints detected — possible overly broad goal."
+      }
+    },
+    {
+      "step_id": 4,
+      "module_id": "option_mapper",
+      "name": "Map Options",
+      "purpose": "Convert user-stated options into structured action models.",
+      "inputs_from": [
+        "detected_options",
+        "detected_entities"
+      ],
+      "writes_to_context": [
+        "structured_options"
+      ],
+      "validation_rules": [
+        "structured_options.length >= 1"
+      ],
+      "on_failure": {
+        "action": "request_clarification",
+        "message": "No clear options detected in the question."
+      }
+    },
+    {
+      "step_id": 5,
+      "module_id": "feasibility_validator",
+      "name": "Validate Feasibility",
+      "purpose": "Test each option against all extracted constraints.",
+      "inputs_from": [
+        "structured_options",
+        "constraints",
+        "required_entities"
+      ],
+      "writes_to_context": [
+        "valid_options",
+        "invalid_options",
+        "validation_report"
+      ],
+      "validation_rules": [
+        "validation_report must exist"
+      ],
+      "on_failure": {
+        "action": "abort",
+        "reason": "Feasibility validation failed unexpectedly."
+      }
+    },
+    {
+      "step_id": 6,
+      "module_id": "frame_corrector",
+      "name": "Frame Validation & Correction",
+      "purpose": "Detect false dichotomies and reframe question if invalid options dominate.",
+      "inputs_from": [
+        "valid_options",
+        "invalid_options",
+        "primary_goal"
+      ],
+      "writes_to_context": [
+        "reframed_question",
+        "frame_warnings",
+        "clarification_required"
+      ],
+      "conditional_logic": [
+        {
+          "if": "valid_options.length == 0",
+          "then": "request_clarification",
+          "message": "None of the provided options can achieve the stated goal."
+        },
+        {
+          "if": "invalid_options.length > 0",
+          "then": "append_frame_warning"
+        }
+      ]
+    },
+    {
+      "step_id": 7,
+      "module_id": "reasoning_engine",
+      "name": "Structured Reasoning",
+      "purpose": "Compare only valid options using causal logic tied to constraints.",
+      "inputs_from": [
+        "valid_options",
+        "primary_goal",
+        "constraints"
+      ],
+      "writes_to_context": [
+        "ranked_options",
+        "justifications",
+        "recommended_option"
+      ],
+      "validation_rules": [
+        "recommended_option must satisfy primary_goal"
+      ],
+      "on_failure": {
+        "action": "re-run_module",
+        "target_module": "reasoning_engine",
+        "max_retries": 1
+      }
+    },
+    {
+      "step_id": 8,
+      "module_id": "answer_generator",
+      "name": "Generate Answer",
+      "purpose": "Compose final structured user-facing answer.",
+      "inputs_from": [
+        "primary_goal",
+        "invalid_options",
+        "ranked_options",
+        "recommended_option"
+      ],
+      "writes_to_context": [
+        "final_answer"
+      ]
+    },
+    {
+      "step_id": 9,
+      "module_id": "output_checker",
+      "name": "Output Consistency Check",
+      "purpose": "Verify that final answer aligns with goal and constraints.",
+      "inputs_from": [
+        "final_answer",
+        "primary_goal",
+        "constraints"
+      ],
+      "writes_to_context": [
+        "checked_answer",
+        "consistency_report"
+      ],
+      "validation_rules": [
+        "checked_answer must not contradict primary_goal",
+        "checked_answer must reference constraints when necessary"
+      ],
+      "on_failure": {
+        "action": "re-run_module",
+        "target_module": "reasoning_engine",
+        "max_retries": 1
+      }
+    }
+  ],
+  "final_output": {
+    "source": "checked_answer",
+    "fallback": "final_answer"
+  }
+}

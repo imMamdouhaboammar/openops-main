@@ -1,0 +1,59 @@
+{
+  "module": {
+    "name": "Accessibility_and_Localization",
+    "version": "2.0.0",
+    "layer": "08_ux",
+    "code": "08D",
+    "description": "WCAG compliance, accessibility features, and internationalization support",
+    "author": "OpenOps Foundation",
+    "created": "2025-12-16T00:00:00Z"
+  },
+  "governance": {
+    "compliance_level": "high",
+    "requires_approval": true,
+    "audit_level": "full",
+    "data_classification": "public"
+  },
+  "objectives": [
+    "Ensure WCAG 2.1 AA compliance",
+    "Support screen readers",
+    "Enable keyboard navigation",
+    "Facilitate internationalization"
+  ],
+  "integration_points": {
+    "imports_from": ["08A_UX_Tokens_and_Style_Config.json", "08B_Copy_Library_and_Tone.json"],
+    "exports_to": []
+  },
+  "accessibility_standards": {
+    "wcag_level": "AA",
+    "target_version": "2.1",
+    "color_contrast_ratio": 4.5,
+    "keyboard_navigation": "full_support",
+    "screen_reader": "optimized",
+    "focus_indicators": "visible_distinct"
+  },
+  "a11y_features": {
+    "semantic_html": true,
+    "aria_labels": "comprehensive",
+    "landmark_roles": true,
+    "skip_links": true,
+    "focus_management": true,
+    "reduced_motion": "respects_preference"
+  },
+  "localization": {
+    "default_locale": "en-US",
+    "supported_locales": ["en-US", "es-ES", "fr-FR", "de-DE", "ja-JP", "zh-CN"],
+    "rtl_support": true,
+    "date_formats": "locale_aware",
+    "number_formats": "locale_aware",
+    "currency_display": "localized"
+  },
+  "testing_checklist": {
+    "keyboard_only_navigation": true,
+    "screen_reader_compatibility": ["NVDA", "JAWS", "VoiceOver"],
+    "color_contrast_validation": true,
+    "zoom_testing": "up_to_200_percent",
+    "assistive_tech_testing": true
+  },
+  "version_history": {"2.0.0": {"date": "2025-12-16", "changes": "Initial accessibility config"}}
+}

@@ -1,0 +1,413 @@
+{
+  "psychology_behavior_framework": {
+    "version": "1.0.0",
+    "description": "Behavioral psychology and persuasion principles for marketing",
+    
+    "core_frameworks": {
+      "jobs_to_be_done": {
+        "description": "Understand customer motivation and decision-making",
+        "components": {
+          "trigger": {
+            "definition": "What event causes them to seek a solution?",
+            "examples": [
+              "Product breaks or fails",
+              "New responsibility at work",
+              "Life change (marriage, move, promotion)",
+              "External pressure (boss, family, peers)"
+            ],
+            "questions": [
+              "What was happening when they started looking?",
+              "What changed in their life or work?",
+              "What made now the right time?"
+            ]
+          },
+          "desired_outcome": {
+            "functional": "What practical problem to solve?",
+            "emotional": "How do they want to feel?",
+            "social": "How do they want to be perceived?",
+            "questions": [
+              "What would success look like?",
+              "How would their life be better?",
+              "What would they be able to do?"
+            ]
+          },
+          "anxieties": {
+            "definition": "What holds them back from purchasing?",
+            "types": [
+              "Fear of wasting money",
+              "Fear of making wrong choice",
+              "Fear of complexity",
+              "Fear of commitment",
+              "Fear of missing better option"
+            ],
+            "questions": [
+              "What are they worried about?",
+              "What could go wrong?",
+              "What stops them from buying now?"
+            ]
+          },
+          "forces": {
+            "push": "Pain of current situation",
+            "pull": "Attraction to new solution",
+            "habit": "Comfort with current state",
+            "anxiety": "Fear of new solution",
+            "formula": "Switch when (Push + Pull) > (Habit + Anxiety)"
+          }
+        },
+        "application": {
+          "messaging": "Address anxieties, amplify pull, reduce friction",
+          "positioning": "Be the clear choice for specific JTBD",
+          "content": "Tell stories of successful switches",
+          "offers": "Lower risk, increase certainty"
+        }
+      },
+
+      "cialdini_principles": {
+        "description": "6 universal principles of persuasion",
+        "principles": {
+          "reciprocity": {
+            "principle": "People feel obligated to give back to others",
+            "tactics": [
+              "Free content (guides, templates, tools)",
+              "Free trials or demos",
+              "Unexpected bonuses",
+              "Personal help or advice"
+            ],
+            "examples": [
+              "Free comprehensive guide before asking for email",
+              "Free tool that solves small problem",
+              "Personalized advice in sales conversation"
+            ]
+          },
+          "commitment_consistency": {
+            "principle": "People align with past commitments",
+            "tactics": [
+              "Small yes leads to bigger yes",
+              "Public commitments",
+              "Written commitments",
+              "Identity-based commitments"
+            ],
+            "examples": [
+              "Free signup → Onboarding tasks → Upgrade",
+              "Quiz or assessment → Results → Solution offer",
+              "Join community → Engage → Purchase"
+            ]
+          },
+          "social_proof": {
+            "principle": "People look to others for validation",
+            "types": [
+              "Expert endorsements",
+              "Celebrity endorsements",
+              "User testimonials",
+              "Wisdom of crowds",
+              "Wisdom of friends"
+            ],
+            "tactics": [
+              "Customer testimonials with specifics",
+              "Case studies with results",
+              "User counts or social stats",
+              "Ratings and reviews",
+              "Media logos or mentions"
+            ],
+            "examples": [
+              "Trusted by 10,000+ companies like [logos]",
+              "4.8/5 stars from 2,500+ reviews",
+              "Featured in TechCrunch, Forbes, Wired"
+            ]
+          },
+          "authority": {
+            "principle": "People defer to credible experts",
+            "sources": [
+              "Credentials (degrees, certifications)",
+              "Experience (years, achievements)",
+              "Media coverage",
+              "Industry awards",
+              "Data and research"
+            ],
+            "tactics": [
+              "Founder bio with credentials",
+              "Team expertise highlighted",
+              "Original research or data",
+              "Partnerships with authorities"
+            ]
+          },
+          "liking": {
+            "principle": "People prefer to say yes to those they like",
+            "drivers": [
+              "Similarity (common background, interests)",
+              "Compliments (genuine appreciation)",
+              "Cooperation (working together)",
+              "Familiarity (repeated exposure)"
+            ],
+            "tactics": [
+              "Share founder story and values",
+              "Show team personality",
+              "Community building",
+              "Authentic brand voice"
+            ]
+          },
+          "scarcity": {
+            "principle": "People value what is less available",
+            "types": [
+              "Limited quantity",
+              "Limited time",
+              "Exclusivity",
+              "High demand"
+            ],
+            "ethical_use": [
+              "Real limitations only",
+              "Clear and honest communication",
+              "No fake urgency",
+              "Respect customer intelligence"
+            ],
+            "examples": [
+              "Only 50 spots available for beta",
+              "Early bird pricing ends Friday",
+              "Invite-only access",
+              "Application required"
+            ]
+          }
+        }
+      },
+
+      "cognitive_biases": {
+        "description": "Mental shortcuts that influence decisions",
+        "biases": {
+          "anchoring": {
+            "description": "First number sets reference point",
+            "application": [
+              "Show original price before discount",
+              "Present most expensive option first",
+              "Use high reference point in comparisons"
+            ]
+          },
+          "framing": {
+            "description": "Presentation affects perception",
+            "application": [
+              "90% success rate vs. 10% failure rate",
+              "Save $100 vs. Only $100 more",
+              "Gain framing for benefits, loss framing for urgency"
+            ]
+          },
+          "loss_aversion": {
+            "description": "Losses hurt more than equivalent gains feel good",
+            "application": [
+              "What you'll lose by not acting",
+              "Risk reversal guarantees",
+              "Emphasize cost of inaction"
+            ]
+          },
+          "bandwagon_effect": {
+            "description": "People do what others are doing",
+            "application": [
+              "X people signed up today",
+              "Trending or popular indicators",
+              "Most popular plan highlighted"
+            ]
+          },
+          "availability_heuristic": {
+            "description": "Recent/memorable examples feel more common",
+            "application": [
+              "Vivid case studies",
+              "Concrete examples",
+              "Memorable stories"
+            ]
+          },
+          "endowment_effect": {
+            "description": "People value what they own more",
+            "application": [
+              "Free trials (they 'own' it)",
+              "Customization (makes it theirs)",
+              "Freemium (already using it)"
+            ]
+          }
+        }
+      }
+    },
+
+    "emotional_triggers": {
+      "fear": {
+        "types": [
+          "Fear of missing out (FOMO)",
+          "Fear of falling behind competitors",
+          "Fear of wasting time/money",
+          "Fear of looking incompetent"
+        ],
+        "use_cases": [
+          "Urgency in offers",
+          "Competitive positioning",
+          "Problem amplification"
+        ],
+        "ethical_considerations": "Don't manipulate or create false fear"
+      },
+      "greed": {
+        "types": [
+          "Financial gain",
+          "Time savings",
+          "Efficiency improvements",
+          "Opportunity capture"
+        ],
+        "use_cases": [
+          "ROI calculators",
+          "Value propositions",
+          "Benefit amplification"
+        ]
+      },
+      "belonging": {
+        "types": [
+          "Community membership",
+          "Tribe affiliation",
+          "Peer acceptance",
+          "Movement participation"
+        ],
+        "use_cases": [
+          "Community building",
+          "Brand positioning",
+          "Social proof"
+        ]
+      },
+      "status": {
+        "types": [
+          "Recognition",
+          "Prestige",
+          "Achievement",
+          "Exclusivity"
+        ],
+        "use_cases": [
+          "Premium positioning",
+          "Aspirational messaging",
+          "Exclusivity offers"
+        ]
+      },
+      "identity": {
+        "principle": "People like me do things like this",
+        "application": [
+          "Position product as identity marker",
+          "Use language of target identity",
+          "Show people like them using product"
+        ]
+      }
+    },
+
+    "messaging_psychology": {
+      "clarity_over_cleverness": {
+        "principle": "Confused people don't buy",
+        "rules": [
+          "Simple language > Complex jargon",
+          "Specific claims > Vague promises",
+          "One clear message > Multiple messages",
+          "Concrete examples > Abstract concepts"
+        ]
+      },
+      "benefits_over_features": {
+        "framework": "Feature → Bridge → Benefit",
+        "example": "AI-powered search → so you can → find answers in seconds, not hours"
+      },
+      "specificity_builds_credibility": {
+        "examples": [
+          "Vague: 'Lots of customers' → Specific: '2,847 customers'",
+          "Vague: 'Save time' → Specific: 'Save 3 hours per week'",
+          "Vague: 'Better results' → Specific: '3x higher conversion rate'"
+        ]
+      },
+      "story_structure": {
+        "before_after_bridge": {
+          "before": "Customer's painful current state",
+          "after": "Their desired future state",
+          "bridge": "How your product gets them there"
+        },
+        "hero_journey": {
+          "customer_is_hero": "They're on a quest",
+          "you_are_guide": "You help them succeed",
+          "common_enemy": "What you fight together",
+          "transformation": "How they change"
+        }
+      }
+    },
+
+    "conversion_optimization_psychology": {
+      "friction_reduction": {
+        "principles": [
+          "Fewer steps = higher conversion",
+          "Clear next action = less confusion",
+          "Remove unnecessary fields",
+          "Progress indicators reduce abandonment"
+        ]
+      },
+      "trust_building": {
+        "elements": [
+          "Security badges",
+          "Privacy guarantees",
+          "Return/refund policies",
+          "Testimonials and reviews",
+          "Professional design"
+        ]
+      },
+      "cta_psychology": {
+        "principles": [
+          "Action-oriented verbs",
+          "Value-based copy (get, start, unlock)",
+          "First-person (Get my free guide)",
+          "Contrasting color",
+          "Sufficient whitespace"
+        ],
+        "examples": {
+          "weak": "Submit",
+          "strong": "Get My Free Strategy Guide"
+        }
+      }
+    },
+
+    "behavioral_segmentation": {
+      "awareness_stages": {
+        "unaware": {
+          "state": "Don't know problem exists",
+          "approach": "Problem education",
+          "content": "Thought leadership, trends, insights"
+        },
+        "problem_aware": {
+          "state": "Know problem, not solutions",
+          "approach": "Solution education",
+          "content": "How-to guides, frameworks, options"
+        },
+        "solution_aware": {
+          "state": "Know solutions, not your product",
+          "approach": "Product education and differentiation",
+          "content": "Product content, comparisons, demos"
+        },
+        "product_aware": {
+          "state": "Know your product, not convinced",
+          "approach": "Objection handling and trust building",
+          "content": "Case studies, testimonials, trials"
+        },
+        "most_aware": {
+          "state": "Ready to buy, need final push",
+          "approach": "Conversion optimization",
+          "content": "Offers, incentives, urgency"
+        }
+      }
+    },
+
+    "application_checklist": {
+      "strategy_phase": [
+        "✓ JTBD analysis completed",
+        "✓ Key anxieties identified",
+        "✓ Emotional triggers mapped",
+        "✓ Persuasion principles selected"
+      ],
+      "creative_phase": [
+        "✓ Social proof included",
+        "✓ Scarcity/urgency (if ethical)",
+        "✓ Clear benefit-driven copy",
+        "✓ Specific, credible claims",
+        "✓ Friction reduced",
+        "✓ Trust elements present"
+      ],
+      "optimization_phase": [
+        "✓ Test psychological triggers",
+        "✓ Measure emotional resonance",
+        "✓ Optimize based on behavior data"
+      ]
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "network_id": "EDW_STYLE_TRANSFER_002",
+  "network_name": "Style Transfer Network",
+  "network_name_ar": "شبكة نقل الأسلوب",
+  "version": "1.0.0",
+  "status": "active",
+  
+  "metadata": {
+    "created_at": "2025-12-19",
+    "author": "OpenOps Team",
+    "category": "style_processing",
+    "tags": ["style_transfer", "tone_conversion", "adaptation"]
+  },
+
+  "core_function": "تحويل النصوص من أسلوب لآخر مع الحفاظ على المعنى",
+
+  "transfer_capabilities": {
+    "formal_to_colloquial": {
+      "source": "formal_arabic_or_english",
+      "target": "egyptian_colloquial",
+      "proficiency": 0.90,
+      "transformations": [
+        "vocabulary_replacement",
+        "sentence_structure_simplification",
+        "colloquial_expression_injection"
+      ]
+    },
+
+    "english_to_mixed": {
+      "source": "pure_english_technical",
+      "target": "egyptian_arabic_with_english_terms",
+      "proficiency": 0.92,
+      "strategy": "selective_translation_with_code_switching"
+    },
+
+    "casual_to_professional": {
+      "source": "very_casual_egyptian",
+      "target": "professional_egyptian_tech",
+      "proficiency": 0.85,
+      "balance": "maintain_authenticity_add_professionalism"
+    },
+
+    "tone_shifting": {
+      "dimensions": [
+        "formality",
+        "enthusiasm",
+        "technicality",
+        "friendliness"
+      ],
+      "granularity": "fine_tuned",
+      "context_aware": true
+    }
+  },
+
+  "style_vectors": {
+    "source_analysis": {
+      "extract_features": [
+        "lexical_density",
+        "sentence_complexity",
+        "formality_level",
+        "emotional_tone",
+        "technical_depth"
+      ]
+    },
+
+    "target_definition": {
+      "egyptian_tech_expert": {
+        "lexical_mix": {"arabic": 0.45, "english": 0.35, "arabized": 0.20},
+        "formality": 0.4,
+        "friendliness": 0.85,
+        "technicality": 0.80,
+        "enthusiasm": 0.70
+      }
+    },
+
+    "transformation_mapping": {
+      "method": "vector_space_interpolation",
+      "preserve": ["core_meaning", "key_facts"],
+      "modify": ["expression_style", "tone", "complexity"]
+    }
+  },
+
+  "quality_metrics": {
+    "meaning_preservation": {"target": 0.95},
+    "style_accuracy": {"target": 0.88},
+    "naturalness": {"target": 0.90}
+  }
+}

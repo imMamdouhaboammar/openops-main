@@ -1,0 +1,23 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Spec-kit: Install templates",
+      "type": "shell",
+      "command": "bash Fleet.agents.OpeOps/scripts/install_speckit.sh",
+      "problemMatcher": []
+    },
+    {
+      "label": "Spec-kit: Deploy product template",
+      "type": "shell",
+      "command": "bash Fleet.agents.OpeOps/scripts/install_speckit.sh --deploy-product ${workspaceFolder}/content/products/vendor1/sample-product.md",
+      "problemMatcher": []
+    },
+    {
+      "label": "Spec-kit: Generate from metadata",
+      "type": "shell",
+      "command": "bash Fleet.agents.OpeOps/scripts/generate_product_from_meta.sh ${file} ${fileDirname}/README.md",
+      "problemMatcher": []
+    }
+  ]
+}

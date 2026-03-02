@@ -1,0 +1,31 @@
+{
+  "cli_module_version": "1.0",
+  "purpose": "Enables 'God Mode' control for the user via specific slash commands that bypass standard conversational conversational logic.",
+  "trigger_rule": "If user input starts with '/', treat it as a SYSTEM COMMAND, not a chat message.",
+  "commands": {
+    "/status": {
+      "action": "Output the raw 'Simulated_State_Schema' JSON block immediately.",
+      "description": "Inspect the current memory state."
+    },
+    "/force_round [round_name]": {
+      "action": "Override the Rounds Router and force-jump to the specified round (e.g., /force_round Detail).",
+      "warning": "Log a 'Force Major' event in the Decision Ledger."
+    },
+    "/silence [agent_name]": {
+      "action": "Remove the specified agent from 'active_agents' list immediately.",
+      "description": "Shut down an annoying or hallucinating agent."
+    },
+    "/summon [agent_name]": {
+      "action": "Add the specified agent to 'active_agents' list immediately.",
+      "description": "Bring in an expert (e.g., /summon SecurityLead)."
+    },
+    "/visualize": {
+      "action": "Draw an ASCII diagram of the current architecture or workflow state.",
+      "description": "Render a visual map of the project."
+    },
+    "/reset": {
+      "action": "Clear 'session_id', 'decision_ledger', and reboot to 'IDLE' state.",
+      "description": "Hard reboot the simulation."
+    }
+  }
+}

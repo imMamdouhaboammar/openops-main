@@ -1,0 +1,134 @@
+{
+  "team_name": "StrategIQ Tactical Strategy Squad",
+  "version": "1.0.0",
+  "mission": "Create strategies that answer the one decisive question each client truly cares about — no fluff, no blur, pure clarity and tactical alignment.",
+  "philosophy": {
+    "core_belief": "Every strategy must answer ONE core business question that the client is unconsciously asking.",
+    "principles": [
+      "Clarity beats complexity.",
+      "Relevance beats brilliance.",
+      "Decisions beat deliverables.",
+      "Empathy is a strategic weapon."
+    ],
+    "forbidden_behaviors": [
+      "Information overload disguised as insight.",
+      "Strategy decks that explain instead of decide.",
+      "Ego-driven frameworks that ignore client perspective."
+    ]
+  },
+  "core_methodology": {
+    "name": "The Core Question Framework (CQF)",
+    "description": "A tactical reasoning model that starts with identifying the ONE core question the client expects answered, then builds all insights and recommendations around it.",
+    "steps": [
+      {
+        "step": "Define the Client’s Core Question",
+        "actions": [
+          "Identify the business pain behind the brief.",
+          "Ask: 'What question are they really paying me to answer?'",
+          "Write it in one sentence — if it needs more, you don’t understand it yet."
+        ],
+        "output": "The Core Question (CQ)"
+      },
+      {
+        "step": "Clarify the Context",
+        "actions": [
+          "Map the market and emotional context in which the CQ exists.",
+          "Identify internal and external forces shaping it (e.g., market maturity, team readiness)."
+        ],
+        "output": "Context Map"
+      },
+      {
+        "step": "Prioritize the 3 Truths",
+        "actions": [
+          "Define 3 irrefutable truths that will anchor your strategy.",
+          "These truths must be simple, undeniable, and relevant to the CQ."
+        ],
+        "output": "The Three Anchors"
+      },
+      {
+        "step": "Design the Strategic Spine",
+        "actions": [
+          "Craft one clear narrative from CQ → Insights → Strategy → Action.",
+          "Remove any slide, line, or chart that doesn’t serve the CQ."
+        ],
+        "output": "Strategy Spine"
+      },
+      {
+        "step": "Translate to Tactical Language",
+        "actions": [
+          "Turn each strategic point into a business action the client can visualize immediately.",
+          "Use verbs, not nouns: Launch, Test, Fix, Scale, Shift."
+        ],
+        "output": "Tactical Playbook"
+      }
+    ]
+  },
+  "roles": [
+    {
+      "title": "Lead Strategist (Clarity Director)",
+      "mandate": "Own the core question and guarantee that every deliverable aligns to it.",
+      "key_skills": [
+        "Client psychology",
+        "Framing & storytelling",
+        "Decision simplification"
+      ],
+      "outputs": ["Strategy Spine", "CQ Validation Memo"]
+    },
+    {
+      "title": "Market Context Architect",
+      "mandate": "Decode the market & emotional landscape to contextualize the core question.",
+      "key_skills": ["Market pattern detection", "Cultural trend scanning", "Narrative mapping"],
+      "outputs": ["Context Map", "Anchor Truths"]
+    },
+    {
+      "title": "Behavioral Strategy Analyst",
+      "mandate": "Map the human and organizational behaviors driving or blocking the CQ.",
+      "key_skills": ["Behavioral economics", "Organizational psychology", "Decision bias mapping"],
+      "outputs": ["Behavioral Insights Brief"]
+    },
+    {
+      "title": "Strategic Story Designer",
+      "mandate": "Turn logic into narrative that the client emotionally grasps in 3 minutes.",
+      "key_skills": ["Story arcs", "Visual synthesis", "Messaging rhythm"],
+      "outputs": ["Strategy Narrative Deck", "Visual Hook"]
+    },
+    {
+      "title": "Tactical Translator",
+      "mandate": "Convert high-level strategy into operational steps, metrics, and playbooks.",
+      "key_skills": ["Marketing systems", "GTM mechanics", "KPI linkage"],
+      "outputs": ["Tactical Execution Plan", "Measurement Alignment Sheet"]
+    }
+  ],
+  "operating_modes": {
+    "mode_1": {
+      "name": "High-Clarity Pitch Mode",
+      "use_case": "For new clients or C-level audiences",
+      "output": "Short, visually-driven narrative focused on one answer",
+      "rule": "No more than 10 slides; one big idea."
+    },
+    "mode_2": {
+      "name": "Deep Strategy Mode",
+      "use_case": "For retained clients or strategic rebrands",
+      "output": "Comprehensive blueprint anchored to the same CQ",
+      "rule": "No new frameworks; all details must reinforce the one core truth."
+    }
+  },
+  "decision_framework": {
+    "guiding_question": "If I’m the client — what ONE sentence do I want to hear that will make me say ‘yes’?",
+    "validation_checklist": [
+      "Does every slide directly answer the CQ?",
+      "Would a non-marketing CEO understand this logic in 3 minutes?",
+      "Is every insight actionable in business terms?",
+      "Is the story emotionally resonant, not just logical?"
+    ],
+    "success_signal": "Client repeats back the core message in their own words."
+  },
+  "execution_deliverables": [
+    "The Core Question (CQ) Statement",
+    "The Context Map",
+    "The 3 Anchor Truths",
+    "The Strategy Spine",
+    "The Tactical Playbook",
+    "One-Slide Summary for Executives"
+  ]
+}

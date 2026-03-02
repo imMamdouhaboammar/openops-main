@@ -1,0 +1,136 @@
+{
+  "engine_name": "Strategic Interrogation Engine",
+  "version": "1.0",
+  "region_scope": ["Egypt", "GCC", "MENA"],
+  "purpose": "Generate structured strategic questions based on stage, friction level, and intent clarity.",
+
+  "core_principle": "Never generate strategy before pressure-testing intent.",
+
+  "interrogation_layers": [
+
+    {
+      "layer": "Intent Clarification",
+      "trigger": "User jumps to solution before defining problem.",
+      "questions": [
+        "What changed in the buyer's world that makes this urgent now?",
+        "If they do nothing, what happens in 6 months?",
+        "Who feels this pain first internally?",
+        "Is this a compliance issue, efficiency issue, revenue issue, or positioning issue?",
+        "Is this a must-have or a nice-to-have?"
+      ],
+      "objective": "Extract economic and emotional urgency."
+    },
+
+    {
+      "layer": "Friction Discovery",
+      "trigger": "User assumes demand exists but deals stall.",
+      "questions": [
+        "Where do deals usually slow down?",
+        "Who blocks the budget?",
+        "What internal approval step creates delay?",
+        "Is risk perception higher than perceived gain?",
+        "Is the buyer afraid of implementation complexity?"
+      ],
+      "objective": "Identify psychological and structural friction."
+    },
+
+    {
+      "layer": "Committee Mapping",
+      "trigger": "High-ticket B2B scenario.",
+      "questions": [
+        "Who signs the contract?",
+        "Who influences technical evaluation?",
+        "Who will use this daily?",
+        "Who could quietly veto the decision?",
+        "Who benefits most if this succeeds?"
+      ],
+      "objective": "Reveal hidden power dynamics."
+    },
+
+    {
+      "layer": "Visibility Audit",
+      "trigger": "User requests awareness strategy.",
+      "questions": [
+        "Are you invisible or misunderstood?",
+        "Are competitors louder or more trusted?",
+        "Are you absent from search?",
+        "Are you absent from industry events?",
+        "Do analysts or media mention you?"
+      ],
+      "objective": "Distinguish presence gap from perception gap."
+    },
+
+    {
+      "layer": "Proof Stress Test",
+      "trigger": "User claims strong offering.",
+      "questions": [
+        "What quantified result can you prove?",
+        "Do you have local case studies?",
+        "Can you demonstrate ROI numerically?",
+        "Can a skeptical CFO verify your impact?",
+        "Is your proof recent and regionally relevant?"
+      ],
+      "objective": "Separate belief from evidence."
+    },
+
+    {
+      "layer": "Bridge Gap Detection",
+      "trigger": "Touchpoints feel disconnected.",
+      "questions": [
+        "Is there a psychological jump between stages?",
+        "Does education logically lead to validation?",
+        "Does validation humanize the brand?",
+        "Does human comfort reduce fear of conversion?",
+        "Where does the buyer disappear?"
+      ],
+      "objective": "Detect missing transition assets."
+    },
+
+    {
+      "layer": "Execution Reality Check",
+      "trigger": "Strategy seems ambitious.",
+      "questions": [
+        "Do you have internal bandwidth?",
+        "Is leadership visible enough?",
+        "Can sales handle increased engagement?",
+        "Do you have CRM stage tracking?",
+        "Is timeline realistic for region?"
+      ],
+      "objective": "Prevent over-strategizing."
+    }
+
+  ],
+
+  "regional_sensitivity": {
+    "Egypt": {
+      "focus": ["Trust", "Relationship", "Reputation familiarity"],
+      "extra_questions": [
+        "Does the buyer know someone who worked with you?",
+        "Is informal validation stronger than formal proof?"
+      ]
+    },
+    "Saudi": {
+      "focus": ["Authority", "Compliance", "Executive presence"],
+      "extra_questions": [
+        "Is your brand perceived as safe?",
+        "Are you visible in regulated discussions?"
+      ]
+    },
+    "UAE": {
+      "focus": ["Speed", "Positioning", "Competitive clarity"],
+      "extra_questions": [
+        "Are you differentiated clearly?",
+        "Are you losing visibility to louder players?"
+      ]
+    }
+  },
+
+  "guardrails": [
+    "If user avoids answering core intent questions, pause strategy generation.",
+    "If proof is weak, recommend validation assets before scaling.",
+    "If friction is unclear, recommend qualitative interviews.",
+    "If committee complexity is high, increase bridge density."
+  ],
+
+  "completion_condition": "Strategy cannot be generated until at least one question from each relevant layer is answered."
+}

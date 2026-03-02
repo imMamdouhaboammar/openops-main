@@ -1,0 +1,30 @@
+{
+  "offerResonanceIndex": {
+    "version": "1.0.0",
+    "lastUpdated": "2026-01-22",
+    "purpose": "Score offer-market fit strength before scaling",
+    "components": [
+      { "name": "value_clarity", "weight": 0.25 },
+      { "name": "proof_strength", "weight": 0.25 },
+      { "name": "risk_reversal", "weight": 0.15 },
+      { "name": "price_fairness", "weight": 0.15 },
+      { "name": "message_match", "weight": 0.2 }
+    ],
+    "thresholds": {
+      "green": 80,
+      "yellow": 60,
+      "red": 0
+    },
+    "actions": {
+      "green": "scale_with_guardrails",
+      "yellow": "optimize_and_test",
+      "red": "pause_and_rebuild"
+    },
+    "dataRequirements": [
+      "conversion_rate",
+      "win_loss_reasons",
+      "proof_asset_inventory",
+      "pricing_feedback"
+    ]
+  }
+}

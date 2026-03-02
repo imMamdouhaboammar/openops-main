@@ -1,0 +1,335 @@
+reasoning_patterns:
+  description: "Pre-defined reasoning patterns for common content strategy challenges"
+  version: "1.0.0"
+
+# ==========================================
+# CONTENT STRATEGY PATTERNS
+# ==========================================
+
+content_strategy_development:
+  name: "Content Strategy Development"
+  estimated_thoughts: 25-35
+  
+  pattern:
+    phase_1_definition:
+      thoughts: 1-5
+      focus:
+        - "Define business objectives"
+        - "Identify target audience"
+        - "Clarify constraints (budget, timeline, resources)"
+        - "Set success metrics"
+    
+    phase_2_research:
+      thoughts: 6-12
+      focus:
+        - "Analyze current market position"
+        - "Review competitor strategies"
+        - "Identify audience pain points"
+        - "Research platform trends"
+        - "Gather performance data"
+    
+    phase_3_analysis:
+      thoughts: 13-20
+      focus:
+        - "Identify content gaps"
+        - "Analyze audience behavior patterns"
+        - "Evaluate platform opportunities"
+        - "Assess resource requirements"
+    
+    phase_4_strategy:
+      thoughts: 21-28
+      focus:
+        - "Define content pillars"
+        - "Create content mix"
+        - "Plan distribution strategy"
+        - "Design engagement tactics"
+        - "Set KPIs and tracking"
+    
+    phase_5_validation:
+      thoughts: 29-35
+      focus:
+        - "Verify strategy alignment"
+        - "Assess feasibility"
+        - "Identify risks"
+        - "Plan mitigation"
+        - "Finalize recommendations"
+
+# ==========================================
+# CAMPAIGN PLANNING PATTERNS
+# ==========================================
+
+campaign_planning:
+  name: "Multi-Platform Campaign Planning"
+  estimated_thoughts: 30-40
+  
+  pattern:
+    phase_1_objectives:
+      thoughts: 1-5
+      focus:
+        - "Define campaign goals"
+        - "Identify target audience segments"
+        - "Set budget and timeline"
+        - "Define success metrics"
+    
+    phase_2_research:
+      thoughts: 6-12
+      focus:
+        - "Analyze past campaign performance"
+        - "Review competitor campaigns"
+        - "Research platform best practices"
+        - "Identify trending topics"
+    
+    phase_3_creative:
+      thoughts: 13-20
+      focus:
+        - "Develop campaign theme"
+        - "Create messaging framework"
+        - "Design content formats"
+        - "Plan creative assets"
+    
+    phase_4_execution:
+      thoughts: 21-30
+      focus:
+        - "Plan content calendar"
+        - "Design platform-specific tactics"
+        - "Set posting schedule"
+        - "Plan engagement strategy"
+        - "Allocate budget"
+    
+    phase_5_optimization:
+      thoughts: 31-40
+      focus:
+        - "Define A/B tests"
+        - "Plan monitoring approach"
+        - "Set optimization triggers"
+        - "Design contingency plans"
+        - "Finalize execution plan"
+
+# ==========================================
+# PERFORMANCE ANALYSIS PATTERNS
+# ==========================================
+
+performance_troubleshooting:
+  name: "Performance Issue Root Cause Analysis"
+  estimated_thoughts: 20-30
+  
+  pattern:
+    phase_1_problem:
+      thoughts: 1-3
+      focus:
+        - "Define the performance gap"
+        - "Quantify the issue"
+        - "Set analysis scope"
+    
+    phase_2_data:
+      thoughts: 4-8
+      focus:
+        - "Gather performance metrics"
+        - "Compare to benchmarks"
+        - "Review historical data"
+        - "Collect audience feedback"
+    
+    phase_3_analysis:
+      thoughts: 9-16
+      focus:
+        - "Identify potential causes"
+        - "Analyze content quality"
+        - "Review timing and frequency"
+        - "Assess audience alignment"
+        - "Evaluate platform optimization"
+    
+    phase_4_hypothesis:
+      thoughts: 17-22
+      focus:
+        - "Develop root cause hypotheses"
+        - "Prioritize by impact"
+        - "Design validation tests"
+    
+    phase_5_solution:
+      thoughts: 23-30
+      focus:
+        - "Create action plan"
+        - "Predict impact"
+        - "Plan implementation"
+        - "Define success criteria"
+        - "Set monitoring approach"
+
+# ==========================================
+# CREATIVE IDEATION PATTERNS
+# ==========================================
+
+viral_content_ideation:
+  name: "Viral Content Strategy Development"
+  estimated_thoughts: 25-35
+  
+  pattern:
+    phase_1_context:
+      thoughts: 1-5
+      focus:
+        - "Define viral success criteria"
+        - "Identify target audience"
+        - "Review platform algorithms"
+        - "Analyze constraints"
+    
+    phase_2_research:
+      thoughts: 6-12
+      focus:
+        - "Study recent viral content"
+        - "Identify trending topics"
+        - "Analyze viral patterns"
+        - "Review audience preferences"
+    
+    phase_3_ideation:
+      thoughts: 13-22
+      focus:
+        - "Generate content concepts"
+        - "Explore format variations"
+        - "Design hook strategies"
+        - "Plan emotional triggers"
+        - "Create shareability elements"
+    
+    phase_4_evaluation:
+      thoughts: 23-28
+      focus:
+        - "Assess viral potential"
+        - "Evaluate feasibility"
+        - "Check brand alignment"
+        - "Identify risks"
+    
+    phase_5_execution:
+      thoughts: 29-35
+      focus:
+        - "Finalize content concept"
+        - "Plan production"
+        - "Design distribution strategy"
+        - "Set success metrics"
+        - "Create contingency plan"
+
+# ==========================================
+# AUDIENCE ANALYSIS PATTERNS
+# ==========================================
+
+audience_deep_dive:
+  name: "Deep Audience Analysis & Segmentation"
+  estimated_thoughts: 20-30
+  
+  pattern:
+    phase_1_data:
+      thoughts: 1-5
+      focus:
+        - "Gather demographic data"
+        - "Collect behavioral data"
+        - "Review engagement patterns"
+        - "Analyze feedback"
+    
+    phase_2_patterns:
+      thoughts: 6-12
+      focus:
+        - "Identify audience segments"
+        - "Analyze behavior patterns"
+        - "Map content preferences"
+        - "Understand pain points"
+    
+    phase_3_personas:
+      thoughts: 13-20
+      focus:
+        - "Develop detailed personas"
+        - "Map customer journeys"
+        - "Identify touchpoints"
+        - "Define messaging needs"
+    
+    phase_4_strategy:
+      thoughts: 21-26
+      focus:
+        - "Create segment strategies"
+        - "Design personalized content"
+        - "Plan targeting approach"
+    
+    phase_5_validation:
+      thoughts: 27-30
+      focus:
+        - "Verify assumptions"
+        - "Test hypotheses"
+        - "Refine personas"
+        - "Finalize strategy"
+
+# ==========================================
+# BRAND DIFFERENTIATION PATTERNS
+# ==========================================
+
+brand_positioning:
+  name: "Brand Differentiation Strategy"
+  estimated_thoughts: 25-35
+  
+  pattern:
+    phase_1_current:
+      thoughts: 1-5
+      focus:
+        - "Assess current positioning"
+        - "Review brand perception"
+        - "Identify brand strengths"
+        - "Acknowledge weaknesses"
+    
+    phase_2_competitive:
+      thoughts: 6-12
+      focus:
+        - "Analyze competitor positioning"
+        - "Identify market gaps"
+        - "Map competitive landscape"
+        - "Find differentiation opportunities"
+    
+    phase_3_audience:
+      thoughts: 13-18
+      focus:
+        - "Understand audience needs"
+        - "Identify unmet needs"
+        - "Analyze preference trends"
+    
+    phase_4_strategy:
+      thoughts: 19-28
+      focus:
+        - "Define unique value proposition"
+        - "Create positioning statement"
+        - "Design brand messaging"
+        - "Plan content differentiation"
+    
+    phase_5_execution:
+      thoughts: 29-35
+      focus:
+        - "Create implementation plan"
+        - "Design content strategy"
+        - "Plan rollout approach"
+        - "Set success metrics"
+
+# ==========================================
+# USAGE GUIDELINES
+# ==========================================
+
+usage_guidelines:
+  when_to_use_sequential_thinking:
+    - "Complex strategic decisions"
+    - "Multi-variable problems"
+    - "High-stakes planning"
+    - "Performance troubleshooting"
+    - "Innovation challenges"
+    - "Competitive analysis"
+  
+  when_not_to_use:
+    - "Simple content requests"
+    - "Routine tasks"
+    - "Time-sensitive quick tasks"
+    - "Well-defined processes"
+  
+  thought_count_guidelines:
+    simple: "10-15 thoughts"
+    medium: "15-25 thoughts"
+    complex: "25-40 thoughts"
+    strategic: "40+ thoughts"
+  
+  best_practices:
+    - "Start with clear problem definition"
+    - "Gather data before analysis"
+    - "Consider multiple hypotheses"
+    - "Validate assumptions"
+    - "Document reasoning process"
+    - "Verify solution completeness"

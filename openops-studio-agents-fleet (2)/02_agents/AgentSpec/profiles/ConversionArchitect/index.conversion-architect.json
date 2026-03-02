@@ -1,0 +1,480 @@
+{
+    "agent_metadata": {
+        "agent_id": "conversion-architect",
+        "namespace": "org.openops.agents.strategic.conversion-architect",
+        "version": "1.0.0",
+        "tier": "L1",
+        "domain": "Conversion Rate Optimization & Persuasion Engineering",
+        "created_date": "2026-01-10",
+        "last_updated": "2026-01-10",
+        "maintainer": "OpenOps Conversion Team"
+    },
+    "capabilities": {
+        "core_capabilities": [
+            {
+                "id": "cro-frameworks",
+                "name": "Conversion Rate Optimization Frameworks",
+                "file_path": "capabilities/core-capabilities.md#cro-frameworks",
+                "maturity": "advanced",
+                "frameworks": [
+                    "Lever Framework",
+                    "RICE Prioritization",
+                    "PIE Scoring",
+                    "Value vs Effort Matrix"
+                ]
+            },
+            {
+                "id": "persuasion-psychology",
+                "name": "Psychology of Persuasion (Cialdini's Principles)",
+                "file_path": "capabilities/core-capabilities.md#persuasion-psychology",
+                "maturity": "expert",
+                "principles": [
+                    "Reciprocity",
+                    "Commitment & Consistency",
+                    "Social Proof",
+                    "Authority",
+                    "Liking",
+                    "Scarcity & Urgency",
+                    "Unity"
+                ]
+            },
+            {
+                "id": "landing-page-optimization",
+                "name": "Landing Page Optimization",
+                "file_path": "capabilities/core-capabilities.md#landing-page-optimization",
+                "maturity": "advanced",
+                "focus_areas": [
+                    "Above-the-fold design",
+                    "CTA optimization",
+                    "Trust signals",
+                    "Mobile responsiveness"
+                ]
+            },
+            {
+                "id": "funnel-analysis",
+                "name": "Conversion Funnel Analysis & Optimization",
+                "file_path": "capabilities/core-capabilities.md#funnel-analysis",
+                "maturity": "advanced",
+                "deliverables": [
+                    "Funnel mapping",
+                    "Drop-off identification",
+                    "Leak diagnosis",
+                    "Optimization roadmap"
+                ]
+            },
+            {
+                "id": "ab-testing",
+                "name": "A/B Testing & Experimentation",
+                "file_path": "capabilities/core-capabilities.md#ab-testing",
+                "maturity": "expert",
+                "coverage": [
+                    "Hypothesis design",
+                    "Statistical significance",
+                    "Variant generation",
+                    "Experiment velocity"
+                ]
+            }
+        ],
+        "advanced_capabilities": [
+            {
+                "id": "heatmap-analysis",
+                "name": "Heatmap & Session Replay Analysis",
+                "file_path": "capabilities/advanced-capabilities.md#heatmap-analysis",
+                "maturity": "advanced",
+                "tools": [
+                    "Hotjar",
+                    "Crazy Egg",
+                    "Microsoft Clarity",
+                    "Fullstory"
+                ]
+            },
+            {
+                "id": "user-testing",
+                "name": "Qualitative User Testing & Research",
+                "file_path": "capabilities/advanced-capabilities.md#user-testing",
+                "maturity": "intermediate",
+                "methods": [
+                    "Tas k-based testing",
+                    "Think-aloud protocol",
+                    "Exit surveys",
+                    "NPS analysis"
+                ]
+            },
+            {
+                "id": "form-optimization",
+                "name": "Form & Checkout Optimization",
+                "file_path": "capabilities/advanced-capabilities.md#form-optimization",
+                "maturity": "advanced",
+                "focus": [
+                    "Field minimization",
+                    "Inline validation",
+                    "Progress indicators",
+                    "Error messaging"
+                ]
+            },
+            {
+                "id": "neuromarketing",
+                "name": "Neuromarketing & Emotional Engagement",
+                "file_path": "capabilities/advanced-capabilities.md#neuromarketing",
+                "maturity": "intermediate",
+                "techniques": [
+                    "Eye tracking",
+                    "Emotion analytics",
+                    "Cognitive biases",
+                    "AI personalization"
+                ]
+            }
+        ]
+    },
+    "tools": {
+        "internal_tools": [
+            {
+                "tool_id": "funnel-analyzer",
+                "name": "Conversion Funnel Analyzer",
+                "file_path": "tools/funnel-analyzer.tool.json",
+                "language": "python",
+                "status": "implemented",
+                "description": "Analyzes multi-stage funnels, identifies leaks, calculates conversion rates"
+            },
+            {
+                "tool_id": "ab-test-calculator",
+                "name": "A/B Test Statistical Significance Calculator",
+                "file_path": "tools/ab-test-calculator.tool.json",
+                "language": "typescript",
+                "status": "implemented",
+                "description": "Calculates p-values, confidence intervals, sample sizes for A/B tests"
+            },
+            {
+                "tool_id": "rice-prioritizer",
+                "name": "RICE Experiment Prioritizer",
+                "file_path": "tools/rice-prioritizer.tool.json",
+                "language": "python",
+                "status": "spec",
+                "description": "Scores and ranks experiment hypotheses using RICE framework"
+            },
+            {
+                "tool_id": "lever-diagnostics",
+                "name": "Lever Framework Diagnostics Tool",
+                "file_path": "tools/lever-diagnostics.tool.json",
+                "language": "python",
+                "status": "spec",
+                "description": "Diagnoses UX using 5 levers: Usability, Motivation, Comprehension, Trust, Cost"
+            },
+            {
+                "tool_id": "heatmap-insights",
+                "name": "Heatmap Insights Extractor",
+                "file_path": "tools/heatmap-insights.tool.json",
+                "language": "python",
+                "status": "spec",
+                "description": "Analyzes click/scroll heatmaps, identifies rage clicks, dead zones"
+            }
+        ],
+        "external_integrations": [
+            {
+                "platform": "Google Analytics 4",
+                "api_docs": "https://developers.google.com/analytics/devguides/reporting/data/v1",
+                "use_case": "Traffic sources, conversion funnels, attribution"
+            },
+            {
+                "platform": "Hotjar",
+                "api_docs": "https://help.hotjar.com/hc/en-us/articles/115011639927",
+                "use_case": "Heatmaps, session recordings, feedback polls"
+            },
+            {
+                "platform": "VWO",
+                "api_docs": "https://developers.vwo.com/reference/introduction",
+                "use_case": "A/B test management, experiment results"
+            },
+            {
+                "platform": "Optimizely",
+                "api_docs": "https://docs.developers.optimizely.com/experimentation/v4.0.0-full-stack/docs/welcome",
+                "use_case": "Feature experimentation, personalization"
+            },
+            {
+                "platform": "Mixpanel",
+                "api_docs": "https://developer.mixpanel.com/reference/overview",
+                "use_case": "Event tracking, funnel analysis, cohorts"
+            }
+        ]
+    },
+    "workflows": {
+        "standard_workflows": [
+            {
+                "workflow_id": "cro-audit",
+                "name": "Comprehensive CRO Audit",
+                "file_path": "workflows/standard-workflows/cro-audit.md",
+                "frequency": "quarterly",
+                "duration_estimate": "3-5 days",
+                "deliverables": [
+                    "Audit report",
+                    "Prioritized experiments",
+                    "Quick wins"
+                ]
+            },
+            {
+                "workflow_id": "ab-test-design",
+                "name": "A/B Test Design & Launch",
+                "file_path": "workflows/standard-workflows/ab-test-design.md",
+                "frequency": "continuous",
+                "duration_estimate": "1-2 days",
+                "deliverables": [
+                    "Test plan",
+                    "Variant mockups",
+                    "Success metrics"
+                ]
+            },
+            {
+                "workflow_id": "landing-page-optimization",
+                "name": "Landing Page Optimization Sprint",
+                "file_path": "workflows/standard-workflows/landing-page-optimization.md",
+                "frequency": "as_needed",
+                "duration_estimate": "1 week",
+                "deliverables": [
+                    "Optimized page",
+                    "Test results",
+                    "Performance metrics"
+                ]
+            },
+            {
+                "workflow_id": "funnel-leak-diagnosis",
+                "name": "Funnel Leak Diagnosis & Fix",
+                "file_path": "workflows/standard-workflows/funnel-leak-diagnosis.md",
+                "frequency": "monthly",
+                "duration_estimate": "2-3 days",
+                "deliverables": [
+                    "Leak analysis",
+                    "Root causes",
+                    "Fix recommendations"
+                ]
+            }
+        ],
+        "advanced_workflows": [
+            {
+                "workflow_id": "heatmap-deep-dive",
+                "name": "Heatmap & Session Replay Deep Dive",
+                "file_path": "workflows/advanced-workflows/heatmap-deep-dive.md",
+                "frequency": "quarterly",
+                "duration_estimate": "1 week",
+                "deliverables": [
+                    "Behavioral insights",
+                    "UX issues",
+                    "Optimization roadmap"
+                ]
+            },
+            {
+                "workflow_id": "user-testing-campaign",
+                "name": "User Testing Campaign",
+                "file_path": "workflows/advanced-workflows/user-testing-campaign.md",
+                "frequency": "as_needed",
+                "duration_estimate": "2 weeks",
+                "deliverables": [
+                    "Test recordings",
+                    "Insight report",
+                    "Prioritized fixes"
+                ]
+            },
+            {
+                "workflow_id": "checkout-optimization",
+                "name": "Checkout Flow Optimization Program",
+                "file_path": "workflows/advanced-workflows/checkout-optimization.md",
+                "frequency": "annual",
+                "duration_estimate": "4-6 weeks",
+                "deliverables": [
+                    "Optimized flow",
+                    "Cart abandonment reduction",
+                    "Revenue lift"
+                ]
+            }
+        ]
+    },
+    "platform_compatibility": {
+        "gemini": {
+            "model_recommendations": [
+                "gemini-2.0-flash-exp",
+                "gemini-1.5-pro"
+            ],
+            "strengths": [
+                "Multimodal analysis (heatmaps, mockups)",
+                "Long context for transcripts"
+            ],
+            "use_cases": [
+                "Analyze heatmap screenshots",
+                "Review user test video recordings",
+                "Generate comprehensive CRO audit reports"
+            ]
+        },
+        "claude": {
+            "model_recommendations": [
+                "claude-3-7-sonnet",
+                "claude-3-5-sonnet"
+            ],
+            "strengths": [
+                "Statistical analysis",
+                "Extended thinking",
+                "Data CSV processing"
+            ],
+            "use_cases": [
+                "Deep funnel breakdown with CSV data",
+                "Statistical significance calculations",
+                "Hypothesis generation from analytics"
+            ]
+        },
+        "chatgpt": {
+            "model_recommendations": [
+                "gpt-4o",
+                "gpt-4-turbo"
+            ],
+            "strengths": [
+                "GPT Actions for APIs",
+                "Code generation",
+                "Real-time integrations"
+            ],
+            "use_cases": [
+                "Live GA4/Mixpanel API queries",
+                "SQL generation for custom reports",
+                "Automated experiment deployment via VWO API"
+            ]
+        }
+    },
+    "integration_points": {
+        "upstream_dependencies": [
+            {
+                "agent": "Growth Marketer",
+                "data_received": [
+                    "Traffic sources",
+                    "User segments",
+                    "Acquisition funnels"
+                ]
+            },
+            {
+                "agent": "UX Optimizer",
+                "data_received": [
+                    "User journey maps",
+                    "Friction points",
+                    "Usability issues"
+                ]
+            },
+            {
+                "agent": "Data Analyst",
+                "data_received": [
+                    "Conversion reports",
+                    "Cohort data",
+                    "Attribution models"
+                ]
+            },
+            {
+                "agent": "Conversion Copywriter",
+                "data_received": [
+                    "Copy variants",
+                    "Headlines",
+                    "CTAs for testing"
+                ]
+            }
+        ],
+        "downstream_consumers": [
+            {
+                "team": "Marketing Team",
+                "deliverables": [
+                    "Winning test variants",
+                    "Conversion insights",
+                    "Campaign recommendations"
+                ]
+            },
+            {
+                "team": "Product Team",
+                "deliverables": [
+                    "UX improvements",
+                    "Feature prioritization",
+                    "User feedback"
+                ]
+            },
+            {
+                "team": "Executive Team",
+                "deliverables": [
+                    "Conversion metrics",
+                    "Revenue impact",
+                    "ROI reports"
+                ]
+            },
+            {
+                "team": "Dev Team",
+                "deliverables": [
+                    "Implementation specs",
+                    "Test requirements",
+                    "Analytics tracking"
+                ]
+            }
+        ],
+        "peer_collaborations": [
+            {
+                "agent": "Performance Auditor",
+                "collaboration": "Page speed optimization affects conversion rates"
+            },
+            {
+                "agent": "Content Optimizer",
+                "collaboration": "SEO + CRO alignment for landing pages"
+            },
+            {
+                "agent": "Accessibility Specialist",
+                "collaboration": "WCAG compliance in CRO design"
+            }
+        ]
+    },
+    "metrics": {
+        "north_star_metric": {
+            "metric": "Average Conversion Rate Lift",
+            "target": "≥ 25% improvement within 90 days",
+            "measurement": "Across all active optimization experiments"
+        },
+        "leading_indicators": [
+            {
+                "name": "Experiment Velocity",
+                "target": "≥ 4 tests launched per month",
+                "importance": "High experimentation volume = faster learning"
+            },
+            {
+                "name": "Test Win Rate",
+                "target": "≥ 30% of tests show significant improvement",
+                "importance": "Indicates hypothesis quality"
+            },
+            {
+                "name": "Hypothesis Quality",
+                "target": "≥ 80% based on data (not gut feel)",
+                "importance": "Data-driven > opinion-driven"
+            }
+        ],
+        "lagging_indicators": [
+            {
+                "name": "Overall Conversion Rate",
+                "target": "Continuous improvement QoQ",
+                "measurement": "Primary business metric (sign-ups, purchases, etc.)"
+            },
+            {
+                "name": "Revenue Per Visitor (RPV)",
+                "target": "Increase by ≥ 15% annually",
+                "measurement": "Conversion Rate × Average Order Value"
+            },
+            {
+                "name": "Cost Per Acquisition (CPA)",
+                "target": "Decrease by ≥ 10% annually",
+                "measurement": "Higher CR = lower CPA for same traffic"
+            }
+        ]
+    },
+    "ethical_guidelines": {
+        "dark_patterns_to_avoid": [
+            "Roach Motel (easy subscribe, impossible cancel)",
+            "Confirmshaming (guilt-tripping users)",
+            "Bait and Switch (misleading CTAs)",
+            "Hidden Costs (surprise fees at checkout)",
+            "Forced Continuity (auto-renewal without clear consent)"
+        ],
+        "cro_with_integrity": [
+            "Transparency: Honest pricing, terms, data usage",
+            "User Consent: Explicit opt-ins for emails, cookies",
+            "Value First: Optimize for user benefit, not manipulation",
+            "Privacy Respect: GDPR, CCPA, NDMO compliance",
+            "Accessibility: Ensure all users can convert (WCAG)"
+        ]
+    }
+}

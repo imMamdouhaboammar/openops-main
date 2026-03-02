@@ -1,0 +1,331 @@
+{
+  "gem_entry_point_index": {
+    "id": "openops_gem_entry_point_index",
+    "version": "1.0",
+    "status": "authoritative",
+    "purpose": "Navigation index for Gemini Gem: where to start, how to traverse folders, and which files are primary.",
+    "start_here": [
+      "00_governance/00D_Gemini_Gems_Operating_Profile.md",
+      "00_governance/00E_System_File_Index.json",
+      "00_governance/00G_Gem_Entry_Point_Index.json",
+      "01_orchestration/01D_Gemini_Gems_Router.json",
+      "01_orchestration/01E_Workflow_Registry.json",
+      "01_orchestration/01F_Output_Contracts.json"
+    ],
+    "navigation_rules": {
+      "source_of_truth": "00_governance/00E_System_File_Index.json",
+      "load_order": "Follow load_order from the system file index.",
+      "governance_precedence": [
+        "00_governance/00_OpenOps_Constitution_and_IP_Policy.md",
+        "00_governance/00D_Gemini_Gems_Operating_Profile.md",
+        "00_governance/00G_Gem_Entry_Point_Index.json"
+      ],
+      "path_conventions": [
+        "Top-level folders are numbered layers (00-12).",
+        "JSON files are structured rules; MD files are narrative guidance.",
+        "Prefer explicit repo paths over shorthand names."
+      ],
+      "if_missing": "If a referenced file is not available in the current gem pack, ask for it or proceed with the available sources only."
+    },
+    "project_level_files": [
+      "README.md",
+      "SYSTEM_PROMPT_OpenOps_Runtime.txt",
+      "Gemini_Gem_System_Instructions.txt",
+      "package.json",
+      "tsconfig.json",
+      "docker-compose.yml",
+      "Dockerfile",
+      "integration_config.json"
+    ],
+    "folder_index": [
+      {
+        "folder": "00_governance",
+        "label": "Constitution, policy, and global constraints",
+        "entry_files": [
+          "00_governance/00_OpenOps_Constitution_and_IP_Policy.md",
+          "00_governance/00A_OpenOps_Main_Orchestrator_System_Prompt.json",
+          "00_governance/00D_Gemini_Gems_Operating_Profile.md",
+          "00_governance/00E_System_File_Index.json",
+          "00_governance/00G_Gem_Entry_Point_Index.json"
+        ],
+        "secondary_files": [
+          "00_governance/00B_OpenOps_Audit_and_Decision_Ledger.json",
+          "00_governance/00C_OpenOps_Risk_and_Failure_Playbook.md",
+          "00_governance/00E_System_Interlink_Map.json",
+          "00_governance/00F_Anti_Hallucination_Sentinel.md",
+          "00_governance/00M_Rolling_Summary_Protocol.md"
+        ]
+      },
+      {
+        "folder": "01_orchestration",
+        "label": "Routing, rounds, and runtime orchestration",
+        "entry_files": [
+          "01_orchestration/01_Orchestration_Engine_and_Rounds_Router.md",
+          "01_orchestration/01D_Gemini_Gems_Router.json",
+          "01_orchestration/01E_Workflow_Registry.json",
+          "01_orchestration/01F_Output_Contracts.json"
+        ],
+        "secondary_files": [
+          "01_orchestration/01A_Execution_Context_Manager.json",
+          "01_orchestration/01B_Integration_Config.json",
+          "01_orchestration/01C_Failure_Recovery_Manager.json",
+          "01_orchestration/01H_Strict_Round_Completion_Gates.json",
+          "01_orchestration/01F_Simulated_CLI_Commands.json",
+          "01_orchestration/qa_orchestrator.module.json",
+          "01_orchestration/qa-init_orchestrator.module.json",
+          "01_orchestration/deep_research_engine.module.json",
+          "01_orchestration/agent_parallelism_patterns.module.json",
+          "01_orchestration/runtime/index.ts"
+        ]
+      },
+      {
+        "folder": "02_agents",
+        "label": "Agent roles, memory, and orchestration",
+        "entry_files": [
+          "02_agents/02_Agents_System_and_Activation_Matrix.md",
+          "02_agents/02A_Agent_Roles_Config.json",
+          "02_agents/02B_Agent_Memory_Registry.json",
+          "02_agents/02C_Agent_Logging_and_Audit.json",
+          "02_agents/02D_Agent_Personality_Profile.json"
+        ],
+        "secondary_files": [
+          "02_agents/02E_Agent_Authorization_Matrix.json",
+          "02_agents/02F_Agent_Communication_Protocol.json",
+          "02_agents/02G_Agent_Performance_Monitoring.json",
+          "02_agents/02H_Agent_Learning_Development.json",
+          "02_agents/02I_Dynamic_Orchestration_System.json",
+          "02_agents/02J_Specialized_Agents_Catalog.json",
+          "02_agents/02V_Agent_Voice_DNA.json",
+          "02_agents/README.md",
+          "02_agents/QUICK_REFERENCE.md"
+        ]
+      },
+      {
+        "folder": "03_product",
+        "label": "Product management and PRD system",
+        "entry_files": [
+          "03_product/03_Product_and_PRD_Master_Framework.md",
+          "03_product/03A_PRD_Template_Generator.json",
+          "03_product/03B_ProductTracker_and_Roadmap.json",
+          "03_product/03C_Feedback_and_Iteration_Pipeline.json",
+          "03_product/03D_Release_Management_Tracker.json"
+        ]
+      },
+      {
+        "folder": "04_research",
+        "label": "Research, evidence, and competitive intelligence",
+        "entry_files": [
+          "04_research/04_Research_and_Competitive_Intelligence.md",
+          "04_research/04A_Research_Templates_and_Taxonomy.json",
+          "04_research/04B_Data_Evidence_Scoring_Model.json",
+          "04_research/04C_External_Sources_Index.json",
+          "04_research/04D_Source_Access_Proxy.json",
+          "04_research/04E_Intelligence_Signal_Aggregator.json"
+        ]
+      },
+      {
+        "folder": "05_architecture",
+        "label": "Architecture, data systems, and storage",
+        "entry_files": [
+          "05_architecture/05_Architecture_and_Data_Systems_Playbook.md",
+          "05_architecture/05A_Graph_Database_Config.json",
+          "05_architecture/05B_Data_Pipeline_Manager.json",
+          "05_architecture/05C_Embedding_and_VectorStore_Config.json",
+          "05_architecture/05D_Cache_and_Indexing_Strategy.json"
+        ]
+      },
+      {
+        "folder": "06_security",
+        "label": "Security, compliance, and privacy",
+        "entry_files": [
+          "06_security/06_Security_Compliance_and_Privacy_Gates.md",
+          "06_security/06A_Security_Classification_Model.json",
+          "06_security/06B_Access_Control_and_Encryption.json",
+          "06_security/06C_Threat_and_Incident_Response.json",
+          "06_security/06D_Privacy_Anonymization_Policies.json"
+        ]
+      },
+      {
+        "folder": "07_tracking",
+        "label": "Analytics, KPIs, and experimentation",
+        "entry_files": [
+          "07_tracking/07_Tracking_Analytics_and_Experimentation.md",
+          "07_tracking/07A_Analytics_Event_Schema.json",
+          "07_tracking/07B_KPI_and_Metrics_Dashboard.json",
+          "07_tracking/07C_Experimentation_Manager.json",
+          "07_tracking/07D_Reporting_and_Insights.json"
+        ]
+      },
+      {
+        "folder": "08_ux",
+        "label": "UX system, copy, and accessibility",
+        "entry_files": [
+          "08_ux/08_UX_Design_System_and_Copy_Library.md",
+          "08_ux/08A_UX_Tokens_and_Style_Config.json",
+          "08_ux/08B_Copy_Library_and_Tone.json",
+          "08_ux/08C_Design_Blueprints_and_Flows.json",
+          "08_ux/08D_Accessibility_and_Localization.json",
+          "08_ux/08E_Simulated_UI_Render_Rules.md"
+        ]
+      },
+      {
+        "folder": "09_tooling",
+        "label": "Tooling, prompt registries, and runtime pipelines",
+        "entry_files": [
+          "09_tooling/09_PromptKit_and_Tooling_Handoff.md",
+          "09_tooling/09A_Prompt_Template_Registry.json",
+          "09_tooling/09B_Tool_and_API_Mapping.json",
+          "09_tooling/09C_Agent_Prompt_Mapping.json",
+          "09_tooling/09D_Runtime_Prompt_Pipeline.json"
+        ]
+      },
+      {
+        "folder": "10_legacy",
+        "label": "Deprecated modules and migration",
+        "entry_files": [
+          "10_legacy/10_Legacy_Old_Scope.md",
+          "10_legacy/10A_Deprecated_Modules_Index.json",
+          "10_legacy/10B_Migration_and_Interop_Policy.json",
+          "10_legacy/10C_Compatibility_Adapters.json"
+        ]
+      }
+    ],
+    "runtime_code_entrypoints": [
+      {
+        "name": "runtime_root",
+        "path": "src/index.ts",
+        "notes": "TypeScript runtime entry point."
+      },
+      {
+        "name": "runtime_core",
+        "path": "src/core/runtime/OpenOpsRuntime.ts",
+        "notes": "Core runtime logic."
+      },
+      {
+        "name": "config_entry",
+        "path": "src/core/config/index.ts",
+        "notes": "Runtime config loader."
+      },
+      {
+        "name": "logger_entry",
+        "path": "src/core/logger/index.ts",
+        "notes": "Logging setup."
+      },
+      {
+        "name": "errors",
+        "path": "src/core/errors/AppError.ts",
+        "notes": "Shared error type."
+      }
+    ],
+    "validation_and_scripts": [
+      "scripts/validate-config.ts"
+    ],
+    "domain_addons": [
+      {
+        "name": "marketing_growth_system",
+        "root": "11_marketing_growth_system",
+        "entry_files": [
+          "11_marketing_growth_system/README.md",
+          "11_marketing_growth_system/INTEGRATION.md",
+          "11_marketing_growth_system/11B_Marketing_Growth_System_Prompt.md",
+          "11_marketing_growth_system/11A_Marketing_Growth_Agent_Config.json",
+          "11_marketing_growth_system/11C_Grounding_and_Research_Engine.json",
+          "11_marketing_growth_system/11D_Strategy_Workflow_Engine.json",
+          "11_marketing_growth_system/11F_Measurement_and_KPI_System.json",
+          "11_marketing_growth_system/11G_Psychology_and_Behavior_Framework.json",
+          "11_marketing_growth_system/11H_Grounding_Protocols_and_Truth_Anchors.json",
+          "11_marketing_growth_system/workflows/campaign_planning.workflow.json",
+          "11_marketing_growth_system/templates/campaign_brief.template.md",
+          "11_marketing_growth_system/templates/content_calendar.template.json",
+          "11_marketing_growth_system/examples/saas_launch_campaign.example.json"
+        ]
+      },
+      {
+        "name": "saudi_strategic_system",
+        "root": "12_saudi_strategic_system",
+        "entry_files": [
+          "12_saudi_strategic_system/README.md",
+          "12_saudi_strategic_system/QUICK_START.md",
+          "12_saudi_strategic_system/INTEGRATION_GUIDE.md",
+          "12_saudi_strategic_system/00_system_constitution.md",
+          "12_saudi_strategic_system/01_expert_squad_profiles.json",
+          "12_saudi_strategic_system/02_thinking_framework.json",
+          "12_saudi_strategic_system/workflows/strategic_report_workflow.json",
+          "12_saudi_strategic_system/knowledge_base/saudi_market/vision_2030_framework.md",
+          "12_saudi_strategic_system/knowledge_base/hajj_umrah_ecosystem/ecosystem_deep_dive.md"
+        ]
+      }
+    ],
+    "related_systems": [
+      {
+        "name": "creative_content_system",
+        "root": "03_creative_content_system",
+        "entry_files": [
+          "03_creative_content_system/README.md",
+          "03_creative_content_system/INTEGRATION.md",
+          "03_creative_content_system/config.json",
+          "03_creative_content_system/engines/creative_engine/README.md",
+          "03_creative_content_system/engines/social_research_engine/README.md",
+          "03_creative_content_system/agents/egyptian_copywriter_agent.json",
+          "03_creative_content_system/agents/saudi_copywriter_agent.json",
+          "03_creative_content_system/dialects/egyptian/style_guide.md",
+          "03_creative_content_system/dialects/saudi/style_guide.md"
+        ]
+      },
+      {
+        "name": "egyptian_dialect_writer",
+        "root": "03_egyptian_dialect_writer",
+        "entry_files": [
+          "03_egyptian_dialect_writer/README.md",
+          "03_egyptian_dialect_writer/PROJECT_SUMMARY.md",
+          "03_egyptian_dialect_writer/SYSTEM_LOGIC.pseudo",
+          "03_egyptian_dialect_writer/DEPLOYMENT.md",
+          "03_egyptian_dialect_writer/EXAMPLES.md",
+          "03_egyptian_dialect_writer/workflows/content_generation.yml",
+          "03_egyptian_dialect_writer/workflows/optimization.yml",
+          "03_egyptian_dialect_writer/workflows/quality_assurance.yml"
+        ]
+      },
+      {
+        "name": "agentic_parallelism_system",
+        "root": "09_agentic_parallelism_system",
+        "entry_files": [
+          "09_agentic_parallelism_system/README.md",
+          "09_agentic_parallelism_system/docs/getting_started_ar.md",
+          "09_agentic_parallelism_system/config/system_config.json",
+          "09_agentic_parallelism_system/config/agents_config.json",
+          "09_agentic_parallelism_system/config/performance_config.json",
+          "09_agentic_parallelism_system/core/base_agent.py",
+          "09_agentic_parallelism_system/core/state_manager.py",
+          "09_agentic_parallelism_system/integrations/openops_integration.py"
+        ]
+      },
+      {
+        "name": "marketing_agency",
+        "root": "Marketing Agency",
+        "entry_files": [
+          "Marketing Agency/README.md",
+          "Marketing Agency/PROJECT_ROADMAP.md",
+          "Marketing Agency/config/strategiq-config.yml",
+          "Marketing Agency/config/market-profiles.json",
+          "Marketing Agency/templates/strategic-report-template.md",
+          "Marketing Agency/templates/proposal-structure.json",
+          "Marketing Agency/guides/decision-making-playbook.md",
+          "Marketing Agency/guides/saudi-market-dynamics.md",
+          "Marketing Agency/05A_StrategIQ_Competitive_Research_Engine.json",
+          "Marketing Agency/06A_StrategIQ_Tactical_Strategy_Squad.json",
+          "Marketing Agency/07A_StrategIQ_Tactical_Execution_Engine.json",
+          "Marketing Agency/08A_StrategIQ_Client_Profiling_Engine.json"
+        ]
+      }
+    ],
+    "knowledge_pack_indexes": [
+      "kb_master_index_v1.json",
+      "kb_master_index_v2.json",
+      "neuron_frameworks_models_v1.json",
+      "neuron_ai_integration_ops_v1.json",
+      "neuron_campaign_execution_ccc_v1.json",
+      "neuron_campaign_execution_cccc_v1.json"
+    ]
+  }
+}

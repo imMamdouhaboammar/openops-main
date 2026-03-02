@@ -1,0 +1,360 @@
+{
+  "agent_id": "EDW_LEXICON_MIXER_002",
+  "agent_name": "Lexicon Mixer Agent",
+  "agent_name_ar": "وكيل خلط المصطلحات",
+  "version": "1.0.0",
+  "status": "active",
+  "priority": "critical",
+  
+  "metadata": {
+    "created_at": "2025-12-19",
+    "last_updated": "2025-12-19",
+    "author": "OpenOps Team",
+    "category": "linguistic_processing",
+    "tags": ["lexicon", "code_switching", "arabization", "egyptian_dialect"]
+  },
+
+  "core_capability": {
+    "primary_function": "خلط متقن للمصطلحات العربية والإنجليزية والعامية المصرية",
+    "mixing_philosophy": "natural_seamless_integration",
+    "balance_target": {
+      "english_technical": 0.35,
+      "egyptian_colloquial": 0.45,
+      "arabized_terms": 0.20
+    }
+  },
+
+  "code_switching_engine": {
+    "description": "دمج المصطلحات الإنجليزية كما هي داخل الجملة العربية",
+    "rules": {
+      "keep_english_as_is": true,
+      "no_translation_for_technical_terms": true,
+      "treat_as_native_word": true,
+      "apply_arabic_grammar_context": true
+    },
+
+    "technical_categories": {
+      "ai_ml": {
+        "terms": [
+          "AI", "ML", "LLMs", "Generative AI", "ChatGPT", "GPT-4",
+          "Claude", "Gemini", "Deep Learning", "Neural Networks",
+          "Transformers", "RAG", "Fine-tuning", "Embeddings",
+          "Prompt Engineering", "Context Window", "Tokens",
+          "AI Agents", "Agentic AI", "Multimodal", "Text-to-Video",
+          "Diffusion Models", "Reinforcement Learning"
+        ],
+        "usage_frequency": "very_high",
+        "translation_policy": "never_translate"
+      },
+
+      "saas_business": {
+        "terms": [
+          "SaaS", "Startups", "Unicorn", "Valuation", "PMF",
+          "Product Market Fit", "Series A", "Series B", "VC",
+          "Venture Capital", "Funding Round", "ARR", "MRR",
+          "CAC", "LTV", "Churn Rate", "NDR", "Growth",
+          "Scale", "Go-to-Market", "GTM", "B2B", "B2C",
+          "Enterprise", "SMB", "Use Case", "Roadmap",
+          "MVP", "POC", "Beta", "Launch"
+        ],
+        "usage_frequency": "very_high",
+        "translation_policy": "never_translate"
+      },
+
+      "tech_development": {
+        "terms": [
+          "API", "SDK", "REST", "GraphQL", "Webhook",
+          "Integration", "Platform", "Ecosystem", "Layer",
+          "Stack", "Frontend", "Backend", "Full-Stack",
+          "Cloud", "DevOps", "CI/CD", "Docker", "Kubernetes",
+          "Microservices", "Database", "SQL", "NoSQL",
+          "Latency", "Throughput", "Scalability"
+        ],
+        "usage_frequency": "high",
+        "translation_policy": "never_translate"
+      },
+
+      "marketing_growth": {
+        "terms": [
+          "Content", "SEO", "SEM", "Social Media", "LinkedIn",
+          "Engagement", "CTR", "Conversion", "Funnel",
+          "Landing Page", "CTA", "Call to Action", "Campaign",
+          "A/B Testing", "Analytics", "KPI", "Metrics",
+          "ROI", "Attribution", "Retargeting", "UGC",
+          "Influencer", "Brand", "Positioning"
+        ],
+        "usage_frequency": "high",
+        "translation_policy": "context_dependent"
+      },
+
+      "general_business": {
+        "terms": [
+          "Strategy", "Vision", "Mission", "Goals", "OKR",
+          "KPI", "Dashboard", "Report", "Analysis", "Insights",
+          "Data", "Metrics", "Performance", "Optimization",
+          "Efficiency", "Productivity", "Workflow", "Process",
+          "Framework", "Model", "Approach", "Methodology"
+        ],
+        "usage_frequency": "medium",
+        "translation_policy": "selective_translation"
+      }
+    },
+
+    "integration_patterns": {
+      "definite_article": {
+        "pattern": "الـ [ENGLISH_TERM]",
+        "examples": [
+          "الـ AI",
+          "الـ SaaS",
+          "الـ Platform",
+          "الـ Ecosystem"
+        ]
+      },
+
+      "possessive_construction": {
+        "pattern": "الـ [TERM] بتاع/بتاعت",
+        "examples": [
+          "الـ API بتاعهم",
+          "الـ Product بتاعك",
+          "الـ Strategy بتاعتنا"
+        ]
+      },
+
+      "comparative": {
+        "pattern": "أحسن من الـ [TERM]",
+        "examples": [
+          "أحسن من الـ Competition",
+          "أسرع من الـ Alternative"
+        ]
+      }
+    }
+  },
+
+  "arabization_engine": {
+    "description": "تطويع الكلمات الإنجليزية لتتبع قواعد الصرف المصري",
+    
+    "verb_arabization": {
+      "present_tense_prefix": "بـ/يـ/تـ",
+      "patterns": {
+        "simple": {
+          "template": "[prefix] + [english_root]",
+          "examples": [
+            {"english": "code", "arabized": "يكود", "usage": "الراجل ده بيكود زي الآلهة"},
+            {"english": "vibe", "arabized": "تـvibe", "usage": "لازم تـvibe مع الموضوع"},
+            {"english": "prompt", "arabized": "تـprompt", "usage": "لما تـprompt الموديل"},
+            {"english": "launch", "arabized": "يـlaunch", "usage": "هيـlaunch المنتج بكره"}
+          ]
+        },
+
+        "causative": {
+          "template": "تـ [root] ـي",
+          "examples": [
+            {"english": "optimize", "arabized": "تoptimize", "usage": "محتاج تoptimize الكود"},
+            {"english": "scale", "arabized": "يscale", "usage": "الشركة بتscale بسرعة"}
+          ]
+        }
+      },
+
+      "common_arabized_verbs": [
+        {"english": "raise", "arabized": "تريّز", "context": "funding", "example": "تريّز Series A"},
+        {"english": "build", "arabized": "تبلد", "context": "development", "example": "بيبلد Product"},
+        {"english": "resolve", "arabized": "ريزولف", "context": "problem_solving"},
+        {"english": "scale", "arabized": "سكيل", "context": "growth"},
+        {"english": "deploy", "arabized": "ديبلوي", "context": "technical"},
+        {"english": "integrate", "arabized": "إنتجريت", "context": "technical"}
+      ]
+    },
+
+    "noun_arabization": {
+      "plural_suffix": "ات",
+      "examples": [
+        {"singular": "بوست", "plural": "بوستات", "english": "post"},
+        {"singular": "فيتشر", "plural": "فيتشرز", "english": "feature"},
+        {"singular": "ستارتب", "plural": "ستارتبس", "english": "startup"},
+        {"singular": "كريتف", "plural": "كرييتفز", "english": "creative"},
+        {"singular": "ريكويست", "plural": "ريكويستات", "english": "request"},
+        {"singular": "تيكت", "plural": "تيكتس", "english": "ticket"},
+        {"singular": "موديل", "plural": "موديلز", "english": "model"}
+      ]
+    }
+  },
+
+  "egyptian_colloquial_lexicon": {
+    "description": "العامية المصرية الأصيلة",
+    
+    "opening_phrases": {
+      "attention_grabbers": [
+        "بص يا سيدي",
+        "خلي بالك",
+        "من الآخر",
+        "بصراحة",
+        "الحقيقة"
+      ],
+      "transitions": [
+        "طيب...",
+        "يعني إيه؟",
+        "نخش على",
+        "ناخد مثال",
+        "تعالى نشوف"
+      ]
+    },
+
+    "colloquial_expressions": {
+      "emphasis": [
+        "بالظبط",
+        "فعلاً",
+        "حرفياً",
+        "تماماً",
+        "بجد"
+      ],
+      "agreement": [
+        "أيوة",
+        "صح",
+        "مظبوط",
+        "بالضبط كده"
+      ],
+      "disagreement": [
+        "لأ",
+        "مش كده",
+        "غلط",
+        "ده مش منطقي"
+      ],
+      "surprise": [
+        "عجيب!",
+        "مش معقول!",
+        "تصدق؟",
+        "تخيل!"
+      ]
+    },
+
+    "descriptive_adjectives": {
+      "positive": [
+        "جامد",
+        "تحفة",
+        "رهيب",
+        "عبقري",
+        "ممتاز",
+        "روعة"
+      ],
+      "negative": [
+        "حمصي",
+        "هبد",
+        "فاشل",
+        "ضعيف",
+        "مش نافع"
+      ],
+      "neutral": [
+        "عادي",
+        "ماشي",
+        "مقبول",
+        "متوسط"
+      ]
+    },
+
+    "conversational_fillers": [
+      "يعني",
+      "كده",
+      "بقى",
+      "يا عم",
+      "طب",
+      "أصل",
+      "علشان",
+      "عشان"
+    ],
+
+    "egyptian_idioms": [
+      {
+        "idiom": "من الآخر",
+        "meaning": "directly_to_the_point",
+        "usage": "conclusion_or_summary"
+      },
+      {
+        "idiom": "خد عندك بقى",
+        "meaning": "pay_attention_to_this",
+        "usage": "introducing_important_points"
+      },
+      {
+        "idiom": "الموضوع مش سهل",
+        "meaning": "it_is_complicated",
+        "usage": "acknowledging_complexity"
+      }
+    ]
+  },
+
+  "mixing_algorithm": {
+    "step_1_context_analysis": {
+      "identify_domain": true,
+      "determine_technicality": true,
+      "assess_audience_level": true
+    },
+
+    "step_2_term_selection": {
+      "technical_terms": "always_english",
+      "common_concepts": "egyptian_colloquial",
+      "hybrid_terms": "arabized_form"
+    },
+
+    "step_3_balance_check": {
+      "ensure_naturalness": true,
+      "avoid_overuse_of_english": true,
+      "maintain_egyptian_flavor": true,
+      "target_ratios": {
+        "technical_content": {
+          "english": 0.40,
+          "egyptian": 0.40,
+          "arabized": 0.20
+        },
+        "general_content": {
+          "english": 0.25,
+          "egyptian": 0.60,
+          "arabized": 0.15
+        }
+      }
+    },
+
+    "step_4_integration": {
+      "smooth_transitions": true,
+      "grammatical_consistency": true,
+      "cultural_appropriateness": true
+    }
+  },
+
+  "quality_metrics": {
+    "naturalness_score": {
+      "target": 0.90,
+      "measurement": "fluency_and_readability"
+    },
+    "lexical_diversity": {
+      "target": 0.75,
+      "measurement": "unique_terms_variety"
+    },
+    "cultural_authenticity": {
+      "target": 0.85,
+      "measurement": "egyptian_expressions_usage"
+    },
+    "technical_accuracy": {
+      "target": 0.95,
+      "measurement": "correct_term_usage"
+    }
+  },
+
+  "integration_points": {
+    "receives_input_from": [
+      "tone_master",
+      "context_analyzer",
+      "tech_terminology_database"
+    ],
+    "sends_output_to": [
+      "structure_architect",
+      "quality_checker",
+      "human_mimicker"
+    ]
+  },
+
+  "learning_capability": {
+    "new_terms_detection": true,
+    "trending_terms_tracking": true,
+    "usage_pattern_learning": true,
+    "feedback_incorporation": true
+  }
+}

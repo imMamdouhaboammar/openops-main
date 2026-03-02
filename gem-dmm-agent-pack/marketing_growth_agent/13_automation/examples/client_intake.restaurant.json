@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "1.0.0",
+  "client": {
+    "clientSlug": "example-restaurant",
+    "clientName": "Example Restaurant",
+    "type": "restaurant",
+    "locations": "single_location"
+  },
+  "goals": {
+    "primary90Days": "+20% revenue focused on Mon–Wed utilization",
+    "primary6Months": "Stabilize weekday demand + build brand recall and repeat visits"
+  },
+  "constraints": {
+    "budget": { "monthlyPaidMedia": 1500, "currency": "USD" },
+    "capacity": {
+      "peakHoursNearCapacity": ["Thu", "Fri", "Sat"],
+      "avoidOverDrivingPeak": true
+    },
+    "compliance": {
+      "avoidMisleadingClaims": true
+    }
+  },
+  "assets": {
+    "brandKit": { "exists": false, "location": "" },
+    "creativeInventory": ["menu photos", "some reviews", "limited UGC reels"]
+  },
+  "channels": {
+    "current": ["instagram_organic", "whatsapp_orders", "google_business_profile"],
+    "desired": ["meta_paid", "google_paid_search", "gbp_optimization", "review_engine"]
+  },
+  "approvals": {
+    "decisionMaker": "Client Owner",
+    "approver": "Client Approver",
+    "slaHours": 24
+  }
+}
+

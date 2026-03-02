@@ -1,0 +1,21 @@
+{
+  "darkPatternFirewall": {
+    "version": "1.0.0",
+    "lastUpdated": "2026-01-22",
+    "purpose": "Block manipulative or deceptive tactics at design time",
+    "blockedPatterns": [
+      "forced_continuity",
+      "hidden_fees",
+      "prechecked_optins",
+      "confirm_shaming",
+      "false_urgency"
+    ],
+    "checks": [
+      "consent_is_explicit",
+      "pricing_is_clear",
+      "cta_is_reversible",
+      "claims_are_verifiable"
+    ],
+    "action": "reject_asset_and_escalate"
+  }
+}

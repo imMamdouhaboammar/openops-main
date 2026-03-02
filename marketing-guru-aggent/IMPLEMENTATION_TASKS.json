@@ -1,0 +1,585 @@
+{
+  "project": "Marketing Guru Agent v2.0 Upgrade",
+  "version": "2.0.0",
+  "branch": "feature/marketing-guru-agent-v2",
+  "status": "tasks_ready",
+  "created": "2026-01-17",
+  "total_duration_days": 17,
+  "task_groups": [
+    {
+      "phase": "Phase 1: Design Artifacts & Research",
+      "duration_days": 3,
+      "priority": "critical",
+      "dependencies": [],
+      "tasks": [
+        {
+          "id": "T1.1",
+          "title": "Create Data Model Design Document",
+          "description": "Define core entities (CampaignBrief, StrategicNarrative, ChannelMix, Experiment, MeasurementFramework) with fields, relationships, state machines, and validation rules",
+          "owner": "Agent: PlannerAgent",
+          "inputs": ["Functional requirements from brief", "Existing playbook patterns"],
+          "outputs": ["marketing_guru_agent/data-model.md"],
+          "success_criteria": [
+            "All 5 entities defined with complete schemas",
+            "State machines documented for each entity",
+            "Validation rules linked to requirements",
+            "Relationships include cardinality"
+          ],
+          "estimated_hours": 4,
+          "priority": "high"
+        },
+        {
+          "id": "T1.2",
+          "title": "Create OpenAPI Contracts",
+          "description": "Design REST API endpoints: /api/marketing/strategies/generate, /api/marketing/campaigns/{id}/optimize, /api/marketing/experiments/{id}/results with request/response schemas",
+          "owner": "Agent: ArchitectAgent",
+          "inputs": ["Data model from T1.1", "API design patterns"],
+          "outputs": ["marketing_guru_agent/contracts/api.openapi.yaml"],
+          "success_criteria": [
+            "3+ endpoints defined with full request/response schemas",
+            "Error responses include status codes",
+            "Examples provided for all inputs",
+            "Rate limits and constraints documented"
+          ],
+          "estimated_hours": 5,
+          "priority": "high"
+        },
+        {
+          "id": "T1.3",
+          "title": "Create Tool Registry",
+          "description": "Catalog all tools agent will use: AudienceAnalyzer, CompetitorMapper, PositioningWedgeBuilder, ChannelMixOptimizer, KPIStackDesigner, AttributionModelSelector",
+          "owner": "Agent: ToolsEngineer",
+          "inputs": ["Agent capabilities from v1.0", "Tool patterns from ConversionCopywriterAgent"],
+          "outputs": ["marketing_guru_agent/tools.registry.json"],
+          "success_criteria": [
+            "6+ tools defined with inputs/outputs",
+            "Tool-to-workflow-phase mapping clear",
+            "Integration paths specified (AI, search, algorithm)",
+            "Tool composition rules documented"
+          ],
+          "estimated_hours": 4,
+          "priority": "high"
+        },
+        {
+          "id": "T1.4",
+          "title": "Create Quickstart Guide",
+          "description": "Document agent overview, prerequisites, basic usage examples, configuration, and troubleshooting",
+          "owner": "Agent: DocumentationAgent",
+          "inputs": ["T1.1-T1.3 outputs", "Existing README"],
+          "outputs": ["marketing_guru_agent/quickstart.md"],
+          "success_criteria": [
+            "Installation steps clear and verified",
+            "Code examples runnable",
+            "Configuration explained",
+            "Common issues addressed"
+          ],
+          "estimated_hours": 3,
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "phase": "Phase 2: Configuration v2.0 Development",
+      "duration_days": 5,
+      "priority": "critical",
+      "dependencies": ["Phase 1"],
+      "tasks": [
+        {
+          "id": "T2.1",
+          "title": "Develop 01_Marketing_Guru_Agent_Config_v2.0.json",
+          "description": "Upgrade core agent configuration with v2.0 schema: enhanced metadata, expanded capabilities, memory integration, advanced activation rules, authority levels, behavioral rules, workflow phases, quality gates",
+          "owner": "Agent: ConfigEngineer",
+          "inputs": ["Current config v1.0", "System architecture from 02A_Agent_Roles_Config.json", "Tool registry from T1.3"],
+          "outputs": ["marketing_guru_agent/01_Marketing_Guru_Agent_Config_v2.0.json"],
+          "success_criteria": [
+            "Version bumped to 2.0.0",
+            "All capability categories expanded (research, strategy, activation, creative, measurement)",
+            "Tool references integrated (6+ tools)",
+            "Workflow phases include duration % breakdown",
+            "Quality gates with approval requirements",
+            "Memory integration configured",
+            "Authority levels defined",
+            "File size <400 lines"
+          ],
+          "estimated_hours": 8,
+          "priority": "critical"
+        },
+        {
+          "id": "T2.2",
+          "title": "Create 02_Marketing_Guru_Agent_Memory.json",
+          "description": "Define memory schema: short-term (in-memory), working (Redis), long-term (VectorDB), audit; memory objects schema; exchange protocols with read/write policies; retrieval strategies",
+          "owner": "Agent: MemoryEngineer",
+          "inputs": ["Memory registry from 02B_Agent_Memory_Registry.json", "Agent config v2.0 from T2.1"],
+          "outputs": ["marketing_guru_agent/02_Marketing_Guru_Agent_Memory.json"],
+          "success_criteria": [
+            "All 4 memory layers configured",
+            "Memory object schema matches OpenOps spec",
+            "Read/write policies match tier permissions",
+            "Retrieval strategy for past campaigns defined",
+            "Learning storage for experiment outcomes",
+            "Audit trail integration"
+          ],
+          "estimated_hours": 6,
+          "priority": "critical"
+        },
+        {
+          "id": "T2.3",
+          "title": "Create 03_Marketing_Guru_Agent_Tools.json",
+          "description": "Orchestrate tool registry: define tool composition rules, phase-to-tool mapping, execution order, error handling, fallback strategies",
+          "owner": "Agent: ToolsOrchestrator",
+          "inputs": ["Tool registry from T1.3", "Workflow phases from T2.4"],
+          "outputs": ["marketing_guru_agent/03_Marketing_Guru_Agent_Tools.json"],
+          "success_criteria": [
+            "Discover phase: AudienceAnalyzer + CompetitorMapper",
+            "Shape phase: PositioningWedgeBuilder + ToneDirectionTool",
+            "Structure phase: ChannelMixOptimizer + ContentCalendarBuilder",
+            "Validate phase: KPIStackDesigner + RiskAssessmentTool",
+            "Handoff phase: PlaybookAssembler + MeasurementDashboardBuilder",
+            "Error handling per tool documented",
+            "Fallback strategies defined"
+          ],
+          "estimated_hours": 5,
+          "priority": "high"
+        },
+        {
+          "id": "T2.4",
+          "title": "Create 04_Marketing_Guru_Agent_Workflows.json",
+          "description": "Define state machines: strategy_generation (Discover→Shape→Structure→Validate→Handoff), campaign_optimization with phases, gates, and feedback loops for KPI variance and experiment failures",
+          "owner": "Agent: WorkflowArchitect",
+          "inputs": ["Playbook patterns from 360_campaign_playbook.md", "Workflow template from plan"],
+          "outputs": ["marketing_guru_agent/04_Marketing_Guru_Agent_Workflows.json"],
+          "success_criteria": [
+            "Strategy generation workflow: 5 phases with duration %",
+            "Campaign optimization workflow: 4 phases",
+            "All phases include activities, outputs, gates",
+            "Gates have evaluation rules (proceed/hold/refine/block)",
+            "Feedback loops: kpi_variance > 15% and experiment_fails",
+            "Feedback triggers specify action and owner",
+            "No circular dependencies in workflow"
+          ],
+          "estimated_hours": 6,
+          "priority": "high"
+        },
+        {
+          "id": "T2.5",
+          "title": "Create 05_Marketing_Guru_Agent_Prompts.json",
+          "description": "Build dynamic prompt library: research mode, strategy mode, creative mode, measurement mode, optimization mode with context-aware routing",
+          "owner": "Agent: PromptEngineer",
+          "inputs": ["Current prompt from v1.0", "Mode definitions from plan"],
+          "outputs": ["marketing_guru_agent/05_Marketing_Guru_Agent_Prompts.json"],
+          "success_criteria": [
+            "5 mode-specific prompts defined",
+            "Each mode has 3-5 context variables",
+            "Prompts include output format directives",
+            "Fallback prompts for error conditions",
+            "Prompt versioning included",
+            "Temperature/model settings specified per mode"
+          ],
+          "estimated_hours": 5,
+          "priority": "high"
+        },
+        {
+          "id": "T2.6",
+          "title": "Deprecate and Archive v1.0",
+          "description": "Create _deprecated/v1.0/ directory, move old config and prompt, create migration guide",
+          "owner": "Agent: MaintenanceBot",
+          "inputs": ["Original config and prompt files"],
+          "outputs": ["_deprecated/v1.0/ with all v1.0 files and MIGRATION.md"],
+          "success_criteria": [
+            "All v1.0 files archived with timestamps",
+            "Migration guide explains what changed",
+            "No broken references to old files"
+          ],
+          "estimated_hours": 2,
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "phase": "Phase 3: Workflow Enhancement & Testing",
+      "duration_days": 4,
+      "priority": "high",
+      "dependencies": ["Phase 2"],
+      "tasks": [
+        {
+          "id": "T3.1",
+          "title": "Enhance omnichannel-blueprint.workflow.json",
+          "description": "Upgrade workflow JSON with state machines from T2.4, add gates and feedback loop configurations",
+          "owner": "Agent: WorkflowBuilder",
+          "inputs": ["Current workflow", "04_Marketing_Guru_Agent_Workflows.json from T2.4"],
+          "outputs": ["marketing_guru_agent/workflows/omnichannel-blueprint.workflow.json (v2.0)"],
+          "success_criteria": [
+            "State transitions explicit (draft → active → paused → completed)",
+            "Gates with evaluation rules",
+            "Feedback loops integrated",
+            "Execution time estimates per phase",
+            "Role assignments for each phase",
+            "Rollback procedures defined"
+          ],
+          "estimated_hours": 4,
+          "priority": "high"
+        },
+        {
+          "id": "T3.2",
+          "title": "Create Integration Tests: Memory Bus",
+          "description": "Test memory layer integration: write to working layer, retrieve from long-term, audit trail recording",
+          "owner": "Agent: QAEngineer",
+          "inputs": ["Memory config from T2.2", "Memory bus spec from 02B"],
+          "outputs": ["marketing_guru_agent/tests/memory-integration.spec.ts"],
+          "success_criteria": [
+            "Short-term write/read test passes",
+            "Working layer persistence test passes",
+            "Long-term retrieval (VectorDB) test passes",
+            "Audit trail immutability verified",
+            "Test coverage >80%"
+          ],
+          "estimated_hours": 5,
+          "priority": "high"
+        },
+        {
+          "id": "T3.3",
+          "title": "Create Integration Tests: Tool Orchestration",
+          "description": "Test tool composition: verify tools called in correct order per phase, error handling, fallback activation",
+          "owner": "Agent: QAEngineer",
+          "inputs": ["Tool config from T2.3", "Workflow from T3.1"],
+          "outputs": ["marketing_guru_agent/tests/tool-orchestration.spec.ts"],
+          "success_criteria": [
+            "Discover phase calls tools in sequence",
+            "Tool output validation passes",
+            "Error fallback activates on tool failure",
+            "Phase gate evaluation correct",
+            "Test coverage >80%"
+          ],
+          "estimated_hours": 5,
+          "priority": "high"
+        },
+        {
+          "id": "T3.4",
+          "title": "Create Integration Tests: Strategy Generation (E2E)",
+          "description": "End-to-end test: brief input → strategy output with all components (narrative, channels, experiments, measurement)",
+          "owner": "Agent: QAEngineer",
+          "inputs": ["All config files T2.1-T2.5", "Data model from T1.1"],
+          "outputs": ["marketing_guru_agent/tests/strategy-generation-e2e.spec.ts"],
+          "success_criteria": [
+            "E2E test executes all 5 workflow phases",
+            "Output includes StrategicNarrative object",
+            "Output includes CampaignBrief with objectives",
+            "Output includes ChannelMix array",
+            "Output includes Experiment array",
+            "Output includes MeasurementFramework",
+            "Quality gates pass",
+            "Test duration <5 minutes"
+          ],
+          "estimated_hours": 6,
+          "priority": "critical"
+        },
+        {
+          "id": "T3.5",
+          "title": "Validation: Constitution Compliance",
+          "description": "Audit all generated files against OpenOps constitution: file size <400 lines, type safety, state management, imports, testing coverage, performance targets",
+          "owner": "Agent: ComplianceAgent",
+          "inputs": ["All generated files from Phase 1-2", "Constitution from .specify/memory/"],
+          "outputs": ["marketing_guru_agent/COMPLIANCE_REPORT.md"],
+          "success_criteria": [
+            "All config files <400 lines",
+            "No global state violations",
+            "Type annotations 100% for JSON schemas",
+            "Relative imports only (no absolute paths)",
+            "Test coverage >70%",
+            "Performance: strategy generation <5min",
+            "Memory usage reasonable (no bloat)",
+            "No hardcoded secrets"
+          ],
+          "estimated_hours": 3,
+          "priority": "high"
+        }
+      ]
+    },
+    {
+      "phase": "Phase 4: Documentation & Agent Context Update",
+      "duration_days": 2,
+      "priority": "medium",
+      "dependencies": ["Phase 3"],
+      "tasks": [
+        {
+          "id": "T4.1",
+          "title": "Update GitHub Copilot Agent Context",
+          "description": "Add Marketing Guru Agent v2.0 technology to .github/copilot/context.md between AUTO-GENERATED markers",
+          "owner": "Agent: ContextBuilder",
+          "inputs": ["Agent capabilities", "Tool registry", "Quickstart guide"],
+          "outputs": [".github/copilot/context.md (updated)"],
+          "success_criteria": [
+            "New tech section inserted between markers",
+            "No existing manual content overwritten",
+            "All capabilities documented",
+            "Tool list complete",
+            "Activation triggers listed",
+            "Output formats specified"
+          ],
+          "estimated_hours": 2,
+          "priority": "medium"
+        },
+        {
+          "id": "T4.2",
+          "title": "Update Project README",
+          "description": "Refresh marketing-guru-aggent/README.md with v2.0 capabilities, new workflows, integration points, and upgrade guide",
+          "owner": "Agent: DocumentationAgent",
+          "inputs": ["All v2.0 artifacts", "Quickstart from T1.4"],
+          "outputs": ["marketing_guru_aggent/README.md (v2.0)"],
+          "success_criteria": [
+            "Version updated to 2.0.0",
+            "New capabilities highlighted",
+            "Workflow diagram or description",
+            "Integration with memory bus explained",
+            "Tool composition explained",
+            "Quality gates documented",
+            "Getting started section includes E2E example",
+            "Links to detailed docs"
+          ],
+          "estimated_hours": 3,
+          "priority": "medium"
+        },
+        {
+          "id": "T4.3",
+          "title": "Create CHANGELOG.md",
+          "description": "Document v1.0 → v2.0 changes: new configs, tool integration, memory system, workflow enhancements, breaking changes",
+          "owner": "Agent: DocumentationAgent",
+          "inputs": ["Upgrade plan document", "All generated files"],
+          "outputs": ["marketing_guru_aggent/CHANGELOG.md"],
+          "success_criteria": [
+            "Version 2.0.0 section complete",
+            "Breaking changes clearly marked",
+            "New features listed (6+ items)",
+            "Bug fixes listed (if any)",
+            "Migration instructions for v1.0 users",
+            "Dependencies changes documented"
+          ],
+          "estimated_hours": 2,
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "phase": "Phase 5: Deployment & Validation",
+      "duration_days": 3,
+      "priority": "high",
+      "dependencies": ["Phase 4"],
+      "tasks": [
+        {
+          "id": "T5.1",
+          "title": "Register Agent in 02_agents/02A_Agent_Roles_Config.json",
+          "description": "Add MarketingGuruStrategist v2.0 as Domain Authority Agent with tier, capabilities, permissions, and activation rules",
+          "owner": "Agent: RegistrationBot",
+          "inputs": ["Agent config v2.0 from T2.1", "Agent roles spec"],
+          "outputs": ["02_agents/02A_Agent_Roles_Config.json (updated)"],
+          "success_criteria": [
+            "Agent registered as L2 Domain Authority",
+            "Tier and capabilities match config v2.0",
+            "Permissions include read/write/execute/restricted",
+            "Reporting structure defined (reports to SupervisorAgent)",
+            "Activation rules captured",
+            "No conflicts with existing agents"
+          ],
+          "estimated_hours": 2,
+          "priority": "high"
+        },
+        {
+          "id": "T5.2",
+          "title": "Update Agent Memory Registry",
+          "description": "Register agent memory namespace in 02_agents/02B_Agent_Memory_Registry.json with retrieval strategy and namespace",
+          "owner": "Agent: MemoryRegistry",
+          "inputs": ["Memory config from T2.2", "Memory registry spec"],
+          "outputs": ["02_agents/02B_Agent_Memory_Registry.json (updated)"],
+          "success_criteria": [
+            "Namespace 'marketing_guru_strategist' registered",
+            "Memory stores listed (strategy_blueprints, experiment_results, etc.)",
+            "Retrieval paths for past campaigns defined",
+            "TTL/retention policies set",
+            "No conflicts with other agents"
+          ],
+          "estimated_hours": 2,
+          "priority": "high"
+        },
+        {
+          "id": "T5.3",
+          "title": "Run Full Integration Test Suite",
+          "description": "Execute all tests from Phase 3 (memory, tools, E2E) and validate >90% pass rate",
+          "owner": "Agent: QAOrchestrator",
+          "inputs": ["All test files from T3.2-T3.4"],
+          "outputs": ["TEST_RESULTS.json with coverage report"],
+          "success_criteria": [
+            "Memory integration tests: 100% pass",
+            "Tool orchestration tests: 100% pass",
+            "E2E strategy generation: 100% pass",
+            "Overall coverage >80%",
+            "Performance benchmarks met (<5min strategy generation)",
+            "No flaky tests"
+          ],
+          "estimated_hours": 4,
+          "priority": "critical"
+        },
+        {
+          "id": "T5.4",
+          "title": "Codacy Security & Quality Scan",
+          "description": "Run Codacy CLI analysis on all v2.0 files; fix any security issues (trivy), code quality issues (complexity, duplication)",
+          "owner": "Agent: SecurityLead",
+          "inputs": ["All generated files", "Codacy configuration"],
+          "outputs": ["CODACY_REPORT.json + fixes applied"],
+          "success_criteria": [
+            "No critical security issues (trivy scan clean)",
+            "No high-priority code quality issues",
+            "Complexity metrics acceptable",
+            "No hardcoded secrets",
+            "Dependencies reviewed (T2.1-T2.5 only use approved packages)",
+            "Code style consistent with project"
+          ],
+          "estimated_hours": 3,
+          "priority": "high"
+        },
+        {
+          "id": "T5.5",
+          "title": "Final Approval & Documentation Sign-Off",
+          "description": "SupervisorAgent reviews all outputs, approves v2.0 for production, archives sign-off memo",
+          "owner": "Agent: SupervisorAgent",
+          "inputs": ["All artifacts from Phases 1-4", "Test results", "Compliance report", "Security scan"],
+          "outputs": ["APPROVAL_MEMO.md in marketing-guru-aggent/"],
+          "success_criteria": [
+            "All quality gates passed",
+            "Constitution compliance verified",
+            "Tests >80% coverage",
+            "Security scan clean",
+            "Documentation complete",
+            "Approval signed with timestamp",
+            "Ready for production deployment"
+          ],
+          "estimated_hours": 2,
+          "priority": "critical"
+        }
+      ]
+    }
+  ],
+  "cross_cutting_concerns": [
+    {
+      "concern": "Type Safety & Validation",
+      "applies_to": ["T2.1", "T2.2", "T2.3", "T2.4", "T2.5"],
+      "rule": "All JSON schemas MUST be valid per OpenOps spec; add JSON Schema validation in tests"
+    },
+    {
+      "concern": "Documentation Linkage",
+      "applies_to": ["T1.1", "T1.2", "T1.3", "T4.1", "T4.2"],
+      "rule": "All generated artifacts must be cross-referenced in README and quickstart"
+    },
+    {
+      "concern": "Security & Compliance",
+      "applies_to": ["T5.4"],
+      "rule": "No task proceeds past T5 until security scan passes (zero critical, <3 high issues)"
+    },
+    {
+      "concern": "Test Coverage",
+      "applies_to": ["T3.2", "T3.3", "T3.4"],
+      "rule": "All integration tests must have >80% code coverage; E2E tests critical paths only"
+    }
+  ],
+  "risk_mitigation": [
+    {
+      "risk": "Memory system integration fails",
+      "probability": "medium",
+      "impact": "high",
+      "mitigation": "T3.2 integration test catches issues early; fallback to in-memory cache in T2.2"
+    },
+    {
+      "risk": "Tool composition order incorrect",
+      "probability": "low",
+      "impact": "high",
+      "mitigation": "T3.3 orchestration tests verify sequence; phase gates (T2.4) enforce correctness"
+    },
+    {
+      "risk": "Configuration files exceed 400 lines (constitution)",
+      "probability": "medium",
+      "impact": "medium",
+      "mitigation": "T3.5 compliance audit; split into sub-files if needed (T2.1-T2.5 already modular)"
+    },
+    {
+      "risk": "E2E test takes >5min (performance target miss)",
+      "probability": "low",
+      "impact": "medium",
+      "mitigation": "T3.4 benchmark included; optimize tool calls in T2.3 if needed"
+    },
+    {
+      "risk": "Security vulnerabilities in new dependencies",
+      "probability": "low",
+      "impact": "critical",
+      "mitigation": "T5.4 Codacy trivy scan mandatory before approval; all deps reviewed in T2.1-T2.5"
+    }
+  ],
+  "success_metrics": [
+    {
+      "metric": "All 5 config files created and validated",
+      "target": "100%",
+      "verification": "T5.3 + T5.4"
+    },
+    {
+      "metric": "Test coverage across all tasks",
+      "target": ">80%",
+      "verification": "T5.3"
+    },
+    {
+      "metric": "Strategy generation execution time",
+      "target": "<5 minutes",
+      "verification": "T3.4 E2E benchmark"
+    },
+    {
+      "metric": "Constitutional compliance",
+      "target": "100% (no violations)",
+      "verification": "T3.5 compliance report"
+    },
+    {
+      "metric": "Security scan findings",
+      "target": "0 critical, <3 high",
+      "verification": "T5.4"
+    },
+    {
+      "metric": "Documentation completeness",
+      "target": "100% artifact coverage",
+      "verification": "T4.1, T4.2, T4.3"
+    },
+    {
+      "metric": "Integration with central agents system",
+      "target": "Agent registered + memory namespace",
+      "verification": "T5.1, T5.2"
+    }
+  ],
+  "execution_notes": {
+    "parallelization_opportunities": [
+      "T1.1, T1.2, T1.3 can run in parallel (Phase 1)",
+      "T2.1, T2.2, T2.3 can run in parallel after T1.3 (Phase 2)",
+      "T3.2, T3.3 can run in parallel after T3.1 (Phase 3)",
+      "T4.1, T4.2, T4.3 can run in parallel (Phase 4)"
+    ],
+    "critical_path": [
+      "T1.1 → T1.2 → T1.3 → T2.1 → T2.4 → T3.1 → T3.4 → T5.3 → T5.5"
+    ],
+    "approval_gates": [
+      {
+        "gate": "Phase 1 Sign-Off",
+        "requires": ["T1.1", "T1.2", "T1.3", "T1.4"],
+        "approver": "PlannerAgent"
+      },
+      {
+        "gate": "Phase 2 Sign-Off",
+        "requires": ["T2.1", "T2.2", "T2.3", "T2.4", "T2.5"],
+        "approver": "ConfigEngineer"
+      },
+      {
+        "gate": "Phase 3 Sign-Off",
+        "requires": ["T3.1", "T3.2", "T3.3", "T3.4", "T3.5"],
+        "approver": "QAOrchestrator"
+      },
+      {
+        "gate": "Production Deployment",
+        "requires": ["T4.1", "T4.2", "T4.3", "T5.1", "T5.2", "T5.3", "T5.4"],
+        "approver": "SupervisorAgent"
+      }
+    ]
+  }
+}

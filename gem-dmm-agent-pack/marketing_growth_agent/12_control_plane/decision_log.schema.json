@@ -1,0 +1,161 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "openops://11_marketing_growth_agent/12_control_plane/decision_log.schema.json",
+  "title": "Decision Log Entry (JSONL-friendly)",
+  "description": "Schema for a single decision log entry. Intended to be stored as JSON Lines (one JSON object per line).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "decisionId",
+    "timestamp",
+    "mode",
+    "decisionType",
+    "summary",
+    "owner",
+    "evidence",
+    "risk",
+    "approvals",
+    "related"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "examples": ["1.0.0"]
+    },
+    "decisionId": {
+      "type": "string",
+      "description": "Unique stable identifier for the decision (do not reuse).",
+      "examples": ["DEC-2026-01-24-0001"]
+    },
+    "timestamp": {
+      "type": "string",
+      "description": "ISO8601 timestamp when the decision was made.",
+      "examples": ["2026-01-24T16:30:00Z"]
+    },
+    "mode": {
+      "type": "string",
+      "description": "Which operating mode the system was in when the decision was made.",
+      "enum": ["advisor", "operator"]
+    },
+    "decisionType": {
+      "type": "string",
+      "description": "Decision category for filtering and governance.",
+      "enum": [
+        "strategy_change",
+        "budget_shift",
+        "offer_change",
+        "brand_positioning_change",
+        "compliance_gate",
+        "experiment_decision",
+        "tracking_definition",
+        "scope_change",
+        "escalation"
+      ]
+    },
+    "summary": {
+      "type": "string",
+      "description": "One-paragraph summary of what changed and why.",
+      "minLength": 20
+    },
+    "owner": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["role", "name"],
+      "properties": {
+        "role": {
+          "type": "string",
+          "description": "Accountable role (Supervisor-owned decisions should use Supervisor Orchestrator).",
+          "examples": ["Supervisor Orchestrator", "Account Lead", "Growth Strategist"]
+        },
+        "name": {
+          "type": "string",
+          "description": "Human or agent name responsible.",
+          "examples": ["MarketingGrowthSupervisor"]
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["inputs", "metrics", "assumptions"],
+      "properties": {
+        "inputs": {
+          "type": "array",
+          "description": "Links or references used as evidence (dashboards, reports, artifacts).",
+          "items": { "type": "string" }
+        },
+        "metrics": {
+          "type": "array",
+          "description": "Key metrics used in the decision with values and time window.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "value", "window"],
+            "properties": {
+              "name": { "type": "string" },
+              "value": { "type": ["number", "string"] },
+              "window": { "type": "string", "examples": ["last_7_days", "last_14_days", "month_to_date"] }
+            }
+          }
+        },
+        "assumptions": {
+          "type": "array",
+          "description": "Any assumptions made; must be explicit.",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "risk": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["riskLevel", "failureModes", "rollbackPlan"],
+      "properties": {
+        "riskLevel": { "type": "string", "enum": ["low", "medium", "high"] },
+        "failureModes": { "type": "array", "items": { "type": "string" } },
+        "rollbackPlan": { "type": "string" }
+      }
+    },
+    "approvals": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required", "status", "approvedBy"],
+      "properties": {
+        "required": { "type": "boolean" },
+        "status": { "type": "string", "enum": ["not_required", "pending", "approved", "rejected"] },
+        "approvedBy": {
+          "type": "array",
+          "description": "Names/roles that approved. Empty if not required or pending.",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "related": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["client", "artifacts", "tasks"],
+      "properties": {
+        "client": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "Client identifiers (name, id, vertical, location)."
+        },
+        "artifacts": {
+          "type": "array",
+          "description": "Artifact references impacted by this decision (filenames, links, IDs).",
+          "items": { "type": "string" }
+        },
+        "tasks": {
+          "type": "array",
+          "description": "Task envelope IDs related to this decision.",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "notes": {
+      "type": "string",
+      "description": "Optional additional notes."
+    }
+  }
+}
+

@@ -1,0 +1,24 @@
+{
+  "attentionYieldCurve": {
+    "version": "1.0.0",
+    "lastUpdated": "2026-01-22",
+    "purpose": "Model diminishing returns of attention and spend",
+    "parameters": {
+      "adstock_decay": 0.6,
+      "saturation_point": 0.75,
+      "marginal_roi_floor": 1.2
+    },
+    "inputs": ["spend", "reach", "frequency", "conversions", "revenue"],
+    "outputs": ["marginal_roi", "optimal_spend_band", "fatigue_risk"],
+    "decisionRules": [
+      {
+        "if": "marginal_roi < marginal_roi_floor",
+        "then": "reduce_or_reallocate"
+      },
+      {
+        "if": "frequency > 4.0",
+        "then": "refresh_creative"
+      }
+    ]
+  }
+}

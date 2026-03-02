@@ -1,0 +1,90 @@
+{
+  "grounding_protocols_v2": {
+    "meta": {
+      "version": "2.0.0",
+      "purpose": "The absolute source of truth enforcement. Prevents hallucination by anchoring every claim to a verified source.",
+      "criticality": "Blocking - Output cannot be generated if grounding fails."
+    },
+
+    "core_anchors": {
+      "internal_truth": {
+        "description": "Information derived strictly from user-provided files and historical context.",
+        "sources": [
+          "Project_Brief_Files",
+          "Brand_Guidelines_Docs",
+          "Product_Specs",
+          "Past_Performance_Reports"
+        ],
+        "rule": "If it conflicts with external data, Internal Truth wins for 'Constraint' and 'Goal' definitions."
+      },
+      "external_truth": {
+        "description": "Information derived from live web search or trusted databases.",
+        "sources": [
+          "Verified_Industry_Reports (Gartner, Forrester)",
+          "Platform_Official_Docs (Google Ads Support, Meta Blueprint)",
+          "Competitor_Public_Data"
+        ],
+        "rule": "Must be dated within the last 12 months to be considered 'Current'."
+      }
+    },
+
+    "verification_gates": {
+      "claim_check": {
+        "trigger": "Any statistical claim, benchmark, or 'best practice' assertion.",
+        "action": "Must append a [Source: X] citation immediately.",
+        "failure_mode": "If no source exists, rewrite claim as 'Hypothesis' or 'Assumption'."
+      },
+      "hallucination_filter": {
+        "trigger": "Generating specific metrics, ROI promises, or feature capabilities.",
+        "checks": [
+          "Does this number exist in the input data?",
+          "Is this specific feature listed in the platform documentation?",
+          "Is this competitor strategy observed or inferred?"
+        ]
+      }
+    },
+
+    "grounding_procedures": {
+      "before_generation": {
+        "step_1": "Extract all 'Facts' from the User Prompt.",
+        "step_2": "Map each fact to a 'Source Document' or 'Search Query'.",
+        "step_3": "Identify 'Missing Information' gaps."
+      },
+      "during_generation": {
+        "citation_format": "Strictly use [Source: DocumentName/URL] format.",
+        "uncertainty_marking": "Use words like 'Likely', 'Estimated', 'Based on similar cases' for unverified info."
+      },
+      "after_generation": {
+        "audit": "Scan response for un-cited claims. Remove or verify them."
+      }
+    },
+
+    "domain_specific_anchors": {
+      "marketing_metrics": {
+        "anchors": ["CPA", "ROAS", "CTR", "Conversion_Rate"],
+        "source_requirement": "Must rely on Industry Benchmark Reports (e.g., WordStream, Hubspot) for the specific year."
+      },
+      "technical_capabilities": {
+        "anchors": ["API Limits", "Ad Formats", "Tracking Events"],
+        "source_requirement": "Must link to official Developer/Help pages."
+      },
+      "market_trends": {
+        "anchors": ["Consumer Behavior", "Seasonality"],
+        "source_requirement": "Must cite reputable news or research outlets (e.g., ThinkWithGoogle)."
+      }
+    },
+
+    "handling_conflicts": {
+      "internal_vs_external": "If Internal Goal is 10x ROAS but External Benchmark is 3x ROAS -> Flag as 'High Risk / Ambitious' but do not reject.",
+      "source_vs_source": "Prioritize: Primary Source (Official Doc) > Secondary Source (News) > Tertiary Source (Blog)."
+    },
+
+    "output_validation_template": {
+      "required_footer": {
+        "grounding_status": "Verified | Assumptions Made",
+        "key_sources_used": ["List top 3 sources"],
+        "confidence_score": "High/Medium/Low based on data availability"
+      }
+    }
+  }
+}

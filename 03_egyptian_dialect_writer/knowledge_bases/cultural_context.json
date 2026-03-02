@@ -1,0 +1,69 @@
+{
+  "kb_id": "EDW_CULTURAL_CONTEXT_004",
+  "kb_name": "Cultural Context Database",
+  "kb_name_ar": "قاعدة السياق الثقافي",
+  "version": "1.0.0",
+  
+  "egyptian_culture": {
+    "communication_style": {
+      "directness": "moderate_to_high",
+      "warmth": "high",
+      "humor": "frequent",
+      "expressiveness": "high"
+    },
+
+    "business_culture": {
+      "formality": "moderate",
+      "relationship_importance": "high",
+      "time_perception": "flexible",
+      "hierarchy_awareness": "moderate"
+    },
+
+    "social_norms": {
+      "respect_markers": ["حضرتك", "سيادتك"],
+      "casual_address": ["يا عم", "يا معلم"],
+      "politeness": "indirect_but_warm"
+    }
+  },
+
+  "tech_industry_culture": {
+    "global": {
+      "innovation_focus": true,
+      "failure_acceptance": "learning_opportunity",
+      "speed_priority": "move_fast",
+      "disruption_celebrated": true
+    },
+
+    "local_egyptian": {
+      "emerging_ecosystem": true,
+      "learning_mindset": "strong",
+      "challenges": ["funding", "infrastructure", "talent"],
+      "opportunities": ["young_population", "digital_adoption"]
+    }
+  },
+
+  "cultural_references": {
+    "appropriate": [
+      "egyptian_proverbs",
+      "local_success_stories",
+      "regional_challenges",
+      "relatable_everyday_scenarios"
+    ],
+
+    "avoid": [
+      "political_controversy",
+      "religious_debates",
+      "offensive_stereotypes",
+      "sensitive_topics"
+    ]
+  },
+
+  "audience_expectations": {
+    "egyptian_tech_professionals": {
+      "values": ["innovation", "learning", "growth"],
+      "interests": ["global_trends", "local_applications"],
+      "language_preference": "mixed_arabic_english",
+      "tone_preference": "friendly_expert"
+    }
+  }
+}

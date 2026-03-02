@@ -1,0 +1,96 @@
+{
+  "name": "@openops/agentic-parallelism-system",
+  "version": "1.0.0",
+  "description": "14 Key Patterns for Building High-Performance Agentic AI Systems",
+  "main": "integrations/openops_integration.py",
+  "scripts": {
+    "test": "pytest tests/",
+    "example:quick": "python examples/marketing_campaign.py quick",
+    "example:full": "python examples/marketing_campaign.py",
+    "example:parallel": "python patterns/01_parallel_tool_use/parallel_tool_use.py",
+    "example:hypothesis": "python patterns/02_hypothesis_generation/hypothesis_generation.py",
+    "lint": "pylint core/ patterns/ integrations/",
+    "format": "black core/ patterns/ integrations/ examples/",
+    "docs": "sphinx-build -b html docs/ docs/_build/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/openops/agentic-parallelism-system"
+  },
+  "keywords": [
+    "agentic-ai",
+    "parallelism",
+    "multi-agent",
+    "langgraph",
+    "langchain",
+    "openai",
+    "anthropic",
+    "performance-optimization",
+    "distributed-systems",
+    "ai-orchestration",
+    "hypothesis-generation",
+    "competitive-ensembles",
+    "speculative-execution",
+    "redundant-execution",
+    "multi-hop-retrieval"
+  ],
+  "author": "OpenOps Team",
+  "license": "MIT",
+  "dependencies": {
+    "asyncio": "^3.4.3",
+    "pydantic": "^2.5.0",
+    "typing-extensions": "^4.9.0"
+  },
+  "devDependencies": {
+    "pytest": "^7.4.3",
+    "pytest-asyncio": "^0.21.1",
+    "pytest-cov": "^4.1.0",
+    "black": "^23.12.0",
+    "pylint": "^3.0.3",
+    "sphinx": "^7.2.6"
+  },
+  "python_requires": ">=3.8",
+  "engines": {
+    "python": ">=3.8"
+  },
+  "openops": {
+    "module_type": "agentic_system",
+    "patterns": [
+      "parallel_tool_use",
+      "hypothesis_generation",
+      "parallel_evaluation",
+      "speculative_execution",
+      "hierarchical_teams",
+      "competitive_ensembles",
+      "assembly_line",
+      "blackboard_collaboration",
+      "redundant_execution",
+      "query_expansion",
+      "sharded_retrieval",
+      "hybrid_search",
+      "context_preprocessing",
+      "multihop_retrieval"
+    ],
+    "integration_points": [
+      "orchestration_engine",
+      "agent_registry",
+      "performance_monitor",
+      "state_manager"
+    ]
+  },
+  "contributors": [
+    {
+      "name": "Mamdouh Aboammar",
+      "role": "System Architect"
+    },
+    {
+      "name": "OpenOps Core Team",
+      "role": "Development & Integration"
+    }
+  ],
+  "references": {
+    "paper": "Building the 14 Key Pillars of Agentic AI - Fareed Khan",
+    "framework": "LangGraph & LangChain",
+    "inspiration": "https://github.com/FareedKhan-dev/agentic-parallelism"
+  }
+}

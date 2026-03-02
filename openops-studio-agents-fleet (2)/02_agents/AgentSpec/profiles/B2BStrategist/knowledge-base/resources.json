@@ -1,0 +1,58 @@
+{
+    "knowledge_base": {
+        "version": "1.0.0",
+        "last_updated": "2026-01-10"
+    },
+    "resources": [
+        {
+            "id": "b2b-frameworks",
+            "name": "B2B Strategy Frameworks & Benchmarks",
+            "file_path": "knowledge-base/b2b-frameworks.md",
+            "topics": [
+                "ABM 2025 trends",
+                "Sales cycle optimization",
+                "RFP best practices",
+                "Saudi B2B market"
+            ]
+        }
+    ],
+    "external_sources": [
+        {
+            "name": "Gartner B2B Research",
+            "url": "https://www.gartner.com/en/sales-service",
+            "type": "research",
+            "focus": [
+                "Buying journey",
+                "ABM trends",
+                "Sales enablement"
+            ]
+        },
+        {
+            "name": "Forrester B2B Reports",
+            "url": "https://www.forrester.com/",
+            "type": "research",
+            "focus": [
+                "Decision-maker research",
+                "B2B marketing"
+            ]
+        },
+        {
+            "name": "RAIN Group (Sales Training)",
+            "url": "https://www.rainsalestraining.com/",
+            "type": "training",
+            "focus": [
+                "Complex sales",
+                "B2B methodologies"
+            ]
+        }
+    ],
+    "benchmarks_2025": {
+        "buying_committee_size": "6-10 stakeholders (average)",
+        "sales_cycle_length": "3-18 months (9 months average for $100K+ deals)",
+        "win_rate_icp_aligned": "25-35%",
+        "win_rate_non_icp": "5-10%",
+        "self_service_journey": "90% completed before sales contact",
+        "rfp_win_rate": "5-10% (typical), 20%+ (strategic selection)",
+        "ai_rfp_efficiency": "60-80% time reduction"
+    }
+}

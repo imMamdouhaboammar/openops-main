@@ -1,0 +1,267 @@
+{
+  "analyticsFramework": {
+    "version": "1.0.0",
+    "description": "Comprehensive analytics and measurement framework for agent performance and client outcomes",
+    
+    "northStarMetrics": {
+      "description": "Primary metrics that define agent success",
+      "metrics": [
+        {
+          "metricId": "NS-001",
+          "name": "Client Revenue Growth Rate",
+          "definition": "(Revenue_Month_N - Revenue_Month_N-1) / Revenue_Month_N-1 * 100",
+          "unit": "percentage",
+          "target": "20-40% month-over-month for growth stage",
+          "frequency": "Monthly",
+          "dataSource": "Client CRM or financial data",
+          "significance": "Measures if agent strategies drive actual business growth"
+        },
+        {
+          "metricId": "NS-002",
+          "name": "Customer Acquisition Cost (CAC) Efficiency",
+          "definition": "Total Marketing Spend / New Customers Acquired",
+          "unit": "dollars",
+          "target": "CAC < LTV/3 (healthy ratio)",
+          "frequency": "Monthly",
+          "dataSource": "Analytics platforms + CRM",
+          "significance": "Measures if acquisition strategies are economically viable"
+        },
+        {
+          "metricId": "NS-003",
+          "name": "Customer Retention Rate",
+          "definition": "((End Users - New Users) / Start Users) * 100",
+          "unit": "percentage",
+          "target": "Industry benchmark + 15%",
+          "frequency": "Monthly",
+          "dataSource": "Product analytics",
+          "significance": "Measures if retention strategies are working"
+        }
+      ]
+    },
+
+    "leadMetrics": {
+      "description": "Metrics that predict north star metrics 2-4 weeks ahead",
+      "metrics": [
+        {
+          "metricId": "LM-001",
+          "name": "Campaign Conversion Rate",
+          "definition": "Conversions / Visitors * 100",
+          "unit": "percentage",
+          "frequency": "Weekly",
+          "leadTime": "2 weeks",
+          "significance": "Early indicator of acquisition performance"
+        },
+        {
+          "metricId": "LM-002",
+          "name": "Email Engagement Rate",
+          "definition": "Average CTR of promotional emails",
+          "unit": "percentage",
+          "frequency": "Weekly",
+          "leadTime": "3 weeks",
+          "significance": "Early indicator of audience responsiveness"
+        },
+        {
+          "metricId": "LM-003",
+          "name": "Product Usage Frequency",
+          "definition": "Average number of weekly active sessions per user",
+          "unit": "sessions/week",
+          "frequency": "Daily",
+          "leadTime": "2 weeks",
+          "significance": "Early indicator of retention and engagement"
+        }
+      ]
+    },
+
+    "operationalMetrics": {
+      "description": "Metrics tracking agent health and execution quality",
+      "metrics": [
+        {
+          "metricId": "OP-001",
+          "name": "Recommendation Implementation Rate",
+          "definition": "Recommendations implemented / Recommendations made * 100",
+          "unit": "percentage",
+          "target": ">70%",
+          "frequency": "Monthly",
+          "significance": "Measures client acceptance of agent strategies"
+        },
+        {
+          "metricId": "OP-002",
+          "name": "Strategy Accuracy Rate",
+          "definition": "Successful strategies / Total strategies attempted * 100",
+          "unit": "percentage",
+          "target": ">60%",
+          "frequency": "Monthly",
+          "significance": "Measures quality of agent recommendations"
+        },
+        {
+          "metricId": "OP-003",
+          "name": "Time-to-Insight",
+          "definition": "Days from problem identification to recommendation",
+          "unit": "days",
+          "target": "<7 days",
+          "frequency": "Monthly",
+          "significance": "Measures agent speed and responsiveness"
+        },
+        {
+          "metricId": "OP-004",
+          "name": "Data Quality Score",
+          "definition": "Complete and accurate data points / Total data points required",
+          "unit": "percentage",
+          "target": ">90%",
+          "frequency": "Daily",
+          "significance": "Ensures recommendations are data-backed"
+        }
+      ]
+    },
+
+    "attributionModel": {
+      "description": "Understanding which tactics drive which outcomes",
+      "models": [
+        {
+          "modelId": "ATTR-001",
+          "name": "Multi-touch Attribution",
+          "description": "Assign credit to all touchpoints in customer journey",
+          "methodology": "Weighted attribution based on position in funnel",
+          "weights": {
+            "firstTouch": 0.2,
+            "middleTouch": 0.3,
+            "lastTouch": 0.5
+          },
+          "usedFor": "Understanding complete customer journey",
+          "limitation": "Requires first-party data; privacy-first"
+        },
+        {
+          "modelId": "ATTR-002",
+          "name": "Incrementality Testing",
+          "description": "Measure true incremental impact through holdout tests",
+          "methodology": "Compare exposed vs control groups",
+          "usedFor": "Understanding true ROI of campaigns",
+          "limitation": "Requires customer randomization; larger sample sizes"
+        },
+        {
+          "modelId": "ATTR-003",
+          "name": "Cohort Attribution",
+          "description": "Track cohorts from acquisition to revenue",
+          "methodology": "Follow user cohorts through entire funnel",
+          "usedFor": "Understanding lifetime value by channel",
+          "limitation": "Requires long observation period"
+        }
+      ]
+    },
+
+    "dashboards": [
+      {
+        "dashboardId": "DB-001",
+        "name": "Executive Overview",
+        "audience": ["CMO", "VP Marketing", "CEO"],
+        "frequency": "Weekly",
+        "metrics": [
+          "Revenue growth rate",
+          "CAC trend",
+          "LTV trend",
+          "Retention rate",
+          "Major initiatives status"
+        ],
+        "visualizations": ["Line chart", "Progress bar", "KPI cards"]
+      },
+      {
+        "dashboardId": "DB-002",
+        "name": "Acquisition Performance",
+        "audience": ["Performance marketer", "Growth analyst"],
+        "frequency": "Daily",
+        "metrics": [
+          "Campaigns active (count)",
+          "Average ROAS",
+          "CPC by channel",
+          "CTR by campaign",
+          "Budget vs spend"
+        ],
+        "visualizations": ["Heatmap", "Funnel chart", "Table"]
+      },
+      {
+        "dashboardId": "DB-003",
+        "name": "Retention & Engagement",
+        "audience": ["Product manager", "Customer success"],
+        "frequency": "Weekly",
+        "metrics": [
+          "Day-1, Day-7, Day-30 retention",
+          "Churn rate",
+          "DAU/MAU ratio",
+          "Feature adoption rates",
+          "NPS"
+        ],
+        "visualizations": ["Cohort table", "Funnel", "Line chart"]
+      },
+      {
+        "dashboardId": "DB-004",
+        "name": "Revenue Intelligence",
+        "audience": ["Finance", "CEO"],
+        "frequency": "Weekly",
+        "metrics": [
+          "MRR/ARR",
+          "Expansion revenue",
+          "Churn revenue",
+          "Cohort LTV",
+          "Customer acquisition cost"
+        ],
+        "visualizations": ["Waterfall chart", "Cohort table"]
+      }
+    ],
+
+    "anomalyDetection": {
+      "description": "Automated detection of performance anomalies",
+      "rules": [
+        {
+          "ruleId": "ANOM-001",
+          "name": "Sudden drop in conversion rate",
+          "condition": "Conversion rate drops >20% vs previous week",
+          "severity": "High",
+          "action": "Alert analyst, investigate tracking, check website changes"
+        },
+        {
+          "ruleId": "ANOM-002",
+          "name": "Spike in CAC",
+          "condition": "CAC increases >30% vs 4-week average",
+          "severity": "High",
+          "action": "Review audience fatigue, check bid changes, test new creative"
+        },
+        {
+          "ruleId": "ANOM-003",
+          "name": "Unusual traffic pattern",
+          "condition": "Traffic deviates >2 standard deviations from mean",
+          "severity": "Medium",
+          "action": "Check for bot traffic, platform algorithm changes, external coverage"
+        }
+      ]
+    },
+
+    "reportingTemplates": {
+      "weeklyReport": {
+        "sections": [
+          "Executive summary (1 paragraph key metrics)",
+          "Traffic & acquisition (graphs with trend)",
+          "Conversion funnel (stage-by-stage breakdown)",
+          "Campaign performance (top 5 winners, bottom 5)",
+          "Retention & engagement (cohort analysis)",
+          "Revenue impact (calculated from above)",
+          "Key insights & recommendations (5-7 items)",
+          "Next week action items"
+        ],
+        "format": "PDF + interactive dashboard"
+      },
+      "monthlyReport": {
+        "sections": [
+          "Executive summary with month-over-month changes",
+          "Goal achievement assessment (vs targets)",
+          "Channel performance summary",
+          "Campaign analysis (what worked, what didn't)",
+          "Competitive intelligence (if available)",
+          "Strategic recommendations (prioritized list)",
+          "Financial impact summary",
+          "Q&A: Common questions about data"
+        ],
+        "format": "PDF + stakeholder presentation"
+      }
+    }
+  }
+}

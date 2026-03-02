@@ -1,0 +1,43 @@
+{
+    "workflows": {
+        "standard": [
+            {
+                "id": "prompt-design-process",
+                "name": "Prompt Design Process",
+                "frequency": "per_task",
+                "duration": "30-60 min",
+                "file": "standard-workflows/prompt-design.md"
+            },
+            {
+                "id": "prompt-evaluation",
+                "name": "Prompt Evaluation & A/B Testing",
+                "frequency": "weekly",
+                "duration": "2 hours",
+                "file": "standard-workflows/prompt-evaluation.md"
+            },
+            {
+                "id": "template-creation",
+                "name": "Template Creation & Documentation",
+                "frequency": "as_needed",
+                "duration": "1 hour",
+                "file": "standard-workflows/template-creation.md"
+            }
+        ],
+        "advanced": [
+            {
+                "id": "multi-agent-design",
+                "name": "Multi-Agent Prompt Design",
+                "frequency": "per_system",
+                "duration": "4-8 hours",
+                "file": "advanced-workflows/multi-agent-design.md"
+            },
+            {
+                "id": "rag-optimization",
+                "name": "RAG Prompt Optimization",
+                "frequency": "per_knowledge_base",
+                "duration": "3-6 hours",
+                "file": "advanced-workflows/rag-optimization.md"
+            }
+        ]
+    }
+}

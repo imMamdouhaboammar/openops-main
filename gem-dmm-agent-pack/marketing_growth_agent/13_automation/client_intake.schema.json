@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "openops://11_marketing_growth_agent/13_automation/client_intake.schema.json",
+  "title": "Client Intake (Canonical)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "client", "goals", "constraints", "assets", "channels", "approvals"],
+  "properties": {
+    "schemaVersion": { "type": "string", "examples": ["1.0.0"] },
+    "client": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["clientSlug", "clientName", "type", "locations"],
+      "properties": {
+        "clientSlug": { "type": "string", "description": "kebab-case slug used in artifact IDs and paths." },
+        "clientName": { "type": "string" },
+        "type": { "type": "string", "enum": ["restaurant", "cafe", "clinic"] },
+        "locations": { "type": "string", "description": "single_location | multi_location details." }
+      }
+    },
+    "goals": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary90Days", "primary6Months"],
+      "properties": {
+        "primary90Days": { "type": "string" },
+        "primary6Months": { "type": "string" }
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["budget", "capacity", "compliance"],
+      "properties": {
+        "budget": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["monthlyPaidMedia", "currency"],
+          "properties": {
+            "monthlyPaidMedia": { "type": "number", "minimum": 0 },
+            "currency": { "type": "string", "examples": ["USD", "SAR", "EGP"] }
+          }
+        },
+        "capacity": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "Capacity constraints (e.g., peak hours, appointments/day)."
+        },
+        "compliance": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "Compliance constraints (clinic rules, policy limitations)."
+        }
+      }
+    },
+    "assets": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["brandKit", "creativeInventory"],
+      "properties": {
+        "brandKit": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["exists"],
+          "properties": {
+            "exists": { "type": "boolean" },
+            "location": { "type": "string" }
+          }
+        },
+        "creativeInventory": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "channels": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["current", "desired"],
+      "properties": {
+        "current": { "type": "array", "items": { "type": "string" } },
+        "desired": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "approvals": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["decisionMaker", "approver", "slaHours"],
+      "properties": {
+        "decisionMaker": { "type": "string" },
+        "approver": { "type": "string" },
+        "slaHours": { "type": "number", "minimum": 1 }
+      }
+    }
+  }
+}
+

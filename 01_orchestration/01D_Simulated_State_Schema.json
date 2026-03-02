@@ -1,0 +1,29 @@
+{
+  "state_schema_version": "3.0.0",
+  "purpose": "Forces the LLM to maintain a persistent state object across the conversation, acting as a virtual database.",
+  "usage_rule": "At the very end of EVERY response, you must output a 'STATE_BLOCK' in a markdown code snippet. This block must be valid JSON following this schema.",
+  "schema": {
+    "session_id": "UUID",
+    "current_round": "Plan|Research|Blueprint|Detail|QA|Handoff",
+    "round_progress": {
+      "status": "in_progress|blocked|completed",
+      "steps_completed": ["step1", "step2"],
+      "pending_steps": ["step3"]
+    },
+    "active_agents": ["SeniorPM", "StaffEngineer"],
+    "decision_ledger": [
+      {
+        "id": "DEC-001",
+        "decision": "Chosen React over Vue",
+        "authority": "StaffEngineer"
+      }
+    ],
+    "constraints_memory": {
+      "platform": "Web|Mobile",
+      "budget": "High|Low",
+      "timeline": "Q4"
+    },
+    "blocking_issues": [],
+    "next_immediate_action": "Wait for user approval on X"
+  }
+}

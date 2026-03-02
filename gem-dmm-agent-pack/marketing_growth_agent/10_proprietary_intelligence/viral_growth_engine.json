@@ -1,0 +1,302 @@
+{
+  "viralGrowthEngine": {
+    "version": "2.0.0",
+    "description": "Proprietary system for identifying and designing viral growth mechanisms",
+    "methodology": "Combining network effects + psychological triggers + incentive design",
+
+    "viralCoefficientOptimizer": {
+      "description": "Calculate and maximize viral coefficient (k-factor)",
+      "formula": "k = i × c × cv",
+      "variables": {
+        "i": "Invitation rate (% of users who invite)",
+        "c": "Conversion rate (% of invitations accepted)",
+        "cv": "Conversion value multiplier (1.0 = same value, 1.5 = 50% more value)"
+      },
+      "interpretation": {
+        "kGreaterThan1": "Exponential viral growth (doubling every cycle)",
+        "kEqualsPointFive": "Linear growth (requires paid marketing to sustain)",
+        "kLessThanPointThree": "Requires paid acquisition + referral incentive"
+      },
+      "optimizationLevers": [
+        {
+          "lever": "Increase Invitation Rate (i)",
+          "methods": [
+            "Frictionless invitations (one-click invite)",
+            "Embedded invitations (invite during core product use)",
+            "Incentivized invitations (rewards for successful refers)",
+            "Social sharing buttons (pre-written templates)"
+          ],
+          "maxIncrease": "100% → 5x improvement potential"
+        },
+        {
+          "lever": "Increase Conversion Rate (c)",
+          "methods": [
+            "Value transfer (new user gets immediate value)",
+            "Scarcity (limited beta slots for new users)",
+            "Social proof (shows if friends already use it)",
+            "Trusted source (invitation from trusted friend > cold)"
+          ],
+          "maxIncrease": "10% → 3x improvement potential"
+        },
+        {
+          "lever": "Increase Conversion Value (cv)",
+          "methods": [
+            "Product improvements (new version more valuable)",
+            "Network effects (product better with more users)",
+            "Exclusive features (early invites get exclusive access)",
+            "Timing (invite at moment of highest perceived value)"
+          ],
+          "maxIncrease": "1.0 → 2x improvement potential"
+        }
+      ]
+    },
+
+    "viralLoopArchetypes": [
+      {
+        "loopId": "VLA-001",
+        "name": "Embeds & Network Effect Loop",
+        "description": "Product creates value by being shared/embedded in others' products",
+        "examples": ["Spotify embeds (share song → plays on recipient device)", "YouTube embeds", "Calendly scheduling links"],
+        "viralMechanic": {
+          "step1": "User creates artifact (playlist, event, video)",
+          "step2": "User shares/embeds link",
+          "step3": "Recipient sees artifact in product context",
+          "step4": "Recipient needs product to create own artifact",
+          "step5": "Recipient joins → creates artifact → shares → repeat"
+        },
+        "kFactorPotential": "k = 0.3-1.5 (high if product valuable enough)",
+        "targetedFor": ["Content platforms", "Creator tools", "Productivity", "Social"],
+        "designPrinciples": [
+          "Make sharing natural (embed, not extra step)",
+          "Create value through sharing (recipient sees something)",
+          "Lower friction for invited user (instant benefit)",
+          "Network effects (product better with more people)"
+        ]
+      },
+      {
+        "loopId": "VLA-002",
+        "name": "Exclusive Access Loop",
+        "description": "Early users get exclusive features/access; they invite friends to share benefit",
+        "examples": ["Gmail (early access prestige)", "Clubhouse (invite-only hype)", "Product Hunt collections"],
+        "viralMechanic": {
+          "step1": "User gets exclusive access (beta, limited supply)",
+          "step2": "Exclusivity creates prestige & desire",
+          "step3": "User has limited invites to share",
+          "step4": "User invites high-value contacts (social proof)",
+          "step5": "Invited contacts want access (FOMO) → join → invite others"
+        },
+        "kFactorPotential": "k = 1.0-2.5 (very high due to FOMO)",
+        "targetedFor": ["Closed beta", "Premium communities", "Insider communities"],
+        "designPrinciples": [
+          "Scarcity (limited slots/invites)",
+          "FOMO (exclusivity perception)",
+          "Social currency (prestige of inviting others)",
+          "Selective invitations (quality > quantity)"
+        ]
+      },
+      {
+        "loopId": "VLA-003",
+        "name": "Reward Referral Loop",
+        "description": "Both referrer and referee get rewarded for successful invitations",
+        "examples": ["Dropbox (+500MB for each referral)", "Uber (credit for both)", "Airbnb (travel credit)"],
+        "viralMechanic": {
+          "step1": "User wants reward (free month, credit, discount)",
+          "step2": "User sees referral program (earn reward by inviting)",
+          "step3": "User invites contacts with unique link",
+          "step4": "Referee clicks link, gets reward",
+          "step5": "Referee appreciates reward → joins → becomes referrer",
+          "step6": "Repeat"
+        },
+        "kFactorPotential": "k = 0.2-0.8 (moderate, dependent on reward size)",
+        "targetedFor": ["SaaS", "Marketplaces", "E-commerce"],
+        "designPrinciples": [
+          "Immediate, clear reward (for both parties)",
+          "Frictionless mechanics (easy to understand, easy to execute)",
+          "Progressive rewards (bigger rewards for more referrals)",
+          "Celebratory moments (show progress, milestones)"
+        ]
+      },
+      {
+        "loopId": "VLA-004",
+        "name": "Competitive Leaderboard Loop",
+        "description": "Users compete for position; social proof drives signups",
+        "examples": ["Slack workspaces leaderboards", "Fitness apps", "Gaming platforms"],
+        "viralMechanic": {
+          "step1": "User sees leaderboard of top users/teams",
+          "step2": "Competitive drive triggers (want to be on leaderboard)",
+          "step3": "User invites team members to beat other teams",
+          "step4": "Team members join to compete",
+          "step5": "New users see they're behind → join to catch up",
+          "step6": "Repeat competitive cycle"
+        },
+        "kFactorPotential": "k = 0.5-1.8 (high if competition is fierce)",
+        "targetedFor": ["Team tools", "Fitness/health", "Gaming", "Learning platforms"],
+        "designPrinciples": [
+          "Social comparison (visible progress vs others)",
+          "Competitive drive (want to win)",
+          "Team participation (need to invite others to compete)",
+          "Achievement celebration (public recognition)"
+        ]
+      },
+      {
+        "loopId": "VLA-005",
+        "name": "Content Seeding Loop",
+        "description": "User generates content; content shared goes viral; sharers sign up",
+        "examples": ["Medium (share stories)", "TikTok (create & share videos)", "Substack (newsletter shares)"],
+        "viralMechanic": {
+          "step1": "User creates content on platform",
+          "step2": "User shares link to content",
+          "step3": "Recipient reads/watches content",
+          "step4": "Recipient impressed by quality → shares with own network",
+          "step5": "New recipients discover platform through viral content",
+          "step6": "Some new recipients join platform to create own content",
+          "step7": "New creators → create → share → viral → new creators"
+        },
+        "kFactorPotential": "k = 0.1-1.2 (depends on content quality)",
+        "targetedFor": ["Content platforms", "Creator tools", "Publishing"],
+        "designPrinciples": [
+          "Content quality (compelling reason to click)",
+          "Easy sharing (multiple channels, pre-written templates)",
+          "Creator incentives (rewards for viral content)",
+          "Platform brand in shared links (recognizable, tempting)"
+        ]
+      },
+      {
+        "loopId": "VLA-006",
+        "name": "Social Proof + FOMO Loop",
+        "description": "Seeing others use product creates desire; combined with scarcity",
+        "examples": ["Slack (see X teams using)", "Superhuman (waitlist + social proof)", "ConvertKit (creator adoption)"],
+        "viralMechanic": {
+          "step1": "User sees social proof ('50k+ companies use this')",
+          "step2": "Trust and desire increase",
+          "step3": "Combined with scarcity ('limited spots', 'closed beta')",
+          "step4": "User feels FOMO (don't want to miss out)",
+          "step5": "User signs up",
+          "step6": "User becomes social proof for others → repeat"
+        },
+        "kFactorPotential": "k = 0.8-2.0 (very high if FOMO is strong)",
+        "targetedFor": ["SaaS", "Premium products", "Exclusive communities"],
+        "designPrinciples": [
+          "Visible social proof (public adoption metrics)",
+          "Scarcity signals (limited access, growing demand)",
+          "FOMO messaging ('don't get left behind')",
+          "Easy trial (remove friction for curious prospects)"
+        ]
+      }
+    ],
+
+    "viralDesignCanvas": {
+      "description": "Template for designing your viral mechanism",
+      "fields": {
+        "productType": "What is your product? (SaaS, Marketplace, Content, Community)",
+        "coreUserAction": "What do users do in your product? (Create, Share, Consume, Transact)",
+        "naturalSharing": "Do users naturally want to share it? (YES = viral potential, NO = need incentive)",
+        "targetLoop": "Which viral loop archetype fits best? (1-6 above)",
+        "invitationMechanic": "How do users invite? (Link, email, social button, etc.)",
+        "incentivesDesign": {
+          "referrerIncentive": "What does inviter get? (Money, access, status, etc.)",
+          "refereeIncentive": "What does invited get? (Same as referrer?)",
+          "incentiveSize": "How valuable? (Enough to motivate?)"
+        },
+        "conversionRate": "% of invitations that lead to signup? (Estimate)",
+        "invitationRate": "% of users who invite? (Estimate)",
+        "conversionValueMultiplier": "Do new users become as valuable as referrers? (1.0 = yes)",
+        "projectedKFactor": "k = i × c × cv = ?",
+        "kFactorInterpretation": "Will it go viral exponentially, linear, or need paid?"
+      }
+    },
+
+    "viralGrowthRoadmap": {
+      "phase1": {
+        "name": "Foundation (Weeks 1-2)",
+        "goals": [
+          "Define your viral loop archetype",
+          "Map out invitation mechanics",
+          "Design referral incentives",
+          "Create tracking infrastructure"
+        ],
+        "output": "Viral mechanism design document"
+      },
+      "phase2": {
+        "name": "MVP Launch (Weeks 3-4)",
+        "goals": [
+          "Launch with core viral loop",
+          "Track k-factor and cohort behavior",
+          "Monitor invitation rate, conversion rate",
+          "Get user feedback on sharing friction"
+        ],
+        "output": "Initial k-factor measurement + insights"
+      },
+      "phase3": {
+        "name": "Optimization (Weeks 5-12)",
+        "goals": [
+          "Increase invitation rate (frictionless UI)",
+          "Increase conversion rate (better landing page)",
+          "Increase referral value (product improvements)",
+          "A/B test copy and incentives"
+        ],
+        "output": "2-3x k-factor improvement"
+      },
+      "phase4": {
+        "name": "Scale (Weeks 12+)",
+        "goals": [
+          "Scale paid acquisition (use viral as multiplier)",
+          "Optimize referral payouts (balance CAC vs LTV)",
+          "Build feedback loops (continuous optimization)",
+          "Measure network effects (does product improve with scale?)"
+        ],
+        "output": "Sustainable viral growth engine"
+      }
+    },
+
+    "commonMistakes": [
+      {
+        "mistake": "Ignoring invitation friction",
+        "consequence": "Invitation rate drops 70% if requires >2 clicks",
+        "solution": "One-click referral links, pre-filled templates, social sharing buttons"
+      },
+      {
+        "mistake": "Weak referral incentive",
+        "consequence": "Only 2-5% of users ever refer if reward < $20",
+        "solution": "Make incentive valuable and immediate (not future, not abstract)"
+      },
+      {
+        "mistake": "Rewarding only referrer",
+        "consequence": "Referred users less likely to engage (no incentive)",
+        "solution": "Reward both parties (social + selfish motivations)"
+      },
+      {
+        "mistake": "Referral system feels like spam",
+        "consequence": "Brand damage, users avoid sharing",
+        "solution": "Make sharing feel natural, not transactional"
+      }
+    ],
+
+    "metrics": {
+      "metric1": {
+        "name": "K-Factor (Viral Coefficient)",
+        "formula": "Invitations sent × Invitation conversion rate × Converted user quality",
+        "target": "k > 1.0 for exponential viral growth",
+        "frequency": "Daily or weekly measurement"
+      },
+      "metric2": {
+        "name": "Invitation Rate",
+        "formula": "Users who sent invitations / Total users",
+        "target": ">20% for strong viral product",
+        "frequency": "Weekly"
+      },
+      "metric3": {
+        "name": "Referral Conversion Rate",
+        "formula": "Referred users who sign up / Total invitations sent",
+        "target": ">15% (much higher than cold traffic)",
+        "frequency": "Weekly"
+      },
+      "metric4": {
+        "name": "Viral Doubling Time",
+        "formula": "Days to 2x user base through viral alone",
+        "target": "<30 days for true viral product",
+        "frequency": "Monthly"
+      }
+    }
+  }
+}

@@ -1,0 +1,299 @@
+{
+    "tool_id": "threat-model-generator",
+    "name": "STRIDE Threat Model Generator",
+    "version": "1.0.0",
+    "category": "analysis",
+    "description": "Automated threat modeling tool using STRIDE methodology to identify security threats in system architecture",
+    "input_schema": {
+        "type": "object",
+        "required": [
+            "architecture_doc",
+            "system_scope"
+        ],
+        "properties": {
+            "architecture_doc": {
+                "type": "string",
+                "description": "URL or content of architecture diagram/document",
+                "format": "uri|markdown|drawio|pdf"
+            },
+            "system_scope": {
+                "type": "object",
+                "required": [
+                    "components",
+                    "data_flows"
+                ],
+                "properties": {
+                    "components": {
+                        "type": "array",
+                        "description": "List of system components to analyze",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "type": {
+                                    "enum": [
+                                        "web_app",
+                                        "api",
+                                        "database",
+                                        "auth_service",
+                                        "external_service"
+                                    ]
+                                },
+                                "trust_level": {
+                                    "enum": [
+                                        "trusted",
+                                        "semi_trusted",
+                                        "untrusted"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "data_flows": {
+                        "type": "array",
+                        "description": "Data flows between components",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "from": {
+                                    "type": "string"
+                                },
+                                "to": {
+                                    "type": "string"
+                                },
+                                "data_classification": {
+                                    "enum": [
+                                        "public",
+                                        "internal",
+                                        "confidential",
+                                        "restricted"
+                                    ]
+                                },
+                                "protocol": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "trust_boundaries": {
+                        "type": "array",
+                        "description": "Defined trust boundaries in the system",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "threat_categories": {
+                "type": "array",
+                "description": "STRIDE categories to analyze (default: all)",
+                "items": {
+                    "enum": [
+                        "Spoofing",
+                        "Tampering",
+                        "Repudiation",
+                        "Information_Disclosure",
+                        "Denial_of_Service",
+                        "Elevation_of_Privilege"
+                    ]
+                },
+                "default": [
+                    "Spoofing",
+                    "Tampering",
+                    "Repudiation",
+                    "Information_Disclosure",
+                    "Denial_of_Service",
+                    "Elevation_of_Privilege"
+                ]
+            },
+            "compliance_frameworks": {
+                "type": "array",
+                "description": "Map threats to controls from these frameworks",
+                "items": {
+                    "enum": [
+                        "NIST-CSF",
+                        "ISO-27001",
+                        "OWASP-ASVS",
+                        "CIS"
+                    ]
+                }
+            }
+        }
+    },
+    "output_schema": {
+        "type": "object",
+        "properties": {
+            "threat_model_id": {
+                "type": "string"
+            },
+            "generated_at": {
+                "type": "string",
+                "format": "date-time"
+            },
+            "system_name": {
+                "type": "string"
+            },
+            "threats": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "threat_id": {
+                            "type": "string"
+                        },
+                        "category": {
+                            "type": "string"
+                        },
+                        "component": {
+                            "type": "string"
+                        },
+                        "description": {
+                            "type": "string"
+                        },
+                        "attack_vector": {
+                            "type": "string"
+                        },
+                        "likelihood": {
+                            "enum": [
+                                "low",
+                                "medium",
+                                "high",
+                                "critical"
+                            ]
+                        },
+                        "impact": {
+                            "enum": [
+                                "low",
+                                "medium",
+                                "high",
+                                "critical"
+                            ]
+                        },
+                        "risk_score": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 10
+                        },
+                        "mitigations": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "control_id": {
+                                            "type": "string"
+                                        },
+                                        "framework": {
+                                            "type": "string"
+                                        },
+                                        "description": {
+                                            "type": "string"
+                                        },
+                                        "implementation_effort": {
+                                            "enum": [
+                                                "low",
+                                                "medium",
+                                                "high"
+                                            ]
+                                        },
+                                        "priority": {
+                                            "enum": [
+                                                "low",
+                                                "medium",
+                                                "high",
+                                                "critical"
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "summary": {
+                    "type": "object",
+                    "properties": {
+                        "total_threats": {
+                            "type": "integer"
+                        },
+                        "critical_threats": {
+                            "type": "integer"
+                        },
+                        "high_threats": {
+                            "type": "integer"
+                        },
+                        "aggregate_risk_score": {
+                            "type": "number"
+                        },
+                        "coverage_percentage": {
+                            "type": "number"
+                        }
+                    }
+                }
+            }
+        },
+        "configuration": {
+            "max_execution_time_seconds": 300,
+            "cache_results": true,
+            "cache_ttl_hours": 24,
+            "parallel_analysis": true
+        },
+        "usage_example": {
+            "request": {
+                "architecture_doc": "https://example.com/architecture.drawio",
+                "system_scope": {
+                    "components": [
+                        {
+                            "name": "web_frontend",
+                            "type": "web_app",
+                            "trust_level": "untrusted"
+                        },
+                        {
+                            "name": "api_gateway",
+                            "type": "api",
+                            "trust_level": "semi_trusted"
+                        }
+                    ],
+                    "data_flows": [
+                        {
+                            "from": "web_frontend",
+                            "to": "api_gateway",
+                            "data_classification": "confidential",
+                            "protocol": "HTTPS"
+                        }
+                    ],
+                    "trust_boundaries": [
+                        "internet_to_dmz",
+                        "dmz_to_internal"
+                    ]
+                },
+                "compliance_frameworks": [
+                    "NIST-CSF",
+                    "OWASP-ASVS"
+                ]
+            },
+            "response": {
+                "threat_model_id": "TM-2026-001",
+                "threats": [
+                    {
+                        "threat_id": "T-001",
+                        "category": "Spoofing",
+                        "component": "api_gateway",
+                        "description": "Attacker could impersonate legitimate user",
+                        "likelihood": "high",
+                        "impact": "critical",
+                        "risk_score": 9.5,
+                        "mitigations": [
+                            {
+                                "control_id": "AC-2",
+                                "framework": "NIST SP 800-53",
+                                "description": "Implement multi-factor authentication",
+                                "priority": "critical"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }

@@ -1,0 +1,80 @@
+# intent-first-strategy-core/config/output_contract.yaml
+# Pack: intent-first-strategy-core
+# Version: 1.0.0
+# Date: 2026-02-13
+# Owner: OpenOps Studio (Mamdouh Aboammar)
+#
+# Purpose: Enforce required output blocks and the "What we know / What we still need" requirement.
+
+output_contract:
+  global_rules:
+    language_policy: "match_user_language"
+    question_limit_per_round: 5
+    gating_policy: "no_strategy_before_validation_and_cq"
+    mandatory_subsections:
+      - "What we know"
+      - "What we still need"
+
+  required_blocks:
+    diagnosis_map:
+      description: "A live, progressively filled map updated every round."
+      must_include:
+        - "client_request"
+        - "suspected_intent"
+        - "suspected_true_issue"
+        - "constraints"
+        - "evidence"
+        - "contradictions"
+        - "unknowns"
+      always_include:
+        - "What we know"
+        - "What we still need"
+
+    primary_problem_statement_pps:
+      description: "One Primary Problem Statement with why-this and impacted metric."
+      must_include:
+        - "statement"
+        - "why_this"
+        - "impacted_metric"
+        - "scope"
+        - "non_goals"
+        - "confidence"
+      always_include:
+        - "What we know"
+        - "What we still need"
+
+    core_question_cq:
+      description: "One CQ that passes the CQ Gate (metric, baseline, target, audience, time horizon, constraints)."
+      must_include:
+        - "core_question"
+        - "metric"
+        - "baseline"
+        - "target"
+        - "time_horizon_days"
+        - "audience"
+        - "constraints"
+        - "validity"
+      always_include:
+        - "What we know"
+        - "What we still need"
+
+    strategy:
+      description: "Allowed only after validation.confirmed=true AND cq.valid=true."
+      gating:
+        required:
+          - "validation.confirmed == true"
+          - "cq.valid == true"
+      required_in_each_section:
+        - "Which part of PPS this solves"
+        - "Which metric it moves"
+        - "Assumptions"
+        - "Risks"
+      anti_template_rule:
+        - "No generic channel plans. Every recommendation must be proven relevant to PPS and CQ."
+      touchpoints_driven_rule:
+        - "Default structure: Presence -> Education -> Validation -> Human -> Conversion touchpoints."
+        - "Channels are delivery surfaces, not the structure."
+      always_include:
+        - "What we know"
+        - "What we still need"
+

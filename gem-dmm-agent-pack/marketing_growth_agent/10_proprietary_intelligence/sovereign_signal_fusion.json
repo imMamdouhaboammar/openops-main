@@ -1,0 +1,118 @@
+{
+  "sovereignSignalFusion": {
+    "version": "1.0.0",
+    "lastUpdated": "2026-01-22",
+    "purpose": "Fuse multi-source signals into high-confidence growth decisions",
+    "confidenceLevels": {
+      "L1": "Speculative (needs validation)",
+      "L2": "Directional (requires experiment)",
+      "L3": "Validated (small-scale evidence)",
+      "L4": "Causal (incrementality verified)"
+    },
+    "sourceClasses": [
+      "first_party",
+      "second_party",
+      "third_party"
+    ],
+    "privacyGates": {
+      "consentRequired": true,
+      "dataMinimization": true,
+      "noPIIByDefault": true,
+      "regionalCompliance": ["GDPR", "CCPA"]
+    },
+    "signals": {
+      "demand": [
+        {
+          "id": "SIG-DEMAND-001",
+          "name": "Brand search lift",
+          "sourceClass": "first_party",
+          "reliabilityScore": 0.85,
+          "freshnessWindowDays": 14,
+          "notes": "High signal for latent demand"
+        },
+        {
+          "id": "SIG-DEMAND-002",
+          "name": "Category query velocity",
+          "sourceClass": "third_party",
+          "reliabilityScore": 0.6,
+          "freshnessWindowDays": 21,
+          "notes": "Use with caution; validate with experiments"
+        }
+      ],
+      "creative": [
+        {
+          "id": "SIG-CREATIVE-001",
+          "name": "Hook-to-click ratio",
+          "sourceClass": "first_party",
+          "reliabilityScore": 0.8,
+          "freshnessWindowDays": 7,
+          "notes": "Primary creative signal for paid channels"
+        },
+        {
+          "id": "SIG-CREATIVE-002",
+          "name": "Creative fatigue decay",
+          "sourceClass": "first_party",
+          "reliabilityScore": 0.75,
+          "freshnessWindowDays": 7,
+          "notes": "Triggers refresh cadence"
+        }
+      ],
+      "economics": [
+        {
+          "id": "SIG-ECO-001",
+          "name": "Marginal CAC",
+          "sourceClass": "first_party",
+          "reliabilityScore": 0.9,
+          "freshnessWindowDays": 7,
+          "notes": "Primary decision signal for scale/kill"
+        },
+        {
+          "id": "SIG-ECO-002",
+          "name": "LTV cohort delta",
+          "sourceClass": "first_party",
+          "reliabilityScore": 0.8,
+          "freshnessWindowDays": 30,
+          "notes": "Detects retention impacts of acquisition changes"
+        }
+      ],
+      "competitive": [
+        {
+          "id": "SIG-COMP-001",
+          "name": "Competitor messaging shift",
+          "sourceClass": "third_party",
+          "reliabilityScore": 0.55,
+          "freshnessWindowDays": 30,
+          "notes": "Requires confirmation from multiple sources"
+        },
+        {
+          "id": "SIG-COMP-002",
+          "name": "Pricing change alerts",
+          "sourceClass": "second_party",
+          "reliabilityScore": 0.7,
+          "freshnessWindowDays": 30,
+          "notes": "Validate with direct observation"
+        }
+      ]
+    },
+    "decisionRules": [
+      {
+        "ruleId": "DEC-001",
+        "if": "confidenceLevel < L3",
+        "then": "require_experiment",
+        "notes": "No scaling without validation"
+      },
+      {
+        "ruleId": "DEC-002",
+        "if": "marginal_cac > target_cac",
+        "then": "pause_or_reduce_spend",
+        "notes": "Protect unit economics"
+      },
+      {
+        "ruleId": "DEC-003",
+        "if": "creative_fatigue_detected",
+        "then": "trigger_creative_refresh",
+        "notes": "Prevent performance decay"
+      }
+    ]
+  }
+}

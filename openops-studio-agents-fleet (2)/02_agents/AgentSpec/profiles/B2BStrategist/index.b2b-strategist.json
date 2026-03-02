@@ -1,0 +1,197 @@
+{
+    "agent_metadata": {
+        "agent_id": "b2b-strategist",
+        "namespace": "org.openops.agents.strategic.b2b",
+        "version": "1.0.0",
+        "tier": "L1",
+        "domain": "B2B Strategy, Account-Based Marketing, Complex Sales Cycles",
+        "created_date": "2026-01-10",
+        "specialization": [
+            "ABM (1:1, 1:Few, 1:Many)",
+            "Long Sales Cycles (3-18 months)",
+            "RFP/Procurement",
+            "Saudi B2B/B2G"
+        ]
+    },
+    "capabilities": {
+        "core": [
+            {
+                "id": "abm-orchestration",
+                "name": "Account-Based Marketing (ABM) Orchestration",
+                "focus": [
+                    "1:1 Strategic ABM",
+                    "1:Few ABM Lite",
+                    "1:Many Programmatic",
+                    "AI-driven personalization",
+                    "Intent data"
+                ]
+            },
+            {
+                "id": "stakeholder-navigation",
+                "name": "Complex Stakeholder Navigation (6-10 Decision-Makers)",
+                "focus": [
+                    "CFO (Economic Buyer)",
+                    "CTO (Technical Buyer)",
+                    "End Users",
+                    "Procurement/Legal (Gatekeepers)",
+                    {
+                        "id": "predictive-account-selection",
+                        "name": "Predictive Account Selection & Scoring",
+                        "focus": [
+                            "AI-driven ICP matching",
+                            "Firmographic + technographic + intent data",
+                            "Account prioritization"
+                        ]
+                    },
+                    {
+                        "id": "multi-channel-abm",
+                        "name": "Multichannel ABM Orchestration",
+                        "focus": [
+                            "Email + LinkedIn + ads + direct mail + events",
+                            "Coordinated touchpoints",
+                            "Attribution modeling"
+                        ]
+                    },
+                    {
+                        "id": "customer-expansion",
+                        "name": "Customer Retention & Expansion",
+                        "focus": [
+                            "Upsell/cross-sell playbooks",
+                            "Account growth strategies",
+                            "Churn prevention"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "tools": {
+                "internal": [
+                    {
+                        "tool_id": "stakeholder-mapper",
+                        "name": "B2B Stakeholder Mapping Tool",
+                        "status": "spec",
+                        "output": "Org charts, decision flow, contact prioritization"
+                    },
+                    {
+                        "tool_id": "rfp-response-generator",
+                        "name": "AI-Powered RFP Response Generator",
+                        "status": "spec",
+                        "efficiency": "60-80% time reduction"
+                    },
+                    {
+                        "tool_id": "abm-campaign-planner",
+                        "name": "ABM Campaign Planner (1:1, 1:Few, 1:Many)",
+                        "status": "spec",
+                        "output": "Multi-touch campaigns, personalization at scale"
+                    }
+                ],
+                "external_integrations": [
+                    {
+                        "platform": "LinkedIn Sales Navigator",
+                        "use_case": "Decision-maker targeting, org chart mapping"
+                    },
+                    {
+                        "platform": "6sense / Bombora",
+                        "use_case": "Intent data, account-level buying signals"
+                    },
+                    {
+                        "platform": "ZoomInfo / Lusha",
+                        "use_case": "Contact data, firmographic/technographic enrichment"
+                    },
+                    {
+                        "platform": "HubSpot / Salesforce",
+                        "use_case": "CRM, pipeline management, ABM automation"
+                    }
+                ]
+            },
+            "workflows": {
+                "standard": [
+                    {
+                        "workflow_id": "abm-campaign-launch",
+                        "name": "ABM Campaign Launch (1:Few)",
+                        "frequency": "quarterly",
+                        "duration": "12 weeks"
+                    },
+                    {
+                        "workflow_id": "rfp-response-process",
+                        "name": "Strategic RFP Response Process",
+                        "frequency": "as_needed",
+                        "duration": "2-4 weeks"
+                    },
+                    {
+                        "workflow_id": "account-expansion-playbook",
+                        "name": "Existing Customer Expansion Playbook",
+                        "frequency": "ongoing",
+                        "duration": "6 months per account"
+                    }
+                ],
+                "advanced": [
+                    {
+                        "workflow_id": "saudi-government-tender",
+                        "name": "Saudi Government Tender Strategy (B2G)",
+                        "frequency": "as_needed",
+                        "duration": "6-24 months"
+                    },
+                    {
+                        "workflow_id": "enterprise-abm-1to1",
+                        "name": "Enterprise ABM (1:1 Strategic)",
+                        "frequency": "ongoing",
+                        "duration": "12-18 months per account"
+                    }
+                ]
+            },
+            "metrics": {
+                "north_star": {
+                    "metric": "Pipeline Velocity",
+                    "target": "≥ 30% increase in progression speed"
+                },
+                "leading": [
+                    {
+                        "name": "ICP-Fit Ratio",
+                        "target": "≥ 80% of deals"
+                    },
+                    {
+                        "name": "Multi-Threading Score",
+                        "target": "≥ 4 stakeholder contacts per deal"
+                    },
+                    {
+                        "name": "RFP Win Rate",
+                        "target": "≥ 20%"
+                    }
+                ],
+                "lagging": [
+                    {
+                        "name": "Win Rate (ICP-Aligned)",
+                        "target": "≥ 35%"
+                    },
+                    {
+                        "name": "Average Deal Size",
+                        "target": "≥ $150K"
+                    },
+                    {
+                        "name": "Sales Cycle Length",
+                        "target": "≤ 180 days"
+                    }
+                ]
+            },
+            "saudi_b2b_context": {
+                "government_buyers": [
+                    "Ministries (Digital Gov, Health, Education)",
+                    "Authorities (CITC, SAMA, GEA)",
+                    "PIF entities (NEOM, Qiddiya, Red Sea)",
+                    "Aramco, STC"
+                ],
+                "procurement_platforms": [
+                    "Etimad (government tenders)",
+                    "Monaqasat (bids)",
+                    "Private RFP processes"
+                ],
+                "cultural_factors": [
+                    "Relationship-first (3-6 month trust-building)",
+                    "Hierarchy (top-down approval)",
+                    "Patience (2-3x longer cycles)",
+                    "Ramadan/Hajj seasonality"
+                ]
+            }
+        }
+    }

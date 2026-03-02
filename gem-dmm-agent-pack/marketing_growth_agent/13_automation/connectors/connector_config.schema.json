@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "openops://11_marketing_growth_agent/13_automation/connectors/connector_config.schema.json",
+  "title": "Automation Connector Config",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["type", "enabled"],
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "filesystem",
+        "slack_webhook",
+        "clickup_api",
+        "notion_api",
+        "google_drive_api",
+        "notion_stub",
+        "clickup_stub",
+        "drive_stub"
+      ]
+    },
+    "enabled": { "type": "boolean" },
+    "dryRun": { "type": "boolean", "description": "If true, connector must not cause side effects." },
+    "filesystem": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ssotRoot": { "type": "string", "description": "Base SSOT path for local outputs." }
+      }
+    },
+    "slackWebhook": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "webhookUrl": { "type": "string" },
+        "defaultChannelLabel": { "type": "string" }
+      }
+    },
+    "clickup": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "apiToken": { "type": "string", "description": "ClickUp personal API token (keep out of git)." },
+        "listId": { "type": "string", "description": "Target list ID where tasks should be created." },
+        "podAssignees": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": { "type": "number" }
+          },
+          "description": "Optional mapping podId -> assignee IDs. Keys: POD-STRATEGY, POD-CONTENT, etc."
+        },
+        "assigneeIds": {
+          "type": "array",
+          "items": { "type": "number" },
+          "description": "Optional default assignee user IDs."
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Optional default tags."
+        }
+      }
+    },
+    "notion": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "apiToken": { "type": "string", "description": "Notion integration token (keep out of git)." },
+        "notionVersion": { "type": "string", "description": "Notion API version header value.", "examples": ["2022-06-28"] },
+        "databaseId": { "type": "string", "description": "Target Notion database ID for artifacts/pages." }
+      }
+    },
+    "googleDrive": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "accessToken": { "type": "string", "description": "OAuth access token with Drive scopes (keep out of git)." },
+        "rootFolderId": { "type": "string", "description": "Drive folder ID under which to create client folders." }
+      }
+    }
+  }
+}

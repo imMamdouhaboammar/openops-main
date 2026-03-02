@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gem-dmm-agent-pack/schemas/cq_schema.json",
+  "title": "Core Question (CQ) Schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "_meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": { "type": "string", "const": "1.0.0" },
+        "created_at": { "type": "string", "format": "date" }
+      },
+      "required": ["schema_version", "created_at"]
+    },
+    "core_question": {
+      "type": "string",
+      "minLength": 15,
+      "description": "One sentence question."
+    },
+    "success_metric": { "type": "string", "minLength": 1 },
+    "baseline": {
+      "description": "Numeric value or bounded range string.",
+      "oneOf": [
+        { "type": "number" },
+        { "type": "string", "minLength": 1 }
+      ]
+    },
+    "target": {
+      "description": "Numeric value or bounded range string.",
+      "oneOf": [
+        { "type": "number" },
+        { "type": "string", "minLength": 1 }
+      ]
+    },
+    "time_horizon_days": { "type": "integer", "minimum": 7, "maximum": 365 },
+    "icp": { "type": "string", "minLength": 3 },
+    "constraints": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1 },
+    "validity": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "is_valid": { "type": "boolean" },
+        "missing_fields": { "type": "array", "items": { "type": "string" } },
+        "notes": { "type": "string" }
+      },
+      "required": ["is_valid", "missing_fields"]
+    }
+  },
+  "required": ["_meta", "core_question", "success_metric", "baseline", "target", "time_horizon_days", "icp", "constraints", "validity"]
+}
+

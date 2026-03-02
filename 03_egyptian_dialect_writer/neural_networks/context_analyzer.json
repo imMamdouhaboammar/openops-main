@@ -1,0 +1,66 @@
+{
+  "network_id": "EDW_CONTEXT_ANALYZER_003",
+  "network_name": "Context Analyzer",
+  "network_name_ar": "محلل السياق",
+  "version": "1.0.0",
+  "status": "active",
+  
+  "core_function": "تحليل عميق للسياق لتوجيه عملية التوليد",
+
+  "analysis_dimensions": {
+    "topic_identification": {
+      "primary_topic": "main_subject_extraction",
+      "subtopics": "related_themes",
+      "domain": "tech_business_marketing_etc",
+      "specificity": "broad_to_narrow_classification"
+    },
+
+    "audience_profiling": {
+      "expertise_level": ["beginner", "intermediate", "expert"],
+      "role": ["founder", "developer", "marketer", "executive"],
+      "interest": ["technical", "business", "strategic"],
+      "language_preference": "egyptian_arabic_dominant"
+    },
+
+    "intent_recognition": {
+      "types": [
+        "inform",
+        "persuade",
+        "entertain",
+        "educate",
+        "provoke_thought"
+      ],
+      "confidence_scoring": true
+    },
+
+    "platform_context": {
+      "target_platform": ["linkedin", "twitter", "blog", "newsletter"],
+      "optimal_format": "platform_specific_structure",
+      "constraints": ["length", "formatting", "tone"]
+    }
+  },
+
+  "contextual_factors": {
+    "temporal": {
+      "trending_topics": "real_time_awareness",
+      "seasonal_relevance": true,
+      "timeliness": "urgency_detection"
+    },
+
+    "cultural": {
+      "egyptian_context": "local_references",
+      "tech_culture": "industry_norms",
+      "professional_standards": "appropriate_behavior"
+    }
+  },
+
+  "output": {
+    "context_vector": "multi_dimensional_representation",
+    "recommendations": [
+      "suggested_tone",
+      "optimal_length",
+      "key_points_to_cover",
+      "examples_to_use"
+    ]
+  }
+}

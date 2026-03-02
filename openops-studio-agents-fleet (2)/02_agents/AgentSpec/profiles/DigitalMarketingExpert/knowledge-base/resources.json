@@ -1,0 +1,162 @@
+{
+    "knowledge_base": {
+        "version": "1.0.0",
+        "last_updated": "2026-01-10"
+    },
+    "resources": [
+        {
+            "id": "saudi-gcc-frameworks",
+            "name": "Saudi/GCC Digital Marketing Frameworks",
+            "file_path": "knowledge-base/saudi-gcc-frameworks.md",
+            "topics": [
+                "Market dynamics",
+                "Platform benchmarks",
+                "Vision 2030",
+                "Influencer pricing",
+                "Arabic SEO",
+                "Social commerce"
+            ]
+        }
+    ],
+    "external_sources": [
+        {
+            "name": "Vision 2030 Official Portal",
+            "url": "https://www.vision2030.gov.sa/",
+            "type": "government",
+            "focus": [
+                "National transformation goals",
+                "Programs",
+                "Initiatives"
+            ]
+        },
+        {
+            "name": "CITC Annual Reports",
+            "url": "https://www.citc.gov.sa/",
+            "type": "regulatory",
+            "focus": [
+                "Digital economy stats",
+                "Telecom data",
+                "Internet penetration"
+            ]
+        },
+        {
+            "name": "Saudi Ministry of Media",
+            "url": "https://www.media.gov.sa/",
+            "type": "regulatory",
+            "focus": [
+                "Influencer regulations",
+                "Content guidelines",
+                "Licensing"
+            ]
+        },
+        {
+            "name": "Visit Saudi (Tourism Authority)",
+            "url": "https://www.visitsaudi.com/",
+            "type": "marketing",
+            "focus": [
+                "Tourism campaigns",
+                "Cultural events",
+                "Destination marketing"
+            ]
+        }
+    ],
+    "platform_benchmarks": {
+        "tiktok": {
+            "users_saudi": "15M+",
+            "avg_time_day": "52 minutes",
+            "engagement_rate": "8-12%",
+            "top_content": [
+                "Comedy",
+                "Food",
+                "Fashion",
+                "Beauty"
+            ],
+            "yoy_growth": "300%"
+        },
+        "snapchat": {
+            "users_saudi": "40M+",
+            "global_rank": "Highest per capita",
+            "avg_time_day": "30+ minutes",
+            "engagement_rate": "5-7%",
+            "top_content": [
+                "Stories",
+                "AR Lenses",
+                "Discover"
+            ]
+        },
+        "instagram": {
+            "users_saudi": "22M+",
+            "avg_time_day": "35 minutes",
+            "engagement_rate": "3.5-5%",
+            "top_content": [
+                "Fashion",
+                "F&B",
+                "Lifestyle"
+            ],
+            "gcc_market_share": "35%"
+        },
+        "whatsapp": {
+            "users_saudi": "32M+",
+            "penetration": "90%+",
+            "business_adoption": "70% of SMEs",
+            "use_cases": [
+                "Customer service",
+                "Sales",
+                "Notifications"
+            ]
+        }
+    },
+    "influencer_pricing_gcc": {
+        "instagram": {
+            "nano": {
+                "followers": "1K-10K",
+                "cost_sar": "500-2K",
+                "engagement_rate": "8-12%"
+            },
+            "micro": {
+                "followers": "10K-100K",
+                "cost_sar": "2K-10K",
+                "engagement_rate": "5-8%"
+            },
+            "macro": {
+                "followers": "100K-1M",
+                "cost_sar": "10K-50K",
+                "engagement_rate": "3-5%"
+            },
+            "mega": {
+                "followers": "1M+",
+                "cost_sar": "50K-200K",
+                "engagement_rate": "2-4%"
+            }
+        },
+        "tiktok": {
+            "nano": {
+                "followers": "1K-10K",
+                "cost_sar": "300-1.5K"
+            },
+            "micro": {
+                "followers": "10K-100K",
+                "cost_sar": "1.5K-8K"
+            },
+            "macro": {
+                "followers": "100K-1M",
+                "cost_sar": "8K-40K"
+            }
+        }
+    },
+    "cultural_calendar": {
+        "hijri_2026": {
+            "ramadan": "March 2026",
+            "eid_fitr": "April 2026",
+            "hajj_season": "June 2026",
+            "eid_adha": "June 2026",
+            "islamic_new_year": "July 2026"
+        },
+        "gregorian": {
+            "national_day": "September 23",
+            "founding_day": "February 22",
+            "riyadh_season": "October - March",
+            "jeddah_season": "June - August"
+        }
+    }
+}

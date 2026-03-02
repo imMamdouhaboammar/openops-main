@@ -1,0 +1,69 @@
+{
+  "podRegistry": {
+    "version": "1.0.0",
+    "lastUpdated": "2026-01-24",
+    "principle": "Pods do not act unless explicitly authorized by the Supervisor Orchestrator.",
+    "authorizationModel": {
+      "requiresSupervisorToken": true,
+      "tokenType": "ephemeral",
+      "tokenTTLMinutes": 60,
+      "idempotencyKeyRequired": true
+    },
+    "pods": [
+      {
+        "podId": "POD-STRATEGY",
+        "name": "Strategy Pod",
+        "mandate": "Diagnosis, positioning, KPI tree, 6-month/90-day plans, experiment backlog.",
+        "allowedOutputs": [
+          "strategy_doc",
+          "kpi_tree",
+          "experiment_backlog",
+          "risk_register"
+        ],
+        "requiresApprovalFor": ["brand_positioning_changes", "budget_strategy_changes"],
+        "escalations": ["SeniorPM"]
+      },
+      {
+        "podId": "POD-CONTENT",
+        "name": "Content Pod",
+        "mandate": "Content pillars, calendar, scripts/captions, review engine scripts, community ops.",
+        "allowedOutputs": ["content_calendar", "scripts", "captions", "publishing_plan"],
+        "requiresApprovalFor": ["tone_of_voice_changes", "sensitive_topics"],
+        "escalations": ["AccountLead", "ComplianceMonitor"]
+      },
+      {
+        "podId": "POD-CREATIVE",
+        "name": "Creative Pod",
+        "mandate": "Creative briefs, creative batches, template packs, brand-consistent assets, QA.",
+        "allowedOutputs": ["creative_briefs", "creative_batch", "template_pack", "qa_report"],
+        "requiresApprovalFor": ["visual_identity_changes", "clinic_claims_or_before_after"],
+        "escalations": ["AccountLead", "ComplianceMonitor"]
+      },
+      {
+        "podId": "POD-PAID",
+        "name": "Paid Media Pod",
+        "mandate": "Campaign builds, testing matrix, scaling/retargeting, pacing, disapproval handling.",
+        "allowedOutputs": ["campaign_plan", "testing_matrix", "budget_pacing_plan", "weekly_learnings"],
+        "requiresApprovalFor": ["new_channel_launch", "major_budget_shifts"],
+        "escalations": ["AccountLead"]
+      },
+      {
+        "podId": "POD-ANALYTICS",
+        "name": "Analytics Pod",
+        "mandate": "Tracking plans, event schemas, UTMs, dashboards, data quality, incrementality designs.",
+        "allowedOutputs": ["tracking_plan", "event_schema", "dashboard_spec", "data_quality_report"],
+        "requiresApprovalFor": ["data_export_requests"],
+        "escalations": ["StaffEngineer", "SecurityLead"]
+      },
+      {
+        "podId": "POD-LIFECYCLE",
+        "name": "Lifecycle/CRM Pod",
+        "mandate": "Lifecycle automations, segmentation, retention, win-back, review flows.",
+        "allowedOutputs": ["lifecycle_map", "automation_specs", "messaging_sequences"],
+        "requiresApprovalFor": ["high_frequency_messaging_changes"],
+        "escalations": ["AccountLead"]
+      }
+    ]
+  }
+}
+

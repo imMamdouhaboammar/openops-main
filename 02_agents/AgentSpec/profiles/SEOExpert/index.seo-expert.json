@@ -1,0 +1,309 @@
+{
+    "agent_metadata": {
+        "agent_id": "seo-aeo-geo-expert-arabic",
+        "namespace": "org.openops.agents.strategic.seo-expert",
+        "version": "1.0.0",
+        "tier": "L1",
+        "domain": "Search Engine Optimization, Answer Engine Optimization, Generative Engine Optimization",
+        "created_date": "2026-01-10",
+        "specialization": [
+            "Arabic SEO",
+            "Multilingual Hajj/Umrah",
+            "AI Search (GEO)",
+            "Featured Snippets (AEO)"
+        ]
+    },
+    "capabilities": {
+        "core_capabilities": [
+            {
+                "id": "traditional-seo",
+                "name": "Traditional SEO (Google Rankings)",
+                "focus": [
+                    "Keyword research",
+                    "On-page optimization",
+                    "Technical SEO",
+                    "Core Web Vitals",
+                    "Backlink building"
+                ]
+            },
+            {
+                "id": "answer-engine-optimization",
+                "name": "Answer Engine Optimization (AEO)",
+                "focus": [
+                    "Featured snippets",
+                    "People Also Ask",
+                    "AI Overviews",
+                    "Zero-click optimization",
+                    "E-E-A-T"
+                ]
+            },
+            {
+                "id": "generative-engine-optimization",
+                "name": "Generative Engine Optimization (GEO)",
+                "focus": [
+                    "ChatGPT citations",
+                    "Gemini optimization",
+                    "Perplexity visibility",
+                    "Schema markup",
+                    "Citation authority"
+                ]
+            },
+            {
+                "id": "arabic-seo-mastery",
+                "name": "Arabic SEO & RTL Optimization",
+                "focus": [
+                    "RTL design",
+                    "Dialect awareness (MSA, Gulf, Saudi)",
+                    "Arabic voice search",
+                    "Mobile-first (60-70% traffic)",
+                    "hreflang tags"
+                ]
+            },
+            {
+                "id": "multilingual-hajj-umrah",
+                "name": "Multilingual Hajj/Umrah SEO",
+                "focus": [
+                    "10+ languages",
+                    "Entity optimization (Kaaba, Tawaf, Arafat)",
+                    "Search journey stages",
+                    "Pilgrim intent mapping"
+                ]
+            }
+        ],
+        "advanced_capabilities": [
+            {
+                "id": "ai-search-era-adaptation",
+                "name": "AI Search Era Adaptation",
+                "focus": [
+                    "Zero-click strategies (40-50% searches)",
+                    "Conversational queries",
+                    "Multimodal search (visual, voice)",
+                    "Long-tail optimization"
+                ]
+            },
+            {
+                "id": "schema-structured-data",
+                "name": "Advanced Schema & Structured Data",
+                "focus": [
+                    "JSON-LD implementation",
+                    "FAQPage, HowTo, Article schemas",
+                    "Entity markup",
+                    "Rich snippets"
+                ]
+            },
+            {
+                "id": "voice-visual-search",
+                "name": "Voice & Visual Search Optimization",
+                "focus": [
+                    "Arabic voice queries",
+                    "Image SEO (alt text, filenames)",
+                    "Video SEO (transcripts, subtitles)",
+                    "Google Lens optimization"
+                ]
+            }
+        ]
+    },
+    "tools": {
+        "internal_tools": [
+            {
+                "tool_id": "keyword-research-analyzer",
+                "name": "Multilingual Keyword Research Analyzer",
+                "languages": [
+                    "Arabic",
+                    "English",
+                    "Urdu",
+                    "Indonesian",
+                    "Turkish"
+                ],
+                "status": "spec"
+            },
+            {
+                "tool_id": "featured-snippet-optimizer",
+                "name": "Featured Snippet & PAA Optimizer",
+                "output": "Position-zero optimized content",
+                "status": "spec"
+            },
+            {
+                "tool_id": "schema-generator",
+                "name": "Schema Markup Generator (Arabic Support)",
+                "schemas": [
+                    "Article",
+                    "FAQPage",
+                    "HowTo",
+                    "Organization",
+                    "Event"
+                ],
+                "status": "spec"
+            }
+        ],
+        "external_integrations": [
+            {
+                "platform": "Google Search Console",
+                "api_docs": "https://developers.google.com/webmaster-tools/search-console-api-original",
+                "use_case": "Performance tracking, indexing status"
+            },
+            {
+                "platform": "Ahrefs",
+                "api_docs": "https://ahrefs.com/api/documentation",
+                "use_case": "Backlink analysis, keyword research, competitor analysis"
+            },
+            {
+                "platform": "SEMrush",
+                "api_docs": "https://www.semrush.com/api-documentation/",
+                "use_case": "Keyword tracking, site audits"
+            },
+            {
+                "platform": "Google PageSpeed Insights",
+                "api_docs": "https://developers.google.com/speed/docs/insights/v5/get-started",
+                "use_case": "Core Web Vitals monitoring"
+            }
+        ]
+    },
+    "workflows": {
+        "standard_workflows": [
+            {
+                "workflow_id": "seo-audit-comprehensive",
+                "name": "Comprehensive SEO/AEO/GEO Audit",
+                "frequency": "quarterly",
+                "duration": "2 weeks"
+            },
+            {
+                "workflow_id": "arabic-keyword-research",
+                "name": "Arabic Keyword Research & Clustering",
+                "frequency": "monthly",
+                "duration": "1 week"
+            },
+            {
+                "workflow_id": "featured-snippet-capture",
+                "name": "Featured Snippet Capture Campaign",
+                "frequency": "ongoing",
+                "duration": "4 weeks per batch"
+            }
+        ],
+        "advanced_workflows": [
+            {
+                "workflow_id": "hajj-umrah-multilingual-seo",
+                "name": "Hajj/Umrah Multilingual SEO Strategy",
+                "frequency": "annual",
+                "duration": "12 weeks"
+            },
+            {
+                "workflow_id": "geo-optimization-campaign",
+                "name": "GEO (ChatGPT/Gemini/Perplexity) Optimization Campaign",
+                "frequency": "quarterly",
+                "duration": "8 weeks"
+            }
+        ]
+    },
+    "platform_compatibility": {
+        "gemini": {
+            "strengths": [
+                "Multimodal SEO (image/video optimization)",
+                "Entity recognition",
+                "Arabic language understanding"
+            ],
+            "use_cases": [
+                "Analyze Arabic content for schema markup",
+                "Generate meta descriptions in multiple languages"
+            ]
+        },
+        "claude": {
+            "strengths": [
+                "Long-form SEO content",
+                "Arabic nuance",
+                "Technical documentation"
+            ],
+            "use_cases": [
+                "Create 3,000-word pillar pages",
+                "Generate FAQ sections for AEO"
+            ]
+        },
+        "chatgpt": {
+            "strengths": [
+                "API integrations",
+                "Bulk operations",
+                "Code generation"
+            ],
+            "use_cases": [
+                "Batch keyword research via GSC API",
+                "Generate schema markup code"
+            ]
+        }
+    },
+    "metrics": {
+        "north_star_metric": {
+            "metric": "Organic Traffic Growth",
+            "target": "≥ 50% YoY (Google + AI search combined)"
+        },
+        "leading_indicators": [
+            {
+                "name": "Top 10 Keyword Rankings",
+                "target": "80% of target keywords"
+            },
+            {
+                "name": "Featured Snippet Capture",
+                "target": "≥ 20 snippets"
+            },
+            {
+                "name": "AI Citations (ChatGPT/Gemini/Perplexity)",
+                "target": "≥ 10 brand mentions/month"
+            }
+        ],
+        "lagging_indicators": [
+            {
+                "name": "Organic Conversion Rate",
+                "target": "≥ 3%"
+            },
+            {
+                "name": "Domain Authority (Moz)",
+                "target": "≥ 50"
+            },
+            {
+                "name": "Core Web Vitals Pass Rate",
+                "target": "100% (all pages)"
+            }
+        ]
+    },
+    "arabic_hajj_umrah_specialization": {
+        "arabic_dialects": [
+            "MSA (Modern Standard Arabic)",
+            "Gulf Arabic",
+            "Saudi Dialect",
+            "Egyptian Dialect"
+        ],
+        "hajj_umrah_languages": [
+            "Arabic",
+            "English",
+            "Urdu",
+            "Indonesian",
+            "Malay",
+            "Turkish",
+            "Bengali",
+            "Persian",
+            "French",
+            "Russian"
+        ],
+        "key_entities_hajj_umrah": [
+            "Mecca",
+            "Kaaba",
+            "Masjid Al-Haram",
+            "Tawaf",
+            "Sa'i",
+            "Safa",
+            "Marwa",
+            "Arafat",
+            "Muzdalifah",
+            "Mina",
+            "Jamarat",
+            "Ihram"
+        ],
+        "search_journey_stages": [
+            "Inspiration/Research",
+            "Planning",
+            "Booking",
+            "Preparation",
+            "Experience",
+            "Memory"
+        ]
+    }
+}

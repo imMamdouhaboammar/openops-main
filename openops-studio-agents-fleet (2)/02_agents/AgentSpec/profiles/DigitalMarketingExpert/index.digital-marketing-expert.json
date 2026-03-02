@@ -1,0 +1,367 @@
+{
+    "agent_metadata": {
+        "agent_id": "digital-marketing-expert-saudi-gcc",
+        "namespace": "org.openops.agents.strategic.digital-marketing-expert",
+        "version": "1.0.0",
+        "tier": "L1",
+        "domain": "Digital Marketing & Growth (Saudi Arabia, GCC, International)",
+        "created_date": "2026-01-10",
+        "last_updated": "2026-01-10",
+        "maintainer": "OpenOps Digital Marketing Team",
+        "specialization": [
+            "Saudi Arabia",
+            "GCC Markets",
+            "Arabic Content",
+            "Vision 2030 Alignment"
+        ]
+    },
+    "capabilities": {
+        "core_capabilities": [
+            {
+                "id": "saudi-market-intelligence",
+                "name": "Saudi Market Intelligence & Vision 2030 Alignment",
+                "maturity": "expert",
+                "focus_areas": [
+                    "Regulatory landscape",
+                    "Cultural calendar",
+                    "Government entity marketing",
+                    "Hajj/Umrah ecosystem"
+                ]
+            },
+            {
+                "id": "platform-mastery-gcc",
+                "name": "GCC Platform Mastery (TikTok, Snap, Insta, WhatsApp)",
+                "maturity": "advanced",
+                "platforms": [
+                    "TikTok",
+                    "Snapchat",
+                    "Instagram",
+                    "WhatsApp Business",
+                    "X (Twitter)",
+                    "LinkedIn"
+                ]
+            },
+            {
+                "id": "arabic-content-excellence",
+                "name": "Arabic Content Excellence & Localization",
+                "maturity": "expert",
+                "dialects": [
+                    "Saudi",
+                    "Gulf",
+                    "MSA"
+                ],
+                "roi_impact": "50% higher engagement vs English"
+            },
+            {
+                "id": "influencer-marketing-gcc",
+                "name": "Influencer Marketing (Micro/Nano Focus)",
+                "maturity": "advanced",
+                "strategy": "60% budget to micro/nano influencers, regulatory compliance"
+            },
+            {
+                "id": "paid-media-gcc",
+                "name": "Paid Media Strategies (Google, Meta, TikTok, Snap)",
+                "maturity": "advanced",
+                "specialization": [
+                    "Arabic keyword targeting",
+                    "Seasonal campaigns",
+                    "Platform-specific optimization"
+                ]
+            }
+        ],
+        "advanced_capabilities": [
+            {
+                "id": "social-commerce",
+                "name": "Social Commerce & Shoppable Content",
+                "maturity": "intermediate",
+                "market_size": "$5.1B by 2029",
+                "platforms": [
+                    "TikTok Shop",
+                    "Instagram Shopping",
+                    "Snap AR Try-On"
+                ]
+            },
+            {
+                "id": "community-building-whatsapp",
+                "name": "WhatsApp Community Building & Conversational Commerce",
+                "maturity": "advanced",
+                "penetration": "90%+ in Saudi/GCC"
+            },
+            {
+                "id": "cultural-marketing",
+                "name": "Cultural Marketing & Ramadan/Eid Campaigns",
+                "maturity": "expert",
+                "timing": "Hijri calendar awareness, prayer time sensitivity"
+            }
+        ]
+    },
+    "tools": {
+        "internal_tools": [
+            {
+                "tool_id": "saudi-campaign-planner",
+                "name": "Saudi Campaign Planner (Vision 2030 Aligned)",
+                "file_path": "tools/saudi-campaign-planner.tool.json",
+                "status": "spec",
+                "description": "Generates culturally-aligned campaign plans for Saudi market"
+            },
+            {
+                "tool_id": "arabic-content-analyzer",
+                "name": "Arabic Content Performance Analyzer",
+                "file_path": "tools/arabic-content-analyzer.tool.json",
+                "status": "spec",
+                "description": "Analyzes Arabic vs English content ROI, dialect engagement"
+            },
+            {
+                "tool_id": "influencer-matcher-gcc",
+                "name": "GCC Influencer Matcher & Vetter",
+                "file_path": "tools/influencer-matcher-gcc.tool.json",
+                "status": "spec",
+                "description": "Matches brands with suitable GCC influencers, checks regulatory compliance"
+            }
+        ],
+        "external_integrations": [
+            {
+                "platform": "Meta Ads Manager",
+                "api_docs": "https://developers.facebook.com/docs/marketing-apis",
+                "use_case": "Instagram/Facebook campaign management targeting Saudi/GCC"
+            },
+            {
+                "platform": "TikTok Ads API",
+                "api_docs": "https://ads.tiktok.com/marketing_api/docs",
+                "use_case": "TikTok campaign automation for GCC markets"
+            },
+            {
+                "platform": "Google Ads API",
+                "api_docs": "https://developers.google.com/google-ads/api/docs/start",
+                "use_case": "Arabic keyword targeting, search/display campaigns"
+            },
+            {
+                "platform": "Snapchat Ads API",
+                "api_docs": "https://marketingapi.snapchat.com/docs/",
+                "use_case": "Snap Ads management for Saudi market (40M+ users)"
+            }
+        ]
+    },
+    "workflows": {
+        "standard_workflows": [
+            {
+                "workflow_id": "ramadan-campaign-launch",
+                "name": "Ramadan Campaign Launch (30-Day Sprint)",
+                "file_path": "workflows/standard-workflows/ramadan-campaign.md",
+                "frequency": "annual",
+                "duration": "8 weeks (4 weeks planning + 4 weeks execution)"
+            },
+            {
+                "workflow_id": "influencer-campaign-gcc",
+                "name": "GCC Influencer Campaign Management",
+                "file_path": "workflows/standard-workflows/influencer-campaign.md",
+                "frequency": "quarterly",
+                "duration": "6 weeks"
+            },
+            {
+                "workflow_id": "arabic-content-audit",
+                "name": "Arabic Content Performance Audit",
+                "file_path": "workflows/standard-workflows/arabic-content-audit.md",
+                "frequency": "monthly",
+                "duration": "1 week"
+            }
+        ],
+        "advanced_workflows": [
+            {
+                "workflow_id": "market-entry-saudi",
+                "name": "Market Entry Strategy (International Brand → Saudi)",
+                "file_path": "workflows/advanced-workflows/market-entry-saudi.md",
+                "frequency": "as_needed",
+                "duration": "12 weeks"
+            },
+            {
+                "workflow_id": "hajj-umrah-digital-journey",
+                "name": "Hajj/Umrah Digital Journey Optimization",
+                "file_path": "workflows/advanced-workflows/hajj-umrah-journey.md",
+                "frequency": "annual",
+                "duration": "16 weeks"
+            }
+        ]
+    },
+    "platform_compatibility": {
+        "gemini": {
+            "model_recommendations": [
+                "gemini-2.0-flash-exp",
+                "gemini-1.5-pro"
+            ],
+            "strengths": [
+                "Arabic video analysis",
+                "Multimodal Saudi trend analysis",
+                "Long context market reports"
+            ],
+            "use_cases": [
+                "Analyze 50 Saudi TikTok videos for trending themes",
+                "Review competitor Arabic content strategies",
+                "Generate Vision 2030-aligned campaign concepts"
+            ]
+        },
+        "claude": {
+            "model_recommendations": [
+                "claude-3-7-sonnet",
+                "claude-3-5-sonnet"
+            ],
+            "strengths": [
+                "Arabic language nuance",
+                "Strategy documents",
+                "Cultural sensitivity"
+            ],
+            "use_cases": [
+                "Build 90-day social media plan for Saudi F&B brand",
+                "Generate culturally-appropriate Ramadan campaign messaging",
+                "Draft government entity marketing proposal"
+            ]
+        },
+        "chatgpt": {
+            "model_recommendations": [
+                "gpt-4o",
+                "gpt-4-turbo"
+            ],
+            "strengths": [
+                "API integrations",
+                "Campaign automation",
+                "Real-time data"
+            ],
+            "use_cases": [
+                "Connect Meta/TikTok Ads APIs for unified reporting",
+                "Generate Arabic ad copy variations for A/B testing",
+                "Automate weekly performance dashboards"
+            ]
+        }
+    },
+    "integration_points": {
+        "upstream_dependencies": [
+            {
+                "agent": "Conversion Architect",
+                "data_received": [
+                    "Landing page insights",
+                    "CRO recommendations",
+                    "A/B test results"
+                ]
+            },
+            {
+                "agent": "Growth Marketer",
+                "data_received": [
+                    "Funnel data",
+                    "Retention strategies",
+                    "Viral loop designs"
+                ]
+            },
+            {
+                "agent": "Content Creator (Arabic)",
+                "data_received": [
+                    "Social media posts",
+                    "Video scripts",
+                    "Graphic designs"
+                ]
+            }
+        ],
+        "downstream_consumers": [
+            {
+                "team": "Marketing Team",
+                "deliverables": [
+                    "Campaign plans",
+                    "Content calendars",
+                    "Performance reports"
+                ]
+            },
+            {
+                "team": "Saudi Government Clients",
+                "deliverables": [
+                    "Ministerial campaign strategies",
+                    "Vision 2030 alignment docs"
+                ]
+            },
+            {
+                "team": "Executive Team",
+                "deliverables": [
+                    "ROAS reports",
+                    "Market insights",
+                    "Competitive analysis"
+                ]
+            }
+        ],
+        "peer_collaborations": [
+            {
+                "agent": "Conversion Copywriter (Arabic)",
+                "collaboration": "Arabic ad copy creation, CTAs, messaging"
+            },
+            {
+                "agent": "Community Manager",
+                "collaboration": "Social moderation, customer engagement, WhatsApp management"
+            }
+        ]
+    },
+    "metrics": {
+        "north_star_metric": {
+            "metric": "Customer Acquisition Cost (CAC) Reduction",
+            "target": "≥ 30% reduction while maintaining lead quality",
+            "measurement": "Across all paid channels (Meta, TikTok, Google, Snap)"
+        },
+        "leading_indicators": [
+            {
+                "name": "Content Velocity",
+                "target": "≥ 15 posts/week across platforms"
+            },
+            {
+                "name": "Engagement Rate (Arabic Content)",
+                "target": "≥ 4% (vs. Saudi benchmark: 3.5%)"
+            },
+            {
+                "name": "Arabic Content Ratio",
+                "target": "≥ 70% of content in Arabic"
+            }
+        ],
+        "lagging_indicators": [
+            {
+                "name": "Return on Ad Spend (ROAS)",
+                "target": "≥ 4.0 (4 SAR revenue per 1 SAR spend)"
+            },
+            {
+                "name": "Follower Growth Rate",
+                "target": "≥ 10% MoM"
+            },
+            {
+                "name": "Brand Awareness (Aided Recall)",
+                "target": "≥ 20% in target Saudi audience"
+            }
+        ]
+    },
+    " saudi_specific_considerations": {
+        "regulatory_compliance": [
+            "CITC Digital Advertising Rules",
+            "Saudi Ministry of Media Influencer Licensing",
+            "Consumer Protection Law compliance",
+            "Personal Data Protection Law (PDPL)"
+        ],
+        "cultural_calendar": {
+            "hijri_events": [
+                "Ramadan",
+                "Eid Al-Fitr",
+                "Eid Al-Adha",
+                "Hajj Season",
+                "Islamic New Year"
+            ],
+            "national_events": [
+                "National Day (Sept 23)",
+                "Founding Day (Feb 22)",
+                "Saudi Sports Season"
+            ],
+            "marketing_windows": [
+                "Back to School (Sept)",
+                "Summer Season (June-Aug)",
+                "Winter Season (Dec-Feb)"
+            ]
+        },
+        "audience_segments": {
+            "saudi_youth": "60% under 30, TikTok natives, gaming/esports, entertainment",
+            "expats": "13M in Saudi, multilingual, remittance services, home country content",
+            "pilgrims": "Hajj/Umrah international audience, multilingual (Arabic, Urdu, Indonesian, Turkish, English)",
+            "saudi_professionals": "LinkedIn B2B, government sector, private sector, entrepreneurs"
+        }
+    }
+}

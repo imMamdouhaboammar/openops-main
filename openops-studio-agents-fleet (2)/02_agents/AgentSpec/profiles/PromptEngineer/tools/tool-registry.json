@@ -1,0 +1,189 @@
+{
+    "tool_registry": {
+        "version": "1.0.0",
+        "total_tools": 3
+    },
+    "tools": {
+        "prompt_template_library": {
+            "tool_id": "prompt-template-library",
+            "name": "Prompt Template Library",
+            "file_path": "tools/prompt-template-library.tool.json",
+            "status": "spec",
+            "total_templates": 50,
+            "categories": {
+                "content": {
+                    "count": 12,
+                    "examples": [
+                        "Blog post",
+                        "Social media caption",
+                        "Email newsletter",
+                        "Ad copy"
+                    ]
+                },
+                "code": {
+                    "count": 10,
+                    "examples": [
+                        "Function generator",
+                        "Bug fixer",
+                        "SQL query",
+                        "API endpoint"
+                    ]
+                },
+                "analysis": {
+                    "count": 8,
+                    "examples": [
+                        "Sentiment analysis",
+                        "Summarization",
+                        "Competitive intel",
+                        "Data insights"
+                    ]
+                },
+                "creative": {
+                    "count": 10,
+                    "examples": [
+                        "Brainstorming",
+                        "Naming",
+                        "Storytelling",
+                        "Script writing"
+                    ]
+                },
+                "enterprise": {
+                    "count": 10,
+                    "examples": [
+                        "RFP response",
+                        "Legal doc review",
+                        "Technical spec",
+                        "Financial report"
+                    ]
+                }
+            },
+            "features": [
+                "Version control (semantic versioning)",
+                "Success rate tracking (A/B tested)",
+                "Variable substitution",
+                "Model-specific variants (GPT-4, Claude, Gemini)"
+            ],
+            "description": "Centralized library of reusable, tested prompt templates with documented success rates and best practices"
+        },
+        "prompt_evaluator": {
+            "tool_id": "prompt-evaluator",
+            "name": "Prompt Evaluation Framework",
+            "file_path": "tools/prompt-evaluator.tool.json",
+            "status": "spec",
+            "metrics": {
+                "exactness": {
+                    "description": "% match with requirements",
+                    "scale": "0-100%",
+                    "target": "≥90%"
+                },
+                "efficiency": {
+                    "description": "Token usage per task",
+                    "unit": "tokens",
+                    "target": "≤400"
+                },
+                "consistency": {
+                    "description": "Output variance across 10 runs",
+                    "measurement": "Standard deviation",
+                    "target": "≤10%"
+                },
+                "error_rate": {
+                    "description": "Hallucinations + format breaks",
+                    "scale": "0-100%",
+                    "target": "≤5%"
+                }
+            },
+            "evaluation_methods": [
+                "Automated scoring (exact match, format validation)",
+                "LLM-as-judge (GPT-4 evaluates GPT-3.5 outputs)",
+                "Human evaluation (4-criteria rubric)",
+                "Consistency testing (10+ runs, variance analysis)"
+            ],
+            "description": "Systematic framework for measuring prompt quality across 4 dimensions (exactness, efficiency, consistency, error rate)"
+        },
+        "ab_testing_system": {
+            "tool_id": "ab-testing-system",
+            "name": "A/B Testing System for Prompts",
+            "file_path": "tools/ab-testing-system.tool.json",
+            "status": "spec",
+            "features": [
+                "Variant management (A vs. B vs. C)",
+                "Sample distribution (50/50 or custom)",
+                "Statistical significance (p-value < 0.05)",
+                "Auto-winner selection (confidence threshold)",
+                "Metric tracking (success rate, tokens, latency, cost)"
+            ],
+            "workflow": [
+                "1. Define variants (Prompt A, Prompt B)",
+                "2. Set sample size (e.g., 100 requests each)",
+                "3. Run experiment (parallel execution)",
+                "4. Analyze results (success rate, efficiency)",
+                "5. Declare winner (if statistically significant)",
+                "6. Deploy winner to production"
+            ],
+            "output": {
+                "comparison_table": "Metric-by-metric comparison",
+                "statistical_summary": "P-value, confidence interval",
+                "recommendation": "Deploy A, B, or continue testing"
+            },
+            "description": "Automated A/B testing system for comparing prompt variants with statistical rigor and auto-winner selection"
+        }
+    },
+    "integrations": {
+        "openai_api": {
+            "models": [
+                "GPT-4 Turbo",
+                "GPT-4o",
+                "GPT-3.5 Turbo"
+            ],
+            "features": [
+                "JSON mode",
+                "Function calling",
+                "System messages"
+            ],
+            "use_case": "Primary LLM for reasoning, code generation, structured outputs"
+        },
+        "anthropic_api": {
+            "models": [
+                "Claude 3.5 Sonnet",
+                "Claude 3 Opus",
+                "Claude 3 Haiku"
+            ],
+            "features": [
+                "200K context",
+                "XML formatting",
+                "Constitutional AI"
+            ],
+            "use_case": "Long context tasks, creative writing, nuanced analysis"
+        },
+        "google_gemini_api": {
+            "models": [
+                "Gemini 1.5 Pro",
+                "Gemini 1.5 Flash"
+            ],
+            "features": [
+                "1M token context",
+                "Multimodal (image, video, audio)",
+                "Google Search grounding"
+            ],
+            "use_case": "Multimodal tasks, ultra-long context, speed-critical applications"
+        },
+        "langchain": {
+            "features": [
+                "Prompt templates",
+                "Chains",
+                "Agents",
+                "RAG pipelines"
+            ],
+            "use_case": "Orchestration framework for complex multi-step workflows"
+        },
+        "langsmith": {
+            "features": [
+                "Prompt logging",
+                "Version control",
+                "Performance monitoring",
+                "Debugging"
+            ],
+            "use_case": "Production monitoring, prompt versioning, A/B test analytics"
+        }
+    }
+}

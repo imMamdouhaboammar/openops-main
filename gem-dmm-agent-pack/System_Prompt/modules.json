@@ -1,0 +1,742 @@
+{
+    "schema_version": "1.0.0",
+    "architecture_name": "Goal-Constrained Reasoning Agent",
+    "description": "A modular AI agent architecture designed to prevent surface-level reasoning errors by enforcing goal extraction, constraint validation, feasibility checks, and structured answer generation.",
+    "modules": [
+        {
+            "id": "input_preprocessor",
+            "name": "Input Pre-Processor",
+            "version": "1.0.0",
+            "type": "core",
+            "description": "Normalizes and prepares raw user input for structured processing.",
+            "responsibilities": [
+                "Trim and normalize whitespace",
+                "Language detection",
+                "Entity extraction (objects, distances, quantities, locations)",
+                "Option detection (identify alternative choices in question)",
+                "Ambiguity flagging"
+            ],
+            "inputs": [
+                "raw_user_input"
+            ],
+            "outputs": [
+                "normalized_text",
+                "detected_entities",
+                "detected_options",
+                "language",
+                "ambiguity_flags"
+            ],
+            "depends_on": [],
+            "failure_modes": [
+                "Unrecognized language",
+                "Incomplete option detection"
+            ],
+            "retry_policy": "once",
+            "marketing_examples": [
+                {
+                    "scenario": "B2B SaaS Lead Generation",
+                    "input": "We want more leads for our B2B SaaS product",
+                    "output": {
+                        "normalized_text": "we want more leads for our b2b saas product",
+                        "detected_entities": [
+                            "leads",
+                            "b2b",
+                            "saas",
+                            "product"
+                        ],
+                        "detected_options": [],
+                        "language": "en",
+                        "ambiguity_flags": [
+                            "goal_unclear",
+                            "no_quantification",
+                            "no_timeline"
+                        ]
+                    }
+                },
+                {
+                    "scenario": "Channel Selection False Dichotomy",
+                    "input": "Should we invest in SEO or paid ads?",
+                    "output": {
+                        "normalized_text": "should we invest in seo or paid ads",
+                        "detected_entities": [
+                            "seo",
+                            "paid ads",
+                            "invest"
+                        ],
+                        "detected_options": [
+                            "seo",
+                            "paid ads"
+                        ],
+                        "language": "en",
+                        "ambiguity_flags": [
+                            "false_dichotomy_suspected",
+                            "goal_not_stated"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "goal_extractor",
+            "name": "Goal Extraction Module",
+            "version": "1.0.0",
+            "type": "cognitive",
+            "description": "Extracts the primary objective and secondary intents from the normalized input.",
+            "responsibilities": [
+                "Identify explicit goal statements",
+                "Infer implicit goals",
+                "Differentiate between action and meta-question",
+                "Rank goals by priority"
+            ],
+            "inputs": [
+                "normalized_text",
+                "detected_entities"
+            ],
+            "outputs": [
+                "primary_goal",
+                "secondary_goals",
+                "goal_confidence_score"
+            ],
+            "depends_on": [
+                "input_preprocessor"
+            ],
+            "validation_checks": [
+                "Primary goal must be singular and clearly stated",
+                "Goal must represent outcome, not method"
+            ],
+            "marketing_examples": [
+                {
+                    "scenario": "Ambiguous Goal - Method Stated as Goal",
+                    "input": "We want more traffic to our website",
+                    "output": {
+                        "primary_goal": "UNCLEAR - needs clarification",
+                        "secondary_goals": [],
+                        "goal_confidence_score": 0.3,
+                        "ambiguity_flags": [
+                            "method_stated_as_goal",
+                            "outcome_unclear"
+                        ],
+                        "clarification_questions": [
+                            "What is the business outcome you want from more traffic?",
+                            "Is the goal qualified leads, sales, brand awareness, or something else?"
+                        ]
+                    }
+                },
+                {
+                    "scenario": "Clear Goal Extraction",
+                    "input": "We want to generate 50 qualified demo requests per month from enterprise CTOs",
+                    "output": {
+                        "primary_goal": "Generate 50 qualified demo requests per month from enterprise CTOs",
+                        "secondary_goals": [],
+                        "goal_confidence_score": 0.85,
+                        "goal_type": "conversion",
+                        "success_metric": "qualified_demo_requests_per_month"
+                    }
+                },
+                {
+                    "scenario": "Vanity Metric Detection",
+                    "input": "We want to get 10,000 social media followers",
+                    "output": {
+                        "primary_goal": "UNCLEAR - vanity metric detected",
+                        "secondary_goals": [],
+                        "goal_confidence_score": 0.4,
+                        "warnings": [
+                            "followers_are_vanity_metric"
+                        ],
+                        "clarification_questions": [
+                            "What business outcome do you want from 10K followers?",
+                            "Is the goal brand awareness, engagement, lead generation, or community building?"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "constraint_parser",
+            "name": "Constraint & Requirement Parser",
+            "version": "1.0.0",
+            "type": "cognitive",
+            "description": "Extracts governing constraints required to achieve the primary goal.",
+            "responsibilities": [
+                "Identify physical constraints",
+                "Identify logical dependencies",
+                "Identify temporal constraints",
+                "Identify resource requirements",
+                "Map constraints to goal"
+            ],
+            "inputs": [
+                "primary_goal",
+                "normalized_text",
+                "detected_entities"
+            ],
+            "outputs": [
+                "constraints",
+                "required_entities",
+                "dependency_graph"
+            ],
+            "depends_on": [
+                "goal_extractor"
+            ],
+            "validation_checks": [
+                "At least one governing constraint must be identified",
+                "Constraints must be directly tied to primary goal"
+            ],
+            "marketing_examples": [
+                {
+                    "scenario": "Budget Constraint Extraction",
+                    "input": {
+                        "goal": "Generate 100 qualified leads per month",
+                        "context": "We have $5,000 per month for marketing"
+                    },
+                    "output": {
+                        "constraints": [
+                            {
+                                "type": "budget",
+                                "value": "$5,000/month",
+                                "mandatory": true,
+                                "linked_goal_id": "primary_goal"
+                            }
+                        ],
+                        "required_entities": [
+                            "landing page",
+                            "lead capture form",
+                            "CRM"
+                        ]
+                    }
+                },
+                {
+                    "scenario": "Multiple Constraints",
+                    "input": {
+                        "goal": "Generate 50 demos/month",
+                        "context": "Budget $10K/month, need results in 60 days, 1 marketing manager, no agency"
+                    },
+                    "output": {
+                        "constraints": [
+                            {
+                                "type": "budget",
+                                "value": "$10,000/month",
+                                "mandatory": true
+                            },
+                            {
+                                "type": "timeline",
+                                "value": "60 days to initial results",
+                                "mandatory": true
+                            },
+                            {
+                                "type": "team",
+                                "value": "1 marketing manager, no agency",
+                                "mandatory": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "scenario": "ICP Constraint",
+                    "input": {
+                        "goal": "Generate qualified leads",
+                        "context": "Target enterprise CTOs in fintech, deal size $50K+"
+                    },
+                    "output": {
+                        "constraints": [
+                            {
+                                "type": "icp",
+                                "value": {
+                                    "role": "CTO",
+                                    "company_size": "enterprise",
+                                    "industry": "fintech",
+                                    "deal_size": "$50K+"
+                                },
+                                "mandatory": true
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "option_mapper",
+            "name": "Option Mapper",
+            "version": "1.0.0",
+            "type": "cognitive",
+            "description": "Maps detected options to structured action representations.",
+            "responsibilities": [
+                 "Convert user options into action models",
+                "Associate options with affected entities",
+                "Identify implicit assumptions per option"
+            ],
+            "inputs": [
+                "detected_options",
+                "detected_entities"
+            ],
+            "outputs": [
+                "structured_options"
+            ],
+            "depends_on": [
+                "input_preprocessor"
+            ],
+            "marketing_examples": [
+                {
+                    "scenario": "Channel Options Mapping",
+                    "input": {
+                        "detected_options": [
+                            "LinkedIn Ads",
+                            "Google Search Ads",
+                            "Content Marketing"
+                        ]
+                    },
+                    "output": {
+                        "structured_options": [
+                            {
+                                "option_id": "linkedin_ads",
+                                "action": "Run LinkedIn Ads campaign",
+                                "affected_entities": [
+                                    "budget",
+                                    "ad_account",
+                                    "landing_page"
+                                ],
+                                "assumptions": [
+                                    "Target audience is on LinkedIn",
+                                    "Budget sufficient for LinkedIn CPCs",
+                                    "Team can manage ad campaigns"
+                                ]
+                            },
+                            {
+                                "option_id": "google_search_ads",
+                                "action": "Run Google Search Ads campaign",
+                                "affected_entities": [
+                                    "budget",
+                                    "google_ads_account",
+                                    "landing_page"
+                                ],
+                                "assumptions": [
+                                    "Target audience searches for solution keywords",
+                                    "Budget sufficient for Google CPCs",
+                                    "Team can manage ad campaigns"
+                                ]
+                            },
+                            {
+                                "option_id": "content_marketing",
+                                "action": "Create and distribute content",
+                                "affected_entities": [
+                                    "content_team",
+                                    "blog",
+                                    "seo"
+                                ],
+                                "assumptions": [
+                                    "Team can produce quality content",
+                                    "6-12 month timeline acceptable",
+                                    "SEO knowledge available"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "feasibility_validator",
+            "name": "Feasibility Validator",
+            "version": "1.0.0",
+            "type": "validation",
+            "description": "Evaluates whether each structured option satisfies all governing constraints.",
+            "responsibilities": [
+                "Test each option against all constraints",
+                "Mark options as valid or invalid",
+                "Provide invalidation reasons",
+                "Detect missing goal satisfaction"
+            ],
+            "inputs": [
+                "structured_options",
+                "constraints",
+                "required_entities"
+            ],
+            "outputs": [
+                "valid_options",
+                "invalid_options",
+                "validation_report"
+            ],
+            "depends_on": [
+                "constraint_parser",
+                "option_mapper"
+            ],
+            "validation_checks": [
+                "No invalid option may proceed to reasoning",
+                "Each valid option must satisfy 100% of mandatory constraints"
+            ],
+            "marketing_examples": [
+                {
+                    "scenario": "Budget Constraint Violation",
+                    "input": {
+                        "goal": "Generate 100 qualified leads per month",
+                        "constraints": [
+                            {
+                                "type": "budget",
+                                "value": "$2,000/month"
+                            }
+                        ],
+                        "option": "LinkedIn Ads"
+                    },
+                    "output": {
+                        "option": "LinkedIn Ads",
+                        "validation_status": "INVALID",
+                        "violated_constraint": "budget",
+                        "reason": "LinkedIn Ads requires $5-8K/month for 100 leads, exceeds $2K budget",
+                        "recommendation": "Reduce target to 30-40 leads/month OR increase budget to $5K+"
+                    }
+                },
+                {
+                    "scenario": "Timeline Constraint Violation",
+                    "input": {
+                        "goal": "Increase organic traffic by 200%",
+                        "constraints": [
+                            {
+                                "type": "timeline",
+                                "value": "30 days"
+                            }
+                        ],
+                        "option": "SEO + Content Marketing"
+                    },
+                    "output": {
+                        "option": "SEO + Content Marketing",
+                        "validation_status": "INVALID",
+                        "violated_constraint": "timeline",
+                        "reason": "SEO + Content Marketing requires 6-12 months to show significant results, violates 30-day timeline",
+                        "recommendation": "Use paid channels (Google Ads, LinkedIn Ads) for 30-day timeline OR extend timeline to 6+ months for SEO"
+                    }
+                },
+                {
+                    "scenario": "Valid Option",
+                    "input": {
+                        "goal": "Generate 50 demos/month",
+                        "constraints": [
+                            {
+                                "type": "budget",
+                                "value": "$10K/month"
+                            },
+                            {
+                                "type": "timeline",
+                                "value": "60 days"
+                            },
+                            {
+                                "type": "team",
+                                "value": "1 marketing manager"
+                            }
+                        ],
+                        "option": "LinkedIn Ads"
+                    },
+                    "output": {
+                        "option": "LinkedIn Ads",
+                        "validation_status": "VALID",
+                        "constraint_checks": {
+                            "budget": "PASS - $7K/month fits $10K budget",
+                            "timeline": "PASS - 2-4 weeks to results",
+                            "team": "PASS - 10 hours/week manageable for 1 person"
+                        },
+                        "expected_outcome": "35-50 qualified demos/month"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "frame_corrector",
+            "name": "Frame Corrector",
+            "version": "1.0.0",
+            "type": "cognitive",
+            "description": "Detects flawed framing (false dichotomy, invalid assumptions) and produces corrected framing if needed.",
+            "responsibilities": [
+                "Detect false choice structures",
+                "Detect missing prerequisites",
+                "Propose reframed decision space",
+                "Trigger clarification request if needed"
+            ],
+            "inputs": [
+                "valid_options",
+                "invalid_options",
+                "primary_goal"
+            ],
+            "outputs": [
+                "reframed_question",
+                "frame_warnings",
+                "clarification_required"
+            ],
+            "depends_on": [
+                "feasibility_validator"
+            ],
+            "marketing_examples": [
+                {
+                    "scenario": "False Dichotomy Detection",
+                    "input": {
+                        "question": "Should we invest in SEO or paid ads?",
+                        "goal": "Successful product launch"
+                    },
+                    "output": {
+                        "frame_issue_detected": true,
+                        "issue_type": "false_dichotomy",
+                        "reframed_question": "Given your goal of successful product launch, which combination of channels (SEO, paid ads, PR, email) will maximize launch impact?",
+                        "frame_warnings": [
+                            "SEO and paid ads serve different purposes and are not mutually exclusive",
+                            "Product launches often require multi-channel strategies"
+                        ],
+                        "clarification_required": true
+                    }
+                },
+                {
+                    "scenario": "No Valid Options",
+                    "input": {
+                        "goal": "Generate 100 leads/month",
+                        "constraints": [
+                            {
+                                "type": "budget",
+                                "value": "$500/month"
+                            }
+                        ],
+                        "options": [
+                            "LinkedIn Ads",
+                            "Google Ads",
+                            "Facebook Ads"
+                        ],
+                        "validation": "All options INVALID (budget too low)"
+                    },
+                    "output": {
+                        "frame_issue_detected": true,
+                        "issue_type": "no_valid_options",
+                        "reframed_question": "With $500/month budget, what is a realistic lead volume target? OR what budget would be needed for 100 leads/month?",
+                        "clarification_required": true,
+                        "alternatives": [
+                            "Reduce target to 15-20 leads/month (achievable with $500)",
+                            "Increase budget to $3-5K/month for 100 leads",
+                            "Use organic channels (SEO, content) with longer timeline"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "reasoning_engine",
+            "name": "Reasoning Engine",
+            "version": "1.0.0",
+            "type": "cognitive",
+            "description": "Performs structured causal reasoning only on validated options.",
+            "responsibilities": [
+                "Compare valid options",
+                "Score options by efficiency or user preference alignment",
+                "Generate causal justification",
+                "Produce ranked recommendation"
+            ],
+            "inputs": [
+                "valid_options",
+                "primary_goal",
+                "constraints"
+            ],
+            "outputs": [
+                "ranked_options",
+                "justifications",
+                "recommended_option"
+            ],
+            "depends_on": [
+                "frame_corrector"
+            ],
+            "validation_checks": [
+                "Reasoning must reference constraints explicitly",
+                "Recommendation must satisfy primary goal"
+            ],
+            "marketing_examples": [
+                {
+                    "scenario": "Channel Ranking for B2B SaaS",
+                    "input": {
+                        "goal": "Generate 50 qualified demos/month from enterprise CTOs",
+                        "constraints": [
+                            {
+                                "type": "budget",
+                                "value": "$10K/month"
+                            },
+                            {
+                                "type": "timeline",
+                                "value": "60 days"
+                            },
+                            {
+                                "type": "icp",
+                                "value": "enterprise CTOs"
+                            }
+                        ],
+                        "valid_options": [
+                            "LinkedIn Ads",
+                            "Google Search Ads"
+                        ]
+                    },
+                    "output": {
+                        "ranked_options": [
+                            {
+                                "rank": 1,
+                                "option": "LinkedIn Ads",
+                                "score": 8.5,
+                                "justification": "LinkedIn Ads offers precise targeting for enterprise CTOs, fits $10K budget ($7K/month typical), delivers results in 2-4 weeks (within 60-day timeline), and expected to generate 35-50 demos/month"
+                            },
+                            {
+                                "rank": 2,
+                                "option": "Google Search Ads",
+                                "score": 6.0,
+                                "justification": "Google Search Ads fits budget ($3-5K/month), delivers quick results, but less precise targeting for enterprise CTOs (broader audience), expected 20-35 demos/month"
+                            }
+                        ],
+                        "recommended_option": "LinkedIn Ads",
+                        "recommendation_confidence": 0.85
+                    }
+                }
+            ]
+        },
+        {
+            "id": "answer_generator",
+            "name": "Answer Generator",
+            "version": "1.0.0",
+            "type": "output",
+            "description": "Composes the final structured answer for the user.",
+            "responsibilities": [
+                "Restate primary goal",
+                "Explain invalid options",
+                "Compare valid options",
+                "Present final recommendation",
+                "Maintain clarity and relevance"
+            ],
+            "inputs": [
+                "primary_goal",
+                "invalid_options",
+                "ranked_options",
+                "recommended_option"
+            ],
+            "outputs": [
+                "final_answer"
+            ],
+            "depends_on": [
+                "reasoning_engine"
+            ],
+            "marketing_examples": [
+                {
+                    "scenario": "Structured Recommendation",
+                    "input": {
+                        "goal": "Generate 50 qualified demos/month from enterprise CTOs",
+                        "invalid_options": [
+                            {
+                                "option": "Content Marketing",
+                                "reason": "Violates 60-day timeline constraint (requires 6-12 months)"
+                            }
+                        ],
+                        "ranked_options": [
+                            {
+                                "rank": 1,
+                                "option": "LinkedIn Ads",
+                                "score": 8.5
+                            },
+                            {
+                                "rank": 2,
+                                "option": "Google Search Ads",
+                                "score": 6.0
+                            }
+                        ],
+                        "recommended_option": "LinkedIn Ads"
+                    },
+                    "output": {
+                        "final_answer": {
+                            "goal_restatement": "Your goal is to generate 50 qualified demo requests per month from enterprise CTOs within 60 days, with a $10K/month budget.",
+                            "invalid_options_explanation": "Content Marketing was ruled out because it requires 6-12 months to show results, which violates your 60-day timeline constraint.",
+                            "valid_options_comparison": "Between LinkedIn Ads and Google Search Ads, LinkedIn Ads offers more precise targeting for enterprise CTOs and is expected to generate 35-50 demos/month ($7K/month cost). Google Search Ads is less precise but cheaper ($3-5K/month), expected to generate 20-35 demos/month.",
+                            "recommendation": "I recommend LinkedIn Ads as your primary channel, with Google Search Ads as a secondary channel if budget allows.",
+                            "next_steps": [
+                                "Set up LinkedIn Campaign Manager account",
+                                "Create 3-5 ad variations targeting enterprise CTOs",
+                                "Set daily budget of $230 ($7K/month)",
+                                "Launch with 2-week test period",
+                                "Kill criteria: If cost per demo exceeds $200 after 2 weeks",
+                                "Scale criteria: If cost per demo is under $150, increase budget to $10K/month"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": "output_checker",
+            "name": "Output Checker",
+            "version": "1.0.0",
+            "type": "validation",
+            "description": "Ensures final answer consistency, coherence, and alignment with extracted goal.",
+            "responsibilities": [
+                "Check logical consistency",
+                "Ensure recommendation satisfies goal",
+                "Detect contradiction",
+                "Perform hallucination minimization check",
+                "Validate constraint references"
+            ],
+            "inputs": [
+                "final_answer",
+                "primary_goal",
+                "constraints"
+            ],
+            "outputs": [
+                "checked_answer",
+                "consistency_report"
+            ],
+            "depends_on": [
+                "answer_generator"
+            ],
+            "failure_modes": [
+                "Recommendation violates goal",
+                "Answer omits constraint reasoning"
+            ],
+            "retry_policy": "re-run reasoning_engine once if inconsistency detected",
+            "marketing_examples": [
+                {
+                    "scenario": "Consistency Check Pass",
+                    "input": {
+                        "final_answer": "Recommendation: LinkedIn Ads for 50 demos/month",
+                        "primary_goal": "Generate 50 qualified demos/month from enterprise CTOs",
+                        "constraints": [
+                            {
+                                "type": "budget",
+                                "value": "$10K/month"
+                            },
+                            {
+                                "type": "timeline",
+                                "value": "60 days"
+                            }
+                        ]
+                    },
+                    "output": {
+                        "checked_answer": "Recommendation: LinkedIn Ads for 50 demos/month",
+                        "consistency_report": {
+                            "goal_satisfied": true,
+                            "constraints_satisfied": true,
+                            "contradictions": [],
+                            "validation_status": "PASS"
+                        }
+                    }
+                },
+                {
+                    "scenario": "Consistency Check Fail - Budget Violation",
+                    "input": {
+                        "final_answer": "Recommendation: LinkedIn Ads + Google Ads + Content Marketing",
+                        "primary_goal": "Generate 50 demos/month",
+                        "constraints": [
+                            {
+                                "type": "budget",
+                                "value": "$10K/month"
+                            }
+                        ]
+                    },
+                    "output": {
+                        "checked_answer": null,
+                        "consistency_report": {
+                            "goal_satisfied": true,
+                            "constraints_satisfied": false,
+                            "contradictions": [
+                                "Recommended combination costs $15K/month, exceeds $10K budget constraint"
+                            ],
+                            "validation_status": "FAIL",
+                            "action": "re-run reasoning_engine with stricter budget enforcement"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

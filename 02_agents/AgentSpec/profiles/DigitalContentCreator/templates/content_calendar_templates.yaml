@@ -1,0 +1,387 @@
+content_calendar:
+  description: "Ready-to-use content calendar templates for systematic content planning"
+  version: "1.0.0"
+
+# ==========================================
+# MONTHLY CONTENT CALENDAR TEMPLATE
+# ==========================================
+
+monthly_calendar:
+  structure:
+    weeks: 4
+    posts_per_week: 5-7
+    total_monthly_posts: 20-30
+  
+  content_pillars:
+    - pillar: "Educational"
+      percentage: 40
+      frequency: "2-3x per week"
+      examples:
+        - "How-to tutorials"
+        - "Tips and tricks"
+        - "Industry insights"
+        - "Problem-solving content"
+    
+    - pillar: "Entertaining"
+      percentage: 30
+      frequency: "2x per week"
+      examples:
+        - "Memes"
+        - "Trends participation"
+        - "Behind-the-scenes"
+        - "Humor content"
+    
+    - pillar: "Promotional"
+      percentage: 20
+      frequency: "1-2x per week"
+      examples:
+        - "Product launches"
+        - "Special offers"
+        - "Testimonials"
+        - "Case studies"
+    
+    - pillar: "Community"
+      percentage: 10
+      frequency: "1x per week"
+      examples:
+        - "User-generated content"
+        - "Q&A sessions"
+        - "Polls and questions"
+        - "Community highlights"
+
+# ==========================================
+# WEEKLY CONTENT MIX
+# ==========================================
+
+weekly_content_mix:
+  monday:
+    theme: "Motivation Monday"
+    content_types:
+      - "Inspirational quote"
+      - "Success story"
+      - "Week goals"
+    platforms:
+      - instagram_feed
+      - instagram_story
+      - linkedin
+  
+  tuesday:
+    theme: "Tutorial Tuesday"
+    content_types:
+      - "How-to guide"
+      - "Step-by-step tutorial"
+      - "Educational carousel"
+    platforms:
+      - instagram_carousel
+      - tiktok
+      - youtube_shorts
+  
+  wednesday:
+    theme: "Wisdom Wednesday"
+    content_types:
+      - "Industry insights"
+      - "Expert tips"
+      - "Did you know?"
+    platforms:
+      - linkedin
+      - instagram_feed
+      - twitter
+  
+  thursday:
+    theme: "Throwback Thursday"
+    content_types:
+      - "Behind-the-scenes"
+      - "Journey story"
+      - "Before/after"
+    platforms:
+      - instagram_feed
+      - facebook
+      - instagram_story
+  
+  friday:
+    theme: "Fun Friday"
+    content_types:
+      - "Memes"
+      - "Trends"
+      - "Entertainment"
+    platforms:
+      - tiktok
+      - instagram_reels
+      - twitter
+  
+  saturday:
+    theme: "Social Saturday"
+    content_types:
+      - "User-generated content"
+      - "Community spotlight"
+      - "Q&A"
+    platforms:
+      - instagram_story
+      - facebook
+      - instagram_feed
+  
+  sunday:
+    theme: "Sunday Prep"
+    content_types:
+      - "Week ahead preview"
+      - "Planning tips"
+      - "Relaxation content"
+    platforms:
+      - instagram_story
+      - linkedin
+      - instagram_feed
+
+# ==========================================
+# SEASONAL PLANNING
+# ==========================================
+
+seasonal_calendar:
+  ramadan:
+    duration: "30 days"
+    posting_times:
+      - "Pre-Iftar: 5-6 PM (PEAK)"
+      - "Post-Iftar: 8-11 PM"
+      - "Suhoor: 2-4 AM"
+    
+    content_themes:
+      - "Ramadan tips"
+      - "Iftar recipes"
+      - "Spiritual content"
+      - "Family moments"
+      - "Charity initiatives"
+    
+    special_days:
+      - day: "First day"
+        content: "Ramadan Kareem greeting"
+      - day: "Mid-Ramadan"
+        content: "Reflection post"
+      - day: "Last 10 days"
+        content: "Spiritual focus"
+      - day: "Eid announcement"
+        content: "Eid Mubarak greeting"
+  
+  summer:
+    months: ["June", "July", "August"]
+    themes:
+      - "Summer skincare"
+      - "Beach essentials"
+      - "Travel content"
+      - "Summer sales"
+    
+    posting_adjustments:
+      - "Later posting times (people out during day)"
+      - "Vacation-themed content"
+      - "Light, fun content"
+  
+  back_to_school:
+    months: ["September", "October"]
+    themes:
+      - "Organization tips"
+      - "Student essentials"
+      - "Productivity hacks"
+      - "Back-to-routine"
+    
+    target_audience:
+      - "Students"
+      - "Parents"
+      - "Teachers"
+  
+  winter:
+    months: ["December", "January", "February"]
+    themes:
+      - "Winter skincare"
+      - "Cozy content"
+      - "New Year goals"
+      - "Winter fashion"
+  
+  egyptian_holidays:
+    - holiday: "Eid Al-Fitr"
+      content_focus: "Celebration, family, gratitude"
+    - holiday: "Eid Al-Adha"
+      content_focus: "Family, tradition, charity"
+    - holiday: "New Year"
+      content_focus: "Reflection, goals, celebration"
+    - holiday: "Mother's Day"
+      content_focus: "Appreciation, gifts, family"
+    - holiday: "Valentine's Day"
+      content_focus: "Love, gifts, self-care"
+
+# ==========================================
+# CAMPAIGN CALENDAR TEMPLATE
+# ==========================================
+
+campaign_calendar:
+  product_launch:
+    timeline: "4 weeks"
+    
+    week_1_teaser:
+      - day: "Monday"
+        content: "Mysterious teaser post"
+      - day: "Wednesday"
+        content: "Behind-the-scenes"
+      - day: "Friday"
+        content: "Countdown begins"
+    
+    week_2_buildup:
+      - day: "Monday"
+        content: "Product sneak peek"
+      - day: "Wednesday"
+        content: "Benefits highlight"
+      - day: "Friday"
+        content: "Influencer collaboration"
+    
+    week_3_launch:
+      - day: "Monday"
+        content: "Official launch announcement"
+      - day: "Wednesday"
+        content: "How-to use tutorial"
+      - day: "Friday"
+        content: "Customer testimonials"
+    
+    week_4_sustain:
+      - day: "Monday"
+        content: "User-generated content"
+      - day: "Wednesday"
+        content: "FAQ addressing"
+      - day: "Friday"
+        content: "Limited offer announcement"
+
+# ==========================================
+# CONTENT BATCHING SCHEDULE
+# ==========================================
+
+batching_schedule:
+  weekly_batch:
+    day: "Sunday"
+    duration: "3-4 hours"
+    tasks:
+      - "Plan next week content"
+      - "Create graphics"
+      - "Write captions"
+      - "Schedule posts"
+      - "Prepare Stories content"
+  
+  monthly_batch:
+    day: "Last Sunday of month"
+    duration: "Full day"
+    tasks:
+      - "Review previous month performance"
+      - "Plan next month themes"
+      - "Create content calendar"
+      - "Batch create graphics"
+      - "Write caption templates"
+      - "Schedule recurring content"
+
+# ==========================================
+# PLATFORM-SPECIFIC CALENDARS
+# ==========================================
+
+instagram_calendar:
+  daily_posting:
+    feed_posts: "1x per day"
+    reels: "3-5x per week"
+    stories: "5-10x per day"
+    carousels: "2-3x per week"
+  
+  optimal_times:
+    weekdays: ["9-11 AM", "7-10 PM"]
+    weekends: ["11 AM-2 PM", "8-10 PM"]
+
+tiktok_calendar:
+  daily_posting:
+    videos: "1-3x per day"
+  
+  optimal_times:
+    all_days: ["12-2 PM", "7-10 PM"]
+  
+  content_strategy:
+    - "Trend participation (daily)"
+    - "Original content (3x/week)"
+    - "Educational (2x/week)"
+
+facebook_calendar:
+  daily_posting:
+    posts: "1-2x per day"
+    stories: "3-5x per day"
+  
+  optimal_times:
+    weekdays: ["8-10 AM", "6-8 PM"]
+    weekends: ["10 AM-1 PM"]
+
+linkedin_calendar:
+  weekly_posting:
+    posts: "3-5x per week"
+  
+  optimal_times:
+    weekdays: ["7-9 AM", "12-1 PM", "5-6 PM"]
+  
+  content_focus:
+    - "Industry insights"
+    - "Professional tips"
+    - "Company updates"
+
+# ==========================================
+# CONTENT TRACKING TEMPLATE
+# ==========================================
+
+tracking_template:
+  fields:
+    - "Date"
+    - "Platform"
+    - "Content type"
+    - "Topic/Theme"
+    - "Caption"
+    - "Hashtags"
+    - "Posting time"
+    - "Reach"
+    - "Engagement"
+    - "Engagement rate"
+    - "Top comment"
+    - "Learnings"
+  
+  weekly_review:
+    - "Top 3 performing posts"
+    - "Bottom 3 performing posts"
+    - "Key insights"
+    - "Adjustments needed"
+
+# ==========================================
+# EMERGENCY CONTENT BANK
+# ==========================================
+
+emergency_content:
+  purpose: "Ready-to-post content for busy days"
+  
+  evergreen_topics:
+    - "Tips and tricks"
+    - "Did you know facts"
+    - "Motivational quotes"
+    - "Behind-the-scenes"
+    - "Customer testimonials"
+  
+  quantity: "10-15 posts ready"
+  
+  refresh_frequency: "Monthly"
+
+# ==========================================
+# CONTENT CALENDAR BEST PRACTICES
+# ==========================================
+
+best_practices:
+  planning:
+    - "Plan 2-4 weeks ahead"
+    - "Leave 20% flexibility for trends"
+    - "Batch create content"
+    - "Schedule in advance"
+  
+  execution:
+    - "Post consistently"
+    - "Engage within first hour"
+    - "Monitor performance"
+    - "Adjust based on data"
+  
+  optimization:
+    - "Review weekly"
+    - "A/B test posting times"
+    - "Analyze top performers"
+    - "Refine strategy monthly"

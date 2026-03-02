@@ -1,0 +1,8 @@
+# Spec-kit configuration for this repository
+products_dir: content/products
+templates_dir: Fleet.agents.OpeOps/templates
+prompts_dir: Fleet.agents.OpeOps/prompts
+manifest_name: manifest.json
+deploy:
+  copy_on_install: true
+  create_symlinks: false

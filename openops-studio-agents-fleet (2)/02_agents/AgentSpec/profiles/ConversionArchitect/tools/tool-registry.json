@@ -1,0 +1,76 @@
+{
+    "tool_registry": {
+        "version": "1.0.0",
+        "last_updated": "2026-01-10",
+        "total_tools": 5
+    },
+    "tools_by_category": {
+        "analytics": [
+            {
+                "tool_id": "funnel-analyzer",
+                "name": "Conversion Funnel Analyzer",
+                "file_path": "tools/funnel-analyzer.tool.json",
+                "status": "implemented",
+                "language": "python"
+            },
+            {
+                "tool_id": "heatmap-insights",
+                "name": "Heatmap Insights Extractor",
+                "file_path": "tools/heatmap-insights.tool.json",
+                "status": "spec",
+                "language": "python"
+            }
+        ],
+        "experimentation": [
+            {
+                "tool_id": "ab-test-calculator",
+                "name": "A/B Test Statistical Significance Calculator",
+                "file_path": "tools/ab-test-calculator.tool.json",
+                "status": "implemented",
+                "language": "typescript"
+            }
+        ],
+        "prioritization": [
+            {
+                "tool_id": "rice-prioritizer",
+                "name": "RICE Experiment Prioritizer",
+                "file_path": "tools/rice-prioritizer.tool.json",
+                "status": "spec",
+                "language": "python"
+            },
+            {
+                "tool_id": "lever-diagnostics",
+                "name": "Lever Framework Diagnostics Tool",
+                "file_path": "tools/lever-diagnostics.tool.json",
+                "status": "spec",
+                "language": "python"
+            }
+        ]
+    },
+    "integration_guides": {
+        "google_analytics_4": {
+            "api_documentation": "https://developers.google.com/analytics/devguides/reporting/data/v1",
+            "authentication": "OAuth 2.0",
+            "rate_limits": "10 requests/second, 10,000/day",
+            "recommended_use": "Traffic sources, funnel data extraction"
+        },
+        "hotjar": {
+            "api_documentation": "https://help.hotjar.com/hc/en-us/articles/115011639927",
+            "authentication": "API Key",
+            "rate_limits": "100 requests/minute (Enterprise)",
+            "recommended_use": "Heatmap data, session replay metadata"
+        },
+        "vwo": {
+            "api_documentation": "https://developers.vwo.com/reference/introduction",
+            "authentication": "API Token",
+            "rate_limits": "Varies by plan",
+            "recommended_use": "A/B test management, results retrieval"
+        },
+        "mixpanel": {
+            "api_documentation": "https://developer.mixpan el.com/reference/overview",
+            "authentication": "API Secret",
+            "rate_limits": "60 requests/minute",
+            "recommended_use": "Event-based funnel analysis, cohorts"
+        }
+    }
+}

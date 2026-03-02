@@ -1,0 +1,285 @@
+{
+  "authorization_matrix": {
+    "version": "2.0.0",
+    "type": "agent_permission_system",
+    "description": "Defines granular authorization, permission boundaries, access control, and delegation protocols for all OpenOps agents.",
+    "author": "OpenOps Studio | Created by Mamdouh Aboammar",
+    "last_updated": "2025-12-19",
+    "governance": {
+      "managed_by": "SupervisorAgent",
+      "approved_by": "StaffEngineer",
+      "compliance_with": [
+        "06_Security_Compliance_and_Privacy_Gates.md",
+        "00B_OpenOps_Audit_and_Decision_Ledger.json",
+        "00_OpenOps_Constitution_and_IP_Policy.md"
+      ]
+    },
+
+    "permission_levels": {
+      "L0_SYSTEM_ADMIN": {
+        "description": "Full system control with no restrictions",
+        "agents": ["Orchestrator", "StaffEngineer"],
+        "capabilities": [
+          "modify_system_config",
+          "override_any_decision",
+          "emergency_shutdown",
+          "access_all_memory_layers",
+          "delegate_to_any_agent",
+          "modify_permission_matrix"
+        ],
+        "restrictions": []
+      },
+      "L1_SUPERVISOR": {
+        "description": "High-level coordination and approval authority",
+        "agents": ["SupervisorAgent", "SeniorProductManager", "SecurityLead"],
+        "capabilities": [
+          "approve_round_decisions",
+          "escalate_to_L0",
+          "access_working_memory",
+          "trigger_recovery_protocols",
+          "veto_execution_decisions",
+          "review_audit_logs"
+        ],
+        "restrictions": [
+          "cannot_modify_system_config",
+          "cannot_access_encrypted_secrets",
+          "requires_approval_for_critical_changes"
+        ]
+      },
+      "L2_DOMAIN_AUTHORITY": {
+        "description": "Specialized domain experts with scoped authority",
+        "agents": [
+          "ResearchBriefAgent",
+          "SynthesizerAgent",
+          "QAOrchestrator",
+          "SecurityArchitect",
+          "UXArchitect"
+        ],
+        "capabilities": [
+          "execute_domain_specific_tasks",
+          "access_relevant_memory_segments",
+          "generate_recommendations",
+          "validate_domain_outputs",
+          "request_resources"
+        ],
+        "restrictions": [
+          "cannot_modify_other_domains",
+          "cannot_escalate_beyond_supervisor",
+          "limited_to_assigned_scope"
+        ]
+      },
+      "L3_SPECIALIST": {
+        "description": "Narrow-scope specialists performing specific tasks",
+        "agents": [
+          "WorkerAgents",
+          "EvaluatorAgent",
+          "RedTeamAgent",
+          "SkepticAgent",
+          "ContentOptimizer",
+          "DataAnalyst"
+        ],
+        "capabilities": [
+          "execute_assigned_tasks",
+          "read_relevant_context",
+          "generate_outputs",
+          "report_findings",
+          "request_clarification"
+        ],
+        "restrictions": [
+          "cannot_make_strategic_decisions",
+          "cannot_access_system_config",
+          "cannot_delegate_tasks",
+          "limited_memory_access"
+        ]
+      },
+      "L4_EXECUTION_ONLY": {
+        "description": "Pure execution agents with minimal autonomy",
+        "agents": ["CodeExecutor", "DataCollector", "FileProcessor"],
+        "capabilities": [
+          "execute_specific_commands",
+          "read_assigned_files",
+          "write_to_designated_outputs",
+          "report_status"
+        ],
+        "restrictions": [
+          "no_decision_making",
+          "no_memory_access",
+          "no_escalation_rights",
+          "requires_explicit_instructions"
+        ]
+      }
+    },
+
+    "resource_access_control": {
+      "memory_access": {
+        "short_term_memory": {
+          "read": ["L0", "L1", "L2", "L3"],
+          "write": ["L0", "L1", "L2"],
+          "delete": ["L0", "L1"]
+        },
+        "working_memory": {
+          "read": ["L0", "L1", "L2"],
+          "write": ["L0", "L1", "L2"],
+          "delete": ["L0", "L1"]
+        },
+        "long_term_memory": {
+          "read": ["L0", "L1", "L2"],
+          "write": ["L0", "L1"],
+          "delete": ["L0"]
+        },
+        "audit_memory": {
+          "read": ["L0", "L1"],
+          "write": ["L0", "L1"],
+          "delete": []
+        }
+      },
+      "file_system_access": {
+        "read_config_files": ["L0", "L1", "L2"],
+        "write_config_files": ["L0", "L1"],
+        "read_user_data": ["L0", "L1", "L2", "L3"],
+        "write_user_data": ["L0", "L1", "L2"],
+        "delete_files": ["L0", "L1"],
+        "execute_scripts": ["L0", "L1", "L4"]
+      },
+      "external_api_access": {
+        "make_api_calls": ["L0", "L1", "L2", "L3"],
+        "authenticate_apis": ["L0", "L1"],
+        "modify_api_keys": ["L0"],
+        "rate_limit_override": ["L0", "L1"]
+      },
+      "agent_communication": {
+        "broadcast_messages": ["L0", "L1"],
+        "send_direct_messages": ["L0", "L1", "L2", "L3"],
+        "receive_messages": ["L0", "L1", "L2", "L3", "L4"],
+        "block_communications": ["L0", "L1"]
+      }
+    },
+
+    "delegation_protocols": {
+      "vertical_delegation": {
+        "description": "Delegation from higher to lower permission levels",
+        "rules": [
+          "L0 can delegate to any level with full authority transfer",
+          "L1 can delegate to L2-L4 with scoped authority",
+          "L2 can delegate to L3-L4 with explicit task boundaries",
+          "L3 cannot delegate",
+          "L4 cannot delegate"
+        ],
+        "requirements": [
+          "clear_scope_definition",
+          "time_bounded_authority",
+          "audit_trail_logging",
+          "revocation_mechanism"
+        ]
+      },
+      "horizontal_delegation": {
+        "description": "Delegation between agents at the same level",
+        "rules": [
+          "Requires supervisor approval for L1",
+          "Automatic for L2 within same domain",
+          "Blocked for L3 and L4"
+        ],
+        "requirements": [
+          "mutual_capability_compatibility",
+          "no_authority_escalation",
+          "transparent_handoff"
+        ]
+      },
+      "temporary_elevation": {
+        "description": "Temporary permission escalation for specific tasks",
+        "rules": [
+          "L3 can request L2 permissions for defined duration",
+          "L2 can request L1 permissions with justification",
+          "All elevations expire automatically",
+          "All elevations are logged and auditable"
+        ],
+        "max_duration": "1_hour",
+        "approval_required_from": ["L1", "L0"],
+        "auto_revoke_on": ["task_completion", "timeout", "error_condition"]
+      }
+    },
+
+    "security_boundaries": {
+      "data_classification": {
+        "PUBLIC": {
+          "access": ["L0", "L1", "L2", "L3", "L4"],
+          "encryption": "none",
+          "examples": ["public documentation", "open-source code"]
+        },
+        "INTERNAL": {
+          "access": ["L0", "L1", "L2", "L3"],
+          "encryption": "at_rest",
+          "examples": ["internal research", "draft documents"]
+        },
+        "CONFIDENTIAL": {
+          "access": ["L0", "L1", "L2"],
+          "encryption": "end_to_end",
+          "examples": ["user data", "business metrics"]
+        },
+        "SECRET": {
+          "access": ["L0", "L1"],
+          "encryption": "hardware_backed",
+          "examples": ["API keys", "authentication tokens"]
+        },
+        "TOP_SECRET": {
+          "access": ["L0"],
+          "encryption": "quantum_resistant",
+          "examples": ["system credentials", "security keys"]
+        }
+      },
+      "isolation_requirements": {
+        "L4_agents": "sandboxed_execution_environment",
+        "L3_agents": "namespace_isolation",
+        "L2_agents": "resource_quotas",
+        "L1_agents": "monitored_access",
+        "L0_agents": "unrestricted_with_audit"
+      }
+    },
+
+    "audit_and_compliance": {
+      "mandatory_logging": {
+        "all_permission_escalations": true,
+        "all_delegation_events": true,
+        "all_authorization_failures": true,
+        "all_resource_access_by_L1_and_above": true,
+        "all_system_config_changes": true
+      },
+      "review_cycles": {
+        "permission_matrix_review": "quarterly",
+        "agent_access_audit": "monthly",
+        "security_boundary_validation": "weekly",
+        "incident_response_review": "as_needed"
+      },
+      "violation_handling": {
+        "minor_violation": "warning_and_log",
+        "moderate_violation": "temporary_suspension",
+        "major_violation": "permanent_revocation",
+        "critical_violation": "system_wide_alert_and_investigation"
+      }
+    },
+
+    "emergency_protocols": {
+      "circuit_breaker": {
+        "trigger_conditions": [
+          "repeated_authorization_failures",
+          "suspicious_access_patterns",
+          "system_resource_exhaustion",
+          "external_security_threat"
+        ],
+        "actions": [
+          "immediate_suspension_of_L3_L4",
+          "elevated_monitoring_of_L2",
+          "alert_L1_and_L0",
+          "activate_incident_response"
+        ],
+        "recovery": "manual_approval_from_L0"
+      },
+      "emergency_shutdown": {
+        "authorized_by": ["L0"],
+        "scope": "all_agents",
+        "preservation": ["audit_logs", "critical_state"],
+        "notification": "immediate_to_all_stakeholders"
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+description: Marketing Growth Agent - Behavioral Regression Suite (Example)
+
+providers:
+  - id: openai:gpt-4o-mini
+    config:
+      temperature: 0.2
+
+prompts:
+  - file://../datasets/prompts/local_clinic_brief.txt
+  - file://../datasets/prompts/local_restaurant_brief.txt
+
+tests:
+  - description: Enforce Impossible-Level output contract when proposing growth ideas
+    assert:
+      - type: regex
+        value: "Trigger\\s*→\\s*Action\\s*→\\s*Reward\\s*→\\s*Friction\\s*→\\s*Metric\\s*→\\s*Failure\\s*Mode"
+      - type: regex
+        value: "MVP\\s*\\(1-day\\)"
+      - type: regex
+        value: "MVP\\+\\+\\s*\\(1-week\\)"
+      - type: regex
+        value: "Not\\s*Built"
+      - type: regex
+        value: "7\\s*[–-]\\s*14\\s*day"
+

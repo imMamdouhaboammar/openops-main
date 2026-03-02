@@ -1,0 +1,43 @@
+{
+    "workflows": {
+        "standard": [
+            {
+                "id": "linkedin-post-creation",
+                "name": "LinkedIn Long-Form Post Creation (Egyptian/Saudi)",
+                "freq": "per_request",
+                "duration": "30-45 min",
+                "file": "standard-workflows/linkedin-post.md"
+            },
+            {
+                "id": "twitter-thread-creation",
+                "name": "Twitter Thread Creation (10-15 tweets)",
+                "freq": "per_request",
+                "duration": "20-30 min",
+                "file": "standard-workflows/twitter-thread.md"
+            },
+            {
+                "id": "blog-post-creation",
+                "name": "Blog Post Creation (2000-5000 words)",
+                "freq": "per_request",
+                "duration": "60-90 min",
+                "file": "standard-workflows/blog-post.md"
+            }
+        ],
+        "advanced": [
+            {
+                "id": "viral-campaign",
+                "name": "Viral Content Campaign (Multi-Platform)",
+                "freq": "monthly",
+                "duration": "2-3 hours",
+                "file": "advanced-workflows/viral-campaign.md"
+            },
+            {
+                "id": "dialect-adaptation",
+                "name": "Fusha → Dialect Adaptation",
+                "freq": "as_needed",
+                "duration": "15-20 min",
+                "file": "advanced-workflows/dialect-adaptation.md"
+            }
+        ]
+    }
+}

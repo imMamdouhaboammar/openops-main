@@ -1,0 +1,77 @@
+{
+    "id": "kb_master_index_v2",
+    "name": "Momint Copy Brain — Master Graph",
+    "version": "2.0",
+    "language_defaults": {
+      "primary": "ar",
+      "allow_code_switching": true,
+      "dialects": ["ar-EG (casual)", "ar-SA (formal when needed)"],
+      "style_notes": [
+        "اكتب عربي بسيط، مسموع، مع إدخال كلمات English طبيعية (brand, package, marketing messages, notice period).",
+        "تجنّب المبالغة؛ ركّز على الوضوح والنتيجة.",
+        "لما الجمهور سعودي، راعِ الفروقات في الكلمات (مثال: مرّة/جداً)."
+      ]
+    },
+    "task_router": {
+      "caption": {
+        "priority_neurons": ["neuron_frameworks_models_v1", "neuron_persuasion_triggers_v1", "neuron_conversion_rate_cro_v1"],
+        "scoring": ["clarity", "hook_strength", "cta_presence"]
+      },
+      "ad_copy": {
+        "priority_neurons": ["neuron_frameworks_models_v1", "neuron_product_worksheet_v1", "neuron_persuasion_triggers_v1"],
+        "scoring": ["clarity", "benefit_focus", "proof", "cta_strength"]
+      },
+      "campaign": {
+        "priority_neurons": ["neuron_campaign_execution_ccc_v1", "neuron_buyer_persona_targets_v1", "neuron_product_worksheet_v1"],
+        "scoring": ["insight_fit", "message_market_fit", "consistency", "cta_strength"]
+      },
+      "sales_process": {
+        "priority_neurons": ["neuron_mindset_role_v1", "neuron_conversion_rate_cro_v1", "neuron_validation_qa_v1"],
+        "scoring": ["clarity", "trust", "next_step"]
+      }
+    },
+    "scoring_weights": {
+      "clarity": 0.2,
+      "benefit_focus": 0.15,
+      "proof": 0.15,
+      "cta_strength": 0.15,
+      "hook_strength": 0.15,
+      "insight_fit": 0.2,
+      "message_market_fit": 0.15,
+      "consistency": 0.1,
+      "trust": 0.15,
+      "next_step": 0.15
+    },
+    "neuron_index": [
+      {"id": "neuron_mindset_role_v1", "file": "neuron_mindset_role_v1.json"},
+      {"id": "neuron_frameworks_models_v1", "file": "neuron_frameworks_models_v1.json"},
+      {"id": "neuron_ttpm_strategy_v1", "file": "neuron_ttpm_strategy_v1.json"},
+      {"id": "neuron_conversion_rate_cro_v1", "file": "neuron_conversion_rate_cro_v1.json"},
+      {"id": "neuron_product_worksheet_v1", "file": "neuron_product_worksheet_v1.json"},
+      {"id": "neuron_buyer_persona_targets_v1", "file": "neuron_buyer_persona_targets_v1.json"},
+      {"id": "neuron_persuasion_triggers_v1", "file": "neuron_persuasion_triggers_v1.json"},
+      {"id": "neuron_campaign_execution_ccc_v1", "file": "neuron_campaign_execution_ccc_v1.json"},
+      {"id": "neuron_ai_integration_ops_v1", "file": "neuron_ai_integration_ops_v1.json"},
+      {"id": "neuron_validation_qa_v1", "file": "neuron_validation_qa_v1.json"}
+    ],
+    "guardrails": {
+      "medical": "لغة غير تشخيصية + تنويه أن المحتوى لا يغني عن استشارة الطبيب.",
+      "financial": "بدون وعود مضللة (أرباح مضمونة). اربط دائمًا Proof أو Disclaimer.",
+      "ethics": "استخدم التحفيز النفسي بذكاء مش بخداع.",
+      "localization": "كيّف النغمة حسب السوق (KSA رسمي + Proof، EGY casual + Mix Eng-Ar)."
+    },
+    "llm_prompts": {
+      "build_campaign": "استخدم المراحل من neuron_campaign_execution_ccc_v1 لبناء حملة كاملة: Insight → Concept → Pillars → Messaging (TOF/MOF/BOF) → Formats → LP Map → KPIs/Tests → Timeline.",
+      "validate_output": "شيّك على الحملة/النص باستخدام neuron_validation_qa_v1، ارجع تقرير ✅/❌ + توصيات.",
+      "pick_framework": "اختر Framework مناسب (AIDA, PAS, BAB, 4P, FABM) من neuron_frameworks_models_v1 بناءً على الهدف والجمهور.",
+      "persona_mapping": "استخرج Personas من neuron_buyer_persona_targets_v1 واربطها بالـ Messaging Matrix.",
+      "trigger_selection": "اختر 2–3 Triggers مناسبة من neuron_persuasion_triggers_v1 لكل Persona/Funnel Stage.",
+      "cro_check": "استخدم neuron_conversion_rate_cro_v1 لتحديد هل الـ Copy عنده Proof + CTA + وضوح + يقلل الاحتكاك.",
+      "ai_helper": "لو احتجت Variants أو تلخيص، استخدم workflow من neuron_ai_integration_ops_v1."
+    },
+    "industry_context": {
+      "input_key": "industry",
+      "fallback": "auto",
+      "auto_detection_sources": ["product_worksheet", "persona_signals", "brand_docs"]
+    }
+  }

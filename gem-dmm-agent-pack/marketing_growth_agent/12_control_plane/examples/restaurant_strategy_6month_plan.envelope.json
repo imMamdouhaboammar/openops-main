@@ -1,0 +1,69 @@
+{
+  "envelopeVersion": "1.0.0",
+  "taskId": "TASK-RESTAURANT-STRATEGY-6M-0001",
+  "mode": "operator",
+  "podId": "POD-STRATEGY",
+  "authorization": {
+    "supervisorToken": "SUPERVISOR_TOKEN_EXAMPLE_ONLY",
+    "expiresAt": "2026-01-24T13:00:00Z",
+    "idempotencyKey": "idem-2026-01-24-restaurant-strategy-6m-0001"
+  },
+  "objective": "Create a 6-month growth operating plan for a single-location restaurant, decomposed into 90/30/7-day plans with KPIs/OKRs and a 7–14 day experiment backlog.",
+  "context": {
+    "clientType": "restaurant",
+    "clientName": "Example Restaurant",
+    "location": "Single location",
+    "primaryConversion": "Reservations + WhatsApp orders",
+    "goalHorizonDays": 180
+  },
+  "inputs": {
+    "brief": {
+      "budgetPaidMediaMonthly": 1500,
+      "currency": "USD",
+      "goal90Days": "+20% revenue with Mon–Wed utilization focus",
+      "constraints": [
+        "Thu–Sat evenings near capacity (avoid over-driving peak demand)",
+        "No CRM; primary conversion is phone/WhatsApp"
+      ],
+      "assets": ["menu photos", "some reviews", "no brand kit"]
+    }
+  },
+  "constraints": {
+    "deadline": "2026-01-31T18:00:00Z",
+    "compliance": {
+      "clinicRules": false,
+      "avoidMisleadingClaims": true
+    },
+    "budget": { "maxSpend": 0, "currency": "USD" },
+    "scope": {
+      "inScope": [
+        "KPI tree and OKRs",
+        "channel strategy (paid + GBP + organic)",
+        "offer architecture (weekday-specific)",
+        "experiment backlog (7–14 day tests) with kill metrics",
+        "90/30/7 day decomposition"
+      ],
+      "outOfScope": ["creative production", "ad account setup", "dashboard implementation"]
+    }
+  },
+  "expectedOutputs": [
+    "6-month roadmap",
+    "90-day plan #1 (days 1–90)",
+    "90-day plan #2 (days 91–180)",
+    "Month 1 (30-day) delivery plan",
+    "Week 1 (7-day) micro-plan",
+    "KPI tree + OKRs",
+    "Experiment backlog (7–14 day tests) with kill metrics"
+  ],
+  "qualityGates": [
+    "Plan explicitly accounts for capacity constraints (do not flood peak hours)",
+    "Every initiative is measurable and testable",
+    "Includes at least 5 experiments with kill metrics and decision dates"
+  ],
+  "approvalGates": [
+    "Client approves revenue goals and KPI targets",
+    "Client approves offer architecture (weekday promos vs premium positioning)"
+  ],
+  "returnFormat": "artifact_plus_decisions"
+}
+

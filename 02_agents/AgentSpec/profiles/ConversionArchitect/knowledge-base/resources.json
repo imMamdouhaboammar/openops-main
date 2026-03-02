@@ -1,0 +1,70 @@
+{
+    "knowledge_base": {
+        "version": "1.0.0",
+        "last_updated": "2026-01-10"
+    },
+    "resources": [
+        {
+            "id": "cro-frameworks",
+            "name": "CRO Frameworks & Best Practices",
+            "file_path": "knowledge-base/cro-frameworks.md",
+            "topics": [
+                "Lever Framework",
+                "RICE",
+                "PIE",
+                "Cialdini's Principles",
+                "Tools Ecosystem"
+            ]
+        }
+    ],
+    "external_sources": [
+        {
+            "name": "CXL Blog",
+            "url": "https://cxl.com/blog/",
+            "type": "blog",
+            "focus": [
+                "CRO tactics",
+                "Case studies",
+                "Research"
+            ]
+        },
+        {
+            "name": "Baymard Institute",
+            "url": "https://baymard.com/",
+            "type": "research",
+            "focus": [
+                "E-commerce UX",
+                "100+ studies",
+                "Benchmarks"
+            ]
+        },
+        {
+            "name": "Nielsen Norman Group",
+            "url": "https://www.nngroup.com/",
+            "type": "research",
+            "focus": [
+                "Usability",
+                "UX research",
+                "Eye tracking"
+            ]
+        }
+    ],
+    "industry_benchmarks": {
+        "ecommerce": {
+            "homepage_to_product": "30-40%",
+            "product_to_cart": "5-10%",
+            "cart_to_checkout": "30-40%",
+            "overall_conversion": "1-3%"
+        },
+        "saas": {
+            "free_trial_signup": "2-5%",
+            "trial_to_paid": "10-25%",
+            "annual_vs_monthly_lift": "15-20%"
+        },
+        "b2b": {
+            "lead_form_conversion": "2-5%",
+            "demo_request": "1-3%",
+            "sql_rate": "20-30%"
+        }
+    }
+}

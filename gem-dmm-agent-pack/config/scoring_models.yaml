@@ -1,0 +1,118 @@
+# gem-dmm-agent-pack/config/scoring_models.yaml
+# Pack Version: 1.0.0 | 2026-02-13
+#
+# Purpose: Evidence scoring + confidence scoring + enforcement rules.
+
+evidence_policy:
+  key_recommendation_definition:
+    triggers:
+      - "Budget-impacting recommendation (changes spend allocation or adds a new paid channel)."
+      - "Tracking architecture change (GA4/GTM/Server-side tracking/CAPI changes)."
+      - "Channel addition/removal or major funnel redesign."
+      - "Any claim of benchmark or expected uplift (CTR, CVR, ROAS, CAC, LTV)."
+      - "Any time-sensitive platform feature claim."
+
+  independent_confirmation_rule:
+    min_confirmations: 3
+    must_be_independent: true
+    independence_unit: "independence_group"
+    reddit_counts: false
+    allowed_confirmation_mix:
+      - "At least 2 confirmations should be from trust tier A sources when possible for platform-specific claims."
+      - "For timeless concepts, trust tier B may suffice, but still require ≥3 confirmations."
+
+  recency:
+    recency_decay_days: 120
+    decay_curve: "linear_to_floor"
+    floor_score: 0.20
+    timeless_exceptions:
+      # These bypass the recency decay *only* for conceptual claims (not platform-specific features).
+      - "experiment_design_basics"
+      - "segmentation_principles"
+      - "positioning_fundamentals"
+      - "offer_clarity_principles"
+      - "copywriting_principles"
+      - "funnel_diagnostics"
+      - "measurement_principles"
+    platform_specific_claims_always_require_recent_docs: true
+
+  scoring_factors:
+    # Factor scores are normalized [0..1]
+    source_credibility:
+      weight: 0.30
+      guidance:
+        - "Use official docs as highest credibility."
+        - "Downgrade sources with unclear authorship or incentives."
+    factual_consistency:
+      weight: 0.25
+      guidance:
+        - "Check claims against at least 2 other sources."
+        - "If contradictions exist, document them and downgrade."
+    contextual_relevance:
+      weight: 0.15
+      guidance:
+        - "Directly supports the CQ and the section claim."
+    recency_and_freshness:
+      weight: 0.15
+      guidance:
+        - "Apply 120-day decay for time-sensitive claims."
+    corroboration:
+      weight: 0.10
+      guidance:
+        - "Count unique independence groups."
+    ethical_compliance:
+      weight: 0.05
+      guidance:
+        - "Must not violate privacy or ethical marketing rules."
+
+  scoring_algorithm:
+    method: "weighted_composite_score"
+    scale: [0.0, 1.0]
+    thresholds:
+      high: 0.85
+      medium: 0.65
+      low: 0.40
+      reject: 0.25
+    penalties:
+      reddit_primary_evidence_penalty: 0.25
+      uncited_claim_penalty: 0.30
+      outdated_platform_claim_penalty: 0.20
+    bonuses:
+      three_independent_confirmations_bonus: 0.05
+
+confidence_policy:
+  per_major_section_required: true
+  confidence_score_formula:
+    description: "Confidence is derived from (1) evidence composite score, (2) data availability, (3) constraints clarity, (4) platform specificity risk."
+    components:
+      evidence_composite_score: { weight: 0.55 }
+      data_availability_score: { weight: 0.20 }
+      constraints_clarity_score: { weight: 0.15 }
+      platform_specificity_risk_adjustment: { weight: 0.10, effect: "subtract" }
+    output:
+      score_range: [0.0, 1.0]
+      banding:
+        - { band: "high", min: 0.85 }
+        - { band: "medium", min: 0.65 }
+        - { band: "low", min: 0.40 }
+        - { band: "very_low", min: 0.00 }
+  caps:
+    if_browsing_disabled_max_confidence: 0.65
+    if_missing_baseline_or_target_max_confidence: 0.70
+
+evidence_record_template:
+  fields:
+    - "claim_id"
+    - "claim_text"
+    - "claim_type (platform_specific|timeless|benchmark|hypothesis)"
+    - "date_accessed"
+    - "source_id"
+    - "source_url"
+    - "source_publish_date (if available)"
+    - "independence_group"
+    - "trust_tier"
+    - "excerpt_or_note"
+    - "supports_or_contradicts (supports|contradicts|context)"
+    - "factor_scores"
+    - "composite_score"
+

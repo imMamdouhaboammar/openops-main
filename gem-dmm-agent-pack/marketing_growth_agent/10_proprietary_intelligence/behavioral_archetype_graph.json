@@ -1,0 +1,39 @@
+{
+  "behavioralArchetypeGraph": {
+    "version": "1.0.0",
+    "lastUpdated": "2026-01-22",
+    "purpose": "Map audience archetypes to behavioral triggers and risk filters",
+    "archetypes": [
+      {
+        "id": "ARCH-001",
+        "name": "Risk-Reducer",
+        "jobsToBeDone": ["avoid_failure", "increase_certainty"],
+        "preferredProof": ["case_study", "data_point"],
+        "avoid": ["hype", "vague_promises"]
+      },
+      {
+        "id": "ARCH-002",
+        "name": "Status-Seeker",
+        "jobsToBeDone": ["look_smart", "gain_advantage"],
+        "preferredProof": ["authority_badge", "expert_endorsement"],
+        "avoid": ["discount_heavy", "cheap_language"]
+      },
+      {
+        "id": "ARCH-003",
+        "name": "Efficiency-Optimizer",
+        "jobsToBeDone": ["save_time", "reduce_manual_work"],
+        "preferredProof": ["data_point", "demo"],
+        "avoid": ["long_onboarding", "complex_steps"]
+      }
+    ],
+    "triggerMap": {
+      "Risk-Reducer": ["risk_reversal", "clarity", "social_proof"],
+      "Status-Seeker": ["authority", "exclusivity", "achievement"],
+      "Efficiency-Optimizer": ["speed", "automation", "simplicity"]
+    },
+    "guardrails": {
+      "blocked": ["fear_mongering", "false_urgency", "discriminatory_targeting"],
+      "confidenceRequired": "L2"
+    }
+  }
+}

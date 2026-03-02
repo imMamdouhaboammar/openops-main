@@ -1,0 +1,496 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# OUTPUT CONTRACT
+# Enforced structure for each stage output
+# Version: 1.0.0
+# ═══════════════════════════════════════════════════════════════════════════════
+
+version: "1.0.0"
+enforcement: strict
+
+stage_outputs:
+  stage_0_safety_and_scope:
+    description: "Initial safety check and scope validation output"
+    required_blocks:
+      - name: "safety_check"
+        type: "object"
+        required_fields:
+          - "pii_detected: boolean"
+          - "scope_valid: boolean"
+          - "warnings: array of strings"
+      
+      - name: "scope_confirmation"
+        type: "object"
+        required_fields:
+          - "is_marketing_related: boolean"
+          - "primary_domain: string"
+          - "redirect_needed: boolean"
+    
+    optional_blocks:
+      - "disclaimer_text"
+    
+    format:
+      type: "json"
+      description: "Structured output for programmatic handling"
+
+  stage_1_discovery_interview:
+    description: "Discovery interview output"
+    required_blocks:
+      - name: "current_understanding"
+        type: "object"
+        required_fields:
+          - "business_model: string"
+          - "industry: string"
+          - "primary_goal: string"
+          - "target_audience_summary: string"
+          - "budget_range: string"
+          - "current_channels: array"
+          - "key_challenges: array"
+      
+      - name: "knowns"
+        type: "array"
+        description: "Facts confirmed during discovery"
+        item_structure:
+          - "fact: string"
+          - "source: string (user_stated | inferred | assumed)"
+          - "confidence: string (confirmed | likely | uncertain)"
+      
+      - name: "unknowns"
+        type: "array"
+        description: "Critical information still needed"
+        item_structure:
+          - "unknown: string"
+          - "importance: string (critical | important | nice_to_have)"
+          - "blocking_cq: boolean"
+      
+      - name: "next_questions"
+        type: "array"
+        constraints:
+          max_items: 5
+        description: "Questions to ask in next round"
+        item_structure:
+          - "question: string"
+          - "purpose: string"
+          - "priority: integer (1-5)"
+    
+    format:
+      type: "markdown"
+      template_ref: "templates/discovery_summary.md"
+
+  stage_2_core_question_lock:
+    description: "Core Question output for validation"
+    required_blocks:
+      - name: "cq"
+        type: "object"
+        required_fields:
+          - "core_question: string"
+          - "success_metric: string"
+          - "baseline: string | number"
+          - "target: string | number"
+          - "time_horizon_days: integer"
+          - "audience_icp: string"
+          - "constraints: array"
+      
+      - name: "why_this_cq"
+        type: "string"
+        description: "Rationale for why this is THE question to answer"
+        min_length: 100
+      
+      - name: "validity_checklist"
+        type: "object"
+        required_fields:
+          - "single_answerable_question: boolean"
+          - "measurable_success_metric: boolean"
+          - "quantifiable_baseline_target: boolean"
+          - "realistic_timeframe: boolean"
+          - "specific_audience: boolean"
+          - "all_required_fields_populated: boolean"
+      
+      - name: "missing_info"
+        type: "array"
+        description: "Information needed to validate CQ"
+        item_structure:
+          - "missing: string"
+          - "impact_on_cq: string"
+      
+      - name: "user_action_required"
+        type: "object"
+        required_fields:
+          - "action: string (confirm | refine | provide_info)"
+          - "prompt: string"
+    
+    format:
+      type: "markdown"
+      validation_required: true
+      user_confirmation_required: true
+
+  stage_3_research_plan_and_grounding:
+    description: "Research output with evidence"
+    required_blocks:
+      - name: "research_queries"
+        type: "array"
+        description: "Search queries executed"
+        item_structure:
+          - "query: string"
+          - "purpose: string"
+          - "sources_consulted: array"
+      
+      - name: "evidence_log"
+        type: "array"
+        description: "Evidence gathered and scored"
+        item_structure:
+          - "claim: string"
+          - "sources: array"
+          - "confidence_score: number (0-1)"
+          - "confidence_band: string"
+          - "assumptions: array"
+          - "notes: string"
+      
+      - name: "source_summary"
+        type: "object"
+        required_fields:
+          - "total_sources: integer"
+          - "tier_a_count: integer"
+          - "tier_b_count: integer"
+          - "tier_c_count: integer"
+          - "tier_d_count: integer"
+          - "independence_groups_covered: array"
+    
+    format:
+      type: "markdown"
+      template_ref: "templates/research_summary.md"
+
+  stage_4_strategy_generation:
+    description: "Full strategy output"
+    required_blocks:
+      - name: "executive_summary"
+        type: "string"
+        max_length: 500
+      
+      - name: "cq_restatement"
+        type: "object"
+        description: "The validated Core Question"
+        ref_schema: "schemas/cq_schema.json"
+      
+      - name: "strategy_spine"
+        type: "object"
+        required_fields:
+          - "truth: string"
+          - "direction: string"
+          - "action: string"
+          - "assumptions: array"
+          - "evidence_plan: array"
+          - "confidence_score: number"
+          - "next_step_questions: array"
+      
+      - name: "positioning_and_icp"
+        type: "object"
+        required_fields:
+          - "positioning_statement: string"
+          - "icp_definition: string"
+          - "secondary_audiences: array"
+          - "assumptions: array"
+          - "evidence_plan: array"
+          - "confidence_score: number"
+          - "next_step_questions: array"
+      
+      - name: "offer_and_funnel"
+        type: "object"
+        required_fields:
+          - "offer_clarity: string"
+          - "funnel_stages: object"
+          - "funnel_gaps: array"
+          - "assumptions: array"
+          - "evidence_plan: array"
+          - "confidence_score: number"
+          - "next_step_questions: array"
+      
+      - name: "channel_mix"
+        type: "object"
+        required_fields:
+          - "recommended_channels: array"
+          - "rationale: string"
+          - "budget_allocation: object"
+          - "assumptions: array"
+          - "evidence_plan: array"
+          - "confidence_score: number"
+          - "next_step_questions: array"
+      
+      - name: "paid_media"
+        type: "object"
+        required_fields:
+          - "platform_recommendations: array"
+          - "testing_matrix: object"
+          - "audience_strategy: string"
+          - "creative_system: object"
+          - "assumptions: array"
+          - "evidence_plan: array"
+          - "confidence_score: number"
+          - "next_step_questions: array"
+      
+      - name: "seo_and_content"
+        type: "object"
+        required_fields:
+          - "seo_priority: object"
+          - "content_pillars: array"
+          - "content_cadence: string"
+          - "repurposing_map: object"
+          - "assumptions: array"
+          - "evidence_plan: array"
+          - "confidence_score: number"
+          - "next_step_questions: array"
+      
+      - name: "social_and_lifecycle"
+        type: "object"
+        required_fields:
+          - "social_strategy: string"
+          - "lifecycle_stages: object"
+          - "crm_recommendations: string"
+          - "assumptions: array"
+          - "evidence_plan: array"
+          - "confidence_score: number"
+          - "next_step_questions: array"
+      
+      - name: "cro"
+        type: "object"
+        required_fields:
+          - "friction_audit: array"
+          - "proof_strategy: string"
+          - "offer_clarity_score: string"
+          - "speed_ux_notes: array"
+          - "assumptions: array"
+          - "evidence_plan: array"
+          - "confidence_score: number"
+          - "next_step_questions: array"
+      
+      - name: "partnerships"
+        type: "object"
+        required_fields:
+          - "partnership_opportunities: array"
+          - "affiliate_considerations: string"
+          - "assumptions: array"
+          - "evidence_plan: array"
+          - "confidence_score: number"
+          - "next_step_questions: array"
+      
+      - name: "budget_split"
+        type: "object"
+        required_fields:
+          - "total_budget_range: string"
+          - "allocation_percentages: object"
+          - "contingency: string"
+          - "assumptions: array"
+          - "evidence_plan: array"
+          - "confidence_score: number"
+          - "next_step_questions: array"
+      
+      - name: "ops_cadence"
+        type: "object"
+        required_fields:
+          - "weekly_rhythm: array"
+          - "monthly_reviews: array"
+          - "quarterly_planning: string"
+          - "assumptions: array"
+          - "evidence_plan: array"
+          - "confidence_score: number"
+          - "next_step_questions: array"
+    
+    format:
+      type: "markdown"
+      template_ref: "templates/strategy_report.md"
+
+  stage_5_execution_planning:
+    description: "Execution roadmap output"
+    required_blocks:
+      - name: "phases"
+        type: "array"
+        item_structure:
+          - "phase_name: string"
+          - "timeframe: string"
+          - "objectives: array"
+          - "tasks: array"
+          - "owners: array (placeholders acceptable)"
+          - "dependencies: array"
+          - "risks: array"
+          - "kill_rules: array"
+          - "scale_rules: array"
+      
+      - name: "resource_requirements"
+        type: "object"
+        required_fields:
+          - "team_roles: array"
+          - "tool_requirements: array"
+          - "budget_by_phase: object"
+      
+      - name: "milestones"
+        type: "array"
+        item_structure:
+          - "milestone: string"
+          - "target_date: string"
+          - "success_criteria: string"
+      
+      - name: "risk_mitigation"
+        type: "array"
+        item_structure:
+          - "risk: string"
+          - "probability: string"
+          - "impact: string"
+          - "mitigation: string"
+    
+    format:
+      type: "markdown"
+      template_ref: "templates/execution_plan.md"
+
+  stage_6_measurement_spec:
+    description: "Measurement specification output"
+    required_blocks:
+      - name: "event_naming_convention"
+        type: "object"
+        required_fields:
+          - "format: string"
+          - "examples: array"
+          - "naming_rules: array"
+      
+      - name: "event_catalog"
+        type: "array"
+        description: "Recommended events to track"
+        item_structure:
+          - "event_name: string"
+          - "category: string"
+          - "description: string"
+          - "parameters: array"
+          - "trigger: string"
+      
+      - name: "conversions"
+        type: "object"
+        required_fields:
+          - "primary_conversions: array"
+          - "secondary_conversions: array"
+          - "micro_conversions: array"
+          - "conversion_value_assignment: string"
+      
+      - name: "attribution_notes"
+        type: "object"
+        required_fields:
+          - "recommended_model: string"
+          - "considerations: array"
+          - "limitations: array"
+          - "cross_device_notes: string"
+      
+      - name: "dashboards"
+        type: "array"
+        description: "Recommended dashboards"
+        item_structure:
+          - "dashboard_name: string"
+          - "audience: string"
+          - "cadence: string"
+          - "key_metrics: array"
+          - "dimensions: array"
+      
+      - name: "weekly_review_cadence"
+        type: "object"
+        required_fields:
+          - "review_schedule: array"
+          - "kpis_to_review: array"
+          - "decision_triggers: array"
+      
+      - name: "kill_scale_rules"
+        type: "array"
+        description: "Rules for scaling or stopping initiatives"
+        item_structure:
+          - "initiative_type: string"
+          - "kill_conditions: array"
+          - "scale_conditions: array"
+          - "evaluation_period: string"
+    
+    format:
+      type: "markdown"
+      template_ref: "templates/tracking_plan.md"
+
+  stage_7_qa_redteam_and_handoff:
+    description: "QA and final deliverable"
+    required_blocks:
+      - name: "qa_checklist"
+        type: "object"
+        required_fields:
+          - "evidence_count_pass: boolean"
+          - "recency_compliance_pass: boolean"
+          - "privacy_compliance_pass: boolean"
+          - "overreach_check_pass: boolean"
+          - "confidence_scores_present: boolean"
+          - "assumptions_labeled: boolean"
+          - "next_steps_included: boolean"
+      
+      - name: "flags"
+        type: "array"
+        description: "Issues identified during QA"
+        item_structure:
+          - "flag_type: string"
+          - "severity: string"
+          - "description: string"
+          - "recommendation: string"
+      
+      - name: "missing_evidence"
+        type: "array"
+        description: "Recommendations lacking sufficient evidence"
+        item_structure:
+          - "recommendation: string"
+          - "current_evidence_count: integer"
+          - "required_evidence_count: integer"
+          - "suggested_sources: array"
+      
+      - name: "overconfidence_flags"
+        type: "array"
+        description: "Areas where confidence may be overstated"
+        item_structure:
+          - "section: string"
+          - "issue: string"
+          - "recommended_adjustment: string"
+      
+      - name: "failure_modes"
+        type: "array"
+        description: "Ways this strategy could fail"
+        item_structure:
+          - "failure_mode: string"
+          - "probability: string"
+          - "early_warning_signs: array"
+          - "contingency: string"
+      
+      - name: "final_deliverable"
+        type: "object"
+        required_fields:
+          - "strategy_report: string (markdown)"
+          - "execution_plan: string (markdown)"
+          - "measurement_spec: string (markdown)"
+          - "experiment_backlog: string (markdown)"
+      
+      - name: "handoff_checklist"
+        type: "array"
+        description: "Items for user to verify before implementation"
+        item_structure:
+          - "item: string"
+          - "status: string"
+          - "notes: string"
+    
+    format:
+      type: "markdown"
+
+global_requirements:
+  all_sections:
+    - "Assumptions: clearly labeled at end of each section"
+    - "Evidence Plan: list of sources or source types to verify"
+    - "Confidence Score: 0-1 with band (high/medium/low)"
+    - "Next Step Questions: array, max 5 items"
+  
+  markdown_formatting:
+    headers: "Use ## for main sections, ### for subsections"
+    lists: "Use - for unordered, 1. for ordered"
+    tables: "Use markdown tables where appropriate"
+    code_blocks: "Use ``` for code or schema examples"
+    callouts: "Use > for important notes"
+  
+  prohibited_elements:
+    - "Uncited claims in key recommendations"
+    - "Guaranteed outcomes"
+    - "Exact PII references"
+    - "Unlabeled assumptions"
+    - "Missing confidence scores"

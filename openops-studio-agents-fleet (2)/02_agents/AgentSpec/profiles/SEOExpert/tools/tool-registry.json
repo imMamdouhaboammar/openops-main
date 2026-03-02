@@ -1,0 +1,89 @@
+{
+    "tool_registry": {
+        "version": "1.0.0",
+        "last_updated": "2026-01-10",
+        "total_tools": 3
+    },
+    "tools_by_category": {
+        "keyword_research": [
+            {
+                "tool_id": "keyword-research-analyzer",
+                "name": "Multilingual Keyword Research Analyzer",
+                "file_path": "tools/keyword-research-analyzer.tool.json",
+                "status": "spec",
+                "languages": [
+                    "Arabic",
+                    "English",
+                    "Urdu",
+                    "Indonesian",
+                    "Turkish",
+                    "Malay",
+                    "Bengali",
+                    "Persian",
+                    "French",
+                    "Russian"
+                ],
+                "description": "Analyzes keyword opportunities across 10+ languages for Hajj/Umrah sector"
+            }
+        ],
+        "content_optimization": [
+            {
+                "tool_id": "featured-snippet-optimizer",
+                "name": "Featured Snippet & PAA Optimizer",
+                "file_path": "tools/featured-snippet-optimizer.tool.json",
+                "status": "spec",
+                "output": "Position-zero optimized content (paragraph, list, table formats)",
+                "description": "Analyzes existing content and suggests optimizations for featured snippet capture"
+            }
+        ],
+        "technical_seo": [
+            {
+                "tool_id": "schema-generator",
+                "name": "Schema Markup Generator (Arabic Support)",
+                "file_path": "tools/schema-generator.tool.json",
+                "status": "spec",
+                "schemas": [
+                    "Article",
+                    "FAQPage",
+                    "HowTo",
+                    "Organization",
+                    "Event",
+                    "Place",
+                    "Person"
+                ],
+                "description": "Generates JSON-LD schema markup with RTL and multilingual support"
+            }
+        ]
+    },
+    "integration_guides": {
+        "google_search_console": {
+            "api_documentation": "https://developers.google.com/webmaster-tools/search-console-api-original",
+            "authentication": "OAuth 2.0",
+            "rate_limits": "1,200 requests per minute",
+            "recommended_use": "Performance tracking, indexing status, keyword data, Core Web Vitals monitoring"
+        },
+        "ahrefs": {
+            "api_documentation": "https://ahrefs.com/api/documentation",
+            "authentication": "API Token",
+            "rate_limits": "Varies by plan",
+            "recommended_use": "Backlink analysis, keyword research (Arabic support), competitor analysis, domain rating tracking"
+        },
+        "semrush": {
+            "api_documentation": "https://www.semrush.com/api-documentation/",
+            "authentication": "API Key",
+            "rate_limits": "Varies by subscription",
+            "recommended_use": "Keyword tracking, site audits, position tracking, topic research"
+        },
+        "google_pagespeed_insights": {
+            "api_documentation": "https://developers.google.com/speed/docs/insights/v5/get-started",
+            "authentication": "API Key",
+            "rate_limits": "25,000 requests per day (free tier)",
+            "recommended_use": "Core Web Vitals monitoring (LCP, INP, CLS), mobile performance analysis"
+        },
+        "screaming_frog": {
+            "type": "desktop_tool",
+            "documentation": "https://www.screamingfrog.co.uk/seo-spider/user-guide/",
+            "recommended_use": "Technical SEO audits, broken link detection, redirect chains, XML sitemap generation"
+        }
+    }
+}

@@ -1,0 +1,470 @@
+egyptian_market_config:
+  description: "Comprehensive Egyptian market configuration and insights"
+  version: "1.0.0"
+  last_updated: "2026-02-16 04:21:21"
+  timezone: "Africa/Cairo (UTC+2)"
+  data_timestamp: "2026-02-16T04:21:21+02:00"
+  data_sources: "Real-time platform APIs, Egyptian market research (Feb 2026)"
+  next_update: "2026-03-01"
+
+# ==========================================
+# MARKET OVERVIEW
+# ==========================================
+
+market_overview:
+  total_population: 110000000
+  internet_users: 75000000
+  internet_penetration: 68.2
+  social_media_users: 49000000
+  social_media_penetration: 44.5
+  mobile_users: 95000000
+  mobile_penetration: 86.4
+
+# ==========================================
+# PLATFORM STATISTICS
+# ==========================================
+
+platform_statistics:
+  facebook:
+    users: 44000000
+    rank: 1
+    primary_age_group: "25-44"
+    gender_split:
+      male: 52
+      female: 48
+    daily_active_users_percentage: 55
+    peak_usage_times:
+      weekdays: ["7:00-10:00 PM", "12:00-2:00 PM"]
+      weekends: ["10:00 AM-2:00 PM", "7:00-11:00 PM"]
+    content_preferences:
+      - "Video content (especially live)"
+      - "News and current events"
+      - "Entertainment"
+      - "Family content"
+      - "Groups and communities"
+  
+  instagram:
+    users: 15000000
+    rank: 3
+    primary_age_group: "18-34"
+    gender_split:
+      male: 45
+      female: 55
+    daily_active_users_percentage: 65
+    peak_usage_times:
+      weekdays: ["8:00-11:00 PM", "1:00-3:00 PM"]
+      weekends: ["11:00 AM-3:00 PM", "8:00-12:00 AM"]
+    content_preferences:
+      - "Reels (short videos)"
+      - "Stories"
+      - "Aesthetic photos"
+      - "Behind-the-scenes"
+      - "Influencer content"
+  
+  tiktok:
+    users: 12000000
+    rank: 4
+    primary_age_group: "16-24"
+    gender_split:
+      male: 48
+      female: 52
+    daily_active_users_percentage: 75
+    peak_usage_times:
+      weekdays: ["7:00-10:00 PM", "12:00-2:00 PM"]
+      weekends: ["11:00 AM-2:00 PM", "8:00 PM-1:00 AM"]
+    content_preferences:
+      - "Comedy and humor"
+      - "Trend participation"
+      - "Educational (quick tips)"
+      - "Challenges"
+      - "Lip-sync and dance"
+  
+  youtube:
+    users: 40000000
+    rank: 2
+    primary_age_group: "18-44"
+    gender_split:
+      male: 60
+      female: 40
+    daily_active_users_percentage: 45
+    peak_usage_times:
+      weekdays: ["8:00-11:00 PM"]
+      weekends: ["2:00-11:00 PM"]
+    content_preferences:
+      - "Entertainment (movies, series)"
+      - "Music videos"
+      - "Educational content"
+      - "Gaming"
+      - "Vlogs"
+  
+  linkedin:
+    users: 5000000
+    rank: 6
+    primary_age_group: "25-44"
+    gender_split:
+      male: 58
+      female: 42
+    daily_active_users_percentage: 35
+    peak_usage_times:
+      weekdays: ["8:00-10:00 AM", "5:00-7:00 PM"]
+      weekends: ["9:00-11:00 AM"]
+    content_preferences:
+      - "Professional development"
+      - "Industry news"
+      - "Career opportunities"
+      - "Business insights"
+      - "Thought leadership"
+  
+  twitter_x:
+    users: 3500000
+    rank: 7
+    primary_age_group: "25-44"
+    gender_split:
+      male: 65
+      female: 35
+    daily_active_users_percentage: 40
+    peak_usage_times:
+      weekdays: ["9:00 AM-12:00 PM", "7:00-10:00 PM"]
+      weekends: ["10:00 AM-2:00 PM"]
+    content_preferences:
+      - "News and politics"
+      - "Sports"
+      - "Entertainment news"
+      - "Trending topics"
+      - "Humor"
+
+# ==========================================
+# CULTURAL CALENDAR
+# ==========================================
+
+cultural_calendar:
+  current_date: "2026-02-16"
+  current_time: "04:21:21 (Cairo Time, UTC+2)"
+  current_period: "Pre-Ramadan (Ramadan starts March 1, 2026)"
+  
+  ramadan:
+    timing_2026: "March 1 - March 30, 2026"
+    duration: "30 days"
+    starts_in_days: 13
+    peak_engagement_time: "5:00-6:00 PM (pre-Iftar, Cairo Time)"
+    secondary_peak: "10:00 PM-2:00 AM (post-Taraweeh, Cairo Time)"
+    content_preferences:
+      - "Inspirational and religious"
+      - "Food and recipes"
+      - "Family content"
+      - "Charity and giving"
+      - "Ramadan series and entertainment"
+    engagement_boost: "+30-50%"
+    posting_strategy:
+      - "Post 1-2 hours before Iftar"
+      - "Avoid posting during Iftar (sunset)"
+      - "Evening content performs best"
+    
+  eid_al_fitr:
+    timing: "After Ramadan (1-3 days)"
+    engagement_pattern: "High before, low during, high after"
+    content_preferences:
+      - "Celebratory content"
+      - "Family gatherings"
+      - "Eid greetings"
+      - "Fashion and outfits"
+    posting_strategy:
+      - "Post 2-3 days before Eid"
+      - "Minimal posting during Eid days"
+      - "Resume normal schedule 2 days after"
+  
+  eid_al_adha:
+    timing: "Variable (Islamic calendar)"
+    duration: "4 days"
+    engagement_pattern: "Moderate before, low during, moderate after"
+    content_preferences:
+      - "Religious content"
+      - "Family content"
+      - "Food (meat dishes)"
+      - "Charity"
+    posting_strategy: "Similar to Eid Al-Fitr"
+  
+  coptic_christmas:
+    timing: "January 7"
+    engagement: "Moderate"
+    content_preferences:
+      - "Celebratory content"
+      - "Unity and coexistence"
+      - "Family gatherings"
+  
+  new_year:
+    timing: "December 31 - January 1"
+    engagement: "Very high"
+    content_preferences:
+      - "Celebratory content"
+      - "Year in review"
+      - "Resolutions and goals"
+      - "Motivational content"
+    posting_strategy:
+      - "Peak engagement: Dec 31, 8 PM - Jan 1, 2 AM"
+  
+  summer_vacation:
+    timing: "June - September"
+    engagement_pattern: "-10-15% (travel season)"
+    content_preferences:
+      - "Travel and destinations"
+      - "Beach and summer activities"
+      - "Vacation tips"
+      - "Summer fashion"
+    posting_strategy:
+      - "Adjust expectations"
+      - "Focus on evergreen content"
+      - "Plan ahead for September comeback"
+  
+  back_to_school:
+    timing: "September"
+    engagement: "High"
+    content_preferences:
+      - "Educational content"
+      - "Organization tips"
+      - "Student life"
+      - "Parenting content"
+  
+  egyptian_holidays:
+    january_25_revolution: "January 25"
+    sinai_liberation: "April 25"
+    labor_day: "May 1"
+    june_30_revolution: "June 30"
+    july_23_revolution: "July 23"
+    october_6_victory: "October 6"
+    note: "Engagement varies, be culturally sensitive"
+
+# ==========================================
+# LANGUAGE PREFERENCES
+# ==========================================
+
+language_preferences:
+  egyptian_arabic_dialect:
+    platforms: ["instagram", "tiktok", "facebook"]
+    usage: "Highly preferred"
+    engagement_boost: "+25-40%"
+    characteristics:
+      - "Casual and relatable"
+      - "Humor works best"
+      - "Authentic voice"
+    examples:
+      - "ازيك؟ (How are you?)"
+      - "تمام (Perfect)"
+      - "يلا بينا (Let's go)"
+  
+  modern_standard_arabic:
+    platforms: ["linkedin", "formal_content"]
+    usage: "Professional contexts"
+    engagement: "Moderate"
+    characteristics:
+      - "Professional tone"
+      - "Educational content"
+      - "News and formal announcements"
+  
+  english:
+    platforms: ["linkedin", "international_brands"]
+    usage: "Limited but growing"
+    target_audience: "Educated, urban, 25-40"
+    engagement: "Lower than Arabic"
+    use_cases:
+      - "International brands"
+      - "Tech content"
+      - "Professional development"
+      - "Bilingual audiences"
+  
+  arabizi:
+    definition: "Arabic written in Latin script"
+    platforms: ["comments", "casual_messaging"]
+    usage: "Declining but still present"
+    example: "ezayak? (ازيك؟)"
+    recommendation: "Avoid in main content"
+
+# ==========================================
+# SENSITIVE TOPICS
+# ==========================================
+
+sensitive_topics:
+  avoid_completely:
+    - "Politics and government criticism"
+    - "Religious debates"
+    - "Sectarian issues"
+    - "Military and security"
+    - "Explicit sexual content"
+  
+  handle_with_care:
+    - "Gender roles and feminism"
+    - "LGBTQ+ topics"
+    - "Alcohol and nightlife"
+    - "Economic hardships"
+    - "Social class differences"
+  
+  safe_topics:
+    - "Family and relationships"
+    - "Food and cooking"
+    - "Entertainment and celebrities"
+    - "Sports (especially football)"
+    - "Travel and tourism"
+    - "Education and career"
+    - "Technology and innovation"
+    - "Health and wellness"
+
+# ==========================================
+# CONTENT PREFERENCES BY DEMOGRAPHIC
+# ==========================================
+
+demographic_preferences:
+  gen_z_16_24:
+    platforms: ["tiktok", "instagram"]
+    content_types:
+      - "Short videos (Reels, TikToks)"
+      - "Memes and humor"
+      - "Trends and challenges"
+      - "Gaming and esports"
+      - "Music and entertainment"
+    tone: "Casual, fun, authentic"
+    language: "Egyptian dialect"
+  
+  millennials_25_40:
+    platforms: ["instagram", "facebook", "linkedin"]
+    content_types:
+      - "Career and professional development"
+      - "Parenting and family"
+      - "Health and fitness"
+      - "Travel and experiences"
+      - "Financial advice"
+    tone: "Relatable, aspirational"
+    language: "Egyptian dialect or Modern Standard Arabic"
+  
+  gen_x_41_56:
+    platforms: ["facebook", "youtube"]
+    content_types:
+      - "News and current events"
+      - "Family content"
+      - "Health and wellness"
+      - "Nostalgia"
+      - "Educational content"
+    tone: "Informative, respectful"
+    language: "Modern Standard Arabic preferred"
+  
+  boomers_57_plus:
+    platforms: ["facebook", "youtube"]
+    content_types:
+      - "News"
+      - "Religious content"
+      - "Health information"
+      - "Family updates"
+      - "Traditional values"
+    tone: "Formal, respectful"
+    language: "Modern Standard Arabic"
+
+# ==========================================
+# REGIONAL DIFFERENCES
+# ==========================================
+
+regional_differences:
+  cairo_greater_cairo:
+    population: 22000000
+    characteristics:
+      - "Fast-paced lifestyle"
+      - "Trend-setters"
+      - "Higher purchasing power"
+      - "More liberal attitudes"
+    content_preferences:
+      - "Urban lifestyle"
+      - "Dining and entertainment"
+      - "Career and ambition"
+  
+  alexandria:
+    population: 5500000
+    characteristics:
+      - "Coastal lifestyle"
+      - "More relaxed pace"
+      - "Summer destination"
+    content_preferences:
+      - "Beach and sea"
+      - "Summer activities"
+      - "Mediterranean culture"
+  
+  delta_region:
+    population: 40000000
+    characteristics:
+      - "Agricultural communities"
+      - "Traditional values"
+      - "Family-oriented"
+    content_preferences:
+      - "Family content"
+      - "Traditional values"
+      - "Agricultural topics"
+  
+  upper_egypt:
+    population: 25000000
+    characteristics:
+      - "Strong cultural identity"
+      - "Traditional values"
+      - "Close-knit communities"
+    content_preferences:
+      - "Cultural heritage"
+      - "Family and traditions"
+      - "Religious content"
+  
+  red_sea_sinai:
+    population: 2000000
+    characteristics:
+      - "Tourism-focused"
+      - "Diverse population"
+      - "Resort lifestyle"
+    content_preferences:
+      - "Tourism and travel"
+      - "Water sports"
+      - "Luxury lifestyle"
+
+# ==========================================
+# BEST PRACTICES
+# ==========================================
+
+best_practices:
+  language:
+    - "Use Egyptian dialect for casual content"
+    - "Use Modern Standard Arabic for formal content"
+    - "Avoid complex vocabulary"
+    - "Use emojis to enhance meaning"
+  
+  timing:
+    - "Post during peak hours (7-10 PM)"
+    - "Avoid posting during prayer times (especially Friday)"
+    - "Consider Ramadan timing adjustments"
+    - "Weekend engagement is higher (Thursday-Friday)"
+  
+  cultural_sensitivity:
+    - "Respect religious values"
+    - "Be mindful of family values"
+    - "Avoid controversial topics"
+    - "Celebrate Egyptian culture and heritage"
+  
+  engagement:
+    - "Respond in Egyptian dialect"
+    - "Use humor appropriately"
+    - "Reference local events and trends"
+    - "Feature Egyptian influencers and celebrities"
+  
+  content_creation:
+    - "Show real Egyptian life"
+    - "Use local references and inside jokes"
+    - "Feature Egyptian locations"
+    - "Collaborate with local creators"
+
+# ==========================================
+# TRENDING TOPICS (2026)
+# ==========================================
+
+trending_topics_2026:
+  - "Digital transformation and AI"
+  - "Sustainable living"
+  - "Mental health awareness"
+  - "Entrepreneurship and startups"
+  - "Fitness and wellness"
+  - "Online education"
+  - "E-commerce and online shopping"
+  - "Egyptian tourism promotion"
+  - "Food delivery and cloud kitchens"
+  - "Remote work and freelancing"

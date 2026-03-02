@@ -1,0 +1,589 @@
+{
+    "prompt_templates": {
+        "vcot_template": {
+            "name": "Visual Chain-of-Thought Template",
+            "sections": [
+                {
+                    "name": "intent_analysis",
+                    "fields": {
+                        "what": "Primary subject description",
+                        "where": "Setting/environment",
+                        "how": "Style, mood, atmosphere",
+                        "why": "Purpose, context"
+                    }
+                },
+                {
+                    "name": "visual_decomposition",
+                    "fields": {
+                        "foreground": "Main subject details",
+                        "midground": "Supporting elements",
+                        "background": "Environment details",
+                        "lighting": "Light source, direction, quality",
+                        "color_palette": "Primary, secondary, accent colors"
+                    }
+                },
+                {
+                    "name": "technical_specifications",
+                    "fields": {
+                        "composition": "Rule of thirds, centered, etc.",
+                        "perspective": "Eye level, bird's eye, etc.",
+                        "depth_of_field": "Shallow, deep, etc.",
+                        "resolution": "4K, 1080p, etc.",
+                        "aspect_ratio": "16:9, 1:1, 9:16, etc."
+                    }
+                },
+                {
+                    "name": "style_reference",
+                    "fields": {
+                        "art_style": "Photorealistic, illustration, etc.",
+                        "mood": "Professional, playful, dramatic, etc.",
+                        "reference": "Artist style, era, inspiration"
+                    }
+                }
+            ]
+        },
+        "prompt_structure": {
+            "order": [
+                "Subject Description - Who/What, detailed appearance",
+                "Action - What is happening",
+                "Environment - Where, with specific details",
+                "Technical - Camera angle, lighting, composition",
+                "Style - Art style, mood, reference",
+                "Specifications - Resolution, aspect ratio"
+            ]
+        }
+    },
+    "style_library": {
+        "photographic": [
+            {
+                "name": "Portrait Professional",
+                "keywords": "professional headshot, studio lighting, softbox, shallow depth of field, neutral background",
+                "lighting": "three-point lighting, soft fill",
+                "color": "neutral, skin tones accurate"
+            },
+            {
+                "name": "Product Photography",
+                "keywords": "product shot, studio lighting, clean background, sharp focus, high detail",
+                "lighting": "bright, even, minimal shadows",
+                "color": "accurate, vibrant"
+            },
+            {
+                "name": "Lifestyle",
+                "keywords": "candid, natural light, authentic moment, environmental context",
+                "lighting": "natural, golden hour optional",
+                "color": "warm, inviting"
+            },
+            {
+                "name": "Cinematic",
+                "keywords": "movie still, dramatic lighting, wide aspect ratio, atmospheric",
+                "lighting": "dramatic, directional, chiaroscuro",
+                "color": "color graded, stylized"
+            }
+        ],
+        "illustration": [
+            {
+                "name": "Digital Art",
+                "keywords": "digital illustration, clean lines, vibrant colors, detailed",
+                "style": "modern digital art"
+            },
+            {
+                "name": "Watercolor",
+                "keywords": "watercolor painting, soft edges, fluid colors, artistic",
+                "style": "traditional watercolor technique"
+            },
+            {
+                "name": "Vector",
+                "keywords": "vector illustration, flat design, geometric shapes, clean",
+                "style": "modern vector art"
+            },
+            {
+                "name": "Anime/Manga",
+                "keywords": "anime style, large expressive eyes, dynamic poses, cel shading",
+                "style": "Japanese animation style"
+            }
+        ],
+        "3d_render": [
+            {
+                "name": "Pixar Style",
+                "keywords": "3D render, Pixar-like, soft lighting, expressive characters, subsurface scattering",
+                "style": "high-quality 3D animation"
+            },
+            {
+                "name": "Architectural Visualization",
+                "keywords": "3D architectural render, photorealistic, realistic materials, natural lighting",
+                "style": "architectural visualization"
+            },
+            {
+                "name": "Product Render",
+                "keywords": "3D product render, studio lighting, realistic materials, reflections",
+                "style": "commercial 3D rendering"
+            },
+            {
+                "name": "Game Art",
+                "keywords": "3D game art, stylized, game engine quality, dynamic lighting",
+                "style": "video game art style"
+            }
+        ],
+        "artistic": [
+            {
+                "name": "Impressionist",
+                "keywords": "impressionist painting, visible brushstrokes, light effects, soft edges",
+                "reference": "Monet, Renoir style"
+            },
+            {
+                "name": "Surrealist",
+                "keywords": "surrealist art, dreamlike, unexpected juxtapositions",
+                "reference": "Dalí, Magritte style"
+            },
+            {
+                "name": "Pop Art",
+                "keywords": "pop art, bold colors, halftone dots, graphic style",
+                "reference": "Warhol, Lichtenstein style"
+            },
+            {
+                "name": "Minimalist",
+                "keywords": "minimalist, clean, simple shapes, negative space",
+                "style": "modern minimalism"
+            }
+        ]
+    },
+    "lighting_profiles": {
+        "studio": {
+            "description": "Controlled artificial lighting",
+            "source": "artificial",
+            "direction": "front/side",
+            "quality": "soft",
+            "temperature": "neutral",
+            "use_cases": [
+                "product",
+                "portrait",
+                "commercial"
+            ]
+        },
+        "natural": {
+            "description": "Natural light from sun/sky",
+            "source": "natural",
+            "direction": "variable",
+            "quality": "mixed",
+            "temperature": "varies by time",
+            "use_cases": [
+                "landscape",
+                "outdoor",
+                "lifestyle"
+            ]
+        },
+        "dramatic": {
+            "description": "High contrast, single source",
+            "source": "single",
+            "direction": "side/back",
+            "quality": "hard",
+            "temperature": "warm or cool",
+            "use_cases": [
+                "cinematic",
+                "mood",
+                "editorial"
+            ]
+        },
+        "golden_hour": {
+            "description": "Low sun, warm tones",
+            "source": "sun_low",
+            "direction": "side",
+            "quality": "soft",
+            "temperature": "warm",
+            "use_cases": [
+                "portrait",
+                "romantic",
+                "landscape"
+            ]
+        },
+        "overcast": {
+            "description": "Diffuse sky light",
+            "source": "diffuse",
+            "direction": "top",
+            "quality": "very soft",
+            "temperature": "cool",
+            "use_cases": [
+                "even lighting",
+                "no harsh shadows"
+            ]
+        },
+        "neon_urban": {
+            "description": "Colorful artificial lights",
+            "source": "artificial_multiple",
+            "direction": "multiple",
+            "quality": "mixed",
+            "temperature": "saturated_colors",
+            "use_cases": [
+                "urban",
+                "cyberpunk",
+                "nightlife"
+            ]
+        }
+    },
+    "color_harmonies": {
+        "complementary": {
+            "description": "Colors opposite on wheel",
+            "effect": "High contrast, vibrant",
+            "examples": [
+                [
+                    "blue",
+                    "orange"
+                ],
+                [
+                    "red",
+                    "green"
+                ],
+                [
+                    "yellow",
+                    "purple"
+                ]
+            ]
+        },
+        "analogous": {
+            "description": "Adjacent colors",
+            "effect": "Harmonious, cohesive",
+            "examples": [
+                [
+                    "blue",
+                    "blue-green",
+                    "green"
+                ],
+                [
+                    "red",
+                    "red-orange",
+                    "orange"
+                ],
+                [
+                    "yellow",
+                    "yellow-green",
+                    "green"
+                ]
+            ]
+        },
+        "triadic": {
+            "description": "Three evenly spaced colors",
+            "effect": "Balanced, dynamic",
+            "examples": [
+                [
+                    "red",
+                    "yellow",
+                    "blue"
+                ],
+                [
+                    "orange",
+                    "green",
+                    "purple"
+                ]
+            ]
+        },
+        "split_complementary": {
+            "description": "Base + adjacent to complement",
+            "effect": "High contrast, less tension",
+            "examples": [
+                [
+                    "blue",
+                    "red-orange",
+                    "yellow-orange"
+                ],
+                [
+                    "red",
+                    "blue-green",
+                    "yellow-green"
+                ]
+            ]
+        },
+        "monochromatic": {
+            "description": "Shades of one color",
+            "effect": "Unified, sophisticated",
+            "examples": [
+                [
+                    "dark blue",
+                    "blue",
+                    "light blue"
+                ],
+                [
+                    "dark green",
+                    "green",
+                    "mint"
+                ]
+            ]
+        }
+    },
+    "composition_rules": {
+        "rule_of_thirds": {
+            "description": "Divide frame into 9 equal parts, place subjects on lines/intersections",
+            "focal_points": [
+                {
+                    "x": 0.33,
+                    "y": 0.33
+                },
+                {
+                    "x": 0.66,
+                    "y": 0.33
+                },
+                {
+                    "x": 0.33,
+                    "y": 0.66
+                },
+                {
+                    "x": 0.66,
+                    "y": 0.66
+                }
+            ],
+            "use_cases": [
+                "general",
+                "landscape",
+                "portrait"
+            ]
+        },
+        "golden_ratio": {
+            "description": "Phi-based spiral composition",
+            "ratio": 1.618,
+            "use_cases": [
+                "artistic",
+                "natural scenes"
+            ]
+        },
+        "centered": {
+            "description": "Subject in center of frame",
+            "focal_point": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "use_cases": [
+                "symmetrical subjects",
+                "products",
+                "icons"
+            ]
+        },
+        "leading_lines": {
+            "description": "Lines that guide eye to subject",
+            "use_cases": [
+                "architecture",
+                "landscape",
+                "depth"
+            ]
+        },
+        "frame_within_frame": {
+            "description": "Use elements to frame the subject",
+            "use_cases": [
+                "creative",
+                "depth",
+                "focus"
+            ]
+        },
+        "negative_space": {
+            "description": "Emphasize empty space around subject",
+            "use_cases": [
+                "minimalist",
+                "dramatic",
+                "text placement"
+            ]
+        }
+    },
+    "aspect_ratios": {
+        "1:1": {
+            "name": "Square",
+            "use_cases": [
+                "social media",
+                "profile pictures",
+                "icons"
+            ],
+            "pixels": {
+                "standard": "1024x1024",
+                "hd": "2048x2048"
+            }
+        },
+        "16:9": {
+            "name": "Widescreen",
+            "use_cases": [
+                "presentations",
+                "YouTube thumbnails",
+                "desktop wallpapers"
+            ],
+            "pixels": {
+                "standard": "1920x1080",
+                "4k": "3840x2160"
+            }
+        },
+        "9:16": {
+            "name": "Vertical/Stories",
+            "use_cases": [
+                "mobile",
+                "stories",
+                "reels",
+                "TikTok"
+            ],
+            "pixels": {
+                "standard": "1080x1920",
+                "2k": "1440x2560"
+            }
+        },
+        "4:3": {
+            "name": "Standard",
+            "use_cases": [
+                "presentations",
+                "documents",
+                "classic photos"
+            ],
+            "pixels": {
+                "standard": "1600x1200",
+                "hd": "2048x1536"
+            }
+        },
+        "21:9": {
+            "name": "Cinematic",
+            "use_cases": [
+                "banner",
+                "cinematic",
+                "ultra-wide"
+            ],
+            "pixels": {
+                "standard": "2560x1080",
+                "4k": "3440x1440"
+            }
+        },
+        "3:2": {
+            "name": "Classic Photo",
+            "use_cases": [
+                "photography",
+                "prints",
+                "classic ratio"
+            ],
+            "pixels": {
+                "standard": "1500x1000",
+                "hd": "3000x2000"
+            }
+        }
+    },
+    "quality_assessment": {
+        "criteria": {
+            "subject_accuracy": {
+                "weight": 0.25,
+                "checks": [
+                    "correct_subject_type",
+                    "matches_description",
+                    "proper_positioning",
+                    "correct_count"
+                ]
+            },
+            "composition_match": {
+                "weight": 0.20,
+                "checks": [
+                    "follows_blueprint_layout",
+                    "correct_depth_layers",
+                    "proper_balance",
+                    "focal_point_placement"
+                ]
+            },
+            "style_fidelity": {
+                "weight": 0.20,
+                "checks": [
+                    "matches_specified_style",
+                    "consistent_aesthetic",
+                    "appropriate_mood"
+                ]
+            },
+            "technical_quality": {
+                "weight": 0.15,
+                "checks": [
+                    "resolution_meets_spec",
+                    "no_artifacts",
+                    "proper_sharpness",
+                    "correct_aspect_ratio"
+                ]
+            },
+            "text_accuracy": {
+                "weight": 0.10,
+                "checks": [
+                    "correct_spelling",
+                    "proper_font_style",
+                    "readable",
+                    "well_integrated"
+                ]
+            },
+            "mood_atmosphere": {
+                "weight": 0.10,
+                "checks": [
+                    "matches_intended_emotion",
+                    "consistent_lighting_mood",
+                    "appropriate_color_mood"
+                ]
+            }
+        },
+        "thresholds": {
+            "pass": 0.85,
+            "conditional": 0.70,
+            "fail": 0.70
+        }
+    },
+    "refinement_strategies": {
+        "subject_wrong": {
+            "strategy": "regenerate_with_clearer_subject",
+            "actions": [
+                "Make subject description more specific",
+                "Add distinguishing characteristics",
+                "Specify exact count if multiple"
+            ]
+        },
+        "composition_off": {
+            "strategy": "add_explicit_composition_guidance",
+            "actions": [
+                "Specify composition rule explicitly",
+                "Add focal point coordinates",
+                "Describe relative positioning"
+            ]
+        },
+        "style_mismatch": {
+            "strategy": "add_style_reference_images",
+            "actions": [
+                "Include style reference images",
+                "Strengthen style keywords",
+                "Reference specific artists/styles"
+            ]
+        },
+        "technical_issues": {
+            "strategy": "adjust_resolution_and_quality",
+            "actions": [
+                "Explicitly specify resolution",
+                "Add quality keywords (sharp, detailed)",
+                "Check aspect ratio specification"
+            ]
+        },
+        "text_errors": {
+            "strategy": "regenerate_with_quoted_text",
+            "actions": [
+                "Quote text exactly in prompt",
+                "Specify font style explicitly",
+                "Reduce text length if complex"
+            ]
+        },
+        "mood_wrong": {
+            "strategy": "adjust_lighting_and_color",
+            "actions": [
+                "Revise lighting description",
+                "Adjust color temperature words",
+                "Add emotional atmosphere keywords"
+            ]
+        }
+    },
+    "mena_cultural_guidelines": {
+        "modesty": {
+            "clothing": "Appropriate coverage in imagery",
+            "poses": "Respectful and dignified"
+        },
+        "religious_sensitivity": {
+            "figures": "Avoid depicting religious figures in art",
+            "symbols": "Treat religious symbols with respect"
+        },
+        "arabic_text": {
+            "rtl": "Ensure right-to-left rendering",
+            "fonts": "Use appropriate Arabic fonts",
+            "diacritics": "Handle properly if included"
+        },
+        "cultural_appropriateness": {
+            "stereotypes": "Avoid stereotypical representations",
+            "customs": "Respect local customs and traditions"
+        }
+    }
+}

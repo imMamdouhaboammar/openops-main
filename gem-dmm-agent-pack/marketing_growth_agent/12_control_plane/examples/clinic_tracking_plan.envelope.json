@@ -1,0 +1,57 @@
+{
+  "envelopeVersion": "1.0.0",
+  "taskId": "TASK-CLINIC-ANALYTICS-TRACKING-0001",
+  "mode": "operator",
+  "podId": "POD-ANALYTICS",
+  "authorization": {
+    "supervisorToken": "SUPERVISOR_TOKEN_EXAMPLE_ONLY",
+    "expiresAt": "2026-01-24T13:00:00Z",
+    "idempotencyKey": "idem-2026-01-24-clinic-tracking-0001"
+  },
+  "objective": "Produce a minimum viable tracking plan for a clinic funnel (ad → landing → WhatsApp/call → booking), including event schema, UTMs, and QA steps.",
+  "context": {
+    "clientType": "clinic",
+    "clientName": "Example Dermatology Clinic",
+    "primaryConversion": "WhatsApp booking",
+    "riskProfile": "high (compliance-sensitive)"
+  },
+  "inputs": {
+    "currentState": {
+      "trackingInstalled": false,
+      "websiteSpeed": "slow",
+      "bookingMethod": "WhatsApp",
+      "crm": "none"
+    },
+    "goals": {
+      "increaseQualifiedBookings90Days": "30%",
+      "reduceNoShows": true
+    }
+  },
+  "constraints": {
+    "deadline": "2026-01-26T18:00:00Z",
+    "compliance": {
+      "noPatientDataExport": true,
+      "minimizePII": true
+    },
+    "budget": { "maxSpend": 0, "currency": "USD" },
+    "scope": {
+      "inScope": ["event list", "event naming", "UTM taxonomy", "conversion definitions", "QA checklist"],
+      "outOfScope": ["implementing GTM/GA4", "server-side tagging setup"]
+    }
+  },
+  "expectedOutputs": [
+    "Tracking plan (events + triggers)",
+    "Event naming convention proposal",
+    "UTM taxonomy and examples",
+    "Conversion definitions (lead vs qualified booking)",
+    "Tracking QA checklist"
+  ],
+  "qualityGates": [
+    "Events map to decisions (no vanity tracking)",
+    "PII minimized (WhatsApp tracking is handled carefully)",
+    "QA steps are practical and repeatable"
+  ],
+  "approvalGates": ["Supervisor approves event naming and qualified-booking definition"],
+  "returnFormat": "artifact_plus_decisions"
+}
+

@@ -1,0 +1,657 @@
+{
+  "workflow_name": "Campaign Planning & Execution",
+  "workflow_id": "campaign_planning_v1",
+  "version": "1.0",
+  "description": "End-to-end workflow for planning, executing, and measuring marketing campaigns using the Marketing & Growth Agent System",
+  
+  "workflow_phases": [
+    {
+      "phase_id": 1,
+      "phase_name": "Discovery & Grounding",
+      "duration": "3-5 days",
+      "objective": "Understand context, research landscape, identify opportunities",
+      
+      "steps": [
+        {
+          "step": "1.1",
+          "name": "Intake Meeting",
+          "owner": "Marketing & Growth Agent + Requester",
+          "duration": "1 hour",
+          "inputs": [
+            "Campaign objective (awareness/acquisition/retention/revenue)",
+            "Budget range",
+            "Timeline expectations",
+            "Target audience (initial hypothesis)",
+            "Success definition (qualitative)"
+          ],
+          "activities": [
+            "Clarify campaign mission and constraints",
+            "Identify stakeholders and decision-makers",
+            "Gather existing brand guidelines, messaging, past campaign data",
+            "Set expectations on deliverables and timeline"
+          ],
+          "outputs": [
+            "Campaign objective statement",
+            "Constraints documented",
+            "Stakeholder map",
+            "Discovery questions list"
+          ],
+          "quality_gates": [
+            "Clear, measurable objective defined",
+            "Budget and timeline realistic",
+            "Stakeholders identified and available"
+          ]
+        },
+        {
+          "step": "1.2",
+          "name": "External Grounding",
+          "owner": "Marketing & Growth Agent",
+          "duration": "1-2 days",
+          "inputs": ["Discovery questions", "Industry context"],
+          "activities": [
+            "Research best practices for objective (e.g., SaaS acquisition campaigns)",
+            "Analyze 3-5 competitors' campaigns (channels, messaging, offers)",
+            "Review industry benchmarks (CPCs, conversion rates, CAC)",
+            "Identify channel trends and opportunities"
+          ],
+          "outputs": [
+            "Best practices report (2-3 pages)",
+            "Competitive analysis matrix",
+            "Benchmark data table",
+            "Opportunity insights"
+          ],
+          "quality_gates": [
+            "At least 3 authoritative sources cited",
+            "Competitor analysis covers messaging + channels + offers",
+            "Benchmarks specific to industry and channel"
+          ],
+          "automation_opportunities": [
+            "Auto-scrape competitor ad copy",
+            "Pull benchmark data from industry databases",
+            "Summarize best practice articles"
+          ]
+        },
+        {
+          "step": "1.3",
+          "name": "Internal Grounding",
+          "owner": "Marketing & Growth Agent",
+          "duration": "1 day",
+          "inputs": [
+            "Product docs",
+            "Past campaign data",
+            "Customer insights",
+            "Brand guidelines"
+          ],
+          "activities": [
+            "Analyze product positioning and differentiation",
+            "Review past campaign performance (what worked/didn't)",
+            "Study customer feedback and support tickets",
+            "Assess current brand messaging and creative",
+            "Map customer journey and conversion funnel"
+          ],
+          "outputs": [
+            "Product positioning summary",
+            "Past campaign learnings",
+            "Customer insights report",
+            "Current state assessment"
+          ],
+          "quality_gates": [
+            "Differentiation clearly articulated",
+            "At least 2 key learnings from past campaigns",
+            "Customer pains and desires documented"
+          ]
+        },
+        {
+          "step": "1.4",
+          "name": "Synthesis & Opportunity Mapping",
+          "owner": "Marketing & Growth Agent",
+          "duration": "0.5 day",
+          "inputs": ["External grounding", "Internal grounding"],
+          "activities": [
+            "Synthesize external and internal insights",
+            "Identify key opportunities and constraints",
+            "Map implications for strategy",
+            "Generate hypotheses to test"
+          ],
+          "outputs": [
+            "Synthesis document (1-2 pages)",
+            "Opportunity map",
+            "Strategic hypotheses list"
+          ],
+          "quality_gates": [
+            "Clear connection between insights and implications",
+            "At least 3 testable hypotheses",
+            "Opportunities prioritized by impact and feasibility"
+          ]
+        }
+      ],
+      
+      "phase_outputs": [
+        "Discovery & Grounding Report (5-10 pages)",
+        "Stakeholder alignment on findings"
+      ],
+      
+      "escalation_triggers": [
+        "Budget or timeline unrealistic for objective",
+        "Insufficient product differentiation identified",
+        "Conflicting stakeholder requirements"
+      ]
+    },
+    
+    {
+      "phase_id": 2,
+      "phase_name": "Strategy Development",
+      "duration": "5-7 days",
+      "objective": "Develop comprehensive campaign strategy grounded in research",
+      
+      "steps": [
+        {
+          "step": "2.1",
+          "name": "Audience Definition",
+          "owner": "Marketing & Growth Agent",
+          "duration": "1 day",
+          "inputs": ["Grounding insights", "Customer data"],
+          "activities": [
+            "Define primary ICP (demographics, firmographics, psychographics)",
+            "Map Jobs To Be Done (trigger, outcome, anxieties, forces)",
+            "Identify secondary audiences if applicable",
+            "Create audience personas"
+          ],
+          "outputs": [
+            "ICP definition document",
+            "JTBD framework completed",
+            "Persona profiles (1-2 pages each)"
+          ],
+          "quality_gates": [
+            "ICP specific and actionable",
+            "JTBD based on real customer insights",
+            "Personas include behavioral and psychological details"
+          ]
+        },
+        {
+          "step": "2.2",
+          "name": "Value Proposition & Messaging",
+          "owner": "Marketing & Growth Agent",
+          "duration": "2 days",
+          "inputs": ["Audience definition", "Product positioning"],
+          "activities": [
+            "Craft core value proposition",
+            "Develop messaging hierarchy (primary, supporting, objections)",
+            "Apply psychology frameworks (Cialdini, emotional triggers)",
+            "Create messaging matrix by audience segment"
+          ],
+          "outputs": [
+            "Value proposition statement",
+            "Messaging hierarchy document",
+            "Psychology application map",
+            "Messaging matrix"
+          ],
+          "quality_gates": [
+            "Value prop is clear, specific, and differentiated",
+            "Messaging addresses key anxieties and objections",
+            "Psychology principles applied with specific tactics"
+          ]
+        },
+        {
+          "step": "2.3",
+          "name": "Channel Strategy",
+          "owner": "Marketing & Growth Agent",
+          "duration": "1-2 days",
+          "inputs": ["Benchmark data", "Budget", "Audience behavior"],
+          "activities": [
+            "Select primary channels (70% budget) with rationale",
+            "Select secondary channels (20% budget)",
+            "Allocate experimental budget (10%)",
+            "Define channel-specific tactics",
+            "Map customer journey across channels"
+          ],
+          "outputs": [
+            "Channel strategy document",
+            "Budget allocation table",
+            "Channel tactics by phase",
+            "Customer journey map"
+          ],
+          "quality_gates": [
+            "Each channel has clear rationale based on audience behavior",
+            "Budget allocation follows 70-20-10 rule",
+            "Channels work together (not in silos)"
+          ]
+        },
+        {
+          "step": "2.4",
+          "name": "Growth Levers & Loops",
+          "owner": "Marketing & Growth Agent",
+          "duration": "1 day",
+          "inputs": ["Product model", "Customer journey"],
+          "activities": [
+            "Identify acquisition, activation, retention, revenue, referral levers",
+            "Design growth loops (viral, content, paid, sales-led)",
+            "Map loop mechanics and reinvestment",
+            "Prioritize loops by potential impact"
+          ],
+          "outputs": [
+            "Growth lever map",
+            "Growth loop diagrams (2-3 loops)",
+            "Loop prioritization matrix"
+          ],
+          "quality_gates": [
+            "At least one compound loop identified",
+            "Loop mechanics are specific and actionable",
+            "Loops aligned with product model"
+          ]
+        },
+        {
+          "step": "2.5",
+          "name": "Strategy Review & Approval",
+          "owner": "Marketing & Growth Agent + Stakeholders",
+          "duration": "0.5 day",
+          "inputs": ["Complete strategy document"],
+          "activities": [
+            "Present strategy to stakeholders",
+            "Gather feedback and objections",
+            "Refine based on input",
+            "Get formal approval to proceed"
+          ],
+          "outputs": [
+            "Approved strategy document",
+            "Stakeholder sign-off",
+            "Refined budget and timeline"
+          ],
+          "quality_gates": [
+            "Key stakeholders approve",
+            "Budget and timeline confirmed",
+            "No major strategic concerns unresolved"
+          ]
+        }
+      ],
+      
+      "phase_outputs": [
+        "Campaign Strategy Document (15-25 pages)",
+        "Executive Summary (2 pages)",
+        "Stakeholder approval"
+      ],
+      
+      "escalation_triggers": [
+        "Stakeholder disagreement on strategy",
+        "Budget insufficient for proposed channels",
+        "Product differentiation too weak for market"
+      ]
+    },
+    
+    {
+      "phase_id": 3,
+      "phase_name": "Tactical Execution Planning",
+      "duration": "7-10 days",
+      "objective": "Translate strategy into detailed execution plans with timelines and assets",
+      
+      "steps": [
+        {
+          "step": "3.1",
+          "name": "Campaign Phasing",
+          "owner": "Marketing & Growth Agent",
+          "duration": "1 day",
+          "inputs": ["Strategy", "Timeline"],
+          "activities": [
+            "Break campaign into 3-4 phases",
+            "Define objectives and tactics per phase",
+            "Set KPIs and milestones per phase",
+            "Create timeline with dependencies"
+          ],
+          "outputs": [
+            "Campaign phasing document",
+            "Detailed timeline (Gantt chart)",
+            "Phase-specific KPIs"
+          ],
+          "quality_gates": [
+            "Each phase has clear objective and success criteria",
+            "Timeline accounts for dependencies",
+            "Phases build on each other logically"
+          ]
+        },
+        {
+          "step": "3.2",
+          "name": "Content & Creative Strategy",
+          "owner": "Marketing & Growth Agent + Creative Team",
+          "duration": "2-3 days",
+          "inputs": ["Messaging", "Psychology frameworks", "Channel tactics"],
+          "activities": [
+            "Define creative themes and concepts",
+            "Develop ad creative briefs (3-5 angles)",
+            "Design landing page structure and copy",
+            "Plan content calendar (blog, email, social)",
+            "Apply psychology principles to creative"
+          ],
+          "outputs": [
+            "Creative briefs (3-5 angles)",
+            "Landing page wireframe and copy",
+            "Content calendar (12 weeks)",
+            "Psychology application checklist"
+          ],
+          "quality_gates": [
+            "Creative briefs are specific and actionable",
+            "Landing pages optimized for conversion",
+            "Content calendar aligned with campaign phases"
+          ]
+        },
+        {
+          "step": "3.3",
+          "name": "Channel Execution Plans",
+          "owner": "Marketing & Growth Agent + Channel Specialists",
+          "duration": "2-3 days",
+          "inputs": ["Channel strategy", "Budget", "Timeline"],
+          "activities": [
+            "Create detailed execution plan per channel",
+            "Define targeting, bidding, budget pacing",
+            "Plan A/B tests and experiments",
+            "Set up tracking and attribution",
+            "Create channel-specific dashboards"
+          ],
+          "outputs": [
+            "Channel execution plans (1 per primary channel)",
+            "Experiment plan with hypotheses and success metrics",
+            "Tracking and attribution setup document",
+            "Dashboard mockups"
+          ],
+          "quality_gates": [
+            "Each channel has clear tactics, budget, and timeline",
+            "At least 3 experiments planned per channel",
+            "Tracking covers all critical conversion points"
+          ]
+        },
+        {
+          "step": "3.4",
+          "name": "Asset Requirements & Production",
+          "owner": "Marketing & Growth Agent + Design/Content Teams",
+          "duration": "2-3 days",
+          "inputs": ["Creative briefs", "Content calendar", "Channel plans"],
+          "activities": [
+            "Create comprehensive asset list",
+            "Assign owners and deadlines",
+            "Coordinate with design and content teams",
+            "Review and approve assets",
+            "Ensure brand consistency"
+          ],
+          "outputs": [
+            "Asset requirements list",
+            "Production timeline",
+            "Asset review and approval process",
+            "Brand compliance checklist"
+          ],
+          "quality_gates": [
+            "All required assets identified",
+            "Realistic production timeline",
+            "Review process defined with stakeholders"
+          ]
+        }
+      ],
+      
+      "phase_outputs": [
+        "Tactical Execution Playbook (30-50 pages)",
+        "Campaign timeline with all tasks and dependencies",
+        "Asset production plan",
+        "Experiment framework"
+      ],
+      
+      "escalation_triggers": [
+        "Asset production timeline at risk",
+        "Technical implementation blockers",
+        "Budget reallocation needed"
+      ]
+    },
+    
+    {
+      "phase_id": 4,
+      "phase_name": "Launch & Optimization",
+      "duration": "Ongoing (90+ days typical)",
+      "objective": "Execute campaign, monitor performance, optimize continuously",
+      
+      "steps": [
+        {
+          "step": "4.1",
+          "name": "Campaign Launch",
+          "owner": "Marketing & Growth Agent + Execution Team",
+          "duration": "Week 1",
+          "inputs": ["Execution plans", "Assets", "Tracking setup"],
+          "activities": [
+            "Launch all channels per plan",
+            "Verify tracking and attribution",
+            "Monitor initial performance closely",
+            "Document launch learnings"
+          ],
+          "outputs": [
+            "Campaign live across all channels",
+            "Launch checklist completed",
+            "Day 1-7 performance report",
+            "Initial learnings documented"
+          ],
+          "quality_gates": [
+            "All channels live as planned",
+            "Tracking verified and working",
+            "No critical errors or downtime"
+          ]
+        },
+        {
+          "step": "4.2",
+          "name": "Daily Monitoring & Quick Optimizations",
+          "owner": "Marketing & Growth Agent",
+          "duration": "Ongoing",
+          "inputs": ["Real-time performance data"],
+          "activities": [
+            "Review key metrics daily (spend, clicks, conversions)",
+            "Pause underperforming ads/keywords",
+            "Adjust bids and budgets",
+            "Monitor for technical issues",
+            "Alert stakeholders to anomalies"
+          ],
+          "outputs": [
+            "Daily performance snapshot",
+            "Optimization actions taken",
+            "Issue log"
+          ],
+          "quality_gates": [
+            "No runaway spend or critical issues",
+            "Quick optimizations implemented within 24 hours",
+            "Stakeholders informed of major changes"
+          ]
+        },
+        {
+          "step": "4.3",
+          "name": "Weekly Analysis & Experimentation",
+          "owner": "Marketing & Growth Agent",
+          "duration": "Ongoing (weekly cadence)",
+          "inputs": ["Weekly performance data", "Experiment results"],
+          "activities": [
+            "Analyze channel and campaign performance",
+            "Review experiment results and statistical significance",
+            "Identify patterns and insights",
+            "Plan next round of experiments",
+            "Report to stakeholders"
+          ],
+          "outputs": [
+            "Weekly performance report",
+            "Experiment results and recommendations",
+            "Next week's experiment plan",
+            "Stakeholder update"
+          ],
+          "quality_gates": [
+            "At least 1 experiment concluded per week",
+            "Clear insights and action items",
+            "Stakeholders informed of performance and changes"
+          ]
+        },
+        {
+          "step": "4.4",
+          "name": "Monthly Strategic Review",
+          "owner": "Marketing & Growth Agent + Leadership",
+          "duration": "Monthly",
+          "inputs": ["Monthly performance data", "Budget pacing", "KPI progress"],
+          "activities": [
+            "Review progress against campaign KPIs",
+            "Analyze unit economics (CAC, LTV, ROAS)",
+            "Assess channel mix and budget allocation",
+            "Identify strategic pivots or scale opportunities",
+            "Update forecasts and projections"
+          ],
+          "outputs": [
+            "Monthly strategic review deck",
+            "Budget reallocation recommendations",
+            "Updated forecast",
+            "Strategic decisions"
+          ],
+          "quality_gates": [
+            "Clear view of ROI and unit economics",
+            "Strategic recommendations backed by data",
+            "Leadership aligned on next steps"
+          ]
+        }
+      ],
+      
+      "phase_outputs": [
+        "Live campaign across all channels",
+        "Daily, weekly, and monthly performance reports",
+        "Continuous optimization log",
+        "Strategic pivots and scale decisions"
+      ],
+      
+      "escalation_triggers": [
+        "Campaign significantly underperforming (>30% below targets)",
+        "CAC exceeds LTV",
+        "Major channel or technical failure",
+        "Budget overrun risk"
+      ]
+    },
+    
+    {
+      "phase_id": 5,
+      "phase_name": "Post-Campaign Review",
+      "duration": "3-5 days",
+      "objective": "Document learnings, measure outcomes, inform future campaigns",
+      
+      "steps": [
+        {
+          "step": "5.1",
+          "name": "Performance Analysis",
+          "owner": "Marketing & Growth Agent",
+          "duration": "2 days",
+          "inputs": ["Complete campaign data", "Original KPIs"],
+          "activities": [
+            "Calculate final campaign metrics vs. targets",
+            "Analyze performance by channel, phase, audience",
+            "Assess experiment outcomes and learnings",
+            "Calculate ROI and unit economics",
+            "Identify what worked and what didn't"
+          ],
+          "outputs": [
+            "Final campaign performance report",
+            "Channel performance breakdown",
+            "Experiment learnings summary",
+            "ROI analysis"
+          ],
+          "quality_gates": [
+            "All KPIs measured and compared to targets",
+            "Clear attribution of results to specific tactics",
+            "Honest assessment of failures and successes"
+          ]
+        },
+        {
+          "step": "5.2",
+          "name": "Learnings & Recommendations",
+          "owner": "Marketing & Growth Agent",
+          "duration": "1 day",
+          "inputs": ["Performance analysis", "Team feedback"],
+          "activities": [
+            "Synthesize key learnings (strategic, tactical, operational)",
+            "Identify repeatable playbooks",
+            "Document what to avoid in future",
+            "Make recommendations for next campaigns",
+            "Update internal best practices"
+          ],
+          "outputs": [
+            "Key learnings document",
+            "Repeatable playbooks",
+            "Recommendations for future campaigns",
+            "Updated best practices wiki"
+          ],
+          "quality_gates": [
+            "At least 5 actionable learnings documented",
+            "Recommendations are specific and prioritized",
+            "Learnings shared with broader team"
+          ]
+        },
+        {
+          "step": "5.3",
+          "name": "Stakeholder Presentation",
+          "owner": "Marketing & Growth Agent + Leadership",
+          "duration": "0.5 day",
+          "inputs": ["Performance report", "Learnings document"],
+          "activities": [
+            "Present final results to stakeholders",
+            "Share key learnings and recommendations",
+            "Discuss implications for future strategy",
+            "Get feedback and alignment"
+          ],
+          "outputs": [
+            "Stakeholder presentation deck",
+            "Q&A and feedback documented",
+            "Alignment on next steps"
+          ],
+          "quality_gates": [
+            "Stakeholders understand outcomes and learnings",
+            "Feedback incorporated into future planning",
+            "Clear mandate for next campaigns"
+          ]
+        }
+      ],
+      
+      "phase_outputs": [
+        "Campaign Post-Mortem Report (10-15 pages)",
+        "Learnings and Best Practices Document",
+        "Stakeholder presentation and sign-off"
+      ],
+      
+      "escalation_triggers": [
+        "Significant underperformance with no clear explanation",
+        "Major strategic disagreement on learnings"
+      ]
+    }
+  ],
+  
+  "workflow_governance": {
+    "quality_gates_philosophy": "Each phase must meet quality standards before proceeding. Marketing & Growth Agent can self-assess L1-L2 gates, but L3 gates require Senior PM approval.",
+    
+    "escalation_paths": {
+      "technical_issues": "Staff Engineer Agent",
+      "budget_overruns": "Senior PM Agent",
+      "strategic_disagreements": "Senior PM Agent",
+      "data_security_concerns": "Security Lead Agent"
+    },
+    
+    "documentation_requirements": {
+      "all_phases": "Document key decisions, rationale, and outcomes",
+      "grounding_phase": "Cite all sources, save research artifacts",
+      "strategy_phase": "Get written stakeholder approval",
+      "execution_phase": "Maintain change log for all optimizations",
+      "review_phase": "Archive all campaign data and learnings"
+    },
+    
+    "collaboration_protocols": {
+      "with_creative_system": "Use 03_creative_content_system for content production",
+      "with_research_engine": "Use 04_research for deep competitive analysis",
+      "with_tracking_system": "Use 07_tracking for analytics and attribution",
+      "with_orchestrator": "Update 01_orchestration on phase transitions"
+    }
+  },
+  
+  "success_metrics": {
+    "workflow_efficiency": {
+      "time_to_strategy": "< 7 days from intake to approved strategy",
+      "time_to_launch": "< 21 days from intake to campaign live",
+      "stakeholder_satisfaction": "> 8/10 on post-campaign survey"
+    },
+    "campaign_effectiveness": {
+      "kpi_achievement": "> 80% of campaigns hit primary KPI",
+      "roi": "Median ROAS > 3:1",
+      "learning_velocity": "> 5 actionable learnings per campaign"
+    }
+  }
+}

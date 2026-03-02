@@ -1,0 +1,288 @@
+{
+  "memorySchema": {
+    "version": "1.0.0",
+    "description": "Memory and learning system for Digital Marketing Agent",
+    "schema": {
+      "campaigns": {
+        "description": "Historical campaign performance data for learning patterns",
+        "fields": {
+          "campaignId": "string",
+          "campaignName": "string",
+          "type": "enum: email, paid_ads, content, partnership, viral",
+          "objective": "string",
+          "targetAudience": "string",
+          "channels": ["string"],
+          "duration": {
+            "startDate": "ISO8601",
+            "endDate": "ISO8601"
+          },
+          "budget": {
+            "allocated": "number",
+            "spent": "number"
+          },
+          "performance": {
+            "impressions": "number",
+            "clicks": "number",
+            "conversions": "number",
+            "revenue": "number",
+            "roi": "number",
+            "ctr": "number",
+            "conversionRate": "number",
+            "cpc": "number",
+            "cpa": "number"
+          },
+          "insights": ["string"],
+          "successFactors": ["string"],
+          "failureFactors": ["string"],
+          "learnings": {
+            "whatWorked": "string",
+            "whatDidntWork": "string",
+            "nextSteps": "string"
+          },
+          "creativeAssets": {
+            "copyVariations": ["string"],
+            "designApproach": "string",
+            "messaging": "string"
+          }
+        }
+      },
+
+      "clientProfiles": {
+        "description": "Client/company context and historical interactions",
+        "fields": {
+          "clientId": "string",
+          "companyName": "string",
+          "industry": "string",
+          "stage": "enum: early, growth, mature",
+          "businessModel": "string",
+          "products": ["string"],
+          "targetMarket": "string",
+          "currentMetrics": {
+            "users": "number",
+            "revenue": "number",
+            "churn": "number",
+            "cac": "number",
+            "ltv": "number",
+            "growthRate": "number"
+          },
+          "previousStrategies": [
+            {
+              "name": "string",
+              "results": "object",
+              "dateImplemented": "ISO8601"
+            }
+          ],
+          "preferredChannels": ["string"],
+          "constraints": ["string"],
+          "budget": "number",
+          "teamSize": "number",
+          "goals": {
+            "primary": "string",
+            "secondary": ["string"],
+            "timeline": "string"
+          }
+        }
+      },
+
+      "performancePatterns": {
+        "description": "Learned patterns from historical data",
+        "fields": {
+          "patternId": "string",
+          "category": "enum: acquisition, retention, conversion, pricing, messaging",
+          "pattern": "string",
+          "industries": ["string"],
+          "stages": ["string"],
+          "successRate": "number",
+          "averageROI": "number",
+          "typicalTimeline": "string",
+          "examples": ["string"],
+          "conditions": {
+            "requiredConditions": ["string"],
+            "benefitsFrom": ["string"]
+          }
+        }
+      },
+
+      "competitorIntelligence": {
+        "description": "Tracked competitor strategies and performance",
+        "fields": {
+          "competitorId": "string",
+          "companyName": "string",
+          "industry": "string",
+          "positioning": "string",
+          "targetAudience": "string",
+          "messaging": "string",
+          "channels": ["string"],
+          "campaigns": [
+            {
+              "name": "string",
+              "channel": "string",
+              "messaging": "string",
+              "estimatedSpend": "number",
+              "dateObserved": "ISO8601"
+            }
+          ],
+          "pricing": {
+            "model": "string",
+            "prices": "object"
+          },
+          "trendsObserved": ["string"],
+          "strategicMoves": ["string"]
+        }
+      },
+
+      "marketTrends": {
+        "description": "Observed market trends and emerging opportunities",
+        "fields": {
+          "trendId": "string",
+          "title": "string",
+          "category": "enum: technology, consumer_behavior, channel, messaging, model",
+          "description": "string",
+          "relevance": "enum: high, medium, low",
+          "industries": ["string"],
+          "expectedDuration": "string",
+          "adoptionRate": "string",
+          "opportunitiesForClients": ["string"],
+          "riskFactors": ["string"],
+          "dateIdentified": "ISO8601"
+        }
+      },
+
+      "bestPractices": {
+        "description": "Proven best practices extracted from successful campaigns",
+        "fields": {
+          "practiceId": "string",
+          "title": "string",
+          "category": "enum: copy, design, targeting, timing, frequency, budget",
+          "description": "string",
+          "applicableIndustries": ["string"],
+          "applicableStages": ["string"],
+          "expectedImpact": "string",
+          "implementationSteps": ["string"],
+          "provenResults": {
+            "campaignsApplied": "number",
+            "averageImprovement": "number",
+            "casesOfSuccess": "number"
+          },
+          "conditionalFactors": ["string"]
+        }
+      },
+
+      "customerSegments": {
+        "description": "Learned customer segment characteristics for targeting",
+        "fields": {
+          "segmentId": "string",
+          "name": "string",
+          "demographics": {
+            "ageRange": "string",
+            "gender": "string",
+            "income": "string",
+            "location": "string",
+            "jobTitle": "string"
+          },
+          "psychographics": {
+            "values": ["string"],
+            "interests": ["string"],
+            "concerns": ["string"]
+          },
+          "behaviors": {
+            "channels": ["string"],
+            "contentPreference": "string",
+            "purchaseFrequency": "string",
+            "loyaltyLevel": "string"
+          },
+          "responsiveness": {
+            "emailCTR": "number",
+            "adCTR": "number",
+            "conversionRate": "number"
+          },
+          "messaging": {
+            "resonatesWithTheme": "string",
+            "objectionsToAddress": ["string"]
+          }
+        }
+      },
+
+      "acquisitionInsights": {
+        "description": "Channel and tactic-specific acquisition insights",
+        "fields": {
+          "insightId": "string",
+          "channel": "string",
+          "tactic": "string",
+          "targetSegment": "string",
+          "averageCAC": "number",
+          "averageCPA": "number",
+          "averageCPC": "number",
+          "bestPerformingMessage": "string",
+          "bestPerformingCreative": "string",
+          "optimalBudget": "string",
+          "optimalTiming": "string",
+          "seasonalFactors": ["string"],
+          "learnings": ["string"]
+        }
+      },
+
+      "retentionPatterns": {
+        "description": "Learned retention and engagement patterns",
+        "fields": {
+          "patternId": "string",
+          "industryOrProduct": "string",
+          "cohortCharacteristic": "string",
+          "day1Retention": "number",
+          "week1Retention": "number",
+          "month1Retention": "number",
+          "month3Retention": "number",
+          "churnDrivers": ["string"],
+          "engagementTriggers": ["string"],
+          "effectiveInterventions": ["string"],
+          "ltvEstimate": "number",
+          "dateObserved": "ISO8601"
+        }
+      },
+
+      "messagingLibrary": {
+        "description": "Effective messaging and copywriting patterns",
+        "fields": {
+          "messageId": "string",
+          "type": "enum: headline, value_prop, social_proof, urgency, curiosity",
+          "message": "string",
+          "targetAudience": "string",
+          "channel": "string",
+          "emotionalHook": "string",
+          "performanceData": {
+            "timesUsed": "number",
+            "averageCTR": "number",
+            "averageConversion": "number"
+          },
+          "psychologicalPrinciples": ["string"],
+          "variants": ["string"]
+        }
+      }
+    },
+
+    "memoryLifecycle": {
+      "recordCreation": "When campaigns complete or insights are extracted",
+      "recordUpdating": "Quarterly or as new data becomes available",
+      "recordRetention": "Minimum 2-3 years for pattern analysis",
+      "recordArchival": "After 5 years, archive to cold storage but keep searchable index"
+    },
+
+    "accessPatterns": {
+      "frequentQueries": [
+        "Similar past campaigns in my industry",
+        "What worked for companies at my stage",
+        "Best performing channels for my audience",
+        "Common churn drivers and solutions",
+        "Trending messaging and creative approaches"
+      ]
+    },
+
+    "learningMechanisms": {
+      "automatedInsightGeneration": "Extract patterns from campaign data automatically",
+      "anomalyDetection": "Flag unusual performance (positive or negative)",
+      "trendIdentification": "Monitor for emerging patterns quarter-over-quarter",
+      "competitiveMonitoring": "Continuous competitive intelligence gathering",
+      "bestPracticeExtraction": "Codify successful practices into reusable playbooks"
+    }
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "file_name": "07A_StrategIQ_Tactical_Execution_Engine.json",
+  "version": "1.0.0",
+  "system": "StrategIQ OS",
+  "module": "Execution Engine | Marketing & Growth Orchestration",
+  "author": "StrategIQ OS by OpenOps Studio | Created by Mamdouh Aboammar",
+  "linkedIn": "https://www.linkedin.com/in/mamdouh-aboammar",
+  "description": "Transforms the Decision Blueprint into a coordinated, measurable execution plan across Marketing, Growth, Creative, and UX teams. Ensures every tactical action aligns directly with the Core Question and Strategy Spine.",
+
+  "input_requirements": {
+    "decision_blueprint": "Validated strategy file (06D) containing core question, truths, tactics, and KPIs",
+    "resources": ["Teams", "Budgets", "Tools"],
+    "constraints": ["Timeframe", "Risk Appetite", "Channel Priorities"]
+  },
+
+  "activation_triggers": [
+    "decision_blueprint.validated == true",
+    "qa_score >= 0.85",
+    "strategy_spine.exists == true"
+  ],
+
+  "execution_layers": {
+    "layer_1": {
+      "name": "Strategic Alignment Layer",
+      "goal": "Convert strategic clarity into operational focus.",
+      "agents": ["Execution Strategist", "Operations PM", "Data Alignment Officer"],
+      "actions": [
+        "Map all actions directly to the Strategy Spine logic",
+        "Eliminate non-core or vanity initiatives",
+        "Define one success metric per objective"
+      ],
+      "output": "Execution Alignment Sheet"
+    },
+
+    "layer_2": {
+      "name": "Tactical Design Layer",
+      "goal": "Design specific, cross-functional campaigns that express the strategy.",
+      "agents": ["Marketing Engineer", "Growth Hacker", "UX Architect", "Creative Strategist"],
+      "framework": {
+        "Campaign Schema": {
+          "initiative_name": "",
+          "goal": "",
+          "core_channel": "",
+          "support_channels": [],
+          "owner": "",
+          "timeline": "",
+          "success_metric": "",
+          "dependencies": []
+        }
+      },
+      "output": "Campaign Design Blueprints"
+    },
+
+    "layer_3": {
+      "name": "Execution & Deployment Layer",
+      "goal": "Activate designed initiatives with precision and measurable accountability.",
+      "agents": ["Performance Manager", "Content Producer", "Media Buyer", "Automation Engineer"],
+      "process": [
+        "Activate approved campaigns with smart scheduling",
+        "Connect analytics & tracking systems (GA4, Posthog, Ads Manager)",
+        "Enable automated reporting pipelines"
+      ],
+      "output": "Live Execution Dashboard"
+    },
+
+    "layer_4": {
+      "name": "Measurement & Optimization Layer",
+      "goal": "Evaluate, iterate, and scale tactics based on evidence.",
+      "agents": ["Data Analyst", "Experiment Designer", "Growth Optimizer"],
+      "rules": [
+        "Run controlled experiments per channel",
+        "Evaluate using primary KPI and confidence interval",
+        "Terminate underperforming tactics quickly",
+        "Scale validated winners"
+      ],
+      "output": "Performance Iteration Report"
+    }
+  },
+
+  "cross_functional_teams": {
+    "Marketing": ["Growth Marketer", "Copy Strategist", "Creative Lead"],
+    "Product": ["PM", "UX Designer", "Data Engineer"],
+    "Paid Media": ["Performance Buyer", "Tracking Specialist"],
+    "Analytics": ["Measurement Lead", "Data QA Analyst"]
+  },
+
+  "governance_model": {
+    "rules": [
+      "Every initiative must map to one Strategic Truth and one KPI.",
+      "No action without measurable impact path.",
+      "If two teams own the same goal → define shared metric and single accountability.",
+      "Weekly review required for all live campaigns.",
+      "Every iteration must reference its parent Core Question ID."
+    ],
+    "meeting_cadence": {
+      "weekly_sync": "Every Monday",
+      "bi_weekly_analysis": "Every 2 weeks",
+      "monthly_board_review": "End of each month"
+    }
+  },
+
+  "data_integration": {
+    "analytics_tools": ["GA4", "Mixpanel", "Posthog", "Looker", "Notion Dashboards"],
+    "tracking_structure": {
+      "event_naming": "CQ_<initiative>_<metric>",
+      "dimensions": ["Channel", "Campaign", "Persona", "Creative", "Stage"],
+      "primary_metrics": ["Activation", "Retention", "Conversion", "Engagement", "CAC"]
+    },
+    "reporting_pipeline": {
+      "frequency": "Daily aggregation, weekly synthesis",
+      "formats": ["Dashboard", "Markdown Summary", "Executive PDF"],
+      "ownership": "Data Alignment Officer"
+    }
+  },
+
+  "automation_logic": {
+    "auto_deploy_if": {
+      "confidence_score": ">=0.85",
+      "alignment_confirmed": true,
+      "resources_allocated": true
+    },
+    "fail_safe": {
+      "if_kpi_drop > 25%": "Pause automation, notify Growth Strategist",
+      "if_alignment_lost": "Trigger recalibration session"
+    }
+  },
+
+  "output_contract": {
+    "deliverables": [
+      "Execution Alignment Sheet",
+      "Campaign Design Blueprints",
+      "Live Execution Dashboard",
+      "Performance Iteration Report",
+      "Executive Summary (Auto Generated)"
+    ],
+    "validation_gates": [
+      "Operational Readiness ≥ 0.85",
+      "Measurement Setup Complete == true",
+      "KPI Path Defined == true"
+    ]
+  },
+
+  "performance_tracking": {
+    "primary_signals": ["Conversion Rate", "Retention Lift", "Revenue Delta", "Brand Lift"],
+    "secondary_signals": ["CTR", "Engagement Depth", "Funnel Velocity"],
+    "learning_feedback": {
+      "store_to_kb": true,
+      "auto_summarize": true,
+      "tag": "execution_insight"
+    }
+  },
+
+  "handoff_rules": {
+    "handoff_to": ["Marketing Director", "Growth Lead", "Product Owner"],
+    "handoff_trigger": "QA_Gate validation complete",
+    "handoff_format": "Notion + PDF + JSON for API use"
+  },
+
+  "integration_with_clarity_system": {
+    "source_module": "06D_StrategIQ_Clarity_Decision_Blueprint",
+    "shared_fields": ["core_question", "strategy_spine", "kpis", "tactics"],
+    "loopback_logic": {
+      "if_confidence_score < 0.75": "Re-trigger Clarity Workshop (06C)",
+      "if_strategy_spine_updated": "Auto-sync with Execution Layer"
+    }
+  },
+
+  "example_output": {
+    "core_question": "Why are qualified users not converting?",
+    "strategy_spine": "If users hesitate due to low trust, rebuild credibility by redesigning proof layers.",
+    "execution_plan": [
+      {
+        "initiative": "Proof-First Landing Campaign",
+        "channels": ["Google Ads", "Meta Retargeting", "Email"],
+        "timeline": "30 days",
+        "metric": "Activation Rate",
+        "owner": "Performance Manager"
+      },
+      {
+        "initiative": "Empathy Messaging Redesign",
+        "channels": ["Website", "UX Flow", "CRM"],
+        "timeline": "60 days",
+        "metric": "Retention Rate",
+        "owner": "UX Lead"
+      }
+    ],
+    "kpis": {
+      "primary": "Activation Rate +20%",
+      "secondary": "Retention +10%"
+    },
+    "confidence_score": 0.87
+  }
+}

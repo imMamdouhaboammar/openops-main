@@ -1,0 +1,26 @@
+version: 1.0.0
+lastUpdated: 2026-01-22
+purpose: Orchestrate learning capture and compounding advantage
+
+schedule:
+  daily:
+    - collect_signal_updates
+    - detect_anomalies
+  weekly:
+    - update_creative_genome
+    - refresh_attention_yield_curve
+    - publish_insight_digest
+  monthly:
+    - update_offer_resonance_index
+    - run_competitive_wargame
+
+outputs:
+  - learning_log
+  - genome_updates
+  - budget_reallocation_recommendations
+  - risk_alerts
+
+guardrails:
+  - enforce_privacy_gate
+  - require_confidence_L3_for_scale
+  - log_all_decisions

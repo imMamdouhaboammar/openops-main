@@ -1,0 +1,351 @@
+{
+    "standard_workflows": [
+        {
+            "id": "initial-startup-assessment",
+            "name": "Initial Startup Assessment",
+            "trigger": "New startup engagement",
+            "duration": "1-2 hours",
+            "steps": [
+                {
+                    "step": 1,
+                    "action": "Gather metrics and context",
+                    "inputs": [
+                        "MRR/ARR",
+                        "Team size",
+                        "Customer count",
+                        "Burn rate",
+                        "Runway"
+                    ],
+                    "tool": "Manual collection / form"
+                },
+                {
+                    "step": 2,
+                    "action": "Run stage diagnostic",
+                    "tool": "stage-diagnostic-engine",
+                    "output": "Current stage + readiness score"
+                },
+                {
+                    "step": 3,
+                    "action": "Identify critical gaps",
+                    "tool": "stage-diagnostic-engine",
+                    "output": "Gap analysis report"
+                },
+                {
+                    "step": 4,
+                    "action": "Generate priority matrix",
+                    "tool": "priority-calculator",
+                    "output": "Do Now / Plan / Delegate / Eliminate matrix"
+                },
+                {
+                    "step": 5,
+                    "action": "Create 90-day playbook",
+                    "tool": "playbook-generator",
+                    "output": "Customized execution plan"
+                },
+                {
+                    "step": 6,
+                    "action": "Present findings and recommendations",
+                    "deliverable": "Assessment report + Playbook document"
+                }
+            ],
+            "frequency": "One-time per new engagement"
+        },
+        {
+            "id": "pre-fundraise-preparation",
+            "name": "Pre-Fundraise Preparation",
+            "trigger": "Startup planning to raise within 3-6 months",
+            "duration": "2-4 weeks (preparation), 3-6 months (execution)",
+            "steps": [
+                {
+                    "step": 1,
+                    "action": "Assess investor readiness",
+                    "tool": "investor-readiness-scorecard",
+                    "output": "Readiness score (1-10)"
+                },
+                {
+                    "step": 2,
+                    "action": "Identify metric gaps",
+                    "analysis": "Compare metrics vs. investor expectations for target round",
+                    "output": "List of gaps to close"
+                },
+                {
+                    "step": 3,
+                    "action": "Build improvement roadmap",
+                    "tool": "priority-calculator",
+                    "output": "3-6 month plan to improve readiness score"
+                },
+                {
+                    "step": 4,
+                    "action": "Prepare pitch materials",
+                    "deliverables": [
+                        "Pitch deck",
+                        "Financial model",
+                        "Data room"
+                    ],
+                    "timeline": "Weeks 3-6"
+                },
+                {
+                    "step": 5,
+                    "action": "Investor targeting strategy",
+                    "actions": [
+                        "Identify 20-30 target investors",
+                        "Map warm intro paths",
+                        "Sequence outreach plan"
+                    ],
+                    "timeline": "Week 8-10"
+                },
+                {
+                    "step": 6,
+                    "action": "Mock pitches and refinement",
+                    "iterations": "3-5 practice pitches",
+                    "timeline": "Week 10-12"
+                },
+                {
+                    "step": 7,
+                    "action": "Launch fundraise",
+                    "note": "Typically 3-6 months from start of preparation to close"
+                }
+            ],
+            "success_rate": "60%+ when readiness score >7",
+            "frequency": "Per fundraising round"
+        },
+        {
+            "id": "quarterly-strategic-review",
+            "name": "Quarterly Strategic Review",
+            "trigger": "End of each quarter",
+            "duration": "Half day",
+            "steps": [
+                {
+                    "step": 1,
+                    "action": "Review previous quarter metrics",
+                    "compare": "Actual vs. Plan",
+                    "output": "Variance analysis"
+                },
+                {
+                    "step": 2,
+                    "action": "Assess stage progression",
+                    "tool": "stage-diagnostic-engine",
+                    "output": "Updated readiness score"
+                },
+                {
+                    "step": 3,
+                    "action": "Update priorities",
+                    "tool": "priority-calculator",
+                    "output": "Revised priority matrix for next quarter"
+                },
+                {
+                    "step": 4,
+                    "action": "Adjust playbook",
+                    "tool": "playbook-generator",
+                    "output": "Next 90-day playbook"
+                },
+                {
+                    "step": 5,
+                    "action": "Set next quarter OKRs",
+                    "framework": "Objectives and Key Results",
+                    "output": "3-5 OKRs for upcoming quarter"
+                },
+                {
+                    "step": 6,
+                    "action": "Team alignment session",
+                    "deliverable": "Shared understanding of priorities and goals"
+                }
+            ],
+            "frequency": "Quarterly (Q1, Q2, Q3, Q4)"
+        }
+    ],
+    "advanced_workflows": [
+        {
+            "id": "market-expansion-planning",
+            "name": "Market Expansion Planning",
+            "trigger": "Startup ready to expand to new market (geographic or vertical)",
+            "duration": "4-8 weeks planning + 6-12 months execution",
+            "steps": [
+                {
+                    "step": 1,
+                    "action": "Assess readiness for expansion",
+                    "criteria": [
+                        "Core market profitability",
+                        "Repeatable playbook in place",
+                        "Unit economics healthy",
+                        "Team capacity"
+                    ],
+                    "go_no_go_decision": true
+                },
+                {
+                    "step": 2,
+                    "action": "Evaluate target markets",
+                    "dimensions": [
+                        "Market size",
+                        "Competitive landscape",
+                        "Regulatory barriers",
+                        "Cultural fit",
+                        "Resource requirements"
+                    ],
+                    "output": "Ranked list of target markets"
+                },
+                {
+                    "step": 3,
+                    "action": "Calculate resource requirements",
+                    "estimate": [
+                        "Team (hires needed)",
+                        "Budget (12-month projection)",
+                        "Timeline to breakeven in new market"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "action": "Build expansion playbook",
+                    "tool": "playbook-generator",
+                    "customizations": "Market-specific tactics",
+                    "output": "12-month expansion plan"
+                },
+                {
+                    "step": 5,
+                    "action": "Define success metrics",
+                    "examples": [
+                        "Month 6: 10 customers in new market",
+                        "Month 12: $50K MRR, CAC payback <18 months"
+                    ]
+                },
+                {
+                    "step": 6,
+                    "action": "Execute and monitor",
+                    "review_cadence": "Monthly for first 6 months, then quarterly"
+                }
+            ],
+            "common_mistakes": [
+                "Expanding before core market profitability",
+                "Underestimating localization needs",
+                "Splitting team focus too early"
+            ],
+            "mena_context": "GCC often treated as single market; Egypt separate due to differences"
+        },
+        {
+            "id": "exit-preparation",
+            "name": "Exit Preparation (IPO or M&A)",
+            "trigger": "Startup at Series B+ considering exit in 12-24 months",
+            "duration": "12-24 months",
+            "steps": [
+                {
+                    "step": 1,
+                    "action": "Financial house in order",
+                    "sub_actions": [
+                        "Clean financials (audited)",
+                        "Predictable revenue model",
+                        "Path to profitability clear",
+                        "Cap table optimized"
+                    ],
+                    "timeline": "Months 1-6"
+                },
+                {
+                    "step": 2,
+                    "action": "Story and positioning",
+                    "narratives": [
+                        "IPO: Growth story + strategic vision",
+                        "M&A: Strategic value to acquirer + synergies"
+                    ],
+                    "timeline": "Months 3-9"
+                },
+                {
+                    "step": 3,
+                    "action": "Strategic acquirer identification (if M&A)",
+                    "process": [
+                        "List 10-20 potential acquirers",
+                        "Map relationships and intro paths",
+                        "Informal conversations (if appropriate)"
+                    ],
+                    "timeline": "Months 6-12"
+                },
+                {
+                    "step": 4,
+                    "action": "Data room preparation",
+                    "contents": [
+                        "Financial statements (3+ years)",
+                        "Customer contracts",
+                        "IP documentation",
+                        "Team org chart and equity",
+                        "Legal/compliance docs"
+                    ],
+                    "timeline": "Months 9-15"
+                },
+                {
+                    "step": 5,
+                    "action": "Process management",
+                    "ipo_path": "Investment bank selection, S-1 filing, roadshow",
+                    "ma_path": "Banker engagement, bid process, negotiation",
+                    "timeline": "Months 15-24"
+                }
+            ],
+            "mena_context": {
+                "ipo_options": [
+                    "Tadawul (Saudi)",
+                    "ADX/DFM (UAE)",
+                    "International (NASDAQ for large scale)"
+                ],
+                "ma_landscape": "Strategic acquirers often regional conglomerates or international tech companies"
+            }
+        },
+        {
+            "id": "unit-economics-optimization",
+            "name": "Unit Economics Optimization",
+            "trigger": "Unit economics unhealthy or investor readiness requires improvement",
+            "duration": "3-6 months",
+            "steps": [
+                {
+                    "step": 1,
+                    "action": "Baseline current unit economics",
+                    "metrics": [
+                        "CAC",
+                        "LTV",
+                        "LTV/CAC ratio",
+                        "CAC payback period",
+                        "Gross margin"
+                    ],
+                    "output": "Current state assessment"
+                },
+                {
+                    "step": 2,
+                    "action": "Identify improvement levers",
+                    "ltv_levers": [
+                        "Reduce churn",
+                        "Increase ARPU",
+                        "Improve gross margin"
+                    ],
+                    "cac_levers": [
+                        "Channel optimization",
+                        "Referral program",
+                        "Sales efficiency"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "action": "Prioritize initiatives",
+                    "framework": "Impact vs. Effort matrix",
+                    "output": "Top 3-5 initiatives"
+                },
+                {
+                    "step": 4,
+                    "action": "Execute optimizations",
+                    "examples": [
+                        "Improve onboarding to increase activation (reduce churn)",
+                        "Implement annual pricing (increase ARPU)",
+                        "Kill underperforming ad channels (reduce CAC)"
+                    ],
+                    "timeline": "3-6 months"
+                },
+                {
+                    "step": 5,
+                    "action": "Monitor and iterate",
+                    "review_cadence": "Bi-weekly for first 3 months",
+                    "success_criteria": [
+                        "LTV/CAC >3x",
+                        "CAC payback <12 months",
+                        "Gross margin >70%"
+                    ]
+                }
+            ],
+            "success_metric": "50%+ improvement in LTV/CAC ratio within 6 months"
+        }
+    ]
+}

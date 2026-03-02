@@ -1,0 +1,304 @@
+{
+    "internal_tools": [
+        {
+            "id": "query-decomposer",
+            "name": "Query Decomposer",
+            "category": "planning",
+            "description": "Breaks complex research questions into structured sub-queries for systematic investigation",
+            "inputs": {
+                "complex_query": "User's research question",
+                "context": "Optional domain/scope constraints"
+            },
+            "outputs": {
+                "primary_question": "Main research question",
+                "sub_questions": "List of component questions",
+                "search_queries": "Specific queries for each sub-question",
+                "dependencies": "Which sub-questions depend on others"
+            },
+            "techniques": [
+                "LLM-based decomposition",
+                "Entity extraction",
+                "Relationship mapping"
+            ]
+        },
+        {
+            "id": "intent-clarifier",
+            "name": "Intent Clarifier",
+            "category": "planning",
+            "description": "Ensures research objectives are crystal clear before execution",
+            "inputs": {
+                "user_query": "Raw user input",
+                "conversation_context": "Prior exchanges if any"
+            },
+            "outputs": {
+                "clarified_intent": "Disambiguated research objective",
+                "scope_boundaries": "What's in/out of scope",
+                "success_criteria": "Measurable success conditions",
+                "clarifying_questions": "Questions if ambiguity detected"
+            },
+            "confidence_threshold": 0.9
+        },
+        {
+            "id": "multi-source-searcher",
+            "name": "Multi-Source Searcher",
+            "category": "retrieval",
+            "description": "Parallel search across web, academic, industry, and news sources",
+            "inputs": {
+                "search_queries": "List of queries to execute",
+                "source_types": "Which source categories to search",
+                "filters": "Date range, language, etc."
+            },
+            "outputs": {
+                "results": "Ranked search results with snippets",
+                "source_metadata": "Source type, date, author info",
+                "deduplication": "Removed duplicate content"
+            },
+            "parallel_execution": true,
+            "max_results_per_source": 20
+        },
+        {
+            "id": "document-processor",
+            "name": "Document Processor",
+            "category": "retrieval",
+            "description": "Extracts and processes content from retrieved documents",
+            "inputs": {
+                "urls": "List of URLs to process",
+                "processing_mode": "full|summary|key_points"
+            },
+            "outputs": {
+                "extracted_content": "Clean text from documents",
+                "key_claims": "Main claims identified",
+                "citations": "Bibliographic information",
+                "metadata": "Publication date, author, etc."
+            },
+            "supported_formats": [
+                "HTML",
+                "PDF",
+                "Markdown",
+                "Plain text"
+            ]
+        },
+        {
+            "id": "evidence-grader",
+            "name": "Evidence Grader",
+            "category": "evaluation",
+            "description": "Classifies evidence as Level A/B/C with credibility scoring",
+            "inputs": {
+                "source": "Source metadata",
+                "claims": "Claims made by source"
+            },
+            "outputs": {
+                "evidence_level": "A|B|C",
+                "credibility_score": "0.0-1.0",
+                "factors_breakdown": "Score per evaluation factor",
+                "warnings": "Potential issues identified"
+            },
+            "factors": [
+                "author_expertise",
+                "publication_quality",
+                "recency",
+                "conflict_of_interest",
+                "corroboration"
+            ]
+        },
+        {
+            "id": "contradiction-detector",
+            "name": "Contradiction Detector",
+            "category": "evaluation",
+            "description": "Identifies contradicting claims across sources",
+            "inputs": {
+                "claims": "Set of claims from multiple sources"
+            },
+            "outputs": {
+                "contradiction_pairs": "List of conflicting claims",
+                "conflict_type": "direct|partial|contextual",
+                "resolution_suggestions": "Ways to resolve or acknowledge",
+                "source_comparison": "Which sources support which position"
+            }
+        },
+        {
+            "id": "bias-detector",
+            "name": "Bias Detector",
+            "category": "evaluation",
+            "description": "Identifies potential biases in research draft",
+            "inputs": {
+                "draft_text": "Current research draft",
+                "sources_used": "Sources cited in draft"
+            },
+            "outputs": {
+                "bias_score": "0.0-1.0 (lower is better)",
+                "bias_types": "Selection, confirmation, framing, etc.",
+                "flagged_sections": "Text sections with potential bias",
+                "remediation": "Suggestions to reduce bias"
+            }
+        },
+        {
+            "id": "synthesis-engine",
+            "name": "Synthesis Engine",
+            "category": "synthesis",
+            "description": "Transforms evidence bundle into coherent insights",
+            "inputs": {
+                "evidence_bundle": "All gathered evidence",
+                "synthesis_mode": "thematic|argument|comparative|trend"
+            },
+            "outputs": {
+                "themes": "Identified thematic clusters",
+                "patterns": "Cross-source patterns discovered",
+                "key_insights": "Synthesized findings",
+                "connections": "Relationships between themes"
+            },
+            "synthesis_patterns": [
+                "Thematic synthesis",
+                "Argument mapping",
+                "Comparative analysis",
+                "Trend identification"
+            ]
+        },
+        {
+            "id": "red-team-agent",
+            "name": "Red Team Agent",
+            "category": "evaluation",
+            "description": "Challenges assumptions and attacks logical gaps",
+            "inputs": {
+                "draft": "Current research draft",
+                "claims": "Main claims to challenge"
+            },
+            "outputs": {
+                "challenged_claims": "Claims with vulnerabilities",
+                "counter_evidence_found": "Contradicting information",
+                "logical_gaps": "Reasoning holes identified",
+                "vulnerability_score": "Overall weakness score"
+            },
+            "attack_vectors": [
+                "Assumption challenge",
+                "Counter-evidence search",
+                "Logical gap detection",
+                "Bias identification"
+            ]
+        },
+        {
+            "id": "report-generator",
+            "name": "Report Generator",
+            "category": "output",
+            "description": "Produces formatted research report with citations",
+            "inputs": {
+                "synthesized_findings": "From synthesis engine",
+                "evaluation_results": "Quality scores",
+                "report_type": "quick|deep_dive|competitive"
+            },
+            "outputs": {
+                "formatted_report": "Complete research report",
+                "executive_summary": "Key points summary",
+                "citations_list": "Properly formatted citations",
+                "metadata": "Quality scores, timestamps"
+            },
+            "output_formats": [
+                "Markdown",
+                "JSON",
+                "PDF"
+            ]
+        }
+    ],
+    "external_integrations": {
+        "search_apis": [
+            {
+                "provider": "Google Custom Search",
+                "purpose": "General web search",
+                "rate_limit": "100 queries/day (free)",
+                "documentation": "https://developers.google.com/custom-search/v1/overview"
+            },
+            {
+                "provider": "Bing Search API",
+                "purpose": "Alternative web search",
+                "rate_limit": "1000 queries/month (free tier)",
+                "documentation": "https://www.microsoft.com/en-us/bing/apis/bing-web-search-api"
+            },
+            {
+                "provider": "Semantic Scholar",
+                "purpose": "Academic paper search",
+                "rate_limit": "100 requests/5 minutes",
+                "documentation": "https://api.semanticscholar.org/"
+            },
+            {
+                "provider": "NewsAPI",
+                "purpose": "News article search",
+                "rate_limit": "100 requests/day (free)",
+                "documentation": "https://newsapi.org/docs"
+            }
+        ],
+        "vector_databases": [
+            {
+                "provider": "Pinecone",
+                "purpose": "Vector storage for embeddings",
+                "features": [
+                    "Hybrid search",
+                    "Metadata filtering"
+                ]
+            },
+            {
+                "provider": "Weaviate",
+                "purpose": "Knowledge graph + vectors",
+                "features": [
+                    "GraphQL queries",
+                    "Hybrid search"
+                ]
+            },
+            {
+                "provider": "Chroma",
+                "purpose": "Local vector database",
+                "features": [
+                    "Easy setup",
+                    "Open source"
+                ]
+            }
+        ],
+        "llm_providers": [
+            {
+                "provider": "OpenAI",
+                "models": [
+                    "GPT-4o",
+                    "o3",
+                    "o3-mini"
+                ],
+                "use_case": "Reasoning, synthesis, evaluation"
+            },
+            {
+                "provider": "Anthropic",
+                "models": [
+                    "Claude 4.5 Opus",
+                    "Claude 4.5 Sonnet"
+                ],
+                "use_case": "Long-form analysis, safety"
+            },
+            {
+                "provider": "Google",
+                "models": [
+                    "Gemini 2.0 Pro",
+                    "Gemini 2.0 Flash"
+                ],
+                "use_case": "Multi-modal, long context"
+            }
+        ],
+        "document_processing": [
+            {
+                "tool": "Jina Reader",
+                "purpose": "Web page to clean text",
+                "url_pattern": "https://r.jina.ai/{url}"
+            },
+            {
+                "tool": "PDF.js",
+                "purpose": "PDF text extraction"
+            },
+            {
+                "tool": "Trafilatura",
+                "purpose": "Web content extraction"
+            }
+        ]
+    },
+    "mcp_integrations": [
+        {
+            "server": "sequential-thinking",
+            "purpose": "Multi-step reasoning for complex research questions"
+        }
+    ]
+}

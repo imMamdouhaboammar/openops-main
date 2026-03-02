@@ -1,0 +1,61 @@
+{
+  "module": {
+    "name": "Graph_Database_Config",
+    "version": "2.0.0",
+    "layer": "05_architecture",
+    "code": "05A",
+    "description": "Configuration for knowledge graph database storing entities, relationships, and context",
+    "author": "OpenOps Foundation",
+    "created": "2025-12-16T00:00:00Z"
+  },
+  "governance": {
+    "compliance_level": "high",
+    "requires_approval": true,
+    "audit_level": "full",
+    "data_classification": "restricted"
+  },
+  "objectives": [
+    "Store multi-agent knowledge graphs",
+    "Enable relationship traversal and discovery",
+    "Support semantic search and reasoning",
+    "Maintain entity versioning and history"
+  ],
+  "integration_points": {
+    "imports_from": ["02B_Agent_Memory_Registry.json", "04E_Intelligence_Signal_Aggregator.json"],
+    "exports_to": ["05C_Embedding_and_VectorStore_Config.json", "05D_Cache_and_Indexing_Strategy.json"]
+  },
+  "database_config": {
+    "engine": "neo4j",
+    "version": "5.x",
+    "cluster_mode": "causal",
+    "replication_factor": 3,
+    "sharding_strategy": "entity_type"
+  },
+  "schema_definition": {
+    "node_types": {
+      "Agent": {"properties": ["id", "role", "status", "created_at"]},
+      "Task": {"properties": ["id", "description", "priority", "status"]},
+      "Artifact": {"properties": ["id", "type", "content_hash", "version"]},
+      "Entity": {"properties": ["id", "name", "type", "metadata"]},
+      "Concept": {"properties": ["id", "label", "definition", "domain"]}
+    },
+    "relationship_types": {
+      "ASSIGNED_TO": {"from": "Task", "to": "Agent"},
+      "DEPENDS_ON": {"from": "Task", "to": "Task"},
+      "PRODUCED": {"from": "Agent", "to": "Artifact"},
+      "RELATED_TO": {"from": "Entity", "to": "Entity"},
+      "CATEGORIZED_AS": {"from": "Entity", "to": "Concept"}
+    }
+  },
+  "query_patterns": {
+    "find_dependencies": "MATCH (t1:Task)-[:DEPENDS_ON*]->(t2:Task) WHERE t1.id = $task_id RETURN t2",
+    "agent_activity": "MATCH (a:Agent)-[:PRODUCED]->(art:Artifact) WHERE a.id = $agent_id RETURN art ORDER BY art.created_at DESC",
+    "knowledge_traverse": "MATCH path = (e1:Entity)-[:RELATED_TO*1..3]-(e2:Entity) WHERE e1.id = $entity_id RETURN path"
+  },
+  "performance_config": {
+    "connection_pool_size": 50,
+    "query_timeout_ms": 30000,
+    "cache_ttl_seconds": 3600
+  },
+  "version_history": {"2.0.0": {"date": "2025-12-16", "changes": "Initial graph database config"}}
+}

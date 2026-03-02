@@ -1,0 +1,42 @@
+{
+  "incrementalityTesting": {
+    "version": "1.0.0",
+    "lastUpdated": "2026-01-22",
+    "principles": [
+      "Prefer randomized tests",
+      "Use holdouts when randomization is not possible",
+      "Report confidence intervals",
+      "Monitor guardrail metrics"
+    ],
+    "testTypes": [
+      {
+        "type": "RCT",
+        "useCase": "User-level experiments",
+        "randomizationUnit": "user",
+        "minDurationDays": 14
+      },
+      {
+        "type": "GeoLift",
+        "useCase": "Channel or region-level tests",
+        "randomizationUnit": "geo",
+        "minDurationDays": 28
+      },
+      {
+        "type": "Holdout",
+        "useCase": "Suppression tests",
+        "randomizationUnit": "segment",
+        "minDurationDays": 21
+      }
+    ],
+    "reporting": {
+      "requiredFields": [
+        "hypothesis",
+        "primary_kpi",
+        "guardrails",
+        "lift",
+        "confidence_interval",
+        "decision"
+      ]
+    }
+  }
+}

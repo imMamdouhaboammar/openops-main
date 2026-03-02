@@ -1,0 +1,74 @@
+{
+  "module": {
+    "name": "Tool_and_API_Mapping",
+    "version": "2.0.0",
+    "layer": "09_tooling",
+    "code": "09B",
+    "description": "Maps external tools, APIs, and integrations to agent capabilities",
+    "author": "OpenOps Foundation",
+    "created": "2025-12-16T00:00:00Z"
+  },
+  "governance": {
+    "compliance_level": "high",
+    "requires_approval": true,
+    "audit_level": "full",
+    "data_classification": "confidential"
+  },
+  "objectives": [
+    "Register external tool integrations",
+    "Map tools to agent capabilities",
+    "Manage API credentials securely",
+    "Monitor tool usage and costs"
+  ],
+  "integration_points": {
+    "imports_from": ["02A_Agent_Roles_Config.json", "06B_Access_Control_and_Encryption.json"],
+    "exports_to": ["09D_Runtime_Prompt_Pipeline.json"]
+  },
+  "tool_categories": {
+    "llm_apis": ["openai", "anthropic", "google_ai"],
+    "search_engines": ["google_search", "bing", "perplexity"],
+    "data_sources": ["databases", "apis", "file_systems"],
+    "code_execution": ["sandboxed_python", "jupyter", "docker"],
+    "communication": ["slack", "email", "webhooks"]
+  },
+  "tool_registry": {
+    "openai_gpt4": {
+      "tool_id": "openai_gpt4",
+      "provider": "OpenAI",
+      "type": "llm_api",
+      "capabilities": ["text_generation", "function_calling", "vision"],
+      "authentication": "api_key",
+      "rate_limits": {"requests_per_minute": 10000, "tokens_per_minute": 2000000},
+      "cost_per_1k_tokens": {"input": 0.01, "output": 0.03},
+      "allowed_agents": ["SupervisorAgent", "ResearchAgent", "SynthesizerAgent"]
+    },
+    "google_search_api": {
+      "tool_id": "google_search_api",
+      "provider": "Google",
+      "type": "search_engine",
+      "capabilities": ["web_search", "news_search", "image_search"],
+      "authentication": "api_key",
+      "rate_limits": {"requests_per_day": 10000},
+      "cost_per_request": 0.005,
+      "allowed_agents": ["ResearchAgent"]
+    }
+  },
+  "capability_mapping": {
+    "text_generation": ["openai_gpt4", "anthropic_claude"],
+    "web_search": ["google_search_api", "bing_api"],
+    "code_execution": ["sandboxed_python", "jupyter_kernel"],
+    "data_retrieval": ["postgres_connector", "redis_cache"]
+  },
+  "credential_management": {
+    "storage": "aws_secrets_manager",
+    "rotation_policy": "90_days",
+    "encryption": "AES-256-GCM",
+    "access_logging": "full"
+  },
+  "usage_monitoring": {
+    "track_per_agent": true,
+    "cost_alerts": {"threshold": 100, "notification": "slack"},
+    "rate_limit_monitoring": true
+  },
+  "version_history": {"2.0.0": {"date": "2025-12-16", "changes": "Initial tool mapping"}}
+}

@@ -1,0 +1,399 @@
+{
+    "agent_metadata": {
+        "agent_id": "deep-research-specialist",
+        "namespace": "org.openops.agents.research.deep",
+        "version": "2.0.0",
+        "tier": "L3",
+        "domain": "Deep Research, Knowledge Synthesis, Multi-Agent Orchestration, Advanced RAG",
+        "created_date": "2026-01-10",
+        "algorithm": "TTD-DR (Time-Tested Diffusion Deep Research)",
+        "specialization": [
+            "Autonomous Research",
+            "Multi-Agent Orchestration",
+            "Evidence Classification",
+            "Knowledge Synthesis",
+            "Red Teaming",
+            "Advanced RAG 2.0"
+        ]
+    },
+    "capabilities": {
+        "core": [
+            {
+                "id": "intent-clarification",
+                "name": "Intent Clarification & Query Decomposition",
+                "focus": [
+                    "Parse user query",
+                    "Identify ambiguities",
+                    "Ask clarifying questions",
+                    "Generate research scope"
+                ],
+                "confidence_threshold": "≥0.9"
+            },
+            {
+                "id": "research-planning",
+                "name": "Research Plan Generation (Gemini Pattern)",
+                "focus": [
+                    "Decompose into subtasks",
+                    "Define information needs",
+                    "Identify source types",
+                    "Sequence retrieval",
+                    "User plan approval"
+                ]
+            },
+            {
+                "id": "react-loop",
+                "name": "Multi-Agent ReAct Loop",
+                "focus": [
+                    "Supervisor orchestration",
+                    "Specialized worker agents",
+                    "Reason-Act-Observe pattern",
+                    "Iterative evidence gathering"
+                ],
+                "max_iterations": 5
+            },
+            {
+                "id": "advanced-rag",
+                "name": "Advanced RAG 2.0",
+                "focus": [
+                    "Hybrid search (sparse + dense + graph)",
+                    "Query expansion & reformulation",
+                    "Re-ranking models",
+                    "Dynamic chunking",
+                    "Multi-hop reasoning"
+                ]
+            },
+            {
+                "id": "denoising-loop",
+                "name": "Core Denoising Loop",
+                "focus": [
+                    "Bias removal",
+                    "Contradiction detection",
+                    "Logic consistency",
+                    "Evidence grounding"
+                ],
+                "iterations": 3,
+                "bias_threshold": "<0.2",
+                "consistency_threshold": ">0.85"
+            },
+            {
+                "id": "red-teaming",
+                "name": "Red Teaming Phase",
+                "focus": [
+                    "Assumption attack",
+                    "Counter-evidence search",
+                    "Logical gap detection",
+                    "Bias identification"
+                ],
+                "cohesion_threshold": ">0.8"
+            },
+            {
+                "id": "evaluation",
+                "name": "Evaluator Agent",
+                "metrics": {
+                    "factual_accuracy": "30% weight",
+                    "coherence": "20% weight",
+                    "coverage": "25% weight",
+                    "source_diversity": "15% weight",
+                    "recency": "10% weight"
+                },
+                "quality_threshold": "≥0.85"
+            }
+        ],
+        "advanced": [
+            {
+                "id": "evidence-classification",
+                "name": "Evidence Classification System",
+                "levels": {
+                    "A": "Strong: Official docs, verified benchmarks, multiple sources, peer-reviewed",
+                    "B": "Moderate: Expert analysis, single credible source, industry reports",
+                    "C": "Weak: Anecdotal, early trends, unverified claims"
+                }
+            },
+            {
+                "id": "source-credibility",
+                "name": "Source Credibility Scoring",
+                "factors": [
+                    "Author expertise (25%)",
+                    "Publication quality (25%)",
+                    "Recency (20%)",
+                    "Conflict of interest (15%)",
+                    "Corroboration (15%)"
+                ]
+            },
+            {
+                "id": "knowledge-synthesis",
+                "name": "Knowledge Synthesis Engine",
+                "patterns": [
+                    "Thematic synthesis",
+                    "Argument mapping",
+                    "Comparative analysis",
+                    "Trend identification"
+                ]
+            },
+            {
+                "id": "multimodal-research",
+                "name": "Multi-Modal Research (2026)",
+                "modalities": [
+                    "text",
+                    "images",
+                    "tables",
+                    "audio",
+                    "video"
+                ]
+            }
+        ]
+    },
+    "pipeline_stages": [
+        {
+            "stage": 1,
+            "name": "IntentClarifier",
+            "role": "Clarify and disambiguate user query",
+            "validation": "intent_confidence >= 0.9"
+        },
+        {
+            "stage": 2,
+            "name": "InitialDraftCompiler",
+            "role": "Create hypothesis or rough draft",
+            "validation": "draft_length > 200, topic_relevance >= 0.75"
+        },
+        {
+            "stage": 3,
+            "name": "ResearchBriefAgent",
+            "role": "Convert to structured research plan",
+            "validation": "contains_objectives, subtopics >= 3"
+        },
+        {
+            "stage": 4,
+            "name": "ReActLoop",
+            "role": "Multi-agent evidence gathering",
+            "iteration_limit": 5,
+            "validation": "sources_verified, no_duplicates"
+        },
+        {
+            "stage": 5,
+            "name": "CoreDenoisingLoop",
+            "role": "Iterative refinement, bias removal",
+            "iterations": 3,
+            "validation": "bias_score < 0.2, logic_consistency > 0.85"
+        },
+        {
+            "stage": 6,
+            "name": "RedTeamingPhase",
+            "role": "Challenge assumptions, attack gaps",
+            "validation": "no_unverified_claims, argument_cohesion > 0.8"
+        },
+        {
+            "stage": 7,
+            "name": "EvaluatorAgent",
+            "role": "Score factual accuracy, coherence",
+            "validation": "overall_quality >= 0.85"
+        },
+        {
+            "stage": 8,
+            "name": "FinalReportGenerator",
+            "role": "Compile final report with citations",
+            "validation": "confidence >= 0.9, citations >= 5"
+        }
+    ],
+    "research_types": [
+        {
+            "type": "market_reality",
+            "objective": "Validate problem exists at scale",
+            "valid_signals": [
+                "user_behavior",
+                "spending_patterns",
+                "inefficiencies"
+            ],
+            "invalid_signals": [
+                "market_size_without_behavior",
+                "buzzwords"
+            ]
+        },
+        {
+            "type": "user_behavior",
+            "objective": "Understand what users do, not say",
+            "valid_sources": [
+                "case_studies",
+                "reviews",
+                "support_tickets"
+            ],
+            "rule": "workarounds > preferences"
+        },
+        {
+            "type": "competitive_intelligence",
+            "objective": "Understand landscape without imitation",
+            "categories": [
+                "direct",
+                "indirect",
+                "status_quo",
+                "manual_workarounds"
+            ]
+        },
+        {
+            "type": "technical_feasibility",
+            "objective": "Validate technical approach",
+            "valid_sources": [
+                "documentation",
+                "benchmarks",
+                "case_studies"
+            ]
+        },
+        {
+            "type": "risk_constraint",
+            "objective": "Surface hidden blockers",
+            "areas": [
+                "regulatory",
+                "technical",
+                "market",
+                "operational"
+            ]
+        }
+    ],
+    "tools": {
+        "internal": [
+            {
+                "id": "query-decomposer",
+                "name": "Query Decomposer",
+                "description": "Break complex questions into structured sub-queries"
+            },
+            {
+                "id": "multi-source-searcher",
+                "name": "Multi-Source Searcher",
+                "description": "Parallel search across web, academic, industry sources"
+            },
+            {
+                "id": "evidence-grader",
+                "name": "Evidence Grader",
+                "description": "Classify evidence as Level A/B/C with credibility score"
+            },
+            {
+                "id": "contradiction-detector",
+                "name": "Contradiction Detector",
+                "description": "Identify contradicting claims and resolution suggestions"
+            },
+            {
+                "id": "synthesis-engine",
+                "name": "Synthesis Engine",
+                "description": "Transform evidence into thematic insights and patterns"
+            },
+            {
+                "id": "report-generator",
+                "name": "Report Generator",
+                "description": "Produce formatted research report with citations"
+            }
+        ],
+        "external_integrations": {
+            "search": [
+                "Google Custom Search",
+                "Bing",
+                "DuckDuckGo"
+            ],
+            "academic": [
+                "Google Scholar",
+                "Semantic Scholar",
+                "arXiv"
+            ],
+            "news": [
+                "NewsAPI",
+                "specialized feeds"
+            ],
+            "industry": [
+                "Crunchbase",
+                "PitchBook",
+                "LinkedIn"
+            ],
+            "vector_databases": [
+                "Pinecone",
+                "Weaviate",
+                "Chroma"
+            ],
+            "llm_providers": [
+                "OpenAI",
+                "Anthropic",
+                "Google"
+            ]
+        }
+    },
+    "workflows": {
+        "standard": [
+            {
+                "id": "quick-research",
+                "duration": "10-15 minutes",
+                "iterations": "3-5",
+                "sources": "5-10",
+                "output": "Brief with citations"
+            },
+            {
+                "id": "deep-dive",
+                "duration": "30-60 minutes",
+                "pipeline": "Full TTD-DR",
+                "sources": "20-50",
+                "output": "Comprehensive report"
+            },
+            {
+                "id": "competitive-analysis",
+                "focus": "Market landscape",
+                "output": "Competitive matrix + insights"
+            }
+        ],
+        "advanced": [
+            "literature-review",
+            "due-diligence",
+            "trend-analysis"
+        ]
+    },
+    "metrics": {
+        "quality": {
+            "factual_accuracy": "≥90%",
+            "citation_coverage": "≥85%",
+            "source_diversity": "≥3 types",
+            "confidence_score": "≥85%",
+            "contradiction_resolution": "100%"
+        },
+        "efficiency": {
+            "quick_research": "<15 min",
+            "deep_dive": "<60 min",
+            "iterations_to_converge": "≤5",
+            "red_team_pass_rate": "≥80%"
+        }
+    },
+    "quality_assurance": {
+        "security_gate": {
+            "policy": "private_by_default",
+            "checks": [
+                "no_internal_sensitive_data",
+                "api_access_logged"
+            ]
+        },
+        "tracking_gate": {
+            "metrics": [
+                "denoising_cycles",
+                "react_iterations",
+                "quality_improvement_rate"
+            ]
+        },
+        "consistency_gate": {
+            "rules": [
+                "convergence_score >= 0.85",
+                "contradictions == 0"
+            ]
+        }
+    },
+    "mena_context": {
+        "arabic_research": {
+            "query_expansion": "Arabic language support",
+            "sources": [
+                "Al-Monitor",
+                "Gulf News",
+                "Ahram",
+                "MAGNiTT"
+            ],
+            "cross_language": "Ar ↔ En synthesis"
+        },
+        "regional_focus": {
+            "government": "Saudi, UAE, Egypt official sources",
+            "business": "MENA-specific databases",
+            "cultural": "Relationship context awareness"
+        }
+    }
+}

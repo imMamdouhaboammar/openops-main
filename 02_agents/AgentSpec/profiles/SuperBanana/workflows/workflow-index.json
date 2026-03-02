@@ -1,0 +1,870 @@
+{
+    "vcot_pipeline": {
+        "name": "Visual Chain-of-Thought Pipeline",
+        "type": "mandatory",
+        "description": "Core 6-stage pipeline for all image generation tasks",
+        "stages": [
+            {
+                "stage": 1,
+                "name": "UNDERSTAND",
+                "tool": "intent-clarifier",
+                "actions": [
+                    "Parse user request",
+                    "Extract subject, style, context, technical specs",
+                    "Identify ambiguities",
+                    "Calculate confidence score"
+                ],
+                "validation": {
+                    "confidence_threshold": 0.9,
+                    "on_fail": "Request clarification from user"
+                }
+            },
+            {
+                "stage": 2,
+                "name": "PLAN",
+                "tool": "visual-planner",
+                "actions": [
+                    "Create composition blueprint",
+                    "Define lighting profile",
+                    "Specify color palette and harmony",
+                    "Set technical specifications"
+                ],
+                "validation": {
+                    "completeness_threshold": 0.95,
+                    "on_fail": "Fill missing elements with defaults"
+                }
+            },
+            {
+                "stage": 3,
+                "name": "CRAFT",
+                "tool": "prompt-engineer",
+                "actions": [
+                    "Transform blueprint to narrative prompt",
+                    "Apply Gemini 3 Pro Image best practices",
+                    "Include technical layer",
+                    "Validate prompt structure"
+                ],
+                "best_practices": [
+                    "Narrative over keywords",
+                    "6-part structure",
+                    "Technical specs included",
+                    "Style references explicit"
+                ]
+            },
+            {
+                "stage": 4,
+                "name": "GENERATE",
+                "tool": "generation-engine",
+                "actions": [
+                    "Execute with Gemini 3 Pro Image",
+                    "Apply reference images if provided",
+                    "Generate at specified resolution",
+                    "Capture metadata"
+                ],
+                "model": "gemini-3-pro-image-preview",
+                "fallback": "gemini-2.5-flash-image"
+            },
+            {
+                "stage": 5,
+                "name": "EVALUATE",
+                "tool": "quality-assessor",
+                "actions": [
+                    "Score against 6 criteria",
+                    "Calculate weighted quality score",
+                    "Identify specific issues",
+                    "Determine verdict"
+                ],
+                "criteria": [
+                    "subject_accuracy (25%)",
+                    "composition_match (20%)",
+                    "style_fidelity (20%)",
+                    "technical_quality (15%)",
+                    "text_accuracy (10%)",
+                    "mood_atmosphere (10%)"
+                ],
+                "routing": {
+                    "pass": "Output (score >= 0.85)",
+                    "conditional": "Minor refinement (score >= 0.70)",
+                    "fail": "Stage 6 (score < 0.70)"
+                }
+            },
+            {
+                "stage": 6,
+                "name": "REFINE",
+                "tool": "iterative-refiner",
+                "condition": "Only if Stage 5 returns FAIL or CONDITIONAL",
+                "actions": [
+                    "Analyze failure points",
+                    "Select refinement strategy",
+                    "Generate improved prompt",
+                    "Decide: regenerate or edit",
+                    "Loop back to Stage 4"
+                ],
+                "max_iterations": 3,
+                "strategies": {
+                    "subject_wrong": "regenerate_with_clearer_subject",
+                    "composition_off": "add_explicit_composition_guidance",
+                    "style_mismatch": "add_style_reference_images",
+                    "technical_issues": "adjust_resolution_and_quality",
+                    "text_errors": "regenerate_with_quoted_text",
+                    "mood_wrong": "adjust_lighting_and_color"
+                }
+            }
+        ]
+    },
+    "standard_workflows": [
+        {
+            "id": "text-to-image",
+            "name": "Text-to-Image Generation",
+            "trigger": "Generate image from text prompt only",
+            "pipeline": "vcot_pipeline",
+            "additional_steps": [],
+            "expected_output": "Single generated image"
+        },
+        {
+            "id": "image-to-image",
+            "name": "Image-to-Image Editing",
+            "trigger": "Edit or transform existing image",
+            "pipeline": "vcot_pipeline",
+            "additional_steps": [
+                {
+                    "step": "pre_1",
+                    "name": "Source Analysis",
+                    "tool": "style-analyzer",
+                    "actions": [
+                        "Analyze source image characteristics",
+                        "Extract style, color, lighting",
+                        "Identify elements to preserve"
+                    ]
+                },
+                {
+                    "step": "between_3_4",
+                    "name": "Mask Generation",
+                    "tool": "mask-generator",
+                    "condition": "If edit is local/targeted",
+                    "actions": [
+                        "Generate mask for edit area",
+                        "Validate mask accuracy"
+                    ]
+                }
+            ],
+            "expected_output": "Edited image"
+        },
+        {
+            "id": "style-transfer",
+            "name": "Style Transfer",
+            "trigger": "Apply style from reference to content",
+            "pipeline": "vcot_pipeline",
+            "additional_steps": [
+                {
+                    "step": "pre_1",
+                    "name": "Style Extraction",
+                    "tool": "style-analyzer",
+                    "actions": [
+                        "Analyze style reference images",
+                        "Extract style characteristics",
+                        "Generate style keywords"
+                    ]
+                }
+            ],
+            "expected_output": "Styled image"
+        },
+        {
+            "id": "with-references",
+            "name": "Reference-Based Generation",
+            "trigger": "Generate with subject/style references",
+            "pipeline": "vcot_pipeline",
+            "additional_steps": [
+                {
+                    "step": "pre_1",
+                    "name": "Reference Processing",
+                    "tool": "reference-processor",
+                    "actions": [
+                        "Categorize references",
+                        "Optimize for generation",
+                        "Limit to 14 images"
+                    ]
+                }
+            ],
+            "expected_output": "Image consistent with references"
+        }
+    ],
+    "advanced_workflows": [
+        {
+            "id": "multi-subject-consistency",
+            "name": "Multi-Subject Consistent Generation",
+            "trigger": "Generate with consistent characters/subjects",
+            "complexity": "high",
+            "steps": [
+                {
+                    "step": 1,
+                    "name": "Subject Definition",
+                    "actions": [
+                        "Define each subject (up to 5 humans)",
+                        "Collect reference images per subject",
+                        "Extract distinctive features"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "name": "Consistency Setup",
+                    "tool": "consistency-tracker",
+                    "actions": [
+                        "Generate consistency embeddings",
+                        "Store subject features",
+                        "Enable identity tracking"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "name": "VCoT Pipeline with Consistency",
+                    "pipeline": "vcot_pipeline",
+                    "modifications": {
+                        "stage_4": "Include consistency embeddings in generation"
+                    }
+                },
+                {
+                    "step": 4,
+                    "name": "Consistency Validation",
+                    "actions": [
+                        "Compare generated subjects to references",
+                        "Score identity consistency",
+                        "Refine if below threshold"
+                    ]
+                }
+            ],
+            "max_subjects": 5
+        },
+        {
+            "id": "multi-image-series",
+            "name": "Multi-Image Series Generation",
+            "trigger": "Generate series of related images",
+            "complexity": "high",
+            "steps": [
+                {
+                    "step": 1,
+                    "name": "Series Planning",
+                    "actions": [
+                        "Define series concept",
+                        "Plan individual images",
+                        "Identify consistency requirements"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "name": "Style Lock",
+                    "tool": "consistency-tracker",
+                    "actions": [
+                        "Generate first image",
+                        "Extract and lock style",
+                        "Create style template"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "name": "Series Generation",
+                    "loop": true,
+                    "per_image": [
+                        "Apply VCoT Pipeline",
+                        "Include style template",
+                        "Maintain consistency",
+                        "Store for next iteration"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "name": "Series Validation",
+                    "actions": [
+                        "Check visual consistency across series",
+                        "Score overall coherence",
+                        "Regenerate outliers if needed"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "multi-turn-editing",
+            "name": "Multi-Turn Conversational Editing",
+            "trigger": "Progressive editing over multiple turns",
+            "complexity": "medium",
+            "steps": [
+                {
+                    "step": 1,
+                    "name": "Initial Generation",
+                    "pipeline": "vcot_pipeline",
+                    "actions": [
+                        "Generate initial image",
+                        "Store context and parameters"
+                    ]
+                },
+                {
+                    "step": "2+",
+                    "name": "Iterative Edits",
+                    "loop": true,
+                    "per_turn": [
+                        "Parse edit request",
+                        "Retrieve stored context",
+                        "Generate mask if local edit",
+                        "Apply edit with context preservation",
+                        "Update stored context"
+                    ]
+                }
+            ],
+            "context_preservation": {
+                "stored": [
+                    "subject_features",
+                    "style_parameters",
+                    "lighting_setup",
+                    "previous_edits"
+                ]
+            }
+        },
+        {
+            "id": "text-heavy-generation",
+            "name": "Text-Heavy Image Generation",
+            "trigger": "Generate images with significant text content",
+            "complexity": "medium",
+            "steps": [
+                {
+                    "step": 1,
+                    "name": "Text Preparation",
+                    "actions": [
+                        "Extract all text content",
+                        "Validate text length (shorter is better)",
+                        "Define font style requirements",
+                        "Plan text placement"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "name": "VCoT with Text Focus",
+                    "pipeline": "vcot_pipeline",
+                    "modifications": {
+                        "stage_3": [
+                            "Quote text exactly in prompt",
+                            "Specify font style explicitly",
+                            "Define text placement clearly"
+                        ],
+                        "stage_5": [
+                            "Weight text_accuracy higher",
+                            "Strict spelling verification"
+                        ]
+                    }
+                },
+                {
+                    "step": 3,
+                    "name": "Text Validation",
+                    "actions": [
+                        "Verify text accuracy (~94% expected)",
+                        "Check readability",
+                        "Regenerate if errors found"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "inpainting-workflow",
+            "name": "Inpainting Workflow",
+            "trigger": "Fill or replace region in existing image",
+            "complexity": "medium",
+            "steps": [
+                {
+                    "step": 1,
+                    "name": "Region Analysis",
+                    "tool": "mask-generator",
+                    "actions": [
+                        "Identify target region",
+                        "Generate mask",
+                        "Analyze surrounding context"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "name": "Inpaint Planning",
+                    "actions": [
+                        "Define what to generate in region",
+                        "Ensure style consistency",
+                        "Plan blending approach"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "name": "Inpaint Execution",
+                    "tool": "generation-engine",
+                    "actions": [
+                        "Apply Gemini inpainting",
+                        "Use mask and inpaint prompt",
+                        "Blend with original"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "name": "Seamless Check",
+                    "actions": [
+                        "Verify no visible seams",
+                        "Check lighting consistency",
+                        "Validate style match"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "outpainting-workflow",
+            "name": "Outpainting/Canvas Extension",
+            "trigger": "Extend image beyond original boundaries",
+            "complexity": "medium",
+            "steps": [
+                {
+                    "step": 1,
+                    "name": "Extension Planning",
+                    "actions": [
+                        "Define extension direction(s)",
+                        "Analyze edge content",
+                        "Plan continuation"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "name": "Context Understanding",
+                    "tool": "style-analyzer",
+                    "actions": [
+                        "Extract style from original",
+                        "Identify perspective rules",
+                        "Understand lighting direction"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "name": "Outpaint Execution",
+                    "tool": "generation-engine",
+                    "actions": [
+                        "Apply Gemini outpainting",
+                        "Maintain perspective",
+                        "Match lighting and style"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "name": "Cohesion Check",
+                    "actions": [
+                        "Verify seamless extension",
+                        "Check perspective consistency",
+                        "Validate overall coherence"
+                    ]
+                }
+            ]
+        }
+    ],
+    "advanced_capability_workflows": [
+        {
+            "id": "siae-full-analysis",
+            "name": "Full Image Analysis",
+            "module": "SIAE",
+            "description": "Complete multi-layer image analysis with recommendations",
+            "steps": [
+                {
+                    "step": 1,
+                    "name": "Technical Analysis",
+                    "tool": "siae-technical-analyzer",
+                    "actions": [
+                        "Analyze resolution, artifacts, sharpness, noise, exposure, color"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "name": "Composition Analysis",
+                    "tool": "siae-composition-analyzer",
+                    "actions": [
+                        "Analyze layout, balance, focal point, depth, framing"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "name": "Style Analysis",
+                    "tool": "siae-style-analyzer",
+                    "actions": [
+                        "Analyze lighting, color palette, mood, style coherence"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "name": "Semantic Analysis",
+                    "tool": "siae-semantic-analyzer",
+                    "actions": [
+                        "Check content accuracy, text, anatomy, physics"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "name": "Issue Detection",
+                    "tool": "siae-issue-detector",
+                    "actions": [
+                        "Aggregate issues, prioritize by severity"
+                    ]
+                },
+                {
+                    "step": 6,
+                    "name": "Generate Recommendations",
+                    "tool": "siae-recommendation-engine",
+                    "actions": [
+                        "Create actionable fix suggestions"
+                    ]
+                }
+            ],
+            "output": "Comprehensive analysis report with scored layers and fix recommendations"
+        },
+        {
+            "id": "creative-direction-workflow",
+            "name": "Creative Direction Workflow",
+            "module": "Creative Director",
+            "description": "From brief to visual concepts and mood boards",
+            "steps": [
+                {
+                    "step": 1,
+                    "name": "Analyze Brief",
+                    "tool": "creative-brief-analyzer",
+                    "actions": [
+                        "Extract objectives, audience, brand context, emotional requirements"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "name": "Generate Concepts",
+                    "tool": "creative-concept-generator",
+                    "actions": [
+                        "Create 3-5 visual concepts with distinct directions"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "name": "Create Mood Boards",
+                    "tool": "creative-moodboard-generator",
+                    "actions": [
+                        "Generate mood board for selected concept"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "name": "Plan Visual Story",
+                    "tool": "creative-story-planner",
+                    "condition": "If multi-image project",
+                    "actions": [
+                        "Plan frame-by-frame visual narrative"
+                    ]
+                }
+            ],
+            "output": "Concepts, mood boards, and optional story plan"
+        },
+        {
+            "id": "brand-enforced-generation",
+            "name": "Brand-Enforced Generation",
+            "module": "Brand Consistency",
+            "description": "Generate images that comply with brand guidelines",
+            "steps": [
+                {
+                    "step": 1,
+                    "name": "Load Brand Profile",
+                    "tool": "brand-asset-manager",
+                    "actions": [
+                        "Retrieve brand colors, fonts, style guidelines"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "name": "Apply Template",
+                    "tool": "brand-template-engine",
+                    "condition": "If template required",
+                    "actions": [
+                        "Constrain generation to template zones and rules"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "name": "VCoT Generation",
+                    "pipeline": "vcot_pipeline",
+                    "modifications": [
+                        "Inject brand constraints into prompts"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "name": "Compliance Check",
+                    "tool": "brand-compliance-checker",
+                    "actions": [
+                        "Validate output against brand guidelines"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "name": "Refine if Needed",
+                    "condition": "If compliance < threshold",
+                    "actions": [
+                        "Adjust and regenerate with stronger brand constraints"
+                    ]
+                }
+            ],
+            "output": "Brand-compliant generated image"
+        },
+        {
+            "id": "ab-testing-workflow",
+            "name": "A/B Testing Variant Creation",
+            "module": "A/B Testing",
+            "description": "Generate and predict performance of multiple variants",
+            "steps": [
+                {
+                    "step": 1,
+                    "name": "Create Base Image",
+                    "pipeline": "vcot_pipeline",
+                    "actions": [
+                        "Generate control/base image"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "name": "Generate Variants",
+                    "tool": "ab-variant-generator",
+                    "actions": [
+                        "Create 3-5 variants with systematic changes"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "name": "Predict Performance",
+                    "tool": "ab-performance-predictor",
+                    "actions": [
+                        "Score each variant for predicted CTR/engagement"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "name": "Generate Attention Heatmaps",
+                    "tool": "ab-performance-predictor",
+                    "actions": [
+                        "Create visual attention predictions"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "name": "Rank and Recommend",
+                    "actions": [
+                        "Rank variants by predicted performance, provide insights"
+                    ]
+                }
+            ],
+            "output": "Base + variants with performance predictions and ranking"
+        },
+        {
+            "id": "adaptive-generation-workflow",
+            "name": "Adaptive Generation with Learning",
+            "module": "Prompt Evolution",
+            "description": "Generate images that improve based on historical learnings",
+            "steps": [
+                {
+                    "step": 1,
+                    "name": "Search Prompt Library",
+                    "tool": "prompt-library-manager",
+                    "actions": [
+                        "Find successful prompts for similar tasks"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "name": "Auto-Improve Prompt",
+                    "tool": "prompt-auto-improver",
+                    "actions": [
+                        "Enhance prompt using learned patterns"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "name": "Generate",
+                    "pipeline": "vcot_pipeline",
+                    "actions": [
+                        "Generate with improved prompt"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "name": "Collect Feedback",
+                    "tool": "prompt-feedback-learner",
+                    "actions": [
+                        "Record outcome for future learning"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "name": "Update Library",
+                    "tool": "prompt-library-manager",
+                    "condition": "If high quality score",
+                    "actions": [
+                        "Save successful prompt to library"
+                    ]
+                }
+            ],
+            "output": "Generated image with continuous improvement loop"
+        },
+        {
+            "id": "reference-driven-generation",
+            "name": "Reference-Driven Generation",
+            "module": "Visual Search",
+            "description": "Generate images using automatically collected references",
+            "steps": [
+                {
+                    "step": 1,
+                    "name": "Collect References",
+                    "tool": "visual-reference-collector",
+                    "actions": [
+                        "Search and curate relevant reference images"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "name": "Analyze References",
+                    "tool": "siae-style-analyzer",
+                    "actions": [
+                        "Extract style, color, mood from references"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "name": "Generate with References",
+                    "pipeline": "vcot_pipeline",
+                    "modifications": [
+                        "Include extracted style in prompts, use references"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "name": "Validate Similarity",
+                    "tool": "visual-similar-finder",
+                    "actions": [
+                        "Ensure output matches reference style"
+                    ]
+                }
+            ],
+            "output": "Generated image informed by curated references"
+        },
+        {
+            "id": "batch-production-workflow",
+            "name": "Batch Production Workflow",
+            "module": "Production Pipeline",
+            "description": "Produce multiple images with consistency and export",
+            "steps": [
+                {
+                    "step": 1,
+                    "name": "Define Batch",
+                    "actions": [
+                        "Configure batch type, items, consistency requirements"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "name": "Process Batch",
+                    "tool": "production-batch-processor",
+                    "actions": [
+                        "Generate all items with consistency tracking"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "name": "Quality Check All",
+                    "workflow": "siae-full-analysis",
+                    "actions": [
+                        "Analyze each image, flag issues"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "name": "Export Assets",
+                    "tool": "production-asset-exporter",
+                    "actions": [
+                        "Export in all required formats and sizes"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "name": "Version and Archive",
+                    "tool": "production-version-control",
+                    "actions": [
+                        "Create versions, generate batch report"
+                    ]
+                }
+            ],
+            "output": "Complete batch with exports and documentation"
+        },
+        {
+            "id": "arabic-visual-creation",
+            "name": "Arabic Visual Creation",
+            "module": "Arabic Typography",
+            "description": "Create visuals with proper Arabic typography handling",
+            "steps": [
+                {
+                    "step": 1,
+                    "name": "Match Fonts",
+                    "tool": "arabic-font-matcher",
+                    "actions": [
+                        "Select appropriate Arabic and Latin fonts"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "name": "Design Layout",
+                    "tool": "arabic-bilingual-layout",
+                    "condition": "If bilingual",
+                    "actions": [
+                        "Create bilingual layout specification"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "name": "Generate Calligraphy",
+                    "tool": "arabic-calligraphy-generator",
+                    "condition": "If calligraphy needed",
+                    "actions": [
+                        "Create artistic Arabic calligraphy prompt"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "name": "Generate Image",
+                    "pipeline": "vcot_pipeline",
+                    "modifications": [
+                        "Include RTL considerations, font specifications"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "name": "Validate Arabic Text",
+                    "tool": "siae-semantic-analyzer",
+                    "actions": [
+                        "Check RTL rendering, letter forms, diacritics"
+                    ]
+                }
+            ],
+            "output": "Properly rendered Arabic visual content"
+        }
+    ],
+    "quick_workflows": [
+        {
+            "id": "quick-generate",
+            "name": "Quick Generation",
+            "trigger": "Simple, straightforward request",
+            "pipeline": "vcot_pipeline",
+            "optimizations": [
+                "Skip detailed blueprint if intent is clear",
+                "Use defaults for unspecified parameters"
+            ]
+        },
+        {
+            "id": "quick-edit",
+            "name": "Quick Edit",
+            "trigger": "Simple edit request",
+            "steps": [
+                "Parse edit request",
+                "Generate mask if needed",
+                "Execute edit",
+                "Basic quality check"
+            ]
+        }
+    ]
+}

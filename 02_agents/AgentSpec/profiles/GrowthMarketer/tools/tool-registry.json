@@ -1,0 +1,36 @@
+{
+    "tools": [
+        "funnel-analyzer.tool.json",
+        "ab-test-calculator.tool.json",
+        "viral-coefficient-calculator.tool.json",
+        "clv-predictor.tool.json",
+        "cohort-analyzer.tool.json",
+        "mixpanel-connector.tool.json",
+        "vwo-connector.tool.json"
+    ],
+    "tool_categories": {
+        "analytics": [
+            "funnel-analyzer",
+            "cohort-analyzer"
+        ],
+        "experimentation": [
+            "ab-test-calculator"
+        ],
+        "growth_mechanics": [
+            "viral-coefficient-calculator"
+        ],
+        "ml_prediction": [
+            "clv-predictor"
+        ],
+        "external_integrations": [
+            "mixpanel-connector",
+            "vwo-connector"
+        ]
+    },
+    "integration_guides": {
+        "mixpanel": "integration-guides/mixpanel-integration.md",
+        "amplitude": "integration-guides/amplitude-integration.md",
+        "vwo": "integration-guides/vwo-integration.md",
+        "customer_io": "integration-guides/customerio-integration.md"
+    }
+}

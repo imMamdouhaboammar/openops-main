@@ -1,0 +1,170 @@
+{
+  "module": {
+    "name": "AgentPromptMapping",
+    "version": "2.0.0",
+    "type": "promptkit_mapping_module",
+    "description": "Defines prompt templates, reasoning styles, and task-specific mappings for all active Agents within OpenOps Studio v2.0.",
+    "author": "OpenOps Studio | Created by Mamdouh Aboammar",
+    "governance": {
+      "supervised_by": "SupervisorAgent",
+      "approved_by": "StaffEngineer",
+      "linked_policies": [
+        "09_PromptKit_and_Tooling_Handoff.md",
+        "02A_Agent_Roles_Config.json"
+      ]
+    },
+
+    "objectives": [
+      "Provide a centralized prompt registry linking every agent to its reasoning pattern.",
+      "Standardize the style, tone, and logic models for each type of operation.",
+      "Enable dynamic injection of contextual templates depending on the round (Plan → QA).",
+      "Support modular prompt updates without retraining or reconfiguration."
+    ],
+
+    "prompt_mapping_schema": {
+      "fields": [
+        "agent_name",
+        "task_type",
+        "prompt_template_ref",
+        "reasoning_style",
+        "tone",
+        "round_scope",
+        "integration_hooks"
+      ]
+    },
+
+    "agents_prompt_map": {
+      "ResearchBriefAgent": {
+        "task_type": "goal_clarification",
+        "prompt_template_ref": "templates/research_brief_v2.prompt",
+        "reasoning_style": "Socratic + Summarization",
+        "tone": "Analytical, Structured",
+        "round_scope": ["Plan"],
+        "integration_hooks": ["AuditLedger.log_event('BRIEF_CREATED')"]
+      },
+      "PlannerAgent": {
+        "task_type": "task_decomposition",
+        "prompt_template_ref": "templates/planner_strategy_v3.prompt",
+        "reasoning_style": "Tree of Thought + Chain Planning",
+        "tone": "Directive, Logical",
+        "round_scope": ["Blueprint"],
+        "integration_hooks": ["ExecutionContextManager.save_plan()"]
+      },
+      "SynthesizerAgent": {
+        "task_type": "knowledge_integration",
+        "prompt_template_ref": "templates/synthesis_pattern_v3.prompt",
+        "reasoning_style": "Parallel Fusion + Denoising",
+        "tone": "Neutral, Formal",
+        "round_scope": ["Detail"],
+        "integration_hooks": ["AgentMemoryRegistry.update_context()"]
+      },
+      "EvaluatorAgent": {
+        "task_type": "accuracy_validation",
+        "prompt_template_ref": "templates/evaluator_panel.prompt",
+        "reasoning_style": "Fact Verification + Logical Consistency",
+        "tone": "Critical, Objective",
+        "round_scope": ["QA"],
+        "integration_hooks": ["QAOrchestrator.collect_scores()"]
+      },
+      "RedTeamAgent": {
+        "task_type": "adversarial_testing",
+        "prompt_template_ref": "templates/redteam_attack_v2.prompt",
+        "reasoning_style": "Socratic Inversion + Counterargument Simulation",
+        "tone": "Skeptical, Adversarial",
+        "round_scope": ["QA"],
+        "integration_hooks": ["QAOrchestrator.log_feedback()"]
+      },
+      "SkepticAgent": {
+        "task_type": "confidence_analysis",
+        "prompt_template_ref": "templates/skeptic_validation.prompt",
+        "reasoning_style": "Statistical Introspection + Variance Check",
+        "tone": "Neutral, Analytical",
+        "round_scope": ["QA"],
+        "integration_hooks": ["QAOrchestrator.verify_confidence()"]
+      },
+      "SupervisorAgent": {
+        "task_type": "orchestration_control",
+        "prompt_template_ref": "templates/supervisor_governance.prompt",
+        "reasoning_style": "Meta Reasoning + Decision Tree Logic",
+        "tone": "Authoritative, Structured",
+        "round_scope": ["All"],
+        "integration_hooks": [
+          "AuditLedger.log_decision()",
+          "RiskAndFailurePlaybook.evaluate_system_state()"
+        ]
+      },
+      "WorkerAgents": {
+        "task_type": "parallel_execution",
+        "prompt_template_ref": "templates/worker_multitask.prompt",
+        "reasoning_style": "Task Parallelism + Context Recall",
+        "tone": "Focused, Informative",
+        "round_scope": ["Blueprint", "Detail"],
+        "integration_hooks": ["AgentParallelismPatterns.orchestrate()"]
+      },
+      "QAOrchestrator": {
+        "task_type": "multi_agent_evaluation",
+        "prompt_template_ref": "templates/qa_panel_consensus.prompt",
+        "reasoning_style": "Weighted Consensus + Multi-Perspective Evaluation",
+        "tone": "Objective, Neutral",
+        "round_scope": ["QA", "Handoff"],
+        "integration_hooks": [
+          "AuditLedger.log_event('QA_COMPLETED')",
+          "AnalyticsTracker.record_metric('qa_score')"
+        ]
+      }
+    },
+
+    "reasoning_style_catalog": {
+      "Socratic": "Uses guided questioning to refine clarity and precision.",
+      "Tree of Thought": "Expands reasoning paths into structured trees for parallel evaluation.",
+      "Chain Planning": "Sequential multi-step task decomposition.",
+      "Parallel Fusion": "Integrates multiple outputs into one coherent narrative.",
+      "Meta Reasoning": "Reasoning about reasoning; system-level introspection.",
+      "Denoising": "Iterative correction to remove factual or logical noise."
+    },
+
+    "prompt_update_policy": {
+      "update_mode": "hot_swap",
+      "template_validation": "checksum + version_signature",
+      "rollback_on_failure": true,
+      "versioning": "semantic_v2",
+      "last_update": "2025-12-16T18:00:00Z"
+    },
+
+    "security_rules": {
+      "classification": "internal_confidential",
+      "encryption": "AES-256",
+      "access_control": {
+        "SupervisorAgent": "admin",
+        "StaffEngineer": "admin",
+        "WorkerAgents": "read",
+        "EvaluatorAgent": "read",
+        "QAOrchestrator": "read/write"
+      },
+      "tamper_protection": "enabled",
+      "audit_logging": true
+    },
+
+    "integration_points": {
+      "upstream": ["AgentRolesConfig", "PromptKitCore"],
+      "downstream": [
+        "ExecutionContextManager",
+        "AgentMemoryRegistry",
+        "QAOrchestrator",
+        "FailureRecoveryManager"
+      ],
+      "dependencies": ["AuditAndDecisionLedger", "RiskAndFailurePlaybook"]
+    },
+
+    "example_prompt_record": {
+      "agent_name": "PlannerAgent",
+      "task_type": "task_decomposition",
+      "prompt_template_ref": "templates/planner_strategy_v3.prompt",
+      "reasoning_style": "Tree of Thought + Chain Planning",
+      "tone": "Directive, Logical",
+      "round_scope": "Blueprint",
+      "integration_hooks": ["ExecutionContextManager.save_plan()"],
+      "version": "v3.1"
+    }
+  }
+}

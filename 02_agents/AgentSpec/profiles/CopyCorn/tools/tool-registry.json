@@ -1,0 +1,320 @@
+{
+    "internal_tools": [
+        {
+            "id": "grounding-engine",
+            "name": "Grounding Engine",
+            "category": "research",
+            "description": "Executes external and internal grounding before any strategy work",
+            "inputs": {
+                "query": "Topic or project to ground",
+                "project_context": "Optional existing project data"
+            },
+            "outputs": {
+                "external_insights": "Latest practices from industry sources",
+                "internal_analysis": "Project-specific context",
+                "grounding_summary": "Key insights for strategy"
+            },
+            "sources": [
+                "Google",
+                "Reforge",
+                "DigitalMarketer",
+                "CXL",
+                "Platform docs"
+            ],
+            "mandatory": true
+        },
+        {
+            "id": "internal-plan-generator",
+            "name": "Internal Plan Generator",
+            "category": "strategy",
+            "description": "Creates compact strategy outline before full solution",
+            "inputs": {
+                "grounding_results": "From grounding engine",
+                "objective": "What we're trying to achieve"
+            },
+            "outputs": {
+                "diagnosis": "What's working/broken",
+                "direction": "Strategic direction",
+                "levers": "Key growth levers",
+                "experiments": "Tests to run",
+                "measurement": "How to track success"
+            },
+            "format": "Brief bullet points"
+        },
+        {
+            "id": "funnel-diagnostic",
+            "name": "Funnel Diagnostic Tool",
+            "category": "analysis",
+            "description": "Analyzes AARRR funnel to identify leaks and opportunities",
+            "inputs": {
+                "funnel_data": "Metrics by stage",
+                "benchmarks": "Industry comparisons"
+            },
+            "outputs": {
+                "stage_analysis": "Per-stage health assessment",
+                "leak_identification": "Where users drop off",
+                "priority_actions": "What to fix first",
+                "benchmark_gaps": "vs. industry standards"
+            }
+        },
+        {
+            "id": "icp-builder",
+            "name": "ICP Builder",
+            "category": "strategy",
+            "description": "Builds comprehensive Ideal Customer Profile",
+            "inputs": {
+                "product_info": "What you're selling",
+                "current_customers": "Who's buying now",
+                "market_data": "Market research"
+            },
+            "outputs": {
+                "demographics": "Who are they",
+                "psychographics": "How they think",
+                "firmographics": "Company details (B2B)",
+                "jtbd_analysis": "Jobs they're hiring for",
+                "pain_gain_map": "Problems and desires"
+            }
+        },
+        {
+            "id": "value-prop-generator",
+            "name": "Value Proposition Generator",
+            "category": "messaging",
+            "description": "Creates compelling value propositions",
+            "inputs": {
+                "icp": "Target customer profile",
+                "product_capabilities": "What you offer",
+                "competitive_landscape": "Alternatives"
+            },
+            "outputs": {
+                "value_proposition": "Core promise",
+                "key_messages": "Supporting pillars",
+                "proof_points": "Evidence",
+                "differentiators": "Why choose us"
+            }
+        },
+        {
+            "id": "hook-generator",
+            "name": "Hook Generator",
+            "category": "creative",
+            "description": "Generates attention-grabbing hooks and angles",
+            "inputs": {
+                "topic": "What we're writing about",
+                "audience": "Who we're targeting",
+                "hook_type": "Pain/desire/curiosity/contrarian/story/social proof"
+            },
+            "outputs": {
+                "hooks": "5-10 hook variations",
+                "rationale": "Why each works",
+                "recommended": "Top 3 recommendations"
+            }
+        },
+        {
+            "id": "campaign-builder",
+            "name": "Campaign Builder",
+            "category": "execution",
+            "description": "Creates complete campaign structures",
+            "inputs": {
+                "objective": "Campaign goal",
+                "audience": "Target segments",
+                "channels": "Where to run",
+                "budget": "Available budget"
+            },
+            "outputs": {
+                "campaign_structure": "Campaign organization",
+                "ad_groups": "Targeting and messaging",
+                "ad_creatives": "Headlines, descriptions, visuals",
+                "landing_pages": "Page structure and copy",
+                "tracking_plan": "Conversion events"
+            }
+        },
+        {
+            "id": "email-flow-builder",
+            "name": "Email Flow Builder",
+            "category": "execution",
+            "description": "Designs email sequences and flows",
+            "inputs": {
+                "flow_type": "Welcome/engagement/win-back/etc.",
+                "audience": "Subscriber segment",
+                "goal": "Desired outcome"
+            },
+            "outputs": {
+                "flow_structure": "Sequence of emails",
+                "email_content": "Subject, preview, body, CTA",
+                "triggers": "What starts the flow",
+                "timing": "When each email sends"
+            }
+        },
+        {
+            "id": "experiment-designer",
+            "name": "Experiment Designer",
+            "category": "experimentation",
+            "description": "Designs structured marketing experiments",
+            "inputs": {
+                "hypothesis": "What we believe",
+                "goal": "What we want to learn",
+                "constraints": "Budget, time, traffic"
+            },
+            "outputs": {
+                "hypothesis_statement": "If/then/because format",
+                "control_variant": "What exists now",
+                "treatment_variant": "What we're testing",
+                "success_metrics": "Primary and secondary",
+                "sample_size": "Required for significance",
+                "duration": "How long to run"
+            }
+        },
+        {
+            "id": "kpi-dashboard-designer",
+            "name": "KPI Dashboard Designer",
+            "category": "measurement",
+            "description": "Designs measurement dashboards and KPI frameworks",
+            "inputs": {
+                "objective": "What we're measuring",
+                "audience": "Who's viewing the dashboard",
+                "data_sources": "Available data"
+            },
+            "outputs": {
+                "north_star": "The ONE metric",
+                "primary_kpis": "Must-tracks",
+                "secondary_kpis": "Supporting metrics",
+                "dashboard_layout": "Visual organization",
+                "review_cadence": "When to check"
+            }
+        },
+        {
+            "id": "arabic-content-generator",
+            "name": "Arabic Content Generator",
+            "category": "creative",
+            "description": "Generates natural Arabic content in specified dialect",
+            "inputs": {
+                "content_type": "Ad/post/email/landing page",
+                "dialect": "Egyptian/Saudi/MSA",
+                "brief": "What to communicate"
+            },
+            "outputs": {
+                "content": "Arabic copy",
+                "variations": "Alternative versions",
+                "cultural_notes": "Relevant considerations"
+            },
+            "dialects": [
+                "Egyptian",
+                "Saudi/Gulf",
+                "MSA"
+            ]
+        }
+    ],
+    "external_integrations": {
+        "analytics": [
+            {
+                "platform": "Google Analytics 4",
+                "purpose": "Web analytics, conversion tracking",
+                "key_reports": [
+                    "Traffic",
+                    "Conversions",
+                    "Audiences",
+                    "Attribution"
+                ]
+            },
+            {
+                "platform": "Mixpanel",
+                "purpose": "Product analytics, user journeys",
+                "key_reports": [
+                    "Funnels",
+                    "Cohorts",
+                    "Retention"
+                ]
+            },
+            {
+                "platform": "Amplitude",
+                "purpose": "Product analytics, behavioral analysis",
+                "key_reports": [
+                    "User paths",
+                    "Feature usage"
+                ]
+            }
+        ],
+        "advertising": [
+            {
+                "platform": "Google Ads",
+                "campaign_types": [
+                    "Search",
+                    "Display",
+                    "Video",
+                    "Performance Max",
+                    "Demand Gen"
+                ]
+            },
+            {
+                "platform": "Meta Ads",
+                "campaign_types": [
+                    "Awareness",
+                    "Traffic",
+                    "Engagement",
+                    "Leads",
+                    "Sales",
+                    "App installs"
+                ]
+            },
+            {
+                "platform": "LinkedIn Ads",
+                "campaign_types": [
+                    "Awareness",
+                    "Website visits",
+                    "Lead gen",
+                    "Engagement"
+                ]
+            },
+            {
+                "platform": "TikTok Ads",
+                "campaign_types": [
+                    "Reach",
+                    "Traffic",
+                    "Video views",
+                    "Conversions"
+                ]
+            }
+        ],
+        "seo": [
+            {
+                "platform": "Ahrefs",
+                "use_for": "Backlinks, keyword research, competitor analysis"
+            },
+            {
+                "platform": "Semrush",
+                "use_for": "Keyword research, site audit, position tracking"
+            },
+            {
+                "platform": "Google Search Console",
+                "use_for": "Organic performance, indexation, issues"
+            }
+        ],
+        "email_marketing": [
+            {
+                "platform": "Klaviyo",
+                "use_for": "E-commerce email, flows, segmentation"
+            },
+            {
+                "platform": "HubSpot",
+                "use_for": "B2B marketing automation"
+            },
+            {
+                "platform": "Mailchimp",
+                "use_for": "SMB email marketing"
+            }
+        ],
+        "experimentation": [
+            {
+                "platform": "Optimizely",
+                "use_for": "A/B testing, personalization"
+            },
+            {
+                "platform": "VWO",
+                "use_for": "A/B testing, heatmaps"
+            },
+            {
+                "platform": "Google Optimize",
+                "use_for": "Basic A/B testing (free)"
+            }
+        ]
+    }
+}

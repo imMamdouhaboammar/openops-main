@@ -1,0 +1,38 @@
+{
+  "module": {
+    "name": "Data_Pipeline_Manager",
+    "version": "2.0.0",
+    "layer": "05_architecture",
+    "code": "05B",
+    "description": "Manages ETL pipelines, data transformations, and streaming processors",
+    "author": "OpenOps Foundation",
+    "created": "2025-12-16T00:00:00Z"
+  },
+  "governance": {
+    "compliance_level": "high",
+    "requires_approval": true,
+    "audit_level": "full",
+    "data_classification": "restricted"
+  },
+  "objectives": [
+    "Orchestrate data ingestion pipelines",
+    "Transform and validate data streams",
+    "Enable real-time and batch processing",
+    "Monitor pipeline health and performance"
+  ],
+  "integration_points": {
+    "imports_from": ["04D_Source_Access_Proxy.json", "05A_Graph_Database_Config.json"],
+    "exports_to": ["05C_Embedding_and_VectorStore_Config.json", "07A_Analytics_Event_Schema.json"]
+  },
+  "pipeline_types": {
+    "streaming": {"engine": "apache_kafka", "partitions": 12, "replication": 3},
+    "batch": {"engine": "apache_spark", "cluster_size": "auto_scale", "schedule": "cron"},
+    "micro_batch": {"engine": "apache_flink", "window_size": "5_minutes"}
+  },
+  "transformations": {
+    "cleansing": ["deduplicate", "validate_schema", "sanitize_inputs"],
+    "enrichment": ["lookup_metadata", "join_reference_data", "compute_features"],
+    "aggregation": ["time_windows", "group_by_entity", "statistical_summaries"]
+  },
+  "version_history": {"2.0.0": {"date": "2025-12-16", "changes": "Initial pipeline manager"}}
+}

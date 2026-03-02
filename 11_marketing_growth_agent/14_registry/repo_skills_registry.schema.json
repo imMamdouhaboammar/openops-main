@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "openops://11_marketing_growth_agent/14_registry/repo_skills_registry.schema.json",
+  "title": "OpenOps Repo Skills Registry Schema",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["$schema", "schemaVersion", "generatedAt", "skillsRoot", "totalSkills", "skills"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "type": "string" },
+    "generatedAt": { "type": "string" },
+    "skillsRoot": { "type": "string" },
+    "totalSkills": { "type": "integer", "minimum": 0 },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["skillId", "path", "hasSkillFile"],
+        "properties": {
+          "skillId": { "type": "string" },
+          "dirName": { "type": "string" },
+          "title": { "type": ["string", "null"] },
+          "description": { "type": ["string", "null"] },
+          "path": { "type": "string" },
+          "skillFile": { "type": ["string", "null"] },
+          "hasSkillFile": { "type": "boolean" }
+        }
+      }
+    }
+  }
+}
+

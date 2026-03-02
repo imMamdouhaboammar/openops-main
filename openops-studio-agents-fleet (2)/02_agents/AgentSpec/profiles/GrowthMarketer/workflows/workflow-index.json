@@ -1,0 +1,142 @@
+{
+    "standard_workflows": [
+        {
+            "id": "aarrr-funnel-audit",
+            "name": "Comprehensive AARRR Funnel Audit",
+            "file_path": "standard-workflows/aarrr-funnel-audit.md",
+            "frequency": [
+                "monthly",
+                "quarterly"
+            ],
+            "duration_estimate": "2-3 hours",
+            "triggers": [
+                "scheduled",
+                "manual_request",
+                "performance_decline"
+            ]
+        },
+        {
+            "id": "ab-test-design-launch",
+            "name": "A/B Test Design & Launch",
+            "file_path": "standard-workflows/ab-test-design-launch.md",
+            "frequency": [
+                "continuous"
+            ],
+            "duration_estimate": "1-2 days",
+            "triggers": [
+                "hypothesis_ready",
+                "manual_request"
+            ]
+        },
+        {
+            "id": "retention-campaign-setup",
+            "name": "Automated Retention Campaign Setup",
+            "file_path": "standard-workflows/retention-campaign-setup.md",
+            "frequency": [
+                "as_needed"
+            ],
+            "duration_estimate": "4-6 hours",
+            "triggers": [
+                "churn_spike",
+                "new_cohort",
+                "manual_request"
+            ]
+        },
+        {
+            "id": "acquisition-channel-analysis",
+            "name": "Acquisition Channel Performance Analysis",
+            "file_path": "standard-workflows/acquisition-channel-analysis.md",
+            "frequency": [
+                "monthly"
+            ],
+            "duration_estimate": "2 hours",
+            "triggers": [
+                "monthly_review",
+                "budget_planning"
+            ]
+        }
+    ],
+    "advanced_workflows": [
+        {
+            "id": "viral-loop-implementation",
+            "name": "Viral Loop Design & Implementation",
+            "file_path": "advanced-workflows/viral-loop-implementation.md",
+            "frequency": [
+                "project_based"
+            ],
+            "duration_estimate": "1-2 weeks",
+            "triggers": [
+                "feature_launch",
+                "growth_initiative"
+            ]
+        },
+        {
+            "id": "plg-strategy-overhaul",
+            "name": "Product-Led Growth Strategy Overhaul",
+            "file_path": "advanced-workflows/plg-strategy-overhaul.md",
+            "frequency": [
+                "annual",
+                "pivot"
+            ],
+            "duration_estimate": "2-4 weeks",
+            "triggers": [
+                "strategic_planning",
+                "manual_request"
+            ]
+        },
+        {
+            "id": "clv-optimization-program",
+            "name": "Customer Lifetime Value Optimization Program",
+            "file_path": "advanced-workflows/clv-optimization-program.md",
+            "frequency": [
+                "quarterly"
+            ],
+            "duration_estimate": "4-8 weeks",
+            "triggers": [
+                "quarterly_planning",
+                "retention_issues"
+            ]
+        },
+        {
+            "id": "nsm-definition-alignment",
+            "name": "North Star Metric Definition & Org Alignment",
+            "file_path": "advanced-workflows/nsm-definition-alignment.md",
+            "frequency": [
+                "annual"
+            ],
+            "duration_estimate": "3-4 weeks",
+            "triggers": [
+                "strategic_planning",
+                "company_pivot"
+            ]
+        }
+    ],
+    "workflow_categories": {
+        "analytics": [
+            "aarrr-funnel-audit",
+            "acquisition-channel-analysis"
+        ],
+        "experimentation": [
+            "ab-test-design-launch"
+        ],
+        "retention": [
+            "retention-campaign-setup",
+            "clv-optimization-program"
+        ],
+        "growth_mechanics": [
+            "viral-loop-implementation",
+            "plg-strategy-overhaul"
+        ],
+        "strategic": [
+            "nsm-definition-alignment"
+        ]
+    },
+    "common_triggers": {
+        "scheduled": "Time-based automatic execution",
+        "manual_request": "User-initiated workflow",
+        "performance_decline": "Automated trigger when metrics drop > 10%",
+        "churn_spike": "Automated trigger when churn increases > 15%",
+        "hypothesis_ready": "Experiment idea validated and ready for testing",
+        "strategic_planning": "Annual or quarterly planning cycles"
+    }
+}

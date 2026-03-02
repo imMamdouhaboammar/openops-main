@@ -1,0 +1,18 @@
+{
+  "trustSignalLedger": {
+    "version": "1.0.0",
+    "lastUpdated": "2026-01-22",
+    "purpose": "Track and score proof assets that increase conversion and trust",
+    "signalTypes": ["case_study", "data_point", "testimonial", "authority_badge"],
+    "fields": ["signal_id", "type", "source", "recency_days", "credibility_score"],
+    "scoring": {
+      "min_credibility": 0.7,
+      "recency_decay_days": 180,
+      "composite_score": "(credibility_score * 0.6) + (recency_score * 0.4)"
+    },
+    "usageRules": [
+      "High-risk promises require composite_score >= 0.8",
+      "Any claim must map to a valid signal_id"
+    ]
+  }
+}

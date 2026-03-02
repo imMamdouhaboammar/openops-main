@@ -1,0 +1,123 @@
+# Logistics & Delivery Apps Marketing Configuration
+# Last-mile delivery, courier services, ride-hailing, freight
+
+industry: logistics_delivery_apps
+last_updated: "2026-02-15"
+source_verification: "Based on 2026 logistics and on-demand delivery benchmarks"
+
+## Industry Characteristics
+
+business_model:
+  segments:
+    food_delivery: "Talabat, Uber Eats, Deliveroo - restaurant partnerships"
+    grocery_delivery: "Instashop, Noon Minutes - quick commerce (15-30 min)"
+    courier_services: "Bosta, Aramex - B2B + B2C parcel delivery"
+    ride_hailing: "Uber, Careem - passenger transport"
+  
+  revenue_model:
+    commission_based: "20-30% per order (food delivery)"
+    delivery_fees: "$1-5 per delivery (customer-paid)"
+    subscription: "$5-15/month (unlimited delivery)"
+  
+  unit_economics:
+    critical: "High volume required for profitability (thin margins)"
+
+user_psychology:
+  primary_motivations:
+    - "Speed (how fast can I get it?)"
+    - "Reliability (will it arrive on time?)"
+    - "Convenience (easy ordering, tracking)"
+    - "Cost (delivery fees, service charges)"
+  
+  decision_triggers:
+    - "Immediate need (hunger, urgent delivery)"
+    - "Free delivery promotions"
+    - "Loyalty rewards (discounts, cashback)"
+    - "App UX (ease of ordering)"
+  
+  trust_factors:
+    - "Real-time tracking"
+    - "Driver ratings and reviews"
+    - "Customer support responsiveness"
+    - "On-time delivery rate"
+
+## Channel Strategy Patterns
+
+recommended_channels:
+  tier_1_essential:
+    - channel: "App Store Optimization (ASO)"
+      rationale: "Users discover delivery apps via app store search"
+      expected_timeline: "2-4 weeks for ranking improvements"
+      typical_cost: "Low (optimization), high ROI"
+      
+    - channel: "Facebook & Instagram Ads (App Installs)"
+      rationale: "Drive app downloads with install campaigns"
+      expected_timeline: "Week 1 for installs"
+      typical_cost: "$0.50-$3 cost per install"
+      
+    - channel: "Google Search Ads (Brand + Category)"
+      rationale: "'Food delivery app', 'courier service Cairo'"
+      expected_timeline: "Immediate"
+      typical_cost: "$0.50-$3 CPC"
+  
+  tier_2_growth:
+    - channel: "Referral Programs (User-to-User)"
+      rationale: "Lowest CAC. Incentivize users to refer friends."
+      expected_timeline: "Immediate (once built)"
+      typical_cost: "$5-10 credit per referral (both sides)"
+      roi_note: "Referred users have 2-3x higher retention"
+      
+    - channel: "Influencer Partnerships"
+      rationale: "Food/lifestyle influencers promote delivery apps"
+      expected_timeline: "1-2 weeks per campaign"
+      typical_cost: "$500-$5K per influencer"
+      
+    - channel: "SMS & Push Notifications (Retention)"
+      rationale: "Re-engage dormant users with offers"
+      expected_timeline: "Immediate"
+      typical_cost: "$0.02-$0.05 per SMS, push is free"
+  
+  tier_3_scale:
+    - channel: "Out-of-Home (Billboards, Transit Ads)"
+      rationale: "Brand awareness in high-traffic areas"
+      expected_timeline: "Ongoing"
+      typical_cost: "$2K-$20K/month"
+      
+    - channel: "Partnerships (Credit Cards, Telecom)"
+      rationale: "Co-marketing with banks, mobile operators"
+      expected_timeline: "3-6 months to negotiate"
+      typical_cost: "Revenue share or co-marketing budget"
+
+## Egypt/GCC Adjustments
+
+regional_nuances:
+  egypt:
+    - "Talabat dominance: 60% market share. Competing is difficult."
+    - "COD critical: 80% of orders are cash on delivery"
+    - "Price sensitivity: Egyptians compare delivery fees obsessively"
+    - "WhatsApp support: Users expect WhatsApp customer service"
+    - "Ramadan surge: 2-3x order volume during Ramadan (6-8PM peak)"
+    
+  gcc:
+    - "Premium service: Fast delivery (30 min) is standard, not differentiator"
+    - "Credit card payments: 70% pay by card (vs 20% in Egypt)"
+    - "Subscription models: Monthly unlimited delivery popular"
+    - "Expat market: Different cuisines, international brands"
+
+## Success Metrics
+
+key_metrics:
+  - metric: "Cost Per Install (CPI)"
+    benchmark: "$0.50-$3"
+    
+  - metric: "Install-to-Order Conversion"
+    benchmark: "20-40% (first order within 7 days)"
+    
+  - metric: "Customer Retention (30-day)"
+    benchmark: "30-50%"
+    
+  - metric: "Average Order Frequency"
+    benchmark: "2-4 orders/month (active users)"
+    
+  - metric: "Delivery Time"
+    target: "< 30 minutes (food), < 60 minutes (groceries)"

@@ -1,0 +1,277 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Thinking Framework & Rules",
+  "version": "1.0",
+  "description": "Cognitive framework and thinking rules for Saudi strategic system",
+  "framework_id": "saudi_strategic_thinking_framework",
+  "core_principles": {
+    "layered_reasoning": {
+      "name": "5-Layer Reasoning",
+      "arabic_name": "التفكير متعدد الطبقات (5 طبقات)",
+      "description": "Every analysis must think through 5 layers minimum",
+      "layers": [
+        {
+          "layer": 1,
+          "name": "Surface Description",
+          "description": "What is being requested or observed",
+          "questions": [
+            "What is the explicit request?",
+            "What is the visible situation?",
+            "What information is provided?"
+          ]
+        },
+        {
+          "layer": 2,
+          "name": "Underlying Business Logic",
+          "description": "What are the real objectives and constraints",
+          "questions": [
+            "What is the real goal behind this request?",
+            "What business outcomes are desired?",
+            "What constraints exist?",
+            "What success looks like?"
+          ]
+        },
+        {
+          "layer": 3,
+          "name": "Human and Psychological Layer",
+          "description": "What drives behavior and decisions",
+          "questions": [
+            "Who are the stakeholders and audiences?",
+            "What motivates their behavior?",
+            "What are their fears and desires?",
+            "What psychological principles apply?"
+          ]
+        },
+        {
+          "layer": 4,
+          "name": "System and Process Implications",
+          "description": "What systems, workflows, and dependencies are involved",
+          "questions": [
+            "What systems and processes are affected?",
+            "What are the dependencies?",
+            "What organizational structure is involved?",
+            "What are the operational implications?"
+          ]
+        },
+        {
+          "layer": 5,
+          "name": "Long-term Strategic Impact",
+          "description": "What are the lasting effects and evolution paths",
+          "questions": [
+            "What are the long-term consequences?",
+            "How does this evolve over time?",
+            "What second and third-order effects?",
+            "How does this shape the future?"
+          ]
+        }
+      ],
+      "application": "Apply to every major analysis or recommendation",
+      "mandatory": true
+    },
+    "counterexamples": {
+      "name": "Test 3 Counterexamples",
+      "arabic_name": "اختبار 3 أمثلة مضادة",
+      "description": "For any strong recommendation, test 3 counterexamples",
+      "questions": [
+        "When would this fail?",
+        "When would this be harmful?",
+        "When would this be misunderstood?"
+      ],
+      "purpose": "Identify weak spots and improve robustness",
+      "mandatory": true
+    },
+    "edge_cases": {
+      "name": "Consider 2 Edge Scenarios",
+      "arabic_name": "النظر في حالتين طرفيتين",
+      "description": "Always consider at least 2 edge scenarios",
+      "special_focus": [
+        "Sensitive religious contexts",
+        "International political sensitivities",
+        "Crisis or negative media coverage",
+        "Operational overload during Hajj or Ramadan"
+      ],
+      "purpose": "Ensure strategy works even in extreme situations",
+      "mandatory": true
+    },
+    "tradeoffs": {
+      "name": "Analyze Trade-offs",
+      "arabic_name": "تحليل المقايضات",
+      "description": "Show what we gain, lose, delay, and risk",
+      "dimensions": [
+        "What we gain",
+        "What we lose",
+        "What we delay",
+        "What we risk"
+      ],
+      "purpose": "Transparent decision-making with full picture",
+      "mandatory": true
+    },
+    "outcome_focus": {
+      "name": "Outcome Focus",
+      "arabic_name": "التركيز على النتائج",
+      "description": "Tie everything back to measurable outcomes",
+      "tie_to": [
+        "Clear KPIs and results",
+        "Behavior change in audiences",
+        "Better experience for pilgrims (if applicable)",
+        "Stronger positioning for entity"
+      ],
+      "purpose": "Ensure recommendations drive real results",
+      "mandatory": true
+    }
+  },
+  "grounding_protocols": {
+    "external_grounding": {
+      "name": "External Grounding",
+      "arabic_name": "التأصيل الخارجي",
+      "description": "Research top sources and best practices",
+      "sources": [
+        "Saudi government communication patterns",
+        "Vision 2030 documents and programs",
+        "Global references in events, exhibitions, tourism, hospitality",
+        "Best practices in strategic communication, digital marketing, growth",
+        "Public relations, crisis management, reputation management"
+      ],
+      "goal": "Avoid generic thinking, align with current and realistic practices",
+      "mandatory": true
+    },
+    "internal_grounding": {
+      "name": "Internal Grounding",
+      "arabic_name": "التأصيل الداخلي",
+      "description": "Analyze the specific project/brief",
+      "analyze": [
+        "Entity type (ministry, authority, program, company, NGO)",
+        "Objectives (awareness, positioning, participation, leads, partnerships)",
+        "Target segments (inside/outside Saudi, B2G/B2B/B2C)",
+        "Assets and constraints (existing brand, channels, budget, seasonality)",
+        "Available materials (past strategies, performance data, existing content)"
+      ],
+      "goal": "Understand the specific context and constraints",
+      "mandatory": true
+    },
+    "saudi_hajj_context": {
+      "name": "Saudi & Hajj Context Grounding",
+      "arabic_name": "التأصيل السعودي ومنظومة الحج والعمرة",
+      "description": "Deep dive into Saudi and Hajj/Umrah context if relevant",
+      "sources": [
+        "Vision 2030 framework",
+        "Saudi institutional map",
+        "Regulatory context",
+        "Cultural communication guide",
+        "Hajj & Umrah ecosystem deep dive",
+        "Ministry of Hajj strategy",
+        "Pilgrim journey framework",
+        "Stakeholders map"
+      ],
+      "condition": "Always for Saudi projects, especially if Hajj/Umrah related",
+      "mandatory": true
+    }
+  },
+  "mandatory_checks": {
+    "saudi_institutional_grounding": {
+      "name": "Saudi Institutional Grounding",
+      "arabic_name": "التأصيل المؤسسي السعودي",
+      "description": "Understand Saudi institutional structure and roles",
+      "checks": [
+        "Government entities, authorities, programs roles",
+        "Decision-making hierarchies and approval flows",
+        "Relationship between ministries, regulators, private sector",
+        "Distinction between policy, operational reality, public communication"
+      ],
+      "if_unclear": [
+        "State explicitly",
+        "Avoid assumptions",
+        "Propose clarification paths or safe framing"
+      ],
+      "mandatory": true
+    },
+    "deep_research_for_x_twitter": {
+      "name": "Deep Research for X (Twitter) Content",
+      "arabic_name": "البحث العميق لمحتوى X",
+      "description": "Before drafting X content, perform deep research",
+      "research_includes": [
+        "Review official Saudi sources and verified accounts",
+        "Understand current public discourse and sensitivities",
+        "Identify potential misinterpretations, political, religious, reputational risks",
+        "Differentiate between official positions, public sentiment, speculation"
+      ],
+      "if_insufficient_context": [
+        "Refrain from producing definitive statements",
+        "Use neutral, cautious framing",
+        "Or recommend delaying publication"
+      ],
+      "constraint": "No X content may be treated as 'light content' - all X content is high-impact",
+      "mandatory": true
+    },
+    "reality_check": {
+      "name": "Saudi Reality Check",
+      "arabic_name": "فحص الواقعية السعودي",
+      "description": "Before finalizing, apply mandatory reality check",
+      "questions": [
+        "Can this be executed within Saudi regulatory and cultural boundaries?",
+        "Does it fit Saudi decision-making speed and approval cycles?",
+        "Does it align with seasonal pressures (Ramadan, Hajj)?",
+        "Does it rely on capabilities that are actually available locally?"
+      ],
+      "if_uncertain": [
+        "Flag explicitly",
+        "Propose safer alternative or phased approach"
+      ],
+      "purpose": "Avoid theoretical strategies that ignore Saudi operational reality",
+      "mandatory": true
+    },
+    "signal_vs_noise": {
+      "name": "Signal vs Noise Discipline",
+      "arabic_name": "الانضباط في التمييز بين الإشارة والضوضاء",
+      "description": "Distinguish between strategic signals and market noise",
+      "signal_criteria": [
+        "Comes from official Saudi institutions or Vision 2030 programs",
+        "Reflects sustained market pattern, not short-term spike",
+        "Has operational or policy implications",
+        "Supported by behavior change, investment, regulation, or execution"
+      ],
+      "noise_indicators": [
+        "Short-lived social media trends",
+        "Viral posts without institutional backing",
+        "Imported global narratives not aligned with Saudi context",
+        "Isolated opinions presented as market truth"
+      ],
+      "mandatory_disclosure": "If influenced by sentiment/media, state confidence level and risk",
+      "strategic_patience": "Avoid reactive strategies driven by daily discourse or temporary controversies",
+      "mandatory": true
+    }
+  },
+  "quality_requirements": {
+    "no_generic_content": {
+      "rule": "No generic or imported strategies without Saudi adaptation",
+      "enforcement": "Reject outputs that are not Saudi-specific"
+    },
+    "no_surface_level": {
+      "rule": "Surface-level thinking is prohibited",
+      "enforcement": "Must apply 5-layer reasoning"
+    },
+    "no_guessing": {
+      "rule": "Guessing is prohibited, uncertainty must be disclosed",
+      "enforcement": "State assumptions explicitly, or refuse if insufficient context"
+    },
+    "no_buzzwords": {
+      "rule": "Empty buzzwords and generic phrases are prohibited",
+      "enforcement": "Every sentence must add actual value"
+    },
+    "actionability_required": {
+      "rule": "All recommendations must be actionable with clear ownership",
+      "enforcement": "Define who owns, executes, approves, is affected"
+    }
+  },
+  "workflow_integration": {
+    "apply_at_every_stage": "Thinking framework applies to all workflow stages",
+    "agent_responsibility": "All agents must follow these thinking rules",
+    "quality_gate_enforcement": "Quality Gates check compliance with thinking framework"
+  },
+  "metadata": {
+    "version": "1.0",
+    "created": "2025-12-19",
+    "author": "Mamdouh Aboammar",
+    "status": "Production"
+  }
+}

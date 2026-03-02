@@ -1,0 +1,438 @@
+{
+  "template_name": "Content Calendar - Marketing & Growth",
+  "template_version": "1.0",
+  "description": "12-week content calendar template for integrated marketing campaigns",
+  
+  "calendar_structure": {
+    "planning_period": "12 weeks (quarterly)",
+    "review_cadence": "Weekly",
+    "planning_lead_time": "4 weeks",
+    
+    "content_pillars": [
+      {
+        "pillar_id": 1,
+        "pillar_name": "[Pillar 1 Name - e.g., Product Education]",
+        "objective": "[What this pillar aims to achieve]",
+        "target_audience": "[Primary audience segment]",
+        "key_messages": [
+          "[Message 1]",
+          "[Message 2]",
+          "[Message 3]"
+        ],
+        "content_mix": {
+          "educational": "40%",
+          "promotional": "20%",
+          "engaging": "30%",
+          "community": "10%"
+        }
+      },
+      {
+        "pillar_id": 2,
+        "pillar_name": "[Pillar 2 Name - e.g., Thought Leadership]",
+        "objective": "[What this pillar aims to achieve]",
+        "target_audience": "[Primary audience segment]",
+        "key_messages": ["[Messages]"],
+        "content_mix": {
+          "educational": "50%",
+          "promotional": "10%",
+          "engaging": "30%",
+          "community": "10%"
+        }
+      },
+      {
+        "pillar_id": 3,
+        "pillar_name": "[Pillar 3 Name - e.g., Customer Success]",
+        "objective": "[What this pillar aims to achieve]",
+        "target_audience": "[Primary audience segment]",
+        "key_messages": ["[Messages]"],
+        "content_mix": {
+          "educational": "30%",
+          "promotional": "20%",
+          "engaging": "40%",
+          "community": "10%"
+        }
+      }
+    ]
+  },
+  
+  "weekly_calendar": [
+    {
+      "week": 1,
+      "week_dates": "[Start Date] - [End Date]",
+      "campaign_phase": "[e.g., Launch, Optimize, Scale]",
+      "weekly_theme": "[Optional theme for the week]",
+      
+      "content_items": [
+        {
+          "content_id": "W1_C1",
+          "pillar": "[Pillar 1]",
+          "content_type": "Blog Post",
+          "title": "[Working Title]",
+          "objective": "[What should this achieve?]",
+          "target_audience": "[Segment]",
+          "key_message": "[Single key message]",
+          "psychology_principle": "[e.g., Social Proof, Authority]",
+          "funnel_stage": "[Awareness | Consideration | Decision]",
+          "distribution_channels": ["Blog", "Email", "LinkedIn", "Twitter"],
+          "cta": "[What action do we want?]",
+          
+          "production_details": {
+            "word_count": "[e.g., 1200-1500]",
+            "assigned_to": "[Writer name]",
+            "draft_due": "[Date]",
+            "review_due": "[Date]",
+            "publish_date": "[Date]",
+            "publish_time": "[Time + Timezone]",
+            "seo_keywords": ["keyword1", "keyword2", "keyword3"],
+            "internal_links": "[Number of internal links required]",
+            "images_required": "[Number and type]",
+            "status": "Not Started | In Progress | Draft | Review | Approved | Published"
+          },
+          
+          "distribution_plan": {
+            "blog": {
+              "publish_date": "[Date]",
+              "promoted_duration": "[X days on homepage]",
+              "internal_promotion": "[Where to promote internally]"
+            },
+            "email": {
+              "segment": "[Email list segment]",
+              "send_date": "[Date]",
+              "subject_line_variations": ["Variation 1", "Variation 2", "Variation 3"]
+            },
+            "linkedin": {
+              "post_date": "[Date]",
+              "post_time": "[Time]",
+              "post_format": "[Article | Native Post | Link Share]",
+              "copy_angle": "[Brief description of angle]"
+            },
+            "twitter": {
+              "tweet_date": "[Date]",
+              "tweet_time": "[Time]",
+              "thread_or_single": "[Thread | Single]",
+              "copy_angle": "[Brief description]"
+            }
+          },
+          
+          "success_metrics": {
+            "primary_kpi": "[e.g., Page views, Shares, Conversions]",
+            "target": "[Numeric target]",
+            "tracking_link": "[UTM-tagged URL]",
+            "conversion_goal": "[e.g., Trial signup, Download, Contact]"
+          }
+        },
+        
+        {
+          "content_id": "W1_C2",
+          "pillar": "[Pillar 2]",
+          "content_type": "Social Media Post Series",
+          "title": "[Series Theme]",
+          "objective": "[What should this achieve?]",
+          "target_audience": "[Segment]",
+          "key_message": "[Single key message]",
+          "psychology_principle": "[e.g., Reciprocity]",
+          "funnel_stage": "[Awareness | Consideration | Decision]",
+          "distribution_channels": ["LinkedIn", "Twitter", "Instagram"],
+          "cta": "[What action do we want?]",
+          
+          "production_details": {
+            "number_of_posts": "[e.g., 5 posts]",
+            "assigned_to": "[Creator name]",
+            "draft_due": "[Date]",
+            "review_due": "[Date]",
+            "publish_dates": ["[Date 1]", "[Date 2]", "[Date 3]"],
+            "images_required": "[Number and type]",
+            "status": "Not Started | In Progress | Draft | Review | Approved | Published"
+          },
+          
+          "distribution_plan": {
+            "linkedin": {
+              "post_schedule": [
+                {"date": "[Date]", "time": "[Time]", "format": "[Format]"},
+                {"date": "[Date]", "time": "[Time]", "format": "[Format]"}
+              ]
+            },
+            "twitter": {
+              "post_schedule": [
+                {"date": "[Date]", "time": "[Time]", "format": "[Format]"}
+              ]
+            }
+          },
+          
+          "success_metrics": {
+            "primary_kpi": "[e.g., Engagement rate, Reach]",
+            "target": "[Numeric target]",
+            "conversion_goal": "[e.g., Profile visits, Website clicks]"
+          }
+        },
+        
+        {
+          "content_id": "W1_C3",
+          "pillar": "[Pillar 3]",
+          "content_type": "Email Newsletter",
+          "title": "[Newsletter Title/Theme]",
+          "objective": "[What should this achieve?]",
+          "target_audience": "[Email segment]",
+          "key_message": "[Single key message]",
+          "psychology_principle": "[e.g., Commitment & Consistency]",
+          "funnel_stage": "[Consideration | Decision | Retention]",
+          "distribution_channels": ["Email"],
+          "cta": "[What action do we want?]",
+          
+          "production_details": {
+            "assigned_to": "[Writer name]",
+            "draft_due": "[Date]",
+            "review_due": "[Date]",
+            "send_date": "[Date]",
+            "send_time": "[Time + Timezone]",
+            "template": "[Template name/ID]",
+            "personalization_fields": ["First Name", "Company", "Industry"],
+            "status": "Not Started | In Progress | Draft | Review | Approved | Sent"
+          },
+          
+          "email_structure": {
+            "subject_line_variations": [
+              "[Subject A]",
+              "[Subject B]",
+              "[Subject C]"
+            ],
+            "preheader": "[Preheader text]",
+            "sections": [
+              {"section": "Hero", "content": "[Brief description]"},
+              {"section": "Main Content", "content": "[Brief description]"},
+              {"section": "CTA", "content": "[CTA text and link]"},
+              {"section": "Footer", "content": "[Social links, unsubscribe]"}
+            ]
+          },
+          
+          "distribution_plan": {
+            "email": {
+              "segment": "[List segment name]",
+              "estimated_recipients": "[Number]",
+              "a_b_test": "[Yes/No - if yes, what's being tested]",
+              "send_date": "[Date]",
+              "send_time": "[Time]"
+            }
+          },
+          
+          "success_metrics": {
+            "primary_kpi": "Open Rate",
+            "target": "[e.g., >25%]",
+            "secondary_kpis": {
+              "click_rate": "[e.g., >5%]",
+              "conversion_rate": "[e.g., >2%]"
+            },
+            "conversion_goal": "[e.g., Download resource, Book demo]"
+          }
+        },
+        
+        {
+          "content_id": "W1_C4",
+          "pillar": "[Pillar 1]",
+          "content_type": "Video Content",
+          "title": "[Video Title]",
+          "objective": "[What should this achieve?]",
+          "target_audience": "[Segment]",
+          "key_message": "[Single key message]",
+          "psychology_principle": "[e.g., Authority, Liking]",
+          "funnel_stage": "[Awareness | Consideration | Decision]",
+          "distribution_channels": ["YouTube", "LinkedIn", "Website"],
+          "cta": "[What action do we want?]",
+          
+          "production_details": {
+            "video_length": "[e.g., 2-3 minutes]",
+            "format": "[Interview | Tutorial | Demo | Testimonial]",
+            "assigned_to": "[Producer name]",
+            "script_due": "[Date]",
+            "filming_date": "[Date]",
+            "editing_due": "[Date]",
+            "publish_date": "[Date]",
+            "talent": "[Who's appearing in video]",
+            "location": "[Where filming]",
+            "status": "Not Started | Scripting | Filming | Editing | Review | Approved | Published"
+          },
+          
+          "video_specs": {
+            "aspect_ratios": ["16:9 (YouTube)", "1:1 (LinkedIn)", "9:16 (Stories)"],
+            "resolution": "1080p minimum",
+            "captions": "Required",
+            "thumbnail_variations": 3,
+            "b_roll_needed": "[Yes/No - description]"
+          },
+          
+          "distribution_plan": {
+            "youtube": {
+              "publish_date": "[Date]",
+              "title": "[SEO-optimized title]",
+              "description": "[With keywords and links]",
+              "tags": ["tag1", "tag2", "tag3"],
+              "playlist": "[Playlist name if applicable]"
+            },
+            "linkedin": {
+              "post_date": "[Date]",
+              "native_upload": "Yes",
+              "accompanying_copy": "[Brief copy angle]"
+            },
+            "website": {
+              "embed_location": "[Page/section]",
+              "publish_date": "[Date]"
+            }
+          },
+          
+          "success_metrics": {
+            "primary_kpi": "[e.g., View count, Watch time]",
+            "target": "[Numeric target]",
+            "conversion_goal": "[e.g., Website visit, Subscribe]"
+          }
+        }
+      ],
+      
+      "week_summary": {
+        "total_content_pieces": 4,
+        "by_type": {
+          "blog": 1,
+          "social": 1,
+          "email": 1,
+          "video": 1
+        },
+        "by_pillar": {
+          "pillar_1": 2,
+          "pillar_2": 1,
+          "pillar_3": 1
+        },
+        "key_milestones": [
+          "[Milestone 1]",
+          "[Milestone 2]"
+        ]
+      }
+    },
+    
+    {
+      "week": 2,
+      "week_dates": "[Start Date] - [End Date]",
+      "campaign_phase": "[Phase]",
+      "weekly_theme": "[Theme]",
+      "content_items": [
+        "[Repeat structure from Week 1]"
+      ],
+      "week_summary": {}
+    },
+    
+    {
+      "week_template": "Weeks 3-12",
+      "note": "Repeat the structure above for remaining weeks, adjusting based on campaign phases and performance learnings"
+    }
+  ],
+  
+  "content_production_workflow": {
+    "roles_and_responsibilities": {
+      "content_strategist": "Plans calendar, ensures alignment with campaign objectives",
+      "writers": "Create blog posts, email copy, social copy",
+      "designers": "Create images, graphics, infographics",
+      "video_producers": "Script, film, edit video content",
+      "social_media_manager": "Schedule and publish social content, engage with audience",
+      "marketing_ops": "Set up tracking, manage distribution tools, report on performance"
+    },
+    
+    "production_stages": {
+      "ideation": "Week W-4: Brainstorm topics, align with campaign strategy",
+      "planning": "Week W-3: Finalize calendar, assign owners, set deadlines",
+      "production": "Week W-2 to W: Create drafts, design assets, produce videos",
+      "review": "Week W-1: Review all content, gather feedback, revise",
+      "approval": "Week W-1: Final approval from stakeholders",
+      "publication": "Week W: Publish according to calendar",
+      "promotion": "Week W to W+1: Promote content across channels",
+      "analysis": "Week W+1: Measure performance, document learnings"
+    },
+    
+    "quality_checklist": {
+      "strategic_alignment": [
+        "Aligns with content pillar objective",
+        "Addresses target audience pain/desire",
+        "Includes clear CTA",
+        "Supports campaign phase goals"
+      ],
+      "message_quality": [
+        "Key message is clear and compelling",
+        "Psychology principle applied appropriately",
+        "Messaging consistent with brand voice",
+        "Objections/anxieties addressed"
+      ],
+      "production_quality": [
+        "Spelling and grammar perfect",
+        "Brand guidelines followed",
+        "Images/videos are high quality",
+        "Links work and tracking is in place"
+      ],
+      "optimization": [
+        "SEO keywords included (for blog/web content)",
+        "Social copy optimized for platform",
+        "Email subject lines A/B tested",
+        "Tracking links and UTM parameters added"
+      ]
+    }
+  },
+  
+  "performance_tracking": {
+    "weekly_kpis": {
+      "content_production": {
+        "on_time_delivery": "> 90%",
+        "content_published_vs_planned": "100%"
+      },
+      "content_performance": {
+        "blog": {
+          "pageviews_per_post": "[Target]",
+          "time_on_page": "[Target]",
+          "conversion_rate": "[Target]"
+        },
+        "social": {
+          "engagement_rate": "[Target]",
+          "reach": "[Target]",
+          "click_through_rate": "[Target]"
+        },
+        "email": {
+          "open_rate": "[Target]",
+          "click_rate": "[Target]",
+          "conversion_rate": "[Target]"
+        },
+        "video": {
+          "views": "[Target]",
+          "watch_time": "[Target]",
+          "engagement": "[Target]"
+        }
+      }
+    },
+    
+    "monthly_review": {
+      "top_performing_content": "Identify top 3 by channel and pillar",
+      "underperforming_content": "Identify bottom 3, understand why",
+      "audience_insights": "What topics, formats, angles resonated most?",
+      "optimization_opportunities": "What to test or change next month?",
+      "budget_pacing": "Is content production on budget?"
+    }
+  },
+  
+  "calendar_optimization": {
+    "review_frequency": "Weekly",
+    "adjustment_protocols": {
+      "high_performance": "If content type overperforms, increase frequency",
+      "low_performance": "If content type underperforms 3 weeks in a row, pivot or pause",
+      "trending_topics": "Reserve 10% of calendar for timely/trending content",
+      "experimental_content": "Test 1-2 new formats or topics per month"
+    }
+  },
+  
+  "integration_with_campaign": {
+    "content_supports_ads": "Blog posts and videos serve as retargeting content for paid ads",
+    "content_feeds_email": "Top-performing blog/social content repurposed in email",
+    "content_enables_seo": "Consistent publishing improves organic visibility",
+    "content_builds_authority": "Thought leadership content positions brand as expert"
+  },
+  
+  "template_usage_notes": {
+    "customization": "Adapt pillar names, content types, and distribution channels to your specific campaign and industry",
+    "team_size_considerations": "For smaller teams, reduce content volume and focus on high-impact pieces. For larger teams, add more content items per week.",
+    "timeline_flexibility": "This template assumes 12-week planning, but can be extended or shortened based on campaign duration",
+    "tool_integration": "Can be imported into project management tools (Asana, Monday) or content scheduling tools (Hootsuite, Buffer)"
+  }
+}

@@ -1,0 +1,329 @@
+{
+  "communication_protocol": {
+    "version": "2.0.0",
+    "type": "agent_communication_system",
+    "description": "Defines communication channels, message formats, collaboration patterns, and conflict resolution protocols for inter-agent interactions within OpenOps.",
+    "author": "OpenOps Studio | Created by Mamdouh Aboammar",
+    "last_updated": "2025-12-19",
+    "governance": {
+      "managed_by": "Orchestrator",
+      "approved_by": "StaffEngineer",
+      "compliance_with": [
+        "02E_Agent_Authorization_Matrix.json",
+        "00B_OpenOps_Audit_and_Decision_Ledger.json"
+      ]
+    },
+
+    "communication_channels": {
+      "broadcast_channel": {
+        "description": "System-wide announcements and alerts",
+        "authorized_senders": ["Orchestrator", "SupervisorAgent", "StaffEngineer"],
+        "recipients": "all_agents",
+        "priority": "high",
+        "format": "structured_json",
+        "retention": "30_days",
+        "examples": [
+          "round_transitions",
+          "emergency_shutdowns",
+          "system_updates"
+        ]
+      },
+      "supervisor_channel": {
+        "description": "Coordination between supervisory agents",
+        "authorized_participants": ["SupervisorAgent", "SeniorProductManager", "SecurityLead", "QAOrchestrator"],
+        "priority": "high",
+        "format": "structured_json",
+        "retention": "90_days",
+        "encryption": "end_to_end"
+      },
+      "domain_channels": {
+        "research_channel": {
+          "participants": ["ResearchBriefAgent", "SynthesizerAgent", "WorkerAgents"],
+          "coordinator": "ResearchBriefAgent",
+          "purpose": "research_collaboration"
+        },
+        "qa_channel": {
+          "participants": ["QAOrchestrator", "EvaluatorAgent", "RedTeamAgent", "SkepticAgent"],
+          "coordinator": "QAOrchestrator",
+          "purpose": "quality_assurance"
+        },
+        "security_channel": {
+          "participants": ["SecurityLead", "ComplianceMonitor", "SecurityArchitect"],
+          "coordinator": "SecurityLead",
+          "purpose": "security_governance",
+          "encryption": "mandatory"
+        },
+        "execution_channel": {
+          "participants": ["WorkerAgents", "CodeExecutor", "DataCollector"],
+          "coordinator": "SupervisorAgent",
+          "purpose": "task_execution"
+        }
+      },
+      "peer_to_peer": {
+        "description": "Direct communication between two agents",
+        "authorization": "requires_supervisor_approval_for_cross_domain",
+        "format": "flexible",
+        "retention": "7_days",
+        "audit_logging": "mandatory"
+      }
+    },
+
+    "message_formats": {
+      "standard_message": {
+        "schema": {
+          "message_id": "uuid",
+          "timestamp": "iso8601",
+          "sender_agent": "string",
+          "recipient_agent": "string_or_array",
+          "channel": "string",
+          "message_type": "enum[request, response, notification, alert, query]",
+          "priority": "enum[critical, high, medium, low]",
+          "content": "object",
+          "metadata": {
+            "round_id": "string",
+            "context_id": "string",
+            "requires_response": "boolean",
+            "response_deadline": "iso8601_optional"
+          }
+        },
+        "validation": "json_schema_v7",
+        "max_size": "10KB"
+      },
+      "request_message": {
+        "extends": "standard_message",
+        "additional_fields": {
+          "request_type": "enum[task, information, approval, escalation]",
+          "parameters": "object",
+          "expected_response_format": "schema_reference"
+        }
+      },
+      "response_message": {
+        "extends": "standard_message",
+        "additional_fields": {
+          "in_reply_to": "message_id",
+          "status": "enum[success, partial, failure, pending]",
+          "result": "object",
+          "error": "optional_object"
+        }
+      },
+      "alert_message": {
+        "extends": "standard_message",
+        "additional_fields": {
+          "severity": "enum[info, warning, error, critical]",
+          "alert_category": "string",
+          "requires_action": "boolean",
+          "suggested_actions": "array"
+        }
+      }
+    },
+
+    "collaboration_patterns": {
+      "request_response": {
+        "description": "Synchronous task delegation",
+        "flow": [
+          "Agent A sends request to Agent B",
+          "Agent B acknowledges receipt",
+          "Agent B processes request",
+          "Agent B sends response to Agent A",
+          "Agent A confirms completion"
+        ],
+        "timeout": "5_minutes_default",
+        "retry_policy": "exponential_backoff_max_3"
+      },
+      "publish_subscribe": {
+        "description": "Event-driven asynchronous updates",
+        "flow": [
+          "Publisher agent emits event to channel",
+          "All subscribed agents receive notification",
+          "Subscribers process independently"
+        ],
+        "use_cases": [
+          "round_state_changes",
+          "research_findings_available",
+          "qa_results_published"
+        ]
+      },
+      "pipeline": {
+        "description": "Sequential processing chain",
+        "flow": [
+          "Agent A completes task, outputs result",
+          "Result automatically forwarded to Agent B",
+          "Agent B processes and forwards to Agent C",
+          "Continue until pipeline complete"
+        ],
+        "error_handling": "stop_and_escalate",
+        "example": "ResearchBriefAgent → SynthesizerAgent → EvaluatorAgent → QAOrchestrator"
+      },
+      "consensus": {
+        "description": "Multi-agent decision making",
+        "flow": [
+          "Coordinator presents decision to group",
+          "Each agent provides vote and rationale",
+          "Coordinator aggregates responses",
+          "Decision finalized based on voting rules"
+        ],
+        "voting_rules": {
+          "unanimous": "all_must_agree",
+          "majority": "more_than_50_percent",
+          "weighted": "authority_level_weighted",
+          "veto": "single_veto_blocks"
+        },
+        "use_cases": [
+          "architecture_decisions",
+          "security_approvals",
+          "critical_path_changes"
+        ]
+      },
+      "fork_join": {
+        "description": "Parallel execution with synchronization",
+        "flow": [
+          "Coordinator forks task to multiple agents",
+          "Agents execute in parallel",
+          "Coordinator waits for all completions",
+          "Results aggregated and processed"
+        ],
+        "timeout_handling": "proceed_with_completed_partial_results",
+        "use_cases": [
+          "multi_source_research",
+          "parallel_qa_checks",
+          "distributed_analysis"
+        ]
+      }
+    },
+
+    "conflict_resolution": {
+      "priority_conflicts": {
+        "description": "Multiple agents request same resource",
+        "resolution_strategy": "authority_level_priority",
+        "tiebreaker": "first_in_queue",
+        "escalation": "to_supervisor_if_unresolved"
+      },
+      "decision_conflicts": {
+        "description": "Agents reach contradictory conclusions",
+        "resolution_steps": [
+          "Document both positions with evidence",
+          "Escalate to domain authority",
+          "If still unresolved, escalate to supervisor",
+          "Final decision by StaffEngineer if needed"
+        ],
+        "mandatory_documentation": true
+      },
+      "resource_conflicts": {
+        "description": "Limited resources with multiple requests",
+        "resolution_strategy": "weighted_priority_queue",
+        "weights": {
+          "authority_level": 0.4,
+          "task_criticality": 0.3,
+          "deadline_urgency": 0.2,
+          "request_timestamp": 0.1
+        }
+      }
+    },
+
+    "collaboration_protocols": {
+      "handoff_protocol": {
+        "description": "Transferring work from one agent to another",
+        "required_elements": [
+          "context_summary",
+          "work_completed",
+          "outstanding_issues",
+          "next_steps_recommendation",
+          "relevant_artifacts"
+        ],
+        "validation": "receiving_agent_acknowledges",
+        "failure_handling": "return_to_sender_with_reason"
+      },
+      "escalation_protocol": {
+        "description": "Elevating issues to higher authority",
+        "trigger_conditions": [
+          "decision_authority_insufficient",
+          "technical_blocker_encountered",
+          "conflicting_requirements",
+          "security_concern_identified",
+          "quality_gate_failure"
+        ],
+        "escalation_chain": "L3 → L2 → L1 → L0",
+        "required_information": [
+          "problem_description",
+          "attempted_resolutions",
+          "impact_assessment",
+          "recommended_action"
+        ],
+        "response_sla": {
+          "critical": "15_minutes",
+          "high": "1_hour",
+          "medium": "4_hours",
+          "low": "24_hours"
+        }
+      },
+      "review_protocol": {
+        "description": "Peer review and validation",
+        "review_types": {
+          "technical_review": {
+            "reviewers": ["StaffEngineer", "SystemsArchitect"],
+            "focus": ["correctness", "performance", "maintainability"]
+          },
+          "security_review": {
+            "reviewers": ["SecurityLead", "ComplianceMonitor"],
+            "focus": ["vulnerabilities", "compliance", "data_protection"],
+            "mandatory_for": "all_security_relevant_outputs"
+          },
+          "quality_review": {
+            "reviewers": ["QAOrchestrator", "EvaluatorAgent"],
+            "focus": ["completeness", "accuracy", "usability"]
+          }
+        },
+        "review_criteria": "documented_in_respective_domain_files",
+        "approval_required": "explicit_sign_off"
+      }
+    },
+
+    "communication_governance": {
+      "rate_limiting": {
+        "L0_agents": "unlimited",
+        "L1_agents": "1000_messages_per_hour",
+        "L2_agents": "500_messages_per_hour",
+        "L3_agents": "200_messages_per_hour",
+        "L4_agents": "50_messages_per_hour",
+        "enforcement": "automatic_throttling"
+      },
+      "message_retention": {
+        "broadcast_messages": "30_days",
+        "supervisor_messages": "90_days",
+        "domain_messages": "60_days",
+        "p2p_messages": "7_days",
+        "alert_messages": "365_days"
+      },
+      "audit_requirements": {
+        "log_all_messages": true,
+        "log_message_content": "for_L1_and_above",
+        "log_metadata_only": "for_L3_and_L4",
+        "encryption": "at_rest_and_in_transit",
+        "retention_policy": "matches_message_retention"
+      },
+      "quality_standards": {
+        "clarity": "messages_must_be_unambiguous",
+        "completeness": "include_all_necessary_context",
+        "conciseness": "avoid_unnecessary_information",
+        "formatting": "follow_standard_schema",
+        "tone": "professional_and_constructive"
+      }
+    },
+
+    "emergency_communication": {
+      "emergency_broadcast": {
+        "authorized_by": ["L0_only"],
+        "override": "all_rate_limits",
+        "priority": "absolute",
+        "delivery": "immediate_to_all",
+        "acknowledgement": "required_from_all_agents"
+      },
+      "incident_channel": {
+        "activation": "automatic_on_critical_alert",
+        "participants": ["L0", "L1", "relevant_domain_experts"],
+        "persistence": "until_incident_resolved",
+        "external_notification": "to_human_operators_if_configured"
+      }
+    }
+  }
+}

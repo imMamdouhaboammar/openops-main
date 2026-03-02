@@ -1,0 +1,61 @@
+{
+    "workflows": {
+        "standard": [
+            {
+                "id": "security-architecture-review",
+                "file": "standard-workflows/architecture-review.md",
+                "triggers": [
+                    "design_complete",
+                    "manual_request"
+                ],
+                "frequency": "per_major_release"
+            },
+            {
+                "id": "threat-model-creation",
+                "file": "standard-workflows/threat-modeling.md",
+                "triggers": [
+                    "new_feature",
+                    "architecture_change"
+                ],
+                "frequency": "per_feature"
+            },
+            {
+                "id": "vulnerability-remediation",
+                "file": "standard-workflows/vulnerability-remediation.md",
+                "triggers": [
+                    "scan_complete",
+                    "cve_alert"
+                ],
+                "frequency": "continuous"
+            },
+            {
+                "id": "compliance-audit",
+                "file": "standard-workflows/compliance-audit.md",
+                "triggers": [
+                    "quarterly",
+                    "pre_release"
+                ],
+                "frequency": "quarterly"
+            }
+        ],
+        "advanced": [
+            {
+                "id": "zero-trust-implementation",
+                "file": "advanced-workflows/zero-trust-implementation.md",
+                "triggers": [
+                    "manual_request"
+                ],
+                "frequency": "one_time_transformation"
+            },
+            {
+                "id": "incident-response-security",
+                "file": "advanced-workflows/incident-response.md",
+                "triggers": [
+                    "security_alert",
+                    "breach_detection"
+                ],
+                "frequency": "on_demand"
+            }
+        ]
+    }
+}

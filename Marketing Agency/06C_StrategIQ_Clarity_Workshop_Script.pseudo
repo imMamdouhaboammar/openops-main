@@ -1,0 +1,211 @@
+# ==========================================================
+# StrategIQ Clarity Workshop Script
+# Interactive Discovery & Core Question Extraction Protocol
+# ==========================================================
+# Version: 1.0.0
+# System: StrategIQ OS | Tactical Strategy Department
+# Author: StrategIQ OS by OpenOps Studio | Created by Mamdouh Aboammar
+# LinkedIn: https://www.linkedin.com/in/mamdouh-aboammar
+# ==========================================================
+
+SESSION_MODE: discovery
+OBJECTIVE: "Extract the client's true Core Question (CQ) and emotional driver before any strategy is built."
+SESSION_LENGTH: 45 minutes
+REQUIRED_AGENTS: ["Clarity Director", "Behavioral Strategist", "Strategic Story Designer"]
+RISK_APPETITE: balanced
+
+# ----------------------------------------------------------
+# 0. PREP PHASE (Before entering the meeting)
+# ----------------------------------------------------------
+
+function pre_brief():
+    review(client_brief)
+    highlight(assumptions)
+    prepare(3 key hypotheses about what the client truly wants)
+    set_mindset("You are here to uncover, not impress.")
+    load_framework("Clarity Thinking Framework v1.0")
+
+# ----------------------------------------------------------
+# 1. OPENING PHASE (Minute 0–5)
+# ----------------------------------------------------------
+
+function opening():
+    greet_client()
+    set_tone("Curiosity, calm authority, genuine listening.")
+    say("""
+    Thanks for taking the time today. My goal isn’t to present a strategy yet —
+    it’s to understand the *real question* that matters most to your business right now.
+    Once we get that question right, everything else becomes simple.
+    """)
+
+    note_to_self("Avoid jargon. No slide deck yet. Keep them talking.")
+
+# ----------------------------------------------------------
+# 2. SURFACE EXPLORATION (Minute 5–15)
+# ----------------------------------------------------------
+
+function explore_surface():
+    ask_open("What made you decide you needed a new strategy now?")
+    ask_open("If I deliver the perfect strategy, what would be different in your business?")
+    ask_open("What has already been tried before?")
+    ask_open("When was the last time something really worked?")
+    
+    record_answers("surface_signals")
+    detect_patterns("themes, frustrations, triggers")
+
+    BehaviorStrategist.analyze_emotion_tone(surface_signals)
+    tag(sentiments=["urgency","fear","hope","frustration"])
+    log_event("Surface Exploration Complete")
+
+# ----------------------------------------------------------
+# 3. DEEP CLARITY PHASE — THE 5 WHYs (Minute 15–25)
+# ----------------------------------------------------------
+
+function dig_deeper():
+    select_topic("The most emotionally charged statement")
+    repeat 5 times:
+        ask("Why do you think that is happening?")
+        record_response()
+        evaluate_depth(response)
+    
+    result = synthesize_responses()
+    output("root_cause_statement", result)
+    log_event("Root Cause Identified")
+
+    say("""
+    I think we’re getting close to the real tension point here.
+    If we fix *this* — everything else seems to move, right?
+    """)
+
+# ----------------------------------------------------------
+# 4. THE MIRROR TEST (Minute 25–30)
+# ----------------------------------------------------------
+
+function mirror_back():
+    summarize_client_words_in_plain_english()
+    say("""
+    Let me reflect what I’m hearing:
+    You’re not just asking for a new campaign or more leads —
+    you’re asking how to make the market *see you differently* again, right?
+    """)
+    await_confirmation()
+
+    if client_says("Exactly"):
+        tag("Core_Question_Validated", True)
+        store(core_question, summary_statement)
+        log_event("CQ Confirmed")
+    else:
+        reframe_and_retry()
+
+# ----------------------------------------------------------
+# 5. ALIGNMENT PHASE (Minute 30–40)
+# ----------------------------------------------------------
+
+function align_expectations():
+    say("""
+    Perfect — now that we know your real question,
+    our strategy will focus entirely on answering that one thing.
+    I’ll show you only what supports that — no extra noise.
+    """)
+    
+    ask_open("Would you like our next session to be strategic direction or tactical actions?")
+    set_next_phase(based_on_response)
+
+    record_context_map(client_tone, decision_urgency, constraints)
+    log_event("Alignment Established")
+
+# ----------------------------------------------------------
+# 6. CLOSING PHASE (Minute 40–45)
+# ----------------------------------------------------------
+
+function closing():
+    summarize("""
+    We’ve identified your core question as:
+    '{core_question}'
+    That will be our North Star.
+    Every slide, insight, or campaign from here will directly answer this.
+    """)
+    gain_verbal_commitment("Does this sound exactly like what you need answered?")
+    if yes:
+        tag("Session_Success", True)
+    else:
+        schedule_follow_up("Refine Core Question")
+    thank_client()
+    log_event("Discovery Session Closed")
+
+# ----------------------------------------------------------
+# 7. POST-SESSION SYNTHESIS
+# ----------------------------------------------------------
+
+function post_session_processing():
+    ClarityDirector.validate(core_question)
+    BehavioralStrategist.extract_underlying_emotion(surface_signals)
+    MarketContextArchitect.map_external_factors(core_question)
+    save_to_kb({
+        "client": client_name,
+        "core_question": core_question,
+        "root_causes": result,
+        "emotions_detected": sentiments,
+        "session_date": current_date()
+    })
+    log_event("Session Insights Saved to KB")
+
+# ----------------------------------------------------------
+# 8. SESSION OUTPUT CONTRACT
+# ----------------------------------------------------------
+
+output_contract:
+  - "Core Question Statement"
+  - "Root Cause Summary"
+  - "Emotional Context Map"
+  - "Strategic Spine Outline (to be developed next)"
+  - "Session Confidence Score (auto-calculated)"
+  - "Next Meeting Agenda: Strategy Synthesis"
+
+# ----------------------------------------------------------
+# 9. AUTOMATED QUALITY CHECK
+# ----------------------------------------------------------
+
+qa_check():
+    assert core_question.length < 20_words, "CQ must be concise."
+    assert clarity_score >= 0.85, "Language must be simple and decisive."
+    assert emotional_alignment == True, "Client resonance required."
+    assert confirmation_received == True, "Verbal validation from client mandatory."
+    log_event("QA Check Passed")
+
+# ----------------------------------------------------------
+# 10. BEHAVIORAL GUIDELINES (for Strategists)
+# ----------------------------------------------------------
+
+rules_of_conduct:
+  - "Ask to understand, not to respond."
+  - "Silence is a tool — don’t rush to fill it."
+  - "Mirror, don’t lecture."
+  - "If you sound smart, you’re probably losing clarity."
+  - "Let the client hear themselves say the truth."
+
+# ----------------------------------------------------------
+# 11. STRATEGIC PSYCHOLOGY NOTES
+# ----------------------------------------------------------
+
+psychology_triggers:
+  - "Clients feel relief when they sense clarity."
+  - "The moment they say 'Exactly!' is the psychological handover of trust."
+  - "Emotional mirroring accelerates buy-in faster than data demonstration."
+  - "Repetition of their own words builds validation bias — use it ethically."
+
+# ----------------------------------------------------------
+# 12. FINAL OUTPUT SUMMARY
+# ----------------------------------------------------------
+
+return {
+    "core_question": core_question,
+    "root_cause": result,
+    "emotional_drivers": sentiments,
+    "clarity_score": clarity_score,
+    "next_phase": next_phase
+}
+
+# ==========================================================
+# END OF FILE
+# ==========================================================

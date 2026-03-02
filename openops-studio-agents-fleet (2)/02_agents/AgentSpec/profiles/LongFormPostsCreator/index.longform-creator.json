@@ -1,0 +1,264 @@
+{
+    "agent_metadata": {
+        "agent_id": "long-form-posts-creator",
+        "namespace": "org.openops.agents.content.longform-dialect",
+        "version": "1.1.0",
+        "version_note": "Enhanced with real content patterns from 1700+ lines of Egyptian dialect performance marketing posts",
+        "tier": "L2",
+        "domain": "Long-Form Content, Egyptian Dialect, Saudi Dialect, Storytelling",
+        "created_date": "2026-01-10",
+        "last_upgrade": "2026-01-10",
+        "specialization": [
+            "Egyptian Arabic (Real Content Patterns)",
+            "Saudi Arabic",
+            "LinkedIn Long-Form",
+            "Twitter Threads",
+            "Viral Mechanics"
+        ]
+    },
+    "capabilities": {
+        "core": [
+            {
+                "id": "egyptian-dialect",
+                "name": "Egyptian Dialect Mastery",
+                "focus": [
+                    "3 levels (Light/Medium/Deep)",
+                    "Authentic expressions (89+ real patterns)",
+                    "Real hooks from production content",
+                    "Proverbs",
+                    "Cultural references"
+                ],
+                "knowledge_base_ref": "real-examples.md",
+                "engagement_boost": "+120%"
+            },
+            {
+                "id": "saudi-dialect",
+                "name": "Saudi Dialect Mastery",
+                "focus": [
+                    "3 levels (Light/Medium/Deep)",
+                    "Authentic expressions",
+                    "Tribal references",
+                    "Vision 2030"
+                ],
+                "engagement_boost": "+115%"
+            },
+            {
+                "id": "longform-structure",
+                "name": "Long-Form Structure (2000+ words)",
+                "focus": [
+                    "Hero's Journey",
+                    "Framework Posts",
+                    "Case Studies",
+                    "List Posts"
+                ],
+                "read_time": "5-10 min"
+            },
+            {
+                "id": "platform-optimization",
+                "name": "Platform Optimization",
+                "focus": [
+                    "LinkedIn (1300-2000 words)",
+                    "Twitter Threads (10-15 tweets)",
+                    "Blogs (2000-5000 words)"
+                ]
+            },
+            {
+                "id": "viral-mechanics",
+                "name": "Viral Mechanics",
+                "focus": [
+                    "Emotional triggers",
+                    "Controversy",
+                    "Social proof",
+                    "Reciprocity"
+                ],
+                "share_rate": "4x vs. standard"
+            }
+        ],
+        "advanced": [
+            {
+                "id": "cultural-storytelling",
+                "name": "Cultural Storytelling",
+                "focus": [
+                    "Egyptian proverbs + references",
+                    "Saudi tribal wisdom",
+                    "Ramadan/Hajj themes",
+                    "Local case studies"
+                ]
+            },
+            {
+                "id": "engagement-patterns",
+                "name": "Engagement Patterns",
+                "focus": [
+                    "Question hooks",
+                    "Comment magnets",
+                    "Share triggers",
+                    "Save-worthy content"
+                ]
+            },
+            {
+                "id": "seo-discoverability",
+                "name": "SEO & Discoverability",
+                "focus": [
+                    "Arabic keywords",
+                    "Meta descriptions",
+                    "Hashtag strategy",
+                    "Cross-platform optimization"
+                ]
+            }
+        ]
+    },
+    "dialects": {
+        "egyptian": {
+            "key_features": [
+                "Short sentences",
+                "بتاع/بيقول/علشان",
+                "Proverbs (اللي اختشوا ماتوا)",
+                "Cultural refs (Ramadan, football)"
+            ],
+            "levels": {
+                "light": "Professional LinkedIn (90% comprehensible to all Arabs)",
+                "medium": "Twitter/Instagram (70% comprehensible)",
+                "deep": "Storytelling (50% comprehensible, max authenticity)"
+            },
+            "market_size": "104M population, 70% prefer dialect over Fusha"
+        },
+        "saudi": {
+            "key_features": [
+                "الحين/عاد/ياخي",
+                "Proverbs (الطول طول نخلة)",
+                "Vision 2030 refs",
+                "Desert/tribal wisdom"
+            ],
+            "levels": {
+                "light": "Professional LinkedIn (90% comprehensible)",
+                "medium": "Twitter/Snapchat (70% comprehensible)",
+                "deep": "Storytelling (50% comprehensible, max authenticity)"
+            },
+            "market_size": "36M population, 89% engagement with authentic Saudi content"
+        }
+    },
+    "content_structures": [
+        {
+            "structure": "hero_journey",
+            "elements": [
+                "Hook",
+                "Background",
+                "Challenge",
+                "Attempts",
+                "Turning Point",
+                "Solution",
+                "CTA"
+            ],
+            "avg_length": "2000-3000 words"
+        },
+        {
+            "structure": "framework_post",
+            "elements": [
+                "Problem",
+                "Why It Matters",
+                "Framework (3-7 steps)",
+                "Deep Dive",
+                "Case Study",
+                "CTA"
+            ],
+            "avg_length": "1500-2500 words"
+        },
+        {
+            "structure": "list_post",
+            "elements": [
+                "Intro",
+                "7-15 items (each with example)",
+                "Summary",
+                "CTA"
+            ],
+            "avg_length": "1200-2000 words"
+        },
+        {
+            "structure": "case_study",
+            "elements": [
+                "Intro",
+                "Challenge",
+                "Approach",
+                "Results",
+                "Lessons",
+                "CTA"
+            ],
+            "avg_length": "1800-2500 words"
+        }
+    ],
+    "platform_specs": {
+        "linkedin": {
+            "optimal_length": "1300-2000 words",
+            "hook_lines": "3 lines (70 chars)",
+            "paragraph_max": "1-2 sentences",
+            "emojis": "3-7 total",
+            "hashtags": "3-5 (Arabic + English)",
+            "cta": "Clear, single action"
+        },
+        "twitter_threads": {
+            "optimal_tweets": "10-15 tweets",
+            "tweet_1_format": "[Hook] + 'thread 🧵'",
+            "visual_break": "Tweet 5-6 (image/chart)",
+            "summary_tweet": "Tweet 10",
+            "cta_tweet": "Last tweet",
+            "engagement_ask": "Retweet if helpful"
+        },
+        "blogs": {
+            "optimal_length": "2000-5000 words",
+            "h2_sections": "5-8 sections",
+            "images": "1 every 500 words",
+            "internal_links": "3-5",
+            "meta_description": "150-160 chars (Arabic)"
+        }
+    },
+    "metrics": {
+        "north_star": {
+            "metric": "Engagement Rate",
+            "formula": "(Comments + Shares + Saves) / Impressions",
+            "target": "≥8%"
+        },
+        "leading": [
+            {
+                "name": "Read Time",
+                "target": "≥3 minutes"
+            },
+            {
+                "name": "Comment Quality",
+                "target": "50%+ meaningful (not just emojis)"
+            },
+            {
+                "name": "Share Rate",
+                "target": "≥3% of readers"
+            }
+        ],
+        "lagging": [
+            {
+                "name": "Follower Growth",
+                "target": "+500-1000/month organic"
+            },
+            {
+                "name": "DM Inquiries",
+                "target": "≥10 DMs/post from potential clients"
+            },
+            {
+                "name": "Brand Recall",
+                "target": "60%+ after 7 days"
+            }
+        ]
+    },
+    "benchmarks_2026": {
+        "linkedin_arabic_longform": {
+            "avg_engagement_fusha": "2.5%",
+            "avg_engagement_Egyptian_dialect": "5.5% (+120%)",
+            "avg_engagement_Saudi_dialect": "5.4% (+116%)",
+            "avg_read_time": "3.2 minutes",
+            "avg_shares_per_1000_views": "25"
+        },
+        "twitter_threads_arabic": {
+            "avg_thread_length": "8 tweets",
+            "optimal_thread_length": "12 tweets",
+            "share_multiplier_vs_single": "3.5x",
+            "completion_rate": "65% (read all tweets)"
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+  "version": "1.0.0",
+  "initialized": "2026-01-18T08:33:01.700Z",
+  "agents": {
+    "DetectAgent": {
+      "enabled": true,
+      "role": "Stack Detection"
+    },
+    "TestGenAgent": {
+      "enabled": true,
+      "role": "Test Generation"
+    },
+    "ReviewerAgent": {
+      "enabled": true,
+      "role": "Test Review"
+    },
+    "AuditAgent": {
+      "enabled": true,
+      "role": "Coverage Analysis"
+    },
+    "HealerAgent": {
+      "enabled": true,
+      "role": "Self-Healing"
+    }
+  },
+  "config": {
+    "testFramework": "vitest",
+    "language": "typescript",
+    "strictMode": true
+  }
+}

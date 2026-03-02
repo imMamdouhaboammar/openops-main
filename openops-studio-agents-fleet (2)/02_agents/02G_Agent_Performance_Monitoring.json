@@ -1,0 +1,443 @@
+{
+  "performance_monitoring": {
+    "version": "2.0.0",
+    "type": "agent_performance_tracking_system",
+    "description": "Comprehensive performance monitoring, metrics collection, evaluation criteria, and optimization framework for all OpenOps agents.",
+    "author": "OpenOps Studio | Created by Mamdouh Aboammar",
+    "last_updated": "2025-12-19",
+    "governance": {
+      "managed_by": "SupervisorAgent",
+      "reviewed_by": "QAOrchestrator",
+      "approved_by": "StaffEngineer",
+      "compliance_with": [
+        "00B_OpenOps_Audit_and_Decision_Ledger.json",
+        "02C_Agent_Logging_and_Audit.json"
+      ]
+    },
+
+    "performance_dimensions": {
+      "execution_metrics": {
+        "response_time": {
+          "description": "Time from task assignment to completion",
+          "measurement_unit": "milliseconds",
+          "targets": {
+            "L0_agents": {"optimal": "<100ms", "acceptable": "<500ms", "poor": ">1000ms"},
+            "L1_agents": {"optimal": "<500ms", "acceptable": "<2000ms", "poor": ">5000ms"},
+            "L2_agents": {"optimal": "<2s", "acceptable": "<10s", "poor": ">30s"},
+            "L3_agents": {"optimal": "<5s", "acceptable": "<20s", "poor": ">60s"},
+            "L4_agents": {"optimal": "<10s", "acceptable": "<60s", "poor": ">300s"}
+          },
+          "tracking": "per_task_basis",
+          "alerting": "if_exceeds_poor_threshold"
+        },
+        "throughput": {
+          "description": "Tasks completed per time unit",
+          "measurement_unit": "tasks_per_hour",
+          "targets": {
+            "high_volume_agents": ">100/hour",
+            "standard_agents": ">10/hour",
+            "complex_task_agents": ">1/hour"
+          },
+          "tracking": "rolling_average_1_hour_window"
+        },
+        "resource_utilization": {
+          "cpu_usage": {
+            "optimal": "<30%",
+            "acceptable": "<70%",
+            "critical": ">90%"
+          },
+          "memory_usage": {
+            "optimal": "<500MB",
+            "acceptable": "<2GB",
+            "critical": ">5GB"
+          },
+          "api_calls": {
+            "optimal": "<100/hour",
+            "acceptable": "<500/hour",
+            "critical": ">1000/hour"
+          }
+        },
+        "error_rate": {
+          "description": "Percentage of failed tasks",
+          "measurement_unit": "percentage",
+          "targets": {
+            "excellent": "<0.1%",
+            "acceptable": "<1%",
+            "concerning": "<5%",
+            "critical": ">5%"
+          },
+          "tracking": "per_agent_per_hour"
+        }
+      },
+
+      "quality_metrics": {
+        "accuracy": {
+          "description": "Correctness of outputs against expected results",
+          "measurement": "automated_validation + human_review",
+          "scale": "0_to_100",
+          "targets": {
+            "critical_agents": ">99%",
+            "standard_agents": ">95%",
+            "experimental_agents": ">90%"
+          },
+          "evaluation_frequency": "per_output"
+        },
+        "completeness": {
+          "description": "Percentage of required output components delivered",
+          "measurement": "schema_validation",
+          "targets": {
+            "all_agents": ">98%"
+          },
+          "penalties": "incomplete_outputs_counted_as_failures"
+        },
+        "consistency": {
+          "description": "Output stability across similar inputs",
+          "measurement": "variance_analysis",
+          "targets": {
+            "deterministic_agents": ">99%",
+            "creative_agents": ">80%"
+          },
+          "sample_size": "min_10_similar_tasks"
+        },
+        "compliance": {
+          "description": "Adherence to governance rules and standards",
+          "measurement": "automated_compliance_checks",
+          "targets": {
+            "all_agents": "100%"
+          },
+          "violations": "automatic_escalation"
+        }
+      },
+
+      "collaboration_metrics": {
+        "communication_efficiency": {
+          "message_clarity_score": {
+            "measurement": "NLP_sentiment_and_structure_analysis",
+            "scale": "0_to_10",
+            "target": ">8"
+          },
+          "response_relevance": {
+            "measurement": "semantic_similarity_to_request",
+            "scale": "0_to_1",
+            "target": ">0.9"
+          },
+          "unnecessary_messages_ratio": {
+            "measurement": "redundant_or_off_topic_messages / total_messages",
+            "target": "<5%"
+          }
+        },
+        "collaboration_effectiveness": {
+          "handoff_success_rate": {
+            "measurement": "successful_handoffs / total_handoffs",
+            "target": ">95%"
+          },
+          "escalation_appropriateness": {
+            "measurement": "justified_escalations / total_escalations",
+            "target": ">90%"
+          },
+          "conflict_resolution_time": {
+            "measurement": "time_from_conflict_to_resolution",
+            "target": "<30_minutes"
+          }
+        }
+      },
+
+      "business_impact_metrics": {
+        "value_delivered": {
+          "description": "Business value generated by agent outputs",
+          "measurement": "stakeholder_ratings + outcome_tracking",
+          "scale": "0_to_10",
+          "target": ">7",
+          "tracking": "per_completed_round"
+        },
+        "cost_efficiency": {
+          "description": "Value delivered per unit cost",
+          "measurement": "(value_delivered / (api_costs + compute_costs))",
+          "target": "increasing_trend",
+          "review_frequency": "monthly"
+        },
+        "user_satisfaction": {
+          "description": "End user satisfaction with agent outputs",
+          "measurement": "surveys + feedback_analysis",
+          "scale": "1_to_5",
+          "target": ">4.0"
+        }
+      }
+    },
+
+    "monitoring_infrastructure": {
+      "data_collection": {
+        "automatic_instrumentation": {
+          "enabled": true,
+          "capture_points": [
+            "task_start",
+            "task_completion",
+            "task_failure",
+            "message_sent",
+            "message_received",
+            "resource_allocation",
+            "resource_release"
+          ],
+          "sampling_rate": {
+            "production": "100%_for_errors_10%_for_success",
+            "development": "100%"
+          }
+        },
+        "custom_metrics": {
+          "enabled": true,
+          "agent_specific_metrics": "defined_in_agent_config",
+          "aggregation": "real_time"
+        },
+        "storage": {
+          "time_series_db": "InfluxDB_or_Prometheus",
+          "retention": {
+            "raw_data": "7_days",
+            "aggregated_hourly": "90_days",
+            "aggregated_daily": "365_days"
+          }
+        }
+      },
+
+      "dashboards": {
+        "real_time_dashboard": {
+          "viewers": ["L0", "L1"],
+          "refresh_rate": "5_seconds",
+          "widgets": [
+            "active_agents_count",
+            "current_round_status",
+            "live_error_feed",
+            "resource_utilization_gauges",
+            "throughput_graph"
+          ]
+        },
+        "agent_health_dashboard": {
+          "viewers": ["L0", "L1", "L2"],
+          "refresh_rate": "30_seconds",
+          "widgets": [
+            "per_agent_status",
+            "error_rate_trends",
+            "response_time_percentiles",
+            "quality_scores",
+            "recent_alerts"
+          ]
+        },
+        "business_metrics_dashboard": {
+          "viewers": ["L0", "L1", "stakeholders"],
+          "refresh_rate": "5_minutes",
+          "widgets": [
+            "value_delivered_trends",
+            "cost_efficiency_metrics",
+            "user_satisfaction_scores",
+            "round_completion_rates"
+          ]
+        }
+      },
+
+      "alerting_system": {
+        "alert_channels": {
+          "critical": ["system_broadcast", "email", "slack", "pagerduty"],
+          "high": ["system_broadcast", "email", "slack"],
+          "medium": ["system_notification", "email"],
+          "low": ["system_notification"]
+        },
+        "alert_rules": [
+          {
+            "name": "high_error_rate",
+            "condition": "error_rate > 5% for 10 minutes",
+            "severity": "critical",
+            "action": "alert + auto_investigation"
+          },
+          {
+            "name": "slow_response",
+            "condition": "p95_response_time > poor_threshold for 5 minutes",
+            "severity": "high",
+            "action": "alert + performance_profiling"
+          },
+          {
+            "name": "resource_exhaustion",
+            "condition": "memory_or_cpu > 90% for 2 minutes",
+            "severity": "critical",
+            "action": "alert + circuit_breaker_activation"
+          },
+          {
+            "name": "compliance_violation",
+            "condition": "any_compliance_check_failure",
+            "severity": "critical",
+            "action": "alert + agent_suspension + audit"
+          },
+          {
+            "name": "quality_degradation",
+            "condition": "accuracy < 90% for 1 hour",
+            "severity": "high",
+            "action": "alert + quality_investigation"
+          }
+        ],
+        "alert_deduplication": {
+          "enabled": true,
+          "window": "15_minutes"
+        },
+        "alert_escalation": {
+          "no_acknowledgement_in": "15_minutes",
+          "escalate_to": "next_authority_level"
+        }
+      }
+    },
+
+    "performance_evaluation": {
+      "evaluation_frequency": {
+        "real_time": "continuous_for_critical_metrics",
+        "hourly": "aggregated_performance_summary",
+        "daily": "comprehensive_agent_report",
+        "weekly": "trend_analysis_and_recommendations",
+        "monthly": "strategic_performance_review"
+      },
+
+      "evaluation_criteria": {
+        "individual_agent_scoring": {
+          "formula": "(0.3 * execution_score) + (0.4 * quality_score) + (0.2 * collaboration_score) + (0.1 * business_impact_score)",
+          "scale": "0_to_100",
+          "rating_bands": {
+            "exceptional": "90-100",
+            "excellent": "80-89",
+            "good": "70-79",
+            "acceptable": "60-69",
+            "needs_improvement": "50-59",
+            "critical": "<50"
+          }
+        },
+        "team_performance_scoring": {
+          "considers": [
+            "individual_agent_scores",
+            "inter_agent_collaboration",
+            "round_completion_success",
+            "overall_system_stability"
+          ],
+          "calculation": "weighted_average_with_collaboration_multiplier"
+        }
+      },
+
+      "performance_reports": {
+        "agent_performance_card": {
+          "generated": "daily",
+          "recipients": ["agent_itself", "supervisor", "L0"],
+          "contents": [
+            "overall_score",
+            "metric_breakdown",
+            "trend_indicators",
+            "strengths",
+            "improvement_areas",
+            "actionable_recommendations"
+          ]
+        },
+        "system_health_report": {
+          "generated": "weekly",
+          "recipients": ["L0", "L1", "stakeholders"],
+          "contents": [
+            "system_overview",
+            "top_performing_agents",
+            "agents_needing_attention",
+            "resource_utilization_trends",
+            "cost_analysis",
+            "upcoming_optimization_opportunities"
+          ]
+        }
+      }
+    },
+
+    "optimization_framework": {
+      "automatic_optimization": {
+        "resource_scaling": {
+          "trigger": "sustained_high_utilization",
+          "action": "increase_allocated_resources",
+          "monitoring": "ensure_performance_improvement"
+        },
+        "caching_optimization": {
+          "trigger": "repeated_similar_queries",
+          "action": "implement_intelligent_caching",
+          "validation": "cache_hit_rate_tracking"
+        },
+        "load_balancing": {
+          "trigger": "uneven_load_distribution",
+          "action": "redistribute_tasks",
+          "validation": "improved_throughput"
+        }
+      },
+
+      "manual_optimization": {
+        "performance_tuning": {
+          "initiated_by": ["L0", "L1"],
+          "targets": "agents_below_acceptable_thresholds",
+          "methods": [
+            "algorithm_optimization",
+            "prompt_engineering",
+            "model_fine_tuning",
+            "architecture_refinement"
+          ],
+          "validation": "A_B_testing_required"
+        },
+        "capability_enhancement": {
+          "initiated_by": ["L0", "StaffEngineer"],
+          "targets": "agents_with_expansion_potential",
+          "methods": [
+            "additional_training",
+            "new_tool_integration",
+            "expanded_permissions",
+            "enhanced_context_access"
+          ],
+          "approval": "governance_review_required"
+        }
+      },
+
+      "continuous_improvement": {
+        "feedback_loops": {
+          "agent_self_assessment": {
+            "frequency": "daily",
+            "method": "automated_analysis_of_own_metrics",
+            "output": "improvement_suggestions"
+          },
+          "peer_feedback": {
+            "frequency": "weekly",
+            "method": "cross_agent_collaboration_reviews",
+            "output": "collaboration_optimization_ideas"
+          },
+          "supervisor_feedback": {
+            "frequency": "weekly",
+            "method": "supervisor_agent_review",
+            "output": "directed_improvement_actions"
+          }
+        },
+        "experimentation": {
+          "A_B_testing": {
+            "enabled": true,
+            "scope": "non_critical_agents",
+            "duration": "minimum_7_days",
+            "success_criteria": "statistically_significant_improvement"
+          },
+          "sandbox_testing": {
+            "enabled": true,
+            "purpose": "test_new_capabilities_without_production_impact",
+            "promotion_criteria": "passes_all_quality_gates"
+          }
+        }
+      }
+    },
+
+    "anomaly_detection": {
+      "statistical_anomalies": {
+        "method": "time_series_analysis_with_ML",
+        "detection": "deviations_beyond_3_standard_deviations",
+        "action": "automatic_alert_and_investigation"
+      },
+      "behavioral_anomalies": {
+        "method": "pattern_recognition_and_baseline_comparison",
+        "detection": "unusual_communication_patterns_or_decision_making",
+        "action": "security_review_and_audit"
+      },
+      "performance_degradation": {
+        "method": "trend_analysis",
+        "detection": "sustained_decline_over_time",
+        "action": "proactive_optimization_or_replacement"
+      }
+    }
+  }
+}

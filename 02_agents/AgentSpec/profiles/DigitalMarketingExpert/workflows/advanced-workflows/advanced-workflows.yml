@@ -1,0 +1,633 @@
+workflows:
+  campaign_orchestration:
+    id: campaign-orchestration
+    name: Campaign Orchestration Pipeline
+    version: "2.0"
+    triggers:
+      - campaign_brief_approved
+      - budget_allocated
+    phases:
+      phase_1_brief_strategy:
+        duration_hours: 8-12
+        parallel: false
+        steps:
+          - step: market_intelligence
+            duration_min: 120
+            inputs:
+              - competitor_landscape
+              - audience_sentiment
+              - platform_trends
+              - regulatory_status
+            outputs:
+              - market_intel_report
+          
+          - step: strategy_development
+            duration_min: 240
+            inputs:
+              - market_intel
+              - campaign_brief
+              - budget
+            outputs:
+              - messaging_framework
+              - content_calendar
+              - platform_allocation
+          
+          - step: approval_gates
+            duration_min: 120
+            inputs:
+              - strategy_doc
+            approval_required:
+              - marketing_director
+              - compliance_officer
+              - brand_safety
+            outputs:
+              - strategy_approved
+      
+      phase_2_content_creation:
+        duration_hours: 24-48
+        parallel: true
+        steps:
+          - step: copy_creation
+            duration_min: 240-360
+            languages:
+              - saudi_arabic
+              - gulf_arabic
+              - english
+              - bilingual
+            platforms:
+              - instagram
+              - tiktok
+              - snapchat
+              - x
+              - linkedin
+            outputs:
+              - copy_variants_3_to_5
+          
+          - step: design_production
+            duration_min: 480-720
+            media_types:
+              - graphics
+              - video
+              - ar_lens
+              - interactive
+            platforms:
+              - instagram
+              - tiktok
+              - snapchat
+              - x
+            outputs:
+              - production_ready_assets
+          
+          - step: ab_variant_generation
+            duration_min: 120-240
+            variants_per_type: 3-5
+            elements:
+              - copy_variants
+              - visual_variants
+              - cta_variations
+              - timing_tests
+            outputs:
+              - ab_test_matrix
+          
+          - step: quality_review
+            duration_min: 120
+            checks:
+              - brand_consistency
+              - compliance_reverify
+              - platform_format
+            outputs:
+              - content_approved
+      
+      phase_3_launch_monitoring:
+        duration: ongoing
+        parallel: true
+        steps:
+          - step: prelaunch
+            duration_min: 60-120
+            tasks:
+              - tracking_setup
+              - bidding_configuration
+              - post_scheduling
+              - alert_setup
+            outputs:
+              - launch_ready
+          
+          - step: launch
+            duration_min: 0
+            parallel_tasks:
+              - organic_posting
+              - paid_activation
+              - technical_monitoring
+              - engagement_tracking
+            outputs:
+              - campaign_live
+          
+          - step: realtime_optimization
+            duration_hours: 24-72
+            frequency: every_4_hours
+            tasks:
+              - performance_analysis
+              - pause_underperformers
+              - scale_winners
+              - bid_adjustments
+            outputs:
+              - optimization_recommendations
+          
+          - step: ongoing_monitoring
+            duration: campaign_duration
+            frequency: daily
+            tasks:
+              - daily_review
+              - weekly_optimization
+              - crisis_detection
+              - sentiment_analysis
+            outputs:
+              - daily_report
+          
+          - step: post_campaign_analysis
+            duration_hours: 8-16
+            timing: 3-5_days_after_end
+            tasks:
+              - final_report
+              - roi_attribution
+              - learnings_doc
+              - recommendations
+            outputs:
+              - final_campaign_report
+
+  multi_market_expansion:
+    id: multi-market-expansion
+    name: Multi-Market Expansion (Saudi → GCC)
+    version: "2.0"
+    target_markets:
+      - name: UAE
+        order: 1
+        launch_delay_days: 1
+      - name: Kuwait
+        order: 2
+        launch_delay_days: 2
+      - name: Qatar
+        order: 3
+        launch_delay_days: 3
+    
+    phases:
+      phase_1_market_assessment:
+        duration_days: 3-5
+        steps:
+          - step: market_research
+            duration_days: 1.5
+            research_areas:
+              - platform_penetration
+              - audience_demographics
+              - cultural_differences
+              - regulatory_landscape
+              - competitor_analysis
+              - partnerships_opportunities
+            outputs:
+              - market_research_report
+          
+          - step: localization_planning
+            duration_days: 1
+            localization_dimensions:
+              - dialect_adaptation
+              - visual_adaptation
+              - pricing_currency
+              - legal_entity_setup
+              - influencer_mapping
+            outputs:
+              - localization_plan
+          
+          - step: go_no_go_decision
+            duration_days: 0.5
+            criteria:
+              - market_fit_score
+              - risk_assessment
+              - budget_requirements
+              - timeline_estimation
+            approval_required: executive_team
+            outputs:
+              - expansion_decision
+      
+      phase_2_localized_development:
+        duration_days: 5-7
+        steps:
+          - step: strategy_adaptation
+            duration_days: 2
+            adaptations:
+              - messaging_refresh
+              - platform_prioritization
+              - budget_allocation_per_market
+              - influencer_partnerships
+              - timeline_alignment
+            outputs:
+              - localized_strategy
+          
+          - step: content_localization
+            duration_days: 3
+            localizations:
+              - copy_translation_adaptation
+              - visual_localization
+              - video_adaptation
+              - influencer_briefing
+              - regulatory_alignment
+            outputs:
+              - localized_assets
+          
+          - step: staging_testing
+            duration_days: 1.5
+            tests:
+              - ab_localized_vs_original
+              - audience_testing
+              - influencer_trial
+              - compliance_verification
+            outputs:
+              - launch_readiness_report
+      
+      phase_3_multi_market_execution:
+        duration: ongoing
+        stagger_strategy: 1_to_2_days_between_launches
+        steps:
+          - step: synchronized_launch
+            duration_hours: 1
+            sequence:
+              - market: saudi
+                day_offset: 0
+              - market: uae
+                day_offset: 1
+              - market: kuwait
+                day_offset: 2
+              - market: qatar
+                day_offset: 3
+            outputs:
+              - all_markets_launched
+          
+          - step: market_specific_monitoring
+            frequency: daily
+            per_market_tracking:
+              - performance_metrics
+              - sentiment_analysis
+              - influencer_tracking
+              - regulatory_compliance
+              - crisis_protocols
+            outputs:
+              - per_market_dashboard
+          
+          - step: cross_market_optimization
+            frequency: weekly
+            optimization_tasks:
+              - identify_winning_creative
+              - identify_underperformers
+              - budget_reallocation
+              - regional_insights_sharing
+            outputs:
+              - consolidated_regional_report
+
+  influencer_marketing_automation:
+    id: influencer-marketing-automation
+    name: Influencer Marketing Automation
+    version: "2.0"
+    
+    phases:
+      phase_1_discovery_vetting:
+        duration_days: 5-10
+        steps:
+          - step: criteria_definition
+            duration_hours: 2
+            criteria:
+              - follower_range: macro_micro_nano
+              - engagement_target: "> 3%"
+              - content_fit: brand_aligned
+              - audience_overlap: target_demographic
+              - authenticity_score: required
+              - compliance: saudi_media_ministry_licensed
+            outputs:
+              - vetting_criteria_doc
+          
+          - step: discovery_search
+            duration_days: 2-3
+            search_sources:
+              - platform_scraping: [instagram, tiktok, snapchat]
+              - manual_curation: team_review
+              - influencer_databases: [influee, hypeeauditor, ninjaoutreach]
+            outputs:
+              - candidate_list: 50-100
+          
+          - step: vetting_analysis
+            duration_days: 2-3
+            analysis_dimensions:
+              - audience_demographic
+              - engagement_pattern
+              - content_quality
+              - prior_partnerships
+              - pricing_review
+              - fit_scoring
+            outputs:
+              - vetted_influencer_list
+          
+          - step: outreach_negotiation
+            duration_days: 1-2
+            tasks:
+              - template_messaging
+              - deliverables_briefing
+              - rate_negotiation
+              - contract_finalization
+              - kit_preparation
+            outputs:
+              - approved_influencers
+      
+      phase_2_campaign_execution:
+        duration_days: 5-14
+        steps:
+          - step: influencer_briefing
+            duration_days: 1
+            briefing_elements:
+              - campaign_objectives
+              - content_requirements
+              - brand_guidelines
+              - hashtags_list
+              - disclosure_requirements
+              - tracking_setup
+            outputs:
+              - briefing_approved
+          
+          - step: content_review_approval
+            duration_days: 1-2
+            review_steps:
+              - initial_submission
+              - brand_compliance_check
+              - revisions_if_needed
+              - final_approval
+              - scheduling_coordination
+            outputs:
+              - content_approved_ready_to_post
+          
+          - step: publishing_amplification
+            duration_hours: 24
+            parallel_tasks:
+              - influencer_publishes
+              - brand_reshares
+              - community_management
+              - engagement_monitoring
+              - promo_code_tracking
+              - sentiment_analysis
+            outputs:
+              - engagement_metrics_24h
+          
+          - step: performance_tracking
+            duration: post_duration
+            frequency: daily
+            metrics:
+              - reach_impressions
+              - engagement_rate
+              - promo_code_usage
+              - click_through_rate
+              - audience_growth
+              - roi_calculation
+            outputs:
+              - performance_report
+
+  social_commerce:
+    id: social-commerce
+    name: Social Commerce Workflow
+    version: "2.0"
+    
+    phases:
+      phase_1_setup_integration:
+        duration_days: 3-5
+        parallel: true
+        steps:
+          - step: platform_setup
+            duration_days: 2
+            platforms:
+              - tiktok_shop: seller_account
+              - instagram_shopping: product_catalog_sync
+              - snapchat_ar: cosmetics_fashion
+              - whatsapp_catalog: integration
+            integrations:
+              - inventory_management
+              - payment_gateway
+            outputs:
+              - platforms_ready
+          
+          - step: product_onboarding
+            duration_days: 2-3
+            tasks:
+              - catalog_upload
+              - bundle_creation
+              - price_optimization
+              - inventory_sync
+              - shipping_configuration
+              - return_policy
+            outputs:
+              - catalog_active
+      
+      phase_2_content_creation:
+        duration: ongoing
+        frequency: weekly
+        step: commerce_content
+        content_types:
+          - shoppable_reels
+          - tiktok_shop_videos
+          - ar_try_on
+          - live_shopping
+          - unboxing_reviews
+          - how_to_guides
+        posting_cadence:
+          - shoppable_posts: 3-4_per_platform
+          - live_sessions: 1-2_weekly
+          - influencer_ugc: 2-3_reposts
+          - seasonal_content: ongoing
+        hashtag_strategy:
+          - trending_hashtags: platform_specific
+          - branded_hashtags: campaign_specific
+          - product_tags: discovery_optimization
+        outputs:
+          - weekly_content_calendar
+      
+      phase_3_campaign_activation:
+        duration: during_campaign
+        parallel: true
+        steps:
+          - step: paid_social_commerce
+            frequency: daily_optimization
+            ad_formats:
+              - carousel_ads
+              - dynamic_product_ads
+              - video_ads
+              - collection_ads
+              - retargeting
+            outputs:
+              - ad_campaign_live
+          
+          - step: influencer_integration
+            frequency: ongoing
+            integrations:
+              - shoppable_posts
+              - affiliate_codes
+              - live_shopping_partnerships
+              - ugc_remixing
+              - influencer_feeds
+            outputs:
+              - influencer_campaigns_active
+          
+          - step: realtime_optimization
+            frequency: every_4_hours
+            metrics_tracked:
+              - add_to_cart_rate
+              - checkout_completion_rate
+              - payment_failures
+              - top_products
+              - cart_abandonment
+              - reviews_monitoring
+            outputs:
+              - optimization_recommendations
+          
+          - step: performance_analysis
+            frequency: post_campaign
+            analysis:
+              - conversion_rate_by_product
+              - average_order_value
+              - return_rate
+              - customer_acquisition_cost
+              - customer_lifetime_value
+              - platform_attribution
+            outputs:
+              - commerce_performance_report
+
+  crisis_management:
+    id: crisis-management
+    name: Crisis Management & Real-Time Response
+    version: "2.0"
+    response_time_sla: "< 30 minutes"
+    
+    phases:
+      phase_1_detection:
+        continuous: true
+        triggers:
+          - negative_sentiment_spike: "30% increase in 1h"
+          - viral_negative_post: ">10K retweets < 2h"
+          - regulatory_alert: "CITC_warning_ministry"
+          - competitor_attack: "direct_brand_criticism"
+          - internal_breach: "employee_leak_negative_press"
+          - system_outage: "platform_unavailability"
+          - influencer_controversy: "partner_scandal"
+        monitoring_channels:
+          - social_listening: [brand24, hootsuite, meltwater]
+          - news_alerts: [google_alerts, saudi_news]
+          - stakeholder_notifications: internal
+          - support_escalations: customer_service
+        outputs:
+          - crisis_alert_triggered
+      
+      phase_2_assessment:
+        duration_minutes: 30
+        steps:
+          - step: severity_classification
+            classification:
+              - level_1_green: "<1K mentions low virality"
+              - level_2_yellow: "1K-10K mentions spreading"
+              - level_3_orange: "10K-100K mentions viral"
+              - level_4_red: ">100K mainstream media"
+            outputs:
+              - severity_level
+          
+          - step: root_cause_analysis
+            analysis_questions:
+              - what_happened: factual_accuracy
+              - why_happened: underlying_cause
+              - who_affected: audience_segments
+              - impact: reputation_sales_legal
+              - how_widespread: organic_vs_coordinated
+            outputs:
+              - root_cause_doc
+          
+          - step: stakeholder_alignment
+            duration_minutes: 15
+            notifications:
+              - pr_director: immediate
+              - legal_team: if_applicable
+              - executive_approval: required
+              - holding_statement: if_needed
+            outputs:
+              - stakeholder_aligned
+      
+      phase_3_response:
+        level_1_green:
+          response_type: no_public_response
+          actions:
+            - internal_logging
+            - escalation_monitoring
+            - postmortem_later
+        
+        level_2_yellow:
+          response_type: community_response
+          actions:
+            - individual_replies
+            - private_dms_complainants
+            - pin_positive_testimonials
+            - increase_positive_content
+            - escalation_monitoring: 24h
+        
+        level_3_orange:
+          response_type: public_statement
+          timing: within_2_hours
+          actions:
+            - formal_statement
+            - multi_channel_posting
+            - leadership_communication
+            - media_outreach
+            - dedicated_support_line
+            - ongoing_monitoring: 4_6h_updates
+        
+        level_4_red:
+          response_type: full_crisis_activation
+          timing: immediate
+          actions:
+            - executive_statement
+            - press_release
+            - ceo_media_interviews
+            - crisis_hotline
+            - daily_updates
+            - influencer_partnerships
+            - paid_media_counter_campaign
+            - law_enforcement_if_applicable
+      
+      phase_4_resolution:
+        post_crisis_duration_days: 3-7
+        post_mortem_timing: 1_2_weeks_after
+        steps:
+          - step: recovery
+            tasks:
+              - sentiment_tracking
+              - positive_amplification
+              - influencer_testimonials
+              - customer_compensation
+              - process_improvements
+          
+          - step: postmortem
+            analysis:
+              - timeline_reconstruction
+              - response_effectiveness
+              - gaps_identification
+              - systemic_issues
+              - team_debriefing
+              - documentation
+            outputs:
+              - lessons_learned_doc
+          
+          - step: prevention
+            ongoing_tasks:
+              - crisis_playbook_updates
+              - monitoring_enhancement
+              - quarterly_drills
+              - communication_reserves
+              - stakeholder_relations
+
+attribution:
+  copyright: "© OpenOps Studio"
+  framework: "Strategic and Execution Framework"
+  created_by: "Mamdouh Aboammar"
+  linkedin: "https://www.linkedin.com/in/mamdouh-aboammar"
+  email: "me@mamdouhaboammar.com"
+  whatsapp: "https://wa.me/+201092677269"
+  last_updated: "2026-01-13"

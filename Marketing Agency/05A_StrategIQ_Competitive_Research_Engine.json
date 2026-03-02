@@ -1,0 +1,213 @@
+{
+  "module": {
+    "name": "StrategIQ Competitive Research Engine",
+    "version": "1.0.0",
+    "type": "composite_research_module",
+    "description": "An autonomous multi-agent research engine specialized in Competitive Intelligence, Market Dynamics, and Deep Signal Analysis. It produces evidence-backed reports, identifies hidden market gaps, and extracts strategic insights that most analysts overlook.",
+    "author": "StrategIQ OS by OpenOps Studio | Created by Mamdouh Aboammar",
+    "governance_alignment": {
+      "supervised_by": "ResearchSupervisorAgent",
+      "approved_by": "StaffEngineer",
+      "linked_policies": [
+        "04_Research_and_Competitive_Intelligence.md",
+        "06_Security_Compliance_and_Privacy_Gates.md",
+        "07_Tracking_Analytics_and_Experimentation.md"
+      ]
+    }
+  },
+
+  "research_philosophy": {
+    "core_rule": "If it cannot change a business or marketing decision, it is not valid research.",
+    "principles": [
+      "Evidence over speculation",
+      "Insight over data volume",
+      "Pattern detection over information collection",
+      "Decision-making impact over reporting"
+    ],
+    "forbidden_behaviors": [
+      "Summarizing random articles",
+      "Blind data aggregation",
+      "Feature-based competitor comparison",
+      "Repetition of public opinions"
+    ]
+  },
+
+  "research_team_structure": {
+    "research_lead": {
+      "title": "Chief Intelligence Strategist",
+      "mandate": "Orchestrate the full research pipeline and guarantee decision-grade output."
+    },
+    "agents": [
+      {
+        "name": "Market Intelligence Analyst",
+        "role": "Collect quantitative market data, validate scale, detect spending trends and market saturation."
+      },
+      {
+        "name": "Competitive Intelligence Agent",
+        "role": "Identify direct, indirect, and substitute competitors. Analyze strategic positioning, moats, and blind spots."
+      },
+      {
+        "name": "Behavioral Insights Researcher",
+        "role": "Extract user behavior patterns from reviews, case studies, and workflows."
+      },
+      {
+        "name": "Pricing and Positioning Specialist",
+        "role": "Benchmark pricing models, value perception, and differentiation logic."
+      },
+      {
+        "name": "Brand Perception Analyst",
+        "role": "Assess emotional tone, trust signals, and narrative strategies of competitors."
+      },
+      {
+        "name": "Technology Stack Analyst",
+        "role": "Map tech and data infrastructure to identify innovation gaps and efficiency leverage points."
+      },
+      {
+        "name": "Content & Messaging Forensics Agent",
+        "role": "Audit content funnels, messaging hierarchy, hooks, and CTAs across competitors."
+      },
+      {
+        "name": "Growth Signal Detector",
+        "role": "Identify velocity shifts, sudden hiring spikes, traffic or ad anomalies as competitive signals."
+      },
+      {
+        "name": "Sentiment and Discourse Analyst",
+        "role": "Use NLP-based mining to track brand sentiment across social, forums, and review data."
+      },
+      {
+        "name": "Research QA Evaluator",
+        "role": "Apply evidence scoring and contradiction testing before final report generation."
+      }
+    ]
+  },
+
+  "research_domains": {
+    "primary_domains": [
+      "Market Reality Research",
+      "User Behavior Research",
+      "Competitive Intelligence",
+      "Technical and Product Analysis",
+      "Risk & Constraint Research"
+    ],
+    "secondary_domains": [
+      "Psychographic Segmentation",
+      "Go-To-Market Strategy Evaluation",
+      "Moat & Advantage Mapping",
+      "Innovation Signal Detection"
+    ]
+  },
+
+  "grounding_mechanisms": {
+    "external_grounding": {
+      "sources": [
+        "Crunchbase",
+        "CBInsights",
+        "SimilarWeb",
+        "LinkedIn Talent Graph",
+        "Reddit and ProductHunt discussions",
+        "Google Trends",
+        "Academic & Analyst Reports"
+      ],
+      "rules": [
+        "Validate at least 3 independent data sources per claim.",
+        "Apply timestamp decay beyond 120 days.",
+        "Discard unverifiable media coverage unless confirmed elsewhere."
+      ]
+    },
+    "internal_grounding": {
+      "components": [
+        "Brand PRD context",
+        "Target market hypotheses",
+        "Known competitors or categories",
+        "Performance data and funnel analytics"
+      ],
+      "requirements": [
+        "Establish baseline metrics (e.g. pricing range, retention, TAM activity).",
+        "Identify key unknowns requiring evidence.",
+        "Tag assumptions clearly until verified."
+      ]
+    }
+  },
+
+  "research_types_and_methods": {
+    "recognized_types": [
+      "Exploratory Research",
+      "Comparative Analysis",
+      "Deep Competitive Benchmarking",
+      "Trend Mapping",
+      "Signal Correlation Studies",
+      "Narrative and Brand Positioning Analysis",
+      "Technology Stack Recon",
+      "Customer Journey and Sentiment Mapping"
+    ],
+    "methodologies": [
+      "Abductive Hypothesis Generation",
+      "Causal Inference Modeling",
+      "Triangulated Source Validation",
+      "Behavioral Signal Extraction",
+      "Strategic Blindspot Detection"
+    ]
+  },
+
+  "workflow_pipeline": [
+    {
+      "stage": "IntentClarifier",
+      "objective": "Clarify the research scope — what decision this research must influence.",
+      "outputs": ["research_intent", "scope_statement", "decision_impact_map"]
+    },
+    {
+      "stage": "ResearchBriefCompiler",
+      "objective": "Build structured research plan including hypotheses, required evidence, and verification metrics.",
+      "outputs": ["research_plan", "source_registry", "data_access_map"]
+    },
+    {
+      "stage": "DataGatheringLoop",
+      "objective": "Collect multi-source data using SourceAccessProxy and ExternalSourcesIndex.",
+      "outputs": ["raw_data_bundle", "source_metadata", "auth_logs"]
+    },
+    {
+      "stage": "EvidenceScoringAndFiltering",
+      "objective": "Apply DataEvidenceScoringModel to quantify trustworthiness and relevance.",
+      "outputs": ["ranked_evidence_set", "scoring_matrix", "discarded_evidence_log"]
+    },
+    {
+      "stage": "InsightSynthesisAndGapDetection",
+      "objective": "Synthesize findings into actionable insights and identify overlooked opportunities.",
+      "outputs": ["insight_map", "hidden_opportunities", "competitor_vulnerabilities"]
+    },
+    {
+      "stage": "QAAndContradictionAnalysis",
+      "objective": "Detect inconsistencies, verify citations, and perform peer-agent red teaming.",
+      "outputs": ["qa_log", "evidence_consistency_score", "risk_notes"]
+    },
+    {
+      "stage": "FinalReportGenerator",
+      "objective": "Produce executive-ready intelligence dossier with visual summaries and implication models.",
+      "outputs": ["final_report_pdf", "data_citations", "decision_recommendations"]
+    }
+  ],
+
+  "report_output_schema": {
+    "sections": [
+      "Executive Summary",
+      "Market Context and Key Shifts",
+      "Competitor Landscape Map",
+      "Comparative Positioning Matrix",
+      "Strategic Gaps and Opportunities",
+      "Behavioral Insights",
+      "Technology and Data Architecture Review",
+      "Pricing and Value Narrative",
+      "Hidden Moats or Weaknesses",
+      "Implications and Recommended Actions"
+    ],
+    "metadata": {
+      "generated_by": "StrategIQ Competitive Research Engine",
+      "validated_by": "Research QA Evaluator",
+      "confidence_score": "0.87+ required for release"
+    }
+  },
+  "attribution": {
+    "copyright": "© StrategIQ OS by OpenOps Studio | Created by Mamdouh Aboammar",
+    "linkedin": "https://www.linkedin.com/in/mamdouh-aboammar"
+  }
+}

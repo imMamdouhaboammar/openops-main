@@ -1,0 +1,81 @@
+{
+    "tool_registry": {
+        "version": "1.0.0",
+        "total_tools": 3
+    },
+    "tools": {
+        "stakeholder_mapper": {
+            "tool_id": "stakeholder-mapper",
+            "name": "B2B Stakeholder Mapping Tool",
+            "file_path": "tools/stakeholder-mapper.tool.json",
+            "status": "spec",
+            "inputs": [
+                "Company name",
+                "Deal size",
+                "Industry"
+            ],
+            "outputs": [
+                "Org chart",
+                "Decision-maker list (roles, names, contact info)",
+                "Engagement priority score"
+            ],
+            "description": "Maps organizational structure, identifies all decision-makers, prioritizes outreach based on influence + accessibility"
+        },
+        "rfp_response_generator": {
+            "tool_id": "rfp-response-generator",
+            "name": "AI-Powered RFP Response Generator",
+            "file_path": "tools/rfp-response-generator.tool.json",
+            "status": "spec",
+            "efficiency_gain": "60-80% time reduction",
+            "features": [
+                "Go/no-go scoring",
+                "Content library integration",
+                "Automated compliance checks",
+                "Client-centric language optimization"
+            ],
+            "description": "Analyzes RFP requirements, generates tailored responses using content library, ensures compliance, optimizes for client needs"
+        },
+        "abm_campaign_planner": {
+            "tool_id": "abm-campaign-planner",
+            "name": "ABM Campaign Planner (1:1, 1:Few, 1:Many)",
+            "file_path": "tools/abm-campaign-planner.tool.json",
+            "status": "spec",
+            "outputs": [
+                "Multi-touch campaign plan",
+                "Personalized content recommendations",
+                "Channel mix strategy",
+                "Timeline + milestones"
+            ],
+            "description": "Designs ABM campaigns based on tier (1:1, 1:Few, 1:Many), account selection, and personalization at scale"
+        }
+    },
+    "integrations": {
+        "linkedin_sales_navigator": {
+            "api": "LinkedIn Sales Navigator API",
+            "use_case": "Decision-maker search, org chart mapping, InMail outreach"
+        },
+        "intent_data": {
+            "platforms": [
+                "6sense",
+                "Bombora",
+                "Demandbase"
+            ],
+            "use_case": "Track account-level buying signals, content consumption"
+        },
+        "contact_enrichment": {
+            "platforms": [
+                "ZoomInfo",
+                "Lusha",
+                "Clearbit"
+            ],
+            "use_case": "Firmographic/technographic data, contact info"
+        },
+        "crm": {
+            "platforms": [
+                "HubSpot",
+                "Salesforce"
+            ],
+            "use_case": "Pipeline management, ABM automation, attribution"
+        }
+    }
+}

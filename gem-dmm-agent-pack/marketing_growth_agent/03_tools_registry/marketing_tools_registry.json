@@ -1,0 +1,702 @@
+{
+  "toolsRegistry": {
+    "metadata": {
+      "version": "1.0.0",
+      "lastUpdated": "2026-01-22",
+      "totalTools": 60,
+      "categories": 13
+    },
+
+    "analytics_tools": [
+      {
+        "toolId": "ANALYTICS-001",
+        "name": "Google Analytics 4",
+        "category": "Web Analytics",
+        "capabilities": [
+          "Website traffic tracking",
+          "User behavior analysis",
+          "Funnel visualization",
+          "Conversion tracking",
+          "Audience segmentation"
+        ],
+        "integrations": ["Google Ads", "Search Console", "BigQuery"],
+        "costModel": "Free up to 10M hits/month",
+        "useCase": "Primary web analytics platform",
+        "skillLevel": "Advanced"
+      },
+      {
+        "toolId": "ANALYTICS-002",
+        "name": "Mixpanel",
+        "category": "Product Analytics",
+        "capabilities": [
+          "Event tracking",
+          "User journey analysis",
+          "Cohort analysis",
+          "Retention curves",
+          "Funnels and flows"
+        ],
+        "integrations": ["Most platforms via API"],
+        "costModel": "Free + paid tiers ($999+)",
+        "useCase": "Product-focused analytics",
+        "skillLevel": "Advanced"
+      },
+      {
+        "toolId": "ANALYTICS-003",
+        "name": "Amplitude",
+        "category": "Product Analytics",
+        "capabilities": [
+          "User behavior tracking",
+          "Retention analysis",
+          "Predictive analytics",
+          "Segmentation",
+          "Dashboards"
+        ],
+        "integrations": ["100+ integrations"],
+        "costModel": "Freemium + enterprise",
+        "useCase": "Mobile and web analytics",
+        "skillLevel": "Advanced"
+      },
+      {
+        "toolId": "ANALYTICS-004",
+        "name": "Heap",
+        "category": "Session Recording",
+        "capabilities": [
+          "Session recording",
+          "Heatmaps",
+          "Click tracking",
+          "User journey playback",
+          "Error tracking"
+        ],
+        "integrations": ["Google Analytics", "Segment"],
+        "costModel": "$500+/month",
+        "useCase": "Understand user behavior visually",
+        "skillLevel": "Intermediate"
+      },
+      {
+        "toolId": "ANALYTICS-005",
+        "name": "Segment",
+        "category": "Data Platform",
+        "capabilities": [
+          "Data collection",
+          "Destination management",
+          "Data governance",
+          "Identity resolution",
+          "Data warehousing"
+        ],
+        "integrations": ["200+ platforms"],
+        "costModel": "$120+/month",
+        "useCase": "Centralized data collection hub",
+        "skillLevel": "Advanced"
+      }
+    ],
+
+    "marketing_automation": [
+      {
+        "toolId": "MKTG-001",
+        "name": "HubSpot",
+        "category": "Marketing Automation & CRM",
+        "capabilities": [
+          "Email marketing",
+          "Lead scoring",
+          "Contact management",
+          "Workflow automation",
+          "Sales pipeline management"
+        ],
+        "integrations": ["900+ apps"],
+        "costModel": "Free + $45+/month",
+        "useCase": "All-in-one marketing and sales platform",
+        "skillLevel": "Intermediate"
+      },
+      {
+        "toolId": "MKTG-002",
+        "name": "Salesforce Marketing Cloud",
+        "category": "Marketing Automation",
+        "capabilities": [
+          "Multi-channel campaigns",
+          "Personalization",
+          "Lead management",
+          "Customer journey mapping",
+          "Advanced analytics"
+        ],
+        "integrations": ["Salesforce ecosystem"],
+        "costModel": "$1,250+/month",
+        "useCase": "Enterprise marketing automation",
+        "skillLevel": "Advanced"
+      },
+      {
+        "toolId": "MKTG-003",
+        "name": "Marketo",
+        "category": "Marketing Automation",
+        "capabilities": [
+          "Lead nurturing",
+          "Account-based marketing",
+          "Predictive analytics",
+          "Multi-touch attribution",
+          "Revenue attribution"
+        ],
+        "integrations": ["Salesforce", "Microsoft"],
+        "costModel": "$1,200+/month",
+        "useCase": "B2B lead management and ABM",
+        "skillLevel": "Advanced"
+      }
+    ],
+
+    "email_marketing": [
+      {
+        "toolId": "EMAIL-001",
+        "name": "Mailchimp",
+        "category": "Email Marketing",
+        "capabilities": [
+          "Email campaigns",
+          "Automation",
+          "Segmentation",
+          "A/B testing",
+          "Analytics"
+        ],
+        "integrations": ["Shopify", "WordPress", "WooCommerce"],
+        "costModel": "Free + $20+/month",
+        "useCase": "Beginner-friendly email platform",
+        "skillLevel": "Beginner"
+      },
+      {
+        "toolId": "EMAIL-002",
+        "name": "Klaviyo",
+        "category": "Email Marketing",
+        "capabilities": [
+          "Ecommerce email automation",
+          "SMS marketing",
+          "Advanced segmentation",
+          "Predictive analytics",
+          "Revenue tracking"
+        ],
+        "integrations": ["Shopify", "WooCommerce", "BigCommerce"],
+        "costModel": "$20+/month",
+        "useCase": "E-commerce focused email platform",
+        "skillLevel": "Intermediate"
+      },
+      {
+        "toolId": "EMAIL-003",
+        "name": "ConvertKit",
+        "category": "Email Marketing",
+        "capabilities": [
+          "Newsletter management",
+          "Creator monetization",
+          "Automation",
+          "Landing pages",
+          "Subscriber tagging"
+        ],
+        "integrations": ["Stripe", "Gumroad"],
+        "costModel": "$25+/month",
+        "useCase": "Creator and newsletter focused",
+        "skillLevel": "Beginner"
+      }
+    ],
+
+    "paid_advertising": [
+      {
+        "toolId": "ADS-001",
+        "name": "Google Ads",
+        "category": "Search Advertising",
+        "capabilities": [
+          "Search ads",
+          "Display ads",
+          "Shopping ads",
+          "YouTube ads",
+          "Remarketing"
+        ],
+        "integrations": ["Google Analytics", "Merchant Center"],
+        "costModel": "Pay-per-click (varies)",
+        "useCase": "Search and display advertising",
+        "skillLevel": "Advanced"
+      },
+      {
+        "toolId": "ADS-002",
+        "name": "Facebook Ads Manager",
+        "category": "Social Advertising",
+        "capabilities": [
+          "Facebook ads",
+          "Instagram ads",
+          "Audience builder",
+          "Campaign optimization",
+          "Attribution"
+        ],
+        "integrations": ["Conversion API", "Pixel"],
+        "costModel": "Pay-per-click (varies)",
+        "useCase": "Social media advertising",
+        "skillLevel": "Advanced"
+      },
+      {
+        "toolId": "ADS-003",
+        "name": "LinkedIn Campaign Manager",
+        "category": "B2B Advertising",
+        "capabilities": [
+          "LinkedIn Ads",
+          "Audience targeting",
+          "Lead generation forms",
+          "ABM targeting",
+          "Conversion tracking"
+        ],
+        "integrations": ["CRM systems"],
+        "costModel": "Pay-per-click ($2-$5 typical CPC)",
+        "useCase": "B2B and professional services advertising",
+        "skillLevel": "Intermediate"
+      }
+    ],
+
+    "content_and_seo": [
+      {
+        "toolId": "SEO-001",
+        "name": "SEMrush",
+        "category": "SEO & Competitive Intelligence",
+        "capabilities": [
+          "Keyword research",
+          "Competitor analysis",
+          "Site audit",
+          "Backlink analysis",
+          "Rank tracking"
+        ],
+        "integrations": ["Google Analytics", "Google Search Console"],
+        "costModel": "$99+/month",
+        "useCase": "Comprehensive SEO tool",
+        "skillLevel": "Advanced"
+      },
+      {
+        "toolId": "SEO-002",
+        "name": "Ahrefs",
+        "category": "SEO & Content",
+        "capabilities": [
+          "Backlink analysis",
+          "Keyword explorer",
+          "Site explorer",
+          "Rank checker",
+          "Content gap analysis"
+        ],
+        "integrations": ["API available"],
+        "costModel": "$99+/month",
+        "useCase": "Backlink analysis and competitor research",
+        "skillLevel": "Advanced"
+      },
+      {
+        "toolId": "SEO-003",
+        "name": "Moz",
+        "category": "SEO Platform",
+        "capabilities": [
+          "Keyword research",
+          "Rank tracking",
+          "Site audit",
+          "Link research",
+          "Content recommendations"
+        ],
+        "integrations": ["Google Analytics"],
+        "costModel": "$99+/month",
+        "useCase": "SEO platform for agencies and enterprises",
+        "skillLevel": "Intermediate"
+      }
+    ],
+
+    "testing_and_optimization": [
+      {
+        "toolId": "TEST-001",
+        "name": "Optimizely",
+        "category": "A/B Testing Platform",
+        "capabilities": [
+          "A/B testing",
+          "Multivariate testing",
+          "Full-stack experimentation",
+          "Personalization",
+          "Advanced analytics"
+        ],
+        "integrations": ["200+ platforms"],
+        "costModel": "Enterprise pricing",
+        "useCase": "Enterprise A/B testing platform",
+        "skillLevel": "Advanced"
+      },
+      {
+        "toolId": "TEST-002",
+        "name": "VWO (Visual Website Optimizer)",
+        "category": "A/B Testing",
+        "capabilities": [
+          "A/B testing",
+          "Heatmaps",
+          "Session recordings",
+          "Surveys",
+          "Personalization"
+        ],
+        "integrations": ["Google Analytics", "Segment"],
+        "costModel": "$25+/month",
+        "useCase": "Mid-market A/B testing tool",
+        "skillLevel": "Intermediate"
+      },
+      {
+        "toolId": "TEST-003",
+        "name": "Instapage",
+        "category": "Landing Page Builder & Testing",
+        "capabilities": [
+          "Landing page builder",
+          "A/B testing",
+          "Personalization",
+          "AMP pages",
+          "Collaboration tools"
+        ],
+        "integrations": ["120+ integrations"],
+        "costModel": "$299+/month",
+        "useCase": "Landing page optimization and testing",
+        "skillLevel": "Intermediate"
+      }
+    ],
+
+    "crm_and_sales": [
+      {
+        "toolId": "CRM-001",
+        "name": "HubSpot CRM",
+        "category": "Customer Relationship Management",
+        "capabilities": [
+          "Contact management",
+          "Deal pipeline",
+          "Email integration",
+          "Meeting scheduling",
+          "Free tier available"
+        ],
+        "integrations": ["900+ apps"],
+        "costModel": "Free + paid",
+        "useCase": "SMB and startup CRM",
+        "skillLevel": "Beginner"
+      },
+      {
+        "toolId": "CRM-002",
+        "name": "Salesforce",
+        "category": "Enterprise CRM",
+        "capabilities": [
+          "Contact and account management",
+          "Sales cloud",
+          "Service cloud",
+          "Advanced reporting",
+          "Customization"
+        ],
+        "integrations": ["1000+ apps"],
+        "costModel": "$165+/month per user",
+        "useCase": "Enterprise sales and customer management",
+        "skillLevel": "Advanced"
+      },
+      {
+        "toolId": "CRM-003",
+        "name": "Pipedrive",
+        "category": "Sales CRM",
+        "capabilities": [
+          "Pipeline management",
+          "Deal tracking",
+          "Activity management",
+          "Forecasting",
+          "Integrations"
+        ],
+        "integrations": ["400+ apps"],
+        "costModel": "$39+/month",
+        "useCase": "Sales team focused CRM",
+        "skillLevel": "Beginner"
+      }
+    ],
+
+    "surveys_and_research": [
+      {
+        "toolId": "SURVEY-001",
+        "name": "Typeform",
+        "category": "Survey & Form Builder",
+        "capabilities": [
+          "Survey creation",
+          "Forms",
+          "Quizzes",
+          "Conditional logic",
+          "Analytics"
+        ],
+        "integrations": ["200+ apps"],
+        "costModel": "Free + $25+/month",
+        "useCase": "Customer research and feedback",
+        "skillLevel": "Beginner"
+      },
+      {
+        "toolId": "SURVEY-002",
+        "name": "Qualtrics",
+        "category": "Experience Management",
+        "capabilities": [
+          "Survey platform",
+          "Data analytics",
+          "Journey mapping",
+          "Real-time analytics",
+          "Enterprise features"
+        ],
+        "integrations": ["Salesforce", "Data warehouses"],
+        "costModel": "Enterprise pricing",
+        "useCase": "Enterprise customer research",
+        "skillLevel": "Advanced"
+      }
+    ],
+    "data_platforms": [
+      {
+        "toolId": "DATA-001",
+        "name": "Snowflake",
+        "category": "Cloud Data Warehouse",
+        "capabilities": [
+          "Scalable data storage",
+          "SQL analytics",
+          "Secure data sharing",
+          "Time-series analysis"
+        ],
+        "integrations": ["BI tools", "CDPs", "ETL pipelines"],
+        "costModel": "Usage-based",
+        "useCase": "Centralized analytics warehouse",
+        "skillLevel": "Advanced"
+      },
+      {
+        "toolId": "DATA-002",
+        "name": "BigQuery",
+        "category": "Cloud Data Warehouse",
+        "capabilities": [
+          "Serverless analytics",
+          "ML integrations",
+          "Real-time streaming",
+          "Large-scale SQL queries"
+        ],
+        "integrations": ["GA4", "GTM", "Looker"],
+        "costModel": "Usage-based",
+        "useCase": "Analytics at scale with Google stack",
+        "skillLevel": "Advanced"
+      },
+      {
+        "toolId": "DATA-003",
+        "name": "Looker",
+        "category": "BI & Analytics",
+        "capabilities": [
+          "Semantic modeling",
+          "Dashboards",
+          "Data governance",
+          "Embedded analytics"
+        ],
+        "integrations": ["Snowflake", "BigQuery", "PostgreSQL"],
+        "costModel": "Enterprise pricing",
+        "useCase": "Executive and operational dashboards",
+        "skillLevel": "Advanced"
+      }
+    ],
+    "experimentation_and_feature_flags": [
+      {
+        "toolId": "EXP-001",
+        "name": "LaunchDarkly",
+        "category": "Feature Flags & Experimentation",
+        "capabilities": [
+          "Feature flagging",
+          "Gradual rollouts",
+          "A/B testing",
+          "Kill switches"
+        ],
+        "integrations": ["Analytics platforms", "CI/CD"],
+        "costModel": "Usage-based",
+        "useCase": "Controlled experiments and rollouts",
+        "skillLevel": "Advanced"
+      },
+      {
+        "toolId": "EXP-002",
+        "name": "Split",
+        "category": "Feature Flags & Experimentation",
+        "capabilities": [
+          "Feature flagging",
+          "Experimentation",
+          "Metric tracking",
+          "Targeting rules"
+        ],
+        "integrations": ["Segment", "GA4", "Mixpanel"],
+        "costModel": "Usage-based",
+        "useCase": "Experimentation with engineering workflows",
+        "skillLevel": "Advanced"
+      },
+      {
+        "toolId": "EXP-003",
+        "name": "Statsig",
+        "category": "Experimentation Platform",
+        "capabilities": [
+          "Experimentation",
+          "Feature gating",
+          "Metric guardrails",
+          "Statistical analysis"
+        ],
+        "integrations": ["Data warehouses", "CDPs"],
+        "costModel": "Usage-based",
+        "useCase": "Product-led growth experimentation",
+        "skillLevel": "Advanced"
+      }
+    ],
+    "data_quality_and_observability": [
+      {
+        "toolId": "DQ-001",
+        "name": "Monte Carlo",
+        "category": "Data Observability",
+        "capabilities": [
+          "Data quality monitoring",
+          "Anomaly detection",
+          "Lineage tracking",
+          "Incident alerts"
+        ],
+        "integrations": ["Snowflake", "BigQuery", "Looker"],
+        "costModel": "Enterprise pricing",
+        "useCase": "Trustworthy marketing analytics",
+        "skillLevel": "Advanced"
+      },
+      {
+        "toolId": "DQ-002",
+        "name": "Great Expectations",
+        "category": "Data Quality",
+        "capabilities": [
+          "Data validation",
+          "Schema testing",
+          "Automated checks",
+          "Reporting"
+        ],
+        "integrations": ["Pandas", "Spark", "Airflow"],
+        "costModel": "Open source + paid",
+        "useCase": "Data QA for analytics pipelines",
+        "skillLevel": "Intermediate"
+      },
+      {
+        "toolId": "DQ-003",
+        "name": "Metabase",
+        "category": "Analytics",
+        "capabilities": [
+          "Self-serve dashboards",
+          "Query builder",
+          "Alerts",
+          "Embedded analytics"
+        ],
+        "integrations": ["PostgreSQL", "BigQuery", "Snowflake"],
+        "costModel": "Open source + paid",
+        "useCase": "Fast insights and monitoring",
+        "skillLevel": "Intermediate"
+      }
+    ],
+    "attribution_and_mmm_tools": [
+      {
+        "toolId": "ATTR-001",
+        "name": "HockeyStack",
+        "category": "B2B Attribution",
+        "capabilities": [
+          "Multi-touch attribution",
+          "Pipeline attribution",
+          "Channel ROI",
+          "Dashboarding"
+        ],
+        "integrations": ["CRM", "Ad platforms", "Warehouse"],
+        "costModel": "Paid",
+        "useCase": "B2B revenue attribution",
+        "skillLevel": "Intermediate"
+      },
+      {
+        "toolId": "ATTR-002",
+        "name": "Rockerbox",
+        "category": "Attribution",
+        "capabilities": [
+          "Multi-touch attribution",
+          "Cross-device tracking",
+          "Unified reporting",
+          "Incrementality insights"
+        ],
+        "integrations": ["Ad platforms", "Analytics tools"],
+        "costModel": "Paid",
+        "useCase": "Multi-channel attribution",
+        "skillLevel": "Advanced"
+      },
+      {
+        "toolId": "MMM-001",
+        "name": "Recast",
+        "category": "Marketing Mix Modeling",
+        "capabilities": [
+          "MMM modeling",
+          "Budget optimization",
+          "Scenario planning",
+          "Adstock curves"
+        ],
+        "integrations": ["Data warehouse", "Ad platforms"],
+        "costModel": "Paid",
+        "useCase": "Strategic spend optimization",
+        "skillLevel": "Advanced"
+      }
+    ],
+    "creative_intelligence_tools": [
+      {
+        "toolId": "CREATIVE-001",
+        "name": "VidMob",
+        "category": "Creative Analytics",
+        "capabilities": [
+          "Creative performance scoring",
+          "Asset analysis",
+          "Creative insights",
+          "Benchmarks"
+        ],
+        "integrations": ["Meta Ads", "YouTube", "TikTok"],
+        "costModel": "Paid",
+        "useCase": "Creative insights at scale",
+        "skillLevel": "Advanced"
+      },
+      {
+        "toolId": "CREATIVE-002",
+        "name": "Motion",
+        "category": "Creative Analytics",
+        "capabilities": [
+          "Ad creative analysis",
+          "Creative fatigue alerts",
+          "Performance tracking",
+          "Competitor creative monitoring"
+        ],
+        "integrations": ["Meta Ads", "Google Ads"],
+        "costModel": "Paid",
+        "useCase": "Creative optimization loops",
+        "skillLevel": "Intermediate"
+      },
+      {
+        "toolId": "CREATIVE-003",
+        "name": "Canva",
+        "category": "Creative Production",
+        "capabilities": [
+          "Design templates",
+          "Brand kits",
+          "Asset creation",
+          "Collaboration"
+        ],
+        "integrations": ["Social platforms"],
+        "costModel": "Free + paid",
+        "useCase": "Rapid creative production",
+        "skillLevel": "Beginner"
+      }
+    ],
+
+    "integration_patterns": {
+      "dataFlow": [
+        "Traffic Source → Google Analytics 4 → Segment → Data Warehouse",
+        "User Behavior → Mixpanel/Amplitude → BI Tool → Dashboards",
+        "Customer Interaction → CRM → Marketing Automation → Email Marketing",
+        "Campaign Performance → Ad Platform → Analytics → Attribution Model"
+      ],
+      "workflowExamples": [
+        {
+          "workflow": "Email Campaign to Conversion",
+          "steps": [
+            "1. Segment audience in HubSpot",
+            "2. Design and send campaign in Mailchimp",
+            "3. Track opens/clicks in Mailchimp",
+            "4. Sync to HubSpot CRM",
+            "5. Track conversions in GA4",
+            "6. Analyze in Segment/warehouse"
+          ]
+        },
+        {
+          "workflow": "Paid Ad Optimization Loop",
+          "steps": [
+            "1. Run ads in Google Ads/Facebook",
+            "2. Track conversions via pixel",
+            "3. Measure in GA4",
+            "4. Analyze in Segment",
+            "5. A/B test variants in VWO",
+            "6. Scale winners, pause losers"
+          ]
+        }
+      ]
+    }
+  }
+}

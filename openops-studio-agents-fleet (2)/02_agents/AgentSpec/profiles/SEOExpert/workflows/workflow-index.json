@@ -1,0 +1,48 @@
+{
+    "workflows": {
+        "standard": [
+            {
+                "id": "seo-audit-comprehensive",
+                "name": "Comprehensive SEO/AEO/GEO Audit",
+                "file_path": "standard-workflows/seo-audit.md",
+                "frequency": "quarterly",
+                "duration": "2 weeks",
+                "trigger": "New website launch OR major algorithm update OR performance decline"
+            },
+            {
+                "id": "arabic-keyword-research",
+                "name": "Arabic Keyword Research & Clustering",
+                "file_path": "standard-workflows/arabic-keyword-research.md",
+                "frequency": "monthly",
+                "duration": "1 week",
+                "trigger": "New content planning OR seasonal campaigns (Ramadan, Hajj)"
+            },
+            {
+                "id": "featured-snippet-capture",
+                "name": "Featured Snippet Capture Campaign",
+                "file_path": "standard-workflows/featured-snippet-capture.md",
+                "frequency": "ongoing",
+                "duration": "4 weeks per batch",
+                "trigger": "Keyword ranking positions 3-10 with existing snippets"
+            }
+        ],
+        "advanced": [
+            {
+                "id": "hajj-umrah-multilingual-seo",
+                "name": "Hajj/Umrah Multilingual SEO Strategy (10+ Languages)",
+                "file_path": "advanced-workflows/hajj-umrah-multilingual-seo.md",
+                "frequency": "annual",
+                "duration": "12 weeks",
+                "trigger": "Pre-Hajj season (3-4 months before Hajj)"
+            },
+            {
+                "id": "geo-optimization-campaign",
+                "name": "GEO (ChatGPT/Gemini/Perplexity) Optimization Campaign",
+                "file_path": "advanced-workflows/geo-optimization.md",
+                "frequency": "quarterly",
+                "duration": "8 weeks",
+                "trigger": "Launch of new AI search platform OR competitor citations increase"
+            }
+        ]
+    }
+}

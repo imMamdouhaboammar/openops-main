@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "openops://11_marketing_growth_agent/12_control_plane/pod_response_envelope.schema.json",
+  "title": "Pod Response Envelope (Canonical)",
+  "description": "Standard response format for pods. Ensures every pod returns artifacts + decision points + next actions in a machine-readable way.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "taskId",
+    "podId",
+    "status",
+    "generatedAt",
+    "artifacts",
+    "decisionsNeeded",
+    "risks",
+    "nextActions"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "examples": ["1.0.0"]
+    },
+    "taskId": {
+      "type": "string",
+      "description": "Task envelope ID this response corresponds to."
+    },
+    "podId": {
+      "type": "string",
+      "enum": [
+        "POD-STRATEGY",
+        "POD-CONTENT",
+        "POD-CREATIVE",
+        "POD-PAID",
+        "POD-ANALYTICS",
+        "POD-LIFECYCLE"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["completed", "blocked", "needs_clarification", "partial"]
+    },
+    "generatedAt": {
+      "type": "string",
+      "description": "ISO8601 timestamp.",
+      "examples": ["2026-01-24T18:00:00Z"]
+    },
+    "summary": {
+      "type": "string",
+      "description": "Optional 5–10 line executive summary for humans."
+    },
+    "artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["artifactId", "artifactType", "format", "location"],
+        "properties": {
+          "artifactId": { "type": "string" },
+          "artifactType": { "type": "string" },
+          "format": { "type": "string", "enum": ["md", "json", "jsonl", "link", "other"] },
+          "location": { "type": "string", "description": "Path, URL, or SSOT reference." },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "decisionsNeeded": {
+      "type": "array",
+      "description": "Explicit approval requests with deadlines.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["decision", "owner", "deadline", "impactIfDelayed"],
+        "properties": {
+          "decision": { "type": "string" },
+          "owner": { "type": "string", "description": "Client approver or internal role." },
+          "deadline": { "type": "string", "description": "ISO8601 timestamp." },
+          "impactIfDelayed": { "type": "string" }
+        }
+      }
+    },
+    "risks": {
+      "type": "array",
+      "description": "Risks detected by the pod, including compliance and brand risk.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["riskLevel", "description", "mitigation"],
+        "properties": {
+          "riskLevel": { "type": "string", "enum": ["low", "medium", "high"] },
+          "description": { "type": "string" },
+          "mitigation": { "type": "string" }
+        }
+      }
+    },
+    "nextActions": {
+      "type": "array",
+      "description": "Concrete next steps the Supervisor can schedule (owners + due).",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["action", "owner", "due"],
+        "properties": {
+          "action": { "type": "string" },
+          "owner": { "type": "string" },
+          "due": { "type": "string", "description": "ISO8601 timestamp or relative deadline." },
+          "dependsOn": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "blockers": {
+      "type": "array",
+      "description": "If status is blocked, list blockers and who can resolve them.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["blocker", "owner"],
+        "properties": {
+          "blocker": { "type": "string" },
+          "owner": { "type": "string" }
+        }
+      }
+    }
+  }
+}
+

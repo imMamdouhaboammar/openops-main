@@ -1,0 +1,76 @@
+{
+  "agents": {
+    "planner_agent": {
+      "role": "planner",
+      "model": "gpt-4",
+      "temperature": 0.7,
+      "max_tokens": 2000,
+      "system_prompt": "You are a strategic planner agent. Your role is to decompose complex tasks into parallel subtasks and generate diverse hypotheses.",
+      "capabilities": ["task_decomposition", "hypothesis_generation", "strategy_planning"]
+    },
+    "worker_agent": {
+      "role": "worker",
+      "model": "gpt-3.5-turbo",
+      "temperature": 0.5,
+      "max_tokens": 1500,
+      "system_prompt": "You are a specialized worker agent. Execute assigned subtasks efficiently and accurately.",
+      "capabilities": ["task_execution", "data_gathering", "content_generation"]
+    },
+    "judge_agent": {
+      "role": "judge",
+      "model": "gpt-4",
+      "temperature": 0.3,
+      "max_tokens": 2000,
+      "system_prompt": "You are an expert judge agent. Evaluate multiple outputs based on specific criteria and select the best one.",
+      "capabilities": ["evaluation", "comparison", "decision_making"]
+    },
+    "retrieval_agent": {
+      "role": "retrieval",
+      "model": "gpt-3.5-turbo",
+      "temperature": 0.2,
+      "max_tokens": 1000,
+      "system_prompt": "You are a retrieval specialist. Find and extract relevant information from various sources.",
+      "capabilities": ["search", "retrieval", "information_extraction"]
+    },
+    "creative_agent": {
+      "role": "creative",
+      "model": "gpt-4",
+      "temperature": 0.9,
+      "max_tokens": 2000,
+      "system_prompt": "You are a creative agent. Generate innovative, diverse, and engaging content.",
+      "capabilities": ["creative_writing", "brainstorming", "innovation"]
+    }
+  },
+  "agent_teams": {
+    "marketing_team": {
+      "manager": "planner_agent",
+      "workers": ["creative_agent", "worker_agent"],
+      "judge": "judge_agent",
+      "parallel_execution": true
+    },
+    "research_team": {
+      "manager": "planner_agent",
+      "workers": ["retrieval_agent", "worker_agent"],
+      "judge": "judge_agent",
+      "parallel_execution": true
+    },
+    "content_team": {
+      "manager": "planner_agent",
+      "workers": ["creative_agent", "creative_agent", "creative_agent"],
+      "judge": "judge_agent",
+      "parallel_execution": true
+    }
+  },
+  "agent_personality": {
+    "creative_agent": {
+      "traits": ["innovative", "bold", "imaginative"],
+      "style": "creative and engaging",
+      "tone": "enthusiastic"
+    },
+    "judge_agent": {
+      "traits": ["analytical", "fair", "thorough"],
+      "style": "objective and detailed",
+      "tone": "professional"
+    }
+  }
+}

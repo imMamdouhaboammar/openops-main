@@ -1,0 +1,187 @@
+{
+  "module": {
+    "name": "PRDTemplateGenerator",
+    "version": "2.0.0",
+    "type": "product_documentation_module",
+    "description": "Generates structured, compliant, and dynamically scoped PRD (Product Requirement Document) templates aligned with OpenOps Product Framework.",
+    "author": "OpenOps Studio | Created by Mamdouh Aboammar",
+    "governance": {
+      "supervised_by": "ProductManagerAgent",
+      "approved_by": "StaffEngineer",
+      "linked_policies": [
+        "03_Product_and_PRD_Master_Framework.md",
+        "06_Security_Compliance_and_Privacy_Gates.md"
+      ]
+    },
+
+    "objectives": [
+      "Automatically generate standardized PRD templates for OpenOps product modules.",
+      "Ensure compliance with product governance and design system standards.",
+      "Adapt template structure dynamically based on product type (Core / Module / Integration / Research).",
+      "Enable seamless integration with the Product Tracker and Audit Ledger."
+    ],
+
+    "template_structure": {
+      "metadata": {
+        "fields": [
+          "prd_id",
+          "product_name",
+          "author",
+          "version",
+          "last_updated",
+          "approval_status"
+        ]
+      },
+      "sections": [
+        "1. Overview and Context",
+        "2. Goals and Non-Goals",
+        "3. Product Scope and Dependencies",
+        "4. Core Functionality and Features",
+        "5. Architecture Overview",
+        "6. User Journeys and UX Requirements",
+        "7. Security, Privacy, and Compliance",
+        "8. Risks and Assumptions",
+        "9. Success Metrics and KPIs",
+        "10. QA Validation and Acceptance Criteria",
+        "11. Open Questions / Future Scope"
+      ]
+    },
+
+    "generation_engine": {
+      "modes": ["draft", "structured", "final_review"],
+      "input_sources": [
+        "ResearchBriefAgent",
+        "PlannerAgent",
+        "UXOrchestrator",
+        "SecurityAndPrivacyGates"
+      ],
+      "auto_populate_fields": true,
+      "dynamic_templates": {
+        "CoreSystem": "prd_template_core.json",
+        "Module": "prd_template_module.json",
+        "Integration": "prd_template_integration.json",
+        "Research": "prd_template_research.json"
+      },
+      "auto_tagging_rules": {
+        "CoreSystem": ["critical", "infrastructure"],
+        "Module": ["feature", "enhancement"],
+        "Integration": ["api", "interop"],
+        "Research": ["prototype", "experimental"]
+      }
+    },
+
+    "output_schema": {
+      "prd_id": "string",
+      "product_name": "string",
+      "category": "Core | Module | Integration | Research",
+      "version": "string",
+      "status": "draft | in_review | approved",
+      "sections": {
+        "overview": "string",
+        "goals": "string",
+        "scope": "string",
+        "architecture": "string",
+        "features": "array",
+        "ux": "string",
+        "security": "string",
+        "risks": "string",
+        "metrics": "array",
+        "qa_criteria": "array"
+      },
+      "linked_artifacts": {
+        "jira_ticket": "optional",
+        "design_reference": "optional",
+        "qa_report_ref": "optional",
+        "decision_ledger_entry": "optional"
+      }
+    },
+
+    "automation_hooks": {
+      "on_generation_start": [
+        "AuditLedger.log_event('PRD_GENERATION_STARTED')",
+        "AnalyticsTracker.record('prd_started')"
+      ],
+      "on_generation_complete": [
+        "AuditLedger.log_event('PRD_GENERATION_COMPLETE')",
+        "QAOrchestrator.validate_prd_consistency"
+      ],
+      "on_prd_approval": [
+        "ProductManagerAgent.mark_prd_as_approved",
+        "SecurityLead.verify_privacy_compliance"
+      ]
+    },
+
+    "storage_and_access": {
+      "storage_path": "/openops/product/prd/",
+      "file_format": "json",
+      "retention_days": 365,
+      "versioning": "semantic_v2",
+      "backup_interval_hours": 12,
+      "access_control": {
+        "ProductManagerAgent": "admin",
+        "SupervisorAgent": "write",
+        "QAOrchestrator": "read",
+        "ComplianceMonitor": "read",
+        "WorkerAgents": "read"
+      }
+    },
+
+    "integration_points": {
+      "upstream": ["PlannerAgent", "ResearchBriefAgent"],
+      "downstream": [
+        "QAOrchestrator",
+        "AuditAndDecisionLedger",
+        "ProductTracker",
+        "UXDesignSystem"
+      ],
+      "dependencies": [
+        "SecurityAndPrivacyGates",
+        "RiskAndFailurePlaybook"
+      ]
+    },
+
+    "security_rules": {
+      "classification": "internal_confidential",
+      "encryption": "AES-256",
+      "audit_logging": true,
+      "tamper_protection": "enabled",
+      "approval_workflow": "required"
+    },
+
+    "analytics_and_metrics": {
+      "track_generation_time": true,
+      "average_generation_latency_ms": 1500,
+      "error_rate_percent": 0.3,
+      "prd_created_count_daily": 12,
+      "metrics_storage": "/openops/analytics/prd_metrics.json"
+    },
+
+    "example_generated_prd": {
+      "prd_id": "PRD_2025_12_16_001",
+      "product_name": "DeepResearchEngine v2",
+      "category": "Core",
+      "version": "1.0.0",
+      "status": "in_review",
+      "sections": {
+        "overview": "Defines a multi-agent deep research engine leveraging the TTD-DR algorithm for human-level synthesis.",
+        "goals": "Enable parallel reasoning, fact validation, and iterative refinement through supervisor-led loops.",
+        "scope": "Applies to research and orchestration modules under /engine/modules/",
+        "architecture": "Microservice pattern integrating DeepResearchEngine, QAOrchestrator, and RiskManager.",
+        "features": [
+          "Supervisor-managed research cycles",
+          "Parallel agent delegation",
+          "Self-correcting diffusion refinement"
+        ],
+        "ux": "Minimal console interface for orchestration control.",
+        "security": "Full compliance with OpenOps Privacy Gate and contextual isolation.",
+        "risks": "High complexity in parallel reasoning; mitigated via checkpointing.",
+        "metrics": ["QA ≥ 0.9", "Latency ≤ 2s"],
+        "qa_criteria": ["Pass Red Team audit", "QA approval ≥ 90%"]
+      },
+      "linked_artifacts": {
+        "jira_ticket": "JIRA-OPS-4512",
+        "decision_ledger_entry": "DEC_98F7_124C"
+      }
+    }
+  }
+}

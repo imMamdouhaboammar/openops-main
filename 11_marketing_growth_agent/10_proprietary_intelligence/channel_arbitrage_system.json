@@ -1,0 +1,350 @@
+{
+  "channelArbitrageSystem": {
+    "version": "3.0.0",
+    "description": "Execution-first channel arbitrage system for acquiring early users under 14-day validation.",
+    "constraints": {
+      "forbiddenPhrases": [
+        "inevitable",
+        "institutional",
+        "paradigm",
+        "long-term",
+        "the future of work"
+      ],
+      "validationWindowDays": 14,
+      "ideaInvalidIf": [
+        "first20Users list is empty",
+        "cannot name exact acquisition surface",
+        "no friction point",
+        "no cheating or bypass behavior",
+        "no day-14 failure definition"
+      ],
+      "growthIdeaFormat": [
+        "Trigger",
+        "Action",
+        "Reward",
+        "Friction",
+        "Metric",
+        "FailureMode"
+      ]
+    },
+    "product": {
+      "name": "Rivo",
+      "oneMetricOnly": "activated_workspace_created",
+      "oneUserActionOnly": "create first workspace"
+    },
+    "acquisitionSurfaces": [
+      "Slack",
+      "Chrome extension listing",
+      "Email",
+      "LinkedIn",
+      "Reddit",
+      "GitHub Issues",
+      "Job boards",
+      "Outbound calendar invites"
+    ],
+    "growthLoops": [
+      {
+        "loopId": "GL-001",
+        "name": "Slack Pain Ping",
+        "whoShipsTo": "Ops leads who manage recurring incident handoffs",
+        "whereAppears": "Slack DMs and Slack channel replies",
+        "observableBehaviorChange": "user installs Rivo and creates first workspace within 24 hours",
+        "first20Users": [
+          "Prospect 01 - LinkedIn URL",
+          "Prospect 02 - LinkedIn URL",
+          "Prospect 03 - LinkedIn URL",
+          "Prospect 04 - LinkedIn URL",
+          "Prospect 05 - LinkedIn URL",
+          "Prospect 06 - LinkedIn URL",
+          "Prospect 07 - LinkedIn URL",
+          "Prospect 08 - LinkedIn URL",
+          "Prospect 09 - LinkedIn URL",
+          "Prospect 10 - LinkedIn URL",
+          "Prospect 11 - LinkedIn URL",
+          "Prospect 12 - LinkedIn URL",
+          "Prospect 13 - LinkedIn URL",
+          "Prospect 14 - LinkedIn URL",
+          "Prospect 15 - LinkedIn URL",
+          "Prospect 16 - LinkedIn URL",
+          "Prospect 17 - LinkedIn URL",
+          "Prospect 18 - LinkedIn URL",
+          "Prospect 19 - LinkedIn URL",
+          "Prospect 20 - LinkedIn URL"
+        ],
+        "loop": {
+          "Trigger": "User posts a handoff complaint in a Slack ops channel",
+          "Action": "Founder replies with a 2-line fix + invite to try Rivo",
+          "Reward": "User gets a clean handoff template in 5 minutes",
+          "Friction": "User doubts the invite or is busy",
+          "Metric": "DM reply -> workspace created",
+          "FailureMode": "Replies but never clicks or creates workspace"
+        },
+        "cheatOrBypass": "User copies the template and never installs",
+        "misuse": "User shares template without attribution",
+        "mvp1Day": "Manual reply + single template page + invite link",
+        "mvp1Week": "Slack bot to detect keywords + auto-suggest reply",
+        "notBuilt": "Multi-step onboarding or team invites",
+        "oneMetric": "activated_workspace_created",
+        "oneUserAction": "create first workspace",
+        "acquisition": {
+          "surface": "Slack",
+          "encounterWithoutIntent": "Sees founder reply in shared channel",
+          "vulnerableMoment": "Right after a messy handoff or delayed incident update"
+        },
+        "collapseSimulation": {
+          "whyNot": "They think it is spam or too busy to try",
+          "tryOnceAbandon": "Creates workspace but never uses again",
+          "powerUserExploit": "Uses the template without signing up",
+          "lazyUserAvoid": "Won't click a new tool link",
+          "publicFailure": "Channel mods delete the reply as self-promo"
+        },
+        "validationPlan14Days": {
+          "dailyActions": "10 channel replies + 10 DMs",
+          "successThreshold": "3+ activated workspaces",
+          "killMetric": "<2 activated workspaces by day 14"
+        }
+      },
+      {
+        "loopId": "GL-002",
+        "name": "Chrome Sidecar",
+        "whoShipsTo": "Operators who live in Jira/Asana",
+        "whereAppears": "Chrome extension listing and in-app side panel",
+        "observableBehaviorChange": "user installs extension and creates first workspace",
+        "first20Users": [
+          "Prospect 01 - Jira admin email",
+          "Prospect 02 - Jira admin email",
+          "Prospect 03 - Jira admin email",
+          "Prospect 04 - Jira admin email",
+          "Prospect 05 - Jira admin email",
+          "Prospect 06 - Jira admin email",
+          "Prospect 07 - Jira admin email",
+          "Prospect 08 - Jira admin email",
+          "Prospect 09 - Jira admin email",
+          "Prospect 10 - Jira admin email",
+          "Prospect 11 - Jira admin email",
+          "Prospect 12 - Jira admin email",
+          "Prospect 13 - Jira admin email",
+          "Prospect 14 - Jira admin email",
+          "Prospect 15 - Jira admin email",
+          "Prospect 16 - Jira admin email",
+          "Prospect 17 - Jira admin email",
+          "Prospect 18 - Jira admin email",
+          "Prospect 19 - Jira admin email",
+          "Prospect 20 - Jira admin email"
+        ],
+        "loop": {
+          "Trigger": "User searches for handoff or runbook extension",
+          "Action": "Installs Rivo Chrome extension",
+          "Reward": "Instant checklist in the ticket view",
+          "Friction": "Does not trust a new extension",
+          "Metric": "install -> workspace created",
+          "FailureMode": "Install without activation"
+        },
+        "cheatOrBypass": "User screenshots the checklist",
+        "misuse": "User resells the template pack",
+        "mvp1Day": "Landing page + manual checklist PDF + install stub",
+        "mvp1Week": "Lightweight extension with one checklist overlay",
+        "notBuilt": "Team analytics or reporting",
+        "oneMetric": "activated_workspace_created",
+        "oneUserAction": "create first workspace",
+        "acquisition": {
+          "surface": "Chrome extension listing",
+          "encounterWithoutIntent": "Finds the listing while fixing a workflow pain",
+          "vulnerableMoment": "Right after a task got bounced or reopened"
+        },
+        "collapseSimulation": {
+          "whyNot": "Security concerns about extensions",
+          "tryOnceAbandon": "Installs then disables",
+          "powerUserExploit": "Copies checklist for internal wiki",
+          "lazyUserAvoid": "Won't install any new tooling",
+          "publicFailure": "Bad reviews due to thin functionality"
+        },
+        "validationPlan14Days": {
+          "dailyActions": "List scan + 5 direct outreach emails",
+          "successThreshold": "5+ installs, 3+ activated workspaces",
+          "killMetric": "<3 activated workspaces by day 14"
+        }
+      },
+      {
+        "loopId": "GL-003",
+        "name": "Job Board Hook",
+        "whoShipsTo": "Newly hired ops managers",
+        "whereAppears": "Job boards and offer letter follow-ups",
+        "observableBehaviorChange": "new hire creates first workspace in first week",
+        "first20Users": [
+          "Prospect 01 - Job board posting URL",
+          "Prospect 02 - Job board posting URL",
+          "Prospect 03 - Job board posting URL",
+          "Prospect 04 - Job board posting URL",
+          "Prospect 05 - Job board posting URL",
+          "Prospect 06 - Job board posting URL",
+          "Prospect 07 - Job board posting URL",
+          "Prospect 08 - Job board posting URL",
+          "Prospect 09 - Job board posting URL",
+          "Prospect 10 - Job board posting URL",
+          "Prospect 11 - Job board posting URL",
+          "Prospect 12 - Job board posting URL",
+          "Prospect 13 - Job board posting URL",
+          "Prospect 14 - Job board posting URL",
+          "Prospect 15 - Job board posting URL",
+          "Prospect 16 - Job board posting URL",
+          "Prospect 17 - Job board posting URL",
+          "Prospect 18 - Job board posting URL",
+          "Prospect 19 - Job board posting URL",
+          "Prospect 20 - Job board posting URL"
+        ],
+        "loop": {
+          "Trigger": "Company posts an ops role with handoff responsibilities",
+          "Action": "Founder emails the hiring manager with a 1-page onboarding kit",
+          "Reward": "New hire looks competent on day one",
+          "Friction": "Hiring manager ignores unsolicited email",
+          "Metric": "email reply -> workspace created",
+          "FailureMode": "No replies or bounced emails"
+        },
+        "cheatOrBypass": "Manager forwards kit without installing",
+        "misuse": "Recruiter uses kit as lead magnet",
+        "mvp1Day": "1-page onboarding kit + tracked link",
+        "mvp1Week": "Automated email sequence + basic personalization",
+        "notBuilt": "Full onboarding templates library",
+        "oneMetric": "activated_workspace_created",
+        "oneUserAction": "create first workspace",
+        "acquisition": {
+          "surface": "Job boards",
+          "encounterWithoutIntent": "Manager sees a helpful kit in inbox",
+          "vulnerableMoment": "Just after role is posted and they need fast onboarding"
+        },
+        "collapseSimulation": {
+          "whyNot": "Perceived as sales email",
+          "tryOnceAbandon": "Downloads kit and never uses it",
+          "powerUserExploit": "Repackages kit for consulting",
+          "lazyUserAvoid": "Won't open attachments",
+          "publicFailure": "Hiring manager posts the email as spam"
+        },
+        "validationPlan14Days": {
+          "dailyActions": "10 job posts contacted + 5 follow-ups",
+          "successThreshold": "3+ activated workspaces",
+          "killMetric": "<2 activated workspaces by day 14"
+        }
+      }
+    ],
+    "dirtyExperiments": [
+      {
+        "experimentId": "DX-001",
+        "name": "Broken Handoff Rescue",
+        "surface": "Slack",
+        "Trigger": "Public complaint about missed handoff",
+        "Action": "Offer a 10-minute fix call",
+        "Reward": "Immediate relief and a clean handoff",
+        "Friction": "User does not want a call",
+        "Metric": "call -> workspace created",
+        "FailureMode": "Calls booked but no activation",
+        "cheatOrBypass": "Gets advice without installing",
+        "mvp1Day": "Manual DM + single calendar link",
+        "mvp1Week": "Lightweight intake form + templated follow-up",
+        "notBuilt": "Scheduling automation across teams",
+        "killMetric": "<2 activated workspaces by day 14",
+        "day14FailureDefinition": "<20% call-to-activation rate"
+      },
+      {
+        "experimentId": "DX-002",
+        "name": "LinkedIn Comment Sniping",
+        "surface": "LinkedIn",
+        "Trigger": "Ops lead posts about process chaos",
+        "Action": "Comment with a 2-step fix + DM offer",
+        "Reward": "Looks helpful, earns a reply",
+        "Friction": "Post author ignores comments",
+        "Metric": "DM reply -> workspace created",
+        "FailureMode": "Replies but no activation",
+        "cheatOrBypass": "Copies the steps and moves on",
+        "mvp1Day": "Manual comments + DM template",
+        "mvp1Week": "Saved searches + daily comment quota",
+        "notBuilt": "Automated commenting",
+        "killMetric": "<2 activated workspaces by day 14",
+        "day14FailureDefinition": "<5% comment-to-DM rate"
+      },
+      {
+        "experimentId": "DX-003",
+        "name": "GitHub Issue Helper",
+        "surface": "GitHub Issues",
+        "Trigger": "Issue mentions ops handoff or runbook gaps",
+        "Action": "Reply with a minimal checklist + invite",
+        "Reward": "Issue moves forward faster",
+        "Friction": "Maintainers distrust external links",
+        "Metric": "click -> workspace created",
+        "FailureMode": "Clicks but no activation",
+        "cheatOrBypass": "Copies checklist into issue",
+        "mvp1Day": "Manual replies + one checklist page",
+        "mvp1Week": "Saved search + reply macros",
+        "notBuilt": "Deep GitHub integrations",
+        "killMetric": "<2 activated workspaces by day 14",
+        "day14FailureDefinition": "<3% click-to-activation rate"
+      },
+      {
+        "experimentId": "DX-004",
+        "name": "Cold Email With One-Pager",
+        "surface": "Email",
+        "Trigger": "Ops leader listed on company site",
+        "Action": "Send a 4-line email + 1-page fix",
+        "Reward": "Fast solution without a sales call",
+        "Friction": "Inbox fatigue",
+        "Metric": "reply -> workspace created",
+        "FailureMode": "No replies",
+        "cheatOrBypass": "Forwards PDF internally",
+        "mvp1Day": "Manual email + tracked link",
+        "mvp1Week": "Small list + A/B subject lines",
+        "notBuilt": "Drip sequences",
+        "killMetric": "<2 activated workspaces by day 14",
+        "day14FailureDefinition": "<1% reply rate"
+      },
+      {
+        "experimentId": "DX-005",
+        "name": "Job Offer Onboarding Insert",
+        "surface": "Outbound calendar invites",
+        "Trigger": "New hire onboarding calendar invite",
+        "Action": "Offer a 15-minute setup help",
+        "Reward": "New hire starts clean",
+        "Friction": "HR blocks external invites",
+        "Metric": "invite accepted -> workspace created",
+        "FailureMode": "Accepted but no activation",
+        "cheatOrBypass": "Uses tips without installing",
+        "mvp1Day": "Manual invite + short note",
+        "mvp1Week": "Template invite + tracking",
+        "notBuilt": "HR system integrations",
+        "killMetric": "<2 activated workspaces by day 14",
+        "day14FailureDefinition": "<10% invite-accept rate"
+      }
+    ],
+    "plan30Days": {
+      "day01": "Pick one loop (GL-001) and list first 20 real prospects",
+      "day02": "Write 2 DM templates and send 10 Slack replies",
+      "day03": "Send 10 Slack DMs and log replies",
+      "day04": "Run 5 quick fixes on calls, log activation",
+      "day05": "Review metrics and keep or kill GL-001",
+      "day06": "Start DX-002 with 10 LinkedIn comments",
+      "day07": "DM 5 LinkedIn posters; track replies",
+      "day08": "Start DX-004 with 10 cold emails",
+      "day09": "Send 10 more emails + 5 follow-ups",
+      "day10": "Start DX-003 with 10 GitHub issue replies",
+      "day11": "Repeat the best performing channel",
+      "day12": "Run 5 more calls; update checklist page",
+      "day13": "Kill any experiment below kill metric",
+      "day14": "Write a 1-page report: activations per channel",
+      "day15": "Double the top channel volume for 7 days",
+      "day16": "Add 10 new prospects to the list",
+      "day17": "Run 10 more top-channel actions",
+      "day18": "Run 10 more top-channel actions",
+      "day19": "Run 10 more top-channel actions",
+      "day20": "Run 10 more top-channel actions",
+      "day21": "Run 10 more top-channel actions",
+      "day22": "Build 1-week MVP for the winning loop",
+      "day23": "Ship MVP and rerun 10 actions",
+      "day24": "Track activation delta vs manual",
+      "day25": "Remove any step that adds friction",
+      "day26": "Start DX-005 with 5 calendar invites",
+      "day27": "Follow up with invitees",
+      "day28": "Review all metrics; cut the bottom 2",
+      "day29": "Document the winning loop playbook",
+      "day30": "Set the next 14-day target and repeat"
+    }
+  }
+}

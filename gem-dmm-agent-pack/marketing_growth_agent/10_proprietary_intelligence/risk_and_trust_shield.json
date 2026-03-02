@@ -1,0 +1,22 @@
+{
+  "riskAndTrustShield": {
+    "version": "1.0.0",
+    "lastUpdated": "2026-01-22",
+    "purpose": "Prevent unethical tactics and protect brand trust",
+    "blockedPractices": [
+      "deceptive_claims",
+      "false_scarcity",
+      "dark_patterns",
+      "discriminatory_targeting"
+    ],
+    "guardrails": {
+      "max_budget_spike": 0.25,
+      "min_confidence_to_scale": "L3",
+      "required": ["privacy_check", "data_quality_check", "unit_economics_check"]
+    },
+    "escalation": {
+      "brand_risk": "SeniorPM",
+      "compliance_risk": "ComplianceMonitor"
+    }
+  }
+}

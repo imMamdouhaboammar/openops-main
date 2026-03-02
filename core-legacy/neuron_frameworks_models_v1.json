@@ -1,0 +1,95 @@
+{
+    "id": "neuron_frameworks_models_v1",
+    "name": "Frameworks & Models Neuron",
+    "version": "1.0",
+    "tags": ["frameworks", "models", "copywriting", "conversion", "structures"],
+    "purpose": "تزويد الـ GPT بصندوق أدوات الأطر (Frameworks) لصياغة Copy & Campaigns بشكل منظم وعملي.",
+    "principles": [
+      "اختيار الـ Framework الصح أسرع طريق لكتابة Copy مقنع.",
+      "كل Framework له سيناريو مناسب (Awareness, Consideration, Conversion).",
+      "الأطر تساعد في تنظيم الأفكار → بس الإبداع مطلوب لإضافة شخصية مختلفة."
+    ],
+    "frameworks": [
+      {
+        "id": "aida",
+        "name": "Attention - Interest - Desire - Action",
+        "when_to_use": "إعلانات + صفحات هبوط + Awareness.",
+        "pattern": ["جذب الانتباه", "ابني الاهتمام", "حوّل للاشتياق", "ادفع للفعل"],
+        "examples": [
+          "حاسس إن Google مش فاهمك؟ 🙅‍♂️ → (Attention)",
+          "12,000 حالة اتعالجت معانا بنجاح → (Interest/Proof)",
+          "اطمن إنك في إيد دكتور مرخّص → (Desire)",
+          "جرّب 7 أيام مجانًا دلوقتي → (Action)"
+        ]
+      },
+      {
+        "id": "pas",
+        "name": "Problem - Agitate - Solve",
+        "when_to_use": "بوستات توعية + Mid Funnel.",
+        "pattern": ["حدد المشكلة", "كبر القلق منها", "قدّم الحل"],
+        "examples": [
+          "بتدوّر على تشخيص وبتتلخبط؟ (Problem)",
+          "Google بيزود قلقك أكتر ما بيحلّه (Agitate)",
+          "استشارة حقيقية خلال دقائق مع ميتادوك (Solve)"
+        ]
+      },
+      {
+        "id": "bab",
+        "name": "Before - After - Bridge",
+        "when_to_use": "قصص + Testimonials.",
+        "pattern": ["الوضع قبل", "الوضع بعد", "الجسر (الحل)"],
+        "examples": [
+          "قبل ميتادوك: قلق وبحث عشوائي (Before)",
+          "بعد ميتادوك: راحة بال واستشارة دقيقة (After)",
+          "الحل: حمل التطبيق وجرب بنفسك (Bridge)"
+        ]
+      },
+      {
+        "id": "4p",
+        "name": "Promise - Picture - Proof - Push",
+        "when_to_use": "Landing Pages + Sales Pages.",
+        "pattern": ["وعد", "صورة ذهنية", "دليل", "CTA"],
+        "examples": [
+          "وعد: صحتك مش لعبة (Promise)",
+          "تخيل دكتور بيرد عليك في دقيقة (Picture)",
+          "12,000 حالة ناجحة (Proof)",
+          "جرّب التطبيق الآن (Push)"
+        ]
+      },
+      {
+        "id": "fabm",
+        "name": "Features - Advantages - Benefits - Motivations",
+        "when_to_use": "Product Copy + Brochures.",
+        "pattern": ["الخاصية", "الميزة", "الفائدة", "الدافع العاطفي"],
+        "examples": [
+          "استشارة عبر فيديو (Feature)",
+          "بسرعة ومن غير مشوار (Advantage)",
+          "تطمن في وقتك (Benefit)",
+          "أنت تستحق راحة البال (Motivation)"
+        ]
+      }
+    ],
+    "applications": {
+      "caption_templates": [
+        "هل بتعاني من [Problem]؟ (PAS) الحل عندنا: [Solution]",
+        "إزاي تحول من [Before] إلى [After]؟ (BAB) — الإجابة: [Bridge]",
+        "جرّب [Feature] → خد [Advantage] → استمتع بـ [Benefit] (FABM)"
+      ],
+      "ad_copy_templates": [
+        "[Attention] → [Interest] → [Desire] → [Action]",
+        "[Promise] + [Proof] → [Push]"
+      ]
+    },
+    "evaluation": {
+      "checklist": [
+        "هل الـ Framework مناسب للـ Funnel Stage؟",
+        "هل كل عنصر في الـ Pattern موجود (مش ناقص خطوة)؟",
+        "هل الأمثلة مطبقة Proof + CTA؟"
+      ]
+    },
+    "links_to": [
+      "neuron_mindset_role_v1",
+      "neuron_conversion_core_v1",
+      "neuron_campaign_execution_ccc_v1"
+    ]
+  }

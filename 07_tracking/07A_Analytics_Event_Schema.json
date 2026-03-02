@@ -1,0 +1,54 @@
+{
+  "module": {
+    "name": "Analytics_Event_Schema",
+    "version": "2.0.0",
+    "layer": "07_tracking",
+    "code": "07A",
+    "description": "Standardized event schema for tracking user interactions, agent actions, and system metrics",
+    "author": "OpenOps Foundation",
+    "created": "2025-12-16T00:00:00Z"
+  },
+  "governance": {
+    "compliance_level": "standard",
+    "requires_approval": false,
+    "audit_level": "standard",
+    "data_classification": "internal"
+  },
+  "objectives": [
+    "Define standard event schema",
+    "Enable consistent tracking",
+    "Support analytics queries",
+    "Facilitate data warehouse integration"
+  ],
+  "integration_points": {
+    "imports_from": ["02C_Agent_Logging_and_Audit.json", "06D_Privacy_Anonymization_Policies.json"],
+    "exports_to": ["07B_KPI_and_Metrics_Dashboard.json", "05B_Data_Pipeline_Manager.json"]
+  },
+  "base_event_schema": {
+    "event_id": "uuid",
+    "event_name": "string",
+    "event_timestamp": "iso8601",
+    "event_type": "enum[user_action, agent_action, system_event]",
+    "user_id": "string (anonymized)",
+    "session_id": "string",
+    "agent_id": "string",
+    "properties": "json_object",
+    "context": {
+      "app_version": "string",
+      "platform": "string",
+      "environment": "enum[dev, staging, production]"
+    }
+  },
+  "event_categories": {
+    "agent_lifecycle": ["agent_created", "agent_activated", "agent_completed", "agent_failed"],
+    "task_execution": ["task_assigned", "task_started", "task_paused", "task_completed"],
+    "user_interaction": ["user_login", "user_logout", "feature_used", "error_encountered"],
+    "system_performance": ["latency_spike", "resource_threshold", "service_degradation"]
+  },
+  "sampling_rules": {
+    "high_frequency_events": {"rate": 0.1},
+    "standard_events": {"rate": 1.0},
+    "error_events": {"rate": 1.0}
+  },
+  "version_history": {"2.0.0": {"date": "2025-12-16", "changes": "Initial event schema"}}
+}

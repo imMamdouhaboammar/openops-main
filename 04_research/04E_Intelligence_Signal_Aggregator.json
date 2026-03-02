@@ -1,0 +1,39 @@
+{
+  "module": {
+    "name": "Intelligence_Signal_Aggregator",
+    "version": "2.0.0",
+    "layer": "04_research",
+    "code": "04E",
+    "description": "Aggregates and synthesizes intelligence signals from multiple research sources",
+    "author": "OpenOps Foundation",
+    "created": "2025-12-16T00:00:00Z"
+  },
+  "governance": {
+    "compliance_level": "high",
+    "requires_approval": false,
+    "audit_level": "standard",
+    "data_classification": "internal"
+  },
+  "objectives": [
+    "Aggregate multi-source intelligence",
+    "Detect patterns and trends",
+    "Generate actionable insights",
+    "Support decision-making with data"
+  ],
+  "integration_points": {
+    "imports_from": ["04A_Research_Templates_and_Taxonomy.json", "04C_External_Sources_Index.json", "04D_Source_Access_Proxy.json"],
+    "exports_to": ["03A_PRD_Template_Generator.json", "05B_Data_Pipeline_Manager.json"]
+  },
+  "signal_types": {
+    "market_trends": {"sources": ["industry_reports", "news_feeds"], "refresh_rate": "daily"},
+    "competitor_activity": {"sources": ["web_scraping", "press_releases"], "refresh_rate": "hourly"},
+    "technology_shifts": {"sources": ["research_papers", "github_trends"], "refresh_rate": "weekly"},
+    "user_sentiment": {"sources": ["social_media", "review_sites"], "refresh_rate": "realtime"}
+  },
+  "aggregation_rules": {
+    "deduplication": {"similarity_threshold": 0.85},
+    "source_weighting": {"academic": 0.4, "industry": 0.3, "social": 0.2, "internal": 0.1},
+    "confidence_scoring": {"min_sources": 2, "decay_rate": 0.1}
+  },
+  "version_history": {"2.0.0": {"date": "2025-12-16", "changes": "Initial signal aggregator"}}
+}

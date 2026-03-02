@@ -1,0 +1,63 @@
+{
+    "id": "kb_master_index_v1",
+    "name": "Momint Copy Brain — Master Graph",
+    "version": "1.0",
+    "language_defaults": {
+      "primary": "ar",
+      "allow_code_switching": true,
+      "dialects": ["ar-EG (casual)", "ar-SA (formal when needed)"],
+      "style_notes": [
+        "اكتب عربي بسيط، مسموع، مع إدخال كلمات English طبيعية (brand, package, marketing messages, notice period).",
+        "تجنّب المبالغة؛ ركّز على الوضوح والنتيجة.",
+        "لما الجمهور سعودي، راعِ الفروقات في الكلمات (مثال: مرّة/جداً)."
+      ]
+    },
+    "task_router": {
+      "caption": {
+        "priority_neurons": ["neuron_headlines_hooks_v1", "neuron_content_recipes_v1", "neuron_conversion_core_v1"],
+        "scoring": ["clarity", "specificity", "novelty", "emotionality", "cta_strength"]
+      },
+      "ad_copy": {
+        "priority_neurons": ["neuron_conversion_core_v1", "neuron_headlines_hooks_v1"],
+        "scoring": ["clarity", "benefit_focus", "proof", "objection_handling", "cta_strength"]
+      },
+      "campaign": {
+        "priority_neurons": ["neuron_campaigns_cases_v1", "neuron_conversion_core_v1", "neuron_content_recipes_v1"],
+        "scoring": ["insight_fit", "message_market_fit", "consistency", "cta_strength"]
+      },
+      "sales_process": {
+        "priority_neurons": ["neuron_freelancing_market_v1", "neuron_conversion_core_v1"],
+        "scoring": ["clarity", "specificity", "trust", "next_step"]
+      }
+    },
+    "scoring_weights": {
+      "clarity": 0.22,
+      "specificity": 0.15,
+      "novelty": 0.12,
+      "emotionality": 0.12,
+      "benefit_focus": 0.10,
+      "proof": 0.10,
+      "objection_handling": 0.08,
+      "cta_strength": 0.16,
+      "insight_fit": 0.18,
+      "message_market_fit": 0.18,
+      "consistency": 0.10,
+      "story_flow": 0.12,
+      "retention_hooks": 0.10,
+      "trust": 0.15,
+      "next_step": 0.15
+    },
+    "neuron_index": [
+      {"id": "neuron_conversion_core_v1", "file": "neuron_conversion_core_v1.json"},
+      {"id": "neuron_headlines_hooks_v1", "file": "neuron_headlines_hooks_v1.json"},
+      {"id": "neuron_content_recipes_v1", "file": "neuron_content_recipes_v1.json"},
+      {"id": "neuron_campaigns_cases_v1", "file": "neuron_campaigns_cases_v1.json"},
+      {"id": "neuron_mindset_psychology_v1", "file": "neuron_mindset_psychology_v1.json"},
+      {"id": "neuron_freelancing_market_v1", "file": "neuron_freelancing_market_v1.json"}
+    ],
+    "guardrails": {
+      "medical": "لو المحتوى طبي → استخدم لغة طمأنة وغير تشخيصية، وأضف تنويه أن المحتوى لا يغني عن استشارة الطبيب.",
+      "ethics": "تجنّب الوعود المضللة؛ قدّم proof (أرقام، أمثلة) أو قلل من حدّة الوعد.",
+      "localization": "لو الجمهور سعودي → اهتم بالـ Geo context (أسعار بالريال، tone محلي). لو مصري → tone casual + mix Eng-Ar."
+    }
+  }

@@ -1,0 +1,148 @@
+{
+  "module": {
+    "name": "DataEvidenceScoringModel",
+    "version": "2.0.0",
+    "type": "evaluation_model",
+    "description": "Defines the multi-factor evidence scoring model used across DeepResearchEngine, QAOrchestrator, and EvaluatorAgents to quantify data credibility, accuracy, and contextual relevance.",
+    "author": "OpenOps Studio | Created by Mamdouh Aboammar",
+    "governance": {
+      "supervised_by": "SupervisorAgent",
+      "approved_by": "StaffEngineer",
+      "linked_policies": [
+        "04_Research_and_Competitive_Intelligence.md",
+        "06_Security_Compliance_and_Privacy_Gates.md"
+      ]
+    },
+
+    "objectives": [
+      "Provide a quantitative and explainable evidence scoring system.",
+      "Standardize credibility evaluation across agents and modules.",
+      "Reduce propagation of unreliable or low-confidence data.",
+      "Enable QA and Audit systems to trace evidence reliability scores."
+    ],
+
+    "evidence_factors": {
+      "source_credibility": {
+        "description": "Trust level and reputation of the originating source.",
+        "weight": 0.30,
+        "scoring_method": "lookup + reputation_adjustment",
+        "validation_ref": "04C_External_Sources_Index.json"
+      },
+      "factual_consistency": {
+        "description": "Degree of alignment between claims and verified data.",
+        "weight": 0.25,
+        "scoring_method": "cross_fact_check + redundancy_match",
+        "reference_sources": "internal_memory + verified_external"
+      },
+      "contextual_relevance": {
+        "description": "Relevance of the evidence to the current research goal or subtopic.",
+        "weight": 0.15,
+        "scoring_method": "semantic_similarity + embedding_overlap",
+        "embedding_model": "OpenOpsEmbed-v2"
+      },
+      "recency_and_freshness": {
+        "description": "How recent and up-to-date the data or evidence is.",
+        "weight": 0.10,
+        "scoring_method": "timestamp_decay",
+        "decay_rate_days": 90
+      },
+      "corroboration": {
+        "description": "Support of the evidence by multiple independent sources.",
+        "weight": 0.10,
+        "scoring_method": "count_unique_supporting_sources"
+      },
+      "ethical_compliance": {
+        "description": "Whether the data collection complies with ethical and privacy policies.",
+        "weight": 0.10,
+        "scoring_method": "policy_alignment_check",
+        "reference_policy": "06_Security_Compliance_and_Privacy_Gates.md"
+      }
+    },
+
+    "scoring_algorithm": {
+      "method": "weighted_composite_score",
+      "formula": "(Σ(factor_score_i * weight_i)) / Σ(weights)",
+      "scoring_scale": [0.0, 1.0],
+      "thresholds": {
+        "high_confidence": 0.85,
+        "medium_confidence": 0.65,
+        "low_confidence": 0.40,
+        "reject": 0.25
+      },
+      "bias_penalty": 0.05,
+      "uncertainty_penalty": 0.03,
+      "consistency_bonus": 0.04
+    },
+
+    "evidence_validation_pipeline": {
+      "stages": [
+        "source_reputation_check",
+        "cross_fact_validation",
+        "semantic_context_alignment",
+        "time_decay_adjustment",
+        "multi_source_corroboration",
+        "policy_and_ethics_check"
+      ],
+      "parallel_processing": true,
+      "max_concurrent_validations": 6,
+      "on_validation_failure": [
+        "mark_as_unverified",
+        "notify_SupervisorAgent",
+        "log_incident_in_AuditLedger"
+      ]
+    },
+
+    "integration_points": {
+      "upstream": [
+        "ExternalSourcesIndex",
+        "AgentMemoryRegistry",
+        "WorkerAgents"
+      ],
+      "downstream": [
+        "DeepResearchEngine",
+        "EvaluatorAgent",
+        "QAOrchestrator",
+        "AuditAndDecisionLedger"
+      ],
+      "dependencies": [
+        "SecurityAndPrivacyGates",
+        "FailureRecoveryManager"
+      ]
+    },
+
+    "analytics_and_metrics": {
+      "track_avg_confidence": true,
+      "metrics_collected": [
+        "avg_confidence_score",
+        "num_validated_sources",
+        "num_failed_validations",
+        "avg_validation_latency_ms"
+      ],
+      "metrics_output_path": "/openops/analytics/evidence_metrics.json",
+      "report_interval_minutes": 15
+    },
+
+    "security_rules": {
+      "classification": "internal_confidential",
+      "integrity_check": "checksum_validation",
+      "encryption_at_rest": true,
+      "tamper_protection": "enabled",
+      "audit_logging": true
+    },
+
+    "example_evidence_record": {
+      "evidence_id": "EVD_2025_12_16_002",
+      "source": "Semantic Scholar",
+      "claim": "TTD-DR algorithm improves coherence by 27%.",
+      "source_credibility": 0.95,
+      "factual_consistency": 0.88,
+      "contextual_relevance": 0.91,
+      "recency_and_freshness": 0.84,
+      "corroboration": 0.80,
+      "ethical_compliance": 0.98,
+      "composite_score": 0.90,
+      "confidence_level": "high_confidence",
+      "validation_timestamp": "2025-12-16T18:15:00Z"
+    }
+  }
+}

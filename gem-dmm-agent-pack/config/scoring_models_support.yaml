@@ -1,0 +1,261 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# EVIDENCE SCORING MODELS
+# Confidence scoring and evidence validation rules
+# Version: 1.0.0
+# ═══════════════════════════════════════════════════════════════════════════════
+
+recency_policy:
+  decay_start_days: 120
+  decay_formula: |
+    if days_since_publication <= 120:
+      recency_factor = 1.0
+    else:
+      recency_factor = max(0.3, 1.0 - (days_since_publication - 120) / 365)
+  
+  rationale: |
+    Marketing platforms and algorithms change frequently. Evidence older than 120 days
+    may no longer reflect current best practices, unless the concept is timeless.
+
+timeless_exceptions:
+  description: "Concepts that bypass recency decay (still require citations for platform-specific claims)"
+  concept_tags:
+    - "experiment_design_basics"
+    - "segmentation_principles"
+    - "funnel_theory"
+    - "consumer_psychology"
+    - "marketing_principles"
+    - "statistical_foundations"
+    - "attribution_theory"
+    - "customer_lifecycle_models"
+    - "positioning_frameworks"
+    - "brand_strategy_principles"
+  platform_specific_caveat: |
+    Even for timeless concepts, any platform-specific claims (e.g., "Meta's algorithm
+    favors X") still require recent, platform-verified evidence.
+
+key_recommendation_definition:
+  description: "Recommendations that require ≥3 independent confirmations"
+  triggers:
+    - type: "budget_impacting"
+      description: "Recommendations that significantly affect budget allocation"
+      examples:
+        - "Allocate 40% of budget to Performance Max"
+        - "Increase testing budget by 50%"
+        - "Shift spend from Facebook to TikTok"
+    
+    - type: "tracking_changes"
+      description: "Changes to tracking, measurement, or attribution"
+      examples:
+        - "Implement server-side tracking"
+        - "Switch to data-driven attribution"
+        - "Add new conversion events"
+    
+    - type: "channel_addition_removal"
+      description: "Adding or removing marketing channels"
+      examples:
+        - "Launch on TikTok Ads"
+        - "Pause LinkedIn campaigns"
+        - "Add influencer marketing"
+    
+    - type: "benchmark_claims"
+      description: "Claims about expected performance or benchmarks"
+      examples:
+        - "Expected CTR of 2-3%"
+        - "Industry average conversion rate"
+        - "Typical ROAS for this vertical"
+    
+    - type: "platform_feature"
+      description: "Claims about specific platform features or capabilities"
+      examples:
+        - "Performance Max uses X targeting"
+        - "GA4 has Y limitation"
+        - "Meta Advantage+ does Z"
+
+independent_confirmation_rule:
+  minimum_count: 3
+  independence_definition: |
+    Sources must be from DIFFERENT independence_groups as defined in grounding_sources.yaml.
+    Multiple pages from the same organization/domain count as ONE independent source.
+  
+  reddit_rule: |
+    Reddit sources can NEVER count as one of the 3 required confirmations.
+    Reddit may only provide qualitative supporting context and must be labeled as weak evidence.
+  
+  valid_combination_example:
+    recommendation: "Use broad match with Smart Bidding for efficiency"
+    confirmations:
+      - source: "google_ads_help"
+        independence_group: "google_official"
+        weight: 1.0
+      - source: "semrush_blog"
+        independence_group: "semrush_practitioner"
+        weight: 0.85
+      - source: "ppc_hero"  # hypothetical
+        independence_group: "ppc_hero_practitioner"
+        weight: 0.8
+    result: "VALID - 3 different independence groups"
+
+confidence_score_formula:
+  components:
+    credibility:
+      description: "Source trust tier and reputation"
+      weights:
+        tier_A: 1.0
+        tier_B: 0.85
+        tier_C: 0.7
+        tier_D: 0.3
+      max_contribution: 0.30
+    
+    recency:
+      description: "Time since publication with decay"
+      calculation: "See recency_policy"
+      max_contribution: 0.20
+    
+    corroboration:
+      description: "Number of independent sources confirming"
+      scale:
+        single_source: 0.3
+        two_sources: 0.6
+        three_plus_sources: 1.0
+      max_contribution: 0.25
+    
+    platform_specificity:
+      description: "Whether claim is platform-specific or general"
+      weights:
+        platform_verified: 1.0
+        platform_documented: 0.9
+        practitioner_observed: 0.7
+        anecdotal: 0.4
+      max_contribution: 0.15
+    
+    internal_consistency:
+      description: "Alignment with other known facts and principles"
+      weights:
+        fully_consistent: 1.0
+        mostly_consistent: 0.8
+        partially_consistent: 0.5
+        contradictory: 0.0
+      max_contribution: 0.10
+
+  formula: |
+    confidence_score = 
+      (credibility × 0.30) +
+      (recency × 0.20) +
+      (corroboration × 0.25) +
+      (platform_specificity × 0.15) +
+      (internal_consistency × 0.10)
+
+  output:
+    score_range: "0.0 to 1.0"
+    bands:
+      high:
+        min: 0.8
+        max: 1.0
+        label: "High Confidence"
+        description: "Well-supported by multiple independent, recent, credible sources"
+        display: "🟢 High Confidence"
+      
+      medium:
+        min: 0.5
+        max: 0.79
+        label: "Medium Confidence"
+        description: "Some evidence but may require additional validation"
+        display: "🟡 Medium Confidence"
+      
+      low:
+        min: 0.0
+        max: 0.49
+        label: "Low Confidence"
+        description: "Limited evidence; treat as hypothesis requiring testing"
+        display: "🔴 Low Confidence"
+
+evidence_recording_template:
+  required_fields:
+    - field: "claim"
+      description: "The specific claim being supported"
+      type: "string"
+    
+    - field: "sources"
+      description: "List of sources supporting the claim"
+      type: "array"
+      items:
+        - source_id: "string (from grounding_sources.yaml)"
+        - source_name: "string"
+        - url: "string"
+        - title: "string"
+        - publication_date: "ISO 8601 date or null"
+        - access_date: "ISO 8601 date"
+        - quote: "relevant excerpt (optional)"
+        - independence_group: "string"
+    
+    - field: "confidence_score"
+      description: "Calculated confidence score"
+      type: "number (0-1)"
+    
+    - field: "confidence_band"
+      description: "High/Medium/Low classification"
+      type: "string"
+    
+    - field: "assumptions"
+      description: "Any assumptions made"
+      type: "array of strings"
+    
+    - field: "notes"
+      description: "Additional context or caveats"
+      type: "string"
+
+sample_evidence_entry:
+  claim: "Performance Max campaigns use automated bidding with broad match keywords"
+  sources:
+    - source_id: "google_ads_help"
+      source_name: "Google Ads Help Center"
+      url: "https://support.google.com/google-ads/answer/10724317"
+      title: "About Performance Max campaigns"
+      publication_date: "2024-06-15"
+      access_date: "2025-01-15"
+      quote: "Performance Max uses Smart Bidding to optimize for your conversion goals"
+      independence_group: "google_official"
+    
+    - source_id: "semrush_blog"
+      source_name: "SEMrush Blog"
+      url: "https://www.semrush.com/blog/performance-max"
+      title: "Performance Max: Complete Guide"
+      publication_date: "2024-08-20"
+      access_date: "2025-01-15"
+      quote: "Smart Bidding handles all bidding decisions automatically"
+      independence_group: "semrush_practitioner"
+    
+    - source_id: "ppc_hero"
+      source_name: "PPC Hero"
+      url: "https://www.ppchero.com/guide/performance-max"
+      title: "Performance Max Deep Dive"
+      publication_date: "2024-07-10"
+      access_date: "2025-01-15"
+      quote: "Automated bidding is central to Performance Max strategy"
+      independence_group: "ppc_hero_practitioner"
+  
+  confidence_score: 0.88
+  confidence_band: "high"
+  assumptions:
+    - "Campaign is using standard Performance Max setup"
+    - "Conversion tracking is properly implemented"
+  notes: "All sources are recent (< 120 days). Official documentation confirmed by practitioner sources."
+
+validation_checklist:
+  pre_publication:
+    - "All key recommendations have ≥3 independent sources"
+    - "No key recommendations rely solely on Reddit"
+    - "Time-sensitive claims include dates"
+    - "Confidence scores are calculated and displayed"
+    - "Assumptions are explicitly labeled"
+    - "Unverifiable claims are framed as hypotheses"
+  
+  recency_check:
+    - "Sources older than 120 days flagged"
+    - "Timeless concepts verified as such"
+    - "Platform-specific claims verified with recent sources"
+  
+  independence_check:
+    - "Confirmations from different independence groups"
+    - "No double-counting from same organization"
+    - "Reddit properly classified as supporting only"

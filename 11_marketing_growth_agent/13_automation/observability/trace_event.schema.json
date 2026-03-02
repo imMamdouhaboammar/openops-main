@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "openops://11_marketing_growth_agent/13_automation/observability/trace_event.schema.json",
+  "title": "Trace Event (JSONL)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "timestamp", "eventType", "context"],
+  "properties": {
+    "schemaVersion": { "type": "string", "examples": ["1.0.0"] },
+    "timestamp": { "type": "string", "examples": ["2026-01-24T18:40:00Z"] },
+    "eventType": {
+      "type": "string",
+      "enum": [
+        "dispatch_pack_generated",
+        "task_envelope_validated",
+        "task_brief_rendered",
+        "pod_response_received",
+        "decision_logged",
+        "schedule_generated"
+      ]
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Freeform context: clientSlug, taskId, artifactIds, decisionId, etc."
+    }
+  }
+}
+

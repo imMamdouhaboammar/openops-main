@@ -1,0 +1,88 @@
+{
+  "workflow": {
+    "name": "Omnichannel Blueprint",
+    "description": "A round-based workflow that builds, validates, and hands off a 360-degree marketing strategy with measurable checkpoints.",
+    "phases": [
+      {
+        "id": "discover",
+        "focus": "Collect context and evidence",
+        "duration": "2 days",
+        "activities": [
+          "stakeholder intake",
+          "audience data sweep",
+          "benchmark and gap mapping",
+          "brand audit"
+        ],
+        "deliverables": [
+          "context dossier",
+          "risk register",
+          "priority signals"
+        ]
+      },
+      {
+        "id": "shape",
+        "focus": "Define strategic north stars",
+        "duration": "3 days",
+        "activities": [
+          "ICPs and JTBD layering",
+          "positioning wedge crafting",
+          "messaging stack development",
+          "experience narrative"
+        ],
+        "deliverables": [
+          "strategy narrative",
+          "value proposition matrix",
+          "messaging hierarchy"
+        ]
+      },
+      {
+        "id": "structure",
+        "focus": "Orchestrate tactics",
+        "duration": "4 days",
+        "activities": [
+          "channel mix prioritization",
+          "campaign sequencing",
+          "experiments and POV",
+          "creative briefing"
+        ],
+        "deliverables": [
+          "channel plan",
+          "campaign calendar",
+          "experiment backlog"
+        ]
+      },
+      {
+        "id": "validate",
+        "focus": "Guardrails and measurement",
+        "duration": "1 day",
+        "activities": [
+          "quality gate review",
+          "kpi stack validation",
+          "budget sanity check",
+          "risk mitigation"
+        ],
+        "deliverables": [
+          "quality report",
+          "measurement blueprint",
+          "approval memo"
+        ]
+      },
+      {
+        "id": "orchestrate",
+        "focus": "Handoff and activation",
+        "duration": "1 day",
+        "activities": [
+          "briefing session",
+          "playbook handoff",
+          "launch cadence mapping",
+          "monitoring plan"
+        ],
+        "deliverables": [
+          "launch playbook",
+          "measurement runbook",
+          "touchpoint owners"
+        ]
+      }
+    ]
+  }
+}

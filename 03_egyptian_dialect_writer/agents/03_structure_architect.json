@@ -1,0 +1,453 @@
+{
+  "agent_id": "EDW_STRUCTURE_ARCHITECT_003",
+  "agent_name": "Structure Architect Agent",
+  "agent_name_ar": "وكيل البنية والهيكل",
+  "version": "1.0.0",
+  "status": "active",
+  "priority": "critical",
+  
+  "metadata": {
+    "created_at": "2025-12-19",
+    "last_updated": "2025-12-19",
+    "author": "OpenOps Team",
+    "category": "content_architecture",
+    "tags": ["structure", "formatting", "organization", "flow"]
+  },
+
+  "core_capability": {
+    "primary_function": "بناء هيكل محتوى منظم وجذاب يناسب المنصات المختلفة",
+    "design_philosophy": "hook_engage_convert",
+    "structure_types": [
+      "linkedin_post",
+      "blog_article",
+      "twitter_thread",
+      "facebook_post",
+      "newsletter"
+    ]
+  },
+
+  "universal_post_structure": {
+    "section_1_hook": {
+      "name": "الخطّاف (The Hook)",
+      "purpose": "جذب الانتباه فوراً في أول 3 ثوانٍ",
+      "position": "paragraph_1",
+      "length": "1-3_sentences",
+      "max_characters": 200,
+      
+      "hook_types": {
+        "shocking_statement": {
+          "description": "جملة صادمة أو مثيرة للجدل",
+          "templates": [
+            "ليه كل الـ [TOPIC] مش [ADJECTIVE] في مصر؟",
+            "فيه حاجة كبيرة بتحصل دلوقتي في [DOMAIN]!",
+            "[NUMBER] من [GROUP] بيعملوا الغلطة دي"
+          ],
+          "examples": [
+            "ليه كل الـ Models مش scalable في مصر؟",
+            "فيه حاجة كبيرة بتحصل دلوقتي في عالم الـ SaaS!"
+          ],
+          "effectiveness": 0.90
+        },
+
+        "controversial_question": {
+          "description": "سؤال يثير الجدل أو الفضول",
+          "templates": [
+            "هل [STATEMENT] فعلاً؟",
+            "تفتكر [QUESTION]؟",
+            "مين قال إن [ASSUMPTION] صح؟"
+          ],
+          "examples": [
+            "هل الـ AI هيقضي فعلاً على وظائف البرمجة؟",
+            "تفتكر الـ No-Code هيبقى مستقبل التطوير؟"
+          ],
+          "effectiveness": 0.85
+        },
+
+        "surprising_fact": {
+          "description": "معلومة مفاجئة أو رقم صادم",
+          "templates": [
+            "من كام يوم [COMPANY] وصلت لـ [METRIC] في [TIMEFRAME]!",
+            "[NUMBER]% من [GROUP] مش عارفين [FACT]"
+          ],
+          "examples": [
+            "من كام يوم Lovable نجحت في إنها تريز 200 مليون دولار!",
+            "75% من الـ Startups بتفشل في أول سنتين"
+          ],
+          "effectiveness": 0.88
+        },
+
+        "personal_observation": {
+          "description": "ملاحظة شخصية مثيرة للاهتمام",
+          "templates": [
+            "شفت نهاردة [OBSERVATION] وده خلاني أفكر في [INSIGHT]",
+            "لاحظت حاجة غريبة في [CONTEXT]..."
+          ],
+          "examples": [
+            "شفت نهاردة بوست عجيب في أحد جروبات ريادة الأعمال",
+            "لاحظت حاجة غريبة في طريقة تفكير معظم المطورين"
+          ],
+          "effectiveness": 0.80
+        }
+      },
+
+      "hook_optimization": {
+        "use_emojis": false,
+        "use_numbers": true,
+        "use_curiosity_gap": true,
+        "avoid_clickbait": true
+      }
+    },
+
+    "section_2_context": {
+      "name": "المقدمة والسياق (Context Setup)",
+      "purpose": "توضيح الموضوع وأهميته",
+      "position": "paragraph_2-3",
+      "length": "3-5_sentences",
+      "max_characters": 400,
+
+      "components": {
+        "topic_introduction": {
+          "description": "تقديم الموضوع الرئيسي بسرعة",
+          "templates": [
+            "لو دي أول مرة تسمع فيها عن [TOPIC]، فهي...",
+            "[TOPIC] ده حاجة جديدة بدأت تنتشر في...",
+            "الموضوع باختصار إن..."
+          ]
+        },
+
+        "importance_establishment": {
+          "description": "شرح أهمية الموضوع",
+          "templates": [
+            "ده مهم لأن...",
+            "اللي يخلي ده مثير للاهتمام إن...",
+            "التأثير الحقيقي بتاع ده..."
+          ]
+        },
+
+        "context_setting": {
+          "description": "وضع السياق التاريخي أو الصناعي",
+          "templates": [
+            "الموضوع ما طلعش فجأة...",
+            "ده كان بيتجهزله من زمان",
+            "علشان تفهم الموضوع كويس، لازم تعرف إن..."
+          ]
+        }
+      }
+    },
+
+    "section_3_body": {
+      "name": "الجسم الرئيسي (Main Body)",
+      "purpose": "شرح تفصيلي للمحتوى",
+      "position": "paragraph_4_to_n",
+      "length": "flexible_based_on_content",
+
+      "organization_methods": {
+        "numbered_list": {
+          "use_case": "متعدد النقاط المستقلة",
+          "format": "✅ **[رقم]. [عنوان النقطة]:**\n[شرح النقطة]",
+          "separator": "\n\n",
+          "example": "✅ **1. فهم المشاعر المركبة:**\nبدل ما يقولك \"positive\" وخلاص..."
+        },
+
+        "sectioned_narrative": {
+          "use_case": "قصة متسلسلة أو تحليل متدرج",
+          "format": "فقرات مفصولة بخطوط أفقية",
+          "separator": ". . . .\n\n",
+          "flow": "sequential_logical"
+        },
+
+        "comparison_structure": {
+          "use_case": "مقارنة بين خيارات أو سيناريوهات",
+          "format": "**قبل:** [الحالة القديمة]\n**بعد:** [الحالة الجديدة]",
+          "emphasis": "highlight_differences"
+        },
+
+        "problem_solution": {
+          "use_case": "عرض مشكلة وحلها",
+          "sections": [
+            "المشكلة:",
+            "السبب:",
+            "الحل:",
+            "النتيجة:"
+          ]
+        }
+      },
+
+      "content_distribution": {
+        "point_1_introduction": {
+          "weight": 0.20,
+          "focus": "setup_main_idea"
+        },
+        "point_2_elaboration": {
+          "weight": 0.30,
+          "focus": "detailed_explanation"
+        },
+        "point_3_examples": {
+          "weight": 0.25,
+          "focus": "real_world_cases"
+        },
+        "point_4_implications": {
+          "weight": 0.25,
+          "focus": "so_what_factor"
+        }
+      },
+
+      "paragraph_spacing": {
+        "single_line_break": "between_related_sentences",
+        "double_line_break": "between_different_points",
+        "horizontal_separator": "between_major_sections",
+        "separator_types": [
+          ". . . .",
+          "...",
+          "---"
+        ]
+      }
+    },
+
+    "section_4_conclusion": {
+      "name": "الخاتمة (Conclusion)",
+      "purpose": "تلخيص وتحفيز التفاعل",
+      "position": "second_to_last_paragraph",
+      "length": "2-3_sentences",
+
+      "components": {
+        "summary_statement": {
+          "description": "تلخيص الفكرة الرئيسية",
+          "templates": [
+            "من الآخر، [MAIN_POINT]",
+            "الخلاصة إن...",
+            "اللي عاوز أوصله..."
+          ]
+        },
+
+        "impact_reminder": {
+          "description": "تذكير بالتأثير أو الأهمية",
+          "templates": [
+            "ده هيغير [ASPECT] بالكامل",
+            "لو فاتك ده، أنت كده بتضيع [OPPORTUNITY]",
+            "اللي يفهم ده هيكون عنده [ADVANTAGE]"
+          ]
+        }
+      }
+    },
+
+    "section_5_cta": {
+      "name": "دعوة للتفاعل (Call to Action)",
+      "purpose": "تشجيع القارئ على التفاعل",
+      "position": "last_paragraph",
+      "length": "1-2_sentences",
+
+      "cta_types": {
+        "opinion_request": {
+          "templates": [
+            "قولي، إيه رأيك في [TOPIC]؟",
+            "تفتكر [QUESTION]؟",
+            "شاركني وجهة نظرك في الكومنتات"
+          ],
+          "effectiveness": 0.85
+        },
+
+        "experience_sharing": {
+          "templates": [
+            "جربت [ACTION] قبل كده؟",
+            "لو عندك تجربة مع [TOPIC]، شاركها معانا",
+            "حد جرب [PRODUCT/SERVICE]؟"
+          ],
+          "effectiveness": 0.80
+        },
+
+        "action_encouragement": {
+          "templates": [
+            "روح جرّب [ACTION] دلوقتي",
+            "ابدأ من النهاردة بـ [STEP]",
+            "مستنيش، اعمل [ACTION]"
+          ],
+          "effectiveness": 0.75
+        },
+
+        "link_tease": {
+          "templates": [
+            "هسيبلك اللينك هنا في أول كومنت كالعادة",
+            "لو عاوز تعرف أكتر، شوف اللينك في الكومنتات",
+            "تفاصيل أكتر في أول تعليق 👇"
+          ],
+          "effectiveness": 0.90
+        }
+      }
+    }
+  },
+
+  "formatting_rules": {
+    "text_styling": {
+      "bold_usage": {
+        "apply_to": [
+          "key_terms",
+          "company_names",
+          "numbers",
+          "section_headers"
+        ],
+        "syntax": "**[TEXT]**",
+        "frequency": "moderate"
+      },
+
+      "italic_usage": {
+        "apply_to": "emphasis_rarely",
+        "frequency": "minimal"
+      }
+    },
+
+    "paragraph_structure": {
+      "max_lines_per_paragraph": 4,
+      "preferred_lines": "2-3",
+      "single_sentence_paragraphs": "allowed_for_emphasis",
+      "white_space": "generous"
+    },
+
+    "list_formatting": {
+      "bullet_points": {
+        "marker": "✅",
+        "alternative_markers": ["•", "-", "👉"],
+        "indentation": "none",
+        "spacing": "single_line_between"
+      },
+
+      "numbered_lists": {
+        "format": "1-, 2-, 3-",
+        "bold_numbers": true,
+        "spacing": "double_line_between"
+      }
+    },
+
+    "emoji_usage": {
+      "frequency": "selective",
+      "placement": [
+        "as_bullet_points",
+        "end_of_sentences",
+        "section_separators"
+      ],
+      "approved_emojis": [
+        "✅", "💡", "👇", "💪", "🚀", "✨", "🤖",
+        "🎯", "📊", "🔥", "⚡", "🎨", "📈", "🧠"
+      ],
+      "avoid_overuse": true
+    },
+
+    "punctuation": {
+      "exclamation_marks": "frequent_for_enthusiasm",
+      "question_marks": "for_rhetorical_questions",
+      "ellipsis": "for_pauses_and_suspense",
+      "horizontal_separators": {
+        "types": [". . . .", "...", "---"],
+        "usage": "between_major_sections"
+      }
+    }
+  },
+
+  "platform_specific_structures": {
+    "linkedin_post": {
+      "optimal_length": "800-1200_characters",
+      "structure": "hook + context + 3_points + conclusion + cta",
+      "line_breaks": "generous",
+      "professionalism": "medium_high",
+      "hashtags": "3-5_at_end"
+    },
+
+    "blog_article": {
+      "optimal_length": "1500-2500_words",
+      "structure": "intro + 5-7_sections + conclusion",
+      "subheadings": "required",
+      "depth": "comprehensive",
+      "examples": "multiple_per_section"
+    },
+
+    "twitter_thread": {
+      "tweets_count": "5-10",
+      "per_tweet_length": "250-280_characters",
+      "structure": "hook + build_up + climax + conclusion",
+      "numbering": "required",
+      "hook_quality": "critical"
+    },
+
+    "facebook_post": {
+      "optimal_length": "500-800_characters",
+      "structure": "hook + story + cta",
+      "tone": "more_casual",
+      "emojis": "more_frequent"
+    }
+  },
+
+  "flow_optimization": {
+    "transition_phrases": {
+      "to_next_point": [
+        "طيب...",
+        "نخش على نقطة تانية",
+        "خد عندك بقى",
+        "حاجة تانية مهمة"
+      ],
+      "to_example": [
+        "ناخد مثال",
+        "تعالى نشوف",
+        "لو بصينا على",
+        "زي مثلاً"
+      ],
+      "to_elaboration": [
+        "يعني إيه؟",
+        "اشمعنى؟",
+        "طيب ده معناه إيه؟",
+        "تفصيلاً..."
+      ],
+      "to_conclusion": [
+        "من الآخر",
+        "الخلاصة",
+        "في النهاية",
+        "اللي عاوز أقوله"
+      ]
+    },
+
+    "coherence_rules": {
+      "topic_consistency": "maintain_throughout",
+      "logical_progression": "required",
+      "no_sudden_jumps": true,
+      "bridge_between_ideas": "always"
+    }
+  },
+
+  "quality_metrics": {
+    "structural_integrity_score": {
+      "target": 0.90,
+      "measurement": "adherence_to_structure"
+    },
+    "flow_smoothness_score": {
+      "target": 0.85,
+      "measurement": "transition_quality"
+    },
+    "engagement_potential_score": {
+      "target": 0.88,
+      "measurement": "hook_and_cta_effectiveness"
+    },
+    "readability_score": {
+      "target": 0.92,
+      "measurement": "paragraph_length_and_spacing"
+    }
+  },
+
+  "integration_points": {
+    "receives_input_from": [
+      "tone_master",
+      "lexicon_mixer",
+      "content_planner"
+    ],
+    "sends_output_to": [
+      "quality_checker",
+      "formatting_engine",
+      "platform_optimizer"
+    ]
+  },
+
+  "adaptive_learning": {
+    "track_engagement_by_structure": true,
+    "optimize_hook_types": true,
+    "test_cta_variations": true,
+    "learn_from_best_performers": true
+  }
+}

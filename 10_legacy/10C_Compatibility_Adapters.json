@@ -1,0 +1,68 @@
+{
+  "module": {
+    "name": "Compatibility_Adapters",
+    "version": "2.0.0",
+    "layer": "10_legacy",
+    "code": "10C",
+    "description": "Adapter implementations for maintaining compatibility with legacy interfaces",
+    "author": "OpenOps Foundation",
+    "created": "2025-12-16T00:00:00Z"
+  },
+  "governance": {
+    "compliance_level": "standard",
+    "requires_approval": false,
+    "audit_level": "minimal",
+    "data_classification": "internal"
+  },
+  "objectives": [
+    "Provide compatibility shims",
+    "Translate between old and new APIs",
+    "Log legacy usage for migration tracking",
+    "Maintain performance with minimal overhead"
+  ],
+  "integration_points": {
+    "imports_from": ["10A_Deprecated_Modules_Index.json", "10B_Migration_and_Interop_Policy.json"],
+    "exports_to": ["00B_OpenOps_Audit_and_Decision_Ledger.json"]
+  },
+  "adapter_registry": {
+    "OrchestratorV1Adapter": {
+      "adapter_id": "OrchestratorV1Adapter",
+      "legacy_interface": "legacy_orchestrator_v1",
+      "target_interface": "01_Orchestration_Engine_and_Rounds_Router",
+      "translation_type": "api_wrapper",
+      "performance_overhead": "5_percent",
+      "limitations": ["no_parallel_execution", "limited_context_size"],
+      "deprecation_warnings": "logged_on_each_call"
+    },
+    "MemoryStoreAdapter": {
+      "adapter_id": "MemoryStoreAdapter",
+      "legacy_interface": "simple_memory_store",
+      "target_interface": "02B_Agent_Memory_Registry",
+      "translation_type": "data_format_converter",
+      "performance_overhead": "10_percent",
+      "limitations": ["eventual_consistency"],
+      "deprecation_warnings": "logged_daily"
+    }
+  },
+  "adapter_patterns": {
+    "facade": "present_simplified_interface",
+    "bridge": "connect_incompatible_interfaces",
+    "proxy": "add_logging_and_metrics",
+    "decorator": "extend_functionality_without_modification"
+  },
+  "monitoring": {
+    "track_adapter_usage": true,
+    "measure_performance_impact": true,
+    "log_translation_errors": true,
+    "alert_on_high_legacy_usage": {
+      "threshold": "20_percent_of_traffic",
+      "notification": "migration_team"
+    }
+  },
+  "lifecycle_management": {
+    "automatic_deprecation_warnings": true,
+    "gradual_feature_restrictions": "enabled",
+    "sunset_date_enforcement": true
+  },
+  "version_history": {"2.0.0": {"date": "2025-12-16", "changes": "Initial compatibility adapters"}}
+}

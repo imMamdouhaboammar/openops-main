@@ -1,0 +1,693 @@
+{
+  "workflows": {
+    "version": "1.0.0",
+    "agent": "ConversionCopywriterAgent",
+    "description": "Structured execution patterns and operational workflows for conversion copywriting tasks",
+    "author": "OpenOps Studio | Mamdouh Aboammar",
+    
+    "workflow_types": {
+      "full_sprint": {
+        "name": "7-Day Implementation Sprint",
+        "duration": "7 days",
+        "use_case": "Complete projects with full research and optimization",
+        "phases": [
+          {
+            "day": 1,
+            "phase": "research_system",
+            "objective": "Deep audience and context understanding",
+            "activities": [
+              "complete_umdp_framework",
+              "build_audience_emotional_map",
+              "identify_pain_points_desires",
+              "map_objections_barriers",
+              "define_proof_requirements"
+            ],
+            "deliverables": [
+              "research_sheet",
+              "audience_profile",
+              "psychological_map"
+            ],
+            "rules": [
+              "NO_WRITING_ALLOWED",
+              "RESEARCH_ONLY",
+              "DEPTH_OVER_SPEED"
+            ],
+            "tools_used": [
+              "umdp_framework_template",
+              "emotional_mapping_tool",
+              "objection_mining_system"
+            ]
+          },
+          {
+            "day": 2,
+            "phase": "messaging_architecture",
+            "objective": "Structure message before writing copy",
+            "activities": [
+              "define_core_promise",
+              "build_supporting_arguments",
+              "map_doubt_handling",
+              "create_objection_killers",
+              "design_social_reinforcement",
+              "establish_why_now_logic"
+            ],
+            "deliverables": [
+              "messaging_blueprint",
+              "message_hierarchy",
+              "proof_placement_map"
+            ],
+            "rules": [
+              "ARCHITECTURE_BEFORE_WRITING",
+              "LOGIC_FLOW_MUST_BE_CLEAR",
+              "VALIDATE_WITH_RESEARCH"
+            ]
+          },
+          {
+            "day": 3,
+            "phase": "drafting_system",
+            "objective": "Write ugly first draft without editing",
+            "activities": [
+              "rapid_content_generation",
+              "framework_application",
+              "conversational_tone_implementation",
+              "idea_flow_creation"
+            ],
+            "deliverables": [
+              "draft_v1",
+              "rough_structure"
+            ],
+            "rules": [
+              "NO_EDITING",
+              "NO_PERFECTION",
+              "ONE_IDEA_PER_LINE",
+              "MARK_UNKNOWNS_WITH_XXX",
+              "TARGET_80_PERCENT_COMPLETION"
+            ],
+            "time_limit": "90 minutes focused writing"
+          },
+          {
+            "day": 4,
+            "phase": "rewriting_layer",
+            "objective": "Polish through systematic filters",
+            "activities": [
+              "apply_clarity_filter",
+              "apply_tightening_filter",
+              "apply_transition_filter",
+              "apply_emotional_lift_filter",
+              "apply_voice_consistency_filter"
+            ],
+            "deliverables": [
+              "polished_copy",
+              "revision_notes"
+            ],
+            "filters": {
+              "clarity": "Replace complex with simple, jargon with plain language",
+              "tightening": "Remove filler words, unnecessary adjectives",
+              "transitions": "Ensure smooth logical flow between ideas",
+              "emotional_lift": "Add feeling words, strengthen emotional connection",
+              "voice": "Maintain consistent tone throughout"
+            }
+          },
+          {
+            "day": 5,
+            "phase": "proof_layer",
+            "objective": "Add trust elements strategically",
+            "activities": [
+              "integrate_social_proof",
+              "add_statistical_evidence",
+              "embed_authority_signals",
+              "include_transformation_stories",
+              "implement_guarantees"
+            ],
+            "deliverables": [
+              "trusted_copy",
+              "proof_documentation"
+            ],
+            "placement_strategy": {
+              "near_big_promise": "Statistics or authority proof",
+              "objection_points": "Guarantees and risk reversals",
+              "closing": "Social proof and testimonials"
+            }
+          },
+          {
+            "day": 6,
+            "phase": "crx_optimization",
+            "objective": "Optimize user experience and flow",
+            "activities": [
+              "conduct_7_second_test",
+              "check_momentum_flow",
+              "verify_mobile_readability",
+              "optimize_white_space",
+              "validate_cta_prominence"
+            ],
+            "deliverables": [
+              "publication_ready_copy",
+              "crx_checklist_completed"
+            ],
+            "tests": {
+              "7_second_test": "Can reader understand offer in 7 seconds?",
+              "scroll_momentum": "Does it flow smoothly without friction?",
+              "mobile_check": "All paragraphs < 3 lines on mobile?",
+              "cta_visibility": "Is call-to-action impossible to miss?"
+            }
+          },
+          {
+            "day": 7,
+            "phase": "publish_measure",
+            "objective": "Launch and monitor performance",
+            "activities": [
+              "create_ab_variants",
+              "setup_tracking_metrics",
+              "publish_campaign",
+              "monitor_performance",
+              "document_learnings"
+            ],
+            "deliverables": [
+              "live_campaign",
+              "analytics_dashboard",
+              "performance_baseline"
+            ],
+            "metrics_to_track": [
+              "ctr_click_through_rate",
+              "conversion_rate",
+              "bounce_rate",
+              "time_on_page",
+              "cost_per_acquisition"
+            ]
+          }
+        ]
+      },
+      
+      "quick_mode": {
+        "name": "Rapid Copy Generation",
+        "duration": "2-4 hours",
+        "use_case": "Urgent requests with existing research",
+        "phases": [
+          {
+            "step": 1,
+            "name": "brief_research",
+            "duration": "30 minutes",
+            "activities": [
+              "extract_key_audience_insights",
+              "identify_primary_pain_point",
+              "determine_main_desire",
+              "list_top_objections"
+            ]
+          },
+          {
+            "step": 2,
+            "name": "framework_selection",
+            "duration": "15 minutes",
+            "activities": [
+              "choose_proven_framework",
+              "map_framework_to_brief",
+              "prepare_structure"
+            ]
+          },
+          {
+            "step": 3,
+            "name": "rapid_draft",
+            "duration": "60 minutes",
+            "activities": [
+              "apply_framework",
+              "write_continuously",
+              "include_essential_proof"
+            ]
+          },
+          {
+            "step": 4,
+            "name": "polish_proof",
+            "duration": "60 minutes",
+            "activities": [
+              "clarity_pass",
+              "proof_integration",
+              "cta_optimization"
+            ]
+          },
+          {
+            "step": 5,
+            "name": "crx_check",
+            "duration": "15 minutes",
+            "activities": [
+              "readability_test",
+              "mobile_check",
+              "cta_visibility"
+            ]
+          }
+        ],
+        "constraints": {
+          "no_ab_testing": "Single variant only",
+          "proven_frameworks_only": "No experimentation",
+          "essential_proof_only": "Top 3 trust elements"
+        }
+      },
+      
+      "consultation_mode": {
+        "name": "Copy Review & Advisory",
+        "duration": "1-2 hours",
+        "use_case": "Existing copy needs improvement",
+        "phases": [
+          {
+            "step": 1,
+            "name": "copy_audit",
+            "activities": [
+              "analyze_structure",
+              "evaluate_clarity",
+              "assess_proof_quality",
+              "identify_friction_points",
+              "check_psychological_triggers"
+            ],
+            "deliverable": "audit_report"
+          },
+          {
+            "step": 2,
+            "name": "gap_analysis",
+            "activities": [
+              "compare_to_best_practices",
+              "identify_missing_elements",
+              "evaluate_framework_alignment",
+              "assess_audience_fit"
+            ],
+            "deliverable": "gap_analysis_report"
+          },
+          {
+            "step": 3,
+            "name": "recommendations",
+            "activities": [
+              "prioritize_changes",
+              "provide_rewrite_examples",
+              "suggest_testing_approach",
+              "estimate_impact"
+            ],
+            "deliverable": "action_plan"
+          }
+        ]
+      },
+      
+      "ab_test_mode": {
+        "name": "Variant Generation for Testing",
+        "duration": "3-6 hours",
+        "use_case": "Create optimized test variants",
+        "approach": {
+          "control": "Current/baseline version",
+          "variants": [
+            {
+              "variant_a": "Test different psychological trigger",
+              "hypothesis": "Fear-based messaging vs desire-based"
+            },
+            {
+              "variant_b": "Test different proof type",
+              "hypothesis": "Social proof vs statistical proof"
+            },
+            {
+              "variant_c": "Test different format",
+              "hypothesis": "Long-form vs short-form"
+            }
+          ]
+        },
+        "rules": [
+          "CHANGE_ONE_VARIABLE_ONLY",
+          "MEANINGFUL_DIFFERENCES",
+          "TEST_OPPOSITE_APPROACHES"
+        ]
+      }
+    },
+    
+    "decision_trees": {
+      "workflow_selection": {
+        "question": "What's the request type?",
+        "branches": [
+          {
+            "condition": "New copy from scratch + Full research needed",
+            "action": "USE_FULL_SPRINT",
+            "justification": "Need deep understanding for optimal results"
+          },
+          {
+            "condition": "Urgent deadline (< 24 hours) + Basic info available",
+            "action": "USE_QUICK_MODE",
+            "justification": "Time constraint requires rapid execution"
+          },
+          {
+            "condition": "Existing copy needs improvement",
+            "action": "USE_CONSULTATION_MODE",
+            "justification": "Advisory approach more efficient"
+          },
+          {
+            "condition": "Copy exists + Want to optimize conversion",
+            "action": "USE_AB_TEST_MODE",
+            "justification": "Testing reveals improvement opportunities"
+          }
+        ]
+      },
+      
+      "framework_selection": {
+        "question": "What's the product/market context?",
+        "branches": [
+          {
+            "condition": "Pain-driven product (insurance, security, medicine)",
+            "framework": "PAS",
+            "rationale": "Amplify pain, then offer relief"
+          },
+          {
+            "condition": "Transformation product (education, coaching, tools)",
+            "framework": "BAB",
+            "rationale": "Show before/after contrast"
+          },
+          {
+            "condition": "Quick win / impulse buy (e-commerce, apps)",
+            "framework": "H-V-C",
+            "rationale": "Fast hook to fast action"
+          },
+          {
+            "condition": "Trust-building needed (B2B, high-ticket)",
+            "framework": "4Ps",
+            "rationale": "Stack proof to build confidence"
+          },
+          {
+            "condition": "Competitive market / Need differentiation",
+            "framework": "Star-Story-Solution",
+            "rationale": "Humanize through relatable journey"
+          }
+        ]
+      },
+      
+      "tone_selection": {
+        "question": "Who's the audience and context?",
+        "branches": [
+          {
+            "condition": "Egyptian B2C + Youth/Casual brand",
+            "tone": "Conversational Egyptian Dialect",
+            "examples": ["يا عم", "يلا بينا", "خد بالك"]
+          },
+          {
+            "condition": "Egyptian B2B + Professional",
+            "tone": "Formal Arabic with warmth",
+            "examples": ["نسعد بخدمتك", "نقدم لك", "الحل الأمثل"]
+          },
+          {
+            "condition": "International audience",
+            "tone": "Clear English, conversational",
+            "examples": ["Here's what", "You'll love", "It's simple"]
+          },
+          {
+            "condition": "Luxury / Premium positioning",
+            "tone": "Sophisticated but accessible",
+            "examples": ["Experience", "Curated", "Exclusively"]
+          }
+        ]
+      }
+    },
+    
+    "execution_patterns": {
+      "landing_page_build": {
+        "sequence": [
+          {
+            "block": "hero_section",
+            "components": [
+              "headline (core promise)",
+              "subheadline (mechanism)",
+              "cta_button",
+              "hero_visual",
+              "micro_proof (trust badge)"
+            ],
+            "objective": "Answer in 7 seconds: What? Who? Why? How?"
+          },
+          {
+            "block": "problem_recognition",
+            "components": [
+              "mirror_their_pain",
+              "amplify_the_problem",
+              "create_urgency"
+            ],
+            "objective": "Make them nod 'Yes, that's me'"
+          },
+          {
+            "block": "solution_introduction",
+            "components": [
+              "present_your_offer",
+              "explain_mechanism",
+              "differentiate_approach"
+            ],
+            "objective": "Position as the logical answer"
+          },
+          {
+            "block": "how_it_works",
+            "components": [
+              "3_simple_steps",
+              "visual_process",
+              "reduce_complexity_fear"
+            ],
+            "objective": "Show it's achievable"
+          },
+          {
+            "block": "benefits_stack",
+            "components": [
+              "transformation_bullets",
+              "emotional_outcomes",
+              "tangible_results"
+            ],
+            "objective": "Build desire through specificity"
+          },
+          {
+            "block": "social_proof",
+            "components": [
+              "testimonials",
+              "case_studies",
+              "statistics",
+              "logos"
+            ],
+            "objective": "Eliminate 'Is this real?' doubt"
+          },
+          {
+            "block": "objection_handling",
+            "components": [
+              "faq",
+              "guarantees",
+              "risk_reversals"
+            ],
+            "objective": "Preempt and neutralize concerns"
+          },
+          {
+            "block": "offer_details",
+            "components": [
+              "pricing",
+              "bonuses",
+              "scarcity (if real)",
+              "urgency (if real)"
+            ],
+            "objective": "Make decision easy and logical"
+          },
+          {
+            "block": "final_cta",
+            "components": [
+              "restate_transformation",
+              "why_now_logic",
+              "clear_action_button",
+              "micro_copy_reassurance"
+            ],
+            "objective": "Final push to action"
+          }
+        ]
+      },
+      
+      "ad_copy_build": {
+        "platform_specific": {
+          "facebook_instagram": {
+            "structure": [
+              {
+                "element": "hook",
+                "length": "first 3 words or first line",
+                "purpose": "stop_the_scroll",
+                "techniques": ["question", "bold_statement", "call_out", "curiosity"]
+              },
+              {
+                "element": "body",
+                "length": "40-80 words",
+                "purpose": "build_desire_or_address_pain",
+                "structure": ["problem or desire", "your solution", "key benefit"]
+              },
+              {
+                "element": "cta",
+                "length": "5-8 words",
+                "purpose": "clear_next_step",
+                "format": "Action verb + benefit/reason"
+              }
+            ],
+            "best_practices": [
+              "Short paragraphs (2-3 lines)",
+              "Emojis optional for casual brands",
+              "Visual and text must align",
+              "Mobile-first thinking"
+            ]
+          },
+          
+          "tiktok_reels": {
+            "structure": [
+              {
+                "element": "hook",
+                "timing": "first 1 second",
+                "purpose": "pattern_interrupt",
+                "techniques": ["visual shock", "unexpected", "bold text overlay"]
+              },
+              {
+                "element": "value",
+                "timing": "seconds 2-12",
+                "purpose": "deliver_insight_or_entertainment",
+                "format": "Quick tip, reveal, or story"
+              },
+              {
+                "element": "cta",
+                "timing": "last 2-3 seconds",
+                "purpose": "guide_action",
+                "format": "Simple instruction or link reference"
+              }
+            ],
+            "best_practices": [
+              "Ultra-casual tone",
+              "Authentic not polished",
+              "Native to platform (UGC style)",
+              "Text overlays for accessibility"
+            ]
+          },
+          
+          "linkedin": {
+            "structure": [
+              {
+                "element": "hook",
+                "length": "professional question or insight",
+                "purpose": "engage_business_audience",
+                "tone": "Authority + approachable"
+              },
+              {
+                "element": "body",
+                "length": "80-150 words",
+                "purpose": "business_value_proposition",
+                "focus": ["roi", "efficiency", "competitive_advantage"]
+              },
+              {
+                "element": "cta",
+                "length": "soft educational angle",
+                "purpose": "low_pressure_next_step",
+                "examples": ["Learn more", "Download guide", "See how"]
+              }
+            ]
+          }
+        }
+      },
+      
+      "email_sequence_build": {
+        "welcome_series": {
+          "email_1": {
+            "timing": "immediate_after_signup",
+            "subject": "Welcome + Set expectations",
+            "body": "Thank them, deliver promised value, set expectations for series",
+            "cta": "Consume first value piece"
+          },
+          "email_2": {
+            "timing": "day_2",
+            "subject": "Quick win or insight",
+            "body": "Deliver actionable tip, build trust",
+            "cta": "Reply or engage"
+          },
+          "email_3": {
+            "timing": "day_4",
+            "subject": "Story or case study",
+            "body": "Show transformation, build desire",
+            "cta": "Soft product intro"
+          },
+          "email_4": {
+            "timing": "day_7",
+            "subject": "Clear offer",
+            "body": "Present product, benefits, proof",
+            "cta": "Purchase or demo"
+          }
+        },
+        
+        "sales_sequence": {
+          "email_1": "Problem agitation",
+          "email_2": "Solution introduction",
+          "email_3": "Proof and testimonials",
+          "email_4": "Objection handling",
+          "email_5": "Urgency and final offer"
+        }
+      }
+    },
+    
+    "quality_control_gates": {
+      "gate_1_research_validation": {
+        "checkpoint": "After Day 1 or Research Phase",
+        "criteria": [
+          "U-M-D-B-P framework 100% complete",
+          "At least 5 pain points identified",
+          "At least 5 desires mapped",
+          "Top 3 objections documented",
+          "Proof requirements defined"
+        ],
+        "pass_criteria": "All criteria met",
+        "fail_action": "Return to research, do not proceed"
+      },
+      
+      "gate_2_message_architecture": {
+        "checkpoint": "After Day 2 or Messaging Phase",
+        "criteria": [
+          "Core promise clear and specific",
+          "Supporting arguments logical",
+          "Objection handling complete",
+          "Proof placement mapped",
+          "Why now logic established"
+        ],
+        "pass_criteria": "Can explain entire message flow verbally",
+        "fail_action": "Refine architecture before writing"
+      },
+      
+      "gate_3_copy_quality": {
+        "checkpoint": "After Day 4 or Polish Phase",
+        "criteria": [
+          "Clarity filter passed (12-year-old test)",
+          "Tightening complete (no filler)",
+          "Smooth transitions verified",
+          "Emotional resonance present",
+          "Voice consistent throughout"
+        ],
+        "pass_criteria": "All 5 filters passed",
+        "fail_action": "Additional rewrite pass"
+      },
+      
+      "gate_4_crx_optimization": {
+        "checkpoint": "Before Publication",
+        "criteria": [
+          "7-second test passed",
+          "Mobile readability confirmed",
+          "CTA prominence verified",
+          "White space adequate",
+          "Momentum flow smooth"
+        ],
+        "pass_criteria": "All UX criteria met",
+        "fail_action": "Layout and formatting adjustments"
+      }
+    },
+    
+    "iteration_protocols": {
+      "feedback_integration": {
+        "round_1": {
+          "focus": "Strategic alignment",
+          "address": "Core message, positioning, audience fit",
+          "timeline": "Major revisions okay"
+        },
+        "round_2": {
+          "focus": "Tactical improvements",
+          "address": "Specific copy elements, proof placement, CTA optimization",
+          "timeline": "Moderate revisions"
+        },
+        "round_3": {
+          "focus": "Polish and finalize",
+          "address": "Minor wording, formatting, final touches",
+          "timeline": "Light revisions only"
+        },
+        "round_4_plus": {
+          "policy": "Discouraged - Indicates unclear brief",
+          "action": "Escalate to SupervisorAgent to clarify requirements"
+        }
+      }
+    }
+  }
+}

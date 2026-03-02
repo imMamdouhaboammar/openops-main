@@ -1,0 +1,101 @@
+{
+  "name": "TikTok Ads Tactics",
+  "version": "1.0",
+  "region_context": ["Egypt","GCC","MENA"],
+  "applies_to": ["B2B","B2C","D2C","Enterprise"],
+  "ads_formats": [
+    {
+      "name": "In-Feed Ads",
+      "description": "Short videos appearing natively in users’ feeds, blending with organic content.",
+      "use_when": "Awareness / Consideration stage of buyer journey",
+      "why": "Native placement increases exposure and relevancy early in the funnel."
+    },
+    {
+      "name": "Spark Ads",
+      "description": "Boosting your existing organic TikTok posts as paid ads for wider reach.",
+      "use_when": "When organic content is already performing well and you want to amplify it.",
+      "why": "Leverages authenticity and existing engagement to improve efficiency."
+    },
+    {
+      "name": "TopView / Brand Takeovers",
+      "description": "High-impact full-screen ads that appear when users open TikTok.",
+      "use_when": "Big campaign launches, major brand announcements, or large product launches.",
+      "why": "Maximizes reach and visibility quickly across the target audience."
+    },
+    {
+      "name": "Lead Generation Ads",
+      "description": "Integrated lead forms to capture contact info directly within TikTok.",
+      "use_when": "Intent is medium-to-high and goal is direct lead capture.",
+      "why": "Allows direct collection of leads without redirecting off platform."
+    },
+    {
+      "name": "Retargeting Sequencing",
+      "description": "A sequence of ads targeting users based on previous interactions.",
+      "use_when": "Driving mid-lower funnel conversions by nurturing engaged audiences.",
+      "why": "Improves conversion rates by refining audience relevance and timing."
+    }
+  ],
+  "deployment_logic": [
+    {
+      "step": 1,
+      "action": "Start with In-Feed and Spark Ads",
+      "goal": "Build broad awareness and early engagement signals."
+    },
+    {
+      "step": 2,
+      "action": "Activate Lead Gen Ads",
+      "goal": "Begin capturing data from users showing higher intent."
+    },
+    {
+      "step": 3,
+      "action": "Deploy Retargeting Sequencing",
+      "goal": "Nurture mid-funnel contacts toward conversion."
+    },
+    {
+      "step": 4,
+      "action": "Use TopView for major launches or events",
+      "goal": "Drive brand top-of-mind and large-scale visibility."
+    }
+  ],
+  "best_practices": [
+    "Localize ad creative for target region (Egypt/GCC/MENA).",
+    "Match ad creative with buyer journey stage intent.",
+    "Avoid overly aggressive 'push' messaging early in the funnel.",
+    "Use measurable CTAs (Form submit, Click-to-site, Demo request).",
+    "Monitor and optimize based on intent progression signals."
+  ],
+  "performance_signals": [
+    {
+      "metric": "View-Through Rate (VTR)",
+      "meaning": "Indicates initial engagement and relevance of creative."
+    },
+    {
+      "metric": "Click-Through Rate (CTR)",
+      "meaning": "Shows interest and movement toward next step."
+    },
+    {
+      "metric": "Lead Form Submissions",
+      "meaning": "Direct sign of conversion intent from ads."
+    },
+    {
+      "metric": "Cost Per Lead (CPL)",
+      "meaning": "Efficiency measure for lead capture performance."
+    },
+    {
+      "metric": "Engaged Audience Growth",
+      "meaning": "Tracking audiences that engage repeatedly (warm audiences)."
+    }
+  ],
+  "tactical_filters": {
+    "avoid_if": [
+      "Intent is not established (low engagement)",
+      "Ad creative is not tied to a clear next step",
+      "Message is overly promotional with no value upfront"
+    ],
+    "adopt_if": [
+      "Strong organic content performance exists",
+      "Audience signals show repeated interaction",
+      "Context supports mid-to-lower funnel actions"
+    ]
+  }
+}

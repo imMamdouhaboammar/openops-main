@@ -1,0 +1,545 @@
+{
+  "specialized_agents": {
+    "version": "2.0.0",
+    "type": "advanced_agent_definitions",
+    "description": "Comprehensive definitions for specialized agents with unique capabilities, workflows, and operational patterns within OpenOps.",
+    "author": "OpenOps Studio | Created by Mamdouh Aboammar",
+    "last_updated": "2025-12-19",
+    "governance": {
+      "managed_by": "SupervisorAgent",
+      "approved_by": "StaffEngineer",
+      "compliance_with": [
+        "02A_Agent_Roles_Config.json",
+        "02E_Agent_Authorization_Matrix.json"
+      ]
+    },
+
+    "agent_catalog": {
+      "ContentOptimizer": {
+        "tier": "L2",
+        "domain": "content_creation",
+        "description": "Specializes in optimizing content for readability, engagement, SEO, and conversion.",
+        "capabilities": [
+          "content_analysis_and_scoring",
+          "readability_optimization",
+          "seo_keyword_optimization",
+          "tone_and_style_adjustment",
+          "a_b_testing_content_variants",
+          "multilingual_optimization"
+        ],
+        "input_formats": ["text", "markdown", "html", "json"],
+        "output_formats": ["optimized_content", "optimization_report", "improvement_suggestions"],
+        "performance_metrics": {
+          "readability_improvement": "target_20_percent_increase",
+          "seo_score_improvement": "target_30_percent_increase",
+          "engagement_prediction_accuracy": "target_85_percent"
+        },
+        "integration_points": [
+          "ResearchBriefAgent_for_context",
+          "QAOrchestrator_for_quality_validation",
+          "MarketingStrategist_for_alignment"
+        ],
+        "learning_sources": [
+          "successful_content_patterns",
+          "engagement_metrics",
+          "user_feedback",
+          "competitive_analysis"
+        ]
+      },
+
+      "DataAnalyst": {
+        "tier": "L2",
+        "domain": "analytics",
+        "description": "Performs statistical analysis, data mining, pattern recognition, and predictive modeling.",
+        "capabilities": [
+          "exploratory_data_analysis",
+          "statistical_testing",
+          "predictive_modeling",
+          "anomaly_detection",
+          "trend_analysis",
+          "visualization_generation",
+          "automated_insight_extraction"
+        ],
+        "tools": [
+          "pandas",
+          "numpy",
+          "scikit_learn",
+          "statsmodels",
+          "matplotlib",
+          "seaborn"
+        ],
+        "input_formats": ["csv", "json", "parquet", "sql_query_results"],
+        "output_formats": ["analysis_reports", "visualizations", "statistical_summaries", "predictions"],
+        "performance_metrics": {
+          "analysis_accuracy": "target_95_percent",
+          "insight_relevance": "target_90_percent",
+          "processing_speed": "target_under_5_minutes_for_10MB_data"
+        },
+        "specializations": {
+          "time_series_analysis": "forecasting_trend_decomposition",
+          "cohort_analysis": "user_behavior_tracking",
+          "attribution_modeling": "marketing_channel_effectiveness"
+        }
+      },
+
+      "SecurityAuditor": {
+        "tier": "L2",
+        "domain": "security",
+        "description": "Continuously audits system for security vulnerabilities, compliance violations, and threat patterns.",
+        "capabilities": [
+          "vulnerability_scanning",
+          "penetration_testing_simulation",
+          "compliance_checking",
+          "threat_modeling",
+          "security_policy_enforcement",
+          "incident_detection",
+          "risk_assessment"
+        ],
+        "frameworks": [
+          "OWASP_Top_10",
+          "CIS_Benchmarks",
+          "NIST_Cybersecurity_Framework",
+          "ISO_27001",
+          "GDPR",
+          "SOC2"
+        ],
+        "scan_frequency": {
+          "continuous_monitoring": "real_time",
+          "full_audit": "weekly",
+          "compliance_check": "monthly",
+          "penetration_test": "quarterly"
+        },
+        "alert_severity": {
+          "critical": "immediate_escalation_and_auto_remediation_if_possible",
+          "high": "escalate_within_1_hour",
+          "medium": "daily_report",
+          "low": "weekly_summary"
+        },
+        "integration_points": [
+          "SecurityLead_for_escalations",
+          "ComplianceMonitor_for_regulatory_issues",
+          "Orchestrator_for_emergency_responses"
+        ]
+      },
+
+      "APIIntegrator": {
+        "tier": "L3",
+        "domain": "integration",
+        "description": "Manages external API integrations, handles authentication, rate limiting, and data transformation.",
+        "capabilities": [
+          "api_discovery_and_documentation",
+          "authentication_management",
+          "rate_limit_handling",
+          "retry_logic_with_exponential_backoff",
+          "data_transformation_and_mapping",
+          "error_handling_and_fallbacks",
+          "webhook_management"
+        ],
+        "supported_auth_methods": [
+          "OAuth2",
+          "API_keys",
+          "JWT",
+          "Basic_Auth",
+          "mTLS"
+        ],
+        "rate_limit_strategies": [
+          "token_bucket",
+          "request_queuing",
+          "adaptive_throttling",
+          "quota_monitoring"
+        ],
+        "performance_metrics": {
+          "integration_reliability": "target_99_9_percent_uptime",
+          "error_recovery_rate": "target_95_percent_automatic_recovery",
+          "latency": "target_p95_under_500ms"
+        },
+        "monitoring": [
+          "api_health_checks",
+          "response_time_tracking",
+          "error_rate_monitoring",
+          "quota_utilization"
+        ]
+      },
+
+      "WorkflowDesigner": {
+        "tier": "L2",
+        "domain": "orchestration",
+        "description": "Designs, optimizes, and manages complex multi-agent workflows and business processes.",
+        "capabilities": [
+          "workflow_modeling_and_visualization",
+          "dependency_analysis",
+          "bottleneck_identification",
+          "optimization_recommendations",
+          "workflow_template_creation",
+          "execution_monitoring",
+          "adaptive_workflow_adjustment"
+        ],
+        "workflow_patterns": [
+          "sequential",
+          "parallel",
+          "conditional_branching",
+          "loops",
+          "exception_handling",
+          "compensation_transactions"
+        ],
+        "optimization_techniques": [
+          "critical_path_reduction",
+          "parallelization_opportunities",
+          "resource_balancing",
+          "cache_utilization",
+          "batch_processing"
+        ],
+        "output_formats": [
+          "workflow_definition_json",
+          "execution_plan",
+          "optimization_report",
+          "performance_projections"
+        ]
+      },
+
+      "KnowledgeEngineer": {
+        "tier": "L2",
+        "domain": "knowledge_management",
+        "description": "Structures, curates, and maintains the organizational knowledge base with semantic relationships.",
+        "capabilities": [
+          "knowledge_extraction_from_documents",
+          "ontology_development",
+          "semantic_relationship_mapping",
+          "knowledge_graph_construction",
+          "automated_taxonomy_creation",
+          "knowledge_quality_assessment",
+          "intelligent_search_and_retrieval"
+        ],
+        "technologies": [
+          "NLP_for_entity_extraction",
+          "graph_databases",
+          "vector_embeddings",
+          "semantic_reasoning_engines"
+        ],
+        "knowledge_sources": [
+          "documentation",
+          "code_repositories",
+          "agent_outputs",
+          "external_databases",
+          "research_papers"
+        ],
+        "quality_metrics": {
+          "knowledge_coverage": "target_90_percent_domain_coverage",
+          "relationship_accuracy": "target_95_percent",
+          "search_relevance": "target_MRR_above_0_8"
+        }
+      },
+
+      "UserExperienceOptimizer": {
+        "tier": "L2",
+        "domain": "ux_optimization",
+        "description": "Analyzes and optimizes user interactions, interfaces, and experiences across the system.",
+        "capabilities": [
+          "user_journey_mapping",
+          "friction_point_identification",
+          "a_b_test_design_and_analysis",
+          "personalization_recommendations",
+          "accessibility_audit",
+          "interaction_pattern_analysis",
+          "usability_scoring"
+        ],
+        "frameworks": [
+          "Nielsen_heuristics",
+          "WCAG_accessibility_standards",
+          "Material_Design_principles",
+          "Human_Interface_Guidelines"
+        ],
+        "metrics": [
+          "task_completion_rate",
+          "time_on_task",
+          "error_rate",
+          "satisfaction_scores",
+          "accessibility_compliance"
+        ],
+        "optimization_areas": [
+          "navigation_structure",
+          "information_architecture",
+          "visual_hierarchy",
+          "interaction_flows",
+          "error_messaging",
+          "onboarding_experience"
+        ]
+      },
+
+      "CostOptimizer": {
+        "tier": "L2",
+        "domain": "finops",
+        "description": "Monitors, analyzes, and optimizes system costs including compute, storage, and API usage.",
+        "capabilities": [
+          "cost_tracking_and_attribution",
+          "anomaly_detection_in_spending",
+          "optimization_recommendations",
+          "budget_forecasting",
+          "resource_rightsizing",
+          "waste_identification",
+          "reserved_capacity_planning"
+        ],
+        "cost_categories": [
+          "compute_resources",
+          "storage",
+          "api_calls",
+          "data_transfer",
+          "third_party_services"
+        ],
+        "optimization_strategies": [
+          "idle_resource_termination",
+          "spot_instance_utilization",
+          "caching_to_reduce_api_calls",
+          "data_compression",
+          "autoscaling_tuning",
+          "reserved_instance_purchasing"
+        ],
+        "reporting": {
+          "frequency": "daily_dashboards_weekly_reports_monthly_reviews",
+          "recipients": ["L0", "L1", "stakeholders"],
+          "contents": [
+            "cost_trends",
+            "savings_achieved",
+            "optimization_opportunities",
+            "forecast_vs_actual"
+          ]
+        }
+      },
+
+      "CompetitiveIntelligence": {
+        "tier": "L2",
+        "domain": "market_research",
+        "description": "Monitors competitors, analyzes market trends, and provides strategic intelligence.",
+        "capabilities": [
+          "competitor_monitoring",
+          "feature_comparison_analysis",
+          "pricing_intelligence",
+          "market_trend_identification",
+          "sentiment_analysis",
+          "strategic_positioning_recommendations",
+          "threat_opportunity_assessment"
+        ],
+        "data_sources": [
+          "competitor_websites",
+          "industry_publications",
+          "social_media",
+          "financial_reports",
+          "patent_databases",
+          "customer_reviews"
+        ],
+        "analysis_types": [
+          "SWOT_analysis",
+          "Porter_five_forces",
+          "value_chain_analysis",
+          "market_segmentation"
+        ],
+        "output_formats": [
+          "competitive_intelligence_briefings",
+          "market_opportunity_reports",
+          "threat_assessments",
+          "strategic_recommendations"
+        ]
+      },
+
+      "AutomationEngineer": {
+        "tier": "L3",
+        "domain": "automation",
+        "description": "Identifies automation opportunities and implements automated workflows and processes.",
+        "capabilities": [
+          "process_mining_and_analysis",
+          "automation_opportunity_identification",
+          "robotic_process_automation",
+          "workflow_automation_implementation",
+          "script_generation",
+          "test_automation",
+          "ci_cd_pipeline_optimization"
+        ],
+        "automation_targets": [
+          "repetitive_manual_tasks",
+          "data_entry_and_processing",
+          "report_generation",
+          "testing_and_validation",
+          "deployment_processes",
+          "monitoring_and_alerting"
+        ],
+        "technologies": [
+          "python_scripting",
+          "bash_scripting",
+          "workflow_engines",
+          "test_frameworks",
+          "ci_cd_tools"
+        ],
+        "success_metrics": {
+          "time_saved": "target_hours_per_week",
+          "error_reduction": "target_percentage_decrease",
+          "roi": "target_positive_within_3_months"
+        }
+      },
+
+      "IncidentResponder": {
+        "tier": "L2",
+        "domain": "incident_management",
+        "description": "Detects, triages, and coordinates response to system incidents and emergencies.",
+        "capabilities": [
+          "incident_detection_and_classification",
+          "severity_assessment",
+          "automated_initial_response",
+          "incident_escalation",
+          "coordination_of_response_teams",
+          "root_cause_analysis",
+          "post_mortem_facilitation",
+          "runbook_execution"
+        ],
+        "incident_severity_levels": {
+          "SEV1_CRITICAL": {
+            "definition": "complete_service_outage_or_data_breach",
+            "response_time": "immediate",
+            "escalation": "automatic_to_L0",
+            "communication": "stakeholder_notification_required"
+          },
+          "SEV2_HIGH": {
+            "definition": "significant_degradation_affecting_users",
+            "response_time": "15_minutes",
+            "escalation": "to_L1",
+            "communication": "internal_teams"
+          },
+          "SEV3_MEDIUM": {
+            "definition": "minor_issues_with_workarounds",
+            "response_time": "1_hour",
+            "escalation": "if_unresolved_in_4_hours",
+            "communication": "team_level"
+          },
+          "SEV4_LOW": {
+            "definition": "cosmetic_or_non_urgent_issues",
+            "response_time": "next_business_day",
+            "escalation": "none",
+            "communication": "ticket_tracking"
+          }
+        },
+        "automation": [
+          "health_check_execution",
+          "log_collection",
+          "rollback_procedures",
+          "failover_activation",
+          "notification_distribution"
+        ]
+      },
+
+      "DocumentationSpecialist": {
+        "tier": "L3",
+        "domain": "documentation",
+        "description": "Creates, maintains, and improves technical and user documentation across the system.",
+        "capabilities": [
+          "automated_documentation_generation",
+          "documentation_gap_identification",
+          "style_guide_enforcement",
+          "version_control_integration",
+          "searchability_optimization",
+          "multilingual_documentation",
+          "interactive_examples_creation"
+        ],
+        "documentation_types": [
+          "api_documentation",
+          "user_guides",
+          "technical_specifications",
+          "runbooks",
+          "troubleshooting_guides",
+          "architecture_diagrams",
+          "release_notes"
+        ],
+        "quality_standards": [
+          "clarity_and_conciseness",
+          "accuracy_and_completeness",
+          "up_to_date_information",
+          "proper_formatting",
+          "code_examples_included",
+          "accessibility_compliance"
+        ],
+        "tools": [
+          "markdown",
+          "openapi_swagger",
+          "diagram_generators",
+          "screenshot_automation",
+          "version_control_systems"
+        ]
+      }
+    },
+
+    "agent_lifecycle": {
+      "creation": {
+        "proposal": "submitted_by_L1_or_L0",
+        "justification": "clear_use_case_and_expected_value",
+        "design": "capabilities_permissions_integration_points",
+        "approval": "L0_council_review",
+        "development": "iterative_with_testing",
+        "deployment": "staged_rollout_with_monitoring"
+      },
+      "monitoring": {
+        "performance_tracking": "continuous_via_02G_monitoring_system",
+        "usage_analysis": "understand_adoption_and_effectiveness",
+        "feedback_collection": "from_users_and_collaborating_agents"
+      },
+      "evolution": {
+        "capability_expansion": "based_on_demand_and_performance",
+        "optimization": "continuous_improvement_cycles",
+        "specialization": "deeper_focus_on_high_value_areas"
+      },
+      "retirement": {
+        "triggers": [
+          "obsolescence",
+          "poor_performance",
+          "redundancy",
+          "strategic_shifts"
+        ],
+        "process": [
+          "impact_assessment",
+          "migration_plan_for_users",
+          "knowledge_preservation",
+          "graceful_shutdown"
+        ]
+      }
+    },
+
+    "collaboration_matrix": {
+      "high_synergy_pairs": [
+        {
+          "agents": ["ContentOptimizer", "MarketingStrategist"],
+          "synergy": "content_aligned_with_strategy"
+        },
+        {
+          "agents": ["DataAnalyst", "CostOptimizer"],
+          "synergy": "data_driven_cost_optimization"
+        },
+        {
+          "agents": ["SecurityAuditor", "ComplianceMonitor"],
+          "synergy": "comprehensive_security_and_compliance"
+        },
+        {
+          "agents": ["WorkflowDesigner", "AutomationEngineer"],
+          "synergy": "optimal_automated_workflows"
+        },
+        {
+          "agents": ["KnowledgeEngineer", "DocumentationSpecialist"],
+          "synergy": "well_structured_and_documented_knowledge"
+        }
+      ],
+      "common_workflows": [
+        {
+          "workflow": "content_creation_pipeline",
+          "agents": ["ResearchBriefAgent", "ContentOptimizer", "QAOrchestrator"],
+          "flow": "research → optimization → quality_assurance"
+        },
+        {
+          "workflow": "security_compliance_audit",
+          "agents": ["SecurityAuditor", "ComplianceMonitor", "IncidentResponder"],
+          "flow": "audit → compliance_check → incident_handling_if_needed"
+        },
+        {
+          "workflow": "system_optimization",
+          "agents": ["DataAnalyst", "CostOptimizer", "WorkflowDesigner"],
+          "flow": "analysis → cost_optimization → workflow_improvement"
+        }
+      ]
+    }
+  }
+}

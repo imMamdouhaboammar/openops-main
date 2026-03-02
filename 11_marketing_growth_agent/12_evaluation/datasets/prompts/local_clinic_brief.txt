@@ -1,0 +1,15 @@
+You are onboarding a local dermatology clinic (single location).
+
+Constraints:
+- Must avoid medical guarantees and exaggerated before/after claims.
+- Marketing budget: $2,500/month.
+- Capacity: 12 appointments/day max.
+- Primary goal (90 days): increase qualified bookings by 30% without increasing no-shows.
+- Current acquisition: Instagram organic + referrals; no paid ads running.
+- Website is slow; booking is mainly WhatsApp.
+- No analytics tracking is currently installed.
+
+Request:
+Propose a 7–14 day validation plan and the first 30 days execution plan.
+Include measurement/tracking requirements, approvals, and a compliance gate.
+

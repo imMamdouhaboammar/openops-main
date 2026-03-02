@@ -1,0 +1,43 @@
+{
+    "workflows": {
+        "standard": [
+            {
+                "id": "abm-campaign-launch",
+                "name": "ABM Campaign Launch (1:Few)",
+                "freq": "quarterly",
+                "duration": "12 weeks",
+                "file": "standard-workflows/abm-campaign.md"
+            },
+            {
+                "id": "rfp-response",
+                "name": "Strategic RFP Response Process",
+                "freq": "as_needed",
+                "duration": "2-4 weeks",
+                "file": "standard-workflows/rfp-response.md"
+            },
+            {
+                "id": "account-expansion",
+                "name": "Customer Expansion Playbook",
+                "freq": "ongoing",
+                "duration": "6 months/account",
+                "file": "standard-workflows/account-expansion.md"
+            }
+        ],
+        "advanced": [
+            {
+                "id": "saudi-gov-tender",
+                "name": "Saudi Government Tender Strategy",
+                "freq": "as_needed",
+                "duration": "6-24 months",
+                "file": "advanced-workflows/saudi-gov-tender.md"
+            },
+            {
+                "id": "enterprise-abm-1to1",
+                "name": "Enterprise ABM (1:1 Strategic)",
+                "freq": "ongoing",
+                "duration": "12-18 months",
+                "file": "advanced-workflows/enterprise-abm.md"
+            }
+        ]
+    }
+}

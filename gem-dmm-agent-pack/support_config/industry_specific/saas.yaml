@@ -1,0 +1,174 @@
+# SaaS Industry Marketing Configuration
+# Optimized for software-as-a-service business models
+
+industry: saas
+last_updated: "2026-02-15"
+source_verification: "Based on 2026 SaaS marketing benchmarks"
+
+## Industry Characteristics
+
+business_model:
+  type: "Recurring revenue"
+  typical_acv: "$1K-$100K+ (depending on segment)"
+  sales_cycle:
+    smb: "7-30 days"
+    mid_market: "30-90 days"
+    enterprise: "3-12 months"
+  churn_sensitivity: "Very high - retention is critical"
+
+buyer_psychology:
+  primary_concerns:
+    - "Will this integrate with our existing stack?"
+    - "What's the ROI? How long to value?"
+    - "Is implementation difficult?"
+    - "What if we need to cancel?"
+  decision_criteria:
+    smb: ["Price", "Ease of use", "Speed to value"]
+    mid_market: ["Features", "Integrations", "Support quality"]
+    enterprise: ["Security", "Compliance", "Scalability", "Vendor stability"]
+
+## Channel Strategy Patterns
+
+recommended_channels:
+  tier_1_essential:
+    - channel: "Content Marketing + SEO"
+      rationale: "Long buyer journey (60-90 days avg). Need to educate before converting."
+      expected_timeline: "3-6 months to see organic traction"
+      typical_cost: "Lower CAC long-term ($50-200 per lead), high upfront investment"
+      
+    - channel: "Google Search Ads (intent-based)"
+      rationale: "Capture high-intent searches (e.g., '[competitor] alternative', 'best [category] software')"
+      expected_timeline: "Immediate results (week 1)"
+      typical_cost: "$5-50 CPC for competitive keywords, $100-300 CAC"
+      
+    - channel: "Product-Led Growth (Free Trial / Freemium)"
+      rationale: "Let product sell itself. Critical for SMB SaaS."
+      expected_timeline: "2-4 weeks to optimize trial-to-paid flow"
+      typical_cost: "Infrastructure cost + onboarding, but low CAC"
+  
+  tier_2_growth:
+    - channel: "LinkedIn Ads (B2B SaaS)"
+      rationale: "Target specific job titles, company sizes, industries"
+      expected_timeline: "2-4 weeks for initial leads"
+      typical_cost: "$8-15 CPC, $150-400 CAC for B2B"
+      
+    - channel: "Comparison Pages / Review Sites"
+      rationale: "Buyers research alternatives. Be present on G2, Capterra, Product Hunt."
+      expected_timeline: "1-2 months to build reviews"
+      typical_cost: "Platform fees ($500-2K/month) + incentives for reviews"
+      
+    - channel: "Webinars / Product Demos"
+      rationale: "Education + validation in single touchpoint. High conversion for complex products."
+      expected_timeline: "Ongoing (weekly/monthly cadence)"
+      typical_cost: "$50-150 per registrant, 20-40% show rate"
+  
+  tier_3_scale:
+    - channel: "Partner / Integration Marketing"
+      rationale: "Co-market with complementary SaaS (e.g., Zapier integrations, app marketplaces)"
+      expected_timeline: "3-6 months to establish partnerships"
+      typical_cost: "Revenue share or co-marketing budgets"
+      
+    - channel: "Retargeting (Display + Social)"
+      rationale: "Typical SaaS buyer visits 5-7 times before converting. Stay top-of-mind."
+      expected_timeline: "Immediate (once pixel deployed)"
+      typical_cost: "$1-5 CPM, supports other channels"
+
+avoid_or_deprioritize:
+  - channel: "Traditional PR / Offline Events"
+    reason: "Low ROI for early-stage SaaS. Prioritize digital channels first."
+  - channel: "Broad Social Media (Instagram, TikTok)"
+    reason: "Unless product is PLG for consumers (e.g., Canva, Notion). B2B SaaS should focus LinkedIn."
+
+## Touchpoint Architecture for SaaS
+
+buyer_journey_mapping:
+  stage_1_awareness:
+    touchpoints: ["SEO blog content", "LinkedIn thought leadership", "Google Search Ads"]
+    goal: "Establish presence for problem-related searches"
+    
+  stage_2_education:
+    touchpoints: ["Product comparison pages", "How-it-works videos", "Webinars"]
+    goal: "Build understanding of solution category and your differentiation"
+    
+  stage_3_validation:
+    touchpoints: ["G2/Capterra reviews", "Case studies", "Free trial"]
+    goal: "Prove ROI and reduce perceived risk"
+    
+  stage_4_conversion:
+    touchpoints: ["Demo call (for mid-market/enterprise)", "Self-serve signup (SMB)", "Optimized pricing page"]
+    goal: "Remove final friction and close"
+
+## Budget Allocation
+
+typical_spend_split:
+  smb_saas:
+    content_seo: "30%"
+    paid_search: "40%"
+    paid_social: "15%"
+    product_marketing: "15%"
+  
+  mid_market_saas:
+    content_seo: "25%"
+    paid_search: "30%"
+    paid_social_linkedin: "25%"
+    events_webinars: "20%"
+  
+  enterprise_saas:
+    content_seo: "20%"
+    paid_search: "20%"
+    abm_linkedin: "30%"
+    events_field: "30%"
+
+## Egypt/GCC Adjustments for SaaS
+
+regional_nuances:
+  egypt:
+    - "Payment challenge: International SaaS subscriptions require credit cards (low penetration). Consider local payment gateways (Fawry, Paymob)."
+    - "Localization: Arabic UI optional but helpful for non-technical users."
+    - "Support expectations: Live chat (WhatsApp preferred) is critical. Self-serve docs insufficient."
+  
+  gcc:
+    - "Enterprise focus: GCC SaaS buyers prioritize vendor relationships. Human touchpoints (in-person demos, account management) critical."
+    - "Security concerns: Data residency requirements in Saudi (PDPL). Mention compliance early."
+    - "Payment: Credit cards more common, but net-30/60 payment terms expected for B2B."
+
+## Success Metrics & Benchmarks
+
+key_metrics:
+  - metric: "CAC (Customer Acquisition Cost)"
+    benchmark_smb: "$200-800"
+    benchmark_mid_market: "$1K-5K"
+    benchmark_enterprise: "$10K-50K+"
+    
+  - metric: "Trial-to-Paid Conversion"
+    benchmark: "10-25% (varies by product complexity)"
+    
+  - metric: "Time to First Value"
+    target: "< 7 days (reduce to increase conversion)"
+    
+  - metric: "MQL-to-SQL Conversion"
+    benchmark: "15-30% (B2B SaaS)"
+    
+  - metric: "LTV:CAC Ratio"
+    healthy: "> 3:1"
+    excellent: "> 5:1"
+
+kill_criteria:
+  - "If CAC exceeds 50% of ACV after 3 months → Pause and reassess channel mix"
+  - "If trial-to-paid < 5% after optimization → Product-market fit issue, not just marketing"
+  - "If sales cycle > 12 months for mid-market → Likely targeting wrong segment"
+
+## Anti-Patterns for SaaS Marketing
+
+common_mistakes:
+  - mistake: "Building features instead of proving ROI"
+    fix: "Lead with outcome (save time, increase revenue), not features list"
+  
+  - mistake: "Over-reliance on paid ads without content foundation"
+    fix: "Invest in SEO + content FIRST. Paid ads amplify, don't replace organic."
+  
+  - mistake: "No clear ICP → Targeting 'everyone'"
+    fix: "Narrow to specific vertical or company size. Expand later."
+  
+  - mistake: "Long, complex trials with no onboarding"
+    fix: "Reduce trial friction. Add automated onboarding emails, in-app guidance."

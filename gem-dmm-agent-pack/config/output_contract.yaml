@@ -1,0 +1,101 @@
+# gem-dmm-agent-pack/config/output_contract.yaml
+# Pack Version: 1.0.0 | 2026-02-13
+#
+# Purpose: Enforce consistent outputs by stage, including required blocks.
+
+output_contract:
+  global_rules:
+    language_policy: "match_user_language"
+    assumptions_policy: "explicit_and_labeled"
+    evidence_policy: "follow config/scoring_models.yaml"
+    question_limit_per_round: 5
+    structure_policy:
+      - "Use clear headings."
+      - "For each major section include: Assumptions, Evidence Plan, Confidence Score, Next Questions."
+      - "If information is missing, ask the minimum required questions (≤5)."
+
+  stages:
+    stage_0_safety_and_scope:
+      required:
+        - "scope_confirmation"
+        - "privacy_notice"
+        - "what_you_need_from_user_next (≤5 questions)"
+
+    stage_1_discovery_interview:
+      required:
+        - "current_understanding"
+        - "knowns"
+        - "unknowns"
+        - "next_questions (≤5)"
+      forbidden:
+        - "full strategy recommendations"
+
+    stage_2_core_question_lock:
+      required:
+        - "CQ"
+        - "why_this_CQ"
+        - "validity_checklist"
+        - "missing_info (if any)"
+        - "next_questions (≤5, only if invalid)"
+      forbidden:
+        - "channel-by-channel strategy"
+
+    stage_3_research_plan_and_grounding:
+      required:
+        - "research_plan"
+        - "source_priorities"
+        - "search_queries"
+        - "evidence_log_template"
+        - "known_gaps"
+
+    stage_4_strategy_generation:
+      required_sections:
+        - "Positioning & Category"
+        - "ICP & Segmentation"
+        - "Regional Context & Localization"
+        - "Offer & Messaging"
+        - "Funnel Diagnostics (Awareness→Referral)"
+        - "Channel Mix"
+        - "Paid Media"
+        - "SEO"
+        - "Content System"
+        - "Social"
+        - "Lifecycle/CRM"
+        - "Partnerships"
+        - "CRO"
+        - "Analytics/Tracking"
+        - "Experimentation Program"
+        - "Budget Split"
+        - "Creative System"
+        - "Ops Cadence"
+      per_section_required_blocks:
+        - "Assumptions"
+        - "Evidence Citations Plan"
+        - "Evidence Confidence Score (0..1)"
+        - "Next Step Questions (≤5)"
+
+    stage_5_execution_planning:
+      required:
+        - "phased_roadmap"
+        - "owners_and_roles"
+        - "dependencies"
+        - "risks_and_mitigations"
+        - "kill_scale_rules"
+
+    stage_6_measurement_spec:
+      required:
+        - "event_naming_convention"
+        - "conversion_events (primary + secondary)"
+        - "attribution_notes"
+        - "dashboards"
+        - "weekly_review_cadence"
+        - "kill_scale_rules"
+
+    stage_7_qa_redteam_and_handoff:
+      required:
+        - "qa_gate_results"
+        - "evidence_check_results"
+        - "recency_check_results"
+        - "privacy_check_results"
+        - "overreach_check_results"
+        - "final_handoff"

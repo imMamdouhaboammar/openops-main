@@ -1,0 +1,406 @@
+{
+  "grounding_research_engine": {
+    "version": "1.0.0",
+    "description": "External and internal grounding system for Marketing & Growth Agent",
+    "status": "active",
+
+    "grounding_philosophy": {
+      "principle": "No strategy or tactic without evidence-based grounding",
+      "sequence": [
+        "external_grounding",
+        "internal_grounding",
+        "synthesis",
+        "internal_plan",
+        "full_strategy"
+      ],
+      "time_allocation": "10-15% of total strategy time"
+    },
+
+    "external_grounding": {
+      "description": "Search and analyze external sources for best practices, frameworks, and benchmarks",
+      
+      "sources": [
+        {
+          "name": "google_search",
+          "priority": "high",
+          "use_cases": [
+            "latest_best_practices",
+            "industry_benchmarks",
+            "case_studies",
+            "emerging_trends"
+          ],
+          "search_patterns": [
+            "[topic] best practices 2024-2025",
+            "[topic] benchmarks [industry]",
+            "[topic] case study successful",
+            "[topic] framework [expert/company]"
+          ]
+        },
+        {
+          "name": "reforge",
+          "priority": "high",
+          "focus": [
+            "growth_frameworks",
+            "retention_strategies",
+            "monetization_patterns",
+            "product_led_growth"
+          ],
+          "url": "https://www.reforge.com"
+        },
+        {
+          "name": "digital_marketer",
+          "priority": "high",
+          "focus": [
+            "campaign_strategies",
+            "funnel_optimization",
+            "email_marketing",
+            "paid_media"
+          ],
+          "url": "https://www.digitalmarketer.com"
+        },
+        {
+          "name": "growth_hackers",
+          "priority": "medium",
+          "focus": [
+            "growth_experiments",
+            "viral_mechanics",
+            "acquisition_tactics"
+          ],
+          "url": "https://growthhackers.com"
+        },
+        {
+          "name": "platform_documentation",
+          "priority": "high",
+          "platforms": [
+            "google_ads_help",
+            "meta_business_help",
+            "linkedin_marketing_solutions",
+            "tiktok_business_center"
+          ]
+        },
+        {
+          "name": "industry_reports",
+          "priority": "medium",
+          "sources": [
+            "gartner",
+            "forrester",
+            "mckinsey",
+            "bcg",
+            "deloitte_digital"
+          ]
+        },
+        {
+          "name": "competitor_analysis",
+          "priority": "high",
+          "methods": [
+            "similarweb",
+            "semrush",
+            "ahrefs",
+            "manual_audit"
+          ]
+        }
+      ],
+
+      "research_questions": {
+        "strategy": [
+          "What are proven positioning strategies for [market/segment]?",
+          "What messaging approaches work for [audience]?",
+          "What are common mistakes in [market] marketing?",
+          "What are emerging trends in [industry] marketing?"
+        ],
+        "channels": [
+          "What are [channel] best practices for [goal]?",
+          "What are typical [channel] benchmarks for [industry]?",
+          "What creative formats work best on [platform]?",
+          "What targeting strategies work for [audience] on [platform]?"
+        ],
+        "growth": [
+          "What growth loops work for [business model]?",
+          "What are proven referral mechanics for [product type]?",
+          "What activation patterns drive retention in [category]?",
+          "What are successful viral mechanics in [space]?"
+        ],
+        "creative": [
+          "What ad formats perform best for [objective] on [platform]?",
+          "What messaging angles work for [pain point/desire]?",
+          "What landing page structures convert for [offer type]?",
+          "What email subject lines drive opens for [audience]?"
+        ]
+      },
+
+      "search_protocol": {
+        "step_1": "Identify key questions based on task",
+        "step_2": "Run parallel searches across top sources",
+        "step_3": "Synthesize findings into patterns",
+        "step_4": "Identify gaps or contradictions",
+        "step_5": "Document key insights with sources"
+      }
+    },
+
+    "internal_grounding": {
+      "description": "Analyze internal project context, data, and constraints",
+      
+      "analysis_dimensions": [
+        {
+          "dimension": "product_positioning",
+          "questions": [
+            "What is the core value proposition?",
+            "What makes this product different?",
+            "What category does it compete in?",
+            "What is the pricing strategy?"
+          ],
+          "sources": [
+            "project_briefs",
+            "brand_guidelines",
+            "product_documentation",
+            "pricing_pages"
+          ]
+        },
+        {
+          "dimension": "target_audience",
+          "questions": [
+            "Who is the ideal customer?",
+            "What are their pain points?",
+            "What are their goals?",
+            "What are their behaviors and preferences?"
+          ],
+          "sources": [
+            "customer_research",
+            "user_interviews",
+            "persona_documents",
+            "analytics_data"
+          ]
+        },
+        {
+          "dimension": "current_marketing",
+          "questions": [
+            "What channels are currently active?",
+            "What campaigns are running?",
+            "What creative themes are in use?",
+            "What is the brand voice?"
+          ],
+          "sources": [
+            "marketing_calendar",
+            "campaign_archive",
+            "brand_guidelines",
+            "content_library"
+          ]
+        },
+        {
+          "dimension": "performance_data",
+          "questions": [
+            "What are current KPIs and values?",
+            "What is working well?",
+            "What is underperforming?",
+            "What have we learned from past experiments?"
+          ],
+          "sources": [
+            "analytics_dashboards",
+            "campaign_reports",
+            "experiment_logs",
+            "attribution_data"
+          ]
+        },
+        {
+          "dimension": "constraints",
+          "questions": [
+            "What is the budget?",
+            "What is the timeline?",
+            "What are team capabilities?",
+            "What are technical limitations?"
+          ],
+          "sources": [
+            "project_briefs",
+            "budget_documents",
+            "team_structure",
+            "tech_stack_info"
+          ]
+        },
+        {
+          "dimension": "competitive_landscape",
+          "questions": [
+            "Who are direct competitors?",
+            "What are their marketing strategies?",
+            "What are their strengths/weaknesses?",
+            "What opportunities exist?"
+          ],
+          "sources": [
+            "competitor_audits",
+            "market_research",
+            "sales_feedback",
+            "customer_interviews"
+          ]
+        }
+      ],
+
+      "data_sources": {
+        "must_check": [
+          "project_brief",
+          "brand_guidelines",
+          "current_analytics",
+          "audience_data"
+        ],
+        "should_check": [
+          "past_campaigns",
+          "experiment_results",
+          "customer_feedback",
+          "competitor_intel"
+        ],
+        "nice_to_have": [
+          "market_research",
+          "industry_reports",
+          "user_interviews",
+          "sales_data"
+        ]
+      },
+
+      "analysis_protocol": {
+        "step_1": "Gather all available internal documents",
+        "step_2": "Identify what is known vs. unknown",
+        "step_3": "Analyze performance data for patterns",
+        "step_4": "Document constraints and capabilities",
+        "step_5": "Synthesize into situation analysis"
+      }
+    },
+
+    "synthesis": {
+      "description": "Combine external and internal grounding into actionable insights",
+      
+      "synthesis_framework": {
+        "current_state": {
+          "what_we_know": "Facts from internal analysis",
+          "what_works": "Proven tactics from external research",
+          "what_doesnt_work": "Failures and anti-patterns",
+          "gaps": "What we need to learn"
+        },
+        "insights": {
+          "opportunities": "Where can we win?",
+          "threats": "What could derail us?",
+          "quick_wins": "What can we do immediately?",
+          "experiments": "What should we test?"
+        },
+        "implications": {
+          "strategic": "What should our positioning be?",
+          "tactical": "What channels/tactics to prioritize?",
+          "creative": "What messaging/angles to use?",
+          "measurement": "What KPIs to track?"
+        }
+      },
+
+      "output_format": {
+        "grounding_summary": {
+          "external_findings": [
+            {
+              "insight": "What did we learn?",
+              "source": "Where did we learn it?",
+              "relevance": "Why does it matter?",
+              "application": "How do we use it?"
+            }
+          ],
+          "internal_findings": [
+            {
+              "insight": "What do we know about our situation?",
+              "source": "Where did we find this?",
+              "implication": "What does this mean for strategy?"
+            }
+          ],
+          "key_insights": [
+            {
+              "insight": "Combined insight from external + internal",
+              "confidence": "high | medium | low",
+              "action": "What to do about it"
+            }
+          ],
+          "open_questions": [
+            {
+              "question": "What do we still need to know?",
+              "impact": "How critical is this?",
+              "how_to_answer": "Experiment, research, or assumption?"
+            }
+          ]
+        }
+      }
+    },
+
+    "internal_plan": {
+      "description": "Compact outline of strategic approach before full strategy",
+      
+      "structure": {
+        "1_diagnosis": {
+          "current_situation": "Brief summary",
+          "key_problems": ["Problem 1", "Problem 2"],
+          "opportunities": ["Opportunity 1", "Opportunity 2"]
+        },
+        "2_strategy_direction": {
+          "target_audience": "Who",
+          "core_message": "What",
+          "differentiation": "Why us"
+        },
+        "3_channels_and_levers": {
+          "primary_channels": ["Channel 1", "Channel 2"],
+          "secondary_channels": ["Channel 3"],
+          "key_levers": ["Lever 1", "Lever 2"]
+        },
+        "4_key_experiments": {
+          "experiment_1": "What to test",
+          "experiment_2": "What to test"
+        },
+        "5_measurement": {
+          "north_star": "Primary KPI",
+          "leading_indicators": ["Indicator 1", "Indicator 2"]
+        }
+      },
+
+      "usage": "Internal reasoning document, include in output only if requested"
+    },
+
+    "grounding_checklist": {
+      "before_strategy": [
+        "✓ Searched external sources for best practices",
+        "✓ Analyzed internal project context",
+        "✓ Reviewed performance data",
+        "✓ Understood constraints",
+        "✓ Synthesized insights",
+        "✓ Created internal plan"
+      ],
+      "red_flags": [
+        "❌ No external research conducted",
+        "❌ No internal data reviewed",
+        "❌ Generic advice without context",
+        "❌ Tactics without strategy",
+        "❌ Missing measurement plan"
+      ]
+    },
+
+    "automation_opportunities": {
+      "web_search_integration": {
+        "tool": "google_search_api",
+        "use": "Automated external grounding",
+        "implementation": "API calls with structured queries"
+      },
+      "internal_data_retrieval": {
+        "tool": "agent_memory_registry",
+        "use": "Retrieve past campaigns, experiments, insights",
+        "implementation": "Query agent memory namespace"
+      },
+      "competitive_intelligence": {
+        "tool": "similarweb_api | semrush_api",
+        "use": "Automated competitor analysis",
+        "implementation": "API integration for traffic, keywords, ads"
+      }
+    },
+
+    "quality_gates": {
+      "grounding_quality": {
+        "criteria": [
+          "Multiple external sources cited",
+          "Internal data analyzed",
+          "Insights synthesized (not just listed)",
+          "Relevance to task clear",
+          "Action implications defined"
+        ],
+        "minimum_standard": "At least 3 external sources + full internal analysis"
+      }
+    }
+  }
+}

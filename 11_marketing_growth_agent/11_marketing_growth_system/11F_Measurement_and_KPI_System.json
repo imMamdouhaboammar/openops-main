@@ -1,0 +1,404 @@
+{
+  "measurement_kpi_system": {
+    "version": "1.0.0",
+    "description": "Comprehensive KPI and measurement framework for marketing",
+
+    "philosophy": {
+      "principles": [
+        "Measure what matters, not what's easy",
+        "Leading indicators over lagging indicators",
+        "Business outcomes over activity metrics",
+        "Data-informed, not data-driven",
+        "Attribution is directional, not perfect"
+      ]
+    },
+
+    "north_star_metric": {
+      "definition": "The single metric that best captures core value delivered to customers",
+      "characteristics": [
+        "Measures value to customer (not just company)",
+        "Predicts long-term business success",
+        "Actionable and understandable by all",
+        "Leading indicator of revenue/growth"
+      ],
+      "examples_by_business_model": {
+        "saas": "Weekly active users completing core action",
+        "ecommerce": "Number of weekly active buyers",
+        "marketplace": "Successful transactions per period",
+        "media": "Time spent engaged per user per week",
+        "freemium": "Power users (high-frequency users)"
+      },
+      "how_to_find": [
+        "What action best represents value delivery?",
+        "What predicts retention and revenue?",
+        "What can the whole team influence?",
+        "What's not easily gamed?"
+      ]
+    },
+
+    "metric_hierarchy": {
+      "level_1_north_star": {
+        "description": "Top-level metric everyone rallies around",
+        "example": "Weekly active buyers"
+      },
+      "level_2_drivers": {
+        "description": "Metrics that directly drive north star",
+        "example": ["New buyers", "Returning buyers", "Average purchase frequency"]
+      },
+      "level_3_inputs": {
+        "description": "Activities/tactics that drive L2 metrics",
+        "example": ["Traffic", "Conversion rate", "Email open rate", "Retention rate"]
+      },
+      "level_4_diagnostics": {
+        "description": "Detailed metrics for debugging",
+        "example": ["Channel-specific CTR", "Landing page bounce rate", "Checkout abandonment"]
+      }
+    },
+
+    "aarrr_framework": {
+      "description": "Pirate Metrics - Full-funnel KPI framework",
+      "stages": {
+        "awareness": {
+          "definition": "People discover you exist",
+          "key_metrics": [
+            "Impressions",
+            "Reach",
+            "Brand search volume",
+            "Social mentions",
+            "Website visitors"
+          ],
+          "leading_indicators": [
+            "Content distribution reach",
+            "Ad impressions",
+            "Share of voice"
+          ]
+        },
+        "acquisition": {
+          "definition": "People visit your site/app",
+          "key_metrics": [
+            "Website traffic",
+            "New visitors",
+            "Traffic by channel",
+            "Cost per click (CPC)",
+            "Click-through rate (CTR)"
+          ],
+          "leading_indicators": [
+            "Ad spend",
+            "Content publishing cadence",
+            "SEO rankings"
+          ]
+        },
+        "activation": {
+          "definition": "People experience core value",
+          "key_metrics": [
+            "Activation rate (%)",
+            "Time to activation",
+            "Aha moment rate",
+            "Onboarding completion rate"
+          ],
+          "leading_indicators": [
+            "Signup rate",
+            "First action completion",
+            "Tutorial completion"
+          ],
+          "definition_required": "Define what 'activated' means for your product"
+        },
+        "retention": {
+          "definition": "People come back and keep using",
+          "key_metrics": [
+            "Day 1/7/30 retention rates",
+            "Churn rate",
+            "DAU/MAU ratio",
+            "Cohort retention curves"
+          ],
+          "leading_indicators": [
+            "Engagement frequency",
+            "Feature adoption",
+            "Support tickets (inverse)"
+          ]
+        },
+        "revenue": {
+          "definition": "People pay",
+          "key_metrics": [
+            "Conversion rate (free to paid)",
+            "Average revenue per user (ARPU)",
+            "Customer lifetime value (LTV)",
+            "Payback period",
+            "MRR/ARR (for subscriptions)"
+          ],
+          "leading_indicators": [
+            "Trial starts",
+            "Pricing page views",
+            "Demo requests"
+          ]
+        },
+        "referral": {
+          "definition": "People refer others",
+          "key_metrics": [
+            "Net Promoter Score (NPS)",
+            "Referral rate",
+            "Viral coefficient (K-factor)",
+            "Word of mouth mentions"
+          ],
+          "leading_indicators": [
+            "Referral invites sent",
+            "Social shares",
+            "Review submissions"
+          ]
+        }
+      }
+    },
+
+    "marketing_kpis_by_goal": {
+      "brand_awareness": {
+        "primary": ["Brand recall", "Brand search volume", "Share of voice"],
+        "secondary": ["Impressions", "Reach", "Social followers"],
+        "avoid": ["Raw impressions without context", "Follower count alone"]
+      },
+      "lead_generation": {
+        "primary": ["Cost per lead (CPL)", "Lead quality score", "Lead-to-opportunity rate"],
+        "secondary": ["Form submissions", "Demo requests", "Content downloads"],
+        "avoid": ["Total leads without quality filter"]
+      },
+      "customer_acquisition": {
+        "primary": ["Customer acquisition cost (CAC)", "CAC payback period", "LTV:CAC ratio"],
+        "secondary": ["Conversion rate", "Trial-to-paid rate", "Time to convert"],
+        "avoid": ["Signups without activation", "Trials without conversion tracking"]
+      },
+      "engagement_retention": {
+        "primary": ["Retention rate by cohort", "DAU/MAU", "Engagement score"],
+        "secondary": ["Session frequency", "Feature adoption", "Email engagement"],
+        "avoid": ["Pageviews alone", "Time on site without context"]
+      },
+      "revenue_growth": {
+        "primary": ["MRR/ARR growth", "Revenue per customer", "Expansion revenue"],
+        "secondary": ["Upsell rate", "Cross-sell rate", "Price realization"],
+        "avoid": ["Revenue without considering CAC or churn"]
+      }
+    },
+
+    "channel_specific_kpis": {
+      "seo": {
+        "primary": ["Organic traffic", "Keyword rankings (top 10)", "Organic conversion rate"],
+        "secondary": ["Impressions", "CTR", "Backlinks", "Domain authority"],
+        "leading": ["Content published", "Technical issues fixed", "New keywords targeted"]
+      },
+      "paid_search": {
+        "primary": ["ROAS", "CPA", "Conversion rate"],
+        "secondary": ["CTR", "Quality score", "Impression share"],
+        "leading": ["Ad spend", "Bid strategy changes", "New ad variants"]
+      },
+      "paid_social": {
+        "primary": ["ROAS", "CPA", "Cost per click"],
+        "secondary": ["CTR", "CPM", "Frequency", "Relevance score"],
+        "leading": ["Creative tests", "Audience expansion", "Budget allocation"]
+      },
+      "email_marketing": {
+        "primary": ["Email revenue", "Conversion rate", "List growth rate"],
+        "secondary": ["Open rate", "CTR", "Unsubscribe rate"],
+        "leading": ["Send volume", "Segmentation", "Personalization"]
+      },
+      "content_marketing": {
+        "primary": ["Content-sourced pipeline", "Content engagement", "SEO traffic"],
+        "secondary": ["Pageviews", "Time on page", "Social shares"],
+        "leading": ["Publishing cadence", "Topic coverage", "Distribution efforts"]
+      },
+      "social_media_organic": {
+        "primary": ["Engagement rate", "Referral traffic", "Share of voice"],
+        "secondary": ["Follower growth", "Reach", "Impressions"],
+        "leading": ["Post frequency", "Content types", "Community interactions"]
+      }
+    },
+
+    "unit_economics": {
+      "customer_acquisition_cost": {
+        "formula": "Total marketing + sales spend / New customers acquired",
+        "includes": ["Ad spend", "Marketing salaries", "Tools/software", "Agency fees"],
+        "by_channel": "Calculate CAC per channel for optimization",
+        "benchmarks": "Varies by industry, typically $7 (ecommerce) to $1,000+ (enterprise B2B)"
+      },
+      "customer_lifetime_value": {
+        "formula": "(Average purchase value × Purchase frequency × Customer lifespan) - CAC",
+        "simplified": "Average revenue per customer × Gross margin × (1 / Churn rate)",
+        "importance": "Must be significantly higher than CAC (typically 3:1 minimum)"
+      },
+      "ltv_cac_ratio": {
+        "formula": "LTV / CAC",
+        "healthy_ratios": {
+          "3:1": "Minimum viable",
+          "4:1_to_5:1": "Healthy and scalable",
+          "above_5:1": "Potentially under-investing in growth"
+        }
+      },
+      "payback_period": {
+        "formula": "CAC / (Monthly revenue per customer × Gross margin %)",
+        "healthy_periods": {
+          "under_12_months": "Excellent",
+          "12_18_months": "Good",
+          "above_18_months": "Concerning unless very high LTV"
+        }
+      }
+    },
+
+    "attribution_models": {
+      "first_touch": {
+        "definition": "100% credit to first interaction",
+        "use_case": "Understanding top-of-funnel performance",
+        "limitations": "Ignores nurturing touchpoints"
+      },
+      "last_touch": {
+        "definition": "100% credit to last interaction before conversion",
+        "use_case": "Understanding conversion drivers",
+        "limitations": "Ignores awareness touchpoints"
+      },
+      "linear": {
+        "definition": "Equal credit across all touchpoints",
+        "use_case": "When all touchpoints equally important",
+        "limitations": "Doesn't account for varying influence"
+      },
+      "time_decay": {
+        "definition": "More credit to recent touchpoints",
+        "use_case": "When recent interactions matter more",
+        "limitations": "May undervalue awareness stage"
+      },
+      "position_based": {
+        "definition": "40% first touch, 40% last touch, 20% middle",
+        "use_case": "Balanced view of journey",
+        "limitations": "Arbitrary weights"
+      },
+      "data_driven": {
+        "definition": "Algorithmic attribution based on actual contribution",
+        "use_case": "Most accurate when enough data",
+        "limitations": "Requires significant traffic and conversions"
+      },
+      "recommendation": "Use multiple models for complete picture. Attribution is directional, not perfect."
+    },
+
+    "dashboard_design": {
+      "executive_dashboard": {
+        "audience": "Leadership, stakeholders",
+        "metrics": [
+          "North star metric trend",
+          "Revenue/MRR",
+          "CAC and LTV",
+          "Key funnel metrics",
+          "Budget spend vs. target"
+        ],
+        "frequency": "Weekly or monthly"
+      },
+      "marketing_operations_dashboard": {
+        "audience": "Marketing team",
+        "metrics": [
+          "Channel performance",
+          "Campaign ROI",
+          "Lead quality and volume",
+          "Conversion funnel",
+          "Experiment results"
+        ],
+        "frequency": "Daily or weekly"
+      },
+      "channel_specific_dashboards": {
+        "audience": "Channel specialists",
+        "metrics": ["Channel-specific KPIs", "Tactical performance", "Optimization opportunities"],
+        "frequency": "Daily"
+      },
+      "design_principles": [
+        "Most important metric largest and first",
+        "Trends over time, not just snapshots",
+        "Comparisons (vs. target, vs. last period)",
+        "Context (why did it change?)",
+        "Actionable insights, not just data"
+      ]
+    },
+
+    "experimentation_framework": {
+      "statistical_rigor": {
+        "sample_size": "Calculate before running test",
+        "significance_level": "Typically 95% confidence (p < 0.05)",
+        "minimum_detectable_effect": "Smallest change worth detecting",
+        "test_duration": "Until reaching statistical significance AND minimum runtime"
+      },
+      "common_pitfalls": [
+        "Stopping tests too early",
+        "Not accounting for seasonality",
+        "Testing too many variations (sample size issues)",
+        "Ignoring secondary metrics",
+        "Not documenting learnings"
+      ],
+      "experiment_types": {
+        "ab_test": "One variation",
+        "multivariate": "Multiple variations, multiple elements",
+        "sequential": "Test winner vs. new challenger",
+        "holdout": "Measure incremental impact"
+      }
+    },
+
+    "tracking_implementation": {
+      "event_taxonomy": {
+        "naming_convention": "Object_Action (e.g., Button_Clicked, Form_Submitted)",
+        "properties": ["timestamp", "user_id", "source", "campaign", "variant"],
+        "consistency": "Strict naming conventions across team"
+      },
+      "critical_events": [
+        "Page views",
+        "Button clicks",
+        "Form submissions",
+        "Purchases/conversions",
+        "Feature usage",
+        "Errors"
+      ],
+      "tools": {
+        "analytics": ["Google Analytics 4", "Mixpanel", "Amplitude", "Heap"],
+        "tag_management": ["Google Tag Manager", "Segment"],
+        "experimentation": ["Optimizely", "VWO", "Google Optimize"],
+        "attribution": ["Ruler Analytics", "Bizible", "HockeyStack"]
+      }
+    },
+
+    "reporting_cadence": {
+      "daily": {
+        "audience": "Channel specialists",
+        "focus": "Tactical performance, immediate issues",
+        "format": "Dashboard + Slack alerts"
+      },
+      "weekly": {
+        "audience": "Marketing team",
+        "focus": "Channel performance, experiments, optimization",
+        "format": "Dashboard + standup discussion"
+      },
+      "monthly": {
+        "audience": "Leadership",
+        "focus": "Strategic KPIs, budget, ROI",
+        "format": "Executive summary + full dashboard"
+      },
+      "quarterly": {
+        "audience": "Company",
+        "focus": "Strategic review, planning",
+        "format": "Presentation + written summary"
+      }
+    },
+
+    "quality_checklist": {
+      "kpi_selection": [
+        "✓ Aligned with business goals",
+        "✓ Leading and lagging indicators",
+        "✓ Actionable (can influence it)",
+        "✓ Not gameable",
+        "✓ Benchmarked when possible"
+      ],
+      "tracking": [
+        "✓ Events properly instrumented",
+        "✓ QA'd for accuracy",
+        "✓ Documented in tracking plan",
+        "✓ Monitored for data quality"
+      ],
+      "reporting": [
+        "✓ Right audience, right frequency",
+        "✓ Context provided",
+        "✓ Actionable insights",
+        "✓ Trends visible",
+        "✓ Easy to understand"
+      ]
+    }
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "file_name": "06D_StrategIQ_Clarity_Decision_Blueprint.json",
+  "version": "1.0.0",
+  "system": "StrategIQ OS",
+  "module": "Clarity Strategy Engine",
+  "author": "StrategIQ OS by OpenOps Studio | Created by Mamdouh Aboammar",
+  "linkedIn": "https://www.linkedin.com/in/mamdouh-aboammar",
+  "description": "Transforms the Core Question (CQ) extracted from client discovery into a complete strategic skeleton — a decision-oriented blueprint that aligns insights, strategy, and execution in one cohesive flow.",
+  
+  "inputs_required": {
+    "core_question": "The validated single question that defines client’s true need.",
+    "root_cause": "Key behavioral or market tension that fuels the question.",
+    "emotional_drivers": ["Fear", "Hope", "Frustration", "Ambition"],
+    "context_map": ["Market", "Customer", "Cultural", "Internal Dynamics"]
+  },
+
+  "system_logic": {
+    "pipeline": [
+      "Input Validation → Strategic Translation → Hypothesis Framing → Insight Anchoring → Strategy Spine Generation → Tactical Layering → Decision Output"
+    ],
+    "trigger_condition": "core_question.validated == true"
+  },
+
+  "strategic_skeleton": {
+    "stage_1_define": {
+      "name": "Strategic Definition",
+      "objective": "Clarify what decision the strategy must enable.",
+      "template": {
+        "core_question": "{{core_question}}",
+        "decision_to_enable": "What business decision does this answer unlock?",
+        "metric_of_success": "What tangible change defines success?"
+      },
+      "example": {
+        "core_question": "Why are qualified users not converting?",
+        "decision_to_enable": "Refocus messaging and funnel priorities toward trust restoration.",
+        "metric_of_success": "Increase activation rate by 20% in 90 days."
+      }
+    },
+
+    "stage_2_truths": {
+      "name": "Anchor Truths",
+      "objective": "Define 3 truths that simplify the landscape.",
+      "rules": [
+        "Must be non-debatable",
+        "Must directly connect to CQ",
+        "Must inspire strategic direction"
+      ],
+      "template": {
+        "truth_1": "",
+        "truth_2": "",
+        "truth_3": ""
+      },
+      "example": {
+        "truth_1": "Trust is the key conversion variable.",
+        "truth_2": "Users feel financial anxiety during signup.",
+        "truth_3": "Visual proof reduces cognitive friction."
+      }
+    },
+
+    "stage_3_insights": {
+      "name": "Insight Anchoring",
+      "objective": "Convert data and context into usable insights.",
+      "structure": {
+        "insight_statement": "Observation → Meaning → Implication",
+        "categories": ["Market Insight", "Behavioral Insight", "Brand Insight"]
+      },
+      "example": {
+        "Market Insight": "Competitors overpromise ROI — creating skepticism.",
+        "Behavioral Insight": "Users delay commitment when reassurance cues are missing.",
+        "Brand Insight": "Our tone is confident but lacks empathy."
+      }
+    },
+
+    "stage_4_spine": {
+      "name": "Strategy Spine",
+      "objective": "Form the logical bridge from problem to solution.",
+      "logic_formula": "If [Truth], then we must [Strategic Direction], by [Action].",
+      "example": {
+        "input": "If users delay commitment due to lack of reassurance, then we must rebuild trust signals by redesigning the onboarding proof layer."
+      }
+    },
+
+    "stage_5_tactics": {
+      "name": "Tactical Expression",
+      "objective": "Translate strategy into visible next actions.",
+      "structure": {
+        "initiative": "Name of tactical move",
+        "channel": "Where it happens",
+        "metric": "How success is measured",
+        "timeline": "When it should happen"
+      },
+      "example": [
+        {
+          "initiative": "Trust Signal Campaign",
+          "channel": "Landing Page + Paid Retargeting",
+          "metric": "Activation uplift of +15%",
+          "timeline": "Next 30 days"
+        },
+        {
+          "initiative": "Proof-First Messaging",
+          "channel": "Email Nurture + App Onboarding",
+          "metric": "Reduction in churn by 10%",
+          "timeline": "Next 60 days"
+        }
+      ]
+    },
+
+    "stage_6_measure": {
+      "name": "Measurement Blueprint",
+      "objective": "Connect strategy to measurable outcomes.",
+      "kpi_model": {
+        "primary_kpi": "The direct signal of success (e.g., activation, retention)",
+        "secondary_kpi": "Supportive indicator (e.g., CTR, engagement rate)",
+        "confidence_score": "Strategic alignment index (0–1)"
+      },
+      "example": {
+        "primary_kpi": "Activation Rate",
+        "secondary_kpi": "Onboarding Completion %%",
+        "confidence_score": 0.87
+      }
+    }
+  },
+
+  "decision_matrix": {
+    "axes": {
+      "X": "Client Clarity (How clearly the CQ is defined)",
+      "Y": "Strategic Focus (How concentrated the solution is)"
+    },
+    "quadrants": {
+      "A": "High Clarity + High Focus → Precision Strategy (Ideal)",
+      "B": "High Clarity + Low Focus → Needs simplification",
+      "C": "Low Clarity + High Focus → Potential misalignment",
+      "D": "Low Clarity + Low Focus → Reject; restart discovery"
+    }
+  },
+
+  "output_contract": {
+    "format": ["JSON", "Markdown", "PDF"],
+    "required_sections": [
+      "Executive Summary",
+      "Core Question",
+      "Anchor Truths",
+      "Strategic Spine",
+      "Key Tactics",
+      "KPIs & Decision Metrics",
+      "Next Steps"
+    ],
+    "validation_gates": [
+      "Clarity ≥ 0.85",
+      "Relevance ≥ 0.8",
+      "Actionability ≥ 0.75"
+    ]
+  },
+
+  "automation_rules": {
+    "auto_generate_summary": "Yes",
+    "auto_link_to_next_module": "StrategIQ_Tactical_Execution_Engine",
+    "fail_safe": "If confidence_score < 0.75 → trigger re-alignment session",
+    "handoff_to": ["Growth Strategist", "Execution Planner", "Creative Lead"]
+  },
+
+  "final_output_example": {
+    "core_question": "Why are qualified users not converting?",
+    "anchor_truths": [
+      "Trust is missing at the key decision point.",
+      "Our brand tone lacks empathy.",
+      "Competitors overpromise and underdeliver — opportunity to stand out."
+    ],
+    "strategy_spine": "If users hesitate due to low trust, we must rebuild credibility by redesigning proof layers and narrative framing.",
+    "tactics": [
+      "Launch Proof-Layer Landing Page",
+      "Run Empathy-Based Email Series",
+      "Deploy Social Trust Ads"
+    ],
+    "primary_kpi": "Activation rate +20%",
+    "secondary_kpi": "Retention after 7 days +10%",
+    "confidence_score": 0.86
+  }
+}

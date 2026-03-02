@@ -1,0 +1,253 @@
+{
+  "system_name": "Creative Content System",
+  "version": "1.0.0",
+  "status": "active",
+  "description": "نظام متكامل لكتابة المحتوى الإبداعي بالعامية المصرية والسعودية",
+  
+  "agents": {
+    "egyptian_copywriter": {
+      "id": "agent_egyptian_copywriter_001",
+      "name": "Egyptian Copywriter Agent",
+      "role": "content_writer",
+      "dialect": "egyptian",
+      "specializations": [
+        "linkedin_posts",
+        "facebook_content",
+        "twitter_threads",
+        "tech_content",
+        "business_content"
+      ],
+      "style_guide": "/dialects/egyptian/style_guide.md",
+      "activation_trigger": "content_request.dialect === 'egyptian'",
+      "authority_level": "specialist"
+    },
+    
+    "saudi_copywriter": {
+      "id": "agent_saudi_copywriter_001",
+      "name": "Saudi Copywriter Agent",
+      "role": "content_writer",
+      "dialect": "saudi",
+      "specializations": [
+        "corporate_content",
+        "vision_2030_content",
+        "professional_posts",
+        "institutional_messaging"
+      ],
+      "style_guide": "/dialects/saudi/style_guide.md",
+      "activation_trigger": "content_request.dialect === 'saudi'",
+      "authority_level": "specialist"
+    },
+    
+    "creative_director": {
+      "id": "agent_creative_director_001",
+      "name": "Creative Director Agent",
+      "role": "creative_oversight",
+      "responsibilities": [
+        "creative_direction",
+        "quality_assurance",
+        "brand_consistency",
+        "style_enforcement"
+      ],
+      "activation_trigger": "always",
+      "authority_level": "authority",
+      "can_veto": true
+    },
+    
+    "brand_strategist": {
+      "id": "agent_brand_strategist_001",
+      "name": "Brand Strategist Agent",
+      "role": "strategy",
+      "responsibilities": [
+        "brand_alignment",
+        "messaging_framework",
+        "voice_definition",
+        "positioning"
+      ],
+      "activation_trigger": "new_brand || brand_voice_development",
+      "authority_level": "authority"
+    },
+    
+    "social_media_analyst": {
+      "id": "agent_social_analyst_001",
+      "name": "Social Media Analyst Agent",
+      "role": "analysis",
+      "responsibilities": [
+        "trend_monitoring",
+        "competitor_analysis",
+        "performance_tracking",
+        "recommendations"
+      ],
+      "activation_trigger": "research_request || optimization_request",
+      "authority_level": "advisory"
+    }
+  },
+  
+  "engines": {
+    "creative_engine": {
+      "enabled": true,
+      "path": "/engines/creative_engine/",
+      "capabilities": [
+        "ideation",
+        "tone_variation",
+        "hook_generation",
+        "cta_optimization",
+        "narrative_structuring"
+      ],
+      "config_file": "config.json"
+    },
+    
+    "social_research_engine": {
+      "enabled": true,
+      "path": "/engines/social_research_engine/",
+      "capabilities": [
+        "social_listening",
+        "trend_detection",
+        "competitor_tracking",
+        "content_analysis",
+        "pattern_recognition"
+      ],
+      "platforms": ["facebook", "x", "instagram", "linkedin"],
+      "config_file": "config.json"
+    }
+  },
+  
+  "dialects": {
+    "egyptian": {
+      "enabled": true,
+      "path": "/dialects/egyptian/",
+      "style_guide": "style_guide.md",
+      "vocabulary_db": "vocabulary_database.json",
+      "tone_templates": "tone_templates.json",
+      "examples_corpus": "examples_corpus.md"
+    },
+    
+    "saudi": {
+      "enabled": true,
+      "path": "/dialects/saudi/",
+      "style_guide": "style_guide.md",
+      "vocabulary_db": "vocabulary_database.json",
+      "tone_templates": "tone_templates.json",
+      "cultural_context": "cultural_context.json"
+    }
+  },
+  
+  "workflows": {
+    "content_creation": {
+      "enabled": true,
+      "path": "/workflows/content_creation_workflow.json",
+      "steps": [
+        "brief_reception",
+        "research_phase",
+        "creative_development",
+        "quality_control",
+        "optimization",
+        "delivery"
+      ]
+    },
+    
+    "ad_campaign": {
+      "enabled": true,
+      "path": "/workflows/ad_campaign_workflow.json",
+      "steps": [
+        "campaign_brief",
+        "market_research",
+        "creative_concepts",
+        "copy_variations",
+        "ab_testing_setup",
+        "delivery"
+      ]
+    },
+    
+    "caption_generation": {
+      "enabled": true,
+      "path": "/workflows/caption_generation_workflow.json",
+      "steps": [
+        "content_analysis",
+        "caption_generation",
+        "variation_creation",
+        "hashtag_optimization",
+        "delivery"
+      ]
+    }
+  },
+  
+  "quality_control": {
+    "dialect_validator": {
+      "enabled": true,
+      "accuracy_threshold": 0.85
+    },
+    
+    "brand_safety_checker": {
+      "enabled": true,
+      "check_levels": ["content", "tone", "messaging"]
+    },
+    
+    "cultural_sensitivity_validator": {
+      "enabled": true,
+      "dialects": ["egyptian", "saudi"],
+      "sensitivity_level": "high"
+    },
+    
+    "engagement_predictor": {
+      "enabled": true,
+      "confidence_threshold": 0.75
+    }
+  },
+  
+  "integration": {
+    "orchestrator": {
+      "endpoint": "/01_orchestration/",
+      "activation_mode": "on_demand",
+      "reporting": true
+    },
+    
+    "knowledge_bases": {
+      "egyptian_kb": "/knowledge_bases/egyptian_kb/",
+      "saudi_kb": "/knowledge_bases/saudi_kb/"
+    },
+    
+    "analytics": {
+      "enabled": true,
+      "path": "/analytics/",
+      "metrics": [
+        "engagement_rate",
+        "content_quality_score",
+        "dialect_accuracy",
+        "brand_alignment"
+      ]
+    }
+  },
+  
+  "api": {
+    "version": "1.0",
+    "base_path": "/api/v1/creative_content",
+    "endpoints": {
+      "generate_content": "/generate",
+      "analyze_trend": "/analyze/trend",
+      "optimize_copy": "/optimize",
+      "get_recommendations": "/recommendations"
+    },
+    "rate_limiting": {
+      "enabled": true,
+      "requests_per_minute": 60
+    }
+  },
+  
+  "logging": {
+    "enabled": true,
+    "level": "info",
+    "log_file": "/logs/creative_content_system.log",
+    "audit_trail": true
+  },
+  
+  "performance": {
+    "caching": {
+      "enabled": true,
+      "ttl": 3600
+    },
+    "parallel_processing": {
+      "enabled": true,
+      "max_workers": 4
+    }
+  }
+}

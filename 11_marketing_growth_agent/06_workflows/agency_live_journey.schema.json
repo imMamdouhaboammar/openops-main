@@ -1,0 +1,166 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "openops://11_marketing_growth_agent/06_workflows/agency_live_journey.schema.json",
+  "title": "OpenOps Agency Live Journey Schema",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "$schema",
+    "schemaVersion",
+    "generatedAt",
+    "language",
+    "title",
+    "purpose",
+    "actors",
+    "journey",
+    "skills",
+    "grounding",
+    "workflowGraph"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "type": "string" },
+    "generatedAt": { "type": "string" },
+    "language": { "type": "string" },
+    "title": { "type": "string" },
+    "purpose": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["oneLine"],
+      "properties": {
+        "oneLine": { "type": "string" }
+      }
+    },
+    "actors": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["clientRoles", "agencyRoles"],
+      "properties": {
+        "clientRoles": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": ["roleId", "name", "responsibilities"],
+            "properties": {
+              "roleId": { "type": "string" },
+              "name": { "type": "string" },
+              "responsibilities": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        },
+        "agencyRoles": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": ["roleId", "name", "mandate"],
+            "properties": {
+              "roleId": { "type": "string" },
+              "name": { "type": "string" },
+              "mandate": { "type": "string" }
+            }
+          }
+        },
+        "pods": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": ["podId", "roleOwner"],
+            "properties": {
+              "podId": { "type": "string" },
+              "roleOwner": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "journey": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["stages"],
+      "properties": {
+        "stages": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": ["stageId", "name", "objective", "primaryOwnerRoleId"],
+            "properties": {
+              "stageId": { "type": "string" },
+              "name": { "type": "string" },
+              "objective": { "type": "string" },
+              "primaryOwnerRoleId": { "type": "string" },
+              "participants": { "type": "array", "items": { "type": "string" } },
+              "inputs": { "type": "array", "items": { "type": "string" } },
+              "outputs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "required": ["artifactType"],
+                  "properties": {
+                    "artifactType": { "type": "string" },
+                    "handoffTo": { "type": "array", "items": { "type": "string" } }
+                  }
+                }
+              },
+              "decisionGates": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "required": ["gateId", "question"],
+                  "properties": {
+                    "gateId": { "type": "string" },
+                    "question": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "skills": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["specialties"],
+      "properties": {
+        "specialties": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": ["specialtyId", "roleId", "mission"],
+            "properties": {
+              "specialtyId": { "type": "string" },
+              "roleId": { "type": "string" },
+              "mission": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "grounding": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["protocol"],
+      "properties": {
+        "protocol": { "type": "object", "additionalProperties": true }
+      }
+    },
+    "workflowGraph": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["nodes", "edges"],
+      "properties": {
+        "nodes": { "type": "array" },
+        "edges": { "type": "array" }
+      }
+    }
+  }
+}
+

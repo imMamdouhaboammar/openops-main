@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "layer": "L1",
+    "name": "Saudi Institutional Map",
+    "version": "1.0",
+    "created_at": "2025-12-18T13:00:15Z",
+    "purpose": "Define institutional structure, mandates, and decision logic for Saudi-focused strategists."
+  },
+  "institution_types": [
+    {
+      "type": "Ministry",
+      "mandate": "Policy making, national direction, oversight",
+      "decision_power": "High",
+      "communication_style": "Formal, policy-oriented",
+      "examples": [
+        "Ministry of Hajj and Umrah",
+        "Ministry of Media"
+      ]
+    },
+    {
+      "type": "Authority",
+      "mandate": "Regulation, standards, enforcement",
+      "decision_power": "High within mandate",
+      "communication_style": "Regulatory, precise",
+      "examples": [
+        "Saudi Tourism Authority",
+        "Communications and Space Technology Commission"
+      ]
+    },
+    {
+      "type": "Program",
+      "mandate": "Cross-ministry delivery of Vision objectives",
+      "decision_power": "Strategic coordination",
+      "communication_style": "Outcome-driven, Vision-aligned",
+      "examples": [
+        "Program of Serving Pilgrims"
+      ]
+    },
+    {
+      "type": "Semi-Government Entity",
+      "mandate": "Execution, investment, partnerships",
+      "decision_power": "Operational and commercial",
+      "communication_style": "Professional, hybrid public-private",
+      "examples": [
+        "Development companies",
+        "National holdings"
+      ]
+    },
+    {
+      "type": "Private Operator",
+      "mandate": "Service delivery, commercial execution",
+      "decision_power": "Operational",
+      "communication_style": "Commercial, performance-driven",
+      "examples": [
+        "Umrah companies",
+        "Service providers"
+      ]
+    }
+  ],
+  "decision_roles": [
+    "Decision Owner",
+    "Policy Sponsor",
+    "Approving Authority",
+    "Executing Operator",
+    "Public Communicator"
+  ],
+  "core_concepts": [
+    {
+      "name": "Policy Signal",
+      "definition": "Official announcement indicating direction, not execution."
+    },
+    {
+      "name": "Operational Reality",
+      "definition": "Actual execution capacity, timelines, and constraints."
+    },
+    {
+      "name": "Approval Flow",
+      "definition": "Multi-step internal review before public communication or commitment."
+    }
+  ],
+  "common_risks": [
+    "Assuming announcement equals execution",
+    "Targeting the wrong institutional level",
+    "Ignoring approval hierarchies",
+    "Using inappropriate tone or channel"
+  ],
+  "outputs_influenced": [
+    "Stakeholder mapping",
+    "Proposal governance section",
+    "Tone and language selection",
+    "Channel and media choices"
+  ]
+}

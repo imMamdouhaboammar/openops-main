@@ -1,0 +1,379 @@
+{
+    "grounding_sources": {
+        "tier_1_primary": [
+            {
+                "name": "Google",
+                "url": "google.com",
+                "use_for": "Latest practices, current trends, industry news"
+            },
+            {
+                "name": "Reforge",
+                "url": "reforge.com",
+                "use_for": "Growth frameworks, retention, monetization"
+            },
+            {
+                "name": "DigitalMarketer",
+                "url": "digitalmarketer.com",
+                "use_for": "Tactical playbooks, campaigns, funnels"
+            }
+        ],
+        "tier_2_specialized": [
+            {
+                "name": "HubSpot Academy",
+                "url": "academy.hubspot.com",
+                "use_for": "Inbound marketing, content strategy"
+            },
+            {
+                "name": "CXL Institute",
+                "url": "cxl.com",
+                "use_for": "CRO, experimentation, analytics"
+            },
+            {
+                "name": "GrowthHackers",
+                "url": "growthhackers.com",
+                "use_for": "Community insights, case studies"
+            },
+            {
+                "name": "Search Engine Journal",
+                "url": "searchenginejournal.com",
+                "use_for": "SEO updates, algorithm changes"
+            },
+            {
+                "name": "Moz",
+                "url": "moz.com/blog",
+                "use_for": "SEO strategy, link building"
+            }
+        ],
+        "tier_3_platforms": [
+            {
+                "name": "Google Ads Help",
+                "url": "support.google.com/google-ads",
+                "use_for": "Google Ads best practices"
+            },
+            {
+                "name": "Meta Business Help",
+                "url": "business.facebook.com/help",
+                "use_for": "Meta Ads updates, policies"
+            },
+            {
+                "name": "LinkedIn Marketing Solutions",
+                "url": "business.linkedin.com",
+                "use_for": "B2B advertising"
+            },
+            {
+                "name": "TikTok for Business",
+                "url": "business.tiktok.com",
+                "use_for": "TikTok advertising"
+            }
+        ]
+    },
+    "frameworks": {
+        "strategy": {
+            "pirate_metrics": {
+                "name": "AARRR Framework",
+                "author": "Dave McClure",
+                "stages": [
+                    "Awareness",
+                    "Acquisition",
+                    "Activation",
+                    "Retention",
+                    "Revenue",
+                    "Referral"
+                ],
+                "use_for": "Full funnel analysis and optimization"
+            },
+            "jtbd": {
+                "name": "Jobs To Be Done",
+                "author": "Clayton Christensen",
+                "components": [
+                    "Functional job",
+                    "Emotional job",
+                    "Social job",
+                    "Triggers",
+                    "Anxieties"
+                ],
+                "use_for": "Customer motivation analysis"
+            },
+            "value_prop_canvas": {
+                "name": "Value Proposition Canvas",
+                "author": "Strategyzer",
+                "components": [
+                    "Customer profile",
+                    "Value map"
+                ],
+                "use_for": "Product-market fit analysis"
+            },
+            "lean_canvas": {
+                "name": "Lean Canvas",
+                "author": "Ash Maurya",
+                "use_for": "Business model design"
+            }
+        },
+        "growth": {
+            "growth_loops": {
+                "name": "Growth Loops Framework",
+                "source": "Reforge",
+                "types": [
+                    "Content loop",
+                    "Referral loop",
+                    "Paid loop",
+                    "Activation loop"
+                ],
+                "use_for": "Sustainable growth design"
+            },
+            "north_star": {
+                "name": "North Star Metric Framework",
+                "source": "Amplitude",
+                "use_for": "Metric prioritization"
+            },
+            "hook_model": {
+                "name": "Hook Model",
+                "author": "Nir Eyal",
+                "stages": [
+                    "Trigger",
+                    "Action",
+                    "Variable reward",
+                    "Investment"
+                ],
+                "use_for": "Habit-forming products"
+            }
+        },
+        "messaging": {
+            "storybrand": {
+                "name": "StoryBrand Framework",
+                "author": "Donald Miller",
+                "elements": [
+                    "Character",
+                    "Problem",
+                    "Guide",
+                    "Plan",
+                    "CTA",
+                    "Success",
+                    "Failure"
+                ],
+                "use_for": "Brand messaging"
+            },
+            "pas": {
+                "name": "PAS Framework",
+                "full_name": "Problem-Agitate-Solution",
+                "use_for": "Copywriting structure"
+            },
+            "aida": {
+                "name": "AIDA",
+                "stages": [
+                    "Attention",
+                    "Interest",
+                    "Desire",
+                    "Action"
+                ],
+                "use_for": "Sales copy structure"
+            },
+            "before_after_bridge": {
+                "name": "Before-After-Bridge",
+                "use_for": "Transformation messaging"
+            }
+        },
+        "experimentation": {
+            "ice_score": {
+                "name": "ICE Score",
+                "dimensions": [
+                    "Impact",
+                    "Confidence",
+                    "Ease"
+                ],
+                "use_for": "Experiment prioritization"
+            },
+            "rice_score": {
+                "name": "RICE Score",
+                "dimensions": [
+                    "Reach",
+                    "Impact",
+                    "Confidence",
+                    "Effort"
+                ],
+                "use_for": "Feature/experiment prioritization"
+            }
+        },
+        "psychology": {
+            "cialdini": {
+                "name": "Cialdini's Principles",
+                "author": "Robert Cialdini",
+                "principles": [
+                    "Reciprocity",
+                    "Commitment",
+                    "Social proof",
+                    "Authority",
+                    "Liking",
+                    "Scarcity",
+                    "Unity"
+                ],
+                "use_for": "Persuasion design"
+            },
+            "fogg_behavior": {
+                "name": "Fogg Behavior Model",
+                "author": "BJ Fogg",
+                "formula": "B = MAT (Motivation + Ability + Trigger)",
+                "use_for": "Behavior change design"
+            }
+        }
+    },
+    "templates": {
+        "internal_plan": {
+            "sections": [
+                "Diagnosis",
+                "Direction",
+                "Levers",
+                "Experiments",
+                "Measurement"
+            ],
+            "format": "Brief bullet points"
+        },
+        "strategy_output": {
+            "sections": [
+                "Summary",
+                "Internal Plan",
+                "Full Strategy",
+                "Execution",
+                "Experiments",
+                "KPIs",
+                "Next Steps"
+            ]
+        },
+        "campaign_brief": {
+            "sections": [
+                "Objective",
+                "Target audience",
+                "Key messages",
+                "Channels",
+                "Budget",
+                "Timeline",
+                "Success metrics"
+            ]
+        },
+        "experiment_doc": {
+            "sections": [
+                "Hypothesis",
+                "Variation",
+                "Primary metric",
+                "Secondary metrics",
+                "Sample size",
+                "Duration",
+                "Results"
+            ]
+        }
+    },
+    "benchmarks": {
+        "email_marketing": {
+            "open_rate": "20-25% (average)",
+            "click_rate": "2-5% (average)",
+            "conversion_rate": "1-3% (average)",
+            "unsubscribe_rate": "<0.5%"
+        },
+        "paid_media": {
+            "google_search_ctr": "3-5% (branded), 1-2% (non-brand)",
+            "facebook_ctr": "0.9-1.5% (average)",
+            "linkedin_ctr": "0.3-0.5% (average)",
+            "cpm_range": "$5-$15 (varies by platform/audience)"
+        },
+        "seo": {
+            "top_3_target": "60%+ of clicks",
+            "organic_ctr_position_1": "27-32%",
+            "time_to_rank": "3-6 months (competitive)",
+            "content_decay": "Review every 6-12 months"
+        },
+        "conversion": {
+            "landing_page": "2-5% (average)",
+            "ecommerce": "2-3% (average)",
+            "saas_trial_to_paid": "10-25%",
+            "checkout_abandonment": "65-70% (normal)"
+        },
+        "retention": {
+            "d1_retention_good": ">40%",
+            "d7_retention_good": ">20%",
+            "d30_retention_good": ">10%",
+            "monthly_churn_saas": "3-5% (good)"
+        }
+    },
+    "hooks_library": {
+        "pain_hooks": [
+            "Tired of [pain point]?",
+            "Stop wasting time on [frustration]",
+            "Why is [problem] so hard?",
+            "Struggling with [challenge]?",
+            "Frustrated by [situation]?"
+        ],
+        "desire_hooks": [
+            "Imagine if you could [dream state]",
+            "What would you do with [benefit]?",
+            "Ready to [aspirational outcome]?",
+            "Want to [desirable action] in [timeframe]?",
+            "Finally [achieve goal] without [pain]"
+        ],
+        "curiosity_hooks": [
+            "What if I told you [surprising truth]?",
+            "The secret that [impressive group] use...",
+            "Most people don't know this about [topic]...",
+            "Here's what [experts] won't tell you...",
+            "The #1 mistake [target audience] makes..."
+        ],
+        "contrarian_hooks": [
+            "Everyone thinks [common belief], but...",
+            "We did the opposite and [result]",
+            "Stop doing [popular thing]",
+            "Why [popular advice] is wrong",
+            "[Counter-intuitive truth] about [topic]"
+        ],
+        "story_hooks": [
+            "I used to [struggle], then...",
+            "Three years ago, we almost [failure]...",
+            "Here's what happened when [action]...",
+            "My biggest mistake was [lesson]...",
+            "The moment everything changed..."
+        ],
+        "social_proof_hooks": [
+            "Join [X] companies who...",
+            "[Number] customers can't be wrong",
+            "Trusted by teams at [logos]",
+            "Rated #1 by [authority]",
+            "Used by [impressive list]"
+        ]
+    },
+    "arabic_resources": {
+        "dialects": {
+            "egyptian": {
+                "characteristics": "Informal, warm, relatable",
+                "audience": "Egypt, understood across MENA",
+                "common_expressions": [
+                    "ازيك",
+                    "تمام",
+                    "يلا",
+                    "خلينا",
+                    "عارف إيه"
+                ]
+            },
+            "saudi_gulf": {
+                "characteristics": "Formal-informal mix, local references",
+                "audience": "Saudi Arabia, UAE, Qatar, Kuwait, Bahrain",
+                "common_expressions": [
+                    "وش لونك",
+                    "كيفك",
+                    "يالله",
+                    "حلو",
+                    "أبشر"
+                ]
+            },
+            "msa": {
+                "characteristics": "Formal, professional, universal",
+                "audience": "Pan-Arab, corporate, official",
+                "use_for": "Official communications, formal content"
+            }
+        },
+        "cultural_calendar": {
+            "ramadan": "High engagement period, sensitivity required",
+            "eid_al_fitr": "Gift-giving, celebration themes",
+            "eid_al_adha": "Family, sacrifice, travel themes",
+            "saudi_national_day": "September 23, patriotic content",
+            "uae_national_day": "December 2, celebration"
+        }
+    }
+}

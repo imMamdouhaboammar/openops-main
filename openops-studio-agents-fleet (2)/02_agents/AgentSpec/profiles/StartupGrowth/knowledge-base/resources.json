@@ -1,0 +1,295 @@
+{
+    "upgradiq_table": {
+        "description": "UpgradIQ Startup Table - Complete operating map for startup building (Pre-Seed → Exit)",
+        "total_elements": "100+",
+        "stages": 7,
+        "last_updated": "2026-01-10",
+        "source": "UpgradIQ Framework",
+        "image_reference": "/uploaded_image_1768059746566.png"
+    },
+    "stage_elements": {
+        "foundation_blue": {
+            "stage_name": "Foundation (Pre-Seed)",
+            "color": "Blue",
+            "elements": {
+                "PRC": "Problem-Solution Fit",
+                "CSD": "Customer Discovery",
+                "MKS": "Market Sizing",
+                "VLP": "Value Proposition",
+                "SLF": "Solution Fit",
+                "USR": "User Research",
+                "PBV": "Problem Behavior Validation",
+                "SAR": "Strategic Alignment & Resources",
+                "RLE": "Roles & Lean Execution",
+                "MPD": "Minimum Product Definition",
+                "ASM": "Assumptions Mapping",
+                "BMD": "Business Model Design",
+                "BRN": "Brand Narrative"
+            }
+        },
+        "growth_systems_green": {
+            "stage_name": "Growth Systems (Seed)",
+            "color": "Green",
+            "elements": {
+                "ORS": "Onboarding & Retention Systems",
+                "CHF": "Channel Fit",
+                "ACE": "Acquisition Engine",
+                "LCD": "Lead Capture & Development",
+                "RTS": "Retention Systems",
+                "RVX": "Revenue Systems",
+                "PDS": "Product Development Systems",
+                "FTP": "Funnel & Tracking Platform",
+                "RMS": "Revenue Model & Systems",
+                "EXV": "Exchange of Value",
+                "DIN": "Distribution & Integration Networks",
+                "PST": "Pricing Strategy & Tactics",
+                "ATL": "Activation & Trial Logic",
+                "TCD": "Tech & Customer Data",
+                "PMT": "Product Market Traction",
+                "SRD": "Sales & Revenue Development"
+            }
+        },
+        "operations_performance_yellow": {
+            "stage_name": "Operations & Performance (Series A Prep)",
+            "color": "Yellow",
+            "elements": {
+                "RLE": "Roles & Responsibilities",
+                "SCB": "Scorecards & Benchmarks",
+                "DGV": "Data Governance",
+                "OPM": "Operations Management",
+                "PRD": "Product Roadmap & Development",
+                "EXC": "Executive Capacity",
+                "CTC": "Customer Success & Tech Stack",
+                "EXS": "Expansion Strategy",
+                "STO": "Sales & Territory Operations",
+                "FCL": "Financial Controls",
+                "ARD": "Annual Resource & Development",
+                "RMF": "Risk Management Framework",
+                "PCS": "Portfolio Construction & Strategy",
+                "UNE": "Unit Economics Evaluation"
+            }
+        },
+        "critical_decisions_red": {
+            "stage_name": "Critical Decisions (Series A)",
+            "color": "Red",
+            "elements": {
+                "DST": "Decisioning Strategy & Tools",
+                "BYT": "Build vs Buy Tactics",
+                "VLG": "Velocity & Leverage Goals",
+                "DLS": "Deal Size & Leverage Strategy",
+                "NGC": "Negotiation & Customer Relations",
+                "BDA": "Business Development & Alliances",
+                "TRP": "Territory & Regional Positioning",
+                "PEX": "Pricing & Expansion"
+            }
+        },
+        "market_product_fit_purple": {
+            "stage_name": "Market & Product Fit (Series B Prep)",
+            "color": "Purple",
+            "elements": {
+                "IVT": "Innovation & Value Transformation",
+                "MKF": "Market Fit & Feedback",
+                "RKP": "Roadmap & Key Priorities",
+                "PFL": "Product-Feature Lifecycle",
+                "CPS": "Competitive Positioning Strategy",
+                "FDS": "Feature Development & Selection",
+                "LGS": "Localization & Go-to-Market Strategy",
+                "RGF": "Revenue Growth & Forecasting",
+                "BRN": "Brand & Reputation Narrative",
+                "PSB": "Pricing Strategy & Bundles",
+                "PTF": "Product Transformation & Features",
+                "GOD": "Go-to-Market Operations & Delivery",
+                "LPT": "Loyalty Programs & Tactics",
+                "VNV": "Value Network & Ventures",
+                "FNE": "Financing & New Economics",
+                "IND": "Innovation & Design",
+                "TRK": "Tracking & Reporting Key Indicators",
+                "FMT": "Forecasting Models & Trends",
+                "CPC": "Customer & Partner Communities",
+                "FCL": "Financial Controls & Leverage"
+            }
+        },
+        "advanced_operations_brown": {
+            "stage_name": "Advanced Operations (Series B+)",
+            "color": "Brown/Dark",
+            "elements": {
+                "DLS": "Deal Lifecycle & Sales",
+                "FAS": "Financial Accounting & Systems",
+                "MRA": "Market Research & Analytics",
+                "IVC": "Investor & VC Relations",
+                "DUD": "Due Diligence & Documentation",
+                "CKS": "Compliance & Knowledge Systems",
+                "DAP": "Data & Privacy Architecture",
+                "PTC": "Pricing & Total Cost",
+                "CPD": "Content & Product Development",
+                "GVS": "Governance & Voting Systems",
+                "VAC": "Valuation & Cap Table",
+                "PMN": "Portfolio Management & Navigation",
+                "FON": "Financial Operations & Networks",
+                "RKM": "Risk Management",
+                "EXT": "Exit Timing & Strategy",
+                "RDT": "Returns Distribution & Tracking"
+            }
+        },
+        "investor_perspective_cyan": {
+            "stage_name": "Investor Stages",
+            "color": "Cyan",
+            "early_investment": {
+                "PRV": "Portfolio Review & Valuation",
+                "USG": "Unit Economics & Growth",
+                "RTP": "Returns & Time to Profit"
+            },
+            "growth_investment": {
+                "PCS": "Portfolio Construction & Strategy",
+                "UNE": "Unit Economics Evaluation",
+                "CHT": "Cap Table & Holding",
+                "FND": "Fund Dynamics",
+                "CNM": "Co-investment & Network Management",
+                "SLM": "Scenario & Liquidity Modeling",
+                "OPR": "Operations & Portfolio Review",
+                "TMS": "Thesis & Market Signals",
+                "IVN": "Investment Navigation",
+                "FRP": "Follow-on & Reserve Planning",
+                "RSD": "Risk & Scenario Distribution",
+                "RKM": "Risk Management",
+                "EXT": "Exit Timing",
+                "RDT": "Returns Distribution & Tracking"
+            }
+        }
+    },
+    "benchmarks_2026": {
+        "pre_seed": {
+            "funding_range_mena": "$100K-$500K",
+            "timeline": "6-12 months",
+            "validation_interviews": "50+",
+            "mvp_status": "Launched",
+            "early_traction": "10-50 paying customers OR 1000+ active users"
+        },
+        "seed": {
+            "funding_range_mena": "$1M-$3M",
+            "funding_range_international": "$2M-$5M",
+            "mrr_target": "$10K-$50K",
+            "team_size": "5-15",
+            "cac_payback": "<18 months",
+            "retention_m3": ">40%",
+            "timeline_to_series_a": "18-24 months"
+        },
+        "series_a": {
+            "funding_range_mena": "$5M-$15M",
+            "funding_range_international": "$10M-$30M",
+            "arr_target": "$1M-$3M",
+            "team_size": "15-50",
+            "cac_payback": "<12 months",
+            "gross_margin": ">70%",
+            "nrr": ">110%",
+            "magic_number": ">0.75",
+            "timeline_to_series_b": "24-36 months"
+        },
+        "series_b": {
+            "funding_range": "$20M-$50M+",
+            "arr_target": "$10M-$30M+",
+            "team_size": "50-150+",
+            "rule_of_40": ">40%",
+            "gross_dollar_retention": ">90%",
+            "market_share_target": ">15% in defined segment"
+        }
+    },
+    "mena_adjustments": {
+        "saudi_gcc": {
+            "timeline_multiplier": "1.2-1.3x (20-30% longer)",
+            "b2g_sales_cycle": "12-18 months",
+            "relationship_building_critical": true,
+            "vision_2030_priority_sectors": [
+                "Fintech",
+                "Tourism",
+                "Logistics",
+                "Edtech",
+                "Healthtech"
+            ]
+        },
+        "egypt": {
+            "timeline_multiplier": "1.3-1.4x (30-40% longer)",
+            "pricing_vs_gcc": "20-30% of Saudi pricing",
+            "capital_scarcity": "Higher reliance on international VCs",
+            "scale_advantage": "104M population",
+            "infrastructure_challenges": [
+                "Payment systems",
+                "Logistics/last-mile",
+                "Currency volatility"
+            ]
+        }
+    },
+    "frameworks": {
+        "lean_startup": {
+            "author": "Eric Ries",
+            "relevance": "Pre-Seed → Seed",
+            "key_concepts": [
+                "Build-Measure-Learn",
+                "MVP",
+                "Pivot or Persevere"
+            ]
+        },
+        "blitzscaling": {
+            "author": "Reid Hoffman",
+            "relevance": "Series A → Series B",
+            "key_concepts": [
+                "Speed over efficiency",
+                "Distribution before product perfection"
+            ]
+        },
+        "crossing_the_chasm": {
+            "author": "Geoffrey Moore",
+            "relevance": "Seed → Series A",
+            "key_concepts": [
+                "Early adopters vs. Early majority",
+                "Whole product solution"
+            ]
+        },
+        "zero_to_one": {
+            "author": "Peter Thiel",
+            "relevance": "Pre-Seed",
+            "key_concepts": [
+                "Monopoly thinking",
+                "10x better",
+                "Contrarian truths"
+            ]
+        },
+        "traction": {
+            "author": "Gabriel Weinberg",
+            "relevance": "Seed → Series A",
+            "key_concepts": [
+                "19 traction channels",
+                "Bullseye framework"
+            ]
+        },
+        "mom_test": {
+            "author": "Rob Fitzpatrick",
+            "relevance": "Pre-Seed",
+            "key_concepts": [
+                "Customer interviews done right",
+                "Avoid false positives"
+            ]
+        }
+    },
+    "case_studies": {
+        "note": "Placeholder for MENA startup case studies across stages",
+        "categories": [
+            "Saudi B2C Success",
+            "Egyptian Scale Play",
+            "GCC B2G Winner",
+            "Regional Expansion",
+            "Failed Premature Scaling",
+            "Successful Pivot"
+        ]
+    },
+    "investor_thesis_database": {
+        "note": "Database of 100+ VC thesis across MENA",
+        "categories": [
+            "Saudi VCs",
+            "UAE VCs",
+            "Egypt VCs",
+            "International VCs (MENA-active)",
+            "Sector-specific funds"
+        ]
+    }
+}

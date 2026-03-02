@@ -1,0 +1,122 @@
+{
+  "engine_name": "Measurement & Signal Tracking Engine",
+  "version": "1.0",
+  "region_focus": ["Egypt", "GCC", "MENA"],
+  "depends_on": [
+    "02_intent_mapping_framework.json",
+    "04_touchpoint_architecture_engine.md",
+    "05_bridge_content_protocol.md",
+    "07_orchestration_logic_engine.json"
+  ],
+
+  "purpose": "Track psychological progression, buying committee exposure, and intent acceleration instead of vanity metrics.",
+
+  "core_principle": "In High-Ticket strategy, we measure movement in certainty — not just clicks.",
+
+  "measurement_layers": {
+
+    "layer_1_intent_progression_tracking": {
+      "goal": "Detect movement between intent stages.",
+      "signals": [
+        "Repeated brand search",
+        "Time-on-page depth increase",
+        "Content type progression (education → validation)",
+        "Return visits",
+        "Multiple asset consumption"
+      ],
+      "output": "Intent acceleration score",
+      "rule": "If content consumption complexity increases, intent is maturing."
+    },
+
+    "layer_2_committee_penetration_tracking": {
+      "goal": "Measure exposure across buying committee roles.",
+      "signals": [
+        "Multiple stakeholders visiting site",
+        "Different job titles engaging with content",
+        "Email forwards within same domain",
+        "LinkedIn profile diversity engagement"
+      ],
+      "output": "Committee coverage score",
+      "rule": "No deal probability increase without multi-role engagement."
+    },
+
+    "layer_3_touchpoint_effectiveness": {
+      "goal": "Evaluate which touchpoints move accounts forward.",
+      "metrics": {
+        "presence": ["brand search lift", "direct traffic growth"],
+        "education": ["deep content scroll depth", "whitepaper completion rate"],
+        "validation": ["case study engagement time", "video completion"],
+        "human": ["executive profile visits", "direct interaction replies"],
+        "conversion": ["meeting requests", "proposal downloads"]
+      },
+      "rule": "A touchpoint is effective only if it increases next-stage progression."
+    },
+
+    "layer_4_bridge_performance": {
+      "goal": "Ensure stage transitions are frictionless.",
+      "signals": [
+        "Education-to-validation transition rate",
+        "Case study to meeting conversion rate",
+        "Proposal to negotiation ratio"
+      ],
+      "warning_flag": "High drop between stages indicates missing or weak bridge."
+    },
+
+    "layer_5_risk_reduction_tracking": {
+      "goal": "Measure perceived risk decline.",
+      "signals": [
+        "Pricing page visits after validation",
+        "FAQ consumption before demo",
+        "Security documentation downloads",
+        "Compliance asset engagement"
+      ],
+      "interpretation": "If financial and compliance assets are consumed, trust is building."
+    }
+  },
+
+  "account_level_kpis": {
+    "account_awareness_score": "Composite of brand search, direct visits, and multi-asset exposure.",
+    "committee_engagement_score": "Number of unique stakeholders interacting.",
+    "intent_velocity_score": "Time taken to move between stages.",
+    "bridge_efficiency_ratio": "Stage transition percentage.",
+    "risk_reduction_index": "Engagement with reassurance content."
+  },
+
+  "regional_adjustments": {
+    "egypt": {
+      "weighting": "Human interaction and direct communication signals carry higher weight."
+    },
+    "saudi_arabia": {
+      "weighting": "Committee diversity and compliance engagement carry higher weight."
+    },
+    "uae": {
+      "weighting": "Speed of stage transition and structured asset consumption carry higher weight."
+    }
+  },
+
+  "vanity_metrics_to_ignore": [
+    "Impressions without progression",
+    "Clicks without multi-touch exposure",
+    "Lead form submissions without committee mapping",
+    "High CTR without next-stage movement"
+  ],
+
+  "early_warning_signals": [
+    "High education consumption but zero validation engagement",
+    "Single-role engagement only",
+    "Proposal requests without human exposure",
+    "Pricing interest before trust signals"
+  ],
+
+  "feedback_loop": {
+    "frequency": "Weekly account-level review",
+    "action_if_stalled": [
+      "Insert additional bridge",
+      "Increase validation assets",
+      "Deploy executive-level human touchpoint",
+      "Reclassify intent stage"
+    ]
+  },
+
+  "final_rule": "Measurement must track psychological certainty accumulation, not traffic volume."
+}

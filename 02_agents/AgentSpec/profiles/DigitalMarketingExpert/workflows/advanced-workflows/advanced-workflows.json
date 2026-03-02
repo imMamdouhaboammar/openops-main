@@ -1,0 +1,272 @@
+{
+  "version": "2.0",
+  "workflow_registry": [
+    {
+      "id": "campaign-orchestration",
+      "name": "Campaign Orchestration Pipeline",
+      "type": "composite",
+      "phases": 3,
+      "duration_hours": "8-48",
+      "complexity": "medium-high",
+      "stages": [
+        {
+          "name": "Brief & Strategy",
+          "duration": "8-12h",
+          "steps": 3,
+          "checkpoints": ["market_intel_complete", "strategy_approved", "budget_approved"]
+        },
+        {
+          "name": "Content Creation",
+          "duration": "24-48h",
+          "steps": 4,
+          "checkpoints": ["copy_ready", "design_ready", "ab_variants_ready", "final_approval"]
+        },
+        {
+          "name": "Launch & Monitoring",
+          "duration": "ongoing",
+          "steps": 5,
+          "checkpoints": ["launch_ready", "monitoring_active", "daily_reviews", "crisis_protocol_ready"]
+        }
+      ],
+      "quality_gates": [
+        "brand_compliance",
+        "cultural_sensitivity",
+        "platform_compliance",
+        "performance_validation"
+      ],
+      "outputs": {
+        "strategy": "strategy_document",
+        "content": ["copy", "design", "variants"],
+        "dashboard": "realtime_performance",
+        "report": "campaign_analysis"
+      },
+      "attribution": {
+        "copyright": "© OpenOps Studio",
+        "created_by": "Mamdouh Aboammar"
+      }
+    },
+    {
+      "id": "multi-market-expansion",
+      "name": "Multi-Market Expansion Workflow (Saudi → GCC)",
+      "type": "composite",
+      "phases": 3,
+      "duration_days": "5-14",
+      "complexity": "high",
+      "stages": [
+        {
+          "name": "Market Assessment",
+          "duration": "3-5d",
+          "steps": 3,
+          "markets": ["UAE", "Kuwait", "Qatar", "Bahrain", "Oman"],
+          "focus": "localization_planning"
+        },
+        {
+          "name": "Localized Development",
+          "duration": "5-7d",
+          "steps": 3,
+          "focus": "content_adaptation"
+        },
+        {
+          "name": "Multi-Market Execution",
+          "duration": "ongoing",
+          "steps": 3,
+          "stagger_days": "1-2 days between market launches"
+        }
+      ],
+      "localization_dimensions": [
+        "dialect_adaptation",
+        "visual_adaptation",
+        "pricing_currency",
+        "regulatory_compliance",
+        "influencer_mapping"
+      ],
+      "attribution": {
+        "copyright": "© OpenOps Studio",
+        "created_by": "Mamdouh Aboammar"
+      }
+    },
+    {
+      "id": "influencer-marketing-automation",
+      "name": "Influencer Marketing Automation",
+      "type": "composite",
+      "phases": 3,
+      "duration_days": "10-28",
+      "complexity": "high",
+      "stages": [
+        {
+          "name": "Discovery & Vetting",
+          "duration": "5-10d",
+          "steps": 4,
+          "vetting_criteria": {
+            "follower_range": "macro_micro_nano",
+            "engagement_target": ">3%",
+            "authenticity_check": "required",
+            "compliance": "saudi_media_ministry_licensed"
+          }
+        },
+        {
+          "name": "Campaign Execution",
+          "duration": "5-14d",
+          "steps": 4,
+          "deliverables": ["posts", "stories", "reels", "live_sessions"]
+        },
+        {
+          "name": "Long-Term Partnerships",
+          "duration": "quarterly-ongoing",
+          "steps": 2,
+          "programs": ["ambassador_program", "community_building"]
+        }
+      ],
+      "performance_metrics": [
+        "reach",
+        "engagement_rate",
+        "promo_code_usage",
+        "click_through_rate",
+        "roi_calculation"
+      ],
+      "attribution": {
+        "copyright": "© OpenOps Studio",
+        "created_by": "Mamdouh Aboammar"
+      }
+    },
+    {
+      "id": "social-commerce",
+      "name": "Social Commerce Workflow",
+      "type": "composite",
+      "phases": 3,
+      "duration_days": "7-30+",
+      "complexity": "high",
+      "stages": [
+        {
+          "name": "Setup & Integration",
+          "duration": "3-5d",
+          "steps": 2,
+          "platforms": ["tiktok_shop", "instagram_shopping", "snapchat_ar", "whatsapp_catalog"]
+        },
+        {
+          "name": "Content Creation",
+          "duration": "ongoing",
+          "steps": 3,
+          "content_types": [
+            "shoppable_reels",
+            "tiktok_shop_videos",
+            "ar_try_on",
+            "live_shopping",
+            "unboxing_reviews"
+          ]
+        },
+        {
+          "name": "Campaign Activation",
+          "duration": "ongoing",
+          "steps": 4,
+          "optimization_frequency": "4-hourly"
+        }
+      ],
+      "commerce_metrics": {
+        "conversion_rate": "by_product",
+        "average_order_value": "aov",
+        "return_rate": "quality_indicator",
+        "customer_acquisition_cost": "cac",
+        "customer_lifetime_value": "clv"
+      },
+      "inventory_integration": true,
+      "payment_gateways": ["cod", "online_payment"],
+      "attribution": {
+        "copyright": "© OpenOps Studio",
+        "created_by": "Mamdouh Aboammar"
+      }
+    },
+    {
+      "id": "crisis-management",
+      "name": "Crisis Management & Real-Time Response",
+      "type": "reactive",
+      "response_time": "< 30 minutes",
+      "complexity": "high",
+      "phases": 4,
+      "stages": [
+        {
+          "name": "Detection",
+          "triggers": [
+            "negative_sentiment_spike",
+            "viral_negative_post",
+            "regulatory_alert",
+            "competitor_attack",
+            "internal_breach",
+            "system_outage",
+            "influencer_controversy"
+          ],
+          "channels": ["social_listening", "news_alerts", "stakeholder_notifications", "support_escalations"]
+        },
+        {
+          "name": "Assessment",
+          "duration_minutes": "< 30",
+          "severity_levels": [
+            "level_1_green",
+            "level_2_yellow",
+            "level_3_orange",
+            "level_4_red"
+          ]
+        },
+        {
+          "name": "Response",
+          "response_strategies": {
+            "level_1": "no_public_response",
+            "level_2": "community_response",
+            "level_3": "public_statement",
+            "level_4": "full_crisis_activation"
+          }
+        },
+        {
+          "name": "Resolution",
+          "duration_days": "3-7",
+          "post_mortem": "1-2 weeks after"
+        }
+      ],
+      "escalation_authority": ["pr_director", "legal_team", "executive_team"],
+      "attribution": {
+        "copyright": "© OpenOps Studio",
+        "created_by": "Mamdouh Aboammar"
+      }
+    }
+  ],
+  "quality_gates": {
+    "brand_compliance": {
+      "voice_alignment": true,
+      "visual_consistency": true,
+      "legal_review": true,
+      "regulatory_check": true
+    },
+    "cultural_sensitivity": {
+      "dialect_appropriateness": true,
+      "religious_respect": true,
+      "gender_sensitivity": true,
+      "local_references": true
+    },
+    "platform_compliance": {
+      "video_specs": true,
+      "text_length": true,
+      "hashtag_guidelines": true,
+      "disclosure_requirements": true
+    },
+    "performance_validation": {
+      "engagement_tracking": true,
+      "roi_preliminary": true,
+      "sentiment_baseline": true,
+      "crisis_monitoring": true
+    }
+  },
+  "integration_points": {
+    "upstream": ["campaign_brief", "market_research", "asset_inventory", "influencer_database"],
+    "downstream": ["campaign_execution", "realtime_dashboards", "crisis_alerts", "analytics_reports"],
+    "peer_agents": ["market_research_agent", "content_creator_agent", "performance_analyst_agent"]
+  },
+  "attribution": {
+    "copyright": "© OpenOps Studio",
+    "framework": "Strategic and Execution Framework",
+    "created_by": "Mamdouh Aboammar",
+    "linkedin": "https://www.linkedin.com/in/mamdouh-aboammar",
+    "email": "me@mamdouhaboammar.com",
+    "whatsapp": "https://wa.me/+201092677269"
+  },
+  "last_updated": "2026-01-13"
+}

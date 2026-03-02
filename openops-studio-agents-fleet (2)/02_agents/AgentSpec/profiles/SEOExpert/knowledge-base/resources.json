@@ -1,0 +1,83 @@
+{
+    "knowledge_base": {
+        "version": "1.0.0",
+        "last_updated": "2026-01-10"
+    },
+    "resources": [
+        {
+            "id": "seo-aeo-geo-frameworks",
+            "name": "SEO/AEO/GEO Frameworks & Benchmarks",
+            "file_path": "knowledge-base/seo-aeo-geo-frameworks.md",
+            "topics": [
+                "AI Search trends",
+                "Core Web Vitals",
+                "AEO best practices",
+                "GEO strategies",
+                "Arabic SEO benchmarks",
+                "Hajj/Umrah industry data"
+            ]
+        }
+    ],
+    "external_sources": [
+        {
+            "name": "Google Search Central",
+            "url": "https://developers.google.com/search",
+            "type": "official",
+            "focus": [
+                "SEO guidelines",
+                "Algorithm updates",
+                "Core Web Vitals",
+                "Search documentation"
+            ]
+        },
+        {
+            "name": "Schema.org",
+            "url": "https://schema.org/",
+            "type": "technical",
+            "focus": [
+                "Structured data",
+                "Schema types",
+                "JSON-LD examples"
+            ]
+        },
+        {
+            "name": "Ahrefs Blog (Arabic SEO)",
+            "url": "https://ahrefs.com/blog/arabic-seo/",
+            "type": "industry",
+            "focus": [
+                "Arabic keyword research",
+                "RTL optimization",
+                "Middle East SEO"
+            ]
+        },
+        {
+            "name": "Search Engine Journal",
+            "url": "https://www.searchenginejournal.com/",
+            "type": "industry",
+            "focus": [
+                "SEO news",
+                "Algorithm updates",
+                "Case studies"
+            ]
+        }
+    ],
+    "benchmarks_2025": {
+        "core_web_vitals": {
+            "lcp": "<2.5 seconds",
+            "inp": "<200 milliseconds",
+            "cls": "<0.1"
+        },
+        "zero_click_searches": "40-50%",
+        "voice_search_adoption": "30%+",
+        "arabic_market": {
+            "speakers": "420M+",
+            "web_content_percentage": "3%",
+            "mobile_traffic": "60-70%"
+        },
+        "hajj_umrah_search_volume": {
+            "hajj_packages": "100K-500K annual",
+            "umrah_packages": "200K-1M annual",
+            "how_to_perform_hajj": "500K+ annual"
+        }
+    }
+}

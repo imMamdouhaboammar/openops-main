@@ -1,0 +1,26 @@
+{
+  "system_interlink_map": {
+    "version": "1.0",
+    "description": "Defines the mandatory file dependencies for each operational phase.",
+    "links": {
+      "Phase_Plan": {
+        "primary_driver": "03_Product_and_PRD_Master_Framework.md",
+        "required_checks": ["00_Constitution.md", "06_Security_Gates.md"]
+      },
+      "Phase_Research": {
+        "primary_driver": "04_Research_and_Competitive_Intelligence.md",
+        "output_format": "04A_Research_Templates.json"
+      },
+      "Phase_Blueprint": {
+        "primary_driver": "05_Architecture_and_Data_Systems.md",
+        "ux_dependency": "08_UX_Design_System.md",
+        "tracking_dependency": "07_Tracking_Analytics.md"
+      },
+      "Phase_Execution": {
+        "primary_driver": "09_PromptKit_and_Tooling.md",
+        "validation_rule": "01_Orchestration_Engine.md#QA_Round"
+      }
+    },
+    "enforcement": "If a phase is active, its 'primary_driver' rules OVERRIDE general rules."
+  }
+}

@@ -1,0 +1,244 @@
+# ==========================================================
+# StrategIQ Competitive Research Engine (CRE)
+# Process Flow Visualization Map v1.0.0
+# ==========================================================
+# © StrategIQ OS by OpenOps Studio | Created by Mamdouh Aboammar
+# LinkedIn: https://www.linkedin.com/in/mamdouh-aboammar
+# ==========================================================
+
+system:
+  name: StrategIQ Competitive Research Engine (CRE)
+  version: 1.0.0
+  category: "Intelligence & Research Automation"
+  integration_layer: "StrategIQ OS Core → Research & Intelligence Framework"
+  author: "Mamdouh Aboammar"
+  description: >
+    A multi-agent research process that conducts deep competitive analysis,
+    validates data through scoring and QA, detects market blindspots, and
+    produces executive-grade intelligence reports for decision-making.
+
+# ----------------------------------------------------------
+# 1. PROCESS NODES OVERVIEW
+# ----------------------------------------------------------
+
+nodes:
+  - id: N1
+    name: Request Intake
+    type: trigger
+    description: >
+      The Orchestrator receives a research request. The system classifies intent and scope
+      (competitive, market, behavioral, or product-related). CRE activates automatically when
+      evidence-based competitive analysis is required.
+    next: [N2]
+
+  - id: N2
+    name: Intent Clarification
+    agent: ResearchSupervisorAgent
+    description: >
+      Clarify research goals, unknowns, and required outputs. Define what business decision the
+      research must influence.
+    inputs: [user_brief, project_scope]
+    outputs: [research_intent, hypothesis_outline]
+    next: [N3]
+
+  - id: N3
+    name: Research Brief Compilation
+    agent: ResearchBriefCompiler
+    description: >
+      Build the structured research blueprint: define hypotheses, questions, sources, and metrics.
+    inputs: [research_intent]
+    outputs: [research_brief]
+    next: [N4]
+
+  - id: N4
+    name: Data Gathering Loop
+    agent: SourceAccessProxy
+    description: >
+      Retrieve data from multi-layered sources using verified access adapters:
+      Crunchbase, SimilarWeb, LinkedIn Talent Graph, Reddit, Analyst Reports.
+    inputs: [research_brief]
+    outputs: [raw_data_bundle, source_metadata]
+    next: [N5]
+
+  - id: N5
+    name: Evidence Scoring & Filtering
+    agent: DataEvidenceScoringModel
+    description: >
+      Apply evidence scoring logic: trustworthiness, recency, relevance, and signal strength.
+      Discard weak or unverified data (< 0.75 confidence).
+    inputs: [raw_data_bundle]
+    outputs: [scored_dataset]
+    next: [N6]
+
+  - id: N6
+    name: Insight Synthesis & Gap Detection
+    agent: IntelligenceSignalAggregator
+    description: >
+      Synthesize validated evidence into insights. Detect hidden opportunities,
+      anomalies, or strategic blindspots competitors missed.
+    inputs: [scored_dataset]
+    outputs: [insight_map, gap_summary]
+    next: [N7]
+
+  - id: N7
+    name: QA & Contradiction Analysis
+    agent: ResearchQAEvaluator
+    description: >
+      Apply contradiction checks, verify citations, run red-team review among skeptic agents.
+      Resolve conflicts through trust-score rebalancing.
+    inputs: [insight_map, scored_dataset]
+    outputs: [qa_log, validation_score]
+    next: [N8]
+
+  - id: N8
+    name: Report Generation
+    agent: ReportSynthesizer
+    description: >
+      Compile all findings into the final executive dossier: competitor matrix, pricing model,
+      behavioral signals, and actionable recommendations.
+    inputs: [insight_map, gap_summary, qa_log]
+    outputs: [final_report, summary_brief]
+    next: [N9]
+
+  - id: N9
+    name: Validation & Handoff
+    agent: QA_Gate
+    description: >
+      Validate through three layers: Data Integrity, Security & Privacy, and Strategic Relevance.
+      Handoff only if QA score ≥ 0.8.
+    inputs: [final_report]
+    outputs: [handoff_package]
+    next: [N10]
+
+  - id: N10
+    name: Distribution
+    agent: HandoffManager
+    description: >
+      Distribute approved reports to key personas: Growth Strategist, Product Manager,
+      and Marketing Systems Architect.
+    inputs: [handoff_package]
+    outputs: [confirmation_log]
+    next: [N11]
+
+  - id: N11
+    name: Archival & Learning Loop
+    agent: ResearchMemoryAgent
+    description: >
+      Archive findings, extract reusable knowledge (patterns, signals, frameworks),
+      and push back learnings to internal KB for future research acceleration.
+    inputs: [final_report]
+    outputs: [knowledge_entry, archive_log]
+    end: true
+
+# ----------------------------------------------------------
+# 2. LAYERS & AGENTS
+# ----------------------------------------------------------
+
+layers:
+  - name: "Strategic Intelligence Layer"
+    contains: [N1, N2, N3]
+    agents: [ResearchSupervisorAgent, ResearchBriefCompiler]
+    purpose: "Framing intent, hypotheses, and objectives before data collection."
+
+  - name: "Evidence & Analysis Layer"
+    contains: [N4, N5, N6]
+    agents: [SourceAccessProxy, DataEvidenceScoringModel, IntelligenceSignalAggregator]
+    purpose: "Gathering, validating, and transforming raw data into insights."
+
+  - name: "Validation & Delivery Layer"
+    contains: [N7, N8, N9, N10]
+    agents: [ResearchQAEvaluator, ReportSynthesizer, QA_Gate, HandoffManager]
+    purpose: "Quality assurance, synthesis, and dissemination of validated insights."
+
+  - name: "Knowledge Feedback Layer"
+    contains: [N11]
+    agents: [ResearchMemoryAgent]
+    purpose: "Store lessons, frameworks, and verified insights for reuse."
+
+# ----------------------------------------------------------
+# 3. DATAFLOW MAPPING
+# ----------------------------------------------------------
+
+dataflow:
+  sequence:
+    - user_brief → N1
+    - N1.research_intent → N2
+    - N2.hypothesis_outline → N3
+    - N3.research_brief → N4
+    - N4.raw_data_bundle → N5
+    - N5.scored_dataset → N6
+    - N6.insight_map → N7
+    - N7.qa_log → N8
+    - N8.final_report → N9
+    - N9.handoff_package → N10
+    - N10.final_report → N11
+
+  visual_hint:
+    style: "directed_graph"
+    direction: "LR"
+    color_code:
+      trigger: "#00BFA5"
+      data_processing: "#0288D1"
+      analysis: "#7B1FA2"
+      validation: "#C2185B"
+      delivery: "#388E3C"
+      learning: "#FBC02D"
+
+# ----------------------------------------------------------
+# 4. VALIDATION GATES
+# ----------------------------------------------------------
+
+validation_gates:
+  - id: G1
+    name: Security & Privacy Gate
+    rules:
+      - Ensure no personal data extraction
+      - Verify data source consent alignment
+      - Mask sensitive identifiers
+  - id: G2
+    name: Evidence Integrity Gate
+    rules:
+      - Minimum evidence trust_score >= 0.75
+      - Cross-verify 3 independent sources
+      - Reject unverifiable citations
+  - id: G3
+    name: Strategic Relevance Gate
+    rules:
+      - Must affect a live or upcoming business decision
+      - All insights must map to actionable recommendations
+      - Any fluff or vanity metric invalidates output
+
+# ----------------------------------------------------------
+# 5. OUTPUT CONTRACT
+# ----------------------------------------------------------
+
+output_contract:
+  formats: ["JSON", "PDF", "Markdown"]
+  default_sections:
+    - Executive Summary
+    - Market Context
+    - Competitor Landscape
+    - Positioning Matrix
+    - Behavioral Insights
+    - Technology Stack
+    - Gaps and Opportunities
+    - Recommended Actions
+  validation_requirements:
+    qa_score_min: 0.8
+    evidence_confidence_min: 0.75
+    citations_minimum: 3
+
+# ----------------------------------------------------------
+# 6. SYSTEM BEHAVIOR NOTES
+# ----------------------------------------------------------
+
+behavior_notes:
+  - "CRE is an insight-generating intelligence system, not a summarizer."
+  - "It must show causal reasoning between data and strategic outcomes."
+  - "If insufficient data, it halts execution and requests clarification."
+  - "If contradictions persist, it flags risks instead of resolving arbitrarily."
+  - "Every final report includes a confidence_score and QA validation metadata."
+
+# ==========================================================
+# END OF FILE
+# ==========================================================

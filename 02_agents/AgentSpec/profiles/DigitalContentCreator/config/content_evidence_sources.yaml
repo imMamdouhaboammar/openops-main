@@ -1,0 +1,376 @@
+content_evidence_sources:
+  description: "Evidence source tiers and requirements for content creation"
+  version: "1.0.0"
+  
+  source_tiers:
+    tier_a:
+      name: "Official & Academic Sources"
+      trust_score_range: [0.95, 0.98]
+      description: "Highest credibility sources - official documentation and peer-reviewed research"
+      
+      sources:
+        platform_official_docs:
+          examples:
+            - "Meta Business Help Center"
+            - "Instagram for Business"
+            - "TikTok Business Center"
+            - "LinkedIn Marketing Solutions"
+            - "Twitter Business"
+            - "YouTube Creator Academy"
+          use_for:
+            - "Platform algorithm updates"
+            - "Feature announcements"
+            - "Best practices from platform"
+            - "Character limits and specs"
+        
+        academic_research:
+          examples:
+            - "Peer-reviewed journals (Journal of Marketing, etc.)"
+            - "University research papers"
+            - "Behavioral psychology studies"
+            - "Consumer behavior research"
+          use_for:
+            - "Psychological principles"
+            - "Persuasion techniques"
+            - "Human behavior patterns"
+            - "Decision-making processes"
+        
+        industry_standards:
+          examples:
+            - "AP Stylebook"
+            - "Chicago Manual of Style"
+            - "Content Marketing Institute standards"
+          use_for:
+            - "Writing standards"
+            - "Grammar rules"
+            - "Formatting guidelines"
+    
+    tier_b:
+      name: "Reputable Marketing Research"
+      trust_score_range: [0.80, 0.90]
+      description: "Established marketing research and platform case studies"
+      
+      sources:
+        marketing_research:
+          examples:
+            - "HubSpot Research"
+            - "Content Marketing Institute"
+            - "Social Media Examiner"
+            - "Hootsuite Insights"
+            - "Sprout Social Data"
+          use_for:
+            - "Industry benchmarks"
+            - "Engagement statistics"
+            - "Best posting times"
+            - "Content performance data"
+        
+        platform_case_studies:
+          examples:
+            - "Meta Success Stories"
+            - "Instagram Business Case Studies"
+            - "LinkedIn Marketing Case Studies"
+            - "TikTok For Business Success Stories"
+          use_for:
+            - "Campaign strategies"
+            - "Real-world results"
+            - "Industry-specific tactics"
+            - "ROI examples"
+        
+        established_books:
+          examples:
+            - "Ogilvy on Advertising"
+            - "Scientific Advertising (Hopkins)"
+            - "The Boron Letters (Halbert)"
+            - "Everybody Writes (Handley)"
+            - "Made to Stick (Heath)"
+          use_for:
+            - "Copywriting principles"
+            - "Storytelling techniques"
+            - "Persuasion frameworks"
+            - "Content strategy"
+    
+    tier_c:
+      name: "Practitioner Insights"
+      trust_score_range: [0.75, 0.85]
+      description: "Expert practitioners and industry reports"
+      
+      sources:
+        practitioner_insights:
+          examples:
+            - "Neil Patel blog"
+            - "Ann Handley content"
+            - "Seth Godin blog"
+            - "Gary Vaynerchuk insights"
+            - "Jay Baer content"
+          use_for:
+            - "Tactical advice"
+            - "Trend observations"
+            - "Creative approaches"
+            - "Industry commentary"
+        
+        industry_reports:
+          examples:
+            - "Buffer State of Social"
+            - "Salesforce State of Marketing"
+            - "Edelman Trust Barometer"
+            - "We Are Social reports"
+          use_for:
+            - "Trend data"
+            - "Platform usage stats"
+            - "Demographic insights"
+            - "Regional differences"
+        
+        brand_case_studies:
+          examples:
+            - "Published brand campaigns"
+            - "Award-winning content"
+            - "Viral campaign analyses"
+          use_for:
+            - "Creative inspiration"
+            - "Execution examples"
+            - "Format ideas"
+    
+    tier_d:
+      name: "Community Discussions"
+      trust_score_range: [0.30, 0.40]
+      description: "Social discussions and anecdotal evidence - context only, not confirmations"
+      
+      sources:
+        social_discussions:
+          examples:
+            - "Reddit (r/marketing, r/socialmedia)"
+            - "Twitter discussions"
+            - "LinkedIn conversations"
+            - "Facebook groups"
+          use_for:
+            - "Qualitative context"
+            - "Practitioner experiences"
+            - "Trend signals"
+            - "Pain point discovery"
+          
+          important_note: "NEVER counts as confirmation. Context only."
+        
+        anecdotal_evidence:
+          examples:
+            - "Individual blog posts"
+            - "Personal experiences"
+            - "Unverified claims"
+          use_for:
+            - "Hypothesis generation"
+            - "Areas to investigate"
+          
+          important_note: "Must be verified with higher-tier sources"
+  
+  evidence_requirements:
+    critical_claims:
+      description: "Claims that significantly impact strategy or results"
+      confirmations_required: 3
+      minimum_tier: "tier_b"
+      
+      examples:
+        - "Platform algorithm changes"
+        - "Best posting times for engagement"
+        - "Engagement rate benchmarks"
+        - "Character length impact on performance"
+        - "Hashtag strategy effectiveness"
+        - "Video vs image performance"
+      
+      validation_process:
+        - "Find ≥3 independent sources"
+        - "At least 2 must be Tier B or higher"
+        - "Sources must not cite each other"
+        - "Check publication/access dates"
+    
+    best_practices:
+      description: "Recommended approaches and tactics"
+      confirmations_required: 2
+      minimum_tier: "tier_c"
+      
+      examples:
+        - "Caption length recommendations"
+        - "Hashtag count suggestions"
+        - "Content formatting tips"
+        - "Emoji usage guidelines"
+        - "CTA placement recommendations"
+      
+      validation_process:
+        - "Find ≥2 independent sources"
+        - "At least 1 must be Tier C or higher"
+        - "Check for consensus"
+        - "Note any contradictions"
+    
+    creative_approaches:
+      description: "Storytelling techniques and creative methods"
+      confirmations_required: 1
+      minimum_tier: "tier_c"
+      
+      examples:
+        - "Hook formulas"
+        - "Storytelling structures"
+        - "Emotional triggers"
+        - "Persuasion techniques"
+        - "Content frameworks"
+      
+      validation_process:
+        - "Find ≥1 credible source"
+        - "Tier C or higher"
+        - "Verify with brand examples if possible"
+    
+    platform_specifications:
+      description: "Technical platform requirements"
+      confirmations_required: 1
+      minimum_tier: "tier_a"
+      
+      examples:
+        - "Character limits"
+        - "Image dimensions"
+        - "Video length limits"
+        - "File size limits"
+        - "Supported formats"
+      
+      validation_process:
+        - "Always use official platform docs"
+        - "Verify current as of date"
+        - "Check for recent updates"
+  
+  recency_rules:
+    platform_specific:
+      decay_days: 90
+      reason: "Platform algorithms and features change frequently"
+      applies_to:
+        - "Algorithm updates"
+        - "Feature changes"
+        - "Best practices"
+        - "Engagement patterns"
+      
+      action_if_outdated:
+        - "Search for updated information"
+        - "Check official platform announcements"
+        - "Note information may be outdated"
+        - "Reduce confidence score"
+    
+    general_psychology:
+      decay_days: 730
+      reason: "Human psychology and behavior are relatively stable"
+      applies_to:
+        - "Persuasion principles"
+        - "Cognitive biases"
+        - "Emotional triggers"
+        - "Decision-making patterns"
+      
+      action_if_outdated:
+        - "Principles likely still valid"
+        - "Check for cultural shifts"
+        - "Verify with recent examples"
+    
+    cultural_trends:
+      decay_days: 180
+      reason: "Cultural trends and language evolve moderately"
+      applies_to:
+        - "Slang and expressions"
+        - "Cultural references"
+        - "Trending topics"
+        - "Social movements"
+      
+      action_if_outdated:
+        - "Verify current relevance"
+        - "Check for language evolution"
+        - "Update cultural references"
+    
+    regional_data:
+      decay_days: 365
+      reason: "Regional market data changes annually"
+      applies_to:
+        - "Market statistics"
+        - "Demographic data"
+        - "Platform usage by region"
+        - "Consumer behavior patterns"
+      
+      action_if_outdated:
+        - "Search for recent regional reports"
+        - "Note data year"
+        - "Acknowledge potential changes"
+  
+  citation_format:
+    inline_citation:
+      format: "[Claim] (Source, Date)"
+      example: "Instagram posts with 1-3 hashtags get the highest engagement (Hootsuite, 2025)"
+    
+    reference_list:
+      format: |
+        **Sources:**
+        - [Source Name] - [Specific Article/Page] - [Publish Date] - [Access Date] - [URL]
+      example: |
+        **Sources:**
+        - Meta Business Help Center - Instagram Best Practices - 2025-01-15 - 2026-02-16 - https://business.facebook.com/...
+        - HubSpot Research - Social Media Benchmarks 2025 - 2025-02-01 - 2026-02-16 - https://hubspot.com/...
+    
+    confidence_notation:
+      high_confidence: "✓✓✓ (3+ Tier B+ sources, <90 days old)"
+      medium_confidence: "✓✓ (2+ Tier C+ sources, <180 days old)"
+      low_confidence: "✓ (1 source or outdated)"
+      unverified: "⚠️ (No verification, hypothesis only)"
+  
+  special_cases:
+    egyptian_market_data:
+      preferred_sources:
+        - "We Are Social Egypt reports"
+        - "Statista Egypt data"
+        - "Local market research firms"
+        - "Platform-specific Egypt data"
+      
+      challenges:
+        - "Limited Egypt-specific research"
+        - "Often need to extrapolate from MENA data"
+        - "Rely more on practitioner insights"
+      
+      approach:
+        - "Use MENA data as baseline"
+        - "Adjust for Egypt-specific factors"
+        - "Validate with local practitioners"
+        - "Note assumptions clearly"
+    
+    egyptian_dialect_content:
+      preferred_sources:
+        - "Successful Egyptian brand content"
+        - "High-engagement Egyptian influencers"
+        - "Egyptian cultural references"
+      
+      validation:
+        - "Check with native speakers when possible"
+        - "Review successful examples"
+        - "Verify cultural appropriateness"
+    
+    emerging_platforms:
+      approach:
+        - "Official platform docs (if available)"
+        - "Early adopter insights (Tier C)"
+        - "Note experimental nature"
+        - "Lower confidence scores"
+      
+      caution:
+        - "Best practices not yet established"
+        - "Rapid changes expected"
+        - "Test and iterate approach"
+  
+  quality_control:
+    before_using_evidence:
+      - "Verify source tier"
+      - "Check publication date"
+      - "Confirm relevance to claim"
+      - "Check for conflicts of interest"
+      - "Verify source still accessible"
+    
+    when_sources_conflict:
+      - "Prioritize higher-tier sources"
+      - "Prioritize more recent sources"
+      - "Look for consensus"
+      - "Note the conflict"
+      - "Test both approaches if possible"
+    
+    when_no_evidence_found:
+      - "Acknowledge lack of evidence"
+      - "State as hypothesis"
+      - "Recommend testing"
+      - "Lower confidence score"
+      - "Don't make unsupported claims"

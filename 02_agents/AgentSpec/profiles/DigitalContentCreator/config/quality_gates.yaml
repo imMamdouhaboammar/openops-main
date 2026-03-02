@@ -1,0 +1,384 @@
+quality_gates:
+  description: "Systematic quality control gates for content creation"
+  version: "1.0.0"
+  
+  gates:
+    clarity_gate:
+      name: "Clarity & Comprehension Gate"
+      target_score: 0.95
+      priority: "critical"
+      
+      checks:
+        understandable_by_target_audience:
+          description: "Content is easily understood by the target demographic"
+          weight: 0.30
+          evaluation_criteria:
+            - "Uses vocabulary appropriate for audience education level"
+            - "Avoids unexplained technical jargon"
+            - "Sentence structure matches audience reading level"
+        
+        main_message_clear_in_first_3_seconds:
+          description: "Primary message is immediately apparent"
+          weight: 0.30
+          evaluation_criteria:
+            - "Hook clearly states benefit or captures attention"
+            - "First sentence communicates core value"
+            - "No buried lede"
+        
+        no_confusing_jargon:
+          description: "Industry terms are explained or avoided"
+          weight: 0.20
+          evaluation_criteria:
+            - "Technical terms defined when necessary"
+            - "Acronyms spelled out on first use"
+            - "Complex concepts simplified"
+        
+        logical_flow:
+          description: "Ideas progress naturally and coherently"
+          weight: 0.20
+          evaluation_criteria:
+            - "Smooth transitions between ideas"
+            - "Logical argument progression"
+            - "Clear beginning, middle, end"
+      
+      failure_action: "revise_for_clarity"
+      failure_message: "Content does not meet clarity standards. Revising for better comprehension."
+    
+    brand_alignment_gate:
+      name: "Brand Voice & Identity Gate"
+      target_score: 0.90
+      priority: "critical"
+      
+      checks:
+        matches_brand_voice_profile:
+          description: "Tone and style align with brand voice"
+          weight: 0.35
+          evaluation_criteria:
+            - "Tone matches brand personality (professional/casual/humorous)"
+            - "Writing style consistent with brand guidelines"
+            - "Formality level appropriate"
+        
+        uses_approved_terminology:
+          description: "Uses brand-preferred language and avoids forbidden terms"
+          weight: 0.25
+          evaluation_criteria:
+            - "No forbidden words or phrases"
+            - "Uses brand-preferred terminology"
+            - "Avoids competitor mentions (unless strategic)"
+        
+        aligns_with_brand_values:
+          description: "Content reflects brand values and positioning"
+          weight: 0.25
+          evaluation_criteria:
+            - "Messaging aligns with brand values"
+            - "Positioning is consistent"
+            - "No contradictions with brand identity"
+        
+        consistent_with_previous_content:
+          description: "Maintains consistency with existing content library"
+          weight: 0.15
+          evaluation_criteria:
+            - "Voice consistency with past content"
+            - "Similar topics handled similarly"
+            - "No jarring style shifts"
+      
+      failure_action: "realign_with_brand"
+      failure_message: "Content does not align with brand voice. Adjusting to match brand identity."
+    
+    audience_relevance_gate:
+      name: "Audience Targeting & Relevance Gate"
+      target_score: 0.90
+      priority: "critical"
+      
+      checks:
+        addresses_audience_pain_points:
+          description: "Content speaks to audience problems or desires"
+          weight: 0.30
+          evaluation_criteria:
+            - "Acknowledges specific pain points"
+            - "Offers relevant solutions"
+            - "Demonstrates understanding of audience challenges"
+        
+        uses_audience_language:
+          description: "Employs vocabulary and expressions familiar to audience"
+          weight: 0.25
+          evaluation_criteria:
+            - "Uses audience's terminology"
+            - "Appropriate dialect (if applicable)"
+            - "References audience understands"
+        
+        references_audience_context:
+          description: "Acknowledges audience's situation and environment"
+          weight: 0.25
+          evaluation_criteria:
+            - "Relevant to audience's daily life"
+            - "Considers audience's constraints"
+            - "Acknowledges audience's goals"
+        
+        appropriate_for_demographic:
+          description: "Suitable for target age, location, and interests"
+          weight: 0.20
+          evaluation_criteria:
+            - "Age-appropriate content"
+            - "Culturally relevant"
+            - "Matches audience sophistication level"
+      
+      failure_action: "retarget_audience"
+      failure_message: "Content not optimally targeted to audience. Adjusting for better relevance."
+    
+    platform_optimization_gate:
+      name: "Platform & Format Optimization Gate"
+      target_score: 1.0
+      priority: "high"
+      
+      checks:
+        within_character_limits:
+          description: "Respects platform character/word limits"
+          weight: 0.30
+          evaluation_criteria:
+            - "Instagram: ≤2,200 characters (optimal: 125-150)"
+            - "Twitter: ≤280 characters"
+            - "Facebook: ≤400 characters (optimal for engagement)"
+            - "LinkedIn: ≤1,300 characters (optimal)"
+            - "TikTok: ≤150 characters"
+          platform_limits:
+            instagram_caption: 2200
+            instagram_optimal: 150
+            twitter: 280
+            facebook_optimal: 400
+            linkedin_optimal: 1300
+            tiktok: 150
+        
+        follows_platform_best_practices:
+          description: "Adheres to platform-specific conventions"
+          weight: 0.30
+          evaluation_criteria:
+            - "Hashtag usage appropriate for platform"
+            - "CTA placement optimized"
+            - "Format matches platform norms"
+          platform_practices:
+            instagram:
+              - "Hashtags at end or in first comment"
+              - "Line breaks for readability"
+              - "Emoji usage encouraged"
+            linkedin:
+              - "Professional tone"
+              - "Minimal hashtags (3-5)"
+              - "Paragraph breaks for readability"
+            twitter:
+              - "Front-load key message"
+              - "1-2 hashtags maximum"
+              - "Thread-friendly structure"
+            tiktok:
+              - "Hook in first 3 words"
+              - "Trending hashtags"
+              - "Call to action clear"
+        
+        optimized_for_mobile_if_needed:
+          description: "Mobile-friendly formatting when platform is mobile-first"
+          weight: 0.20
+          evaluation_criteria:
+            - "Short paragraphs (2-3 lines)"
+            - "Scannable structure"
+            - "Emoji for visual breaks"
+          mobile_first_platforms:
+            - instagram
+            - tiktok
+            - snapchat
+        
+        includes_platform_specific_elements:
+          description: "Leverages platform-unique features"
+          weight: 0.20
+          evaluation_criteria:
+            - "Instagram: Mentions, hashtags, emoji"
+            - "LinkedIn: Professional insights, data"
+            - "Twitter: Threads, polls, mentions"
+            - "TikTok: Trending sounds, challenges"
+      
+      failure_action: "optimize_for_platform"
+      failure_message: "Content not optimized for platform. Adjusting format and structure."
+    
+    cultural_appropriateness_gate:
+      name: "Cultural Sensitivity & Appropriateness Gate"
+      target_score: 1.0
+      priority: "critical"
+      
+      checks:
+        culturally_sensitive:
+          description: "Respects cultural norms and values"
+          weight: 0.30
+          evaluation_criteria:
+            - "No cultural stereotypes"
+            - "Respects local customs"
+            - "Appropriate for cultural context"
+          regional_considerations:
+            egypt:
+              - "Conservative values respected"
+              - "Family-oriented messaging"
+              - "Ramadan/Eid awareness"
+            gcc:
+              - "Islamic values respected"
+              - "Gender-appropriate content"
+              - "Modest imagery references"
+        
+        avoids_stereotypes:
+          description: "No stereotypical representations"
+          weight: 0.25
+          evaluation_criteria:
+            - "No gender stereotypes"
+            - "No cultural clichés"
+            - "No age-based assumptions"
+        
+        respects_religious_context:
+          description: "Appropriate for religious sensitivities"
+          weight: 0.25
+          evaluation_criteria:
+            - "No religious insensitivity"
+            - "Ramadan/religious holidays respected"
+            - "Prayer times considered (if time-sensitive)"
+          religious_considerations:
+            - "Avoid scheduling during prayer times"
+            - "Ramadan: Focus on family, charity, spirituality"
+            - "Eid: Celebratory, joyful messaging"
+            - "No alcohol/pork references in MENA content"
+        
+        appropriate_for_region:
+          description: "Suitable for target geographic region"
+          weight: 0.20
+          evaluation_criteria:
+            - "Local references accurate"
+            - "Regional language appropriate"
+            - "Local events/trends acknowledged"
+      
+      failure_action: "cultural_review"
+      failure_message: "Content requires cultural sensitivity review. Adjusting for appropriateness."
+    
+    evidence_gate:
+      name: "Evidence & Accuracy Gate"
+      target_score: 1.0
+      priority: "high"
+      
+      checks:
+        claims_have_citations:
+          description: "Factual claims are backed by sources"
+          weight: 0.30
+          evaluation_criteria:
+            - "Statistics cited"
+            - "Research referenced"
+            - "Expert quotes attributed"
+          citation_requirements:
+            critical_claims:
+              - "≥3 independent confirmations"
+              - "Minimum Tier B sources"
+            best_practices:
+              - "≥2 confirmations"
+              - "Minimum Tier C sources"
+        
+        sources_are_credible:
+          description: "Sources meet credibility standards"
+          weight: 0.25
+          evaluation_criteria:
+            - "Tier A/B sources for critical claims"
+            - "Official platform docs for platform claims"
+            - "Academic sources for psychology claims"
+          source_tiers:
+            tier_a:
+              trust_score: 0.95-0.98
+              examples:
+                - "Platform official docs"
+                - "Academic research"
+                - "Industry standards"
+            tier_b:
+              trust_score: 0.80-0.90
+              examples:
+                - "Reputable marketing research"
+                - "Platform case studies"
+                - "Established books"
+            tier_c:
+              trust_score: 0.75-0.85
+              examples:
+                - "Practitioner insights"
+                - "Industry reports"
+                - "Brand case studies"
+            tier_d:
+              trust_score: 0.30-0.40
+              examples:
+                - "Social discussions"
+                - "Anecdotal evidence"
+              note: "Context only, not confirmations"
+        
+        data_is_current:
+          description: "Information is up-to-date"
+          weight: 0.25
+          evaluation_criteria:
+            - "Platform-specific: <90 days old"
+            - "General psychology: <2 years old"
+            - "Cultural trends: <6 months old"
+          recency_requirements:
+            platform_specific:
+              decay_days: 90
+              reason: "Algorithms change frequently"
+            general_psychology:
+              decay_days: 730
+              reason: "Human psychology stable"
+            cultural_trends:
+              decay_days: 180
+              reason: "Trends evolve moderately"
+        
+        statistics_are_accurate:
+          description: "Numbers and data are correct"
+          weight: 0.20
+          evaluation_criteria:
+            - "Statistics verified"
+            - "Percentages calculated correctly"
+            - "Comparisons are fair"
+      
+      failure_action: "add_evidence"
+      failure_message: "Claims require evidence or verification. Adding citations and sources."
+
+  gate_execution_order:
+    - clarity_gate
+    - brand_alignment_gate
+    - audience_relevance_gate
+    - platform_optimization_gate
+    - cultural_appropriateness_gate
+    - evidence_gate
+  
+  failure_handling:
+    critical_gate_failure:
+      action: "halt_and_revise"
+      description: "If a critical gate fails, content must be revised before proceeding"
+      
+    high_gate_failure:
+      action: "revise_and_recheck"
+      description: "If a high priority gate fails, revise and re-evaluate"
+      
+    multiple_failures:
+      action: "full_revision"
+      description: "If 3+ gates fail, perform complete content revision"
+  
+  reporting:
+    gate_report_format:
+      gate_name: "string"
+      status: "passed | failed"
+      score: "float (0.0-1.0)"
+      target_score: "float (0.0-1.0)"
+      failed_checks: "array of check names"
+      recommendations: "array of improvement suggestions"
+    
+    overall_quality_score:
+      calculation: "weighted average of all gate scores"
+      weights:
+        clarity_gate: 0.25
+        brand_alignment_gate: 0.25
+        audience_relevance_gate: 0.20
+        platform_optimization_gate: 0.15
+        cultural_appropriateness_gate: 0.10
+        evidence_gate: 0.05
+      
+      thresholds:
+        excellent: 0.95
+        good: 0.90
+        acceptable: 0.85
+        needs_improvement: 0.80
+        unacceptable: "<0.80"

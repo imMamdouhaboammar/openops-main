@@ -1,0 +1,57 @@
+{
+  "envelopeVersion": "1.0.0",
+  "taskId": "TASK-CLINIC-BRAND-IDENTITY-0001",
+  "mode": "operator",
+  "podId": "POD-CREATIVE",
+  "authorization": {
+    "supervisorToken": "SUPERVISOR_TOKEN_EXAMPLE_ONLY",
+    "expiresAt": "2026-01-24T13:00:00Z",
+    "idempotencyKey": "idem-2026-01-24-clinic-brand-0001"
+  },
+  "objective": "Create a minimum viable brand kit + template pack for a local dermatology clinic without violating medical advertising constraints.",
+  "context": {
+    "clientType": "clinic",
+    "clientName": "Example Dermatology Clinic",
+    "location": "Single location",
+    "primarySurface": "WhatsApp booking",
+    "timeHorizonDays": 30
+  },
+  "inputs": {
+    "brief": "Clinic wants +30% qualified bookings in 90 days; no tracking installed; must avoid exaggerated claims.",
+    "availableAssets": ["logo: none", "photos: limited", "reviews: some", "doctorCredentials: yes"],
+    "competitors": ["Competitor A", "Competitor B", "Competitor C"]
+  },
+  "constraints": {
+    "deadline": "2026-01-31T18:00:00Z",
+    "compliance": {
+      "noGuarantees": true,
+      "noExaggeratedBeforeAfter": true,
+      "preferProofFrameworks": ["process", "credentials", "reviews", "safety"]
+    },
+    "budget": { "maxSpend": 0, "currency": "USD" },
+    "scope": {
+      "inScope": ["brand hygiene", "voice and tone", "template pack", "creative QA checklist"],
+      "outOfScope": ["full rebrand naming project", "print signage redesign"]
+    }
+  },
+  "expectedOutputs": [
+    "Brand identity brief (filled)",
+    "Positioning line + proof pillars",
+    "Voice & tone guide (do/don't)",
+    "Visual direction (photo/video/design notes)",
+    "Template pack spec (social + ads)",
+    "Brand QA checklist (clinic-safe)"
+  ],
+  "qualityGates": [
+    "Complies with clinic constraints (no guarantees, conservative proof)",
+    "Templates enable fast production without rework",
+    "Voice/tone consistent across ads + WhatsApp scripts"
+  ],
+  "approvalGates": [
+    "Client approves positioning and proof pillars",
+    "Client approves visual direction",
+    "Client approves template pack"
+  ],
+  "returnFormat": "artifact_plus_decisions"
+}
+

@@ -1,0 +1,14 @@
+You are onboarding a casual dining restaurant (single location, dine-in + delivery).
+
+Constraints:
+- Budget: $1,500/month paid media.
+- Peak hours already near capacity on Thu–Sat evenings.
+- Goal (90 days): +20% revenue with a focus on increasing Mon–Wed utilization.
+- Current assets: menu photos, a few reviews, no consistent brand kit.
+- Google Business Profile exists but not optimized; reviews are not being requested systematically.
+- No CRM, no email list. Primary conversion is phone/WhatsApp orders and reservations.
+
+Request:
+Propose a 6-month plan broken into 90/30/7-day micro-plans.
+Include an experiment backlog (7–14 day tests) and a reporting cadence.
+

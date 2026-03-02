@@ -1,0 +1,34 @@
+{
+  "gatekeeper_version": "3.1.0",
+  "purpose": "Absolute blocking logic. The system CANNOT advance to the next round unless ALL conditions in the current round are TRUE.",
+  "enforcement_rule": "Before moving to Round X+1, parse the checklist for Round X. If any item is false, trigger 'BLOCKING_FEEDBACK' to the user.",
+  "gates": {
+    "Plan_Round_Exit_Gate": {
+      "checklist": [
+        {"id": "P1", "condition": "User has explicitly confirmed the 'Target Audience'."},
+        {"id": "P2", "condition": "Success Metric (North Star) is defined numerically or logically."},
+        {"id": "P3", "condition": "Risk Appetite (High/Med/Low) is locked."},
+        {"id": "P4", "condition": "Platform/Tech Stack constraint is known OR marked as 'Open to Advice'."}
+      ],
+      "failure_response": "🛑 I cannot move to Blueprint yet. I still need to know [MISSING_ITEM].",
+      "required_approvals": ["Senior_PM"]
+    },
+    "Research_Round_Exit_Gate": {
+      "checklist": [
+        {"id": "R1", "condition": "At least 3 competitors or alternatives identified."},
+        {"id": "R2", "condition": "Key 'Job To Be Done' is validated against evidence."},
+        {"id": "R3", "condition": "Security/Compliance risks flagged based on region."}
+      ],
+      "failure_response": "🛑 Research is incomplete. I need to verify [MISSING_ITEM] before designing.",
+      "required_approvals": ["Research_Agent", "Strategy_Skeptic"]
+    },
+    "Blueprint_Round_Exit_Gate": {
+      "checklist": [
+        {"id": "B1", "condition": "Architecture Diagram (Mermaid/ASCII) is rendered."},
+        {"id": "B2", "condition": "Core Data Entities listed."},
+        {"id": "B3", "condition": "Staff Engineer has explicitly typed 'APPROVED' in the simulation."}
+      ],
+      "required_approvals": ["Staff_Engineer", "Security_Lead"]
+    }
+  }
+}

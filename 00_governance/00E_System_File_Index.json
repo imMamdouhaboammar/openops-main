@@ -1,0 +1,338 @@
+{
+  "system_file_index": {
+    "id": "openops_system_file_index",
+    "version": "1.0",
+    "status": "authoritative",
+    "purpose": "Single source of truth for file availability, load order, and multi-platform packaging packs (Gemini Gems, ChatGPT Custom GPTs, Claude Skills).",
+    "source_of_truth": true,
+    "load_order": [
+      {
+        "order": 1,
+        "layer": "governance",
+        "files": [
+          "00_governance/00_OpenOps_Constitution_and_IP_Policy.md",
+          "00_governance/00A_OpenOps_Main_Orchestrator_System_Prompt.json",
+          "00_governance/00B_OpenOps_Audit_and_Decision_Ledger.json",
+          "00_governance/00C_OpenOps_Risk_and_Failure_Playbook.md",
+          "00_governance/00D_Gemini_Gems_Operating_Profile.md",
+          "00_governance/00E_System_File_Index.json",
+          "00_governance/00G_Gem_Entry_Point_Index.json"
+        ]
+      },
+      {
+        "order": 2,
+        "layer": "orchestration",
+        "files": [
+          "01_orchestration/01_Orchestration_Engine_and_Rounds_Router.md",
+          "01_orchestration/01A_Execution_Context_Manager.json",
+          "01_orchestration/01B_Integration_Config.json",
+          "01_orchestration/01C_Failure_Recovery_Manager.json",
+          "01_orchestration/01D_Gemini_Gems_Router.json",
+          "01_orchestration/01E_Workflow_Registry.json",
+          "01_orchestration/01F_Output_Contracts.json"
+        ]
+      },
+      {
+        "order": 3,
+        "layer": "agents",
+        "files": [
+          "02_agents/02_Agents_System_and_Activation_Matrix.md",
+          "02_agents/02A_Agent_Roles_Config.json",
+          "02_agents/02B_Agent_Memory_Registry.json",
+          "02_agents/02C_Agent_Logging_and_Audit.json",
+          "02_agents/02D_Agent_Personality_Profile.json"
+        ]
+      },
+      {
+        "order": 4,
+        "layer": "core_systems",
+        "files": [
+          "03_product/03_Product_and_PRD_Master_Framework.md",
+          "04_research/04_Research_and_Competitive_Intelligence.md",
+          "05_architecture/05_Architecture_and_Data_Systems_Playbook.md",
+          "06_security/06_Security_Compliance_and_Privacy_Gates.md",
+          "07_tracking/07_Tracking_Analytics_and_Experimentation.md",
+          "08_ux/08_UX_Design_System_and_Copy_Library.md",
+          "09_tooling/09_PromptKit_and_Tooling_Handoff.md"
+        ]
+      },
+      {
+        "order": 5,
+        "layer": "domain_systems_optional",
+        "optional": true,
+        "files": [
+          "11_marketing_growth_system/11B_Marketing_Growth_System_Prompt.md",
+          "11_marketing_growth_system/11A_Marketing_Growth_Agent_Config.json",
+          "11_marketing_growth_system/11C_Grounding_and_Research_Engine.json",
+          "11_marketing_growth_system/11D_Strategy_Workflow_Engine.json",
+          "11_marketing_growth_system/11F_Measurement_and_KPI_System.json",
+          "11_marketing_growth_system/11G_Psychology_and_Behavior_Framework.json",
+          "11_marketing_growth_system/workflows/campaign_planning.workflow.json",
+          "12_saudi_strategic_system/00_system_constitution.md",
+          "12_saudi_strategic_system/01_expert_squad_profiles.json",
+          "12_saudi_strategic_system/02_thinking_framework.json",
+          "12_saudi_strategic_system/workflows/strategic_report_workflow.json",
+          "12_saudi_strategic_system/knowledge_base/saudi_market/vision_2030_framework.md",
+          "12_saudi_strategic_system/knowledge_base/hajj_umrah_ecosystem/ecosystem_deep_dive.md"
+        ]
+      }
+    ],
+    "gemini_upload_profiles": {
+      "core_minimal": [
+        "00_governance/00_OpenOps_Constitution_and_IP_Policy.md",
+        "00_governance/00D_Gemini_Gems_Operating_Profile.md",
+        "00_governance/00E_System_File_Index.json",
+        "00_governance/00G_Gem_Entry_Point_Index.json",
+        "01_orchestration/01_Orchestration_Engine_and_Rounds_Router.md",
+        "01_orchestration/01D_Gemini_Gems_Router.json",
+        "01_orchestration/01E_Workflow_Registry.json",
+        "01_orchestration/01F_Output_Contracts.json"
+      ],
+      "core_standard": [
+        "00_governance/00_OpenOps_Constitution_and_IP_Policy.md",
+        "00_governance/00A_OpenOps_Main_Orchestrator_System_Prompt.json",
+        "00_governance/00B_OpenOps_Audit_and_Decision_Ledger.json",
+        "00_governance/00C_OpenOps_Risk_and_Failure_Playbook.md",
+        "00_governance/00D_Gemini_Gems_Operating_Profile.md",
+        "00_governance/00E_System_File_Index.json",
+        "00_governance/00G_Gem_Entry_Point_Index.json",
+        "01_orchestration/01_Orchestration_Engine_and_Rounds_Router.md",
+        "01_orchestration/01A_Execution_Context_Manager.json",
+        "01_orchestration/01B_Integration_Config.json",
+        "01_orchestration/01C_Failure_Recovery_Manager.json",
+        "01_orchestration/01D_Gemini_Gems_Router.json",
+        "01_orchestration/01E_Workflow_Registry.json",
+        "01_orchestration/01F_Output_Contracts.json",
+        "02_agents/02_Agents_System_and_Activation_Matrix.md",
+        "02_agents/02A_Agent_Roles_Config.json",
+        "02_agents/02B_Agent_Memory_Registry.json",
+        "02_agents/02C_Agent_Logging_and_Audit.json"
+      ],
+      "saudi_strategic_addon": [
+        "12_saudi_strategic_system/00_system_constitution.md",
+        "12_saudi_strategic_system/01_expert_squad_profiles.json",
+        "12_saudi_strategic_system/02_thinking_framework.json",
+        "12_saudi_strategic_system/workflows/strategic_report_workflow.json",
+        "12_saudi_strategic_system/knowledge_base/saudi_market/vision_2030_framework.md",
+        "12_saudi_strategic_system/knowledge_base/hajj_umrah_ecosystem/ecosystem_deep_dive.md"
+      ],
+      "marketing_growth_addon": [
+        "11_marketing_growth_system/11B_Marketing_Growth_System_Prompt.md",
+        "11_marketing_growth_system/11A_Marketing_Growth_Agent_Config.json",
+        "11_marketing_growth_system/11C_Grounding_and_Research_Engine.json",
+        "11_marketing_growth_system/11D_Strategy_Workflow_Engine.json",
+        "11_marketing_growth_system/11F_Measurement_and_KPI_System.json",
+        "11_marketing_growth_system/11G_Psychology_and_Behavior_Framework.json",
+        "11_marketing_growth_system/workflows/campaign_planning.workflow.json"
+      ]
+    },
+    "targets": {
+      "gemini_gems": {
+        "id": "targets.gemini_gems",
+        "status": "active",
+        "packaging_mode": "multi_file_upload",
+        "profiles": {
+          "core_minimal": {
+            "ref": "system_file_index.gemini_upload_profiles.core_minimal",
+            "notes": [
+              "Use when context limits are tight.",
+              "Includes Gemini-specific operating profile and router."
+            ]
+          },
+          "core_standard": {
+            "ref": "system_file_index.gemini_upload_profiles.core_standard",
+            "notes": [
+              "Use when you need full orchestration + recovery + agents metadata.",
+              "Still Gemini-specific."
+            ]
+          },
+          "saudi_strategic_addon": {
+            "ref": "system_file_index.gemini_upload_profiles.saudi_strategic_addon"
+          },
+          "marketing_growth_addon": {
+            "ref": "system_file_index.gemini_upload_profiles.marketing_growth_addon"
+          }
+        },
+        "defaults": {
+          "core_profile": "core_minimal",
+          "addons": []
+        }
+      },
+      "chatgpt_gpts": {
+        "id": "targets.chatgpt_gpts",
+        "status": "draft",
+        "packaging_mode": "instructions_plus_knowledge_files",
+        "notes": [
+          "This target intentionally excludes Gemini-specific router/profile files.",
+          "Use OpenOps core governance + round router + output contracts as the knowledge base backbone."
+        ],
+        "profiles": {
+          "core_minimal": [
+            "00_governance/00_OpenOps_Constitution_and_IP_Policy.md",
+            "00_governance/00A_OpenOps_Main_Orchestrator_System_Prompt.json",
+            "00_governance/00E_System_File_Index.json",
+            "01_orchestration/01_Orchestration_Engine_and_Rounds_Router.md",
+            "01_orchestration/01E_Workflow_Registry.json",
+            "01_orchestration/01F_Output_Contracts.json"
+          ],
+          "core_standard": [
+            "00_governance/00_OpenOps_Constitution_and_IP_Policy.md",
+            "00_governance/00A_OpenOps_Main_Orchestrator_System_Prompt.json",
+            "00_governance/00B_OpenOps_Audit_and_Decision_Ledger.json",
+            "00_governance/00C_OpenOps_Risk_and_Failure_Playbook.md",
+            "00_governance/00E_System_File_Index.json",
+            "01_orchestration/01_Orchestration_Engine_and_Rounds_Router.md",
+            "01_orchestration/01A_Execution_Context_Manager.json",
+            "01_orchestration/01B_Integration_Config.json",
+            "01_orchestration/01C_Failure_Recovery_Manager.json",
+            "01_orchestration/01E_Workflow_Registry.json",
+            "01_orchestration/01F_Output_Contracts.json",
+            "02_agents/02_Agents_System_and_Activation_Matrix.md",
+            "02_agents/02A_Agent_Roles_Config.json",
+            "02_agents/02B_Agent_Memory_Registry.json",
+            "02_agents/02C_Agent_Logging_and_Audit.json",
+            "02_agents/02D_Agent_Personality_Profile.json"
+          ],
+          "saudi_strategic_addon": [
+            "12_saudi_strategic_system/00_system_constitution.md",
+            "12_saudi_strategic_system/01_expert_squad_profiles.json",
+            "12_saudi_strategic_system/02_thinking_framework.json",
+            "12_saudi_strategic_system/workflows/strategic_report_workflow.json",
+            "12_saudi_strategic_system/knowledge_base/saudi_market/vision_2030_framework.md",
+            "12_saudi_strategic_system/knowledge_base/hajj_umrah_ecosystem/ecosystem_deep_dive.md"
+          ],
+          "marketing_growth_addon": [
+            "11_marketing_growth_system/11B_Marketing_Growth_System_Prompt.md",
+            "11_marketing_growth_system/11A_Marketing_Growth_Agent_Config.json",
+            "11_marketing_growth_system/11C_Grounding_and_Research_Engine.json",
+            "11_marketing_growth_system/11D_Strategy_Workflow_Engine.json",
+            "11_marketing_growth_system/11F_Measurement_and_KPI_System.json",
+            "11_marketing_growth_system/11G_Psychology_and_Behavior_Framework.json",
+            "11_marketing_growth_system/workflows/campaign_planning.workflow.json"
+          ]
+        },
+        "defaults": {
+          "core_profile": "core_minimal",
+          "addons": []
+        }
+      },
+      "claude_skills": {
+        "id": "targets.claude_skills",
+        "status": "draft",
+        "packaging_mode": "skills_knowledge_base",
+        "notes": [
+          "This target is designed to be compatible with skill-style packaging (instruction + files).",
+          "Gemini-specific files are excluded; focus stays on OpenOps governance and round discipline."
+        ],
+        "profiles": {
+          "core_minimal": [
+            "00_governance/00_OpenOps_Constitution_and_IP_Policy.md",
+            "00_governance/00A_OpenOps_Main_Orchestrator_System_Prompt.json",
+            "00_governance/00E_System_File_Index.json",
+            "01_orchestration/01_Orchestration_Engine_and_Rounds_Router.md",
+            "01_orchestration/01E_Workflow_Registry.json",
+            "01_orchestration/01F_Output_Contracts.json"
+          ],
+          "core_standard": [
+            "00_governance/00_OpenOps_Constitution_and_IP_Policy.md",
+            "00_governance/00A_OpenOps_Main_Orchestrator_System_Prompt.json",
+            "00_governance/00B_OpenOps_Audit_and_Decision_Ledger.json",
+            "00_governance/00C_OpenOps_Risk_and_Failure_Playbook.md",
+            "00_governance/00E_System_File_Index.json",
+            "01_orchestration/01_Orchestration_Engine_and_Rounds_Router.md",
+            "01_orchestration/01A_Execution_Context_Manager.json",
+            "01_orchestration/01B_Integration_Config.json",
+            "01_orchestration/01C_Failure_Recovery_Manager.json",
+            "01_orchestration/01E_Workflow_Registry.json",
+            "01_orchestration/01F_Output_Contracts.json",
+            "02_agents/02_Agents_System_and_Activation_Matrix.md",
+            "02_agents/02A_Agent_Roles_Config.json",
+            "02_agents/02B_Agent_Memory_Registry.json",
+            "02_agents/02C_Agent_Logging_and_Audit.json",
+            "02_agents/02D_Agent_Personality_Profile.json"
+          ],
+          "saudi_strategic_addon": [
+            "12_saudi_strategic_system/00_system_constitution.md",
+            "12_saudi_strategic_system/01_expert_squad_profiles.json",
+            "12_saudi_strategic_system/02_thinking_framework.json",
+            "12_saudi_strategic_system/workflows/strategic_report_workflow.json",
+            "12_saudi_strategic_system/knowledge_base/saudi_market/vision_2030_framework.md",
+            "12_saudi_strategic_system/knowledge_base/hajj_umrah_ecosystem/ecosystem_deep_dive.md"
+          ],
+          "marketing_growth_addon": [
+            "11_marketing_growth_system/11B_Marketing_Growth_System_Prompt.md",
+            "11_marketing_growth_system/11A_Marketing_Growth_Agent_Config.json",
+            "11_marketing_growth_system/11C_Grounding_and_Research_Engine.json",
+            "11_marketing_growth_system/11D_Strategy_Workflow_Engine.json",
+            "11_marketing_growth_system/11F_Measurement_and_KPI_System.json",
+            "11_marketing_growth_system/11G_Psychology_and_Behavior_Framework.json",
+            "11_marketing_growth_system/workflows/campaign_planning.workflow.json"
+          ]
+        },
+        "defaults": {
+          "core_profile": "core_minimal",
+          "addons": []
+        }
+      }
+    },
+    "file_registry": [
+      {
+        "id": "openops_constitution",
+        "path": "00_governance/00_OpenOps_Constitution_and_IP_Policy.md",
+        "layer": "governance",
+        "authoritative": true
+      },
+      {
+        "id": "openops_orchestrator_prompt",
+        "path": "00_governance/00A_OpenOps_Main_Orchestrator_System_Prompt.json",
+        "layer": "governance",
+        "authoritative": true
+      },
+      {
+        "id": "gemini_gems_profile",
+        "path": "00_governance/00D_Gemini_Gems_Operating_Profile.md",
+        "layer": "governance",
+        "authoritative": true
+      },
+      {
+        "id": "system_file_index",
+        "path": "00_governance/00E_System_File_Index.json",
+        "layer": "governance",
+        "authoritative": true
+      },
+      {
+        "id": "gem_entry_point_index",
+        "path": "00_governance/00G_Gem_Entry_Point_Index.json",
+        "layer": "governance",
+        "authoritative": true
+      },
+      {
+        "id": "orchestration_router",
+        "path": "01_orchestration/01_Orchestration_Engine_and_Rounds_Router.md",
+        "layer": "orchestration",
+        "authoritative": true
+      },
+      {
+        "id": "gemini_router",
+        "path": "01_orchestration/01D_Gemini_Gems_Router.json",
+        "layer": "orchestration",
+        "authoritative": true
+      },
+      {
+        "id": "workflow_registry",
+        "path": "01_orchestration/01E_Workflow_Registry.json",
+        "layer": "orchestration",
+        "authoritative": true
+      },
+      {
+        "id": "output_contracts",
+        "path": "01_orchestration/01F_Output_Contracts.json",
+        "layer": "orchestration",
+        "authoritative": true
+      }
+    ],
+    "availability_notes": [
+      "Some READMEs reference files that are not present in the repository. Use this index as the authoritative list for packaging/export across all targets."
+    ]
+  }
+}

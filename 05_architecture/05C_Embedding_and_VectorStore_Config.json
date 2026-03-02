@@ -1,0 +1,45 @@
+{
+  "module": {
+    "name": "Embedding_and_VectorStore_Config",
+    "version": "2.0.0",
+    "layer": "05_architecture",
+    "code": "05C",
+    "description": "Configuration for embeddings generation and vector similarity search",
+    "author": "OpenOps Foundation",
+    "created": "2025-12-16T00:00:00Z"
+  },
+  "governance": {
+    "compliance_level": "standard",
+    "requires_approval": false,
+    "audit_level": "standard",
+    "data_classification": "internal"
+  },
+  "objectives": [
+    "Generate semantic embeddings",
+    "Enable similarity search",
+    "Support hybrid retrieval (dense + sparse)",
+    "Optimize vector indexing performance"
+  ],
+  "integration_points": {
+    "imports_from": ["05A_Graph_Database_Config.json", "05B_Data_Pipeline_Manager.json"],
+    "exports_to": ["02B_Agent_Memory_Registry.json", "04A_Research_Templates_and_Taxonomy.json"]
+  },
+  "embedding_models": {
+    "text": {"model": "text-embedding-3-large", "dimensions": 1536, "provider": "openai"},
+    "code": {"model": "codegen-embedding", "dimensions": 768, "provider": "anthropic"},
+    "multimodal": {"model": "clip-vit", "dimensions": 512, "provider": "openai"}
+  },
+  "vector_store": {
+    "engine": "pinecone",
+    "indexes": {
+      "knowledge_base": {"dimensions": 1536, "metric": "cosine", "replicas": 2},
+      "code_search": {"dimensions": 768, "metric": "dot_product", "replicas": 1}
+    }
+  },
+  "retrieval_strategies": {
+    "semantic_search": {"top_k": 10, "score_threshold": 0.7},
+    "hybrid_search": {"dense_weight": 0.7, "sparse_weight": 0.3},
+    "reranking": {"enabled": true, "model": "cross-encoder"}
+  },
+  "version_history": {"2.0.0": {"date": "2025-12-16", "changes": "Initial embedding config"}}
+}

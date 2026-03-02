@@ -1,0 +1,391 @@
+{
+    "standard_workflows": [
+        {
+            "id": "quick-research",
+            "name": "Quick Research",
+            "trigger": "Simple, focused research question",
+            "duration": "10-15 minutes",
+            "steps": [
+                {
+                    "step": 1,
+                    "name": "Intent Clarification",
+                    "tool": "intent-clarifier",
+                    "duration": "1-2 min",
+                    "skip_if": "Question is simple and unambiguous"
+                },
+                {
+                    "step": 2,
+                    "name": "Query Decomposition",
+                    "tool": "query-decomposer",
+                    "output": "2-3 search queries"
+                },
+                {
+                    "step": 3,
+                    "name": "Multi-Source Search",
+                    "tool": "multi-source-searcher",
+                    "sources": [
+                        "web",
+                        "news"
+                    ],
+                    "max_results": 10
+                },
+                {
+                    "step": 4,
+                    "name": "Evidence Grading",
+                    "tool": "evidence-grader",
+                    "filter": "Keep Level A and B only"
+                },
+                {
+                    "step": 5,
+                    "name": "Synthesis",
+                    "tool": "synthesis-engine",
+                    "mode": "key_points"
+                },
+                {
+                    "step": 6,
+                    "name": "Report Generation",
+                    "tool": "report-generator",
+                    "format": "quick",
+                    "output": "500-1000 words with 5+ citations"
+                }
+            ],
+            "quality_checks": {
+                "min_sources": 5,
+                "min_citations": 5,
+                "evidence_level": "At least 3 Level A or B sources"
+            }
+        },
+        {
+            "id": "deep-dive",
+            "name": "Deep Dive Research",
+            "trigger": "Complex, multi-faceted research question",
+            "duration": "30-60 minutes",
+            "pipeline": "Full TTD-DR",
+            "steps": [
+                {
+                    "step": 1,
+                    "name": "Intent Clarification",
+                    "tool": "intent-clarifier",
+                    "duration": "3-5 min",
+                    "validation": "intent_confidence >= 0.9"
+                },
+                {
+                    "step": 2,
+                    "name": "Initial Draft",
+                    "description": "Create hypothesis and draft structure",
+                    "validation": "draft_length > 200"
+                },
+                {
+                    "step": 3,
+                    "name": "Research Planning",
+                    "tool": "query-decomposer",
+                    "output": "Research brief with 3+ subtopics"
+                },
+                {
+                    "step": 4,
+                    "name": "ReAct Loop",
+                    "agents": [
+                        "supervisor",
+                        "web-searcher",
+                        "academic-finder"
+                    ],
+                    "iterations": "3-5",
+                    "validation": "sources_verified, no_duplicates"
+                },
+                {
+                    "step": 5,
+                    "name": "Denoising Loop",
+                    "iterations": 3,
+                    "tools": [
+                        "contradiction-detector",
+                        "bias-detector"
+                    ],
+                    "validation": "bias_score < 0.2, logic_consistency > 0.85"
+                },
+                {
+                    "step": 6,
+                    "name": "Red Teaming",
+                    "tool": "red-team-agent",
+                    "validation": "no_unverified_claims, cohesion > 0.8"
+                },
+                {
+                    "step": 7,
+                    "name": "Evaluation",
+                    "metrics": [
+                        "accuracy",
+                        "coherence",
+                        "coverage",
+                        "diversity"
+                    ],
+                    "threshold": "overall_quality >= 0.85"
+                },
+                {
+                    "step": 8,
+                    "name": "Final Report",
+                    "tool": "report-generator",
+                    "format": "deep_dive",
+                    "output": "2000-5000 words with 20+ citations"
+                }
+            ],
+            "quality_checks": {
+                "min_sources": 20,
+                "min_citations": 15,
+                "source_diversity": "3+ types",
+                "red_team_pass": true,
+                "overall_quality": ">= 0.85"
+            }
+        },
+        {
+            "id": "competitive-analysis",
+            "name": "Competitive Analysis",
+            "trigger": "Market/competitor research request",
+            "duration": "45-90 minutes",
+            "steps": [
+                {
+                    "step": 1,
+                    "name": "Define Landscape",
+                    "actions": [
+                        "Identify direct competitors",
+                        "Identify indirect substitutes",
+                        "Identify status quo solutions"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "name": "Competitor Deep Dives",
+                    "per_competitor": [
+                        "Problem focus",
+                        "Target user",
+                        "Value proposition",
+                        "Strengths/Weaknesses",
+                        "Moat analysis"
+                    ],
+                    "sources": [
+                        "website",
+                        "reviews",
+                        "news",
+                        "employee_linkedin"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "name": "Comparison Matrix",
+                    "tool": "synthesis-engine",
+                    "mode": "comparative",
+                    "dimensions": [
+                        "features",
+                        "pricing",
+                        "positioning",
+                        "moat"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "name": "Strategic Insights",
+                    "analysis": [
+                        "What users choose existing solutions for",
+                        "Why they tolerate pain",
+                        "Where switching costs exist",
+                        "Where dissatisfaction accumulates"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "name": "Report Generation",
+                    "output": "Competitive matrix + strategic implications"
+                }
+            ],
+            "output_schema": {
+                "landscape_overview": "Market context",
+                "competitor_profiles": "Per-competitor analysis",
+                "comparison_matrix": "Multi-dimensional comparison",
+                "strategic_implications": "Actionable insights"
+            }
+        }
+    ],
+    "advanced_workflows": [
+        {
+            "id": "literature-review",
+            "name": "Literature Review",
+            "trigger": "Academic or systematic research request",
+            "duration": "2-4 hours",
+            "steps": [
+                {
+                    "step": 1,
+                    "name": "Search Strategy",
+                    "actions": [
+                        "Define inclusion/exclusion criteria",
+                        "Generate search queries",
+                        "Select databases (Scholar, Semantic Scholar, arXiv)"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "name": "Systematic Search",
+                    "sources": [
+                        "academic"
+                    ],
+                    "target": "50-100 initial papers"
+                },
+                {
+                    "step": 3,
+                    "name": "Screening",
+                    "phases": [
+                        "Title/abstract screening",
+                        "Full-text screening"
+                    ],
+                    "target": "15-30 included papers"
+                },
+                {
+                    "step": 4,
+                    "name": "Data Extraction",
+                    "extract": [
+                        "Methods",
+                        "Findings",
+                        "Limitations"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "name": "Thematic Synthesis",
+                    "tool": "synthesis-engine",
+                    "mode": "thematic"
+                },
+                {
+                    "step": 6,
+                    "name": "Gap Analysis",
+                    "identify": "What's missing in literature"
+                },
+                {
+                    "step": 7,
+                    "name": "Report",
+                    "format": "State-of-the-art summary + research gaps"
+                }
+            ]
+        },
+        {
+            "id": "due-diligence",
+            "name": "Due Diligence Research",
+            "trigger": "Investment or partnership evaluation",
+            "duration": "4-8 hours",
+            "areas": [
+                {
+                    "area": "Company Background",
+                    "sources": [
+                        "Crunchbase",
+                        "LinkedIn",
+                        "News",
+                        "Legal filings"
+                    ],
+                    "focus": [
+                        "Founding team",
+                        "Funding history",
+                        "Key milestones"
+                    ]
+                },
+                {
+                    "area": "Market Position",
+                    "sources": [
+                        "Industry reports",
+                        "Competitor analysis"
+                    ],
+                    "focus": [
+                        "Market size",
+                        "Competitive landscape",
+                        "Differentiation"
+                    ]
+                },
+                {
+                    "area": "Product/Technology",
+                    "sources": [
+                        "Product reviews",
+                        "Technical blogs",
+                        "GitHub"
+                    ],
+                    "focus": [
+                        "Product quality",
+                        "Technical moat",
+                        "Roadmap"
+                    ]
+                },
+                {
+                    "area": "Financial Health",
+                    "sources": [
+                        "Public filings",
+                        "News",
+                        "Estimated metrics"
+                    ],
+                    "focus": [
+                        "Revenue",
+                        "Burn rate",
+                        "Unit economics"
+                    ]
+                },
+                {
+                    "area": "Risks",
+                    "sources": [
+                        "News",
+                        "Legal",
+                        "Regulatory"
+                    ],
+                    "focus": [
+                        "Legal issues",
+                        "Regulatory risk",
+                        "Key person risk"
+                    ]
+                }
+            ],
+            "output": "DD report with risk matrix"
+        },
+        {
+            "id": "trend-analysis",
+            "name": "Trend Analysis",
+            "trigger": "Future-looking research request",
+            "duration": "2-3 hours",
+            "steps": [
+                {
+                    "step": 1,
+                    "name": "Historical Context",
+                    "timeframe": "Past 2-5 years",
+                    "sources": [
+                        "Academic",
+                        "Industry reports",
+                        "News"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "name": "Current State",
+                    "focus": "Present landscape and key players"
+                },
+                {
+                    "step": 3,
+                    "name": "Emerging Signals",
+                    "sources": [
+                        "Recent papers",
+                        "Patents",
+                        "Startup activity",
+                        "Expert opinions"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "name": "Pattern Identification",
+                    "tool": "synthesis-engine",
+                    "mode": "trend"
+                },
+                {
+                    "step": 5,
+                    "name": "Trajectory Projection",
+                    "output": "Likely scenarios (conservative, moderate, aggressive)"
+                },
+                {
+                    "step": 6,
+                    "name": "Implications",
+                    "analysis": "What this means for [user context]"
+                }
+            ],
+            "output": "Trend report with scenarios and implications"
+        }
+    ]
+}

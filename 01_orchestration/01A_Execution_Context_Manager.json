@@ -1,0 +1,159 @@
+{
+  "module": {
+    "name": "ExecutionContextManager",
+    "version": "2.0.0",
+    "type": "core_engine_component",
+    "description": "Manages live execution context, memory isolation, and round state transitions within OpenOps Orchestration Engine v2.0.",
+    "author": "OpenOps Studio | Created by Mamdouh Aboammar",
+    "governance": {
+      "ownership": "StaffEngineer",
+      "supervision": "SupervisorAgent",
+      "compliance": "Security & Privacy Gates enforced"
+    },
+
+    "objectives": [
+      "Maintain coherent state across orchestration rounds.",
+      "Ensure safe data flow between agents without leakage.",
+      "Enable rollback, checkpointing, and rehydration of context.",
+      "Provide event hooks for runtime modules (DeepResearchEngine, QAOrchestrator, etc.)."
+    ],
+
+    "architecture": {
+      "state_layers": [
+        "runtime_memory",
+        "shared_context",
+        "agent_local_memory",
+        "transient_cache"
+      ],
+      "isolation_policy": "context_per_round",
+      "storage_engine": "Redis or InMemoryVectorStore",
+      "context_snapshot_interval": "per_round_exit",
+      "context_pruning_policy": "on_handoff_completion"
+    },
+
+    "data_schema": {
+      "context_id": "uuid",
+      "round": "Plan | Blueprint | Detail | QA | Handoff",
+      "agents_active": "array",
+      "input_payload": "object",
+      "output_payload": "object",
+      "state": "active | paused | checkpointed | recovered",
+      "memory_scope": {
+        "runtime_memory": "volatile",
+        "shared_context": "round-limited",
+        "agent_local_memory": "isolated",
+        "transient_cache": "ephemeral"
+      },
+      "checksum": "sha256",
+      "last_updated": "ISO-8601",
+      "created_by": "OrchestrationEngine"
+    },
+
+    "operations": {
+      "create_context": {
+        "trigger": "on_round_start",
+        "actions": [
+          "allocate memory scopes",
+          "register agents for the round",
+          "load prior dependencies"
+        ]
+      },
+      "update_context": {
+        "trigger": "on_agent_output",
+        "actions": [
+          "merge output into shared_context",
+          "recompute checksum",
+          "log context change to Audit Ledger"
+        ]
+      },
+      "checkpoint_context": {
+        "trigger": "on_error_or_round_exit",
+        "storage_path": "/openops/runtime/state/",
+        "filename_format": "context_<round>_<timestamp>.json",
+        "compression": "gzip"
+      },
+      "restore_context": {
+        "trigger": "on_recovery",
+        "validation": [
+          "verify checksum",
+          "ensure version compatibility"
+        ]
+      },
+      "destroy_context": {
+        "trigger": "on_handoff_complete",
+        "actions": [
+          "clear runtime memory",
+          "retain minimal summary for analytics"
+        ]
+      }
+    },
+
+    "integration_points": {
+      "upstream": ["OrchestrationEngineRouter"],
+      "downstream": [
+        "DeepResearchEngine",
+        "AgentParallelismPatterns",
+        "QAOrchestrator",
+        "AuditAndDecisionLedger"
+      ],
+      "dependencies": [
+        "RiskAndFailurePlaybook",
+        "SecurityAndPrivacyGates"
+      ]
+    },
+
+    "event_hooks": {
+      "on_context_create": [
+        "SupervisorAgent.verify_round_scope",
+        "SecurityGate.classify_data"
+      ],
+      "on_context_update": [
+        "QAOrchestrator.monitor_consistency",
+        "AuditLedger.log_context_change"
+      ],
+      "on_context_checkpoint": [
+        "FailureRecoveryManager.store_snapshot",
+        "AnalyticsTracker.log_context_event"
+      ],
+      "on_context_destroy": [
+        "PrivacyGate.cleanup_sensitive_memory"
+      ]
+    },
+
+    "security_rules": {
+      "classification": "internal",
+      "encryption": "AES-256 at rest",
+      "access_control": {
+        "SupervisorAgent": "read/write",
+        "WorkerAgents": "read",
+        "EvaluatorAgent": "read",
+        "Orchestrator": "admin"
+      },
+      "audit_policy": "all_context_transitions_logged"
+    },
+
+    "failure_recovery": {
+      "auto_restore": true,
+      "max_restore_attempts": 2,
+      "fallback_action": "trigger RiskAndFailurePlaybook",
+      "on_restore_success": "resume_round_execution",
+      "on_restore_failure": "halt_and_escalate"
+    },
+
+    "example_snapshot": {
+      "context_id": "ctx_2025_12_16_1420",
+      "round": "Detail",
+      "agents_active": ["SupervisorAgent", "WorkerAgents", "EvaluatorAgent"],
+      "state": "active",
+      "input_payload": {
+        "task": "Integrate research findings",
+        "sources": ["evidence_bundle.json"]
+      },
+      "output_payload": {
+        "refined_draft": "string_hash_ref"
+      },
+      "checksum": "81a2b4f1bced98fe21e9...",
+      "last_updated": "2025-12-16T14:21:33Z"
+    }
+  }
+}

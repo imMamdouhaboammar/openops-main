@@ -1,0 +1,328 @@
+{
+    "tool_metadata": {
+        "tool_id": "funnel-analyzer",
+        "tool_name": "Conversion Funnel Analyzer",
+        "version": "1.0.0",
+        "language": "python",
+        "category": "analytics",
+        "status": "implemented",
+        "created_date": "2026-01-10"
+    },
+    "description": "Analyzes multi-stage conversion funnels, calculates conversion rates between stages, identifies bottlenecks (leaks), and provides cohort breakdowns by segment.",
+    "input_schema": {
+        "type": "object",
+        "required": [
+            "funnel_data",
+            "date_range"
+        ],
+        "properties": {
+            "funnel_data": {
+                "type": "array",
+                "description": "Array of funnel stages with user counts",
+                "items": {
+                    "type": "object",
+                    "required": [
+                        "stage",
+                        "user_count"
+                    ],
+                    "properties": {
+                        "stage": {
+                            "type": "string",
+                            "description": "Funnel stage name",
+                            "examples": [
+                                "Homepage",
+                                "Product Page",
+                                "Add to Cart",
+                                "Checkout",
+                                "Purchase"
+                            ]
+                        },
+                        "user_count": {
+                            "type": "integer",
+                            "description": "Number of users at thisстage",
+                            "minimum": 0
+                        },
+                        "segment": {
+                            "type": "string",
+                            "description": "Optional segment (e.g., traffic source, device type)",
+                            "examples": [
+                                "Organic",
+                                "Paid Ads",
+                                "Referral",
+                                "Mobile",
+                                "Desktop"
+                            ]
+                        }
+                    }
+                }
+            },
+            "date_range": {
+                "type": "object",
+                "required": [
+                    "start_date",
+                    "end_date"
+                ],
+                "properties": {
+                    "start_date": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "Start date for analysis (YYYY-MM-DD)"
+                    },
+                    "end_date": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "End date for analysis (YYYY-MM-DD)"
+                    }
+                }
+            },
+            "leak_threshold": {
+                "type": "number",
+                "description": "Conversion rate threshold below which a stage is flagged as a leak",
+                "default": 50.0,
+                "minimum": 0,
+                "maximum": 100
+            },
+            "segment_by": {
+                "type": "string",
+                "description": "Field to segment funnel breakdown by (e.g., 'traffic_source', 'device')",
+                "examples": [
+                    "traffic_source",
+                    "device",
+                    "country",
+                    "campaign"
+                ]
+            }
+        }
+    },
+    "output_schema": {
+        "type": "object",
+        "properties": {
+            "conversion_rates": {
+                "type": "object",
+                "description": "Conversion rates between each funnel stage",
+                "additionalProperties": {
+                    "type": "number"
+                },
+                "example": {
+                    "Homepage → Product Page": 35.0,
+                    "Product Page → Add to Cart": 30.0,
+                    "Add to Cart → Checkout": 70.0,
+                    "Checkout → Purchase": 80.0
+                }
+            },
+            "overall_conversion_rate": {
+                "type": "number",
+                "description": "Overall CR from first to last stage",
+                "example": 5.88
+            },
+            "total_users": {
+                "type": "object",
+                "properties": {
+                    "top_of_funnel": {
+                        "type": "integer",
+                        "description": "Users at first stage"
+                    },
+                    "bottom_of_funnel": {
+                        "type": "integer",
+                        "description": "Users at final stage (conversions)"
+                    }
+                }
+            },
+            "leaks": {
+                "type": "array",
+                "description": "Stages with CR below threshold",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "stage_transition": {
+                            "type": "string",
+                            "example": "Homepage → Product Page"
+                        },
+                        "conversion_rate": {
+                            "type": "number",
+                            "example": 35.0
+                        },
+                        "severity": {
+                            "type": "string",
+                            "enum": [
+                                "minor",
+                                "moderate",
+                                "severe"
+                            ],
+                            "description": "Based on how far below threshold"
+                        }
+                    }
+                }
+            },
+            "cohort_breakdown": {
+                "type": "object",
+                "description": "Funnel breakdown by segment (if segment_by provided)",
+                "additionalProperties": {
+                    "type": "object",
+                    "properties": {
+                        "conversion_rates": {
+                            "type": "object"
+                        },
+                        "overall_cr": {
+                            "type": "number"
+                        }
+                    }
+                },
+                "example": {
+                    "Organic": {
+                        "conversion_rates": {
+                            "Homepage → Product": 42.0,
+                            "Product → Cart": 35.0
+                        },
+                        "overall_cr": 6.5
+                    },
+                    "Paid Ads": {
+                        "conversion_rates": {
+                            "Homepage → Product": 28.0,
+                            "Product → Cart": 22.0
+                        },
+                        "overall_cr": 3.8
+                    }
+                }
+            },
+            "recommendations": {
+                "type": "array",
+                "description": "Prioritized optimization recommendations",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "stage": {
+                            "type": "string"
+                        },
+                        "issue": {
+                            "type": "string"
+                        },
+                        "suggested_tests": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "priority": {
+                            "type": "string",
+                            "enum": [
+                                "low",
+                                "medium",
+                                "high",
+                                "critical"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "configuration": {
+        "data_sources": [
+            "Google Analytics 4",
+            "Mixpanel",
+            "Amplitude",
+            "Custom CSV Upload"
+        ],
+        "caching": {
+            "enabled": true,
+            "ttl_seconds": 3600,
+            "cache_key_template": "funnel_analysis:{date_range}:{segment}"
+        },
+        "performance": {
+            "max_stages": 10,
+            "max_rows": 100000,
+            "timeout_seconds": 60
+        }
+    },
+    "usage_example": {
+        "request": {
+            "funnel_data": [
+                {
+                    "stage": "Homepage",
+                    "user_count": 100000,
+                    "segment": "Organic"
+                },
+                {
+                    "stage": "Product Page",
+                    "user_count": 35000,
+                    "segment": "Organic"
+                },
+                {
+                    "stage": "Add to Cart",
+                    "user_count": 10500,
+                    "segment": "Organic"
+                },
+                {
+                    "stage": "Checkout",
+                    "user_count": 7350,
+                    "segment": "Organic"
+                },
+                {
+                    "stage": "Purchase",
+                    "user_count": 5880,
+                    "segment": "Organic"
+                }
+            ],
+            "date_range": {
+                "start_date": "2026-01-01",
+                "end_date": "2026-01-31"
+            },
+            "leak_threshold": 50.0,
+            "segment_by": "traffic_source"
+        },
+        "response": {
+            "conversion_rates": {
+                "Homepage → Product Page": 35.0,
+                "Product Page → Add to Cart": 30.0,
+                "Add to Cart → Checkout": 70.0,
+                "Checkout → Purchase": 80.0
+            },
+            "overall_conversion_rate": 5.88,
+            "total_users": {
+                "top_of_funnel": 100000,
+                "bottom_of_funnel": 5880
+            },
+            "leaks": [
+                {
+                    "stage_transition": "Homepage → Product Page",
+                    "conversion_rate": 35.0,
+                    "severity": "moderate"
+                },
+                {
+                    "stage_transition": "Product Page → Add to Cart",
+                    "conversion_rate": 30.0,
+                    "severity": "severe"
+                }
+            ],
+            "recommendations": [
+                {
+                    "stage": "Product Page → Add to Cart",
+                    "issue": "Only 30% adding to cart (severe leak)",
+                    "suggested_tests": [
+                        "Test prominent 'Add to Cart' button (larger, contrasting color)",
+                        "Add product reviews/social proof above CTA",
+                        "Clarify shipping costs/delivery time upfront"
+                    ],
+                    "priority": "critical"
+                },
+                {
+                    "stage": "Homepage → Product Page",
+                    "issue": "65% drop-off at homepage",
+                    "suggested_tests": [
+                        "Improve homepage clarity (value prop, hero message)",
+                        "Add category navigation above fold",
+                        "A/B test hero image/video"
+                    ],
+                    "priority": "high"
+                }
+            ]
+        }
+    },
+    "related_tools": [
+        "ab-test-calculator",
+        "rice-prioritizer",
+        "lever-diagnostics",
+        "heatmap-insights"
+    ]
+}

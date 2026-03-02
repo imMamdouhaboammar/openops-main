@@ -1,0 +1,627 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# GROUNDING SOURCES REGISTRY
+# External sources for evidence-based recommendations
+# Version: 1.0.0 | Last Updated: 2026-02-15
+# ═══════════════════════════════════════════════════════════════════════════════
+#
+# 🔴 2026 VERIFICATION REQUIREMENTS:
+# - Platform features: Verify against Q4 2025+ sources
+# - Benchmarks: Include 2026 context or mark "dated"
+# - Regional (Egypt/GCC): Require 2025+ verification
+# - Algorithms: Require 2026 verification for Google/Meta/TikTok
+#
+# Platform Changes 2026:
+# - Google: Performance Max dominant, Consent Mode v2 required
+# - Meta: Advantage+ standard, Reels 40% of Instagram inventory
+# - TikTok: TikTok Shop integrated, Spark Ads 30% of formats
+# - GA4: Universal Analytics fully sunset, BigQuery standard
+# - Regional: Snapchat 75% in Saudi, WhatsApp critical, Ramadan Mar 10-Apr 8
+# ═══════════════════════════════════════════════════════════════════════════════
+
+source_priority_order:
+  1: "official_docs"
+  2: "vendor_docs"
+  3: "research"
+  4: "practitioner"
+  5: "github"
+  6: "reddit"  # Always last, supporting context only
+
+sources:
+  # ═══════════════════════════════════════════════════════════════════════════
+  # TIER A: OFFICIAL PLATFORM DOCUMENTATION
+  # ═══════════════════════════════════════════════════════════════════════════
+  
+  - id: "google_search_central"
+    name: "Google Search Central"
+    category: "official_docs"
+    type: "official_docs"
+    base_url: "https://developers.google.com/search"
+    trust_tier: "A"
+    default_reputation_score: 1.0
+    update_frequency: "continuous"
+    allowed_use:
+      - "SEO best practices"
+      - "Technical SEO requirements"
+      - "Search algorithm guidance"
+      - "Structured data specifications"
+    independence_group: "google_official"
+    
+  - id: "google_ads_help"
+    name: "Google Ads Help Center"
+    category: "official_docs"
+    type: "official_docs"
+    base_url: "https://support.google.com/google-ads"
+    trust_tier: "A"
+    default_reputation_score: 1.0
+    update_frequency: "continuous"
+    allowed_use:
+      - "Google Ads campaign setup"
+      - "Bidding strategies"
+      - "Targeting options"
+      - "Performance optimization"
+    independence_group: "google_official"
+    
+  - id: "ga4_documentation"
+    name: "Google Analytics 4 Documentation"
+    category: "official_docs"
+    type: "official_docs"
+    base_url: "https://developers.google.com/analytics"
+    trust_tier: "A"
+    default_reputation_score: 1.0
+    update_frequency: "continuous"
+    allowed_use:
+      - "GA4 implementation"
+      - "Event tracking setup"
+      - "Conversion configuration"
+      - "Reporting capabilities"
+    independence_group: "google_official"
+    
+  - id: "gtm_documentation"
+    name: "Google Tag Manager Documentation"
+    category: "official_docs"
+    type: "official_docs"
+    base_url: "https://developers.google.com/tag-manager"
+    trust_tier: "A"
+    default_reputation_score: 1.0
+    update_frequency: "continuous"
+    allowed_use:
+      - "Tag implementation"
+      - "Trigger configuration"
+      - "Variable setup"
+      - "Data layer specifications"
+    independence_group: "google_official"
+    
+  - id: "search_console_docs"
+    name: "Google Search Console Documentation"
+    category: "official_docs"
+    type: "official_docs"
+    base_url: "https://support.google.com/webmasters"
+    trust_tier: "A"
+    default_reputation_score: 1.0
+    update_frequency: "continuous"
+    allowed_use:
+      - "Search performance analysis"
+      - "Index coverage"
+      - "Sitemap management"
+      - "Manual action resolution"
+    independence_group: "google_official"
+    
+  - id: "meta_business_help"
+    name: "Meta Business Help Center"
+    category: "official_docs"
+    type: "official_docs"
+    base_url: "https://www.facebook.com/business/help"
+    trust_tier: "A"
+    default_reputation_score: 1.0
+    update_frequency: "continuous"
+    allowed_use:
+      - "Facebook/Instagram ads setup"
+      - "Audience targeting"
+      - "Pixel implementation"
+      - "Campaign objectives"
+    independence_group: "meta_official"
+    
+  - id: "tiktok_business_help"
+    name: "TikTok Business Help Center"
+    category: "official_docs"
+    type: "official_docs"
+    base_url: "https://ads.tiktok.com/help"
+    trust_tier: "A"
+    default_reputation_score: 1.0
+    update_frequency: "weekly"
+    allowed_use:
+      - "TikTok ads setup"
+      - "Creative best practices"
+      - "Targeting options"
+      - "Pixel implementation"
+    independence_group: "tiktok_official"
+    
+  - id: "linkedin_marketing_docs"
+    name: "LinkedIn Marketing Solutions Documentation"
+    category: "official_docs"
+    type: "official_docs"
+    base_url: "https://www.linkedin.com/help/lms"
+    trust_tier: "A"
+    default_reputation_score: 1.0
+    update_frequency: "weekly"
+    allowed_use:
+      - "LinkedIn ads setup"
+      - "B2B targeting"
+      - "Campaign objectives"
+      - "Lead generation forms"
+    independence_group: "microsoft_official"
+    
+  - id: "microsoft_ads_docs"
+    name: "Microsoft Advertising Documentation"
+    category: "official_docs"
+    type: "official_docs"
+    base_url: "https://help.ads.microsoft.com"
+    trust_tier: "A"
+    default_reputation_score: 0.95
+    update_frequency: "weekly"
+    allowed_use:
+      - "Bing/Microsoft ads"
+      - "LinkedIn profile targeting"
+      - "Import from Google Ads"
+      - "Audience network"
+    independence_group: "microsoft_official"
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # TIER A: ANALYTICS VENDOR DOCUMENTATION
+  # ═══════════════════════════════════════════════════════════════════════════
+  
+  - id: "mixpanel_docs"
+    name: "Mixpanel Documentation"
+    category: "vendor_docs"
+    type: "vendor_docs"
+    base_url: "https://docs.mixpanel.com"
+    trust_tier: "A"
+    default_reputation_score: 0.95
+    update_frequency: "weekly"
+    allowed_use:
+      - "Product analytics implementation"
+      - "Event tracking best practices"
+      - "Funnel analysis"
+      - "Cohort analysis"
+    independence_group: "mixpanel_vendor"
+    
+  - id: "amplitude_docs"
+    name: "Amplitude Documentation"
+    category: "vendor_docs"
+    type: "vendor_docs"
+    base_url: "https://amplitude.com/docs"
+    trust_tier: "A"
+    default_reputation_score: 0.95
+    update_frequency: "weekly"
+    allowed_use:
+      - "Product analytics"
+      - "Behavioral cohorting"
+      - "Experimentation features"
+      - "Data governance"
+    independence_group: "amplitude_vendor"
+    
+  - id: "posthog_docs"
+    name: "PostHog Documentation"
+    category: "vendor_docs"
+    type: "vendor_docs"
+    base_url: "https://posthog.com/docs"
+    trust_tier: "A"
+    default_reputation_score: 0.95
+    update_frequency: "weekly"
+    allowed_use:
+      - "Open-source analytics"
+      - "Feature flags"
+      - "Session replay"
+      - "Experimentation"
+    independence_group: "posthog_vendor"
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # TIER B: REPUTABLE MARKETING RESEARCH OUTLETS
+  # ═══════════════════════════════════════════════════════════════════════════
+  
+  - id: "think_with_google"
+    name: "Think with Google"
+    category: "research"
+    type: "research"
+    base_url: "https://www.thinkwithgoogle.com"
+    trust_tier: "B"
+    default_reputation_score: 0.85
+    update_frequency: "weekly"
+    allowed_use:
+      - "Consumer insights"
+      - "Industry benchmarks"
+      - "Trend analysis"
+      - "Case studies"
+    independence_group: "google_research"
+    
+  - id: "statista"
+    name: "Statista"
+    category: "research"
+    type: "research"
+    base_url: "https://www.statista.com"
+    trust_tier: "B"
+    default_reputation_score: 0.85
+    update_frequency: "daily"
+    allowed_use:
+      - "Market statistics"
+      - "Industry data"
+      - "Consumer trends"
+      - "Competitive analysis"
+    independence_group: "statista_research"
+    
+  - id: "emarketer"
+    name: "eMarketer (Insider Intelligence)"
+    category: "research"
+    type: "research"
+    base_url: "https://www.emarketer.com"
+    trust_tier: "B"
+    default_reputation_score: 0.85
+    update_frequency: "daily"
+    allowed_use:
+      - "Digital marketing trends"
+      - "E-commerce forecasts"
+      - "Social media usage"
+      - "Ad spending data"
+    independence_group: "emarketer_research"
+    
+  - id: "gartner_marketing"
+    name: "Gartner Marketing Insights"
+    category: "research"
+    type: "research"
+    base_url: "https://www.gartner.com/marketing"
+    trust_tier: "B"
+    default_reputation_score: 0.9
+    update_frequency: "weekly"
+    allowed_use:
+      - "Marketing technology trends"
+      - "CMO strategies"
+      - "Martech landscapes"
+      - "Strategic planning"
+    independence_group: "gartner_research"
+    
+  - id: "forrester_marketing"
+    name: "Forrester Marketing Research"
+    category: "research"
+    type: "research"
+    base_url: "https://www.forrester.com/marketing"
+    trust_tier: "B"
+    default_reputation_score: 0.9
+    update_frequency: "weekly"
+    allowed_use:
+      - "B2C and B2C marketing insights"
+      - "Customer experience"
+      - "Digital transformation"
+      - "Vendor evaluations"
+    independence_group: "forrester_research"
+    
+  - id: "mckinsey_marketing"
+    name: "McKinsey Marketing & Sales"
+    category: "research"
+    type: "research"
+    base_url: "https://www.mckinsey.com/marketing-sales"
+    trust_tier: "B"
+    default_reputation_score: 0.9
+    update_frequency: "monthly"
+    allowed_use:
+      - "Strategic marketing frameworks"
+      - "Growth strategies"
+      - "Digital marketing transformation"
+      - "Customer analytics"
+    independence_group: "mckinsey_research"
+    
+  - id: "hubspot_research"
+    name: "HubSpot Research"
+    category: "research"
+    type: "research"
+    base_url: "https://www.hubspot.com/state-of-marketing"
+    trust_tier: "B"
+    default_reputation_score: 0.8
+    update_frequency: "annual"
+    allowed_use:
+      - "State of marketing reports"
+      - "Inbound marketing trends"
+      - "Sales and marketing alignment"
+      - "Content marketing benchmarks"
+    independence_group: "hubspot_research"
+    
+  - id: "content_marketing_institute"
+    name: "Content Marketing Institute"
+    category: "research"
+    type: "research"
+    base_url: "https://contentmarketinginstitute.com"
+    trust_tier: "B"
+    default_reputation_score: 0.8
+    update_frequency: "weekly"
+    allowed_use:
+      - "Content marketing strategies"
+      - "B2B content benchmarks"
+      - "Content distribution"
+      - "Measurement frameworks"
+    independence_group: "cmi_research"
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # TIER B: PRACTITIONER SOURCES
+  # ═══════════════════════════════════════════════════════════════════════════
+  
+  - id: "moz_blog"
+    name: "Moz Blog"
+    category: "practitioner"
+    type: "practitioner"
+    base_url: "https://moz.com/blog"
+    trust_tier: "B"
+    default_reputation_score: 0.85
+    update_frequency: "weekly"
+    allowed_use:
+      - "SEO best practices"
+      - "Link building strategies"
+      - "Local SEO"
+      - "Keyword research methodologies"
+    independence_group: "moz_practitioner"
+    
+  - id: "ahrefs_blog"
+    name: "Ahrefs Blog"
+    category: "practitioner"
+    type: "practitioner"
+    base_url: "https://ahrefs.com/blog"
+    trust_tier: "B"
+    default_reputation_score: 0.85
+    update_frequency: "weekly"
+    allowed_use:
+      - "SEO tutorials"
+      - "Content strategy"
+      - "Competitor analysis"
+      - "Link building tactics"
+    independence_group: "ahrefs_practitioner"
+    
+  - id: "semrush_blog"
+    name: "SEMrush Blog"
+    category: "practitioner"
+    type: "practitioner"
+    base_url: "https://www.semrush.com/blog"
+    trust_tier: "B"
+    default_reputation_score: 0.85
+    update_frequency: "weekly"
+    allowed_use:
+      - "PPC strategies"
+      - "SEO guides"
+      - "Content marketing"
+      - "Competitive research"
+    independence_group: "semrush_practitioner"
+    
+  - id: "unbounce_blog"
+    name: "Unbounce Blog"
+    category: "practitioner"
+    type: "practitioner"
+    base_url: "https://unbounce.com/blog"
+    trust_tier: "B"
+    default_reputation_score: 0.85
+    update_frequency: "weekly"
+    allowed_use:
+      - "Landing page optimization"
+      - "CRO best practices"
+      - "A/B testing"
+      - "Conversion copywriting"
+    independence_group: "unbounce_practitioner"
+    
+  - id: "optimeo_blog"
+    name: "Optimizely Blog"
+    category: "practitioner"
+    type: "practitioner"
+    base_url: "https://www.optimizely.com/blog"
+    trust_tier: "B"
+    default_reputation_score: 0.85
+    update_frequency: "weekly"
+    allowed_use:
+      - "Experimentation best practices"
+      - "Statistical significance"
+      - "Feature flagging"
+      - "Digital experience optimization"
+    independence_group: "optimizely_practitioner"
+    
+  - id: "niel_patel_blog"
+    name: "Neil Patel Blog"
+    category: "practitioner"
+    type: "practitioner"
+    base_url: "https://neilpatel.com/blog"
+    trust_tier: "B"
+    default_reputation_score: 0.8
+    update_frequency: "weekly"
+    allowed_use:
+      - "Digital marketing tutorials"
+      - "SEO guides"
+      - "Content marketing"
+      - "Conversion optimization"
+    independence_group: "neilpatel_practitioner"
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # TIER C: GITHUB REPOSITORIES
+  # ═══════════════════════════════════════════════════════════════════════════
+  
+  - id: "github_analytics"
+    name: "GitHub - Analytics & Tracking"
+    category: "github"
+    type: "github"
+    base_url: "https://github.com/topics/analytics"
+    trust_tier: "C"
+    default_reputation_score: 0.75
+    update_frequency: "unknown"
+    allowed_use:
+      - "Implementation patterns"
+      - "Tracking plan templates"
+      - "Open-source analytics tools"
+      - "Data pipeline examples"
+    independence_group: "github_community"
+    
+  - id: "github_experimentation"
+    name: "GitHub - Experimentation Frameworks"
+    category: "github"
+    type: "github"
+    base_url: "https://github.com/topics/a-b-testing"
+    trust_tier: "C"
+    default_reputation_score: 0.75
+    update_frequency: "unknown"
+    allowed_use:
+      - "A/B testing frameworks"
+      - "Feature flag implementations"
+      - "Statistical testing libraries"
+      - "Experiment design patterns"
+    independence_group: "github_community"
+    
+  - id: "github_attribution"
+    name: "GitHub - Attribution Models"
+    category: "github"
+    type: "github"
+    base_url: "https://github.com/topics/attribution"
+    trust_tier: "C"
+    default_reputation_score: 0.75
+    update_frequency: "unknown"
+    allowed_use:
+      - "Attribution model implementations"
+      - "Marketing mix modeling"
+      - "Multi-touch attribution code"
+      - "Data-driven attribution"
+    independence_group: "github_community"
+    
+  - id: "segment_tracking"
+    name: "Segment Tracking Plan Templates"
+    category: "github"
+    type: "github"
+    base_url: "https://github.com/segmentio"
+    trust_tier: "C"
+    default_reputation_score: 0.8
+    update_frequency: "unknown"
+    allowed_use:
+      - "Tracking plan schemas"
+      - "Event naming conventions"
+      - "Analytics.js patterns"
+      - "Data governance"
+    independence_group: "segment_vendor"
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # TIER D: REDDIT (WEAK EVIDENCE ONLY)
+  # ═══════════════════════════════════════════════════════════════════════════
+  
+  - id: "reddit_marketing"
+    name: "Reddit - r/marketing"
+    category: "reddit"
+    type: "reddit"
+    base_url: "https://www.reddit.com/r/marketing"
+    trust_tier: "D"
+    default_reputation_score: 0.3
+    update_frequency: "continuous"
+    allowed_use:
+      - "Qualitative signals only"
+      - "Practitioner anecdotes"
+      - "Trend awareness"
+      - "Community sentiment"
+    independence_group: "reddit_community"
+    restrictions:
+      - "NEVER counts toward 3 independent confirmations"
+      - "Always label as weak evidence"
+      - "Use only as supporting context"
+      - "Verify claims through Tier A/B sources"
+      
+  - id: "reddit_ppc"
+    name: "Reddit - r/PPC"
+    category: "reddit"
+    type: "reddit"
+    base_url: "https://www.reddit.com/r/PPC"
+    trust_tier: "D"
+    default_reputation_score: 0.3
+    update_frequency: "continuous"
+    allowed_use:
+      - "Paid advertising anecdotes"
+      - "Platform-specific experiences"
+      - "Practitioner tips"
+      - "Campaign troubleshooting discussions"
+    independence_group: "reddit_community"
+    restrictions:
+      - "NEVER counts toward 3 independent confirmations"
+      - "Always label as weak evidence"
+      
+  - id: "reddit_seo"
+    name: "Reddit - r/SEO"
+    category: "reddit"
+    type: "reddit"
+    base_url: "https://www.reddit.com/r/SEO"
+    trust_tier: "D"
+    default_reputation_score: 0.3
+    update_frequency: "continuous"
+    allowed_use:
+      - "SEO community discussions"
+      - "Algorithm update reactions"
+      - "Tactical discussions"
+      - "Industry sentiment"
+    independence_group: "reddit_community"
+    restrictions:
+      - "NEVER counts toward 3 independent confirmations"
+      - "Always label as weak evidence"
+
+independence_groups:
+  google_official:
+    description: "Google's official documentation ecosystem"
+    sources: ["google_search_central", "google_ads_help", "ga4_documentation", "gtm_documentation", "search_console_docs"]
+  
+  meta_official:
+    description: "Meta's official documentation"
+    sources: ["meta_business_help"]
+  
+  tiktok_official:
+    description: "TikTok's official documentation"
+    sources: ["tiktok_business_help"]
+  
+  microsoft_official:
+    description: "Microsoft's official documentation"
+    sources: ["linkedin_marketing_docs", "microsoft_ads_docs"]
+  
+  analytics_vendors:
+    description: "Third-party analytics vendors"
+    sources: ["mixpanel_docs", "amplitude_docs", "posthog_docs"]
+  
+  research_outlets:
+    description: "Independent research organizations"
+    sources: ["statista", "emarketer", "gartner_marketing", "forrester_marketing", "mckinsey_marketing"]
+  
+  practitioner_sites:
+    description: "Marketing practitioner blogs and publications"
+    sources: ["moz_blog", "ahrefs_blog", "semrush_blog", "unbounce_blog", "optimeo_blog"]
+  
+  github_community:
+    description: "Open-source community repositories"
+    sources: ["github_analytics", "github_experimentation", "github_attribution"]
+  
+  reddit_community:
+    description: "Reddit discussion forums (WEAK EVIDENCE ONLY)"
+    sources: ["reddit_marketing", "reddit_ppc", "reddit_seo"]
+
+confirmation_rules:
+  minimum_independent_sources: 3
+  independence_requirement: |
+    For a key recommendation, confirmations must come from DIFFERENT independence_groups.
+    Multiple pages from the same source or organization do NOT count as independent.
+  
+  reddit_never_counts: |
+    Reddit sources can NEVER be one of the 3 required confirmations.
+    They may only be used as supporting qualitative context.
+  
+  recency_enforcement_2026: |
+    Platform feature claims MUST be verified against sources updated Q4 2025 or later.
+    Benchmark data MUST include 2026 context or be explicitly marked as "dated".
+    Regional insights (Egypt/GCC) require 2025+ verification.
+    Algorithm changes require 2026 verification.
+  
+  example_valid_confirmations:
+    scenario: "Google Ads Performance Max best practices"
+    valid_combination:
+      - source: "google_ads_help" (google_official)
+      - source: "think_with_google" (google_research)
+      - source: "semrush_blog" (semrush_practitioner)
+    note: "Three different independence groups = valid"
+    
+  example_invalid_confirmations:
+    scenario: "Google Ads Performance Max best practices"
+    invalid_combination:
+      - source: "google_ads_help" (google_official)
+      - source: "ga4_documentation" (google_official)
+      - source: "think_with_google" (google_research)
+    reason: "All from Google ecosystem = only 1 independent source"

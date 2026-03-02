@@ -1,0 +1,243 @@
+﻿The JEDAR Master Crisis Management Playbook: A Strategic Doctrine for Saudi Governmental Entities and Large Enterprises
+1. Executive Summary
+In the current era of the Kingdom of Saudi Arabia (KSA), the operational landscape for governmental entities and large-scale enterprises is defined by a paradox of opportunity and volatility. The ambitious trajectory of Vision 2030 has accelerated economic diversification, digital transformation, and global openness, positioning Saudi organizations on the world stage. However, this rapid evolution has simultaneously birthed a complex matrix of reputational risks. The hyper-connectivity of the Saudi populace—where digital platforms serve as the primary arena for public discourse—means that a reputational threat can metastasize from a localized complaint to a national security concern in a matter of minutes.
+This JEDAR Master Crisis Management Playbook is not merely a procedural manual; it is a doctrine of stability and "Antifragility" designed specifically for the unique sociopolitical, legal, and digital ecosystem of Saudi Arabia. It is authored by the JEDAR Agency task force, adopting our proprietary "Dual-Layer Approach" which combines microscopic digital immersion with macroscopic strategic distance.1 This document moves beyond generic Western crisis management theories to address the specific realities of the Kingdom: the dominance of the "6-Minute Rule" in social media escalation, the legal imperatives of the Anti-Cybercrime Law, the cultural nuances of honor (Wajh) and social harmony, and the operational immensity of national events like Hajj and Riyadh Season.
+For Saudi governmental bodies and major enterprises (such as PIF-backed giga-projects), the cost of unpreparedness is no longer measured solely in financial loss but in the erosion of public trust and the disruption of national progress. The proliferation of "electronic flies" (coordinated bot networks), the weaponization of rumors, and the high expectations of a youthful, digitally native citizenry necessitate a response capability that is agile, legally robust, and culturally resonant.
+This playbook provides a comprehensive blueprint for command and control. It outlines the transition from reactive firefighting to proactive "Immunization," detailing the architecture of a modern Crisis Command Center, the precise syntax of holding statements, and the technological stack required for information superiority. By internalizing these protocols, Saudi entities can ensure that when the inevitable storm hits, they do not merely survive—they emerge with their institutional integrity strengthened, demonstrating the resilience that is the hallmark of the Kingdom’s leadership.
+________________
+2. Crisis Foundations in the Saudi Context
+To manage a crisis effectively within the Kingdom, one must first redefine what constitutes a "crisis" through the lens of Saudi cultural, legal, and operational realities. A crisis here is rarely a singular operational failure; it is almost always a multi-dimensional event that threatens the social contract between the institution and the public.
+2.1 The Definition of Crisis: Social Harmony and National Image
+In Western corporate structures, a crisis is often defined by its impact on the bottom line or share price. In Saudi Arabia, the definition is broader and more profound. A crisis is any event that threatens Social Harmony (Al-Silm Al-Ahli), violates Religious Values, or impinges upon the National Image.
+The Saudi digital sphere serves as a modern Majlis—a public gathering space where grievances are aired, and consensus is formed. Consequently, a crisis often begins when an entity is perceived to have acted against the collective interest or dignity of the community. For example, a service failure in a government app is not just a technical glitch; it is viewed as a failure in the state’s promise of modernization. Similarly, a culturally insensitive marketing campaign is not just a branding error; it is an affront to national identity. The JEDAR philosophy posits that organizations must view themselves as custodians of public trust. Therefore, a crisis is defined as a rupture in that trust which, if left unchecked, invites intervention from higher regulatory or security authorities.2
+2.2 The Legal Landscape: The Weaponization of Law
+Crisis management in Saudi Arabia operates within a stringent legal framework that fundamentally alters the response strategy. The Anti-Cybercrime Law is the gravity that governs the digital ecosystem. Crisis leaders must understand that managing a crisis often involves invoking legal instruments to contain malicious actors.
+* Criminalization of Rumors: Article 6 of the Anti-Cybercrime Law is a critical tool in the crisis manager's arsenal. It penalizes the production, preparation, transmission, or storage of material impinging on public order, religious values, or public morals with imprisonment of up to five years and fines reaching 3 million SAR.3 This legal reality means that when an organization is targeted by a fabricated rumor, the response is not limited to a "PR correction." It involves a parallel legal track: identifying the source and coordinating with the Ministry of Interior’s cybercrime channels to prosecute the offenders. The crisis team must distinguish between "organic criticism" (which requires empathy and resolution) and "criminal fabrication" (which requires legal escalation).
+* Privacy and Defamation: Article 3 of the same law criminalizes defamation and the invasion of privacy.5 This has dual implications. First, it protects the organization's executives from personal slander. Second, it restricts the organization from releasing data that might infringe on a customer's privacy during a rebuttal. Corporate apologies or explanatory statements must be meticulously drafted by legal counsel to ensure they do not inadvertently admit liability in a way that triggers criminal prosecution against employees or violates the sanctity of private data.
+2.3 The Cultural Imperative: Honor, Face, and Responsibility
+Cultural nuances dictate the reception and success of any crisis communication. Understanding the anthropology of the Saudi audience is as important as the message itself.
+* The Concept of Face (Wajh): Public embarrassment is a severe reputational injury in Saudi culture. A crisis often involves a loss of face for the entity or the aggrieved party. Successful crisis resolution requires a strategy that allows all parties to maintain dignity. Direct, aggressive confrontation or dismissive denials often escalate crises by insulting the public's intelligence or honor.6 The goal is to restore equilibrium, not to "win" a debate.
+* Collective Responsibility: The slogan "We are all responsible" (Kulluna Mas'ool), which became the rallying cry during the COVID-19 pandemic, encapsulates the expectation of shared duty between the state, the private sector, and the citizen.7 Crisis messaging must appeal to this sense of collective patriotism. It should frame the resolution not as a transaction, but as a fulfillment of national duty.
+* Indirect Communication: Saudi communication styles often favor high-context, indirect messaging over blunt refusal. A direct "No" or a flat denial can be perceived as aggressive or arrogant. Effective crisis communications often employ indirect but firm language, focusing on "clarification" and "contextualization" rather than combative "rebuttal".8
+2.4 JEDAR’s Stabilizing Anchor Philosophy
+In the heat of a crisis—whether it be a crowd control incident during Hajj or a massive cybersecurity breach in a ministry—the immediate reaction of leadership is often emotional, driven by the fear of reputational damage. JEDAR positions itself as the "Stabilizing Anchor" for decision-makers.
+Our philosophy mandates a Dual-Layer Approach to crisis management 1:
+1. Layer 1: Deep Immersion: This involves the crisis team embedding themselves into the digital noise. We utilize advanced monitoring tools to read the specific vernacular, memes, and hashtags driving the crisis. We understand the "street" sentiment at a granular level.
+2. Layer 2: Strategic Distance: Simultaneously, the leadership must maintain a detached, high-level view. This strategic distance ensures that tactical decisions made in the heat of the moment do not compromise long-term Vision 2030 goals or national interests. JEDAR provides this balance, preventing tactical errors driven by short-term panic and ensuring that every move is calculated to restore the institution to its natural state of strength.
+________________
+3. The JEDAR Crisis Lifecycle Model
+Standard crisis models (like Fink or the 4Rs) are often too linear for the explosive velocity of the Saudi digital ecosystem. JEDAR has adapted these global standards into a localized, four-phase cycle designed for high-speed containment and recovery.2
+Phase 1: The Pre-Crisis (The Shield)
+This phase is defined by "Immunization" rather than just passive prevention. In the Saudi context, if you wait for the crisis to appear on the radar, you are already late.
+* Digital Immunization: This involves proactively populating search engines (SEO) and social platforms with positive, verified content to create a "reputation buffer." The objective is to ensure that if a negative story breaks, it must compete with a fortified wall of positive narratives regarding the entity's achievements and Vision 2030 contributions.10
+* Hashtag Occupation: For predictable events like Hajj or Riyadh Season, the pre-crisis phase involves "occupying" the digital space. This means securing and populating anticipated hashtags (e.g., #Hajj1446_Success) with content before they can be hijacked by hostile actors or bot networks.11
+* Weak Signal Detection: Utilizing AI-driven social listening tools to detect "weak signals." These are the minor complaints, the localized rumors in WhatsApp groups, or the low-engagement tweets that typically precede a major viral event. In Saudi Arabia, a single tweet from an influential account can ignite a firestorm; detecting that tweet when it has 10 likes is the key to prevention.9
+Phase 2: The Acute Phase (The Storm)
+This is the point of impact where the crisis becomes visible and begins to escalate. Speed is the only metric that matters here.
+* The 6-Minute Rule: JEDAR analysis of Saudi social media dynamics, particularly on X (Twitter), indicates that a definitive narrative is often established within the first 6 minutes of a viral spike.12 If the entity does not acknowledge the issue or provide a holding statement within this window, an information vacuum is created. This vacuum is immediately filled by rumors, "electronic flies," and hostile interpretations. The crisis team must be empowered to release pre-approved holding statements without bureaucratic delay to seize the narrative initiative.
+* Triaging: Immediate assessment of the crisis type is crucial. Is it a Tier 1 operational hiccup or a Tier 4 national security threat? This triage determines whether the response remains with the customer service team or escalates to the Minister’s office.10
+* Containment: The operational goal in this phase is containment. This does not mean silencing the public, but rather moving the conversation from uncontrolled viral hashtags to controlled channels, such as the entity’s direct messages, the Unified Security Operations Center (911), or official press releases.1
+Phase 3: The Chronic Phase (The Navigation)
+In this phase, the immediate explosion has settled, but the issue persists through investigations, legal proceedings, or sustained media scrutiny.
+* Narrative Stabilization: The entity must shift from reactive holding statements to proactive narrative building. This involves releasing detailed facts, infographics, and audiovisual evidence to correct misinformation.
+* Stakeholder Alignment: A critical risk in the Saudi government sector is "fragmented messaging," where different entities (e.g., MOH, MOI, and a Royal Commission) release contradictory statements about the same event. This phase requires rigorous coordination with the Center for Government Communication (CGC) to ensure that all government entities are "singing from the same song sheet".14
+* Fatigue Management: Managing the stamina of the crisis team is vital. High-profile crises in the Kingdom, such as the Hamburgini food poisoning case, can drag on for weeks. Ensuring team rotation and mental resilience is a logistical necessity.15
+Phase 4: Resolution & Recovery (The Renaissance)
+This phase marks the return to the "New Normal" and the extraction of value from the crisis.
+* Post-Mortem Analysis: Conducting a brutal, honest assessment of what went wrong is essential. This analysis must strip away the cultural tendency to avoid blame and focus on systemic root causes.
+* Reputation Reconstruction: Launching "Goodwill Initiatives" to rebuild trust is a proven strategy in the Kingdom. For instance, after overcoming operational challenges, brands like Al Baik focused heavily on charity and community service to restore public affection.16
+* Policy Reform: The crisis must lead to tangible change. Amending internal regulations, improving safety protocols, or enhancing digital infrastructure closes the gap that caused the crisis, demonstrating to the leadership and the public that the lesson has been learned.17
+________________
+4. Crisis Typology & Classification
+Effective response requires accurate diagnosis. A "one-size-fits-all" approach is disastrous in a landscape as diverse as Saudi Arabia's. JEDAR classifies crises into four distinct tiers based on severity, origin, and potential impact on national interest.2
+4.1 Tier Classification Matrix
+Crisis Tier
+	Definition
+	Examples in KSA Context
+	Response Protocol & Owner
+	Tier 1: Routine (Low)
+	Minor operational errors, isolated customer complaints, or low-traction negative sentiment. High frequency, low impact.
+	A delayed Saudi Airlines flight, a rude employee video with <1k views, a minor trending hashtag regarding service delay.
+	Monitor & Engage: Managed by Customer Service & Social Media Manager. No press release needed. Direct resolution with affected parties.
+	Tier 2: Critical (Medium)
+	Incidents threatening brand reputation, minor public safety issues, or rumors gaining viral traction. Requires public clarification.
+	Rumors about a product ban, a viral video of a safety violation in a restaurant, breakdown of a digital government service (e.g., temporary Absher outage).
+	Rapid Response: Holding statement within 15 mins. Spokesperson clarification. Coordination with CGC if government-related. Managed by Comms Director.
+	Tier 3: Dangerous (High)
+	Threats to life, significant financial loss, major legal violations, or corruption allegations. Intense media scrutiny.
+	Mass food poisoning outbreak (e.g., Hamburgini), Cyberattack on critical infrastructure, major corruption allegation investigated by Nazaha.
+	War Room Activation: Gold Command involvement (CEO/Minister). Legal team leads compliance. Continuous updates to National Risk Council.
+	Tier 4: National (Severe)
+	Events threatening national security, Hajj/Umrah operations, international relations, or public health.
+	Stampede risks during Hajj, pandemics (MERS/COVID), politically motivated cyber campaigns targeting the state.
+	State Level: Ministry of Interior / National Risk Council takes lead. Total mobilization. Unified Media Center controls narrative.
+	4.2 Specific Saudi Crisis Vectors
+* The "Electronic Flies" (Dhubab Iliktrūniya):
+   * Nature: These are coordinated bot attacks, often originating from hostile regional actors, designed to sow discord, attack national projects (like NEOM or Riyadh Season), or amplify negative narratives.18
+   * Identifier: Indicators include rapid retweeting, accounts with generic profile pictures created recently, repetitive syntax across thousands of tweets, and sudden hashtag spikes at odd hours (e.g., 3 AM).
+   * Response Strategy: The JEDAR doctrine dictates "Block Without Comment." Direct engagement amplifies their reach. Instead, the strategy is to report these networks to the relevant authorities for cybercrime investigation and to "flood the zone" with positive, verified content that pushes the bot activity down the timeline.20
+* Cultural & Religious Sensitivities:
+   * Nature: Marketing campaigns, corporate behavior, or influencer content deemed offensive to Islamic values, Saudi traditions, or public morals.
+   * Examples: Improper use of religious symbols in advertising, culturally insensitive content by influencers (e.g., the Riyadh Comedy Festival backlash or dress code violations), or violation of privacy/modesty norms.21
+   * Response Strategy: Immediate, unconditional apology expressing deep regret. Rapid removal of the offensive content. A reaffirmation of commitment to national values and, often, a visible disciplinary action against the responsible parties to demonstrate accountability.
+* Hajj & Umrah Operational Crises:
+   * Nature: The massive scale of Hajj presents unique risks involving crowd control, health hazards, and transportation logistics. These are high-stakes events where the safety of millions is at risk.
+   * Response Strategy: Extreme speed and coordination are required. Reliance on the Unified Security Operations Center (911) and the National Center for Security Operations (NCSO) is paramount. The narrative must focus on the state’s tireless efforts to serve the guests of Rahman, ensuring transparency while preventing panic.23
+________________
+5. Command Center Blueprint
+In the event of a crisis, decentralized decision-making is a liability. A physical and digital "War Room" is essential for centralized command, aligned with the standards of the National Risk Council.25
+5.1 Team Structure (The Crisis Cell)
+* Gold Commander (Strategic): The CEO or Minister. They set the ultimate objective (e.g., "Protect the brand," "Ensure public safety," "Maintain public order"). They authorize high-level statements and financial resources.
+* Silver Commander (Tactical): The Crisis Director or VP of Communications. They manage the War Room operations, coordinate the JEDAR task force, approve specific messaging, and ensure the strategy is executed.
+* Bronze Teams (Operational):
+   * Monitoring Unit: Dedicated analysts using AI tools to track sentiment, velocity, and emerging narratives.10
+   * Content Unit: Rapid-response creatives capable of drafting statements, designing infographics, and editing video clarifications in real-time.
+   * Legal Liaison: A critical role to ensure all communications comply with the Anti-Cybercrime Law and the Personal Data Protection Law (PDPL).26
+   * Liaison Officer: The direct link to external bodies like the Center for Government Communication (CGC) to ensure narrative alignment with the state’s unified messaging.14
+5.2 The Digital War Room Tech Stack
+To function at the "speed of Twitter," the Command Center must utilize a specific, integrated digital toolkit 10:
+* Intelligence & Listening: Brandwatch and Sprinklr for enterprise-level social listening. CrowdTangle for tracking viral content on Facebook/Instagram.
+* Coordination & Activation: CrisisGo and Everbridge for immediate team communication, protocol activation, and mass notification to employees or stakeholders.
+* Analysis & Filtering: Google Perspective API and Microsoft Content Moderator for AI-driven filtering of toxic content and comment moderation.
+* Visual Forensics: Amazon Rekognition for identifying unauthorized use of logos, analyzing visual sentiment, and detecting manipulated images or deepfakes.2
+5.3 Integration with National Infrastructure
+Government bodies and large enterprises do not operate in silos. The Command Center must have established "Hotlines" and integration protocols with:
+* NCSO (911): For immediate coordination on physical security, fire, and safety incidents.23
+* CGC (Unified Media Center): For approving media lines in national-level crises and accessing the "Grid" of government spokespersons.7
+* NCA (National Cybersecurity Authority): For reporting cyber-attacks, data breaches, and digital intrusions immediately upon detection.27
+________________
+6. Scenarios (War Gaming)
+To ensure readiness, JEDAR utilizes detailed simulations based on probable threats.
+Scenario A: The "Fabricated Leak" (Cyber/Rumor)
+Situation: A doctored document bearing the entity’s official letterhead circulates on WhatsApp and X, claiming a popular government service app (e.g., Absher or Tawakkalna) has been hacked and user data leaked.
+JEDAR Response Protocol:
+1. T+0 mins: AI monitoring detects a spike in keywords "Hack," "Leak," "Data," and "Breach."
+2. T+15 mins: The Technical Team verifies system integrity (confirms Negative Breach).
+3. T+30 mins: The Crisis Director authorizes the issuance of a "Denial & Caution" statement. This statement explicitly cites the Anti-Cybercrime Law penalties for spreading rumors to deter further sharing.3
+4. T+60 mins: Release of a technical infographic showing the "Green" security status and explaining the fabrication.
+5. T+2 hours: The Liaison Officer coordinates with the CGC to have key influencers and other government accounts retweet the official denial. The Legal Team files a formal report against the originators of the document.
+Scenario B: The "Influencer Misstep" (Cultural)
+Situation: A contracted influencer for a tourism project posts content from a conservative heritage site that is perceived as disrespectful to local customs (e.g., inappropriate dress or behavior).
+JEDAR Response Protocol:
+1. Immediate Action: Suspend the influencer's contract privately and immediately request the removal of the content.
+2. Public Action: Issue a statement emphasizing that individual views/actions do not reflect the entity's values. Importantly, do not repost or link to the offensive content to avoid the "Streisand Effect."
+3. Corrective Action: Launch a counter-campaign highlighting local heritage, respect, and community engagement, featuring local elders or community leaders to restore goodwill.28
+Scenario C: The "Operational Failure" (Service Disruption)
+Situation: A major breakdown in Hajj transport logistics leaves thousands of pilgrims stranded at a transition point for 4 hours, leading to viral videos of distress.
+JEDAR Response Protocol:
+1. Acknowledgment (The 6-Minute Rule): "We are aware of delays at Sector B and are acting immediately." (Validate the user's pain to prevent anger escalation).29
+2. Explanation: "Due to unexpected weather conditions/technical fault..." (Provide context, not excuses).
+3. Resolution: "Alternative buses have been dispatched and will arrive in 20 minutes." (Provide a concrete timeline).
+4. Empathy: Deploy field teams to distribute water and food. Document these actions and share them to demonstrate care and control.30
+Scenario D: The "Boycott Campaign" (Geopolitical/Social)
+Situation: An organic or bot-driven campaign calls for the boycott of a product or service due to a perceived geopolitical stance or alignment.
+JEDAR Response Protocol:
+1. Assessment: Determine if the campaign is organic (real citizens) or inorganic (electronic flies).
+2. If Inorganic: Deploy the "Block Without Comment" doctrine. Flood the zone with positive news about the company’s contribution to the local economy (Saudization numbers, CSR initiatives).
+3. If Organic: Engage with key opinion leaders (KOLs) to clarify the position. Avoid direct confrontation with the public. Reiterate loyalty to the Kingdom’s vision and economic prosperity.
+________________
+7. Strategic Messaging & Communication Protocols
+7.1 The Holding Statement
+The "Golden Hour" is dead; in the age of Twitter, we have the "Golden Minutes." A holding statement must be ready to deploy within 15 minutes of verification to fill the information vacuum.11
+Template 1: Operational Incident (Generic)
+"We are aware of reports regarding at. Our specialized teams are currently on-site assessing the situation. The safety of is our absolute priority. We urge the public to rely only on official sources for updates and avoid spreading unverified information."
+Template 2: Rumor Rebuttal (Cyber Law Focus)
+"The categorically denies the rumors circulating regarding. We confirm that operations are proceeding normally. We remind the public that creating or sharing fabricated information is a violation of Article 6 of the Anti-Cybercrime Law. Legal measures will be taken against the sources of these fabrications." 31
+7.2 The Tone of Voice
+* Authoritative yet Compassionate: Official statements should use "Royal" or "Formal" Arabic (Fusha) to convey seriousness and state authority. However, the tone must also be compassionate when addressing affected individuals.
+* Religious Alignment: Critical statements, especially those regarding national safety, Hajj, or fatalities, should begin with "By the Grace of God" (Bismillah) and use appropriate religious terminology (e.g., Rahimahullah for the deceased). This aligns the entity with the spiritual values of the public.
+* Unity-Based: Use collective terminology ("Our Nation," "Our Sons and Daughters," "The Guests of God") to invoke the "We are all responsible" spirit. This frames the crisis response as a collective national effort rather than a corporate obligation.7
+7.3 Managing "Electronic Flies"
+* Do Not Feed the Trolls: Direct engagement with bot accounts amplifies their reach and validates their narrative.
+* The "Block Without Comment" Doctrine: Official accounts should block obvious bot accounts to degrade their network efficiency and remove their visibility from the entity’s platform.20
+* The "Truth Flood": Instead of replying to bots, the entity should publish a high volume of high-quality, SEO-optimized positive content. This algorithmic strategy pushes the bot-generated negative content down in search results and timelines.10
+________________
+8. Digital Toolkit & Technology
+Modern crisis management is data-driven. JEDAR mandates the use of a specific tech stack to gain information superiority.2
+8.1 Listening & Analysis
+* Brandwatch / Sprinklr / Meltwater: For tracking viral velocity, sentiment volume, and identifying the "Patient Zero" of a rumor.
+* CrowdTangle: Essential for tracking content spread across Facebook and Instagram ecosystems.
+* Google Trends: To monitor if a social media crisis is bleeding into general search behavior, indicating a shift from a "Twitter storm" to a mainstream reputation issue.
+* Arabic NLP Sentiment Analysis: Utilizing advanced tools capable of understanding Khaleeji dialects, sarcasm, and local idioms, which standard global tools often misinterpret.
+8.2 Content Moderation & Filtering
+* Automated Moderation: Using Google Perspective API or Microsoft Content Moderator to automatically hide comments containing profanity, hate speech, or specific keywords on owned channels. This prevents the comment section from becoming a toxic battleground.2
+* Visual Recognition: Amazon Rekognition is vital for identifying unauthorized use of entity logos, detecting deepfake imagery, or flagging inappropriate visual content in real-time.2
+8.3 Simulation & Training
+* CrisisGo: For mobile-based crisis protocol activation. This app ensures every team member has the crisis plan, contact lists, and checklists in their pocket, accessible offline.
+* Simulation Drills: Conducting quarterly "Tabletop Exercises" mimicking scenarios like a cyber-attack or a Hajj stampede is mandatory. These drills test the team’s ability to adhere to the "6-Minute Rule" and identify bottlenecks in the approval process.9
+________________
+9. Recovery & Reputation Restoration
+The crisis does not end when the trending hashtag dies. The Recovery Phase is where true resilience is built and where the entity transitions back to business as usual.32
+9.1 The "Reform" Phase
+* Visible Change: If the crisis was caused by an internal fault (e.g., the Hamburgini poisoning), the entity must visibly demonstrate the correction. This could involve publishing videos of new hygiene protocols, announcing third-party audits, or introducing new leadership. The public must see that the entity has changed.17
+* Re-humanization: Shift the narrative back to the people. Showcase the human side of the organization through interviews with frontline staff, behind-the-scenes content, and stories of dedication.
+9.2 SEO & Digital Hygiene (The "Right to be Forgotten")
+* Positive Displacement: Launching a sustained content campaign (articles, videos, press releases) optimized for the keywords associated with the crisis. The goal is to push negative news results off the first page of Google, effectively "burying" the crisis in the archives.10
+* Wikipedia & Database Audits: Ensuring factual accuracy is restored on all encyclopedic platforms and that the crisis does not become the defining feature of the entity's history.
+9.3 Post-Crisis Evaluation (KPIs)
+Measuring success is not just about survival. JEDAR uses specific KPIs to evaluate the response 10:
+* Response Time: Was the first acknowledgment issued within 15 minutes?
+* Sentiment Shift: How long did it take for sentiment to return to the pre-crisis baseline?
+* Misinformation Correction Rate: What percentage of viral rumors were successfully debunked?
+* Audience Retention: Did we lose followers/customers, or did we gain respect through transparency?
+________________
+10. Saudi-Specific Insights: The JEDAR "Golden Rules"
+To operate effectively in KSA, one must internalize these unwritten rules derived from the region's unique dynamics.
+1. The "6-Minute Rule" is Real: On Saudi Twitter, a vacuum of 6 minutes is enough for a hashtag to trend. Speed is the primary variable of containment.12
+2. Rumors are Crimes: Treat disinformation not as a PR nuisance, but as a legal violation. Invoke the Anti-Cybercrime Law in messaging to deter spreaders.3
+3. Respect the Calendar: Be hyper-aware of Prayer Times, Ramadan, and Hajj. A crisis response released during Maghrib prayer in Ramadan will be missed or seen as disrespectful.
+4. Wasta (Connections) in Crisis: Leverage personal networks with key influencers and journalists to get the "real story" out through backchannels while the official statement is being drafted. This "soft power" is often faster than official channels.6
+5. National Alignment is Non-Negotiable: Never issue a statement that contradicts the Ministry of Media or Vision 2030 narratives. Coordinate with the CGC for "Unified Messaging" to ensure the entity is protected by the state's media umbrella.7
+6. The "Apology" Nuance: In Saudi culture, an apology must be sincere but dignified. "We regret the inconvenience" is often better than "We were wrong," unless the error is catastrophic. Preserve the institution's stature while acknowledging the user's pain.22
+Conclusion
+The Saudi digital sphere is a high-stakes arena where the speed of information often outpaces the speed of verification. This JEDAR Master Playbook provides the armor and the weaponry required to navigate this arena. By combining the rigor of data-driven monitoring with the nuance of cultural intelligence and the weight of legal frameworks, Saudi entities can transform crises from threats into opportunities for demonstrating resilience, leadership, and unwavering commitment to the Kingdom's vision.
+Prepared by JEDAR Agency Task Force.
+CONFIDENTIAL - FOR INTERNAL USE ONLY.
+________________
+Citations:
+.1
+Works cited
+1. Jedar profile company-English.pdf, https://drive.google.com/open?id=1HjEnaFdoWRkYBiPehEw7dA0js90kCMMx
+2. دليل مفصّل لإدارة الأزمات الرقمية والإعلامية للمؤسسات والجهات الحكومية وشبه الحكومية والخاصة, https://drive.google.com/open?id=1A4FfOmT8loJmppFaEONiGMUOHQqJSCADyHAyJaGTD3w
+3. Saudi Arabia refers six people to prosecution over content inciting public opinion, accessed on December 9, 2025, https://gulfnews.com/world/gulf/saudi/saudi-arabia-refers-six-people-to-prosecution-over-content-inciting-public-opinion-1.500362653
+4. Saudi Arabia: Five Year Sentence and Fines for Spreading Rumours - Lexis® Middle East, accessed on December 9, 2025, https://www.lexismiddleeast.com/news/2021-02-15_1/en
+5. Saudi Arabia: Warns of Legal Action Against Online Defamation - Newspaper - [Lexis® Middle East], accessed on December 9, 2025, https://www.lexismiddleeast.com/news/2025-10-17_31
+6. Cultural Differences - Saudi Arabia - crossculture academy, accessed on December 9, 2025, https://crossculture-academy.com/cultural-differences-saudi-arabia/
+7. 'We're all responsible' slogan reflects unified Saudi efforts to defeat COVID-19 | Arab News, accessed on December 9, 2025, https://www.arabnews.com/node/1672821/saudi-arabia
+8. Cultural Differences Between The U.S. And Saudi Arabia In Business - Commisceo Global, accessed on December 9, 2025, https://commisceo-global.com/articles/cultural-differences-between-usa-saudi-arabia-business/
+9. What are the Three Stages of Crisis Management? - International SOS, accessed on December 9, 2025, https://www.internationalsos.com/magazine/what-are-the-three-stages-of-crisis-management
+10. خطة وإستراتيجية إدارة الأزمات الإعلامية والرقمية لحملة "احكِ تجربتك" وموسم حج 1446هـ, https://drive.google.com/open?id=1hjJ5542lOqp7zQA0-wBfrvu8OXI6kLMrDdnIhW6tF1E
+11. إعداد وتنفيذ وإطلاق حملة إعلامية مكثفة لموسم حج 1446هـ, https://drive.google.com/open?id=1KDlgjUIf70889xHHmzD4gp0WchkRwWT38l2NbT5dSRI
+12. The myth of the six minute rule: Student engagement with online videos - ResearchGate, accessed on December 9, 2025, https://www.researchgate.net/publication/283479581_The_myth_of_the_six_minute_rule_Student_engagement_with_online_videos
+13. AGENDA CITY OF WINDCREST, TEXAS SPECIAL JOINT CITY COUNCIL AND PARKS AND RECREATION MEETING AND PUBLIC HEARING JULY 25, 2012 6:0, accessed on December 9, 2025, https://www.windcrest-tx.gov/Archive/ViewFile/Item/847
+14. Center for Government Communication - Saudipedia, accessed on December 9, 2025, https://saudipedia.com/en/article/541/government-and-politics/centers/center-for-government-communication
+15. Saudi Arabia's top local burger chain Hamburgini crashes into bankruptcy, shuts down operations | World News - The Times of India, accessed on December 9, 2025, https://timesofindia.indiatimes.com/world/middle-east/saudi-arabias-top-local-burger-chain-hamburgini-crashes-into-bankruptcy-shuts-down-operations/articleshow/123528752.cms
+16. The Rise of Al Baik: A Fast Food Phenomenon - LazyWait, accessed on December 9, 2025, https://lazywait.com/the-rise-of-al-baik-a-fast-food-phenomenon/
+17. Just Break Glass: Creating the Best Future Emergency Response Plan for Your Business, accessed on December 9, 2025, https://www.tegna.com/advertise/just-break-glass/
+18. Electronic flies and the fake news industry: a new generation of wars on Arab cyberspace Kamel Rezzoug , Hamida Khamet - ASJP, accessed on December 9, 2025, https://asjp.cerist.dz/en/downArticle/524/11/3/254059
+19. (PDF) Propaganda, Fake News, and Fake Trends: The Weaponization of Twitter Bots in the Gulf Crisis - ResearchGate, accessed on December 9, 2025, https://www.researchgate.net/publication/331821831_Propaganda_Fake_News_and_Fake_Trends_The_Weaponization_of_Twitter_Bots_in_the_Gulf_Crisis
+20. Electronic propaganda fills Gulf's media vacuum | Haitham El-Zobaidi | AW, accessed on December 9, 2025, https://thearabweekly.com/electronic-propaganda-fills-gulfs-media-vacuum
+21. The Riyadh Comedy Festival Isn't Trying to Change Your Opinion of Saudi Arabia, accessed on December 9, 2025, https://carnegieendowment.org/emissary/2025/10/riyadh-comedy-festival-ea-backlash-saudi-arabia?lang=en
+22. Exploring language use in apology strategies of tourists visiting Saudi Arabia - PMC, accessed on December 9, 2025, https://pmc.ncbi.nlm.nih.gov/articles/PMC11856575/
+23. Unified Security Operations: A Deep Dive into Saudi Arabia's Comprehensive Emergency Response - FINTECH.TV, accessed on December 9, 2025, https://fintech.tv/unified-security-operations-a-deep-dive-into-saudi-arabias-comprehensive-emergency-response/
+24. National Center for Security Operations - Saudipedia, accessed on December 9, 2025, https://saudipedia.com/en/article/710/government-and-politics/security-and-defense/national-center-for-security-operations
+25. Measuring National Preparedness Using The Saudi Arabia Resilience Index - PreventionWeb, accessed on December 9, 2025, https://www.preventionweb.net/media/110979/download
+26. KSA Anti-Cybercrime Law: Scope, Provisions, and Penalties Explained - Facia.ai, accessed on December 9, 2025, https://facia.ai/knowledgebase/ksa-cybercrime-law/
+27. Other Policies and Strategies | National Platform (National Portal), accessed on December 9, 2025, https://my.gov.sa/en/content/164
+28. Influencer Marketing Done Well in the Middle East: Trends, Challenges, and Opportunities in 2025 - Ronn Torossian, accessed on December 9, 2025, https://ronntorossian.medium.com/influencer-marketing-done-well-in-the-middle-east-trends-challenges-and-opportunities-in-2025-0281754aef0b
+29. PP Connect Holding Statement Template for Crisis Comms, accessed on December 9, 2025, https://go.presspage.com/hubfs/PP%20Connect%20Holding%20Statement%20Template%20for%20Crisis%20Comms.pdf
+30. The impact of crisis and disasters risk management in COVID-19 times: Insights and lessons learned from Saudi Arabia - PMC - PubMed Central, accessed on December 9, 2025, https://pmc.ncbi.nlm.nih.gov/articles/PMC9765402/
+31. Saudi Public Prosecution warns of harsh penalties for spreading rumors | Arab News, accessed on December 9, 2025, https://www.arabnews.com/node/2006491/amp
+32. The Six Stages of a Crisis - Everbridge, accessed on December 9, 2025, http://go.everbridge.com/rs/everbridge/images/Whitepaper_SixStagesofaCrisis-Stage5.pdf
+33. The 8 Golden Rules for Effective PR Crisis Management - ..:: O'Keeffe ::.., accessed on December 9, 2025, https://okeeffepr.com/the-8-golden-rules-for-effective-pr-crisis-management/
+34. Mohammed bin Salman's "Army of Flies": Saudi Arabia's Creative Spread of Disinformation and Attack on Political Dissidence - Democratic Erosion Consortium, accessed on December 9, 2025, https://democratic-erosion.org/2021/11/30/mohammed-bin-salmans-army-of-flies-saudi-arabias-creative-spread-of-disinformation-and-attack-on-political-dissidence/
+35. The Prepared Leader: The Five Phases of Crisis Management - Knowledge at Wharton, accessed on December 9, 2025, https://knowledge.wharton.upenn.edu/article/the-prepared-leader-the-five-phases-of-crisis-management/
+36. Crisis Response Models to Know for Crisis Management - Fiveable, accessed on December 9, 2025, https://fiveable.me/lists/crisis-response-models
+37. Saudi Arabia warns Snapchat users that 'insulting' regime is a criminal offense, accessed on December 9, 2025, https://www.theguardian.com/technology/2023/jun/04/snapchat-social-media-saudi-arabia-authorities
+38. Greetings & Introductions in Saudi Arabia: Practical Guide, accessed on December 9, 2025, https://www.arabia-interculture.com/en/social-etiquette-and-cultural-norms-in-saudi-arabia/
+39. National Crises and Disasters Control Center Provides 20 Branches for Managing Crises and Health Disasters in the Kingdom, accessed on December 9, 2025, https://www.spa.gov.sa/2038133
+40. 2024 Country Reports on Human Rights Practices: Saudi Arabia - State Department, accessed on December 9, 2025, https://www.state.gov/reports/2024-country-reports-on-human-rights-practices/saudi-arabia
+41. Al Baik turned a $1.8M debt into a $3.2B food empire! - YouTube, accessed on December 9, 2025, https://m.youtube.com/shorts/LoQcNCObx2E
+42. Social Media Influencers Go Dark on TikTok After Promoting Saudi Arabia's Futuristic Megacity Neom | by Franky Arriola | Medium, accessed on December 9, 2025, https://medium.com/@gettingfrankpodcast/social-media-influencers-go-dark-on-tiktok-after-promoting-saudi-arabias-futuristic-megacity-neom-55779b0fb6e8
+43. Social Media in Saudi Arabia: Popular Trends and Strategies for 2025 | Sprinklr, accessed on December 9, 2025, https://www.sprinklr.com/blog/social-media-in-saudi-arabia/
+44. The Gender of the Addressee as a Factor in the Selection of Apology Strategies: The Case of Saudi and British - International Journal of Society, Culture & Language, accessed on December 9, 2025, https://www.ijscl.com/article_34778_3fe78aadeba6c57f0b17c303e66ab339.pdf

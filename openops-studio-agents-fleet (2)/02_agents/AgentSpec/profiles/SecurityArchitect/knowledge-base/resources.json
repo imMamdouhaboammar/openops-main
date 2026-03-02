@@ -1,0 +1,21 @@
+{
+    "knowledge_base": {
+        "domain_expertise": "domain-expertise.md",
+        "best_practices": "best-practices.md",
+        "frameworks": "frameworks.md",
+        "resources": "resources.json"
+    },
+    "external_sources": {
+        "owasp": "https://owasp.org",
+        "nist": "https://www.nist.gov/cyberframework",
+        "iso_27001": "https://www.iso.org/standard/27001",
+        "mitre_attack": "https://attack.mitre.org",
+        "cwe": "https://cwe.mitre.org",
+        "cve": "https://cve.mitre.org"
+    },
+    "update_frequency": {
+        "vulnerability_feeds": "daily",
+        "framework_updates": "monthly",
+        "best_practices": "quarterly"
+    }
+}

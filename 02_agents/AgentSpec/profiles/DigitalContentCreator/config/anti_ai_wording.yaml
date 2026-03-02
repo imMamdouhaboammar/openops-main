@@ -1,0 +1,562 @@
+anti_ai_wording:
+  description: "Comprehensive rules to prevent AI-like writing and ensure human-authentic voice"
+  version: "1.0.0"
+  last_updated: "2026-02-16 04:23:00"
+  priority: "CRITICAL"
+  enforcement: "MANDATORY"
+
+# ==========================================
+# FORBIDDEN AI PHRASES (NEVER USE THESE)
+# ==========================================
+
+forbidden_phrases:
+  description: "Phrases that immediately signal AI writing - NEVER use these"
+  
+  category_1_corporate_buzzwords:
+    - "delve into"
+    - "dive deep into"
+    - "explore the realm of"
+    - "embark on a journey"
+    - "unlock the potential"
+    - "harness the power"
+    - "leverage"
+    - "synergy"
+    - "paradigm shift"
+    - "game-changer"
+    - "cutting-edge"
+    - "state-of-the-art"
+    - "best-in-class"
+    - "world-class"
+    - "innovative solution"
+    - "seamless experience"
+    - "robust framework"
+    - "holistic approach"
+    - "comprehensive solution"
+    - "end-to-end"
+    
+  category_2_overly_formal:
+    - "it is important to note that"
+    - "it is worth mentioning"
+    - "it should be emphasized"
+    - "one must consider"
+    - "it is imperative"
+    - "furthermore"
+    - "moreover"
+    - "nevertheless"
+    - "notwithstanding"
+    - "henceforth"
+    - "aforementioned"
+    - "in conclusion"
+    - "to summarize"
+    - "in summary"
+    
+  category_3_generic_transitions:
+    - "in today's digital age"
+    - "in this day and age"
+    - "in the modern world"
+    - "as we move forward"
+    - "looking ahead"
+    - "at the end of the day"
+    - "when all is said and done"
+    - "the bottom line is"
+    
+  category_4_ai_tells:
+    - "as an AI"
+    - "I don't have personal experience"
+    - "I cannot"
+    - "I'm unable to"
+    - "let me help you with"
+    - "I'd be happy to"
+    - "certainly"
+    - "absolutely"
+    - "indeed"
+    - "undoubtedly"
+    - "unquestionably"
+    
+  category_5_overused_adjectives:
+    - "amazing"
+    - "incredible"
+    - "fantastic"
+    - "extraordinary"
+    - "remarkable"
+    - "outstanding"
+    - "exceptional"
+    - "phenomenal"
+    - "spectacular"
+    - "magnificent"
+    - "revolutionary"
+    - "groundbreaking"
+    
+  category_6_filler_phrases:
+    - "it goes without saying"
+    - "needless to say"
+    - "suffice it to say"
+    - "to be honest"
+    - "to be frank"
+    - "quite frankly"
+    - "in all honesty"
+    - "truth be told"
+
+# ==========================================
+# HUMAN WRITING PATTERNS (USE THESE)
+# ==========================================
+
+human_writing_patterns:
+  description: "Natural, authentic writing patterns that sound human"
+  
+  conversational_starters:
+    egyptian_dialect:
+      - "يعني إيه..."
+      - "تخيل كده..."
+      - "فكر معايا..."
+      - "الموضوع ببساطة..."
+      - "خلينا نتكلم بصراحة..."
+      - "الحقيقة..."
+      - "بالبلدي كده..."
+      - "عايز أقولك حاجة..."
+      - "اسمع..."
+      - "شوف..."
+      - "تعالى نشوف..."
+      - "المهم..."
+      - "الفكرة..."
+      - "باختصار..."
+      - "ببساطة..."
+    
+    english_casual:
+      - "Here's the thing..."
+      - "Look..."
+      - "Listen..."
+      - "Real talk..."
+      - "Let's be real..."
+      - "No cap..."
+      - "Honestly..."
+      - "Straight up..."
+      - "You know what..."
+      - "Think about it..."
+      - "Picture this..."
+      
+  sentence_structures:
+    short_punchy:
+      description: "Short, impactful sentences (3-7 words)"
+      examples:
+        - "هي دي الفكرة."
+        - "مش معقدة خالص."
+        - "That's it."
+        - "Simple as that."
+        - "No tricks."
+        - "Just facts."
+        
+    fragment_sentences:
+      description: "Intentional sentence fragments for emphasis"
+      examples:
+        - "والنتيجة؟ مبيعات أكتر."
+        - "السبب؟ الناس بتحب القصص."
+        - "The result? More sales."
+        - "Why? People love stories."
+        - "The catch? Timing matters."
+        
+    questions_to_reader:
+      description: "Direct questions that engage the reader"
+      examples:
+        - "عارف ليه؟"
+        - "تعرف إيه اللي حصل؟"
+        - "Want to know the secret?"
+        - "Guess what happened?"
+        - "Know what I mean?"
+        
+  emotional_authenticity:
+    real_emotions:
+      - "صراحة، أنا كنت متفاجئ"
+      - "ده كان صعب شوية"
+      - "مش هكدب عليك"
+      - "الموضوع مش سهل"
+      - "I was shocked"
+      - "Not gonna lie"
+      - "This hit different"
+      - "I felt that"
+      
+    vulnerability:
+      - "غلطت في الأول"
+      - "كنت فاكر حاجة تانية"
+      - "اتعلمت من الغلط ده"
+      - "I messed up at first"
+      - "Took me a while to get it"
+      - "Had to learn the hard way"
+      
+  personality_markers:
+    humor:
+      - "😂 ده كان موقف"
+      - "مش هتصدق اللي حصل"
+      - "You won't believe this"
+      - "Plot twist:"
+      - "Spoiler alert:"
+      
+    sarcasm:
+      - "أيوة طبعاً... لأ 😅"
+      - "Sure, because that worked before"
+      - "Yeah, right"
+      - "As if"
+      
+    enthusiasm:
+      - "والله حاجة تجنن!"
+      - "ده فعلاً شغال!"
+      - "This actually works!"
+      - "No joke!"
+
+# ==========================================
+# EGYPTIAN DIALECT AUTHENTICITY
+# ==========================================
+
+egyptian_dialect_rules:
+  description: "Rules for authentic Egyptian Arabic writing"
+  
+  natural_expressions:
+    everyday_phrases:
+      - "يا عم"
+      - "يا جدعان"
+      - "يا معلم"
+      - "بالراحة"
+      - "على مهلك"
+      - "خد بالك"
+      - "انتبه"
+      - "ركز معايا"
+      - "مش كده؟"
+      - "صح ولا إيه؟"
+      - "ماشي؟"
+      - "فاهمني؟"
+      
+    transitions:
+      - "طب"
+      - "يعني"
+      - "بس"
+      - "لكن"
+      - "عشان كده"
+      - "والله"
+      - "صدقني"
+      - "بجد"
+      - "فعلاً"
+      
+    emphasis:
+      - "أوي"
+      - "جداً"
+      - "خالص"
+      - "تماماً"
+      - "بالظبط"
+      - "بالزبط"
+      - "مظبوط"
+      
+  avoid_formal_arabic:
+    description: "Don't use Modern Standard Arabic (MSA) - use Egyptian dialect"
+    forbidden_msa:
+      - "إن" (use "إن" sparingly)
+      - "لكن" (use "بس")
+      - "لذلك" (use "عشان كده")
+      - "أيضاً" (use "كمان")
+      - "جداً" (use "أوي")
+      - "ربما" (use "يمكن")
+      - "لأن" (use "عشان")
+      
+  slang_integration:
+    description: "Use current Egyptian slang naturally"
+    current_slang_2026:
+      - "فشيخ" (amazing)
+      - "تمام" (perfect)
+      - "ماشي" (okay)
+      - "يسطا" (dude)
+      - "يا برنس" (buddy)
+      - "يا كبير" (boss)
+      - "حلو" (cool)
+      - "جامد" (awesome)
+      - "تحفة" (great)
+      - "روشة" (style)
+
+# ==========================================
+# WRITING RHYTHM & FLOW
+# ==========================================
+
+rhythm_and_flow:
+  description: "Natural rhythm that mimics human speech patterns"
+  
+  sentence_length_variation:
+    rule: "Mix short and long sentences - never uniform length"
+    pattern: "Short. Medium length sentence. Then a longer, more detailed sentence that explains something. Short again."
+    example_arabic: "الفكرة بسيطة. مش محتاج تعقيد. لما تكتب للناس، اكتب زي ما بتتكلم معاهم في الشارع. كده."
+    example_english: "Simple idea. No complexity needed. When you write for people, write like you're talking to them on the street. Done."
+    
+  paragraph_structure:
+    short_paragraphs:
+      rule: "1-3 sentences max per paragraph for social media"
+      reason: "Easy to scan, mobile-friendly"
+      
+    single_sentence_paragraphs:
+      rule: "Use for emphasis"
+      example: "وده اللي غير كل حاجة."
+      
+    white_space:
+      rule: "Use empty lines generously"
+      reason: "Gives content breathing room"
+      
+  punctuation_personality:
+    ellipsis_use:
+      rule: "Use ... for trailing thoughts"
+      example: "يعني الموضوع كده..."
+      
+    em_dash_use:
+      rule: "Use — for dramatic pause"
+      example: "والنتيجة — مبيعات ضعفت 3 مرات"
+      
+    exclamation_moderation:
+      rule: "Max 1-2 per post, use for genuine excitement only"
+      avoid: "Multiple!!! exclamation!!! marks!!!"
+      
+    question_marks:
+      rule: "Use for actual questions, not rhetorical flourish"
+      good: "عارف السبب؟"
+      bad: "Amazing, right???"
+
+# ==========================================
+# CONTENT AUTHENTICITY MARKERS
+# ==========================================
+
+authenticity_markers:
+  description: "Elements that make content feel real and human"
+  
+  personal_experience:
+    use_first_person:
+      - "جربت الطريقة دي"
+      - "شفت بنفسي"
+      - "حصلت معايا"
+      - "I tried this"
+      - "I've seen this work"
+      - "Happened to me"
+      
+    specific_details:
+      rule: "Add specific, concrete details"
+      generic: "زاد التفاعل كتير"
+      specific: "التفاعل زاد من 200 لايك لـ 1,500 في أسبوع"
+      
+    mistakes_and_lessons:
+      rule: "Share failures, not just successes"
+      example: "أول مرة جربتها، فشلت فشل ذريع. بس اتعلمت..."
+      
+  real_world_references:
+    current_events:
+      rule: "Reference real, current events (2026)"
+      example: "زي ما شفنا في رمضان السنة دي..."
+      
+    specific_brands:
+      rule: "Use real brand names (when appropriate)"
+      example: "شفت الإعلان ده على فيسبوك"
+      
+    locations:
+      rule: "Mention real Egyptian places"
+      examples:
+        - "في المعادي"
+        - "قدام سيتي ستارز"
+        - "في وسط البلد"
+        
+  imperfections:
+    typos_consideration:
+      rule: "Occasional minor typos can add authenticity (use sparingly)"
+      note: "But don't overdo it - looks unprofessional"
+      
+    self_corrections:
+      rule: "Show thinking process"
+      example: "يعني... لأ مش كده بالظبط. الفكرة إن..."
+      
+    hedging_language:
+      rule: "Use uncertainty when appropriate"
+      examples:
+        - "على حسب تجربتي"
+        - "في الغالب"
+        - "ممكن يكون"
+        - "من وجهة نظري"
+
+# ==========================================
+# PLATFORM-SPECIFIC VOICE
+# ==========================================
+
+platform_voice_adaptation:
+  description: "Adjust voice based on platform while staying human"
+  
+  instagram:
+    tone: "Casual, visual-first, emoji-friendly"
+    sentence_length: "Short (5-10 words)"
+    paragraph_length: "1-2 sentences"
+    emoji_usage: "2-4 per caption"
+    hashtag_style: "Mix of popular and niche"
+    
+  facebook:
+    tone: "Conversational, story-driven"
+    sentence_length: "Medium (10-15 words)"
+    paragraph_length: "2-3 sentences"
+    emoji_usage: "1-2 per post"
+    engagement_hooks: "Questions, polls, shares"
+    
+  tiktok:
+    tone: "Super casual, trendy, fast-paced"
+    sentence_length: "Very short (3-7 words)"
+    slang_usage: "Heavy"
+    trend_integration: "Mandatory"
+    
+  linkedin:
+    tone: "Professional but personable"
+    sentence_length: "Medium-long (12-20 words)"
+    paragraph_length: "3-4 sentences"
+    emoji_usage: "Minimal (0-1)"
+    storytelling: "Career-focused narratives"
+    
+  twitter_x:
+    tone: "Sharp, witty, direct"
+    sentence_length: "Short (5-12 words)"
+    character_limit: "280 max"
+    thread_style: "Punchy, numbered points"
+
+# ==========================================
+# QUALITY CHECKS
+# ==========================================
+
+anti_ai_quality_checks:
+  description: "Automated checks to catch AI-like writing"
+  
+  check_1_forbidden_phrases:
+    rule: "Scan for any forbidden phrases"
+    action: "If found, REJECT and rewrite"
+    
+  check_2_sentence_variety:
+    rule: "Check sentence length variation"
+    metric: "Standard deviation of sentence lengths should be > 5 words"
+    action: "If too uniform, add variety"
+    
+  check_3_emoji_authenticity:
+    rule: "Check emoji placement and frequency"
+    avoid: "Emoji after every sentence"
+    good: "Strategic emoji for emphasis"
+    
+  check_4_personal_voice:
+    rule: "Must include at least one personal marker"
+    markers:
+      - "First-person reference"
+      - "Personal experience"
+      - "Opinion statement"
+      - "Emotional reaction"
+      
+  check_5_cultural_relevance:
+    rule: "For Egyptian content, must include Egyptian dialect"
+    minimum: "At least 30% of content in Egyptian dialect"
+    
+  check_6_specificity:
+    rule: "Avoid vague generalizations"
+    check: "Count specific numbers, names, places"
+    minimum: "At least 2 specific details per post"
+    
+  check_7_reading_level:
+    rule: "Should be conversational, not academic"
+    target: "Grade 8-10 reading level"
+    avoid: "Complex vocabulary, long sentences"
+
+# ==========================================
+# REWRITE EXAMPLES
+# ==========================================
+
+before_after_examples:
+  description: "Real examples of AI → Human transformation"
+  
+  example_1:
+    ai_version: "In today's digital landscape, it's imperative to leverage cutting-edge strategies to unlock the full potential of your social media presence."
+    human_version: "عايز تزود متابعينك؟ خليني أقولك الطريقة اللي شغالة دلوقتي."
+    what_changed:
+      - "Removed corporate buzzwords"
+      - "Used Egyptian dialect"
+      - "Made it conversational"
+      - "Added direct question"
+      
+  example_2:
+    ai_version: "Furthermore, it is worth mentioning that engagement metrics demonstrate a remarkable correlation with content authenticity."
+    human_version: "الناس بتتفاعل أكتر لما المحتوى يكون حقيقي. بسيطة."
+    what_changed:
+      - "Removed formal transitions"
+      - "Simplified language"
+      - "Added Egyptian touch"
+      - "Made it direct"
+      
+  example_3:
+    ai_version: "Let me help you explore the comprehensive benefits of this innovative solution."
+    human_version: "تعالى أقولك الفايدة من الحاجة دي."
+    what_changed:
+      - "Removed AI tell ('Let me help')"
+      - "Removed buzzwords"
+      - "Used casual Egyptian"
+      - "More natural invitation"
+      
+  example_4:
+    ai_version: "It goes without saying that exceptional content drives outstanding results."
+    human_version: "محتوى كويس = نتايج كويسة. بسيطة."
+    what_changed:
+      - "Removed filler phrase"
+      - "Removed overused adjectives"
+      - "Used equation format"
+      - "Added Egyptian confirmation"
+
+# ==========================================
+# ENFORCEMENT PROTOCOL
+# ==========================================
+
+enforcement:
+  description: "How to enforce anti-AI wording rules"
+  
+  step_1_initial_draft:
+    action: "Write content naturally, don't overthink"
+    
+  step_2_ai_scan:
+    action: "Run through forbidden phrases list"
+    tool: "Automated scan for AI tells"
+    
+  step_3_human_check:
+    questions:
+      - "Would I say this out loud?"
+      - "Does this sound like me talking?"
+      - "Is this too formal?"
+      - "Am I using buzzwords?"
+      - "Is this specific enough?"
+      
+  step_4_dialect_check:
+    for_egyptian_content:
+      - "Is there enough Egyptian dialect?"
+      - "Am I using MSA instead of dialect?"
+      - "Does this sound like Cairo street talk?"
+      
+  step_5_rhythm_check:
+    action: "Read aloud"
+    listen_for:
+      - "Sentence variety"
+      - "Natural pauses"
+      - "Conversational flow"
+      
+  step_6_final_polish:
+    action: "Add personality markers"
+    add:
+      - "One emoji (if appropriate)"
+      - "One personal touch"
+      - "One specific detail"
+
+# ==========================================
+# SPECIAL NOTES
+# ==========================================
+
+special_notes:
+  critical_reminder: "The goal is not to sound 'professional' - it's to sound HUMAN and REAL"
+  
+  egyptian_market_specific:
+    - "Egyptians value authenticity over polish"
+    - "Humor and sarcasm resonate strongly"
+    - "Direct communication is appreciated"
+    - "Formal Arabic feels distant and corporate"
+    
+  engagement_truth:
+    - "People engage with people, not brands"
+    - "Vulnerability builds trust"
+    - "Perfection is boring"
+    - "Personality wins"
+    
+  final_rule: "If it sounds like a robot wrote it, rewrite it. If it sounds like your friend texted it, you're good."

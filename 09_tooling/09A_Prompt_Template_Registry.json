@@ -1,0 +1,77 @@
+{
+  "module": {
+    "name": "Prompt_Template_Registry",
+    "version": "2.0.0",
+    "layer": "09_tooling",
+    "code": "09A",
+    "description": "Centralized registry of prompt templates for agent interactions",
+    "author": "OpenOps Foundation",
+    "created": "2025-12-16T00:00:00Z"
+  },
+  "governance": {
+    "compliance_level": "standard",
+    "requires_approval": true,
+    "audit_level": "standard",
+    "data_classification": "internal"
+  },
+  "objectives": [
+    "Maintain versioned prompt templates",
+    "Enable prompt reusability",
+    "Support dynamic prompt generation",
+    "Facilitate A/B testing of prompts"
+  ],
+  "integration_points": {
+    "imports_from": ["02A_Agent_Roles_Config.json", "02D_Agent_Personality_Profile.json"],
+    "exports_to": ["09C_Agent_Prompt_Mapping.json", "09D_Runtime_Prompt_Pipeline.json"]
+  },
+  "template_categories": {
+    "system_prompts": ["agent_initialization", "context_setting", "constraint_definition"],
+    "task_prompts": ["instruction", "clarification", "validation"],
+    "response_prompts": ["formatting", "synthesis", "error_handling"],
+    "interaction_prompts": ["handoff", "collaboration", "escalation"]
+  },
+  "template_structure": {
+    "template_id": "string",
+    "version": "semver",
+    "agent_role": "string",
+    "context": "enum[planning, execution, review, handoff]",
+    "content": "string_with_variables",
+    "variables": ["array_of_placeholder_names"],
+    "examples": ["array_of_example_inputs_outputs"],
+    "metadata": {
+      "created_at": "timestamp",
+      "updated_at": "timestamp",
+      "author": "string",
+      "performance_metrics": "object"
+    }
+  },
+  "example_templates": {
+    "SUPERVISOR_TASK_ASSIGNMENT": {
+      "template_id": "SUPERVISOR_TASK_ASSIGNMENT",
+      "version": "1.0.0",
+      "agent_role": "SupervisorAgent",
+      "context": "execution",
+      "content": "Task Assignment:\n\nAgent: {{agent_name}}\nTask: {{task_description}}\nPriority: {{priority}}\nDeadline: {{deadline}}\n\nPlease confirm understanding and begin execution. Report progress at {{checkpoint_interval}}.",
+      "variables": ["agent_name", "task_description", "priority", "deadline", "checkpoint_interval"]
+    },
+    "EVALUATOR_QUALITY_CHECK": {
+      "template_id": "EVALUATOR_QUALITY_CHECK",
+      "version": "1.0.0",
+      "agent_role": "EvaluatorAgent",
+      "context": "review",
+      "content": "Quality Evaluation:\n\nArtifact: {{artifact_id}}\nCriteria: {{quality_criteria}}\n\nPlease assess the artifact against the following dimensions:\n- Completeness\n- Accuracy\n- Best Practices\n- Documentation\n\nProvide a score (0-100) and detailed feedback.",
+      "variables": ["artifact_id", "quality_criteria"]
+    }
+  },
+  "versioning_strategy": {
+    "major": "breaking_changes_to_structure",
+    "minor": "new_variables_or_optional_content",
+    "patch": "typo_fixes_or_clarifications"
+  },
+  "performance_tracking": {
+    "metrics": ["response_quality", "task_completion_rate", "user_satisfaction"],
+    "ab_testing": "enabled",
+    "champion_challenger": "automated"
+  },
+  "version_history": {"2.0.0": {"date": "2025-12-16", "changes": "Initial prompt registry"}}
+}

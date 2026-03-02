@@ -1,0 +1,59 @@
+{
+  "creativeGenomeEngine": {
+    "version": "1.0.0",
+    "lastUpdated": "2026-01-22",
+    "purpose": "Encode creative DNA and recombine winning patterns",
+    "genomeSchema": {
+      "hook": ["pain", "aspiration", "shock", "authority"],
+      "promise": ["time_saved", "money_saved", "risk_reduced", "status_gain"],
+      "proof": ["case_study", "data_point", "testimonial", "authority_badge"],
+      "cta": ["demo", "trial", "download", "subscribe"],
+      "tone": ["expert", "friendly", "urgent", "minimal"],
+      "format": ["static", "video", "carousel", "long_form"]
+    },
+    "geneWeightsByChannel": {
+      "paid_social": { "hook": 0.35, "proof": 0.2, "promise": 0.2, "cta": 0.15, "tone": 0.1 },
+      "paid_search": { "promise": 0.3, "proof": 0.25, "cta": 0.2, "hook": 0.15, "tone": 0.1 },
+      "email": { "proof": 0.3, "promise": 0.25, "cta": 0.2, "hook": 0.15, "tone": 0.1 },
+      "seo_content": { "proof": 0.35, "promise": 0.25, "hook": 0.15, "cta": 0.15, "tone": 0.1 }
+    },
+    "compatibilityMatrix": {
+      "high_risk_promises": ["money_saved", "status_gain"],
+      "required_proof_for_high_risk": ["data_point", "case_study"],
+      "forbidden_pairs": [
+        { "hook": "shock", "proof": "testimonial", "reason": "low trust pairing" }
+      ]
+    },
+    "metadata": {
+      "required": ["channel", "audience_segment", "date", "campaign_id"],
+      "optional": ["placement", "device", "creative_owner"]
+    },
+    "scoringModel": {
+      "components": ["hook_strength", "promise_clarity", "proof_strength", "cta_clarity", "message_match"],
+      "weights": { "hook_strength": 0.25, "promise_clarity": 0.2, "proof_strength": 0.25, "cta_clarity": 0.15, "message_match": 0.15 },
+      "output": "genome_score_0_100"
+    },
+    "learningLoop": {
+      "inputs": ["performance_metrics", "fatigue_index", "segment_response"],
+      "outputs": ["next_best_variants", "kill_list", "refresh_schedule"],
+      "cadence": "weekly"
+    },
+    "fatigueDetection": {
+      "signal": "ctr_decay",
+      "threshold": 0.25,
+      "action": "rotate_or_refresh"
+    },
+    "variantGenerator": {
+      "rules": [
+        "Change only 1-2 genome genes per test",
+        "Maintain proof consistency when testing hook",
+        "Do not mix high-risk promises with low-proof",
+        "Only test one high-risk claim at a time"
+      ]
+    },
+    "guardrails": {
+      "ethical": ["no_false_claims", "no_manipulative_framing"],
+      "quality": ["minimum_proof_required", "brand_voice_compliance"]
+    }
+  }
+}

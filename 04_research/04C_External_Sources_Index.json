@@ -1,0 +1,202 @@
+{
+  "module": {
+    "name": "ExternalSourcesIndex",
+    "version": "2.0.0",
+    "type": "knowledge_index_registry",
+    "description": "Central index for managing and validating all approved external data sources, APIs, repositories, and feeds accessible by OpenOps Agents.",
+    "author": "OpenOps Studio | Created by Mamdouh Aboammar",
+    "governance": {
+      "supervised_by": "ResearchSupervisorAgent",
+      "approved_by": "SecurityLead",
+      "linked_policies": [
+        "04_Research_and_Competitive_Intelligence.md",
+        "06_Security_Compliance_and_Privacy_Gates.md"
+      ]
+    },
+
+    "objectives": [
+      "Maintain a verified registry of trusted external data sources for research and intelligence modules.",
+      "Provide metadata for indexing, freshness validation, and source reputation.",
+      "Enforce security and compliance gating for outbound data access.",
+      "Support agent-specific access rules for contextual retrieval and fact verification."
+    ],
+
+    "index_schema": {
+      "fields": [
+        "source_id",
+        "category",
+        "type",
+        "name",
+        "url",
+        "update_frequency",
+        "auth_required",
+        "access_tier",
+        "last_validation",
+        "reputation_score",
+        "security_status"
+      ]
+    },
+
+    "categories": {
+      "academic_research": [
+        "SemanticScholar",
+        "ArXiv",
+        "OpenAlex",
+        "CrossRef"
+      ],
+      "news_and_media": [
+        "ReutersAPI",
+        "BloombergFeed",
+        "APNewsRSS",
+        "BBCAPI"
+      ],
+      "technical_sources": [
+        "GitHubAPI",
+        "StackExchangeAPI",
+        "KaggleDatasets",
+        "NPMRegistry"
+      ],
+      "regulatory_and_policy": [
+        "EU_LegalAPI",
+        "UNDataAPI",
+        "GovUK_OpenData",
+        "WorldBankData"
+      ],
+      "competitive_intelligence": [
+        "CrunchbaseAPI",
+        "PitchBook",
+        "CBInsights",
+        "GlassdoorScraper"
+      ]
+    },
+
+    "access_matrix": {
+      "ResearchBriefAgent": ["academic_research", "news_and_media"],
+      "PlannerAgent": ["technical_sources", "academic_research"],
+      "WorkerAgents": ["technical_sources", "news_and_media"],
+      "EvaluatorAgent": ["academic_research"],
+      "SynthesizerAgent": ["news_and_media", "academic_research"],
+      "SupervisorAgent": ["all"],
+      "SecurityLead": ["all"]
+    },
+
+    "source_metadata": [
+      {
+        "source_id": "SRC_001",
+        "name": "Semantic Scholar API",
+        "url": "https://api.semanticscholar.org",
+        "category": "academic_research",
+        "type": "api",
+        "update_frequency": "daily",
+        "auth_required": false,
+        "access_tier": "public",
+        "last_validation": "2025-12-15T22:00:00Z",
+        "reputation_score": 0.97,
+        "security_status": "approved"
+      },
+      {
+        "source_id": "SRC_002",
+        "name": "GitHub API",
+        "url": "https://api.github.com",
+        "category": "technical_sources",
+        "type": "api",
+        "update_frequency": "realtime",
+        "auth_required": true,
+        "access_tier": "trusted",
+        "last_validation": "2025-12-14T16:30:00Z",
+        "reputation_score": 0.96,
+        "security_status": "approved"
+      },
+      {
+        "source_id": "SRC_003",
+        "name": "Reuters API",
+        "url": "https://api.reuters.com",
+        "category": "news_and_media",
+        "type": "api",
+        "update_frequency": "hourly",
+        "auth_required": true,
+        "access_tier": "restricted",
+        "last_validation": "2025-12-13T08:45:00Z",
+        "reputation_score": 0.92,
+        "security_status": "approved"
+      },
+      {
+        "source_id": "SRC_004",
+        "name": "World Bank Data",
+        "url": "https://data.worldbank.org",
+        "category": "regulatory_and_policy",
+        "type": "open_data",
+        "update_frequency": "weekly",
+        "auth_required": false,
+        "access_tier": "public",
+        "last_validation": "2025-12-10T09:00:00Z",
+        "reputation_score": 0.95,
+        "security_status": "approved"
+      }
+    ],
+
+    "validation_and_refresh_policy": {
+      "validation_interval_days": 7,
+      "minimum_reputation_score": 0.85,
+      "on_source_failure": [
+        "disable_source",
+        "alert_SecurityLead",
+        "log_incident_in_AuditLedger"
+      ],
+      "on_source_update": [
+        "record_metadata_change",
+        "notify_SupervisorAgent"
+      ]
+    },
+
+    "security_rules": {
+      "classification": "internal_confidential",
+      "encryption_in_transit": true,
+      "verify_ssl": true,
+      "allowed_protocols": ["https"],
+      "restricted_domains": ["*.darkweb", "*.torrent", "*.unsafe"],
+      "tamper_protection": "enabled",
+      "audit_logging": true
+    },
+
+    "integration_points": {
+      "upstream": ["ResearchBriefAgent", "PlannerAgent", "WorkerAgents"],
+      "downstream": [
+        "DeepResearchEngine",
+        "AgentMemoryRegistry",
+        "QAOrchestrator"
+      ],
+      "dependencies": [
+        "AuditAndDecisionLedger",
+        "SecurityAndPrivacyGates"
+      ]
+    },
+
+    "analytics_and_metrics": {
+      "track_query_count": true,
+      "track_source_latency": true,
+      "metrics_storage_path": "/openops/analytics/source_usage.json",
+      "fields": [
+        "source_id",
+        "queries_today",
+        "average_latency_ms",
+        "last_success",
+        "failure_rate_percent"
+      ]
+    },
+
+    "example_source_record": {
+      "source_id": "SRC_005",
+      "name": "Crunchbase API",
+      "url": "https://api.crunchbase.com",
+      "category": "competitive_intelligence",
+      "type": "api",
+      "update_frequency": "daily",
+      "auth_required": true,
+      "access_tier": "restricted",
+      "last_validation": "2025-12-16T08:00:00Z",
+      "reputation_score": 0.91,
+      "security_status": "approved"
+    }
+  }
+}

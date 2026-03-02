@@ -1,0 +1,518 @@
+{
+    "schema_version": "1.0.0",
+    "relations_version": "1.0.0",
+    "description": "Defines data dependencies, state propagation, rule bindings, and execution contracts between modules in the Goal-Constrained Reasoning Agent with marketing-specific constraint relationships.",
+    "state_model": {
+        "context_object": "agent_context",
+        "persistence_scope": "per_request",
+        "immutable_fields": [
+            "raw_user_input",
+            "primary_goal"
+        ],
+        "mutable_fields": [
+            "normalized_text",
+            "detected_entities",
+            "detected_options",
+            "constraints",
+            "required_entities",
+            "structured_options",
+            "valid_options",
+            "invalid_options",
+            "ranked_options",
+            "recommended_option",
+            "final_answer",
+            "checked_answer"
+        ]
+    },
+    "marketing_constraint_types": {
+        "budget": {
+            "description": "Total marketing budget or per-channel budget constraints",
+            "affects_modules": [
+                "constraint_parser",
+                "feasibility_validator",
+                "reasoning_engine"
+            ],
+            "validation_rules": [
+                "R18_budget_constraint_validation",
+                "R21_budget_feasibility_check"
+            ],
+            "typical_values": [
+                "$500/month",
+                "$5K/month",
+                "$10K/month",
+                "$50K/month"
+            ],
+            "impacts": [
+                "channel_selection",
+                "expected_volume",
+                "timeline_to_results"
+            ]
+        },
+        "timeline": {
+            "description": "When results are needed or campaign duration",
+            "affects_modules": [
+                "constraint_parser",
+                "feasibility_validator",
+                "reasoning_engine"
+            ],
+            "validation_rules": [
+                "R19_timeline_constraint_validation",
+                "R22_timeline_feasibility_check"
+            ],
+            "typical_values": [
+                "30 days",
+                "60 days",
+                "6 months",
+                "12 months"
+            ],
+            "impacts": [
+                "channel_selection",
+                "organic_vs_paid_mix",
+                "realistic_expectations"
+            ]
+        },
+        "icp": {
+            "description": "Ideal Customer Profile - target audience characteristics",
+            "affects_modules": [
+                "constraint_parser",
+                "feasibility_validator",
+                "reasoning_engine"
+            ],
+            "validation_rules": [
+                "R20_icp_constraint_validation",
+                "R23_icp_reach_validation"
+            ],
+            "typical_attributes": [
+                "role",
+                "company_size",
+                "industry",
+                "geography",
+                "deal_size"
+            ],
+            "impacts": [
+                "channel_selection",
+                "targeting_precision",
+                "cost_per_acquisition"
+            ]
+        },
+        "team": {
+            "description": "Team size, skills, and capacity constraints",
+            "affects_modules": [
+                "constraint_parser",
+                "feasibility_validator"
+            ],
+            "validation_rules": [
+                "R24_team_capacity_validation"
+            ],
+            "typical_values": [
+                "1 marketing manager",
+                "small team (2-3)",
+                "agency support"
+            ],
+            "impacts": [
+                "channel_complexity",
+                "execution_feasibility",
+                "need_for_automation"
+            ]
+        }
+    },
+    "marketing_goal_to_metric_mappings": {
+        "awareness": {
+            "primary_metrics": [
+                "brand_search_volume",
+                "reach",
+                "impressions"
+            ],
+            "secondary_metrics": [
+                "social_followers",
+                "content_views"
+            ],
+            "avoid_vanity_metrics": true,
+            "typical_channels": [
+                "content_marketing",
+                "pr",
+                "social_media",
+                "display_ads"
+            ]
+        },
+        "consideration": {
+            "primary_metrics": [
+                "website_visitors",
+                "content_downloads",
+                "email_signups"
+            ],
+            "secondary_metrics": [
+                "time_on_site",
+                "pages_per_session"
+            ],
+            "avoid_vanity_metrics": false,
+            "typical_channels": [
+                "content_marketing",
+                "seo",
+                "webinars",
+                "email_nurture"
+            ]
+        },
+        "conversion": {
+            "primary_metrics": [
+                "qualified_leads",
+                "demos_booked",
+                "trials_started",
+                "sales"
+            ],
+            "secondary_metrics": [
+                "conversion_rate",
+                "cost_per_acquisition"
+            ],
+            "avoid_vanity_metrics": true,
+            "typical_channels": [
+                "paid_ads",
+                "retargeting",
+                "email_campaigns",
+                "sales_outreach"
+            ]
+        },
+        "retention": {
+            "primary_metrics": [
+                "customer_lifetime_value",
+                "churn_rate",
+                "expansion_revenue"
+            ],
+            "secondary_metrics": [
+                "nps",
+                "engagement_rate"
+            ],
+            "avoid_vanity_metrics": false,
+            "typical_channels": [
+                "email_marketing",
+                "customer_success",
+                "community",
+                "product_updates"
+            ]
+        }
+    },
+    "channel_to_constraint_dependencies": {
+        "linkedin_ads": {
+            "minimum_budget": "$5K/month for B2B",
+            "timeline_to_results": "2-4 weeks",
+            "best_for_icp": [
+                "B2B",
+                "enterprise",
+                "professional_roles"
+            ],
+            "team_requirements": [
+                "ad_campaign_management",
+                "10_hours_per_week"
+            ],
+            "technical_requirements": [
+                "landing_page",
+                "crm",
+                "linkedin_campaign_manager"
+            ]
+        },
+        "google_search_ads": {
+            "minimum_budget": "$2K/month",
+            "timeline_to_results": "2-4 weeks",
+            "best_for_icp": [
+                "high_intent_searches",
+                "B2B_and_B2C"
+            ],
+            "team_requirements": [
+                "ad_campaign_management",
+                "keyword_research",
+                "10_hours_per_week"
+            ],
+            "technical_requirements": [
+                "landing_page",
+                "google_ads_account",
+                "conversion_tracking"
+            ]
+        },
+        "seo_content_marketing": {
+            "minimum_budget": "$2K/month for content production",
+            "timeline_to_results": "6-12 months",
+            "best_for_icp": [
+                "any_with_search_intent"
+            ],
+            "team_requirements": [
+                "content_writing",
+                "seo_knowledge",
+                "20_hours_per_week"
+            ],
+            "technical_requirements": [
+                "blog",
+                "cms",
+                "analytics",
+                "seo_tools"
+            ]
+        },
+        "facebook_instagram_ads": {
+            "minimum_budget": "$1K/month",
+            "timeline_to_results": "2-4 weeks",
+            "best_for_icp": [
+                "B2C",
+                "consumer_products",
+                "ecommerce"
+            ],
+            "team_requirements": [
+                "ad_campaign_management",
+                "creative_production",
+                "10_hours_per_week"
+            ],
+            "technical_requirements": [
+                "facebook_ads_manager",
+                "landing_page",
+                "pixel_tracking"
+            ]
+        },
+        "email_marketing": {
+            "minimum_budget": "$500/month for tools + content",
+            "timeline_to_results": "2-8 weeks",
+            "best_for_icp": [
+                "existing_list",
+                "nurture_campaigns"
+            ],
+            "team_requirements": [
+                "email_copywriting",
+                "automation_setup",
+                "5_hours_per_week"
+            ],
+            "technical_requirements": [
+                "email_platform",
+                "crm",
+                "list_segmentation"
+            ]
+        }
+    },
+    "module_relations": [
+        {
+            "module_id": "input_preprocessor",
+            "reads": [
+                "raw_user_input"
+            ],
+            "writes": [
+                "normalized_text",
+                "detected_entities",
+                "detected_options",
+                "language",
+                "ambiguity_flags"
+            ],
+            "binds_rules": [],
+            "triggers_next": [
+                "goal_extractor"
+            ],
+            "marketing_notes": "Detects marketing channels, budget mentions, timeline mentions, and ICP attributes in raw input"
+        },
+        {
+            "module_id": "goal_extractor",
+            "reads": [
+                "normalized_text",
+                "detected_entities"
+            ],
+            "writes": [
+                "primary_goal",
+                "secondary_goals",
+                "goal_confidence_score"
+            ],
+            "binds_rules": [
+                "R1_primary_goal_required",
+                "R2_goal_is_outcome_not_method",
+                "R3_goal_confidence_threshold",
+                "R17_vanity_metric_detection"
+            ],
+            "triggers_next": [
+                "constraint_parser"
+            ],
+            "marketing_notes": "Distinguishes between methods (traffic, followers) and outcomes (leads, revenue). Detects vanity metrics."
+        },
+        {
+            "module_id": "constraint_parser",
+            "reads": [
+                "primary_goal",
+                "normalized_text",
+                "detected_entities"
+            ],
+            "writes": [
+                "constraints",
+                "required_entities",
+                "dependency_graph"
+            ],
+            "binds_rules": [
+                "R4_constraints_required",
+                "R5_constraints_must_link_to_goal",
+                "R6_required_entities_identified",
+                "R18_budget_constraint_validation",
+                "R19_timeline_constraint_validation",
+                "R20_icp_constraint_validation"
+            ],
+            "triggers_next": [
+                "option_mapper"
+            ],
+            "marketing_notes": "Extracts budget, timeline, team, ICP, and technical constraints. Links each constraint to primary goal."
+        },
+        {
+            "module_id": "option_mapper",
+            "reads": [
+                "detected_options",
+                "detected_entities"
+            ],
+            "writes": [
+                "structured_options"
+            ],
+            "binds_rules": [
+                "R7_options_required",
+                "R8_each_option_has_action_model"
+            ],
+            "triggers_next": [
+                "feasibility_validator"
+            ],
+            "marketing_notes": "Maps marketing channels to structured actions with typical costs, timelines, and requirements"
+        },
+        {
+            "module_id": "feasibility_validator",
+            "reads": [
+                "structured_options",
+                "constraints",
+                "required_entities"
+            ],
+            "writes": [
+                "valid_options",
+                "invalid_options",
+                "validation_report"
+            ],
+            "binds_rules": [
+                "R9_test_each_option_against_all_constraints",
+                "R10_block_invalid_options_from_reasoning",
+                "R11_mark_goal_infeasible_if_no_valid_options",
+                "R21_budget_feasibility_check",
+                "R22_timeline_feasibility_check",
+                "R23_icp_reach_validation",
+                "R24_team_capacity_validation"
+            ],
+            "conditional_branches": [
+                {
+                    "condition": "valid_options.length == 0",
+                    "action": "halt_and_request_clarification"
+                }
+            ],
+            "triggers_next": [
+                "frame_corrector"
+            ],
+            "marketing_notes": "Tests each channel against budget, timeline, ICP, and team constraints. Marks channels as VALID or INVALID with specific reasons."
+        },
+        {
+            "module_id": "frame_corrector",
+            "reads": [
+                "valid_options",
+                "invalid_options",
+                "primary_goal"
+            ],
+            "writes": [
+                "reframed_question",
+                "frame_warnings",
+                "clarification_required"
+            ],
+            "binds_rules": [
+                "R12_false_dichotomy_detection",
+                "R13_reframe_must_preserve_goal",
+                "R25_marketing_false_dichotomy_patterns"
+            ],
+            "conditional_branches": [
+                {
+                    "condition": "clarification_required == true",
+                    "action": "pause_pipeline_for_user_input"
+                }
+            ],
+            "triggers_next": [
+                "reasoning_engine"
+            ],
+            "marketing_notes": "Detects false dichotomies like 'SEO vs Paid Ads' and reframes to 'which combination'. Preserves primary goal."
+        },
+        {
+            "module_id": "reasoning_engine",
+            "reads": [
+                "valid_options",
+                "primary_goal",
+                "constraints"
+            ],
+            "writes": [
+                "ranked_options",
+                "justifications",
+                "recommended_option"
+            ],
+            "binds_rules": [
+                "R14_reasoning_must_reference_constraints"
+            ],
+            "triggers_next": [
+                "answer_generator"
+            ],
+            "marketing_notes": "Ranks valid channels by goal alignment, budget efficiency, timeline match, team fit, and ICP reach. Provides constraint-grounded justifications."
+        },
+        {
+            "module_id": "answer_generator",
+            "reads": [
+                "primary_goal",
+                "invalid_options",
+                "ranked_options",
+                "recommended_option"
+            ],
+            "writes": [
+                "final_answer"
+            ],
+            "binds_rules": [
+                "R15_answer_structure_required",
+                "R27_include_kill_and_scale_criteria"
+            ],
+            "triggers_next": [
+                "output_checker"
+            ],
+            "marketing_notes": "Generates structured recommendation with goal restatement, invalid options explanation, valid options comparison, recommendation, next steps, and success criteria (kill/scale)."
+        },
+        {
+            "module_id": "output_checker",
+            "reads": [
+                "final_answer",
+                "primary_goal",
+                "constraints"
+            ],
+            "writes": [
+                "checked_answer",
+                "consistency_report"
+            ],
+            "binds_rules": [
+                "R16_no_recommendation_if_goal_not_satisfied",
+                "R26_realistic_outcome_expectations"
+            ],
+            "conditional_branches": [
+                {
+                    "condition": "consistency_report.goal_satisfied == false",
+                    "action": "rollback_to_reasoning_engine"
+                }
+            ],
+            "triggers_next": [],
+            "marketing_notes": "Validates that recommendation satisfies goal, fits constraints, and has realistic outcome expectations. No overpromising."
+        }
+    ],
+    "data_flow_contract": {
+        "rule": "No module may overwrite primary_goal after goal_extractor completes.",
+        "rule_2": "Only feasibility_validator determines validity of options.",
+        "rule_3": "Reasoning_engine may only consume valid_options.",
+        "rule_4": "Answer_generator must not introduce new options not present in valid_options.",
+        "rule_5": "Output_checker has authority to reject final_answer.",
+        "marketing_rule_1": "Budget constraint must be enforced at feasibility_validator - no channel exceeding budget may be marked valid.",
+        "marketing_rule_2": "Timeline constraint must be enforced at feasibility_validator - no channel with timeline > constraint may be marked valid.",
+        "marketing_rule_3": "Vanity metrics detected at goal_extractor must trigger clarification request.",
+        "marketing_rule_4": "False dichotomies detected at frame_corrector must be reframed before reasoning.",
+        "marketing_rule_5": "Outcome expectations at answer_generator must be realistic for given constraints - no overpromising."
+    },
+    "error_handling_policy": {
+        "fatal_rule_violation": "abort_pipeline",
+        "high_severity_violation": "re-run_current_module_once",
+        "medium_severity_violation": "log_and_continue",
+        "clarification_required": "pause_and_request_user_input",
+        "marketing_budget_violation": "mark_option_invalid_and_continue",
+        "marketing_timeline_violation": "mark_option_invalid_and_continue",
+        "marketing_vanity_metric_detected": "request_clarification_on_business_outcome",
+        "marketing_false_dichotomy_detected": "reframe_question_and_continue"
+    }
+}
