@@ -1,0 +1,134 @@
+{
+  "schemaVersion": "1.0.0",
+  "name": "OpenOps Marketing Agents Marketplace",
+  "slug": "openops-marketing-agents-marketplace",
+  "description": "A simple Claude plugin marketplace for marketing agents, skills, and workflows.",
+  "version": "1.0.0",
+  "homepage": "https://github.com/imMamdouhaboammar/openops-main",
+  "publisher": {
+    "name": "OpenOps",
+    "github": "imMamdouhaboammar"
+  },
+  "plugins": [
+    {
+      "id": "paid-media-plan-architect",
+      "name": "Paid Media Plan Architect",
+      "description": "Builds clear paid media plans with audience logic, channels, messages, budget split, KPIs, and testing priorities.",
+      "category": "Paid Media",
+      "repository": "https://github.com/imMamdouhaboammar/openops-main",
+      "path": ".claude-plugin/plugins/paid-media-plan-architect",
+      "price": { "amount": 2999, "currency": "EGP", "offer": "Free For limited Time" },
+      "tags": ["paid-media", "media-plan", "performance-marketing", "marketing"]
+    },
+    {
+      "id": "ugc-script-writer",
+      "name": "UGC & Script Writer",
+      "description": "Writes UGC hooks, scripts, creator directions, and short-form video angles for ads and social content.",
+      "category": "Creative",
+      "repository": "https://github.com/imMamdouhaboammar/openops-main",
+      "path": ".claude-plugin/plugins/ugc-script-writer",
+      "price": { "amount": 1790, "currency": "EGP", "offer": "Free For limited Time" },
+      "tags": ["ugc", "scripts", "hooks", "creative"]
+    },
+    {
+      "id": "creative-strategist",
+      "name": "Creative Strategist",
+      "description": "Develops campaign ideas, content angles, creative territories, and testable creative directions.",
+      "category": "Creative",
+      "repository": "https://github.com/imMamdouhaboammar/openops-main",
+      "path": ".claude-plugin/plugins/creative-strategist",
+      "price": { "amount": 3900, "currency": "EGP", "offer": "Free For limited Time" },
+      "tags": ["creative-strategy", "campaigns", "content-angles", "ads"]
+    },
+    {
+      "id": "gtm-sales-consultant",
+      "name": "GTM / Sales Consultant",
+      "description": "Shapes go-to-market offers, lead generation logic, sales messages, and offer clarity before launch.",
+      "category": "Growth",
+      "repository": "https://github.com/imMamdouhaboammar/openops-main",
+      "path": ".claude-plugin/plugins/gtm-sales-consultant",
+      "price": { "amount": 7400, "currency": "EGP", "offer": "Free For limited Time" },
+      "tags": ["gtm", "sales", "lead-generation", "offer"]
+    },
+    {
+      "id": "social-media-specialist",
+      "name": "Social Media Specialist",
+      "description": "Creates posts, content calendars, caption drafts, and daily social publishing plans.",
+      "category": "Social Media",
+      "repository": "https://github.com/imMamdouhaboammar/openops-main",
+      "path": ".claude-plugin/plugins/social-media-specialist",
+      "price": { "amount": 699, "currency": "EGP", "offer": "Free For limited Time" },
+      "tags": ["social-media", "content-calendar", "posts", "captions"]
+    },
+    {
+      "id": "seo-aeo-geo-superhero",
+      "name": "SEO / AEO / GEO Superhero",
+      "description": "Builds search visibility plans, articles, landing page structures, and AI answer-ready content.",
+      "category": "Search",
+      "repository": "https://github.com/imMamdouhaboammar/openops-main",
+      "path": ".claude-plugin/plugins/seo-aeo-geo-superhero",
+      "price": { "amount": 10999, "currency": "EGP", "offer": "Free For limited Time" },
+      "tags": ["seo", "aeo", "geo", "content", "landing-pages"]
+    },
+    {
+      "id": "proposals-specialist",
+      "name": "Proposals Specialist",
+      "description": "Structures technical and financial proposals by turning requirements into a clear solution and scope.",
+      "category": "Proposals",
+      "repository": "https://github.com/imMamdouhaboammar/openops-main",
+      "path": ".claude-plugin/plugins/proposals-specialist",
+      "price": { "amount": 5999, "currency": "EGP", "offer": "Free For limited Time" },
+      "tags": ["proposals", "rfp", "scope", "technical-offer"]
+    },
+    {
+      "id": "saudi-marketer-content-creator",
+      "name": "Saudi Marketer / Content Creator",
+      "description": "Adapts marketing and content work to Saudi language, market context, and stakeholder communication.",
+      "category": "Saudi Market",
+      "repository": "https://github.com/imMamdouhaboammar/openops-main",
+      "path": ".claude-plugin/plugins/saudi-marketer-content-creator",
+      "price": { "amount": 12999, "currency": "EGP", "offer": "Free For limited Time" },
+      "tags": ["saudi", "arabic-content", "ksa", "localization"]
+    },
+    {
+      "id": "pr-crisis-expert",
+      "name": "PR & Crisis Expert",
+      "description": "Creates press materials, official statements, reputation notes, and calm responses for sensitive moments.",
+      "category": "PR",
+      "repository": "https://github.com/imMamdouhaboammar/openops-main",
+      "path": ".claude-plugin/plugins/pr-crisis-expert",
+      "price": { "amount": 4999, "currency": "EGP", "offer": "Free For limited Time" },
+      "tags": ["pr", "crisis", "press-release", "reputation"]
+    },
+    {
+      "id": "account-manager",
+      "name": "Account Manager",
+      "description": "Writes client updates, meeting minutes, follow-up notes, decision summaries, and status messages.",
+      "category": "Account Management",
+      "repository": "https://github.com/imMamdouhaboammar/openops-main",
+      "path": ".claude-plugin/plugins/account-manager",
+      "price": { "amount": 5999, "currency": "EGP", "offer": "Free For limited Time" },
+      "tags": ["account-management", "client-updates", "meetings", "follow-up"]
+    },
+    {
+      "id": "pitch-deck-architect",
+      "name": "Pitch Deck Architect",
+      "description": "Structures pitch decks, sales decks, RFP responses, and commercial stories visually and logically.",
+      "category": "Proposals",
+      "repository": "https://github.com/imMamdouhaboammar/openops-main",
+      "path": ".claude-plugin/plugins/pitch-deck-architect",
+      "price": { "amount": 1999, "currency": "EGP", "offer": "Free For limited Time" },
+      "tags": ["pitch-deck", "sales-deck", "presentations", "rfp"]
+    },
+    {
+      "id": "performance-analyst",
+      "name": "Performance Analyst",
+      "description": "Reads campaign numbers, extracts insights, prepares reports, and turns data into practical next actions.",
+      "category": "Analytics",
+      "repository": "https://github.com/imMamdouhaboammar/openops-main",
+      "path": ".claude-plugin/plugins/performance-analyst",
+      "price": { "amount": 2479, "currency": "EGP", "offer": "Free For limited Time" },
+      "tags": ["analytics", "reports", "performance", "insights"]
+    }
+  ]
+}
